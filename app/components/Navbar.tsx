@@ -148,27 +148,27 @@ export default function Navbar() {
                         </div>
 
                         {/* Desktop Menu */}
-                        <div className="hidden md:flex items-center">
+                        <div className="hidden lg:flex items-center">
                             <div className="flex items-center space-x-4">
-                                <Link href="/" className="text-gray-700 dark:text-gray-300 hover:text-[--color-accent-pink] px-3 py-2 rounded-md text-base font-medium transition-colors">Home</Link>
+                                <Link href="/" className="text-gray-700 dark:text-gray-300 hover:[color:var(--color-accent-pink)] px-3 py-2 rounded-md text-base font-medium transition-colors">Home</Link>
                                 <div className="relative group">
-                                    <button className="flex items-center text-gray-700 dark:text-gray-300 hover:text-[--color-accent-pink] px-3 py-2 rounded-md text-base font-medium transition-colors focus:outline-none"><span>Books</span><ChevronDownIcon /></button>
+                                    <button className="flex items-center text-gray-700 dark:text-gray-300 hover:[color:var(--color-accent-pink)] px-3 py-2 rounded-md text-base font-medium transition-colors focus:outline-none"><span>Books</span><ChevronDownIcon /></button>
                                     <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                                         <div className="py-1">
-                                            <Link href="/books/grace-of-kings" className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-[--color-accent-pink]">The Grace of Kings</Link>
-                                            <Link href="/books/wall-of-storms" className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-[--color-accent-pink]">The Wall of Storms</Link>
-                                            <Link href="/books/the-veiled-throne" className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-[--color-accent-pink]">The Veiled Throne</Link> {/* <-- ADD THIS */}
-                                            <Link href="/books/speaking-bones" className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-[--color-accent-pink]">Speaking Bones</Link> {/* <-- ADD THIS */}
+                                            <Link href="/books/grace-of-kings" className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:[color:var(--color-accent-pink)]">The Grace of Kings</Link>
+                                            <Link href="/books/wall-of-storms" className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:[color:var(--color-accent-pink)]">The Wall of Storms</Link>
+                                            <Link href="/books/the-veiled-throne" className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:[color:var(--color-accent-pink)]">The Veiled Throne</Link> {/* <-- ADD THIS */}
+                                            <Link href="/books/speaking-bones" className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:[color:var(--color-accent-pink)]">Speaking Bones</Link> {/* <-- ADD THIS */}
                                         </div>
                                     </div>
                                 </div>
                                 <div className="relative group">
-                                    <button className="flex items-center text-gray-700 dark:text-gray-300 hover:text-[--color-accent-pink] px-3 py-2 rounded-md text-base font-medium transition-colors focus:outline-none"><span>Characters</span><ChevronDownIcon /></button>
+                                    <button className="flex items-center text-gray-700 dark:text-gray-300 hover:[color:var(--color-accent-pink)] px-3 py-2 rounded-md text-base font-medium transition-colors focus:outline-none"><span>Characters</span><ChevronDownIcon /></button>
                                     <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                                         <div className="py-1"><span className="block px-4 py-2 text-sm text-gray-400">Coming Soon</span></div>
                                     </div>
                                 </div>
-                                <Link href="/places" className="text-gray-700 dark:text-gray-300 hover:text-[--color-accent-pink] px-3 py-2 rounded-md text-base font-medium transition-colors">Places</Link>
+                                <Link href="/places" className="text-gray-700 dark:text-gray-300 hover:[color:var(--color-accent-pink)] px-3 py-2 rounded-md text-base font-medium transition-colors">Places</Link>
                             </div>
                             <div className="ml-4">
                                 <SearchBar />
@@ -179,7 +179,7 @@ export default function Navbar() {
                         </div>
 
                         {/* Mobile Menu Button */}
-                        <div className="-mr-2 flex md:hidden">
+                        <div className="-mr-2 flex lg:hidden">
                             <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="bg-gray-100 dark:bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
                                 {isMobileMenuOpen ? <XIcon /> : <MenuIcon />}
                             </button>
@@ -189,7 +189,7 @@ export default function Navbar() {
 
                 {/* Mobile Menu */}
                 {isMobileMenuOpen && (
-                    <div className="md:hidden">
+                    <div className="lg:hidden">
                         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                             <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">Home</Link>
                             <Link href="/books/grace-of-kings" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">The Grace of Kings</Link>

@@ -1,15 +1,23 @@
 import Image from 'next/image';
+import BookNavigation from '../../components/BookNavigation'; // <-- ADD THIS IMPORT
+import TopBookNavigation from '../../components/TopBookNavigation'; // Import the new component
 
 export default function SpeakingBonesPage() {
+    const bookNav = {
+        prevBook: { title: "The Veiled Throne", link: "/books/the-veiled-throne" },
+        nextBook: null
+    };
     return (
         <div>
+            <TopBookNavigation prevBook={bookNav.prevBook} nextBook={bookNav.nextBook} />
+            
             <div className="flex flex-col md:flex-row gap-8 items-start mb-12">
                 <div className="w-full md:w-1/3 flex-shrink-0">
-                    <Image 
-                        src="/speaking-bones.jpg" 
-                        alt="Speaking Bones Book Cover" 
-                        width={400} 
-                        height={600} 
+                    <Image
+                        src="/speaking-bones.jpg"
+                        alt="Speaking Bones Book Cover"
+                        width={400}
+                        height={600}
                         className="rounded-lg shadow-2xl object-cover w-full"
                         priority
                     />
@@ -23,6 +31,7 @@ export default function SpeakingBonesPage() {
                     </div>
                 </div>
             </div>
+            <BookNavigation prevBook={bookNav.prevBook} nextBook={bookNav.nextBook} />
         </div>
     );
 }

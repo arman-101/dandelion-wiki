@@ -1,16 +1,17 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import BookNavigation from '../../components/BookNavigation';
+import TopBookNavigation from '../../components/TopBookNavigation'; // Import the new component
 
-// --- COMPLETE DATA FOR THE GRACE OF KINGS ---
+// --- FULLY REVISED & COMPLETE DATA FOR THE GRACE OF KINGS ---
 const chapters = [
-    // Chapters 1-5 (Previously done, now with location links)
     {
         num: 1,
         title: "An Assassin",
         date: "ZUDI: THE SEVENTH MONTH IN THE FOURTEENTH YEAR OF THE REIGN OF ONE BRIGHT HEAVEN.",
         quote: "The emperor is just a man, after all.",
         speaker: "Kuni Garu",
-        summary: "The story opens with a grand Imperial Procession in Zudi, showcasing the might of the conquering Xana Empire. Two school-skipping boys, the clever Kuni Garu and his timid friend Rin Coda, watch the spectacle. The procession is violently interrupted when an assassin from Haan, riding a sophisticated man-lifting kite, attacks Emperor Mapidéré's mobile Throne Pagoda with fire bombs. The Emperor is saved by his guard, but the attack exposes his mortality. Kuni witnesses the fear in the Emperor's eyes, a pivotal moment that shatters his perception of imperial power.",
+        summary: "The story opens with a grand Imperial Procession in Zudi, showcasing the might of the conquering Xana Empire. Two school-skipping boys, the clever Kuni Garu and his timid friend Rin Coda, watch the spectacle.\n\nThe procession is violently interrupted when an assassin from Haan, riding a sophisticated man-lifting kite, attacks Emperor Mapidéré's mobile Throne Pagoda with fire bombs. The Emperor is saved by his guard, but the attack exposes his mortality. Kuni witnesses the fear in the Emperor's eyes, a pivotal moment that shatters his perception of imperial power.",
         links: [ { name: "Zudi", path: "/places/zudi" }, { name: "Kuni Garu", path: "/characters/kuni-garu" }, { name: "Emperor Mapidéré", path: "/characters/emperor-mapidere" } ]
     },
     {
@@ -37,7 +38,7 @@ const chapters = [
         date: "ZUDI: THE FIFTH MONTH IN THE TWENTY-FIRST YEAR OF THE REIGN OF ONE BRIGHT HEAVEN.",
         quote: "All life is an experiment. Who can plan so far ahead?",
         speaker: "Kuni Garu",
-        summary: "Jia Matiza, a brilliant herbalist and daughter of a wealthy rancher, rejects her conventional suitors. She seeks out Kuni Garu, and they quickly form a powerful bond over their shared philosophies on life and nobility. Jia introduces Kuni to the symbolism of the dandelion, a hardy and resourceful plant she admires. Inspired to be a man worthy of her, Kuni gives up his roguish life to take a steady job as a corvée guard, which allows him to formally propose marriage.",
+        summary: "Jia Matiza, a brilliant herbalist and daughter of a wealthy rancher, rejects her conventional suitors. She seeks out Kuni Garu, and they quickly form a powerful bond over their shared philosophies on life and nobility. Jia introduces Kuni to the symbolism of the dandelion, a hardy and resourceful plant she admires.\n\nInspired to be a man worthy of her, Kuni gives up his roguish life to take a steady job as a corvée guard, which allows him to formally propose marriage.",
         links: [ { name: "Zudi", path: "/places/zudi" }, { name: "Jia Matiza", path: "/characters/jia-matiza" }, { name: "Kuni Garu", path: "/characters/kuni-garu" }, { name: "Dandelion", path: "/concepts/dandelion" } ]
     },
     {
@@ -46,10 +47,9 @@ const chapters = [
         date: "ÉCOFI ISLAND: THE TEΝΤΗ ΜΟΝΤΗ IN THE TWENTY-THIRD YEAR OF THE REIGN OF ONE BRIGHT HEAVEN.",
         quote: "Great men are always misunderstood by their own age. And great seldom means good.",
         speaker: "Tututika",
-        summary: "The aging Emperor Mapidéré is haunted by a dream in which the gods of Dara argue over his legacy and prophesy the coming conflict. On his deathbed, a palace coup is orchestrated by Chatelain Goran Pira and Prime Minister Lügo Crupo. They forge a decree, arrange the 'suicide' of the true heir, Crown Prince Pulo, and install the young, naive Prince Loshi on the throne as Emperor Erishi. To secure his power, Crupo famously presents a deer to the court, calls it a horse, and executes those who dare to disagree, cementing his control over the new regime.",
+        summary: "The aging Emperor Mapidéré is haunted by a dream in which the gods of Dara argue over his legacy and prophesy the coming conflict. On his deathbed, a palace coup is orchestrated by Chatelain Goran Pira and Prime Minister Lügo Crupo. They forge a decree, arrange the 'suicide' of the true heir, Crown Prince Pulo, and install the young, naive Prince Loshi on the throne as Emperor Erishi.\n\nTo secure his power, Crupo famously presents a deer to the court, calls it a horse, and executes those who dare to disagree, cementing his control over the new regime.",
         links: [ { name: "Écofi Island", path: "/places/ecofi-island" }, { name: "Emperor Mapidéré", path: "/characters/emperor-mapidere" }, { name: "Goran Pira", path: "/characters/goran-pira" }, { name: "Lügo Crupo", path: "/characters/lugo-crupo" }, { name: "The Gods of Dara", path: "/concepts/gods-of-dara" } ]
     },
-    // Chapters 6-51
     {
         num: 6,
         title: "Corvée",
@@ -74,7 +74,7 @@ const chapters = [
         date: "OUTSIDE ZUDI: THE NINTH MONTH IN THE THIRD YEAR OF THE REIGN OF RIGHTEOUS FORCE.",
         quote: "If you try to obey the law, and the judges call you a criminal anyway, then you might as well live up to the name.",
         speaker: "Kuni Garu",
-        summary: "While escorting prisoners, Kuni Garu is faced with a crisis when most of them desert to join the rebellion. Facing execution for this failure, Kuni chooses the path of an outlaw. He and his remaining followers take to the mountains as 'honorable bandits.' A prophetic dream and Kuni's accidental slaying of a giant white python cement his status as a destined leader among his men. After a disastrous raid results in deaths, Kuni is humbled but resolves to become a more responsible leader, eventually deciding to save his family by taking the city of Zudi.",
+        summary: "While escorting prisoners, Kuni Garu is faced with a crisis when most of them desert to join the rebellion. Facing execution for this failure, Kuni chooses the path of an outlaw. He and his remaining followers take to the mountains as 'honorable bandits.' A prophetic dream and Kuni's accidental slaying of a giant white python cement his status as a destined leader among his men.\n\nAfter a disastrous raid results in deaths, Kuni is humbled but resolves to become a more responsible leader, eventually deciding to save his family by taking the city of Zudi.",
         links: [ { name: "Zudi", path: "/places/zudi" }, { name: "Kuni Garu", path: "/characters/kuni-garu" } ]
     },
     {
@@ -146,7 +146,7 @@ const chapters = [
         date: "DIMU: THE FOURTH MONTH IN THE FOURTH YEAR OF THE REIGN OF RIGHTEOUS FORCE.",
         quote: "A man can never fulfill a role he is not born for.",
         speaker: "Mata Zyndu",
-        summary: "Huno Krima, growing paranoid and arrogant, declares himself King of West Cocru. He executes his co-conspirator Zopa Shigin and rules through fear, employing secret police known as the 'Black Caps.' His reign is short-lived as General Tanno Namen launches a surprise attack on his capital, Dimu. Krima's undisciplined army collapses, and he is killed in the chaos. The first major rebel movement ends in failure.",
+        summary: "Huno Krima, growing paranoid and arrogant, declares himself King of West Cocru. He executes his co-conspirator Zopa Shigin and rules through fear, employing secret police known as the 'Black Caps.'\n\nHis reign is short-lived as General Tanno Namen launches a surprise attack on his capital, Dimu. Krima's undisciplined army collapses, and he is killed in the chaos. The first major rebel movement ends in failure.",
         links: [ { name: "Dimu", path: "/places/dimu" }, { name: "Huno Krima", path: "/characters/huno-krima" }, { name: "Tanno Namen", path: "/characters/tanno-namen" } ]
     },
     {
@@ -155,7 +155,7 @@ const chapters = [
         date: "ÇARUZA AND ZUDI: THE FOURTH MONTH IN THE FOURTH YEAR OF THE REIGN OF RIGHTEOUS FORCE.",
         quote: "Show is substance.",
         speaker: "Kuni Garu",
-        summary: "With the rebellion faltering, King Thufi and the Grand Council in Çaruza are paralyzed by indecision. Mata Zyndu is formally made Marshal of Cocru. Kuni Garu arrives and convinces Mata to relieve the besieged city of Zudi. Kuni's former lieutenant, Dosa, has surrendered Zudi to the Empire. Kuni and Mata march on the city, and Kuni, showing mercy, spares Dosa's life after retaking it, a decision that solidifies his reputation as a compassionate leader.",
+        summary: "With the rebellion faltering, King Thufi and the Grand Council in Çaruza are paralyzed by indecision. Mata Zyndu is formally made Marshal of Cocru. Kuni Garu arrives and convinces Mata to relieve the besieged city of Zudi. Kuni's former lieutenant, Dosa, has surrendered Zudi to the Empire.\n\nKuni and Mata march on the city, and Kuni, showing mercy, spares Dosa's life after retaking it, a decision that solidifies his reputation as a compassionate leader.",
         links: [ { name: "Çaruza", path: "/places/caruza" }, { name: "Zudi", path: "/places/zudi" }, { name: "Kuni Garu", path: "/characters/kuni-garu" }, { name: "Mata Zyndu", path: "/characters/mata-zyndu" } ]
     },
     {
@@ -218,7 +218,7 @@ const chapters = [
         date: "ARULUGI: THE SEVENTH MONTH IN THE FOURTH YEAR OF THE REIGN OF RIGHTEOUS FORCE.",
         quote: "A seducer is one who wins through deception rather than force.",
         speaker: "Tututika",
-        summary: "Kindo Marana leads his newly rebuilt navy and air force against the island of Arulugi, the heart of Amu. Princess Kikomi, chafing under her role as a political pawn, is visited by the goddess Tututika, who advises her to embrace her own form of power. Marana outwits the Amu navy with a clever tactic, and Arulugi falls. Kikomi, taken captive, attempts to manipulate Marana but fails. However, she later inspires a prisoner revolt, leading to her and her uncle's 'miraculous' escape.",
+        summary: "Kindo Marana leads his newly rebuilt navy and air force against the island of Arulugi, the heart of Amu. Princess Kikomi, chafing under her role as a political pawn, is visited by the goddess Tututika, who advises her to embrace her own form of power. Marana outwits the Amu navy with a clever tactic, and Arulugi falls.\n\nKikomi, taken captive, attempts to manipulate Marana but fails. However, she later inspires a prisoner revolt, leading to her and her uncle's 'miraculous' escape.",
         links: [ { name: "Arulugi", path: "/places/arulugi" }, { name: "Kindo Marana", path: "/characters/kindo-marana" }, { name: "Princess Kikomi", path: "/characters/princess-kikomi" }, { name: "Tututika", path: "/concepts/gods-of-dara" } ]
     },
     {
@@ -398,7 +398,7 @@ const chapters = [
         date: "ÇARUZA: THE FIRST MONTH IN THE FOURTH YEAR OF THE PRINCIPATE.",
         quote: "See him for who he really is, Mira. That is all I ask.",
         speaker: "Kiji",
-        summary: "With Kuni's rebellion gaining momentum, Mata Zyndu is consumed by the war. He grows more distant and isolated. The god Kiji, disguised as a beggar, visits Mira, the woman Mata has taken into his household, and gives her a bone dagger, urging her to see the hegemon's true nature. Meanwhile, Gin Mazoti and Luan Zya develop a fleet of mechanical, submersible crubens, a revolutionary naval weapon that allows them to bypass Mata's blockades and land troops anywhere in Dara.",
+        summary: "With Kuni's rebellion gaining momentum, Mata Zyndu is consumed by the war. He grows more distant and isolated. The god Kiji, disguised as a beggar, visits Mira, the woman Mata has taken into his household, and gives her a bone dagger, urging her to see the hegemon's true nature.\n\nMeanwhile, Gin Mazoti and Luan Zya develop a fleet of mechanical, submersible crubens, a revolutionary naval weapon that allows them to bypass Mata's blockades and land troops anywhere in Dara.",
         links: [ { name: "Çaruza", path: "/places/caruza" }, { name: "Mata Zyndu", path: "/characters/mata-zyndu" }, { name: "Gin Mazoti", path: "/characters/gin-mazoti" }, { name: "Kiji", path: "/concepts/gods-of-dara" } ]
     },
     {
@@ -425,7 +425,7 @@ const chapters = [
         date: "DIMU AND DIMUSHI: THE NINTH MONTH IN THE FOURTH YEAR OF THE PRINCIPATE.",
         quote: "Do you think that if I intend to replace you, I would be stopped by the loss of a single life?",
         speaker: "Kuni Garu",
-        summary: "The two armies face each other across the Liru River. Mata attempts to break Kuni's resolve by threatening to execute Kuni's captured father. Kuni, in a masterful bluff, calls his bluff, pretending to be utterly ruthless and uncaring. The psychological gambit works, and Mata spares his father's life. The war settles into a stalemate, with both sides launching raids and engaging in psychological warfare orchestrated by Luan Zya.",
+        summary: "The two armies face each other across the Liru River. Mata attempts to break Kuni's resolve by threatening to execute Kuni's captured father. Kuni, in a masterful bluff, calls his bluff, pretending to be utterly ruthless and uncaring. The psychological gambit works, and Mata spares his father's life.\n\nThe war settles into a stalemate, with both sides launching raids and engaging in psychological warfare orchestrated by Luan Zya.",
         links: [ { name: "Liru River", path: "/places/liru-river" }, { name: "Kuni Garu", path: "/characters/kuni-garu" }, { name: "Mata Zyndu", path: "/characters/mata-zyndu" } ]
     },
     {
@@ -452,7 +452,7 @@ const chapters = [
         date: "COCRU: THE ELEVENTH MONTH IN THE EIGHTH YEAR OF THE PRINCIPATE.",
         quote: "I’m on the run not because I don’t know how to fight, but because the gods are jealous of me.",
         speaker: "Mata Zyndu",
-        summary: "After three more years of war, Mata's forces are starving and depleted. Kuni offers a peace treaty, dividing the islands between them. Mata, seeing no other choice, agrees. However, Luan Zya convinces Kuni that true peace is impossible while Mata lives. Kuni breaks the treaty and launches a massive surprise attack. The final confrontation takes place at Rana Kida. Surrounded and with his army deserting, Mata makes a final, heroic last stand with his most loyal followers.",
+        summary: "After three more years of war, Mata's forces are starving and depleted. Kuni offers a peace treaty, dividing the islands between them. Mata, seeing no other choice, agrees. However, Luan Zya convinces Kuni that true peace is impossible while Mata lives. Kuni breaks the treaty and launches a massive surprise attack. The final confrontation takes place at Rana Kida. Surrounded and with his army deserting, Mata makes a final, heroic last stand with his most loyal followers, ultimately taking his own life rather than be captured. His death ends the Chrysanthemum-Dandelion War.",
         links: [ { name: "Cocru", path: "/places/cocru" }, { name: "Mata Zyndu", path: "/characters/mata-zyndu" }, { name: "Kuni Garu", path: "/characters/kuni-garu" } ]
     },
     {
@@ -475,8 +475,15 @@ const ExternalLinkIcon = () => (
 
 
 export default function GraceOfKingsPage() {
+    const bookNav = {
+        prevBook: null,
+        nextBook: { title: "The Wall of Storms", link: "/books/wall-of-storms" }
+    };
+
     return (
         <div>
+            <TopBookNavigation prevBook={bookNav.prevBook} nextBook={bookNav.nextBook} />
+
             {/* --- BOOK HEADER --- */}
             <div className="flex flex-col md:flex-row gap-8 items-start mb-12">
                 <div className="w-full md:w-1/3 flex-shrink-0">
@@ -554,6 +561,8 @@ export default function GraceOfKingsPage() {
                     </div>
                 ))}
             </div>
+            
+            <BookNavigation prevBook={bookNav.prevBook} nextBook={bookNav.nextBook} />
         </div>
     );
 }
