@@ -26,3 +26,17 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ededed; /* A dark gray that works for both light/dark modes */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-accent-pink);
+  border-radius: 20px;
+}
