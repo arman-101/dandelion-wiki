@@ -13,19 +13,19 @@ const ChevronDownIcon = () => (
     </svg>
 );
 const MenuIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-  </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
 );
 const XIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-  </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+    </svg>
 );
 const SearchIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-    <path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd" />
-  </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+        <path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd" />
+    </svg>
 );
 
 // --- SEARCH DATA (FULLY UPDATED) ---
@@ -33,7 +33,9 @@ const WIKI_PAGES = [
     // Books
     { title: 'The Grace of Kings', path: '/books/grace-of-kings' },
     { title: 'The Wall of Storms', path: '/books/wall-of-storms' },
-    
+    { title: 'The Veiled Throne', path: '/books/the-veiled-throne' }, // <-- ADD THIS
+    { title: 'Speaking Bones', path: '/books/speaking-bones' },     // <-- ADD THIS
+
     // Characters
     { title: 'Kuni Garu', path: '/characters/kuni-garu' },
     { title: 'Emperor Mapidéré', path: '/characters/emperor-mapidere' },
@@ -144,7 +146,7 @@ export default function Navbar() {
                                 Dandelion Dynasty Wiki
                             </Link>
                         </div>
-                        
+
                         {/* Desktop Menu */}
                         <div className="hidden md:flex items-center">
                             <div className="flex items-center space-x-4">
@@ -155,6 +157,8 @@ export default function Navbar() {
                                         <div className="py-1">
                                             <Link href="/books/grace-of-kings" className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-[--color-accent-pink]">The Grace of Kings</Link>
                                             <Link href="/books/wall-of-storms" className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-[--color-accent-pink]">The Wall of Storms</Link>
+                                            <Link href="/books/the-veiled-throne" className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-[--color-accent-pink]">The Veiled Throne</Link> {/* <-- ADD THIS */}
+                                            <Link href="/books/speaking-bones" className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-[--color-accent-pink]">Speaking Bones</Link> {/* <-- ADD THIS */}
                                         </div>
                                     </div>
                                 </div>
@@ -192,7 +196,7 @@ export default function Navbar() {
                             <Link href="/books/wall-of-storms" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">The Wall of Storms</Link>
                             <Link href="/characters" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">Characters</Link>
                             <Link href="/places" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">Places</Link>
-                             <button onClick={() => { setIsModalOpen(true); setIsMobileMenuOpen(false); }} className="w-full text-left text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">
+                            <button onClick={() => { setIsModalOpen(true); setIsMobileMenuOpen(false); }} className="w-full text-left text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">
                                 Give Feedback
                             </button>
                             <div className="p-2">
