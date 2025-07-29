@@ -32,7 +32,8 @@ const SearchIcon = () => (
 // --- SEARCH BAR COMPONENT ---
 const SearchBar = () => {
     const [searchTerm, setSearchTerm] = useState('');
-    const [results, setResults] = useState<{ title: string; path: string; }[]>([]);
+    // Update the state to expect the 'type' property
+    const [results, setResults] = useState<{ title: string; path: string; type: string; }[]>([]);
     const [isFocused, setIsFocused] = useState(false);
     const router = useRouter();
 
@@ -63,7 +64,7 @@ const SearchBar = () => {
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     onFocus={() => setIsFocused(true)}
-                    onBlur={() => setTimeout(() => setIsFocused(false), 200)}
+                    onBlur={() => setTimeout(() => setIsFocused(false), 200)} // Delay to allow click
                     className="w-full pl-10 pr-4 py-2 bg-gray-100 dark:bg-gray-700 border border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 dark:focus:ring-teal-400 transition-colors"
                 />
                 <div className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
@@ -79,7 +80,11 @@ const SearchBar = () => {
                                 onClick={(e) => { e.preventDefault(); handleResultClick(page.path); }}
                                 className="block px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-teal-100 dark:hover:bg-teal-800 transition-colors"
                             >
-                                {page.title}
+                                {/* Updated structure to show type */}
+                                <div className="flex justify-between items-center">
+                                    <span>{page.title}</span>
+                                    <span className="text-xs italic text-gray-400 dark:text-gray-500">{page.type}</span>
+                                </div>
                             </a>
                         </li>
                     ))}
