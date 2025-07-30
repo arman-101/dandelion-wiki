@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import FeedbackModal from './FeedbackModal';
-import { ALL_WIKI_PAGES, MAIN_CHARACTERS, MAIN_PLACES } from '../data/wiki-data';
+import { ALL_WIKI_PAGES, MAIN_CHARACTERS, MAIN_PLACES, MAIN_GODS } from '../data/wiki-data';
 
 // --- ICONS ---
 const ChevronDownIcon = () => (
@@ -106,7 +106,7 @@ export default function Navbar() {
                         <div className="flex items-center">
                             <Link href="/" className="flex-shrink-0 flex items-center gap-3 text-2xl font-bold text-teal-600 dark:text-teal-400">
                                 <Image src="/icon.png" alt="Wiki Icon" width={32} height={32} className="rounded-md" />
-                                Dandelion Dynasty Wiki
+                                TDD Wiki
                             </Link>
                         </div>
                         
@@ -167,6 +167,23 @@ export default function Navbar() {
                                     </div>
                                 </div>
 
+                                <div className="relative group">
+                                    <button 
+                                        onClick={() => router.push('/gods')}
+                                        className="flex items-center text-gray-700 dark:text-gray-300 hover:[color:var(--color-accent-pink)] px-3 py-2 rounded-md text-base font-medium transition-colors focus:outline-none cursor-pointer"
+                                    >
+                                        <span>Gods</span>
+                                        <ChevronDownIcon />
+                                    </button>
+                                    <div className="absolute left-0 top-full mt-2 w-48 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                                        <div className="py-1">
+                                            {MAIN_GODS.map(god => (
+                                                <Link key={god.path} href={god.path} className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:[color:var(--color-accent-pink)]">{god.title}</Link>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                             <div className="ml-4">
                                 <SearchBar />
@@ -193,6 +210,7 @@ export default function Navbar() {
                             <Link href="/books" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">Books</Link>
                             <Link href="/characters" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">Characters</Link>
                             <Link href="/places" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">Places</Link>
+                            <Link href="/gods" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">Gods</Link>
                              <button onClick={() => { setIsModalOpen(true); setIsMobileMenuOpen(false); }} className="w-full text-left text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">
                                 Give Feedback
                             </button>

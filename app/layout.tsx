@@ -8,7 +8,7 @@ import ScrollToTopButton from './components/ScrollToTopButton' // <-- 1. IMPORT 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Dandelion Dynasty Wiki',
+  title: 'The Dandelion Dynasty Wiki',
   description: 'An encyclopedia for the epic silkpunk saga by Ken Liu.',
   icons: {
     icon: '/icon.png', // Add this line

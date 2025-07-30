@@ -6,28 +6,28 @@ const books = [
         title: "The Grace of Kings",
         series: "The Dandelion Dynasty #1",
         description: "Two men rebel together against tyranny—and then become the deadliest of enemies.",
-        coverImage: "/the-grace-of-kings.jpg",
+        coverImage: "/books/the-grace-of-kings.jpg",
         link: "/books/grace-of-kings"
     },
     {
         title: "The Wall of Storms",
         series: "The Dandelion Dynasty #2",
         description: "Emperor Ragin's peaceful reign is threatened by a new invasion from across the sea.",
-        coverImage: "/the-wall-of-storms.jpg",
+        coverImage: "/books/the-wall-of-storms.jpg",
         link: "/books/wall-of-storms"
     },
     {
         title: "The Veiled Throne",
         series: "The Dandelion Dynasty #3",
         description: "The vanquished people of Dara plot rebellion under the yoke of the mighty Lyucu Empire.",
-        coverImage: "/the-veiled-throne.jpg",
+        coverImage: "/books/the-veiled-throne.jpg",
         link: "/books/the-veiled-throne"
     },
     {
         title: "Speaking Bones",
         series: "The Dandelion Dynasty #4",
         description: "A new generation of heroes rises to fight the final war for the future of Dara.",
-        coverImage: "/speaking-bones.jpg",
+        coverImage: "/books/speaking-bones.jpg",
         link: "/books/speaking-bones"
     }
 ];

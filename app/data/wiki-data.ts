@@ -2,7 +2,7 @@
 interface WikiPage {
     title: string;
     path: string;
-    type: 'Book' | 'Character' | 'Place' | 'Concept';
+    type: 'Book' | 'Character' | 'Place' | 'Concept' | 'God';
 }
 
 // A curated list of main characters for the dropdown menu
@@ -16,7 +16,7 @@ export const MAIN_CHARACTERS: WikiPage[] = [
     { title: 'Zomi Kidosu', path: '/characters/zomi-kidosu', type: 'Character' },
 ];
 
-// A curated list of main places for the dropdown menu (UPDATED)
+// A curated list of main places (Tiro States) for the dropdown menu
 export const MAIN_PLACES: WikiPage[] = [
     { title: 'Amu', path: '/places/amu', type: 'Place' },
     { title: 'Cocru', path: '/places/cocru', type: 'Place' },
@@ -27,7 +27,19 @@ export const MAIN_PLACES: WikiPage[] = [
     { title: 'Xana', path: '/places/xana', type: 'Place' },
 ];
 
-// A comprehensive list of ALL pages for the search bar (UPDATED)
+// A curated list of gods for the dropdown menu
+export const MAIN_GODS: WikiPage[] = [
+    { title: 'Kiji', path: '/gods/kiji', type: 'God' },
+    { title: 'Tututika', path: '/gods/tututika', type: 'God' },
+    { title: 'Kana', path: '/gods/kana', type: 'God' }, // <-- UPDATED
+    { title: 'Rapa', path: '/gods/rapa', type: 'God' }, // <-- UPDATED
+    { title: 'Rufizo', path: '/gods/rufizo', type: 'God' },
+    { title: 'Tazu', path: '/gods/tazu', type: 'God' },
+    { title: 'Lutho', path: '/gods/lutho', type: 'God' },
+    { title: 'Fithowéo', path: '/gods/fithoweo', type: 'God' },
+];
+
+// A comprehensive list of ALL pages for the search bar
 export const ALL_WIKI_PAGES: WikiPage[] = [
     // Books
     { title: 'The Grace of Kings', path: '/books/grace-of-kings', type: 'Book' },
@@ -35,7 +47,7 @@ export const ALL_WIKI_PAGES: WikiPage[] = [
     { title: 'The Veiled Throne', path: '/books/the-veiled-throne', type: 'Book' },
     { title: 'Speaking Bones', path: '/books/speaking-bones', type: 'Book' },
     
-    // All Characters (includes main characters)
+    // All Characters
     ...MAIN_CHARACTERS,
     { title: 'Emperor Mapidéré', path: '/characters/emperor-mapidere', type: 'Character' },
     { title: 'Phin Zyndu', path: '/characters/phin-zyndu', type: 'Character' },
@@ -50,7 +62,7 @@ export const ALL_WIKI_PAGES: WikiPage[] = [
     { title: 'Gozogi Çadé', path: '/characters/gozogi-cade', type: 'Character' },
     { title: 'Than Carucono', path: '/characters/than-carucono', type: 'Character' },
 
-    // All Places (includes main places)
+    // All Places
     ...MAIN_PLACES,
     { title: 'Zudi', path: '/places/zudi', type: 'Place' },
     { title: 'Tunoa Islands', path: '/places/tunoa-islands', type: 'Place' },
@@ -60,8 +72,11 @@ export const ALL_WIKI_PAGES: WikiPage[] = [
     { title: 'Nokida', path: '/places/nokida', type: 'Place' },
     { title: 'Tunoa', path: '/places/tunoa', type: 'Place' },
 
+    // All Gods
+    ...MAIN_GODS,
+    { title: 'Gods of Dara', path: '/gods', type: 'Concept'},
+
     // Concepts
     { title: 'Dandelion', path: '/concepts/dandelion', type: 'Concept' },
-    { title: 'The Gods of Dara', path: '/concepts/gods-of-dara', type: 'Concept' },
     { title: 'Grand Examination', path: '/concepts/grand-examination', type: 'Concept' },
 ];
