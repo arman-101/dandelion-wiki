@@ -20,15 +20,15 @@ const placesIslands = [
 ];
 
 const placesLandmarks = [
-    { name: "Pan", description: "The 'Immaculate City,' the Imperial capital built by Emperor Mapidéré.", image: "/places/pan.jpg", link: "/places/pan" },
-    { name: "Zudi", description: "A major city in northern Cocru and the childhood home of Kuni Garu.", image: "/places/zudi.jpg", link: "/places/zudi" },
-    { name: "Mount Kiji", description: "A snow-peaked volcano on Rui, the sole source of the lift gas for airships.", image: "/places/mount-kiji.jpg", link: "/places/mount-kiji" },
-    { name: "Kishi Channel", description: "The treacherous channel made unnavigable by a great whirlpool.", image: "/places/kishi-channel.jpg", link: "/places/kishi-channel" },
+    { name: "Pan", description: "The 'Immaculate City,' the Imperial capital built by Emperor Mapidéré.", image: "/places/pan.png", link: "/places/pan" },
+    { name: "Zudi", description: "A major city in northern Cocru and the childhood home of Kuni Garu.", image: "/places/zudi.png", link: "/places/zudi" },
+    { name: "Mount Kiji", description: "A snow-peaked volcano on Rui, the sole source of the lift gas for airships.", image: "/places/mount-kiji.png", link: "/places/mount-kiji" },
+    { name: "Kishi Channel", description: "The treacherous channel made unnavigable by a great whirlpool.", image: "/places/kishi-channel.png", link: "/places/kishi-channel" },
 ];
 
 const placesBeyondDara = [
-    { name: "Ukyu & Gondé", description: "The vast, harsh scrublands across the eastern sea, home to the Lyucu people.", image: "/places/ukyu-gonde.jpg", link: "/places/ukyu-gonde" },
-    { name: "Eseeran Nomnny", description: "A mysterious southern continent, separated from the Lyucu Lands by the sea.", image: "/places/eseeran-nomnny.jpg", link: "/places/eseeran-nomnny" },
+    { name: "Ukyu & Gondé", description: "The vast, harsh scrublands across the eastern sea, home to the Lyucu people.", image: "/places/ukyu-gonde.png", link: "/places/ukyu-gonde" },
+    { name: "Eseeran Nomnny", description: "A mysterious southern continent, separated from the Lyucu Lands by the sea.", image: "/places/eseeran-nomnny.png", link: "/places/eseeran-nomnny" },
 ];
 
 export default function PlacesPage() {
