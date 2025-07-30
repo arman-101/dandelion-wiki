@@ -8,15 +8,15 @@ const characterData: Character = {
     infoBox: {
         aliases: "Empress Jia",
         occupation: "Scholar, Empress of Dara, Regent",
-        placeOfBirth: "Zudi",
+        placeOfBirth: { text: "Zudi", link: "/places/zudi" },
         status: "Deceased",
         gender: "Female",
-        significantOther: "Kuni Garu",
+        significantOther: { text: "Kuni Garu", link: "/characters/kuni-garu" },
         relatives: "Unnamed father, Timu (son), Théra (daughter), Fara (daughter)",
         affiliation: "Dandelion Court, Empire of Dara",
-        nationality: "Cocru",
-        firstAppeared: "The Grace of Kings",
-        lastAppeared: "Speaking Bones"
+        nationality: { text: "Cocru", link: "/places/cocru" },
+        firstAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" },
+        lastAppeared: { text: "Speaking Bones", link: "/books/speaking-bones" }
     },
     appearanceAndPersonality: [
         { type: 'text', content: "Jia is described as beautiful, with curly, bright-red hair and large, almond-shaped dark-green eyes." },

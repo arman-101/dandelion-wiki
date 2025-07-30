@@ -9,15 +9,18 @@ const characterData: Character = {
     infoBox: {
         aliases: "Emperor Ragin, The Dandelion",
         occupation: "Bandit, Corvée Guard, Duke of Zudi, King of Dasu, Emperor of Dara",
-        placeOfBirth: "Zudi",
-        status: "Deceased (by the end of the series)",
+        placeOfBirth: { text: "Zudi", link: "/places/zudi" },
+        status: "Deceased",
         gender: "Male",
-        significantOther: "Jia Matiza, Consort Risana",
+        significantOther: [
+            { text: "Jia Matiza", link: "/characters/jia-matiza" },
+            { text: "Consort Risana", link: "/characters/consort-risana" },
+        ],
         relatives: "Féso Garu (father), Naré Garu (mother), Kado Garu (brother), Prince Timu (son), Princess Théra (daughter), Prince Phyro (son), Princess Fara (daughter)",
         affiliation: "House of Garu, Dandelion Court, Empire of Dara",
-        nationality: "Cocru",
-        firstAppeared: "The Grace of Kings",
-        lastAppeared: "Speaking Bones"
+        nationality: { text: "Cocru", link: "/places/cocru" },
+        firstAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" },
+        lastAppeared: { text: "Speaking Bones", link: "/books/speaking-bones" }
     },
     appearanceAndPersonality: [
         { type: 'text', content: "In his youth, Kuni is described as stocky and well-muscled, with long, narrow eyes that glint with sly intelligence." },

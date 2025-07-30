@@ -8,13 +8,13 @@ const characterData: Character = {
     infoBox: {
         aliases: "The Kite-Rider, Toru Noki",
         occupation: "Assassin, Strategist, Prime Minister of Dara, Teacher",
-        placeOfBirth: "Ginpen",
+        placeOfBirth: { text: "Ginpen", link: "/places/ginpen" },
         status: "Deceased",
         gender: "Male",
         affiliation: "House of Zya, Dandelion Court",
-        nationality: "Haan",
-        firstAppeared: "The Grace of Kings",
-        lastAppeared: "The Wall of Storms"
+        nationality: { text: "Haan", link: "/places/haan" },
+        firstAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" },
+        lastAppeared: { text: "The Wall of Storms", link: "/books/wall-of-storms" }
     },
     appearanceAndPersonality: [
         { type: 'text', content: "Luan Zya is described as lean and gaunt, with an intense and scholarly demeanor. As the mysterious assassin, he has skin 'as black as sand' and bright green eyes." },

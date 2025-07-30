@@ -19,17 +19,19 @@ export type ContentBlock =
     | { type: 'text'; content: string }
     | { type: 'ref'; data: ReferenceLink };
 
-// A new type for linked items in an infobox
 export interface InfoBoxLink {
     text: string;
     link: string;
 }
 
+// UPDATED Character Interface
 export interface Character {
     name: string;
     image: string | StaticImageData;
     introduction: string;
-    infoBox: { [key: string]: string };
+    infoBox: {
+        [key: string]: string | InfoBoxLink | InfoBoxLink[]; // <-- FIX IS HERE
+    };
     appearanceAndPersonality: ContentBlock[];
     history: {
         era: string;
@@ -51,13 +53,12 @@ export interface God {
     }[];
 }
 
-// UPDATED Place Interface
 export interface Place {
     name: string;
     image: string | StaticImageData;
     introduction: string;
     infoBox: {
-        [key: string]: string | InfoBoxLink | InfoBoxLink[]; // <-- FIX IS HERE
+        [key: string]: string | InfoBoxLink | InfoBoxLink[];
     };
     geography: ContentBlock[];
     culture: ContentBlock[];
@@ -66,6 +67,7 @@ export interface Place {
         summary: ContentBlock[];
     }[];
 }
+
 
 // --- PAGE LISTS FOR NAVIGATION & SEARCH ---
 
@@ -115,31 +117,43 @@ export const ALL_WIKI_PAGES: WikiPage[] = [
     // All Characters
     ...MAIN_CHARACTERS,
     { title: 'Emperor Mapidéré', path: '/characters/emperor-mapidere', type: 'Character' },
-    { title: 'Phin Zyndu', path: '/characters/phin-zyndu', type: 'Character' },
-    { title: 'Goran Pira', path: '/characters/goran-pira', type: 'Character' },
-    { title: 'Lügo Crupo', path: '/characters/lugo-crupo', type: 'Character' },
+    { title: 'Consort Risana', path: '/characters/consort-risana', type: 'Character' },
     { title: 'Prince Timu', path: '/characters/prince-timu', type: 'Character' },
     { title: 'Prince Phyro', path: '/characters/prince-phyro', type: 'Character' },
+    { title: 'Soto Zyndu', path: '/characters/soto-zyndu', type: 'Character' },
+    { title: 'Emperor Erishi', path: '/characters/emperor-erishi', type: 'Character' },
+    { title: 'Goran Pira', path: '/characters/goran-pira', type: 'Character' },
+    { title: 'Lügo Crupo', path: '/characters/lugo-crupo', type: 'Character' },
+    { title: 'Kindo Marana', path: '/characters/kindo-marana', type: 'Character' },
+    { title: 'Tanno Namen', path: '/characters/tanno-namen', type: 'Character' },
+    { title: 'Mün Çakri', path: '/characters/mun-cakri', type: 'Character' },
+    { title: 'Rin Coda', path: '/characters/rin-coda', type: 'Character' },
+    { title: 'King Thufi', path: '/characters/king-thufi', type: 'Character' },
+    { title: 'Princess Kikomi', path: '/characters/princess-kikomi', type: 'Character' },
+
+    { title: 'Phin Zyndu', path: '/characters/phin-zyndu', type: 'Character' },
     { title: 'Zato Ruthi', path: '/characters/zato-ruthi', type: 'Character' },
     { title: 'Doru Solofi', path: '/characters/doru-solofi', type: 'Character' },
     { title: 'Noda Mi', path: '/characters/noda-mi', type: 'Character' },
-    { title: 'Consort Risana', path: '/characters/consort-risana', type: 'Character' },
     { title: 'Gozogi Çadé', path: '/characters/gozogi-cade', type: 'Character' },
     { title: 'Than Carucono', path: '/characters/than-carucono', type: 'Character' },
-    { title: 'Dafiro Miro', path: '/characters/dafiro-miro', type: 'Character' }, // New
-    { title: 'King Jizu', path: '/characters/king-jizu', type: 'Character' }, // New
-    { title: 'King Mocri', path: '/characters/king-mocri', type: 'Character' }, // New
-    { title: 'King Shilué', path: '/characters/king-shilue', type: 'Character' }, // New
+    { title: 'Dafiro Miro', path: '/characters/dafiro-miro', type: 'Character' },
+    { title: 'King Jizu', path: '/characters/king-jizu', type: 'Character' },
+    { title: 'King Mocri', path: '/characters/king-mocri', type: 'Character' },
+    { title: 'King Shilué', path: '/characters/king-shilue', type: 'Character' },
 
     // All Places
     ...PLACES_TIRO_STATES,
     ...PLACES_BEYOND_DARA,
-    { title: 'Dasu & Rui', path: '/places/dasu-rui', type: 'Place' }, // New
-    { title: 'Crescent Island', path: '/places/crescent-island', type: 'Place' }, // New
-    { title: 'Tan Adü', path: '/places/tan-adu', type: 'Place' }, // New
-    { title: 'Tunoa Islands', path: '/places/tunoa-islands', type: 'Place' }, // New
-    { title: 'Wolf\'s Paw', path: '/places/wolfs-paw', type: 'Place' }, // New
+    { title: 'Dasu & Rui', path: '/places/dasu-rui', type: 'Place' },
+    { title: 'Crescent Island', path: '/places/crescent-island', type: 'Place' },
+    { title: 'Tan Adü', path: '/places/tan-adu', type: 'Place' },
+    { title: 'Tunoa Islands', path: '/places/tunoa-islands', type: 'Place' },
+    { title: 'Wolf\'s Paw', path: '/places/wolfs-paw', type: 'Place' },
+    { title: 'Pan', path: '/places/pan', type: 'Place' },
     { title: 'Zudi', path: '/places/zudi', type: 'Place' },
+    { title: 'Mount Kiji', path: '/places/mount-kiji', type: 'Place' },
+    { title: 'Kishi Channel', path: '/places/kishi-channel', type: 'Place' },
     { title: 'Géjira', path: '/places/gejira', type: 'Place' },
     { title: 'Nokida', path: '/places/nokida', type: 'Place' },
     { title: 'Tunoa', path: '/places/tunoa', type: 'Place' },

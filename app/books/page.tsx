@@ -7,14 +7,14 @@ const books = [
         series: "The Dandelion Dynasty #1",
         description: "Two men rebel together against tyranny—and then become the deadliest of enemies.",
         coverImage: "/books/the-grace-of-kings.jpg",
-        link: "/books/grace-of-kings"
+        link: "/books/the-grace-of-kings"
     },
     {
         title: "The Wall of Storms",
         series: "The Dandelion Dynasty #2",
         description: "Emperor Ragin's peaceful reign is threatened by a new invasion from across the sea.",
         coverImage: "/books/the-wall-of-storms.jpg",
-        link: "/books/wall-of-storms"
+        link: "/books/the-wall-of-storms"
     },
     {
         title: "The Veiled Throne",

@@ -8,14 +8,14 @@ const characterData: Character = {
     infoBox: {
         aliases: "The Chrysanthemum, Hegemon of Dara, Butcher of Wolf's Paw",
         occupation: "Marshal of Cocru, Hegemon",
-        placeOfBirth: "Tunoa Islands",
+        placeOfBirth: { text: "Tunoa Islands", link: "/places/tunoa-islands" },
         status: "Deceased",
         gender: "Male",
         relatives: "Dazu Zyndu (grandfather), Soto Zyndu (aunt), Phin Zyndu (uncle)",
         affiliation: "House of Zyndu, Tiro Rebellion",
-        nationality: "Cocru",
-        firstAppeared: "The Grace of Kings",
-        lastAppeared: "The Grace of Kings"
+        nationality: { text: "Cocru", link: "/places/cocru" },
+        firstAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" },
+        lastAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" }
     },
     appearanceAndPersonality: [
         { type: 'text', content: "Mata is a physical giant, standing seven and a half feet tall even as a youth, with a powerful, muscular build. His most striking features are his coal-black, double-pupiled eyes, a rare trait said to mark a man for a great destiny." },

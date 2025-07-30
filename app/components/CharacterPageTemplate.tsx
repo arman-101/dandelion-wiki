@@ -1,10 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import React from 'react';
 import { Character, ContentBlock, ReferenceLink } from '../data/wiki-data';
 
 // --- REUSABLE SUB-COMPONENTS FOR THE TEMPLATE ---
 
-const InfoBox = ({ data }: { data: { [key: string]: string } }) => (
+// UPDATED InfoBox Component
+const InfoBox = ({ data }: { data: Character['infoBox'] }) => (
     <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md border border-gray-200 dark:border-gray-700">
         <h3 className="font-bold text-lg mb-3 text-teal-600 dark:text-teal-400 border-b border-gray-300 dark:border-gray-600 pb-2">Biographical Information</h3>
         <dl className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
@@ -13,7 +15,22 @@ const InfoBox = ({ data }: { data: { [key: string]: string } }) => (
                 return (
                     <div key={key} className="grid grid-cols-3 gap-2">
                         <dt className="font-semibold col-span-1">{label}:</dt>
-                        <dd className="col-span-2">{String(value)}</dd>
+                        <dd className="col-span-2">
+                            {(() => {
+                                if (Array.isArray(value)) {
+                                    return value.map((item, index) => (
+                                        <React.Fragment key={item.text}>
+                                            <Link href={item.link} className="text-teal-600 dark:text-teal-400 hover:underline">{item.text}</Link>
+                                            {index < value.length - 1 ? ', ' : ''}
+                                        </React.Fragment>
+                                    ));
+                                } else if (typeof value === 'object' && value.link) {
+                                    return <Link href={value.link} className="text-teal-600 dark:text-teal-400 hover:underline">{value.text}</Link>;
+                                } else {
+                                    return String(value);
+                                }
+                            })()}
+                        </dd>
                     </div>
                 );
             })}

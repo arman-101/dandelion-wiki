@@ -8,13 +8,13 @@ const characterData: Character = {
     infoBox: {
         aliases: "Marshal Gin, Queen of Rima and Faça",
         occupation: "Dockworker, Quartermaster, Marshal of Dasu, Queen",
-        placeOfBirth: "Dimushi",
+        placeOfBirth: { text: "Dimushi", link: "/places/dimushi" },
         status: "Deceased",
         gender: "Female",
         affiliation: "Dandelion Court, Empire of Dara",
-        nationality: "Amu",
-        firstAppeared: "The Grace of Kings",
-        lastAppeared: "Speaking Bones"
+        nationality: { text: "Amu", link: "/places/amu" },
+        firstAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" },
+        lastAppeared: { text: "Speaking Bones", link: "/books/speaking-bones" }
     },
     appearanceAndPersonality: [
         { type: 'text', content: "Gin is small and wiry, with a sharp, intelligent face. For much of her early life, she disguised herself as a boy to survive and find work." },

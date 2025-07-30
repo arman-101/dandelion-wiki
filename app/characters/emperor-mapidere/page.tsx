@@ -8,14 +8,14 @@ const characterData: Character = {
     infoBox: {
         aliases: "King Réon of Xana",
         occupation: "King, Emperor of Dara",
-        placeOfBirth: "Xana",
+        placeOfBirth: { text: "Xana", link: "/places/xana" },
         status: "Deceased",
         gender: "Male",
         relatives: "Crown Prince Pulo (son), Prince Loshi (son)",
         affiliation: "House of Xana, Empire of Dara",
-        nationality: "Xana",
-        firstAppeared: "The Grace of Kings",
-        lastAppeared: "The Grace of Kings"
+        nationality: { text: "Xana", link: "/places/xana" },
+        firstAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" },
+        lastAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" }
     },
     appearanceAndPersonality: [
         { type: 'text', content: "In his old age, Mapidéré is described as gaunt, with hard, expressionless eyes. He wears a splendid crown of gold and gems topped with the statuette of a cruben." },
