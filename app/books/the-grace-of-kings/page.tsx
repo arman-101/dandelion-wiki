@@ -488,7 +488,7 @@ export default function GraceOfKingsPage() {
             <div className="flex flex-col md:flex-row gap-8 items-start mb-12">
                 <div className="w-full md:w-1/3 flex-shrink-0">
                     <Image 
-                        src="/the-grace-of-kings.jpg" 
+                        src="/books/the-grace-of-kings.jpg" 
                         alt="The Grace of Kings Book Cover" 
                         width={400} 
                         height={600} 

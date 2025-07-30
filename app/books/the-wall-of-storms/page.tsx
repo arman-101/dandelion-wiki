@@ -299,7 +299,7 @@ export default function WallOfStormsPage() {
             <div className="flex flex-col md:flex-row gap-8 items-start mb-12">
                 <div className="w-full md:w-1/3 flex-shrink-0">
                     <Image
-                        src="/the-wall-of-storms.jpg"
+                        src="/books/the-wall-of-storms.jpg"
                         alt="The Wall of Storms Book Cover"
                         width={400}
                         height={600}
