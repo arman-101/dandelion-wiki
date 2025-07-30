@@ -477,7 +477,7 @@ const ExternalLinkIcon = () => (
 export default function GraceOfKingsPage() {
     const bookNav = {
         prevBook: null,
-        nextBook: { title: "The Wall of Storms", link: "/books/wall-of-storms" }
+        nextBook: { title: "The Wall of Storms", link: "/books/the-wall-of-storms" }
     };
 
     return (

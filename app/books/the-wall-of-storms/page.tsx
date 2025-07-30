@@ -287,7 +287,7 @@ const ExternalLinkIcon = () => (
 
 export default function WallOfStormsPage() {
     const bookNav = {
-        prevBook: { title: "The Grace of Kings", link: "/books/grace-of-kings" },
+        prevBook: { title: "The Grace of Kings", link: "/books/the-grace-of-kings" },
         nextBook: { title: "The Veiled Throne", link: "/books/the-veiled-throne" }
     };
 

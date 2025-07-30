@@ -1,9 +1,40 @@
-export default function PlaceholderPage() {
-    const PageTitle = "Gozogi Kade"; // <-- CHANGE THIS FOR EACH PAGE
-    return (
-        <div>
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">{PageTitle}</h1>
-            <p>Content for this page will be added soon.</p>
-        </div>
-    );
-}
+import CharacterPageTemplate from '../../components/CharacterPageTemplate';
+import { Character } from '../../data/wiki-data';
+
+const characterData: Character = {
+    name: "Gozogi Çadé",
+    image: "/characters/gozogi-cade.png",
+    introduction: "Gozogi Çadé is a former street tough and one of Kuni Garu's oldest and most loyal friends from his bandit days. He serves as a reliable, if somewhat simple, commander in the Dandelion military.",
+    infoBox: {
+        aliases: "None",
+        occupation: "Bandit, General",
+        status: "Alive",
+        gender: "Male",
+        affiliation: "Dandelion Court, Empire of Dara",
+        nationality: { text: "Cocru", link: "/places/cocru" },
+        firstAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" },
+        lastAppeared: "Speaking Bones"
+    },
+    appearanceAndPersonality: [
+        { type: 'text', content: "Gozogi is a rough-and-tumble man, more comfortable in a tavern or on a battlefield than in the Imperial court. He is not a great thinker or strategist, but he is brave, loyal, and good-natured. He represents the common man who rose to power with Kuni, and he never loses his straightforward, unpretentious demeanor." },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 8, link: "/books/the-grace-of-kings#chapter-8" } },
+    ],
+    history: [
+        {
+            era: "The Dandelion Rebellion",
+            summary: [
+                { type: 'text', content: "Gozogi was a member of Kuni's original street gang and one of the first to follow him into outlawry. He served as a dependable lieutenant throughout the rebellion and the civil war, always loyal to his friend." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 8, link: "/books/grace-of-kings#chapter-8" } },
+            ]
+        },
+        {
+            era: "The Dandelion Dynasty",
+            summary: [
+                { type: 'text', content: "After Kuni became emperor, Gozogi was made a general. He remained part of Kuni's inner circle of old friends, often providing a simple, common-sense perspective that was valued in the increasingly complex world of court politics." },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 8, link: "/books/wall-of-storms#chapter-8" } },
+            ]
+        },
+    ]
+};
+
+export default function GozogiCadePage() { return <CharacterPageTemplate characterData={characterData} />; }

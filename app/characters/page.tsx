@@ -129,6 +129,66 @@ const characters = [
         image: "/characters/princess-kikomi.png",
         link: "/characters/princess-kikomi"
     },
+    {
+        name: "Phin Zyndu",
+        description: "The uncle of Mata Zyndu and the guardian of his family's legacy of vengeance.",
+        image: "/characters/phin-zyndu.png",
+        link: "/characters/phin-zyndu"
+    },
+    {
+        name: "Zato Ruthi",
+        description: "The stern and traditional Imperial Tutor for the children of Emperor Ragin.",
+        image: "/characters/zato-ruthi.png",
+        link: "/characters/zato-ruthi"
+    },
+    {
+        name: "Doru Solofi",
+        description: "A disgraced nobleman and a leader of the rebellious Hegemon Cults.",
+        image: "/characters/doru-solofi.png",
+        link: "/characters/doru-solofi"
+    },
+    {
+        name: "Noda Mi",
+        description: "The cunning strategist and mastermind behind the Hegemon Cults.",
+        image: "/characters/noda-mi.png",
+        link: "/characters/noda-mi"
+    },
+    {
+        name: "Gozogi Çadé",
+        description: "A former street tough and one of Kuni Garu's oldest and most loyal friends.",
+        image: "/characters/gozogi-cade.png",
+        link: "/characters/gozogi-cade"
+    },
+    {
+        name: "Than Carucono",
+        description: "A cheerful former street performer who becomes a loyal general for Kuni Garu.",
+        image: "/characters/than-carucono.png",
+        link: "/characters/than-carucono"
+    },
+    {
+        name: "Dafiro Miro",
+        description: "A wise advisor to King Thufi who becomes a key double agent for Kuni Garu.",
+        image: "/characters/dafiro-miro.png",
+        link: "/characters/dafiro-miro"
+    },
+    {
+        name: "King Jizu",
+        description: "The fisherman-king of Rima whose martyrdom became a symbol for the rebellion.",
+        image: "/characters/king-jizu.png",
+        link: "/characters/king-jizu"
+    },
+    {
+        name: "King Mocri",
+        description: "The proud and honorable king of Gan and a key member of the Tiro Alliance.",
+        image: "/characters/king-mocri.png",
+        link: "/characters/king-mocri"
+    },
+    {
+        name: "King Shilué",
+        description: "The treacherous king of Faça whose attempt to play both sides led to his downfall.",
+        image: "/characters/king-shilue.png",
+        link: "/characters/king-shilue"
+    },
 ];
 
 export default function CharactersPage() {

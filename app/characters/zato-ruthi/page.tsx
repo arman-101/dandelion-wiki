@@ -1,9 +1,33 @@
-export default function PlaceholderPage() {
-    const PageTitle = "Zato Ruthi"; // <-- CHANGE THIS FOR EACH PAGE
-    return (
-        <div>
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">{PageTitle}</h1>
-            <p>Content for this page will be added soon.</p>
-        </div>
-    );
-}
+import CharacterPageTemplate from '../../components/CharacterPageTemplate';
+import { Character } from '../../data/wiki-data';
+
+const characterData: Character = {
+    name: "Zato Ruthi",
+    image: "/characters/zato-ruthi.png",
+    introduction: "Zato Ruthi is the stern and deeply traditional Imperial Tutor for the children of Emperor Ragin. He is a respected scholar from Haan who embodies the classical ideals of education and propriety.",
+    infoBox: {
+        aliases: "Imperial Tutor",
+        occupation: "Scholar, Tutor",
+        status: "Alive",
+        gender: "Male",
+        affiliation: "Dandelion Court",
+        nationality: { text: "Haan", link: "/places/haan" },
+        firstAppeared: { text: "The Wall of Storms", link: "/books/the-wall-of-storms" },
+        lastAppeared: "Speaking Bones"
+    },
+    appearanceAndPersonality: [
+        { type: 'text', content: "Zato Ruthi is an elderly scholar who carries himself with an air of immense dignity and seriousness. He is a staunch traditionalist who believes in a rigorous, classical education and has little patience for the pranks and modern curiosities of his royal pupils, particularly Princess Théra. Despite his stern exterior, he is deeply dedicated to his duty and the proper upbringing of the heirs." },
+        { type: 'ref', data: { book: "The Wall of Storms", chapter: 3, link: "/books/the-wall-of-storms#chapter-3" } },
+    ],
+    history: [
+        {
+            era: "Tutor to the Imperial Children",
+            summary: [
+                { type: 'text', content: "Zato Ruthi was responsible for the education of Princes Timu and Phyro, and Princess Théra. He frequently clashed with the children over their behavior, at one point attempting to resign in fury after they painted a mocking poem on his robe. He was skillfully placated by Emperor Ragin and Empress Jia, who reframed the prank as a clever apology. His traditional curriculum, focused on classics and propriety, often frustrated the engineering-minded Théra." },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 3, link: "/books/the-wall-of-storms#chapter-3" } },
+            ]
+        },
+    ]
+};
+
+export default function ZatoRuthiPage() { return <CharacterPageTemplate characterData={characterData} />; }

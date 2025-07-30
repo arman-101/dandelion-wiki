@@ -4,7 +4,7 @@ import TopBookNavigation from '../../components/TopBookNavigation'; // Import th
 
 export default function VeiledThronePage() {
         const bookNav = {
-        prevBook: { title: "The Wall of Storms", link: "/books/wall-of-storms" },
+        prevBook: { title: "The Wall of Storms", link: "/books/the-wall-of-storms" },
         nextBook: { title: "Speaking Bones", link: "/books/speaking-bones" }
     };
 
