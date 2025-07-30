@@ -7,6 +7,20 @@ export interface WikiPage {
     type: 'Book' | 'Character' | 'Place' | 'Concept' | 'God';
 }
 
+// --- TYPE DEFINITIONS ---
+
+// Define the shape of a reference link
+export interface ReferenceLink {
+    book: string;
+    chapter: number;
+    link: string;
+}
+
+// Define the shape of a content block (can be text or a reference)
+export type ContentBlock = 
+    | { type: 'text'; content: string }
+    | { type: 'ref'; data: ReferenceLink };
+
 // DEFINE THE CHARACTER TYPE HERE
 export interface Character {
     name: string;
@@ -15,17 +29,28 @@ export interface Character {
     infoBox: {
         [key: string]: string;
     };
-    appearanceAndPersonality: string;
+    appearanceAndPersonality: ContentBlock[];
     history: {
         era: string;
-        summary: string;
-        references: {
-            book: string;
-            chapter: number;
-            link: string;
-        }[];
+        summary: ContentBlock[];
     }[];
 }
+
+// DEFINE THE GOD TYPE HERE
+export interface God {
+    name: string;
+    image: string | StaticImageData;
+    introduction: string;
+    infoBox: {
+        [key: string]: string | { text: string; link: string }; // <-- FIX IS HERE
+    };
+    mythology: ContentBlock[];
+    appearances: {
+        event: string;
+        summary: ContentBlock[];
+    }[];
+}
+
 
 // A curated list of main characters for the dropdown menu
 export const MAIN_CHARACTERS: WikiPage[] = [
