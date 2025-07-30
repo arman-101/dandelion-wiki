@@ -16,7 +16,18 @@ export const MAIN_CHARACTERS: WikiPage[] = [
     { title: 'Zomi Kidosu', path: '/characters/zomi-kidosu', type: 'Character' },
 ];
 
-// A comprehensive list of ALL pages for the search bar
+// A curated list of main places for the dropdown menu (UPDATED)
+export const MAIN_PLACES: WikiPage[] = [
+    { title: 'Amu', path: '/places/amu', type: 'Place' },
+    { title: 'Cocru', path: '/places/cocru', type: 'Place' },
+    { title: 'Faça', path: '/places/faca', type: 'Place' },
+    { title: 'Gan', path: '/places/gan', type: 'Place' },
+    { title: 'Haan', path: '/places/haan', type: 'Place' },
+    { title: 'Rima', path: '/places/rima', type: 'Place' },
+    { title: 'Xana', path: '/places/xana', type: 'Place' },
+];
+
+// A comprehensive list of ALL pages for the search bar (UPDATED)
 export const ALL_WIKI_PAGES: WikiPage[] = [
     // Books
     { title: 'The Grace of Kings', path: '/books/grace-of-kings', type: 'Book' },
@@ -39,7 +50,8 @@ export const ALL_WIKI_PAGES: WikiPage[] = [
     { title: 'Gozogi Çadé', path: '/characters/gozogi-cade', type: 'Character' },
     { title: 'Than Carucono', path: '/characters/than-carucono', type: 'Character' },
 
-    // Places
+    // All Places (includes main places)
+    ...MAIN_PLACES,
     { title: 'Zudi', path: '/places/zudi', type: 'Place' },
     { title: 'Tunoa Islands', path: '/places/tunoa-islands', type: 'Place' },
     { title: 'Dasu', path: '/places/dasu', type: 'Place' },
