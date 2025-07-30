@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Character } from '../data/characters-data'; // Import our data structure
+import { Character } from '../data/wiki-data'; // Import our data structure
 
 // --- REUSABLE SUB-COMPONENTS FOR THE TEMPLATE ---
 
@@ -61,12 +61,12 @@ export default function CharacterPageTemplate({ characterData }: CharacterPageTe
                         <section id="history">
                             <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-200 border-b-2 border-teal-500 pb-2 mb-4">History</h2>
                             <div className="space-y-6">
-                                {characterData.history.map(era => (
+                                {characterData.history.map((era) => (
                                     <div key={era.era}>
                                         <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200">{era.era}</h3>
                                         <p className="text-gray-700 dark:text-gray-300 mt-2 leading-relaxed">
                                             {era.summary}
-                                            {era.references.map(ref => <Reference key={ref.chapter} {...ref} />)}
+                                            {era.references.map((ref) => <Reference key={ref.chapter} {...ref} />)}
                                         </p>
                                     </div>
                                 ))}

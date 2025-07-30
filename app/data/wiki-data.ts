@@ -1,8 +1,30 @@
+import { StaticImageData } from 'next/image';
+
 // This interface defines the structure for all our wiki pages
-interface WikiPage {
+export interface WikiPage {
     title: string;
     path: string;
     type: 'Book' | 'Character' | 'Place' | 'Concept' | 'God';
+}
+
+// DEFINE THE CHARACTER TYPE HERE
+export interface Character {
+    name: string;
+    image: string | StaticImageData;
+    introduction: string;
+    infoBox: {
+        [key: string]: string;
+    };
+    appearanceAndPersonality: string;
+    history: {
+        era: string;
+        summary: string;
+        references: {
+            book: string;
+            chapter: number;
+            link: string;
+        }[];
+    }[];
 }
 
 // A curated list of main characters for the dropdown menu
@@ -31,11 +53,10 @@ export const MAIN_PLACES: WikiPage[] = [
 export const MAIN_GODS: WikiPage[] = [
     { title: 'Kiji', path: '/gods/kiji', type: 'God' },
     { title: 'Tututika', path: '/gods/tututika', type: 'God' },
-    { title: 'Kana', path: '/gods/kana', type: 'God' }, // <-- UPDATED
-    { title: 'Rapa', path: '/gods/rapa', type: 'God' }, // <-- UPDATED
+    { title: 'Kana', path: '/gods/kana', type: 'God' },
+    { title: 'Rapa', path: '/gods/rapa', type: 'God' },
     { title: 'Rufizo', path: '/gods/rufizo', type: 'God' },
     { title: 'Tazu', path: '/gods/tazu', type: 'God' },
-    { title: 'Lutho', path: '/gods/lutho', type: 'God' },
     { title: 'Fithowéo', path: '/gods/fithoweo', type: 'God' },
 ];
 
