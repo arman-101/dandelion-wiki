@@ -1,23 +1,38 @@
-export const WIKI_PAGES = [
+// This interface defines the structure for all our wiki pages
+interface WikiPage {
+    title: string;
+    path: string;
+    type: 'Book' | 'Character' | 'Place' | 'Concept';
+}
+
+// A curated list of main characters for the dropdown menu
+export const MAIN_CHARACTERS: WikiPage[] = [
+    { title: 'Kuni Garu', path: '/characters/kuni-garu', type: 'Character' },
+    { title: 'Mata Zyndu', path: '/characters/mata-zyndu', type: 'Character' },
+    { title: 'Jia Matiza', path: '/characters/jia-matiza', type: 'Character' },
+    { title: 'Luan Zya', path: '/characters/luan-zya', type: 'Character' },
+    { title: 'Gin Mazoti', path: '/characters/gin-mazoti', type: 'Character' },
+    { title: 'Princess Théra', path: '/characters/princess-thera', type: 'Character' },
+    { title: 'Zomi Kidosu', path: '/characters/zomi-kidosu', type: 'Character' },
+];
+
+// A comprehensive list of ALL pages for the search bar
+export const ALL_WIKI_PAGES: WikiPage[] = [
     // Books
     { title: 'The Grace of Kings', path: '/books/grace-of-kings', type: 'Book' },
     { title: 'The Wall of Storms', path: '/books/wall-of-storms', type: 'Book' },
     { title: 'The Veiled Throne', path: '/books/the-veiled-throne', type: 'Book' },
     { title: 'Speaking Bones', path: '/books/speaking-bones', type: 'Book' },
     
-    // Characters
-    { title: 'Kuni Garu', path: '/characters/kuni-garu', type: 'Character' },
+    // All Characters (includes main characters)
+    ...MAIN_CHARACTERS,
     { title: 'Emperor Mapidéré', path: '/characters/emperor-mapidere', type: 'Character' },
-    { title: 'Mata Zyndu', path: '/characters/mata-zyndu', type: 'Character' },
     { title: 'Phin Zyndu', path: '/characters/phin-zyndu', type: 'Character' },
-    { title: 'Jia Matiza', path: '/characters/jia-matiza', type: 'Character' },
     { title: 'Goran Pira', path: '/characters/goran-pira', type: 'Character' },
     { title: 'Lügo Crupo', path: '/characters/lugo-crupo', type: 'Character' },
-    { title: 'Princess Théra', path: '/characters/princess-thera', type: 'Character' },
     { title: 'Prince Timu', path: '/characters/prince-timu', type: 'Character' },
     { title: 'Prince Phyro', path: '/characters/prince-phyro', type: 'Character' },
     { title: 'Zato Ruthi', path: '/characters/zato-ruthi', type: 'Character' },
-    { title: 'Zomi Kidosu', path: '/characters/zomi-kidosu', type: 'Character' },
     { title: 'Doru Solofi', path: '/characters/doru-solofi', type: 'Character' },
     { title: 'Noda Mi', path: '/characters/noda-mi', type: 'Character' },
     { title: 'Consort Risana', path: '/characters/consort-risana', type: 'Character' },

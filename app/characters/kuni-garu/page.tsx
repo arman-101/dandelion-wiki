@@ -1,9 +1,12 @@
-export default function PlaceholderPage() {
-    const PageTitle = "Kuni Garu"; // <-- CHANGE THIS FOR EACH PAGE
-    return (
-        <div>
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">{PageTitle}</h1>
-            <p>Content for this page will be added soon.</p>
-        </div>
-    );
+import CharacterPageTemplate from '../../components/CharacterPageTemplate';
+import { charactersData } from '../../data/characters-data';
+
+export default function KuniGaruPage() {
+    const characterData = charactersData['kuni-garu'];
+
+    if (!characterData) {
+        return <div>Character not found.</div>;
+    }
+
+    return <CharacterPageTemplate characterData={characterData} />;
 }
