@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import FeedbackModal from './FeedbackModal';
-import { ALL_WIKI_PAGES, MAIN_CHARACTERS, MAIN_PLACES, MAIN_GODS } from '../data/wiki-data';
+import { ALL_WIKI_PAGES, MAIN_CHARACTERS, PLACES_TIRO_STATES, PLACES_BEYOND_DARA, MAIN_GODS } from '../data/wiki-data';
 
 // --- ICONS ---
 const ChevronDownIcon = () => (
@@ -158,9 +158,13 @@ export default function Navbar() {
                                         <span>Places</span>
                                         <ChevronDownIcon />
                                     </button>
-                                    <div className="absolute left-0 top-full mt-2 w-48 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                                    <div className="absolute left-0 top-full mt-2 w-56 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                                         <div className="py-1">
-                                            {MAIN_PLACES.map(place => (
+                                            {PLACES_TIRO_STATES.map(place => (
+                                                <Link key={place.path} href={place.path} className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:[color:var(--color-accent-pink)]">{place.title}</Link>
+                                            ))}
+                                            <hr className="my-1 border-gray-200 dark:border-gray-600" />
+                                            {PLACES_BEYOND_DARA.map(place => (
                                                 <Link key={place.path} href={place.path} className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:[color:var(--color-accent-pink)]">{place.title}</Link>
                                             ))}
                                         </div>

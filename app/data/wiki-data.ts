@@ -9,26 +9,27 @@ export interface WikiPage {
 
 // --- TYPE DEFINITIONS ---
 
-// Define the shape of a reference link
 export interface ReferenceLink {
     book: string;
     chapter: number;
     link: string;
 }
 
-// Define the shape of a content block (can be text or a reference)
 export type ContentBlock = 
     | { type: 'text'; content: string }
     | { type: 'ref'; data: ReferenceLink };
 
-// DEFINE THE CHARACTER TYPE HERE
+// A new type for linked items in an infobox
+export interface InfoBoxLink {
+    text: string;
+    link: string;
+}
+
 export interface Character {
     name: string;
     image: string | StaticImageData;
     introduction: string;
-    infoBox: {
-        [key: string]: string;
-    };
+    infoBox: { [key: string]: string };
     appearanceAndPersonality: ContentBlock[];
     history: {
         era: string;
@@ -36,13 +37,12 @@ export interface Character {
     }[];
 }
 
-// DEFINE THE GOD TYPE HERE
 export interface God {
     name: string;
     image: string | StaticImageData;
     introduction: string;
     infoBox: {
-        [key: string]: string | { text: string; link: string }; // <-- FIX IS HERE
+        [key: string]: string | InfoBoxLink;
     };
     mythology: ContentBlock[];
     appearances: {
@@ -51,8 +51,24 @@ export interface God {
     }[];
 }
 
+// UPDATED Place Interface
+export interface Place {
+    name: string;
+    image: string | StaticImageData;
+    introduction: string;
+    infoBox: {
+        [key: string]: string | InfoBoxLink | InfoBoxLink[]; // <-- FIX IS HERE
+    };
+    geography: ContentBlock[];
+    culture: ContentBlock[];
+    history: {
+        event: string;
+        summary: ContentBlock[];
+    }[];
+}
 
-// A curated list of main characters for the dropdown menu
+// --- PAGE LISTS FOR NAVIGATION & SEARCH ---
+
 export const MAIN_CHARACTERS: WikiPage[] = [
     { title: 'Kuni Garu', path: '/characters/kuni-garu', type: 'Character' },
     { title: 'Mata Zyndu', path: '/characters/mata-zyndu', type: 'Character' },
@@ -63,8 +79,7 @@ export const MAIN_CHARACTERS: WikiPage[] = [
     { title: 'Zomi Kidosu', path: '/characters/zomi-kidosu', type: 'Character' },
 ];
 
-// A curated list of main places (Tiro States) for the dropdown menu
-export const MAIN_PLACES: WikiPage[] = [
+export const PLACES_TIRO_STATES: WikiPage[] = [
     { title: 'Amu', path: '/places/amu', type: 'Place' },
     { title: 'Cocru', path: '/places/cocru', type: 'Place' },
     { title: 'Faça', path: '/places/faca', type: 'Place' },
@@ -74,7 +89,11 @@ export const MAIN_PLACES: WikiPage[] = [
     { title: 'Xana', path: '/places/xana', type: 'Place' },
 ];
 
-// A curated list of gods for the dropdown menu
+export const PLACES_BEYOND_DARA: WikiPage[] = [
+    { title: 'Ukyu & Gondé', path: '/places/ukyu-gonde', type: 'Place' },
+    { title: 'Eseeran Nomnny', path: '/places/eseeran-nomnny', type: 'Place' },
+];
+
 export const MAIN_GODS: WikiPage[] = [
     { title: 'Kiji', path: '/gods/kiji', type: 'God' },
     { title: 'Tututika', path: '/gods/tututika', type: 'God' },
@@ -85,7 +104,7 @@ export const MAIN_GODS: WikiPage[] = [
     { title: 'Fithowéo', path: '/gods/fithoweo', type: 'God' },
 ];
 
-// A comprehensive list of ALL pages for the search bar
+// UPDATED: Comprehensive list of ALL pages
 export const ALL_WIKI_PAGES: WikiPage[] = [
     // Books
     { title: 'The Grace of Kings', path: '/books/grace-of-kings', type: 'Book' },
@@ -107,20 +126,27 @@ export const ALL_WIKI_PAGES: WikiPage[] = [
     { title: 'Consort Risana', path: '/characters/consort-risana', type: 'Character' },
     { title: 'Gozogi Çadé', path: '/characters/gozogi-cade', type: 'Character' },
     { title: 'Than Carucono', path: '/characters/than-carucono', type: 'Character' },
+    { title: 'Dafiro Miro', path: '/characters/dafiro-miro', type: 'Character' }, // New
+    { title: 'King Jizu', path: '/characters/king-jizu', type: 'Character' }, // New
+    { title: 'King Mocri', path: '/characters/king-mocri', type: 'Character' }, // New
+    { title: 'King Shilué', path: '/characters/king-shilue', type: 'Character' }, // New
 
     // All Places
-    ...MAIN_PLACES,
+    ...PLACES_TIRO_STATES,
+    ...PLACES_BEYOND_DARA,
+    { title: 'Dasu & Rui', path: '/places/dasu-rui', type: 'Place' }, // New
+    { title: 'Crescent Island', path: '/places/crescent-island', type: 'Place' }, // New
+    { title: 'Tan Adü', path: '/places/tan-adu', type: 'Place' }, // New
+    { title: 'Tunoa Islands', path: '/places/tunoa-islands', type: 'Place' }, // New
+    { title: 'Wolf\'s Paw', path: '/places/wolfs-paw', type: 'Place' }, // New
     { title: 'Zudi', path: '/places/zudi', type: 'Place' },
-    { title: 'Tunoa Islands', path: '/places/tunoa-islands', type: 'Place' },
-    { title: 'Dasu', path: '/places/dasu', type: 'Place' },
-    { title: 'Crescent Island', path: '/places/crescent-island', type: 'Place' },
     { title: 'Géjira', path: '/places/gejira', type: 'Place' },
     { title: 'Nokida', path: '/places/nokida', type: 'Place' },
     { title: 'Tunoa', path: '/places/tunoa', type: 'Place' },
 
     // All Gods
     ...MAIN_GODS,
-    { title: 'Gods of Dara', path: '/gods', type: 'Concept'},
+    { title: 'Gods of Dara', path: '/gods', type: 'God'},
 
     // Concepts
     { title: 'Dandelion', path: '/concepts/dandelion', type: 'Concept' },
