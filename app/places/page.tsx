@@ -12,11 +12,11 @@ const placesTiroStates = [
 ];
 
 const placesIslands = [
-    { name: "Dasu & Rui", description: "The home islands of Xana, known for Mount Kiji and the Imperial Air Base.", image: "/places/dasu-rui.jpg", link: "/places/dasu-rui" },
-    { name: "Crescent Island", description: "A largely unsettled northern island, used as a royal hunting preserve.", image: "/places/crescent-island.jpg", link: "/places/crescent-island" },
-    { name: "Tan Adü", description: "A remote southern island inhabited by people living in a more 'savage' state.", image: "/places/tan-adu.jpg", link: "/places/tan-adu" },
-    { name: "Tunoa Islands", description: "The ancestral island fiefdom of the Zyndu Clan, known for its fierce loyalty.", image: "/places/tunoa-islands.jpg", link: "/places/tunoa-islands" },
-    { name: "Wolf's Paw", description: "The southern island that is part of the state of Gan, separated by the Kishi Channel.", image: "/places/wolfs-paw.jpg", link: "/places/wolfs-paw" },
+    { name: "Dasu & Rui", description: "The home islands of Xana, known for Mount Kiji and the Imperial Air Base.", image: "/places/dasu-rui.png", link: "/places/dasu-rui" },
+    { name: "Crescent Island", description: "A largely unsettled northern island, used as a royal hunting preserve.", image: "/places/crescent-island.png", link: "/places/crescent-island" },
+    { name: "Tan Adü", description: "A remote southern island inhabited by people living in a more 'savage' state.", image: "/places/tan-adu.png", link: "/places/tan-adu" },
+    { name: "Tunoa Islands", description: "The ancestral island fiefdom of the Zyndu Clan, known for its fierce loyalty.", image: "/places/tunoa-islands.png", link: "/places/tunoa-islands" },
+    { name: "Wolf's Paw", description: "The southern island that is part of the state of Gan, separated by the Kishi Channel.", image: "/places/wolfs-paw.png", link: "/places/wolfs-paw" },
 ];
 
 const placesLandmarks = [
