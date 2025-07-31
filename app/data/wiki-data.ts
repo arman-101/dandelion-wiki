@@ -4,7 +4,7 @@ import { StaticImageData } from 'next/image';
 export interface WikiPage {
     title: string;
     path: string;
-    type: 'Book' | 'Character' | 'Place' | 'Concept' | 'God' | 'Map';
+    type: 'Book' | 'Character' | 'Place' | 'Concept' | 'God' | 'Map' | 'Other';
 }
 
 // --- MASTER DATA FOR CHARACTER LISTING PAGE ---
@@ -225,6 +225,9 @@ export const ALL_WIKI_PAGES: WikiPage[] = [
     { title: 'Gods', path: '/gods', type: 'God' },
     { title: 'Concepts', path: '/concepts', type: 'Concept' },
     { title: 'Maps', path: '/maps', type: 'Map' },
+    { title: 'About This Wiki', path: '/other/me', type: 'Other' },
+    { title: 'About the Author', path: '/other/ken', type: 'Other' },
+
     
     // Then, spread in all the individual pages from the detailed lists
     ...ALL_BOOKS,

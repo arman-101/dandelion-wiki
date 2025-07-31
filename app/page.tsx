@@ -4,8 +4,8 @@ import { ALL_WIKI_PAGES } from './data/wiki-data';
 // Define the types for the Icon component's props to fix the 'implicit any' errors.
 // Added 'maps' to the IconProps type
 type IconProps = {
-  name: 'book' | 'users' | 'places' | 'gods' | 'concepts' | 'maps';
-  className: string;
+    name: 'book' | 'users' | 'places' | 'gods' | 'concepts' | 'maps';
+    className: string;
 };
 
 // A simple placeholder for the icons. Replace these with actual SVG icon components.
@@ -23,61 +23,65 @@ const Icon = ({ name, className }: IconProps) => (
 
 
 export default function HomePage() {
-  const pageCount = ALL_WIKI_PAGES.length;
+    const pageCount = ALL_WIKI_PAGES.length;
 
-  const cardClasses = "bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl hover:border-[color:var(--color-accent-pink)] border-2 border-transparent hover:scale-105 transform transition-all duration-300 ease-in-out";
-  const iconClasses = "h-8 w-8 mx-auto mb-3 text-teal-500 dark:text-teal-400";
-  const titleClasses = "text-xl font-bold text-teal-600 dark:text-teal-400";
-  const descriptionClasses = "mt-2 text-gray-600 dark:text-gray-400";
+    const cardClasses = "bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl hover:border-[color:var(--color-accent-pink)] border-2 border-transparent hover:scale-105 transform transition-all duration-300 ease-in-out";
+    const iconClasses = "h-8 w-8 mx-auto mb-3 text-teal-500 dark:text-teal-400";
+    const titleClasses = "text-xl font-bold text-teal-600 dark:text-teal-400";
+    const descriptionClasses = "mt-2 text-gray-600 dark:text-gray-400";
 
-  return (
-    <div className="text-center">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight">
-            Welcome to the World of Dara
-        </h1>
-        <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-300">
-            Explore the epic &ldquo;silkpunk&rdquo; saga of gods and rebels. This wiki is your guide to the characters, locations, and rich history of Ken Liu&apos;s masterpiece.
-        </p>
-        
-        <div className="mt-6">
-            <p className="text-sm text-gray-500 dark:text-gray-400 border border-gray-300 dark:border-gray-700 rounded-full inline-block px-4 py-1">
-                Currently tracking <span className="font-bold text-teal-600 dark:text-teal-400">{pageCount}</span> pages
+    return (
+        <div className="text-center">
+            <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight">
+                Welcome to the World of Dara
+            </h1>
+            <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-300">
+                Explore the epic &ldquo;silkpunk&rdquo; saga of gods and rebels. This wiki is your guide to the characters, locations, and rich history of{' '}
+                <Link href="/other/ken" className="text-teal-600 dark:text-teal-400 hover:underline">
+                    Ken Liu&apos;s
+                </Link>
+                {' '}masterpiece.
             </p>
-        </div>
 
-        {/* Updated layout to two rows of three */}
-        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <Link href="/books" className={cardClasses}>
-                <Icon name="book" className={iconClasses} />
-                <h3 className={titleClasses}>Books</h3>
-                <p className={descriptionClasses}>Find detailed summaries of each book in the series.</p>
-            </Link>
-            <Link href="/characters" className={cardClasses}>
-                <Icon name="users" className={iconClasses} />
-                <h3 className={titleClasses}>Characters</h3>
-                <p className={descriptionClasses}>Dive into the lives of the heroes and villains who shape destiny.</p>
-            </Link>
-            <Link href="/places" className={cardClasses}>
-                <Icon name="places" className={iconClasses} />
-                <h3 className={titleClasses}>Places</h3>
-                <p className={descriptionClasses}>Discover the diverse islands and mythical landscapes of Dara.</p>
-            </Link>
-            <Link href="/gods" className={cardClasses}>
-                <Icon name="gods" className={iconClasses} />
-                <h3 className={titleClasses}>Gods</h3>
-                <p className={descriptionClasses}>Learn about the powerful deities who watch over the mortal realm.</p>
-            </Link>
-            <Link href="/concepts" className={cardClasses}>
-                <Icon name="concepts" className={iconClasses} />
-                <h3 className={titleClasses}>Concepts</h3>
-                <p className={descriptionClasses}>Explore the key ideas and philosophies that define the world.</p>
-            </Link>
-            <Link href="/maps" className={cardClasses}>
-                <Icon name="maps" className={iconClasses} />
-                <h3 className={titleClasses}>Maps</h3>
-                <p className={descriptionClasses}>Visualize the world with maps of Dara and beyond.</p>
-            </Link>
+            <div className="mt-6">
+                <p className="text-sm text-gray-500 dark:text-gray-400 border border-gray-300 dark:border-gray-700 rounded-full inline-block px-4 py-1">
+                    Currently tracking <span className="font-bold text-teal-600 dark:text-teal-400">{pageCount}</span> pages
+                </p>
+            </div>
+
+            {/* Updated layout to two rows of three */}
+            <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                <Link href="/books" className={cardClasses}>
+                    <Icon name="book" className={iconClasses} />
+                    <h3 className={titleClasses}>Books</h3>
+                    <p className={descriptionClasses}>Find detailed summaries of each book in the series.</p>
+                </Link>
+                <Link href="/characters" className={cardClasses}>
+                    <Icon name="users" className={iconClasses} />
+                    <h3 className={titleClasses}>Characters</h3>
+                    <p className={descriptionClasses}>Dive into the lives of the heroes and villains who shape destiny.</p>
+                </Link>
+                <Link href="/places" className={cardClasses}>
+                    <Icon name="places" className={iconClasses} />
+                    <h3 className={titleClasses}>Places</h3>
+                    <p className={descriptionClasses}>Discover the diverse islands and mythical landscapes of Dara.</p>
+                </Link>
+                <Link href="/gods" className={cardClasses}>
+                    <Icon name="gods" className={iconClasses} />
+                    <h3 className={titleClasses}>Gods</h3>
+                    <p className={descriptionClasses}>Learn about the powerful deities who watch over the mortal realm.</p>
+                </Link>
+                <Link href="/concepts" className={cardClasses}>
+                    <Icon name="concepts" className={iconClasses} />
+                    <h3 className={titleClasses}>Concepts</h3>
+                    <p className={descriptionClasses}>Explore the key ideas and philosophies that define the world.</p>
+                </Link>
+                <Link href="/maps" className={cardClasses}>
+                    <Icon name="maps" className={iconClasses} />
+                    <h3 className={titleClasses}>Maps</h3>
+                    <p className={descriptionClasses}>Visualize the world with maps of Dara and beyond.</p>
+                </Link>
+            </div>
         </div>
-    </div>
-  );
+    );
 }
