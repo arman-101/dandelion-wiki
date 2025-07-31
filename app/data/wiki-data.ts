@@ -56,6 +56,8 @@ export const ALL_CONCEPTS_DATA = [
     { name: "Corvée Labor", description: "The system of forced, unpaid labor imposed by the Xana Empire, a major cause of the rebellion.", image: "/concepts/corvee-labor.png", link: "/concepts/corvee-labor" },
     { name: "Cruben", description: "Massive, horned, sea-turtle-like beasts from Tan Adü, ridden as powerful naval mounts.", image: "/concepts/cruben.png", link: "/concepts/cruben" },
     { name: "Garinafin", description: "Enormous, whale-like war beasts domesticated by the Lyucu, capable of leveling cities.", image: "/concepts/garinafin.png", link: "/concepts/garinafin" },
+    { name: "The Wall of Storms", description: "A massive, perpetual storm that separates the continents of Dara and Ukyu, a seemingly impassable barrier.", image: "/concepts/wall-of-storms.png", link: "/concepts/wall-of-storms" },
+    { name: "Quotes", description: "A collection of memorable quotes from the series, offering wisdom, insight, and a glimpse into the hearts of the characters.", image: "/concepts/quotes.png", link: "/concepts/quotes" },
 ];
 
 
