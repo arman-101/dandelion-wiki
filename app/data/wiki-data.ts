@@ -30,7 +30,7 @@ export interface Character {
     image: string | StaticImageData;
     introduction: string;
     infoBox: {
-        [key: string]: string | InfoBoxLink | InfoBoxLink[]; // <-- FIX IS HERE
+        [key: string]: string | InfoBoxLink | InfoBoxLink[];
     };
     appearanceAndPersonality: ContentBlock[];
     history: {
@@ -103,6 +103,7 @@ export const MAIN_GODS: WikiPage[] = [
     { title: 'Rapa', path: '/gods/rapa', type: 'God' },
     { title: 'Rufizo', path: '/gods/rufizo', type: 'God' },
     { title: 'Tazu', path: '/gods/tazu', type: 'God' },
+    { title: 'Lutho', path: '/gods/lutho', type: 'God' },
     { title: 'Fithowéo', path: '/gods/fithoweo', type: 'God' },
 ];
 
