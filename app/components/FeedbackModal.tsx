@@ -28,7 +28,7 @@ export default function FeedbackModal({ isOpen, onClose }: FeedbackModalProps) {
         const formData = { email, reason, message };
 
         try {
-            const response = await fetch('https://formspree.io/f/mjkorzao', {
+            const response = await fetch('https://formspree.io/f/mrblljzn', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData),
@@ -47,6 +47,7 @@ export default function FeedbackModal({ isOpen, onClose }: FeedbackModalProps) {
                 setStatus('Oops! There was a problem submitting your feedback.');
             }
         } catch (_error) { // Fixed: Renamed 'error' to '_error' to resolve lint warning
+            console.log(_error);
             setStatus('Oops! There was a problem submitting your feedback.');
         }
     };
