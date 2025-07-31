@@ -4,7 +4,7 @@ import { StaticImageData } from 'next/image';
 export interface WikiPage {
     title: string;
     path: string;
-    type: 'Book' | 'Character' | 'Place' | 'Concept' | 'God';
+    type: 'Book' | 'Character' | 'Place' | 'Concept' | 'God' | 'Map';
 }
 
 // --- MASTER DATA FOR CHARACTER LISTING PAGE ---
@@ -216,13 +216,20 @@ export const PLACES_BEYOND_DARA: WikiPage[] = [
 
 export const MAIN_GODS: WikiPage[] = ALL_GODS;
 
-// UPDATED: Comprehensive list of ALL pages
+// UPDATED: Comprehensive list of ALL pages for site-wide navigation and search
 export const ALL_WIKI_PAGES: WikiPage[] = [
+    // Manually add the main category listing pages first
+    { title: 'Books', path: '/books', type: 'Book' },
+    { title: 'Characters', path: '/characters', type: 'Character' },
+    { title: 'Places', path: '/places', type: 'Place' },
+    { title: 'Gods', path: '/gods', type: 'God' },
+    { title: 'Concepts', path: '/concepts', type: 'Concept' },
+    { title: 'Maps', path: '/maps', type: 'Map' },
+    
+    // Then, spread in all the individual pages from the detailed lists
     ...ALL_BOOKS,
     ...ALL_CHARACTERS,
     ...ALL_PLACES,
     ...ALL_GODS,
     ...ALL_CONCEPTS,
-    // Add other single pages manually
-    { title: 'Gods of Dara', path: '/gods', type: 'God'},
 ];
