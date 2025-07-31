@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import BookNavigation from '../../components/BookNavigation'; // <-- ADD THIS IMPORT
-import TopBookNavigation from '../../components/TopBookNavigation'; // Import the new component
+import TopPageNavigation from '../../components/TopPageNavigation'; // Import the new component
 
 export default function VeiledThronePage() {
         const bookNav = {
@@ -8,9 +8,17 @@ export default function VeiledThronePage() {
         nextBook: { title: "Speaking Bones", link: "/books/speaking-bones" }
     };
 
+    const prevPageData = { title: "The Wall of Storms", path: "/books/the-wall-of-storms" };
+    const nextPageData = { title: "Speaking Bones", path: "/books/speaking-bones" };
+    const returnLinkData = { title: "Return to Series Overview", path: "/books" };
+
     return (
         <div>
-            <TopBookNavigation prevBook={bookNav.prevBook} nextBook={bookNav.nextBook} />
+            <TopPageNavigation
+                prevPage={prevPageData}
+                nextPage={nextPageData}
+                returnLink={returnLinkData}
+            />
 
             <div className="flex flex-col md:flex-row gap-8 items-start mb-12">
                 <div className="w-full md:w-1/3 flex-shrink-0">

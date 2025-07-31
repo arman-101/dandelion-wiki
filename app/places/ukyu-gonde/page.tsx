@@ -1,5 +1,10 @@
+'use client';
+
 import PlacePageTemplate from '../../components/PlacePageTemplate';
-import { Place } from '../../data/wiki-data';
+import { Place, ALL_PLACES } from '../../data/wiki-data';
+import { usePathname } from 'next/navigation';
+import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
 // --- DATA FOR UKYU & GONDÉ (WITH FULL REFERENCES) ---
 const placeData: Place = {
@@ -18,7 +23,7 @@ const placeData: Place = {
     },
     geography: [
         { type: 'text', content: "Separated from Dara by the Wall of Storms, the Lyucu Lands consist of vast, windswept scrublands and harsh, arid plains." },
-        { type: 'ref', data: { book: "The Wall of Storms", chapter: 0, link: "/books/wall-of-storms" } }, // Corrected 'Map' to 'chapter'
+        { type: 'ref', data: { book: "The Wall of Storms", chapter: 0, link: "/books/wall-of-storms" } }, 
         { type: 'text', content: " The environment is challenging, leading its inhabitants to adopt a nomadic lifestyle. The land is home to massive, fearsome beasts like the garinafin, which the Lyucu have domesticated for war." },
         { type: 'ref', data: { book: "The Wall of Storms", chapter: 46, link: "/books/wall-of-storms#chapter-46" } },
     ],
@@ -38,7 +43,15 @@ const placeData: Place = {
     ]
 };
 
-
 export default function UkyuGondePage() {
-    return <PlacePageTemplate placeData={placeData} />;
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_PLACES);
+    const returnLink = { title: 'Return to All Places', path: '/places' };
+
+    return (
+        <>
+            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PlacePageTemplate placeData={placeData} />
+        </>
+    );
 }

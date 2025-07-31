@@ -17,22 +17,26 @@ export default function HomePage() {
             </p>
         </div>
 
-        <div className="mt-8 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 grid gap-6 md:grid-cols-3 lg:grid-cols-5">
             <Link href="/books" className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl hover:border-[color:var(--color-accent-pink)] border-2 border-transparent transition-all">
                 <h3 className="text-xl font-bold text-teal-600 dark:text-teal-400">Books</h3>
-                <p className="mt-2 text-gray-600 dark:text-gray-400">Find detailed summaries and analyses of each book in the series.</p>
+                <p className="mt-2 text-gray-600 dark:text-gray-400">Find detailed summaries of each book in the series.</p>
             </Link>
             <Link href="/characters" className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl hover:border-[color:var(--color-accent-pink)] border-2 border-transparent transition-all">
                 <h3 className="text-xl font-bold text-teal-600 dark:text-teal-400">Characters</h3>
-                <p className="mt-2 text-gray-600 dark:text-gray-400">Dive into the lives of the heroes, villains, and mortals who shape destiny.</p>
+                <p className="mt-2 text-gray-600 dark:text-gray-400">Dive into the lives of the heroes and villains who shape destiny.</p>
             </Link>
             <Link href="/places" className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl hover:border-[color:var(--color-accent-pink)] border-2 border-transparent transition-all">
                 <h3 className="text-xl font-bold text-teal-600 dark:text-teal-400">Places</h3>
-                <p className="mt-2 text-gray-600 dark:text-gray-400">Discover the diverse islands, grand cities, and mythical landscapes of Dara.</p>
+                <p className="mt-2 text-gray-600 dark:text-gray-400">Discover the diverse islands and mythical landscapes of Dara.</p>
             </Link>
             <Link href="/gods" className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl hover:border-[color:var(--color-accent-pink)] border-2 border-transparent transition-all">
                 <h3 className="text-xl font-bold text-teal-600 dark:text-teal-400">Gods</h3>
-                <p className="mt-2 text-gray-600 dark:text-gray-400">Learn about the powerful and meddlesome deities who watch over the mortal realm.</p>
+                <p className="mt-2 text-gray-600 dark:text-gray-400">Learn about the powerful deities who watch over the mortal realm.</p>
+            </Link>
+            <Link href="/concepts" className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl hover:border-[color:var(--color-accent-pink)] border-2 border-transparent transition-all">
+                <h3 className="text-xl font-bold text-teal-600 dark:text-teal-400">Concepts</h3>
+                <p className="mt-2 text-gray-600 dark:text-gray-400">Explore the key ideas and philosophies that define the world.</p>
             </Link>
         </div>
     </div>

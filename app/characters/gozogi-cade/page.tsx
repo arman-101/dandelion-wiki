@@ -1,5 +1,10 @@
+'use client';
+
 import CharacterPageTemplate from '../../components/CharacterPageTemplate';
-import { Character } from '../../data/wiki-data';
+import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
+import { usePathname } from 'next/navigation';
+import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
 const characterData: Character = {
     name: "Gozogi Çadé",
@@ -17,7 +22,7 @@ const characterData: Character = {
     },
     appearanceAndPersonality: [
         { type: 'text', content: "Gozogi is a rough-and-tumble man, more comfortable in a tavern or on a battlefield than in the Imperial court. He is not a great thinker or strategist, but he is brave, loyal, and good-natured. He represents the common man who rose to power with Kuni, and he never loses his straightforward, unpretentious demeanor." },
-        { type: 'ref', data: { book: "The Grace of Kings", chapter: 8, link: "/books/the-grace-of-kings#chapter-8" } },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 8, link: "/books/grace-of-kings#chapter-8" } },
     ],
     history: [
         {
@@ -37,4 +42,15 @@ const characterData: Character = {
     ]
 };
 
-export default function GozogiCadePage() { return <CharacterPageTemplate characterData={characterData} />; }
+export default function GozogiCadePage() {
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CHARACTERS);
+    const returnLink = { title: 'Return to All Characters', path: '/characters' };
+
+    return (
+        <>
+            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <CharacterPageTemplate characterData={characterData} />
+        </>
+    );
+}

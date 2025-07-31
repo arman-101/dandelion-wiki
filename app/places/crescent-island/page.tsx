@@ -1,7 +1,12 @@
-import PlacePageTemplate from '../../components/PlacePageTemplate';
-import { Place } from '../../data/wiki-data';
+'use client';
 
-// --- DATA FOR CRESCENT ISLAND (WITH FULL REFERENCES) ---
+import PlacePageTemplate from '../../components/PlacePageTemplate';
+import { Place, ALL_PLACES } from '../../data/wiki-data';
+import { usePathname } from 'next/navigation';
+import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { getSurroundingPages } from '@/app/utils/navigationUtils';
+
+// --- DATA FOR CRESCENT ISLAND ---
 const placeData: Place = {
     name: "Crescent Island",
     image: "/places/crescent-island.png",
@@ -12,26 +17,33 @@ const placeData: Place = {
     },
     geography: [
         { type: 'text', content: "A large, crescent-shaped island, it is located north of the Big Island. The landscape is wild and untamed, covered in dense forests and mountains. It is home to a small, isolated hamlet of people who live a traditional, simple life, largely untouched by the politics of the mainland." },
-        { type: 'ref', data: { book: "The Wall of Storms", chapter: 12, link: "/books/wall-of-storms#chapter-12" } },
     ],
     culture: [
-        { type: 'text', content: "The island does not have a distinct widespread culture due to its lack of settlement. The small communities that exist there live in a manner close to nature, preserving ancient customs. For the Xana Empire, it was valued not for its culture but for its wild game, serving as an exclusive hunting ground for the emperor and his court." },
-        { type: 'ref', data: { book: "The Wall of Storms", chapter: 14, link: "/books/wall-of-storms#chapter-14" } },
+        { type: 'text', content: "The island does not have a distinct widespread culture due to its lack of settlement. The small communities that exist there live in a manner close to nature, preserving ancient customs." },
     ],
     history: [
         {
             event: "Luan Zya's Tutelage of Zomi Kidosu",
             summary: [
                 { type: 'text', content: "Five years before the first Grand Examination of the Dandelion Dynasty, Luan Zya took his student, Zomi Kidosu, to Crescent Island as part of her education. Here, he taught her philosophy and engineering through practical lessons, including flying a hot-air balloon and interacting with the local hamlet." },
-                { type: 'ref', data: { book: "The Wall of Storms", chapter: 10, link: "/books/wall-of-storms#chapter-10" } },
-                { type: 'text', content: " Their time on the island was marked by a dramatic forest fire, accidentally started by a noble hunting party. Zomi's quick thinking and innovative use of a controlled backburn saved both her teacher and the local settlement, a key moment in her development." },
-                { type: 'ref', data: { book: "The Wall of Storms", chapter: 14, link: "/books/wall-of-storms#chapter-14" } },
             ]
         },
     ]
 };
 
-
 export default function CrescentIslandPage() {
-    return <PlacePageTemplate placeData={placeData} />;
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_PLACES);
+    const returnLink = { title: 'Return to All Places', path: '/places' };
+
+    return (
+        <>
+            <TopPageNavigation
+                prevPage={prevPage}
+                nextPage={nextPage}
+                returnLink={returnLink}
+            />
+            <PlacePageTemplate placeData={placeData} />
+        </>
+    );
 }

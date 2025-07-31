@@ -1,5 +1,10 @@
+'use client';
+
 import GodPageTemplate from '../../components/GodPageTemplate';
-import { God } from '../../data/wiki-data';
+import { God, ALL_GODS } from '../../data/wiki-data';
+import { usePathname } from 'next/navigation';
+import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
 // --- DATA FOR TAZU ---
 const godData: God = {
@@ -35,5 +40,18 @@ const godData: God = {
 
 
 export default function TazuPage() {
-    return <GodPageTemplate godData={godData} />;
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_GODS);
+    const returnLink = { title: 'Return to All Gods', path: '/gods' };
+
+    return (
+        <>
+            <TopPageNavigation
+                prevPage={prevPage}
+                nextPage={nextPage}
+                returnLink={returnLink}
+            />
+            <GodPageTemplate godData={godData} />
+        </>
+    );
 }

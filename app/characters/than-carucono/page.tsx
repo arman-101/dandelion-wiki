@@ -1,5 +1,10 @@
+'use client';
+
 import CharacterPageTemplate from '../../components/CharacterPageTemplate';
-import { Character } from '../../data/wiki-data';
+import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
+import { usePathname } from 'next/navigation';
+import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
 const characterData: Character = {
     name: "Than Carucono",
@@ -12,7 +17,7 @@ const characterData: Character = {
         gender: "Male",
         affiliation: "Dandelion Court, Empire of Dara",
         nationality: { text: "Cocru", link: "/places/cocru" },
-        firstAppeared: { text: "The Grace of Kings", link: "/books/grace-of-kings" },
+        firstAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" },
         lastAppeared: "Speaking Bones"
     },
     appearanceAndPersonality: [
@@ -37,4 +42,15 @@ const characterData: Character = {
     ]
 };
 
-export default function ThanCaruconoPage() { return <CharacterPageTemplate characterData={characterData} />; }
+export default function ThanCaruconoPage() {
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CHARACTERS);
+    const returnLink = { title: 'Return to All Characters', path: '/characters' };
+
+    return (
+        <>
+            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <CharacterPageTemplate characterData={characterData} />
+        </>
+    );
+}

@@ -1,5 +1,11 @@
+'use client'; // FIX 1: Add this directive at the very top of the file
+
 import GodPageTemplate from '../../components/GodPageTemplate';
 import { God } from '../../data/wiki-data';
+import { usePathname } from 'next/navigation';
+import TopPageNavigation from '@/app/components/TopPageNavigation'; // Note: Changed to .tsx assuming it's a TSX file
+import { getSurroundingPages } from '@/app/utils/navigationUtils';
+import { ALL_GODS } from '@/app/data/wiki-data'; // Removed unused ALL_CHARACTERS and ALL_PLACES
 
 // --- DATA FOR FITHOWÉO ---
 const godData: God = {
@@ -35,5 +41,19 @@ const godData: God = {
 
 
 export default function FithoweoPage() {
-    return <GodPageTemplate godData={godData} />;
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_GODS);
+    const returnLink = { title: 'Return to All Gods', path: '/gods' };
+
+    // FIX 2: Wrap your returned JSX in parentheses ()
+    return (
+        <>
+            <TopPageNavigation
+                prevPage={prevPage}
+                nextPage={nextPage}
+                returnLink={returnLink}
+            />
+            <GodPageTemplate godData={godData} />
+        </>
+    );
 }

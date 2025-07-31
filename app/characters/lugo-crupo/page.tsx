@@ -1,5 +1,10 @@
+'use client';
+
 import CharacterPageTemplate from '../../components/CharacterPageTemplate';
-import { Character } from '../../data/wiki-data';
+import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
+import { usePathname } from 'next/navigation';
+import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
 const characterData: Character = {
     name: "Lügo Crupo",
@@ -39,4 +44,15 @@ const characterData: Character = {
     ]
 };
 
-export default function LugoCrupoPage() { return <CharacterPageTemplate characterData={characterData} />; }
+export default function LugoCrupoPage() {
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CHARACTERS);
+    const returnLink = { title: 'Return to All Characters', path: '/characters' };
+
+    return (
+        <>
+            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <CharacterPageTemplate characterData={characterData} />
+        </>
+    );
+}

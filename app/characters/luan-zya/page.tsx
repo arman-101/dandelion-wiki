@@ -1,5 +1,10 @@
+'use client';
+
 import CharacterPageTemplate from '../../components/CharacterPageTemplate';
-import { Character } from '../../data/wiki-data';
+import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
+import { usePathname } from 'next/navigation';
+import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
 const characterData: Character = {
     name: "Luan Zya",
@@ -14,7 +19,7 @@ const characterData: Character = {
         affiliation: "House of Zya, Dandelion Court",
         nationality: { text: "Haan", link: "/places/haan" },
         firstAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" },
-        lastAppeared: { text: "The Wall of Storms", link: "/books/wall-of-storms" }
+        lastAppeared: { text: "The Wall of Storms", link: "/books/the-wall-of-storms" }
     },
     appearanceAndPersonality: [
         { type: 'text', content: "Luan Zya is described as lean and gaunt, with an intense and scholarly demeanor. As the mysterious assassin, he has skin 'as black as sand' and bright green eyes." },
@@ -51,4 +56,15 @@ const characterData: Character = {
     ]
 };
 
-export default function LuanZyaPage() { return <CharacterPageTemplate characterData={characterData} />; }
+export default function LuanZyaPage() {
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CHARACTERS);
+    const returnLink = { title: 'Return to All Characters', path: '/characters' };
+
+    return (
+        <>
+            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <CharacterPageTemplate characterData={characterData} />
+        </>
+    );
+}

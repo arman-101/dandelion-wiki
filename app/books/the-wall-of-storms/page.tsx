@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import BookNavigation from '../../components/BookNavigation'; // <-- ADD THIS IMPORT
-import TopBookNavigation from '../../components/TopBookNavigation'; // Import the new component
+import TopPageNavigation from '../../components/TopPageNavigation'; // Import the new component
 
 // --- ACCURATE & DETAILED DATA FOR THE WALL OF STORMS (Chapters 1-30) ---
 const chapters = [
@@ -291,9 +291,18 @@ export default function WallOfStormsPage() {
         nextBook: { title: "The Veiled Throne", link: "/books/the-veiled-throne" }
     };
 
+    const prevPageData = { title: "The Grace of Kings", path: "/books/the-grace-of-kings" };
+    const nextPageData = { title: "The Veiled Throne", path: "/books/the-veiled-throne" };
+    const returnLinkData = { title: "Return to Series Overview", path: "/books" };
+
+
     return (
         <div>
-            <TopBookNavigation prevBook={bookNav.prevBook} nextBook={bookNav.nextBook} />
+            <TopPageNavigation
+                prevPage={prevPageData}
+                nextPage={nextPageData}
+                returnLink={returnLinkData}
+            />
             
             {/* --- BOOK HEADER --- */}
             <div className="flex flex-col md:flex-row gap-8 items-start mb-12">

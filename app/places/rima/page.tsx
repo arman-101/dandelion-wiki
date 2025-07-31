@@ -1,5 +1,10 @@
+'use client';
+
 import PlacePageTemplate from '../../components/PlacePageTemplate';
-import { Place } from '../../data/wiki-data';
+import { Place, ALL_PLACES } from '../../data/wiki-data';
+import { usePathname } from 'next/navigation';
+import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
 // --- DATA FOR RIMA (WITH FULL REFERENCES) ---
 const placeData: Place = {
@@ -10,9 +15,7 @@ const placeData: Place = {
         Region: "Northern Dara",
         Capital: "Na Thion",
         PatronGod: { text: "Fithowéo", link: "/gods/fithoweo" },
-        NotableCharacters: [
-            { text: "King Jizu", link: "/characters/king-jizu" },
-        ],
+        NotableCharacters: [{ text: "King Jizu", link: "/characters/king-jizu" }],
     },
     geography: [
         { type: 'text', content: "Rima is a rugged, mountainous land located in the northern half of the Big Island. Its terrain is defined by the Shinané Mountains, whose deep shades are home to spice estates." },
@@ -43,7 +46,15 @@ const placeData: Place = {
     ]
 };
 
-
 export default function RimaPage() {
-    return <PlacePageTemplate placeData={placeData} />;
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_PLACES);
+    const returnLink = { title: 'Return to All Places', path: '/places' };
+
+    return (
+        <>
+            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PlacePageTemplate placeData={placeData} />
+        </>
+    );
 }

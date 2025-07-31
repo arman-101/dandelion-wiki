@@ -1,5 +1,10 @@
+'use client';
+
 import CharacterPageTemplate from '../../components/CharacterPageTemplate';
-import { Character } from '../../data/wiki-data';
+import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
+import { usePathname } from 'next/navigation';
+import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
 const characterData: Character = {
     name: "Princess Théra",
@@ -14,7 +19,7 @@ const characterData: Character = {
         relatives: "Kuni Garu (father), Jia Matiza (mother), Timu (brother), Phyro (brother), Fara (sister)",
         affiliation: "Dandelion Court, Empire of Dara",
         nationality: "Daran",
-        firstAppeared: { text: "The Wall of Storms", link: "/books/wall-of-storms" },
+        firstAppeared: { text: "The Wall of Storms", link: "/books/the-wall-of-storms" },
         lastAppeared: { text: "Speaking Bones", link: "/books/speaking-bones" }
     },
     appearanceAndPersonality: [
@@ -42,4 +47,15 @@ const characterData: Character = {
     ]
 };
 
-export default function PrincessTheraPage() { return <CharacterPageTemplate characterData={characterData} />; }
+export default function PrincessTheraPage() {
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CHARACTERS);
+    const returnLink = { title: 'Return to All Characters', path: '/characters' };
+
+    return (
+        <>
+            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <CharacterPageTemplate characterData={characterData} />
+        </>
+    );
+}

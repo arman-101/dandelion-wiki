@@ -1,7 +1,12 @@
-import PlacePageTemplate from '../../components/PlacePageTemplate';
-import { Place } from '../../data/wiki-data';
+'use client';
 
-// --- DATA FOR KISHI CHANNEL (WITH FULL REFERENCES) ---
+import PlacePageTemplate from '../../components/PlacePageTemplate';
+import { Place, ALL_PLACES } from '../../data/wiki-data';
+import { usePathname } from 'next/navigation';
+import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { getSurroundingPages } from '@/app/utils/navigationUtils';
+
+// --- DATA FOR KISHI CHANNEL ---
 const placeData: Place = {
     name: "Kishi Channel",
     image: "/places/kishi-channel.png",
@@ -12,24 +17,34 @@ const placeData: Place = {
         PatronGod: { text: "Tazu", link: "/gods/tazu" },
     },
     geography: [
-        { type: 'text', content: "The channel is defined by its powerful and deadly whirlpool, a permanent fixture of the seascape believed to be a manifestation of the chaotic god Tazu. The currents are so strong that they can pull down and destroy even the largest ships." },
-        { type: 'ref', data: { book: "The Grace of Kings", chapter: 31, link: "/books/grace-of-kings#chapter-31" } },
+        { type: 'text', content: "The channel is defined by its powerful and deadly whirlpool, a permanent fixture of the seascape believed to be a manifestation of the chaotic god Tazu." },
     ],
     culture: [
-        { type: 'text', content: "The Kishi Channel is a place of legend and fear among sailors. It is seen as the domain of Tazu, a place where the god's chaotic nature is on full display. Only the most desperate or foolish would attempt to navigate it." },
+        { type: 'text', content: "The Kishi Channel is a place of legend and fear among sailors. It is seen as the domain of Tazu, a place where the god's chaotic nature is on full display." },
     ],
     history: [
         {
             event: "The Slaughter at Wolf's Paw",
             summary: [
-                { type: 'text', content: "The Kishi Channel became the site of one of the most horrific events of the Chrysanthemum-Dandelion War. Trapped on Wolf's Paw by a naval blockade, Mata Zyndu made a pact with Tazu. He sacrificed 20,000 surrendered Imperial soldiers by sending them into the whirlpool on flimsy barges. In exchange, Tazu temporarily calmed the waters, allowing Mata's army to escape to the mainland. This act cemented Mata's reputation as the 'Butcher of Wolf's Paw'." },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 31, link: "/books/grace-of-kings#chapter-31" } },
+                { type: 'text', content: "The Kishi Channel became the site of one of the most horrific events of the Chrysanthemum-Dandelion War. Trapped on Wolf's Paw by a naval blockade, Mata Zyndu made a pact with Tazu. He sacrificed 20,000 surrendered Imperial soldiers by sending them into the whirlpool on flimsy barges. In exchange, Tazu temporarily calmed the waters, allowing Mata's army to escape to the mainland." },
             ]
         },
     ]
 };
 
-
 export default function KishiChannelPage() {
-    return <PlacePageTemplate placeData={placeData} />;
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_PLACES);
+    const returnLink = { title: 'Return to All Places', path: '/places' };
+
+    return (
+        <>
+            <TopPageNavigation
+                prevPage={prevPage}
+                nextPage={nextPage}
+                returnLink={returnLink}
+            />
+            <PlacePageTemplate placeData={placeData} />
+        </>
+    );
 }
