@@ -5,6 +5,9 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ScrollToTopButton from './components/ScrollToTopButton' // <-- 1. IMPORT THE COMPONENT
 
+import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -35,6 +38,9 @@ export default function RootLayout({
           <Footer />
         </div>
         <ScrollToTopButton /> {/* <-- 2. ADD THE COMPONENT HERE */}
+
+        <Analytics />
+        <SpeedInsights/>
       </body>
     </html>
   )
