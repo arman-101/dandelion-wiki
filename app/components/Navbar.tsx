@@ -129,7 +129,7 @@ export default function Navbar() {
                             </Link>
                         </div>
 
-                        <div className="hidden xl:flex items-center gap-2">
+                        <div className="hidden lg:flex items-center gap-2">
                             {/* Main Nav Links */}
                             <Link href="/" className="text-gray-700 dark:text-gray-300 hover:[color:var(--color-accent-pink)] px-3 py-2 rounded-md text-base font-medium transition-colors">
                                 Home
@@ -234,7 +234,7 @@ export default function Navbar() {
                         </div>
 
                         {/* Mobile Menu Button */}
-                        <div className="-mr-2 flex xl:hidden">
+                        <div className="-mr-2 flex lg:hidden">
                             <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="bg-gray-100 dark:bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none ml-2">
                                 {isMobileMenuOpen ? <XIcon /> : <MenuIcon />}
                             </button>
@@ -244,7 +244,7 @@ export default function Navbar() {
 
                 {/* Mobile Menu */}
                 {isMobileMenuOpen && (
-                    <div className="xl:hidden border-t border-gray-200 dark:border-gray-800">
+                    <div className="lg:hidden border-t border-gray-200 dark:border-gray-800">
                         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                             <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">
                                 Home
