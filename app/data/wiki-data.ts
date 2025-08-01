@@ -220,7 +220,7 @@ export const MAIN_GODS: WikiPage[] = ALL_GODS;
 export const OTHER_PAGES: WikiPage[] = [
     { title: 'About This Wiki', path: '/other/about-wiki', type: 'Other' },
     { title: 'About the Author', path: '/other/about-author', type: 'Other' },
-    { title: 'All Pages', path: 'other/all-pages', type: 'Other'},
+    { title: 'All Pages', path: '/other/all-pages', type: 'Other'},
 ];
 
 // UPDATED: Comprehensive list of ALL pages for site-wide navigation and search
