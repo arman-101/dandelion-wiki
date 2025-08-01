@@ -27,9 +27,9 @@ export default function BookNavigation({ prevBook, nextBook }: BookNavigationPro
         <div className="mt-16 flex justify-between items-center border-t border-gray-200 dark:border-gray-700 pt-8">
             <div>
                 {prevBook && (
-                    <Link href={prevBook.link} className="inline-flex items-center px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-md hover:bg-teal-600 hover:text-white transition-colors">
+                    <Link href={prevBook.link} className="inline-flex items-center px-4 py-2 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-md hover:text-teal-500 transition-colors">
                         <ArrowLeft />
-                        <div>
+                        <div className="hidden md:block ml-2">
                             <p className="text-xs">Previous Book</p>
                             <p className="font-bold">{prevBook.title}</p>
                         </div>
@@ -38,8 +38,8 @@ export default function BookNavigation({ prevBook, nextBook }: BookNavigationPro
             </div>
             <div>
                 {nextBook && (
-                    <Link href={nextBook.link} className="inline-flex items-center px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-md hover:bg-teal-600 hover:text-white transition-colors">
-                        <div>
+                    <Link href={nextBook.link} className="inline-flex items-center px-4 py-2 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-md hover:text-teal-500 transition-colors">
+                        <div className="hidden md:block mr-2">
                             <p className="text-xs text-right">Next Book</p>
                             <p className="font-bold">{nextBook.title}</p>
                         </div>
