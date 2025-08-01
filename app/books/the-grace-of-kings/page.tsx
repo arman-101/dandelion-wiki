@@ -514,19 +514,26 @@ export default function GraceOfKingsPage() {
                         </div>
                     </div>
                     <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md border border-gray-200 dark:border-gray-700">
-                        <h3 className="font-bold text-xl mb-3 text-teal-600 dark:text-teal-400">Book Details</h3>
+                        <h3 className="font-bold text-xl mb-4 text-teal-600 dark:text-teal-400">Book Details</h3>
                         <ul className="space-y-2 text-base text-gray-700 dark:text-gray-300">
                             <li><strong>Author:</strong> Ken Liu</li>
                             <li><strong>Published:</strong> April 7, 2015 by Saga Press</li>
                             <li><strong>Pages:</strong> 640 (Hardcover)</li>
                             <li><strong>ISBN:</strong> 9781481424271</li>
                             <li><strong>Awards:</strong> Locus Award for Best First Novel (2016), Nebula Award Nominee (2015)</li>
-                            <li>
-                                <a href="https://www.goodreads.com/book/show/18952341-the-grace-of-kings" target="_blank" rel="noopener noreferrer" className="text-teal-600 dark:text-teal-400 hover:underline inline-flex items-center">
-                                    View on Goodreads <ExternalLinkIcon />
-                                </a>
-                            </li>
                         </ul>
+                        <div className="border-t border-gray-200 dark:border-gray-700 mt-4 pt-4 space-y-2">
+                            <a href="https://www.goodreads.com/book/show/18952341-the-grace-of-kings" target="_blank" rel="noopener noreferrer" className="text-teal-600 dark:text-teal-400 hover:underline inline-flex items-center text-base">
+                                View on Goodreads <ExternalLinkIcon />
+                            </a>
+                            <br />
+                            <a href="https://amzn.to/4lYVMGM" target="_blank" rel="noopener noreferrer" className="text-teal-600 dark:text-teal-400 hover:underline inline-flex items-center text-base">
+                                Purchase on Amazon <ExternalLinkIcon />
+                            </a>
+                            <p className="text-xs text-gray-400 dark:text-gray-500 pt-2 italic">
+                                (As an Amazon Associate, I earn from qualifying purchases.)
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>

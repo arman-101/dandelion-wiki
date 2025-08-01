@@ -593,7 +593,7 @@ export default function WallOfStormsPage() {
                 nextPage={nextPageData}
                 returnLink={returnLinkData}
             />
-            
+
             {/* --- BOOK HEADER --- */}
             <div className="flex flex-col md:flex-row gap-8 items-start mb-12">
                 <div className="w-full md:w-1/3 flex-shrink-0">
@@ -615,19 +615,26 @@ export default function WallOfStormsPage() {
                         </div>
                     </div>
                     <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md border border-gray-200 dark:border-gray-700">
-                        <h3 className="font-bold text-xl mb-3 text-teal-600 dark:text-teal-400">Book Details</h3>
+                        <h3 className="font-bold text-xl mb-4 text-teal-600 dark:text-teal-400">Book Details</h3>
                         <ul className="space-y-2 text-base text-gray-700 dark:text-gray-300">
                             <li><strong>Author:</strong> Ken Liu</li>
                             <li><strong>Published:</strong> October 4, 2016 by Saga Press</li>
                             <li><strong>Pages:</strong> 880 (Hardcover)</li>
                             <li><strong>ISBN:</strong> 9781481424332</li>
                             <li><strong>Awards:</strong> Locus Award Nominee for Best Fantasy Novel (2017)</li>
-                            <li>
-                                <a href="https://www.goodreads.com/book/show/18952381-the-wall-of-storms" target="_blank" rel="noopener noreferrer" className="text-teal-600 dark:text-teal-400 hover:underline inline-flex items-center">
-                                    View on Goodreads <ExternalLinkIcon />
-                                </a>
-                            </li>
                         </ul>
+                        <div className="border-t border-gray-200 dark:border-gray-700 mt-4 pt-4 space-y-2">
+                            <a href="https://www.goodreads.com/book/show/18952381-the-wall-of-storms" target="_blank" rel="noopener noreferrer" className="text-teal-600 dark:text-teal-400 hover:underline inline-flex items-center text-base">
+                                View on Goodreads <ExternalLinkIcon />
+                            </a>
+                            <br />
+                            <a href="https://amzn.to/3IXJlMU" target="_blank" rel="noopener noreferrer" className="text-teal-600 dark:text-teal-400 hover:underline inline-flex items-center text-base">
+                                Purchase on Amazon <ExternalLinkIcon />
+                            </a>
+                            <p className="text-xs text-gray-400 dark:text-gray-500 pt-2 italic">
+                                (As an Amazon Associate, I earn from qualifying purchases.)
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
