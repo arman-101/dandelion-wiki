@@ -2,14 +2,12 @@ import Link from 'next/link';
 import { ALL_WIKI_PAGES } from './data/wiki-data';
 
 // Define the types for the Icon component's props to fix the 'implicit any' errors.
-// Added 'maps' to the IconProps type
 type IconProps = {
-    name: 'book' | 'users' | 'places' | 'gods' | 'concepts' | 'maps';
-    className: string;
+  name: 'book' | 'users' | 'places' | 'gods' | 'concepts' | 'maps';
+  className: string;
 };
 
 // A simple placeholder for the icons. Replace these with actual SVG icon components.
-// Added the SVG path for the new 'maps' icon
 const Icon = ({ name, className }: IconProps) => (
     <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         {name === 'book' && <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />}
@@ -44,9 +42,11 @@ export default function HomePage() {
             </p>
 
             <div className="mt-6">
-                <p className="text-sm text-gray-500 dark:text-gray-400 border border-gray-300 dark:border-gray-700 rounded-full inline-block px-4 py-1">
-                    Currently tracking <span className="font-bold text-teal-600 dark:text-teal-400">{pageCount}</span> pages
-                </p>
+                <Link href="/other/all-pages" className="inline-block">
+                    <p className="text-sm text-gray-500 dark:text-gray-400 border border-gray-300 dark:border-gray-700 rounded-full px-4 py-1 hover:border-teal-500 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
+                        Currently tracking <span className="font-bold text-teal-600 dark:text-teal-400">{pageCount}</span> pages
+                    </p>
+                </Link>
             </div>
 
             {/* Updated layout to two rows of three */}

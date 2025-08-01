@@ -273,6 +273,9 @@ export default function Navbar() {
                                     {page.title}
                                 </Link>
                             ))}
+                            <Link href="https://buymeacoffee.com/darknebulax1" target='_blank' className="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">
+                                Cup a coffee?
+                            </Link>
                             <hr className="my-1 border-gray-200 dark:border-gray-600" />
                             <button onClick={() => { setIsModalOpen(true); setIsMobileMenuOpen(false); }} className="w-full text-left text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">
                                 Feedback

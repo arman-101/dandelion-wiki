@@ -14,6 +14,10 @@ export default function Footer() {
                     <span className="text-gray-400 dark:text-gray-600">|</span>
                     <Link href="/other/about-author" className="text-teal-600 dark:text-teal-400 hover:underline">
                         About the Author
+                    </Link>                    
+                    <span className="text-gray-400 dark:text-gray-600">|</span>
+                    <Link href="https://buymeacoffee.com/darknebulax1" target='_blank' className="text-teal-600 dark:text-teal-400 hover:underline">
+                        Cup a coffee?
                     </Link>
                 </div>
             </div>
