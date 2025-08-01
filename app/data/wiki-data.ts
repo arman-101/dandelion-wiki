@@ -63,8 +63,8 @@ export const ALL_CONCEPTS_DATA = [
 
 // --- FULL, ORDERED LISTS FOR NAVIGATION ---
 export const ALL_BOOKS: WikiPage[] = [
-    { title: 'The Grace of Kings', path: '/books/grace-of-kings', type: 'Book' },
-    { title: 'The Wall of Storms', path: '/books/wall-of-storms', type: 'Book' },
+    { title: 'The Grace of Kings', path: '/books/the-grace-of-kings', type: 'Book' },
+    { title: 'The Wall of Storms', path: '/books/the-wall-of-storms', type: 'Book' },
     { title: 'The Veiled Throne', path: '/books/the-veiled-throne', type: 'Book' },
     { title: 'Speaking Bones', path: '/books/speaking-bones', type: 'Book' },
 ];
@@ -216,6 +216,12 @@ export const PLACES_BEYOND_DARA: WikiPage[] = [
 
 export const MAIN_GODS: WikiPage[] = ALL_GODS;
 
+// NEW: Export for the "Other" pages dropdown
+export const OTHER_PAGES: WikiPage[] = [
+    { title: 'About This Wiki', path: '/other/about-wiki', type: 'Other' },
+    { title: 'About the Author', path: '/other/about-author', type: 'Other' },
+];
+
 // UPDATED: Comprehensive list of ALL pages for site-wide navigation and search
 export const ALL_WIKI_PAGES: WikiPage[] = [
     // Manually add the main category listing pages first
@@ -225,9 +231,8 @@ export const ALL_WIKI_PAGES: WikiPage[] = [
     { title: 'Gods', path: '/gods', type: 'God' },
     { title: 'Concepts', path: '/concepts', type: 'Concept' },
     { title: 'Maps', path: '/maps', type: 'Map' },
-    { title: 'About This Wiki', path: '/other/about-wiki', type: 'Other' },
-    { title: 'About the Author', path: '/other/about-author', type: 'Other' },
 
+     ...OTHER_PAGES,
     
     // Then, spread in all the individual pages from the detailed lists
     ...ALL_BOOKS,
