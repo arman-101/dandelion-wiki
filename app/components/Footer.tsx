@@ -8,11 +8,11 @@ export default function Footer() {
                     The Dandelion Dynasty Wiki is a fan-created project. All content from the books is copyright Ken Liu.
                 </p>
                 <div className="flex justify-center items-center space-x-4 mt-4 text-sm">
-                    <Link href="/other/me" className="text-teal-600 dark:text-teal-400 hover:underline">
+                    <Link href="/other/about-wiki" className="text-teal-600 dark:text-teal-400 hover:underline">
                         About This Wiki
                     </Link>
                     <span className="text-gray-400 dark:text-gray-600">|</span>
-                    <Link href="/other/ken" className="text-teal-600 dark:text-teal-400 hover:underline">
+                    <Link href="/other/about-author" className="text-teal-600 dark:text-teal-400 hover:underline">
                         About the Author
                     </Link>
                 </div>

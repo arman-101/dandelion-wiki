@@ -23,7 +23,7 @@ const SocialLink = ({ name, url, icon }: typeof socialLinks[0]) => (
 
 export default function KenLiuPage() {
     return (
-        <div className="max-w-4xl mx-auto px-4 py-16">
+        <div className="max-w-4xl mx-auto px-4">
             <div className="bg-slate-50 dark:bg-gray-800/50 rounded-2xl shadow-xl overflow-hidden">
                 <div className="grid grid-cols-1 md:grid-cols-3">
                     {/* Image Column */}

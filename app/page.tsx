@@ -37,7 +37,7 @@ export default function HomePage() {
             </h1>
             <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-300">
                 Explore the epic &ldquo;silkpunk&rdquo; saga of gods and rebels. This wiki is your guide to the characters, locations, and rich history of{' '}
-                <Link href="/other/ken" className="text-teal-600 dark:text-teal-400 hover:underline">
+                <Link href="/other/about-author" className="text-teal-600 dark:text-teal-400 hover:underline">
                     Ken Liu&apos;s
                 </Link>
                 {' '}masterpiece.

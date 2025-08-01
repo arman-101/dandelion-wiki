@@ -225,8 +225,8 @@ export const ALL_WIKI_PAGES: WikiPage[] = [
     { title: 'Gods', path: '/gods', type: 'God' },
     { title: 'Concepts', path: '/concepts', type: 'Concept' },
     { title: 'Maps', path: '/maps', type: 'Map' },
-    { title: 'About This Wiki', path: '/other/me', type: 'Other' },
-    { title: 'About the Author', path: '/other/ken', type: 'Other' },
+    { title: 'About This Wiki', path: '/other/about-wiki', type: 'Other' },
+    { title: 'About the Author', path: '/other/about-author', type: 'Other' },
 
     
     // Then, spread in all the individual pages from the detailed lists
