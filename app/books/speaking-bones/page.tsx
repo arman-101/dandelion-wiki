@@ -2,21 +2,27 @@
 
 import Image from 'next/image';
 import TopPageNavigation from '../../components/TopPageNavigation';
+import BookNavigation from '@/app/components/BookNavigation';
 
 export default function SpeakingBonesPage() {
+    const bookNav = {
+        prevBook: { title: "The Veiled Throne", link: "/books/the-veiled-throne" },
+        nextBook: null
+    };
+
     // Define the data for the navigation component
-    const prevPageData = { title: "The Veiled Throne", path: "/books/the-veiled-throne" }; 
+    const prevPageData = { title: "The Veiled Throne", path: "/books/the-veiled-throne" };
     const nextPageData = null;
     const returnLinkData = { title: "Return to Series Overview", path: "/books" };
 
     return (
         <div>
-            <TopPageNavigation 
-                prevPage={prevPageData} 
+            <TopPageNavigation
+                prevPage={prevPageData}
                 nextPage={nextPageData}
                 returnLink={returnLinkData}
             />
-            
+
             <div className="flex flex-col md:flex-row gap-8 items-start mb-12">
                 {/* --- FIX IS HERE --- */}
                 {/* We set a max width on mobile (max-w-xs) and center it (mx-auto) */}
@@ -32,7 +38,7 @@ export default function SpeakingBonesPage() {
                     />
                 </div>
                 {/* --- END OF FIX --- */}
-                
+
                 <div className="w-full md:w-2/3">
                     <p className="text-lg text-gray-500 dark:text-gray-400 font-semibold mb-1">The Dandelion Dynasty #4</p>
                     <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">Speaking Bones</h1>
@@ -42,6 +48,7 @@ export default function SpeakingBonesPage() {
                     </div>
                 </div>
             </div>
+            <BookNavigation prevBook={bookNav.prevBook} nextBook={bookNav.nextBook} />
         </div>
     );
 }
