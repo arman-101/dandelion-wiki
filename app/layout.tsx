@@ -23,19 +23,24 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} bg-gray-50 dark:bg-gray-950 text-gray-800 dark:text-gray-200`}>
-          <div className="min-h-screen flex flex-col">
-            <Navbar />
-            <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-              {children}
-            </main>
-            <Footer />
-          </div>
-          <ScrollToTopButton /> 
+    <html lang="en">
+      
+      <head>
+        <link rel="icon" href="icon.png" sizes="any" />
+      </head>
 
-          <Analytics />
-          <SpeedInsights/>
+      <body className={`${inter.className} bg-gray-50 dark:bg-gray-950 text-gray-800 dark:text-gray-200`}>
+        <div className="min-h-screen flex flex-col">
+          <Navbar />
+          <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            {children}
+          </main>
+          <Footer />
+        </div>
+        <ScrollToTopButton />
+
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
