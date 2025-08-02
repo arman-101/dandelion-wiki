@@ -33,7 +33,7 @@ a {
 }
 
 /* Teal link hover effects for light mode */
-.text-teal-600:hover {
+a.text-teal-600:hover {
   color: #14b8a6; /* teal-500 */
 }
 
