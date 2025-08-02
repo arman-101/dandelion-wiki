@@ -69,7 +69,7 @@ const SearchBar = () => {
     };
 
     return (
-        <div className="relative w-full md:w-64">
+        <div className="relative w-full">
             <div className="relative">
                 <input
                     type="text"
@@ -307,6 +307,9 @@ export default function Navbar() {
                 {isMobileMenuOpen && (
                     <div className="lg:hidden border-t border-gray-200 dark:border-gray-800">
                         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                            <div className="p-2">
+                                <SearchBar />
+                            </div>
                             <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">
                                 Home
                             </Link>
@@ -341,8 +344,8 @@ export default function Navbar() {
                             <button onClick={() => { setIsModalOpen(true); setIsMobileMenuOpen(false); }} className="w-full text-left text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">
                                 Feedback
                             </button>
-                            <div className="p-2">
-                                <SearchBar />
+                            <div className="flex items-center justify-start p-2">
+                                <ThemeToggleButton />
                             </div>
                         </div>
                     </div>
