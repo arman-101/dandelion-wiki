@@ -14,7 +14,7 @@ const chapters = [
         quote: "The world is woven from the threads of stories, but the shuttles are guided by the hands of the gods.",
         speaker: "Zomi Kidosu",
         summary: "In Pan, Zomi Kidosu receives a package containing a turtle shell with a secret message from Princess Théra, who has been presumed dead for years. The message, encoded in a complex cypher based on their shared memories and knowledge, confirms that Théra is alive and leading a rebellion in Ukyu-Gondé. The discovery reignites Zomi's hope and sets her on a new path, determined to aid Théra from across the Wall of Storms.",
-        links: [{ name: "Pan", path: "/places/pan" }, { name: "Zomi Kidosu", path: "/characters/zomi-kidosu" }, { name: "Princess Théra", path: "/characters/princess-thera" }, { name: "The Wall of Storms", path: "/concepts/wall-of-storms" }]
+        links: [{ name: "Pan", path: "/places/pan" }, { name: "Zomi Kidosu", path: "/characters/zomi-kidosu" }, { name: "Princess Théra", path: "/characters/princess-thera" }, { name: "The Wall of Storms", path: "/concepts/the-wall-of-storms" }]
     },
     {
         num: 2,

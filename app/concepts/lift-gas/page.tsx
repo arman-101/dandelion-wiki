@@ -19,9 +19,9 @@ const conceptData: Concept = {
     },
     details: [
         { type: 'text', content: "The gas bubbles up from the depths of Lake Dako, a small, emerald-green lake within the crater of the volcano Mount Kiji on the island of Rui. The secrets of its extraction and refinement were closely guarded by the Xana Empire, giving them a technological monopoly that allowed for their conquest of Dara." },
-        { type: 'ref', data: { book: "The Grace of Kings", chapter: 20, link: "/books/grace-of-kings#chapter-20" } },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 20, link: "/books/the-grace-of-kings#chapter-20" } },
         { type: 'text', content: "Because Mount Kiji is the only known source in the world, its capture is a primary strategic objective in every major war. When Gin Mazoti captured Rui for Kuni Garu by surprise, it effectively crippled Mata Zyndu's ability to build new airships, a turning point in the Chrysanthemum-Dandelion War." },
-        { type: 'ref', data: { book: "The Grace of Kings", chapter: 43, link: "/books/grace-of-kings#chapter-43" } },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 43, link: "/books/the-grace-of-kings#chapter-43" } },
     ]
 };
 

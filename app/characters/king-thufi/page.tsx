@@ -22,22 +22,22 @@ const characterData: Character = {
     },
     appearanceAndPersonality: [
         { type: 'text', content: "Thufi is a simple, honest, and good-hearted man. He is initially overwhelmed by the burdens of kingship and often appears weak and indecisive. However, he possesses a strong moral core and a genuine concern for the well-being of the people, famously declaring, 'I will not be a king who sits on a throne of skulls.' Though not a great leader himself, he is wise enough to recognize and empower talented men like Mata Zyndu and Kuni Garu." },
-        { type: 'ref', data: { book: "The Grace of Kings", chapter: 26, link: "/books/grace-of-kings#chapter-26" } },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 26, link: "/books/the-grace-of-kings#chapter-26" } },
     ],
     history: [
         {
             era: "The Dandelion Rebellion",
             summary: [
                 { type: 'text', content: "Discovered by the early rebels, Thufi was crowned King of Cocru to give their cause legitimacy. As the rebellion grew, he was named Princeps of the Tiro Alliance. His most decisive act was his promise to grant Kuni Garu the kingship of Géfica if he captured Pan, a promise that set the stage for the conflict between Kuni and Mata." },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 12, link: "/books/grace-of-kings#chapter-12" } },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 26, link: "/books/grace-of-kings#chapter-26" } },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 12, link: "/books/the-grace-of-kings#chapter-12" } },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 26, link: "/books/the-grace-of-kings#chapter-26" } },
             ]
         },
         {
             era: "Later Life",
             summary: [
                 { type: 'text', content: "After the war, Thufi willingly abdicated his throne, content to return to a simple life. Years later, Emperor Ragin visits him, and their conversation reveals that Thufi is far happier as a common man than he ever was as a king, serving as a poignant contrast to Kuni's own journey." },
-                { type: 'ref', data: { book: "The Wall of Storms", chapter: 2, link: "/books/wall-of-storms#chapter-2" } },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 2, link: "/books/the-wall-of-storms#chapter-2" } },
             ]
         },
     ]

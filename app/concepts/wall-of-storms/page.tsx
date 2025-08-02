@@ -11,7 +11,7 @@ import { getSurroundingPages } from '@/app/utils/navigationUtils';
 const conceptData: Concept = {
     name: "The Wall of Storms",
     introduction: "A seemingly impassable, continent-spanning superstorm that has isolated the lands of Dara from the rest of the world for millennia.",
-    image: "/concepts/wall-of-storms.png",
+    image: "/concepts/the-wall-of-storms.png",
     infoBox: {
         Type: "Meteorological & Geographical Phenomenon",
         Location: "The Fathomed Sea, between Dara and Ukyu",

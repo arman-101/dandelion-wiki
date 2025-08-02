@@ -24,24 +24,24 @@ const characterData: Character = {
     },
     appearanceAndPersonality: [
         { type: 'text', content: "Théra is described as having her mother's red hair and her father's sly, intelligent eyes. She is fiercely independent, intellectually curious, and impatient with the constraints of tradition. She possesses a natural talent for engineering and a keen strategic mind, often seeing practical solutions that elude more conventional thinkers. While she can be headstrong, she is also deeply loyal to her family and dedicated to protecting her people." },
-        { type: 'ref', data: { book: "The Wall of Storms", chapter: 1, link: "/books/wall-of-storms#chapter-1" } },
+        { type: 'ref', data: { book: "The Wall of Storms", chapter: 1, link: "/books/the-wall-of-storms#chapter-1" } },
     ],
     history: [
         {
             era: "Early Life in Pan",
             summary: [
                 { type: 'text', content: "Growing up in the Imperial Palace, Théra often chafed under the tutelage of Zato Ruthi, preferring to study Luan Zya's tales of invention and adventure. Her cleverness was apparent from a young age, as shown when she helped save Zomi Kidosu from a bully in a tavern." },
-                { type: 'ref', data: { book: "The Wall of Storms", chapter: 1, link: "/books/wall-of-storms#chapter-1" } },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 1, link: "/books/the-wall-of-storms#chapter-1" } },
                 { type: 'text', content: " Her father, Emperor Ragin, secretly saw her as his most capable child and his desired heir, a radical idea in the patriarchal society of Dara." },
-                { type: 'ref', data: { book: "The Wall of Storms", chapter: 18, link: "/books/wall-of-storms#chapter-18" } },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 18, link: "/books/the-wall-of-storms#chapter-18" } },
             ]
         },
         {
             era: "The Hegemon Cults",
             summary: [
                 { type: 'text', content: "When the Hegemon Cults rose in Tunoa, using 'magic mirrors' to project an image of the deceased Mata Zyndu, Théra was the first to suspect a scientific explanation. Guided by the gods Tututika and Fithowéo, she deduced the principles of wave interference and constructed her own counter-mirror. She dramatically unveiled her invention at the Siege of Zyndu Castle, projecting an image of her father embracing the Hegemon, instantly shattering the rebels' faith and ending the uprising." },
-                { type: 'ref', data: { book: "The Wall of Storms", chapter: 24, link: "/books/wall-of-storms#chapter-24" } },
-                { type: 'ref', data: { book: "The Wall of Storms", chapter: 27, link: "/books/wall-of-storms#chapter-27" } },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 24, link: "/books/the-wall-of-storms#chapter-24" } },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 27, link: "/books/the-wall-of-storms#chapter-27" } },
             ]
         },
     ]

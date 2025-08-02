@@ -22,25 +22,25 @@ const placeData: Place = {
     },
     geography: [
         { type: 'text', content: "A chain of islands with rugged coastlines, the Tunoa Islands are dominated by the ancestral castle of the Zyndu, a strong fortress that has stood for generations." },
-        { type: 'ref', data: { book: "The Grace of Kings", chapter: 7, link: "/books/grace-of-kings#chapter-7" } },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 7, link: "/books/the-grace-of-kings#chapter-7" } },
     ],
     culture: [
         { type: 'text', content: "The culture of the Tunoa Islands is defined by an unshakable loyalty to the Zyndu clan. Even after the clan's fall from grace, the people of Tunoa revered their memory and were among the first to flock to Mata Zyndu's banner when he began his rebellion." },
-        { type: 'ref', data: { book: "The Grace of Kings", chapter: 7, link: "/books/grace-of-kings#chapter-7" } },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 7, link: "/books/the-grace-of-kings#chapter-7" } },
     ],
     history: [
         {
             event: "Mata Zyndu's First Stand",
             summary: [
                 { type: 'text', content: "The Tunoa Islands are where Mata Zyndu began his rebellion against the Xana Empire. After being summoned by the local Xana commander, Mata assassinated him, rallied the people, and single-handedly reclaimed his ancestral castle, establishing his first base of operations." },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 7, link: "/books/grace-of-kings#chapter-7" } },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 7, link: "/books/the-grace-of-kings#chapter-7" } },
             ]
         },
         {
             event: "The Hegemon Cults",
             summary: [
                 { type: 'text', content: "Years into Emperor Ragin's reign, the Tunoa Islands became a hotbed for the Hegemon Cults, groups of rebels who venerated the ghost of Mata Zyndu. Prince Phyro was sent to the islands to quell this uprising." },
-                { type: 'ref', data: { book: "The Wall of Storms", chapter: 20, link: "/books/wall-of-storms#chapter-20" } },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 20, link: "/books/the-wall-of-storms#chapter-20" } },
             ]
         },
     ]

@@ -19,9 +19,9 @@ const conceptData: Concept = {
     },
     details: [
         { type: 'text', content: "For generations, the street performers of Faça used the properties of rubbed silk and amber to create entertaining illusions. This was considered a low-class curiosity until the Dandelion Dynasty began to see its potential. Luan Zya was the first to recognize it as a legitimate field of scientific study." },
-        { type: 'ref', data: { book: "The Grace of Kings", chapter: 48, link: "/books/grace-of-kings#chapter-48" } },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 48, link: "/books/the-grace-of-kings#chapter-48" } },
         { type: 'text', content: "Later, Princess Théra, with her engineering talent, harnessed the silkmotic force to create powerful flash-bang grenades. These devices were instrumental in the war against the Lyucu, demonstrating how an obscure piece of folk magic could be transformed into a decisive military technology under the Dandelion philosophy of innovation." },
-        { type: 'ref', data: { book: "The Wall of Storms", chapter: 25, link: "/books/wall-of-storms#chapter-25" } },
+        { type: 'ref', data: { book: "The Wall of Storms", chapter: 25, link: "/books/the-wall-of-storms#chapter-25" } },
     ]
 };
 

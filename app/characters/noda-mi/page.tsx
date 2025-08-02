@@ -29,8 +29,8 @@ const characterData: Character = {
             era: "The Hegemon Cults",
             summary: [
                 { type: 'text', content: "Noda Mi formed a pact with Doru Solofi to overthrow Emperor Ragin. It was Noda who devised the strategy of using the 'magic mirrors' to project an image of Mata Zyndu, turning their political rebellion into a powerful religious movement. After their defeat at the hands of Princess Théra, he and Doru fled to Géjira and sought refuge with Queen Gin Mazoti, an act which created a major political crisis for the Dandelion Court." },
-                { type: 'ref', data: { book: "The Wall of Storms", chapter: 20, link: "/books/wall-of-storms#chapter-20" } },
-                { type: 'ref', data: { book: "The Wall of Storms", chapter: 28, link: "/books/wall-of-storms#chapter-28" } },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 20, link: "/books/the-wall-of-storms#chapter-20" } },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 28, link: "/books/the-wall-of-storms#chapter-28" } },
             ]
         },
     ]

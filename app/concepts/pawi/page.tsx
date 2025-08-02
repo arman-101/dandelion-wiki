@@ -18,7 +18,7 @@ const conceptData: Concept = {
     },
     details: [
         { type: 'text', content: "The pawi are more than mere pets; they are extensions of their respective gods' domains and personalities. For example, Kiji, the god of air, is represented by the swift Mingén falcon, while Tazu, the chaotic god of the sea, is represented by the shark. These animals are often revered and considered sacred by the mortals who worship that particular god." },
-        { type: 'ref', data: { book: "The Wall of Storms", chapter: 6, link: "/books/wall-of-storms#chapter-6" } },
+        { type: 'ref', data: { book: "The Wall of Storms", chapter: 6, link: "/books/the-wall-of-storms#chapter-6" } },
         { type: 'text', content: "The gods can observe the mortal world through the eyes of their pawi and sometimes use them to interact with mortals, though this is rare. The tale of the Calendrical Dozen, a contest to find the hidden gods, revolved around mortals trying to lure out the deities by appealing to the nature of their pawi." },
     ]
 };

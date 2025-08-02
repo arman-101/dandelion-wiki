@@ -22,21 +22,21 @@ const characterData: Character = {
     },
     appearanceAndPersonality: [
         { type: 'text', content: "Than is cheerful and optimistic, often providing levity in grim situations. He is not a brilliant strategist like Luan Zya or Gin Mazoti, but he is a reliable and brave commander who excels at inspiring morale. His loyalty to Kuni is absolute, and he represents the strong bonds of friendship that form the foundation of Kuni's inner circle." },
-        { type: 'ref', data: { book: "The Grace of Kings", chapter: 8, link: "/books/grace-of-kings#chapter-8" } },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 8, link: "/books/the-grace-of-kings#chapter-8" } },
     ],
     history: [
         {
             era: "The Dandelion Rebellion",
             summary: [
                 { type: 'text', content: "Than was a member of Kuni's original bandit crew, joining him in the mountains outside Zudi. He served faithfully throughout the rebellion and the subsequent civil war, always at Kuni's side." },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 8, link: "/books/grace-of-kings#chapter-8" } },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 8, link: "/books/the-grace-of-kings#chapter-8" } },
             ]
         },
         {
             era: "The Dandelion Dynasty",
             summary: [
                 { type: 'text', content: "After Kuni's ascension, Than was made a general and remained a key figure at court. He was part of the 'Swords' faction, representing the old guard who fought in the rebellion. He participated in the drinking party that revealed the court's growing factionalism." },
-                { type: 'ref', data: { book: "The Wall of Storms", chapter: 8, link: "/books/wall-of-storms#chapter-8" } },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 8, link: "/books/the-wall-of-storms#chapter-8" } },
             ]
         },
     ]

@@ -22,21 +22,21 @@ const characterData: Character = {
     },
     appearanceAndPersonality: [
         { type: 'text', content: "Gozogi is a rough-and-tumble man, more comfortable in a tavern or on a battlefield than in the Imperial court. He is not a great thinker or strategist, but he is brave, loyal, and good-natured. He represents the common man who rose to power with Kuni, and he never loses his straightforward, unpretentious demeanor." },
-        { type: 'ref', data: { book: "The Grace of Kings", chapter: 8, link: "/books/grace-of-kings#chapter-8" } },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 8, link: "/books/the-grace-of-kings#chapter-8" } },
     ],
     history: [
         {
             era: "The Dandelion Rebellion",
             summary: [
                 { type: 'text', content: "Gozogi was a member of Kuni's original street gang and one of the first to follow him into outlawry. He served as a dependable lieutenant throughout the rebellion and the civil war, always loyal to his friend." },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 8, link: "/books/grace-of-kings#chapter-8" } },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 8, link: "/books/the-grace-of-kings#chapter-8" } },
             ]
         },
         {
             era: "The Dandelion Dynasty",
             summary: [
                 { type: 'text', content: "After Kuni became emperor, Gozogi was made a general. He remained part of Kuni's inner circle of old friends, often providing a simple, common-sense perspective that was valued in the increasingly complex world of court politics." },
-                { type: 'ref', data: { book: "The Wall of Storms", chapter: 8, link: "/books/wall-of-storms#chapter-8" } },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 8, link: "/books/the-wall-of-storms#chapter-8" } },
             ]
         },
     ]

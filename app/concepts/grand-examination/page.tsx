@@ -18,9 +18,9 @@ const conceptData: Concept = {
     },
     details: [
         { type: 'text', content: "Proposed by Luan Zya and implemented by Empress Jia, the Grand Examination was a cornerstone of the new dynasty's philosophy. Candidates from across Dara were brought to the capital to be tested on a wide range of subjects. The goal was to find the most capable people to run the empire, breaking the grip of the old noble families." },
-        { type: 'ref', data: { book: "The Wall of Storms", chapter: 15, link: "/books/wall-of-storms#chapter-15" } },
+        { type: 'ref', data: { book: "The Wall of Storms", chapter: 15, link: "/books/the-wall-of-storms#chapter-15" } },
         { type: 'text', content: "The first Examination became a major political event, exposing deep-seated regional prejudices and highlighting the tension between tradition and innovation. Zomi Kidosu's radical performance, where she criticized the test's reliance on classical logograms as a barrier to the poor, forced the court to confront the system's inherent biases. Despite its flaws, the Examination represented a fundamental shift in how power and authority were legitimized in Dara." },
-        { type: 'ref', data: { book: "The Wall of Storms", chapter: 16, link: "/books/wall-of-storms#chapter-16" } },
+        { type: 'ref', data: { book: "The Wall of Storms", chapter: 16, link: "/books/the-wall-of-storms#chapter-16" } },
     ]
 };
 

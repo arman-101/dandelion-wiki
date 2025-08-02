@@ -24,25 +24,25 @@ const characterData: Character = {
     },
     appearanceAndPersonality: [
         { type: 'text', content: "In his old age, Mapidéré is described as gaunt, with hard, expressionless eyes. He wears a splendid crown of gold and gems topped with the statuette of a cruben." },
-        { type: 'ref', data: { book: "The Grace of Kings", chapter: 1, link: "/books/grace-of-kings#chapter-1" } },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 1, link: "/books/the-grace-of-kings#chapter-1" } },
         { type: 'text', content: " Mapidéré was a ruler of grand vision and profound paranoia. He was a brilliant military strategist who used advanced airship technology to achieve what no one thought possible. However, he was also a tyrant who ruled through fear, imposing crushing taxes and brutal forced labor upon the conquered peoples. He believed that the only way to hold his empire together was through a constant display of overwhelming power and splendor." },
-        { type: 'ref', data: { book: "The Grace of Kings", chapter: 5, link: "/books/grace-of-kings#chapter-5" } },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 5, link: "/books/the-grace-of-kings#chapter-5" } },
     ],
     history: [
         {
             era: "The Unification Wars",
             summary: [
                 { type: 'text', content: "As King Réon of Xana, he harnessed the mystical lift gas from Mount Kiji to build an unstoppable fleet of airships. Over two decades, he systematically conquered the other six Tiro states, culminating in the unification of the Islands of Dara under his single, iron-fisted rule as Emperor Mapidéré." },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 4, link: "/books/grace-of-kings#chapter-4" } },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 4, link: "/books/the-grace-of-kings#chapter-4" } },
             ]
         },
         {
             era: "Reign as Emperor",
             summary: [
                 { type: 'text', content: "His reign was defined by monumental engineering projects, such as the construction of the immaculate capital city of Pan and the Grand Tunnels, all built with the brutal use of corvée labor." },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 6, link: "/books/grace-of-kings#chapter-6" } },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 6, link: "/books/the-grace-of-kings#chapter-6" } },
                 { type: 'text', content: " In his later years, he became obsessed with his legacy and succession. A palace conspiracy orchestrated by his most trusted advisors led to the death of his chosen heir, and he died leaving the empire in the hands of a weak child and a corrupt regent, paving the way for total collapse." },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 5, link: "/books/grace-of-kings#chapter-5" } },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 5, link: "/books/the-grace-of-kings#chapter-5" } },
             ]
         },
     ]

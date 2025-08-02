@@ -22,7 +22,7 @@ const placeData: Place = {
     },
     geography: [
         { type: 'text', content: "The state of Amu is split between the medium-sized island of Arulugi and the northeastern region of the Big Island." },
-        { type: 'ref', data: { book: "The Grace of Kings", chapter: 38, link: "/books/grace-of-kings#chapter-38" } },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 38, link: "/books/the-grace-of-kings#chapter-38" } },
     ],
     culture: [
         { type: 'text', content: "Amu culture is considered the most refined and sophisticated in Dara. The capital of Müning resembles a 'filigreed diadem floating over the water,' with tall, narrow houses connected by a network of arching bridges and hanging platforms." },

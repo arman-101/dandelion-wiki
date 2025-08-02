@@ -23,34 +23,34 @@ const characterData: Character = {
     },
     appearanceAndPersonality: [
         { type: 'text', content: "Gin is small and wiry, with a sharp, intelligent face. For much of her early life, she disguised herself as a boy to survive and find work." },
-        { type: 'ref', data: { book: "The Grace of Kings", chapter: 40, link: "/books/grace-of-kings#chapter-40" } },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 40, link: "/books/the-grace-of-kings#chapter-40" } },
         { type: 'text', content: " Gin is fiercely intelligent, proud, and ambitious. She has a deep understanding of the practical realities of war, from supply lines to troop morale, which other, more glory-focused commanders often overlook. She is pragmatic and ruthless when necessary but also possesses a strong sense of honor and loyalty, particularly towards Kuni Garu, the first leader to recognize her true talent." },
-        { type: 'ref', data: { book: "The Grace of Kings", chapter: 49, link: "/books/grace-of-kings#chapter-49" } },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 49, link: "/books/the-grace-of-kings#chapter-49" } },
     ],
     history: [
         {
             era: "Early Life",
             summary: [
                 { type: 'text', content: "An orphan from a brothel in Dimushi, Gin survived on the streets before disguising herself as a boy to work on the docks. She served in various rebel armies as a quartermaster, constantly frustrated as her strategic advice was ignored by arrogant nobles." },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 40, link: "/books/grace-of-kings#chapter-40" } },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 40, link: "/books/the-grace-of-kings#chapter-40" } },
             ]
         },
         {
             era: "Chrysanthemum-Dandelion War",
             summary: [
                 { type: 'text', content: "She eventually found her way to Kuni Garu in Dasu. After she bested his top advisor in a game of cüpa, Kuni recognized her genius. In a revolutionary act, he revealed her as a woman and promoted her to Marshal of his armies." },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 41, link: "/books/grace-of-kings#chapter-41" } },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 41, link: "/books/the-grace-of-kings#chapter-41" } },
                 { type: 'text', content: " Gin's brilliant strategies—including the surprise attack on Rui through the Grand Tunnels and her conquest of the northern states—were the key to Kuni's victory over Mata Zyndu." },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 43, link: "/books/grace-of-kings#chapter-43" } },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 48, link: "/books/grace-of-kings#chapter-48" } },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 43, link: "/books/the-grace-of-kings#chapter-43" } },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 48, link: "/books/the-grace-of-kings#chapter-48" } },
             ]
         },
         {
             era: "Reign of Four Placid Seas",
             summary: [
                 { type: 'text', content: "As the empire's highest-ranking military officer, Marshal Gin became the leader of the 'Swords,' a court faction representing the military old guard. This often put her in political conflict with Empress Jia, who led the 'Abacus' faction of civil bureaucrats. Despite their rivalry, Gin remained a steadfastly loyal and essential pillar of the Dandelion Dynasty." },
-                { type: 'ref', data: { book: "The Wall of Storms", chapter: 8, link: "/books/wall-of-storms#chapter-8" } },
-                { type: 'ref', data: { book: "The Wall of Storms", chapter: 29, link: "/books/wall-of-storms#chapter-29" } },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 8, link: "/books/the-wall-of-storms#chapter-8" } },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 29, link: "/books/the-wall-of-storms#chapter-29" } },
             ]
         },
     ]

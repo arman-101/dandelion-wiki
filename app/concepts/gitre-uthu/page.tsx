@@ -19,7 +19,7 @@ const conceptData: Concept = {
     },
     details: [
         { type: 'text', content: "After his failed kite attack, a wandering Luan Zya encountered a mysterious teacher—the god Lutho in disguise—who gave him the book. The pages of Gitré Üthu are blank, but when a reader contemplates a problem, the book fills with relevant text, diagrams, and historical precedents, written in the blood of all the scholars who came before." },
-        { type: 'ref', data: { book: "The Grace of Kings", chapter: 18, link: "/books/grace-of-kings#chapter-18" } },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 18, link: "/books/the-grace-of-kings#chapter-18" } },
         { type: 'text', content: "The book is not a simple instruction manual; it offers possibilities and perspectives, requiring a wise reader to interpret and apply its lessons. It served as Luan Zya's most powerful tool, providing the strategic insights that allowed Kuni Garu's small band of rebels to challenge and ultimately defeat a mighty empire." },
     ]
 };

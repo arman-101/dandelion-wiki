@@ -23,22 +23,22 @@ const characterData: Character = {
     },
     appearanceAndPersonality: [
         { type: 'text', content: "Erishi is depicted as a spoiled, petulant, and unintelligent young man, completely disconnected from the realities of his empire. He is obsessed with decadent pleasures and elaborate toys, famously building a maze out of meat while his people starved. He possessed none of his father's vision or strength, making him an ideal puppet for the powerful figures at his court." },
-        { type: 'ref', data: { book: "The Grace of Kings", chapter: 9, link: "/books/grace-of-kings#chapter-9" } },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 9, link: "/books/the-grace-of-kings#chapter-9" } },
     ],
     history: [
         {
             era: "Ascension to the Throne",
             summary: [
                 { type: 'text', content: "Following the death of Emperor Mapidéré, a palace conspiracy led by Lügo Crupo and Goran Pira saw the true heir, Prince Pulo, murdered. Loshi, a younger and more pliable prince, was installed on the throne and given the regnal name Erishi. His reign was a disaster, marked by famine and the rapid decay of Imperial authority." },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 5, link: "/books/grace-of-kings#chapter-5" } },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 5, link: "/books/the-grace-of-kings#chapter-5" } },
             ]
         },
         {
             era: "The Dandelion Rebellion",
             summary: [
                 { type: 'text', content: "Erishi remained a non-entity throughout the rebellion, delegating all power to his regents, first Lügo Crupo and then Goran Pira. He was captured by Kuni Garu when Pan fell. He was ultimately killed by Mata Zyndu when the Hegemon burned the Imperial capital to the ground, bringing a final, ignominious end to the Xana Dynasty." },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 30, link: "/books/grace-of-kings#chapter-30" } },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 33, link: "/books/grace-of-kings#chapter-33" } },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 30, link: "/books/the-grace-of-kings#chapter-30" } },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 33, link: "/books/the-grace-of-kings#chapter-33" } },
             ]
         },
     ]

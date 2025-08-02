@@ -23,6 +23,9 @@ export default function Home() {
           <Link href="/concepts" className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
             Learn Concepts
           </Link>
+          <Link href="/gods" className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+            Discover Gods
+          </Link>
         </div>
       </div>
 

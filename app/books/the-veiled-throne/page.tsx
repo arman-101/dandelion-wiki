@@ -66,7 +66,7 @@ const chapters = [
         quote: "Every single person on this expedition is irreplaceable... We’re not going to jump to sacrifice as the first solution to every problem. That’s the easy way out.",
         speaker: "Princess Théra",
         summary: "Months after the end of *The Wall of Storms*, Princess Théra's expedition has successfully passed through the Wall of Storms, aided by a pod of cruben. Now in the seas of Ukyu-Gondé, they are spotted by a lone surviving Lyucu city-ship. A single garinafin, piloted by a warrior named Toof, is sent to investigate. Théra and her husband, the Agon prince Takval Aragoz, devise a clever defense: they fly giant kites shaped like tusked tigers, a natural predator of the garinafin. The malnourished and psychologically stressed garinafin is terrified by the decoys and retreats, buying the Dara fleet precious time.",
-        links: [{ name: "Princess Théra", path: "/characters/princess-thera" }, { name: "Takval Aragoz", path: "/characters/takval-aragoz" }, { name: "The Wall of Storms", path: "/concepts/wall-of-storms" }, { name: "Cruben", path: "/concepts/cruben" }, { name: "Garinafin", path: "/concepts/garinafin" }]
+        links: [{ name: "Princess Théra", path: "/characters/princess-thera" }, { name: "Takval Aragoz", path: "/characters/takval-aragoz" }, { name: "The Wall of Storms", path: "/concepts/the-wall-of-storms" }, { name: "Cruben", path: "/concepts/cruben" }, { name: "Garinafin", path: "/concepts/garinafin" }]
     },
     {
         num: 8,

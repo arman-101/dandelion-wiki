@@ -399,7 +399,7 @@ const chapters = [
         quote: "The universe is knowable.",
         speaker: "Luan Zya",
         summary: "This chapter recounts Luan Zya's voyage three years prior. He sails north in search of the lands beyond Dara, using a giant, triple-decked kite to explore the upper atmosphere. He discovers the Wall of Storms, a permanent, massive typhoon that surrounds the islands. In a daring move, he pilots his kite into the storm and is struck by lightning. He survives and finds himself in a strange new ocean current. After months adrift, where he is saved from starvation by crubens, he uses his scientific knowledge to start a signal fire and is eventually rescued by the people of Ukyu.",
-        links: [{ name: "Luan Zya", path: "/characters/luan-zya" }, { name: "The Wall of Storms", path: "/concepts/wall-of-storms" }, { name: "Cruben", path: "/concepts/cruben" }, { name: "Gitré Üthu", path: "/concepts/gitre-uthu" }]
+        links: [{ name: "Luan Zya", path: "/characters/luan-zya" }, { name: "The Wall of Storms", path: "/concepts/the-wall-of-storms" }, { name: "Cruben", path: "/concepts/cruben" }, { name: "Gitré Üthu", path: "/concepts/gitre-uthu" }]
     },
     {
         num: 45,
@@ -453,7 +453,7 @@ const chapters = [
         quote: "To carry out my promise to the queen, she must first betray her.",
         speaker: "Zomi Kidosu (internal thought)",
         summary: "Luan Zya, now aware of the Lyucu's true intentions, is tortured by Pékyu Tenryo to reveal the secret to passing the Wall of Storms. When physical torture fails, Tenryo tortures Oga Kidosu in front of him, forcing Luan to capitulate to save Zomi's father. Luan provides the calculations but secretly includes a flaw that will trap the Lyucu reinforcements. He and Oga are taken on the invasion fleet, where Luan makes a final, suicidal attempt to sabotage the mission by setting fire to the garinafin feed supply.",
-        links: [{ name: "Luan Zya", path: "/characters/luan-zya" }, { name: "Zomi Kidosu", path: "/characters/zomi-kidosu" }, { name: "The Wall of Storms", path: "/concepts/wall-of-storms" }]
+        links: [{ name: "Luan Zya", path: "/characters/luan-zya" }, { name: "Zomi Kidosu", path: "/characters/zomi-kidosu" }, { name: "The Wall of Storms", path: "/concepts/the-wall-of-storms" }]
     },
     {
         num: 51,

@@ -23,16 +23,16 @@ const characterData: Character = {
     },
     appearanceAndPersonality: [
         { type: 'text', content: "Kikomi is described as incredibly beautiful, with golden hair, azure eyes, and flawless amber skin. She is intelligent and proud, chafing at her role as a mere political pawn. Advised by the goddess Tututika to use her own unique talents, she attempts to use seduction and manipulation as weapons, but her inexperience and genuine emotions lead to a tragic end." },
-        { type: 'ref', data: { book: "The Grace of Kings", chapter: 24, link: "/books/grace-of-kings#chapter-24" } },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 24, link: "/books/the-grace-of-kings#chapter-24" } },
     ],
     history: [
         {
             era: "The Dandelion Rebellion",
             summary: [
                 { type: 'text', content: "After her home, Arulugi, was conquered by Kindo Marana, Princess Kikomi was taken captive. She made a secret deal with the Imperial commander: in exchange for the safety of Amu, she would sow discord between the rebellion's two most powerful military leaders, Mata Zyndu and his uncle Phin." },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 27, link: "/books/grace-of-kings#chapter-27" } },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 27, link: "/books/the-grace-of-kings#chapter-27" } },
                 { type: 'text', content: "Taking refuge with the rebels, she became the object of affection for both men. Torn by her mission and her growing feelings for Mata, she ultimately fulfilled her promise by seducing and murdering Phin Zyndu. The act shattered Mata's trust in everyone around him and created the first deep fracture in his brotherhood with Kuni Garu. Kikomi was killed by Phin's guards immediately after." },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 27, link: "/books/grace-of-kings#chapter-27" } },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 27, link: "/books/the-grace-of-kings#chapter-27" } },
             ]
         },
     ]

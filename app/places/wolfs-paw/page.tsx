@@ -18,7 +18,7 @@ const placeData: Place = {
     },
     geography: [
         { type: 'text', content: "A large island that forms the heart of Gan, Wolf's Paw is separated from the Itanti Peninsula on the Big Island by the Kishi Channel. This channel is home to a massive, permanent whirlpool, making naval passage extremely dangerous and often impossible." },
-        { type: 'ref', data: { book: "The Grace of Kings", chapter: 31, link: "/books/grace-of-kings#chapter-31" } },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 31, link: "/books/the-grace-of-kings#chapter-31" } },
     ],
     culture: [
         { type: 'text', content: "As part of Gan, the culture on Wolf's Paw is sophisticated and trade-oriented. Its strategic position makes it a key naval territory." },
@@ -28,14 +28,14 @@ const placeData: Place = {
             event: "Battle of Wolf's Paw",
             summary: [
                 { type: 'text', content: "This island was the site of the decisive battle where Mata Zyndu's rebel forces faced the combined Imperial armies of Kindo Marana and Tanno Namen. Despite being betrayed by his allies from Faça and Gan, Mata's personal prowess won the day, leading to the capture of Marana and the suicide of Namen." },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 29, link: "/books/grace-of-kings#chapter-29" } },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 29, link: "/books/the-grace-of-kings#chapter-29" } },
             ]
         },
         {
             event: "The Slaughter at Wolf's Paw",
             summary: [
                 { type: 'text', content: "Following the battle, Mata was trapped on the island by a naval blockade. To secure passage, he made a horrific pact with the god Tazu, sacrificing 20,000 surrendered Imperial prisoners to the whirlpool in the Kishi Channel. This act earned him the name 'Butcher of Wolf's Paw' and forever stained his honor." },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 31, link: "/books/grace-of-kings#chapter-31" } },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 31, link: "/books/the-grace-of-kings#chapter-31" } },
             ]
         },
     ]

@@ -19,9 +19,9 @@ const conceptData: Concept = {
     },
     details: [
         { type: 'text', content: "The cruben are enormous, ancient creatures of the sea. While viewed as 'savage' by the people of the Tiro states, the inhabitants of Tan Adü share a deep, symbiotic bond with them. They are able to communicate with and guide the beasts, turning them into a formidable and unconventional naval force." },
-        { type: 'ref', data: { book: "The Grace of Kings", chapter: 28, link: "/books/grace-of-kings#chapter-28" } },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 28, link: "/books/the-grace-of-kings#chapter-28" } },
         { type: 'text', content: "Their decisive role in the Dandelion Rebellion came when Luan Zya, who had once lived among the people of Tan Adü, recruited the cruben-riders for Kuni Garu's army. Their ability to navigate stealthily and strike from the sea was instrumental in the shocking and successful capture of the Imperial capital, Pan." },
-        { type: 'ref', data: { book: "The Grace of Kings", chapter: 30, link: "/books/grace-of-kings#chapter-30" } },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 30, link: "/books/the-grace-of-kings#chapter-30" } },
     ]
 };
 

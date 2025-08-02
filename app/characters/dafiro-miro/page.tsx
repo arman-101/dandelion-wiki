@@ -22,16 +22,16 @@ const characterData: Character = {
     },
     appearanceAndPersonality: [
         { type: 'text', content: "Dafiro is an older, cautious, and pragmatic man. He is a shrewd observer of politics and a realist who understands the brutal necessities of war and statecraft. Unlike many of the younger, more idealistic rebels, he is patient and willing to play the long game. His loyalty is ultimately to the well-being of the people of Dara, which leads him to make difficult and dangerous choices." },
-        { type: 'ref', data: { book: "The Grace of Kings", chapter: 12, link: "/books/grace-of-kings#chapter-12" } },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 12, link: "/books/the-grace-of-kings#chapter-12" } },
     ],
     history: [
         {
             era: "The Dandelion Rebellion",
             summary: [
                 { type: 'text', content: "Dafiro was instrumental in guiding the young King Thufi and managing the fractious Tiro Alliance. He was often the voice of caution, reminding the other leaders of the true strength of the Xana Empire." },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 12, link: "/books/grace-of-kings#chapter-12" } },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 12, link: "/books/the-grace-of-kings#chapter-12" } },
                 { type: 'text', content: " After Mata Zyndu became Hegemon, Dafiro appeared to serve him, but was secretly working as an agent for Kuni Garu. He played a crucial role in the capture of Rui, personally killing Kindo Marana." },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 43, link: "/books/grace-of-kings#chapter-43" } },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 43, link: "/books/the-grace-of-kings#chapter-43" } },
             ]
         },
     ]
