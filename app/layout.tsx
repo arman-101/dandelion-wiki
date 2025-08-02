@@ -4,6 +4,7 @@ import './globals.css'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ScrollToTopButton from './components/ScrollToTopButton'
+import ThemeProviders from './components/ThemeProviders'
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
@@ -23,21 +24,23 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       
       <head>
         <link rel="icon" href="icon.png" sizes="any" />
       </head>
 
       <body className={`${inter.className} bg-gray-50 dark:bg-gray-950 text-gray-800 dark:text-gray-200`}>
-        <div className="min-h-screen flex flex-col">
-          <Navbar />
-          <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            {children}
-          </main>
-          <Footer />
-        </div>
-        <ScrollToTopButton />
+        <ThemeProviders>
+          <div className="min-h-screen flex flex-col">
+            <Navbar />
+            <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+              {children}
+            </main>
+            <Footer />
+          </div>
+          <ScrollToTopButton />
+        </ThemeProviders>
 
         <Analytics />
         <SpeedInsights />
