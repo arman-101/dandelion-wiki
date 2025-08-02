@@ -116,8 +116,8 @@ export default function PlacePageTemplate({ placeData }: PlacePageTemplateProps)
                             <Image 
                                 src={placeData.image}
                                 alt={`Image of ${placeData.name}`}
-                                layout="fill"
-                                objectFit="cover"
+                                fill
+                                style={{ objectFit: "cover" }}
                                 className="rounded-lg shadow-lg"
                             />
                         </div>

@@ -7,40 +7,106 @@ export interface WikiPage {
     type: 'Book' | 'Character' | 'Place' | 'Concept' | 'God' | 'Map' | 'Other';
 }
 
+// --- CHARACTERS ORGANIZED BY BOOK (NAVBAR VERSION - MAIN CHARACTERS ONLY) ---
+export const CHARACTERS_BY_BOOK_NAV = {
+    TGOK: [
+        { name: "Kuni Garu", description: "A charismatic bandit who rises to become the founder of the Dandelion Dynasty.", image: "/characters/kuni-garu.png", link: "/characters/kuni-garu" },
+        { name: "Mata Zyndu", description: "A peerless warrior and last son of a noble clan, driven by honor and vengeance.", image: "/characters/mata-zyndu.png", link: "/characters/mata-zyndu" },
+        { name: "Jia Matiza", description: "A brilliant scholar and Kuni's first wife, the political architect of the Dandelion Dynasty.", image: "/characters/jia-matiza.png", link: "/characters/jia-matiza" },
+        { name: "Luan Zya", description: "A master strategist and inventor from Haan who serves as Kuni Garu's chief advisor.", image: "/characters/luan-zya.png", link: "/characters/luan-zya" },
+        { name: "Emperor Mapidéré", description: "The ambitious and ruthless conqueror who first united Dara into an empire.", image: "/characters/emperor-mapidere.png", link: "/characters/emperor-mapidere" },
+        { name: "Princess Kikomi", description: "The beautiful and tragic princess of Amu whose actions have devastating consequences.", image: "/characters/princess-kikomi.png", link: "/characters/princess-kikomi" },
+    ],
+    TWOS: [
+        { name: "Kuni Garu", description: "A charismatic bandit who rises to become the founder of the Dandelion Dynasty.", image: "/characters/kuni-garu.png", link: "/characters/kuni-garu" },
+        { name: "Gin Mazoti", description: "A military prodigy who becomes the first female Marshal in the history of Dara.", image: "/characters/gin-mazoti.png", link: "/characters/gin-mazoti" },
+        { name: "Princess Théra", description: "The brilliant and adventurous eldest daughter of Emperor Ragin and Empress Jia.", image: "/characters/princess-thera.png", link: "/characters/princess-thera" },
+        { name: "Zomi Kidosu", description: "A radical thinker and student of Luan Zya who champions innovation and meritocracy.", image: "/characters/zomi-kidosu.png", link: "/characters/zomi-kidosu" },
+        { name: "Prince Timu", description: "The studious and serious Crown Prince of the Dandelion Dynasty.", image: "/characters/prince-timu.png", link: "/characters/prince-timu" },
+        { name: "Prince Phyro", description: "The charismatic and martially gifted son of Emperor Ragin and Consort Risana.", image: "/characters/prince-phyro.png", link: "/characters/prince-phyro" },
+        { name: "Princess Fara", description: "A Lyucu princess who becomes a key figure in the conflict between Dara and Ukyu.", image: "/characters/kuni-garu.png", link: "/characters/princess-fara" },
+        { name: "Vadyu Roatan", description: "A Lyucu warrior and leader who plays a crucial role in the invasion of Dara.", image: "/characters/kuni-garu.png", link: "/characters/vadyu-roatan" },
+    ],
+    TVT: [
+        { name: "Princess Théra", description: "The brilliant and adventurous eldest daughter of Emperor Ragin and Empress Jia.", image: "/characters/princess-thera.png", link: "/characters/princess-thera" },
+        { name: "Zomi Kidosu", description: "A radical thinker and student of Luan Zya who champions innovation and meritocracy.", image: "/characters/zomi-kidosu.png", link: "/characters/zomi-kidosu" },
+        { name: "Emperor Monad", description: "The son of Emperor Ragin who faces the challenges of ruling during the Lyucu occupation.", image: "/characters/kuni-garu.png", link: "/characters/emperor-monad" },
+        { name: "Princess Aya", description: "A skilled warrior and daughter of Gin Mazoti who fights against the Lyucu occupation.", image: "/characters/kuni-garu.png", link: "/characters/princess-aya" },
+        { name: "Takval", description: "A Lyucu leader who becomes a key figure in the occupation and governance of Dara.", image: "/characters/kuni-garu.png", link: "/characters/takval" },
+    ],
+    SB: [
+        { name: "Princess Théra", description: "The brilliant and adventurous eldest daughter of Emperor Ragin and Empress Jia.", image: "/characters/princess-thera.png", link: "/characters/princess-thera" },
+        { name: "Zomi Kidosu", description: "A radical thinker and student of Luan Zya who champions innovation and meritocracy.", image: "/characters/zomi-kidosu.png", link: "/characters/zomi-kidosu" },
+        { name: "Princess Aya", description: "A skilled warrior and daughter of Gin Mazoti who fights against the Lyucu occupation.", image: "/characters/kuni-garu.png", link: "/characters/princess-aya" },
+        { name: "Emperor Thak", description: "A ruler who emerges during the final conflicts of the Dandelion Dynasty.", image: "/characters/kuni-garu.png", link: "/characters/emperor-thak" },
+    ]
+};
+
+// --- CHARACTERS ORGANIZED BY BOOK (FULL LIST FOR REFERENCE) ---
+export const CHARACTERS_BY_BOOK = {
+    TGOK: [
+        { name: "Kuni Garu", description: "A charismatic bandit who rises to become the founder of the Dandelion Dynasty.", image: "/characters/kuni-garu.png", link: "/characters/kuni-garu" },
+        { name: "Mata Zyndu", description: "A peerless warrior and last son of a noble clan, driven by honor and vengeance.", image: "/characters/mata-zyndu.png", link: "/characters/mata-zyndu" },
+        { name: "Jia Matiza", description: "A brilliant scholar and Kuni's first wife, the political architect of the Dandelion Dynasty.", image: "/characters/jia-matiza.png", link: "/characters/jia-matiza" },
+        { name: "Luan Zya", description: "A master strategist and inventor from Haan who serves as Kuni Garu's chief advisor.", image: "/characters/luan-zya.png", link: "/characters/luan-zya" },
+        { name: "Emperor Mapidéré", description: "The ambitious and ruthless conqueror who first united Dara into an empire.", image: "/characters/emperor-mapidere.png", link: "/characters/emperor-mapidere" },
+        { name: "Emperor Erishi", description: "The weak and foolish second emperor of the Xana Dynasty.", image: "/characters/emperor-erishi.png", link: "/characters/emperor-erishi" },
+        { name: "Goran Pira", description: "The Imperial Chatelain who secretly orchestrated the downfall of the Xana Dynasty.", image: "/characters/goran-pira.png", link: "/characters/goran-pira" },
+        { name: "Lügo Crupo", description: "The ambitious and ruthless Prime Minister and Regent of the Xana Empire.", image: "/characters/lugo-crupo.png", link: "/characters/lugo-crupo" },
+        { name: "Kindo Marana", description: "The Minister of Finance turned surprisingly competent Commander-in-Chief.", image: "/characters/kindo-marana.png", link: "/characters/kindo-marana" },
+        { name: "Tanno Namen", description: "A legendary and honorable general of the Xana Empire.", image: "/characters/tanno-namen.png", link: "/characters/tanno-namen" },
+        { name: "Mün Çakri", description: "A former butcher and one of Kuni Garu's most loyal followers and bodyguards.", image: "/characters/mun-cakri.png", link: "/characters/mun-cakri" },
+        { name: "Rin Coda", description: "Kuni Garu's timid and scholarly childhood friend who becomes a trusted advisor.", image: "/characters/rin-coda.png", link: "/characters/rin-coda" },
+        { name: "King Thufi", description: "A humble shepherd who is elevated to King of Cocru during the rebellion.", image: "/characters/king-thufi.png", link: "/characters/king-thufi" },
+        { name: "Princess Kikomi", description: "The beautiful and tragic princess of Amu whose actions have devastating consequences.", image: "/characters/princess-kikomi.png", link: "/characters/princess-kikomi" },
+        { name: "Phin Zyndu", description: "The uncle of Mata Zyndu and the guardian of his family's legacy of vengeance.", image: "/characters/phin-zyndu.png", link: "/characters/phin-zyndu" },
+        { name: "Gozogi Çadé", description: "A former street tough and one of Kuni Garu's oldest and most loyal friends.", image: "/characters/gozogi-cade.png", link: "/characters/gozogi-cade" },
+        { name: "Than Carucono", description: "A cheerful former street performer who becomes a loyal general for Kuni Garu.", image: "/characters/than-carucono.png", link: "/characters/than-carucono" },
+        { name: "Dafiro Miro", description: "A wise advisor to King Thufi who becomes a key double agent for Kuni Garu.", image: "/characters/dafiro-miro.png", link: "/characters/dafiro-miro" },
+        { name: "King Jizu", description: "The fisherman-king of Rima whose martyrdom became a symbol for the rebellion.", image: "/characters/king-jizu.png", link: "/characters/king-jizu" },
+        { name: "King Mocri", description: "The proud and honorable king of Gan and a key member of the Tiro Alliance.", image: "/characters/king-mocri.png", link: "/characters/king-mocri" },
+        { name: "King Shilué", description: "The treacherous king of Faça whose attempt to play both sides led to his downfall.", image: "/characters/king-shilue.png", link: "/characters/king-shilue" },
+    ],
+    TWOS: [
+        { name: "Gin Mazoti", description: "A military prodigy who becomes the first female Marshal in the history of Dara.", image: "/characters/gin-mazoti.png", link: "/characters/gin-mazoti" },
+        { name: "Princess Théra", description: "The brilliant and adventurous eldest daughter of Emperor Ragin and Empress Jia.", image: "/characters/princess-thera.png", link: "/characters/princess-thera" },
+        { name: "Zomi Kidosu", description: "A radical thinker and student of Luan Zya who champions innovation and meritocracy.", image: "/characters/zomi-kidosu.png", link: "/characters/zomi-kidosu" },
+        { name: "Consort Risana", description: "An illusionist and Kuni Garu's second wife, a woman of great wisdom and subtle power.", image: "/characters/consort-risana.png", link: "/characters/consort-risana" },
+        { name: "Prince Timu", description: "The studious and serious Crown Prince of the Dandelion Dynasty.", image: "/characters/prince-timu.png", link: "/characters/prince-timu" },
+        { name: "Prince Phyro", description: "The charismatic and martially gifted son of Emperor Ragin and Consort Risana.", image: "/characters/prince-phyro.png", link: "/characters/prince-phyro" },
+        { name: "Soto Zyndu", description: "The politically brilliant aunt of Mata Zyndu and a secret advisor to Empress Jia.", image: "/characters/soto-zyndu.png", link: "/characters/soto-zyndu" },
+        { name: "Zato Ruthi", description: "The stern and traditional Imperial Tutor for the children of Emperor Ragin.", image: "/characters/zato-ruthi.png", link: "/characters/zato-ruthi" },
+        { name: "Doru Solofi", description: "A disgraced nobleman and a leader of the rebellious Hegemon Cults.", image: "/characters/doru-solofi.png", link: "/characters/doru-solofi" },
+        { name: "Noda Mi", description: "The cunning strategist and mastermind behind the Hegemon Cults.", image: "/characters/noda-mi.png", link: "/characters/noda-mi" },
+        { name: "Princess Fara", description: "A Lyucu princess who becomes a key figure in the conflict between Dara and Ukyu.", image: "/characters/kuni-garu.png", link: "/characters/princess-fara" },
+        { name: "Vadyu Roatan", description: "A Lyucu warrior and leader who plays a crucial role in the invasion of Dara.", image: "/characters/kuni-garu.png", link: "/characters/vadyu-roatan" },
+        { name: "Cudyü Roatan", description: "A Lyucu commander and brother to Vadyu, involved in the conquest of Dara.", image: "/characters/kuni-garu.png", link: "/characters/cudyu-roatan" },
+    ],
+    TVT: [
+        { name: "Emperor Monad", description: "The son of Emperor Ragin who faces the challenges of ruling during the Lyucu occupation.", image: "/characters/kuni-garu.png", link: "/characters/emperor-monad" },
+        { name: "Princess Aya", description: "A skilled warrior and daughter of Gin Mazoti who fights against the Lyucu occupation.", image: "/characters/kuni-garu.png", link: "/characters/princess-aya" },
+        { name: "Takval", description: "A Lyucu leader who becomes a key figure in the occupation and governance of Dara.", image: "/characters/kuni-garu.png", link: "/characters/takval" },
+        { name: "Tanvanaki", description: "A Lyucu princess and leader who plays a significant role in the occupation of Dara.", image: "/characters/kuni-garu.png", link: "/characters/tanvanaki" },
+        { name: "Suca Tiron", description: "A Lyucu warrior and leader involved in the governance of occupied Dara.", image: "/characters/kuni-garu.png", link: "/characters/suca-tiron" },
+        { name: "Ragi", description: "A Lyucu leader and advisor who becomes involved in the political affairs of occupied Dara.", image: "/characters/kuni-garu.png", link: "/characters/ragi" },
+    ],
+    SB: [
+        { name: "Emperor Thak", description: "A ruler who emerges during the final conflicts of the Dandelion Dynasty.", image: "/characters/kuni-garu.png", link: "/characters/emperor-thak" },
+        { name: "Princess Théra", description: "The brilliant and adventurous eldest daughter of Emperor Ragin and Empress Jia.", image: "/characters/princess-thera.png", link: "/characters/princess-thera" },
+        { name: "Zomi Kidosu", description: "A radical thinker and student of Luan Zya who champions innovation and meritocracy.", image: "/characters/zomi-kidosu.png", link: "/characters/zomi-kidosu" },
+        { name: "Princess Aya", description: "A skilled warrior and daughter of Gin Mazoti who fights against the Lyucu occupation.", image: "/characters/kuni-garu.png", link: "/characters/princess-aya" },
+    ]
+};
+
 // --- MASTER DATA FOR CHARACTER LISTING PAGE ---
 export const ALL_CHARACTERS_DATA = [
-    { name: "Kuni Garu", description: "A charismatic bandit who rises to become the founder of the Dandelion Dynasty.", image: "/characters/kuni-garu.png", link: "/characters/kuni-garu" },
-    { name: "Mata Zyndu", description: "A peerless warrior and last son of a noble clan, driven by honor and vengeance.", image: "/characters/mata-zyndu.png", link: "/characters/mata-zyndu" },
-    { name: "Jia Matiza", description: "A brilliant scholar and Kuni's first wife, the political architect of the Dandelion Dynasty.", image: "/characters/jia-matiza.png", link: "/characters/jia-matiza" },
-    { name: "Luan Zya", description: "A master strategist and inventor from Haan who serves as Kuni Garu's chief advisor.", image: "/characters/luan-zya.png", link: "/characters/luan-zya" },
-    { name: "Gin Mazoti", description: "A military prodigy who becomes the first female Marshal in the history of Dara.", image: "/characters/gin-mazoti.png", link: "/characters/gin-mazoti" },
-    { name: "Princess Théra", description: "The brilliant and adventurous eldest daughter of Emperor Ragin and Empress Jia.", image: "/characters/princess-thera.png", link: "/characters/princess-thera" },
-    { name: "Zomi Kidosu", description: "A radical thinker and student of Luan Zya who champions innovation and meritocracy.", image: "/characters/zomi-kidosu.png", link: "/characters/zomi-kidosu" },
-    { name: "Emperor Mapidéré", description: "The ambitious and ruthless conqueror who first united Dara into an empire.", image: "/characters/emperor-mapidere.png", link: "/characters/emperor-mapidere" },
-    { name: "Consort Risana", description: "An illusionist and Kuni Garu's second wife, a woman of great wisdom and subtle power.", image: "/characters/consort-risana.png", link: "/characters/consort-risana" },
-    { name: "Prince Timu", description: "The studious and serious Crown Prince of the Dandelion Dynasty.", image: "/characters/prince-timu.png", link: "/characters/prince-timu" },
-    { name: "Prince Phyro", description: "The charismatic and martially gifted son of Emperor Ragin and Consort Risana.", image: "/characters/prince-phyro.png", link: "/characters/prince-phyro" },
-    { name: "Soto Zyndu", description: "The politically brilliant aunt of Mata Zyndu and a secret advisor to Empress Jia.", image: "/characters/soto-zyndu.png", link: "/characters/soto-zyndu" },
-    { name: "Emperor Erishi", description: "The weak and foolish second emperor of the Xana Dynasty.", image: "/characters/emperor-erishi.png", link: "/characters/emperor-erishi" },
-    { name: "Goran Pira", description: "The Imperial Chatelain who secretly orchestrated the downfall of the Xana Dynasty.", image: "/characters/goran-pira.png", link: "/characters/goran-pira" },
-    { name: "Lügo Crupo", description: "The ambitious and ruthless Prime Minister and Regent of the Xana Empire.", image: "/characters/lugo-crupo.png", link: "/characters/lugo-crupo" },
-    { name: "Kindo Marana", description: "The Minister of Finance turned surprisingly competent Commander-in-Chief.", image: "/characters/kindo-marana.png", link: "/characters/kindo-marana" },
-    { name: "Tanno Namen", description: "A legendary and honorable general of the Xana Empire.", image: "/characters/tanno-namen.png", link: "/characters/tanno-namen" },
-    { name: "Mün Çakri", description: "A former butcher and one of Kuni Garu's most loyal followers and bodyguards.", image: "/characters/mun-cakri.png", link: "/characters/mun-cakri" },
-    { name: "Rin Coda", description: "Kuni Garu's timid and scholarly childhood friend who becomes a trusted advisor.", image: "/characters/rin-coda.png", link: "/characters/rin-coda" },
-    { name: "King Thufi", description: "A humble shepherd who is elevated to King of Cocru during the rebellion.", image: "/characters/king-thufi.png", link: "/characters/king-thufi" },
-    { name: "Princess Kikomi", description: "The beautiful and tragic princess of Amu whose actions have devastating consequences.", image: "/characters/princess-kikomi.png", link: "/characters/princess-kikomi" },
-    { name: "Phin Zyndu", description: "The uncle of Mata Zyndu and the guardian of his family's legacy of vengeance.", image: "/characters/phin-zyndu.png", link: "/characters/phin-zyndu" },
-    { name: "Zato Ruthi", description: "The stern and traditional Imperial Tutor for the children of Emperor Ragin.", image: "/characters/zato-ruthi.png", link: "/characters/zato-ruthi" },
-    { name: "Doru Solofi", description: "A disgraced nobleman and a leader of the rebellious Hegemon Cults.", image: "/characters/doru-solofi.png", link: "/characters/doru-solofi" },
-    { name: "Noda Mi", description: "The cunning strategist and mastermind behind the Hegemon Cults.", image: "/characters/noda-mi.png", link: "/characters/noda-mi" },
-    { name: "Gozogi Çadé", description: "A former street tough and one of Kuni Garu's oldest and most loyal friends.", image: "/characters/gozogi-cade.png", link: "/characters/gozogi-cade" },
-    { name: "Than Carucono", description: "A cheerful former street performer who becomes a loyal general for Kuni Garu.", image: "/characters/than-carucono.png", link: "/characters/than-carucono" },
-    { name: "Dafiro Miro", description: "A wise advisor to King Thufi who becomes a key double agent for Kuni Garu.", image: "/characters/dafiro-miro.png", link: "/characters/dafiro-miro" },
-    { name: "King Jizu", description: "The fisherman-king of Rima whose martyrdom became a symbol for the rebellion.", image: "/characters/king-jizu.png", link: "/characters/king-jizu" },
-    { name: "King Mocri", description: "The proud and honorable king of Gan and a key member of the Tiro Alliance.", image: "/characters/king-mocri.png", link: "/characters/king-mocri" },
-    { name: "King Shilué", description: "The treacherous king of Faça whose attempt to play both sides led to his downfall.", image: "/characters/king-shilue.png", link: "/characters/king-shilue" },
-];
+    ...CHARACTERS_BY_BOOK.TGOK,
+    ...CHARACTERS_BY_BOOK.TWOS,
+    ...CHARACTERS_BY_BOOK.TVT,
+    ...CHARACTERS_BY_BOOK.SB
+].filter((character, index, self) => 
+    index === self.findIndex(c => c.link === character.link)
+);
 
 // --- MASTER DATA FOR CONCEPTS LISTING PAGE ---
 export const ALL_CONCEPTS_DATA = [
@@ -57,6 +123,9 @@ export const ALL_CONCEPTS_DATA = [
     { name: "Cruben", description: "Massive, horned, sea-turtle-like beasts from Tan Adü, ridden as powerful naval mounts.", image: "/concepts/cruben.png", link: "/concepts/cruben" },
     { name: "Garinafin", description: "Enormous, whale-like war beasts domesticated by the Lyucu, capable of leveling cities.", image: "/concepts/garinafin.png", link: "/concepts/garinafin" },
     { name: "The Wall of Storms", description: "A massive, perpetual storm that separates the continents of Dara and Ukyu, a seemingly impassable barrier.", image: "/concepts/wall-of-storms.png", link: "/concepts/wall-of-storms" },
+    { name: "Lyucu Culture", description: "The traditions, beliefs, and way of life of the fierce northern people who invade Dara.", image: "/concepts/lyucu-culture.png", link: "/concepts/lyucu-culture" },
+    { name: "Resistance Movement", description: "The organized efforts of the Dara people to resist and overthrow Lyucu occupation.", image: "/concepts/resistance-movement.png", link: "/concepts/resistance-movement" },
+    { name: "Cultural Exchange", description: "The complex interactions and mutual influences between Dara and Lyucu cultures during occupation.", image: "/concepts/cultural-exchange.png", link: "/concepts/cultural-exchange" },
     { name: "Quotes", description: "A collection of memorable quotes from the series, offering wisdom, insight, and a glimpse into the hearts of the characters.", image: "/concepts/quotes.png", link: "/concepts/quotes" },
 ];
 
@@ -90,14 +159,23 @@ export const ALL_PLACES: WikiPage[] = [
     { title: 'Tan Adü', path: '/places/tan-adu', type: 'Place' },
     { title: 'Tunoa Islands', path: '/places/tunoa-islands', type: 'Place' },
     { title: 'Wolf\'s Paw', path: '/places/wolfs-paw', type: 'Place' },
+    { title: 'Arulugi', path: '/places/arulugi', type: 'Place' },
+    { title: 'Kriphi', path: '/places/kriphi', type: 'Place' },
+    { title: 'Ginpen', path: '/places/ginpen', type: 'Place' },
+    { title: 'Dimushi', path: '/places/dimushi', type: 'Place' },
+    { title: 'Zathin Gulf', path: '/places/zathin-gulf', type: 'Place' },
     // Major Landmarks
     { title: 'Pan', path: '/places/pan', type: 'Place' },
     { title: 'Zudi', path: '/places/zudi', type: 'Place' },
     { title: 'Mount Kiji', path: '/places/mount-kiji', type: 'Place' },
     { title: 'Kishi Channel', path: '/places/kishi-channel', type: 'Place' },
+    { title: 'Lake Dako', path: '/places/lake-dako', type: 'Place' },
+    { title: 'Liru River', path: '/places/liru-river', type: 'Place' },
+    { title: 'Thoco Pass', path: '/places/thoco-pass', type: 'Place' },
     // Lands Beyond Dara
     { title: 'Ukyu & Gondé', path: '/places/ukyu-gonde', type: 'Place' },
     { title: 'Eseeran Nomnny', path: '/places/eseeran-nomnny', type: 'Place' },
+    { title: 'Agon', path: '/places/agon', type: 'Place' },
 ];
 
 export const ALL_GODS: WikiPage[] = [

@@ -15,9 +15,8 @@ export default function ConceptsPage() {
                              <Image 
                                 src={concept.image}
                                 alt={`Image representing ${concept.name}`}
-                                layout="fill"
-                                objectFit="cover"
-                                objectPosition="center"
+                                fill
+                                style={{ objectFit: "cover", objectPosition: "center" }}
                             />
                         </div>
                         <div className="p-4">

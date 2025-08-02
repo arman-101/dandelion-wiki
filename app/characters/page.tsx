@@ -14,9 +14,8 @@ export default function CharactersPage() {
                              <Image 
                                 src={char.image}
                                 alt={`Portrait of ${char.name}`}
-                                layout="fill"
-                                objectFit="cover"
-                                objectPosition="top"
+                                fill
+                                style={{ objectFit: "cover", objectPosition: "top" }}
                             />
                         </div>
                         <div className="p-4">

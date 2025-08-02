@@ -39,7 +39,7 @@ export default function PlacesPage() {
                 {placesTiroStates.map((place) => (
                     <Link href={place.link} key={place.name} className="group bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-1 overflow-hidden">
                         <div className="relative w-full h-64">
-                             <Image src={place.image} alt={`Image of ${place.name}`} layout="fill" objectFit="cover" objectPosition="center" />
+                             <Image src={place.image} alt={`Image of ${place.name}`} fill style={{ objectFit: "cover", objectPosition: "center" }} />
                         </div>
                         <div className="p-4">
                             <h2 className="text-xl font-bold text-gray-900 dark:text-white mt-1 group-hover:[color:var(--color-accent-pink)] transition-colors">{place.name}</h2>
@@ -54,7 +54,7 @@ export default function PlacesPage() {
                 {placesIslands.map((place) => (
                     <Link href={place.link} key={place.name} className="group bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-1 overflow-hidden">
                         <div className="relative w-full h-64">
-                             <Image src={place.image} alt={`Image of ${place.name}`} layout="fill" objectFit="cover" objectPosition="center" />
+                             <Image src={place.image} alt={`Image of ${place.name}`} fill style={{ objectFit: "cover", objectPosition: "center" }} />
                         </div>
                         <div className="p-4">
                             <h2 className="text-xl font-bold text-gray-900 dark:text-white mt-1 group-hover:[color:var(--color-accent-pink)] transition-colors">{place.name}</h2>
@@ -69,7 +69,7 @@ export default function PlacesPage() {
                 {placesLandmarks.map((place) => (
                     <Link href={place.link} key={place.name} className="group bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-1 overflow-hidden">
                         <div className="relative w-full h-64">
-                             <Image src={place.image} alt={`Image of ${place.name}`} layout="fill" objectFit="cover" objectPosition="center" />
+                             <Image src={place.image} alt={`Image of ${place.name}`} fill style={{ objectFit: "cover", objectPosition: "center" }} />
                         </div>
                         <div className="p-4">
                             <h2 className="text-xl font-bold text-gray-900 dark:text-white mt-1 group-hover:[color:var(--color-accent-pink)] transition-colors">{place.name}</h2>
@@ -84,7 +84,7 @@ export default function PlacesPage() {
                 {placesBeyondDara.map((place) => (
                     <Link href={place.link} key={place.name} className="group bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-1 overflow-hidden">
                         <div className="relative w-full h-64">
-                             <Image src={place.image} alt={`Image of ${place.name}`} layout="fill" objectFit="cover" objectPosition="center" />
+                             <Image src={place.image} alt={`Image of ${place.name}`} fill style={{ objectFit: "cover", objectPosition: "center" }} />
                         </div>
                         <div className="p-4">
                             <h2 className="text-xl font-bold text-gray-900 dark:text-white mt-1 group-hover:[color:var(--color-accent-pink)] transition-colors">{place.name}</h2>

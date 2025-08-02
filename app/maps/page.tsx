@@ -17,8 +17,8 @@ export default function MapsPage() {
                         <Image
                             src="/maps/dara.jpeg"
                             alt="Map of the Islands of Dara"
-                            layout="fill"
-                            objectFit="contain"
+                            fill
+                            style={{ objectFit: "contain" }}
                         />
                     </div>
                     {/* Information and Links */}
@@ -50,8 +50,8 @@ export default function MapsPage() {
                         <Image
                             src="/maps/ukyu-gonde.jpg"
                             alt="Map of Ukyu and Gondé"
-                            layout="fill"
-                            objectFit="contain"
+                            fill
+                            style={{ objectFit: "contain" }}
                         />
                     </div>
                     {/* Information and Links */}

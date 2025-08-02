@@ -1,7 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { ALL_WIKI_PAGES } from './data/wiki-data';
 
 export default function Home() {
+  const pageCount = ALL_WIKI_PAGES.length;
+  
   return (
     <div className="max-w-4xl mx-auto">
       {/* Hero Section */}
@@ -12,6 +15,15 @@ export default function Home() {
         <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
           An encyclopedia for the epic silkpunk saga by Ken Liu
         </p>
+
+        {/* Page Count */}
+        <div className="mb-8">
+          <Link href="/other/all-pages" className="inline-block">
+            <p className="text-sm text-gray-500 dark:text-gray-400 border border-gray-300 dark:border-gray-700 rounded-full px-4 py-1 hover:border-teal-500 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
+              Currently tracking <span className="font-bold text-teal-600 dark:text-teal-400">{pageCount}</span> pages
+            </p>
+          </Link>
+        </div>
 
         <div className="flex flex-wrap justify-center gap-4">
           <Link href="/books" className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">

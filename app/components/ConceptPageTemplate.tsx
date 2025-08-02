@@ -101,8 +101,8 @@ export default function ConceptPageTemplate({ conceptData }: ConceptPageTemplate
                             <Image 
                                 src={conceptData.image}
                                 alt={`Image representing ${conceptData.name}`}
-                                layout="fill"
-                                objectFit="cover"
+                                fill
+                                style={{ objectFit: "cover" }}
                                 className="rounded-lg shadow-lg"
                             />
                         </div>

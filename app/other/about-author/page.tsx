@@ -32,8 +32,8 @@ export default function KenLiuPage() {
                              <Image 
                                 src="/ken.jpg" // Ensure you have this image in your /public folder
                                 alt="Photo of Ken Liu"
-                                layout="fill"
-                                objectFit="cover"
+                                fill
+                                style={{ objectFit: "cover" }}
                                 className="md:rounded-l-2xl"
                             />
                         </div>

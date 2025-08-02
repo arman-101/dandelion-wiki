@@ -104,8 +104,8 @@ export default function GodPageTemplate({ godData }: GodPageTemplateProps) {
                             <Image 
                                 src={godData.image}
                                 alt={`Portrait of ${godData.name}`}
-                                layout="fill"
-                                objectFit="cover"
+                                fill
+                                style={{ objectFit: "cover" }}
                                 className="rounded-lg shadow-lg"
                             />
                         </div>

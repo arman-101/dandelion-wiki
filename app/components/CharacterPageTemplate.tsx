@@ -112,8 +112,8 @@ export default function CharacterPageTemplate({ characterData }: CharacterPageTe
                             <Image 
                                 src={characterData.image}
                                 alt={`Portrait of ${characterData.name}`}
-                                layout="fill"
-                                objectFit="cover"
+                                fill
+                                style={{ objectFit: "cover" }}
                                 className="rounded-lg shadow-lg"
                             />
                         </div>

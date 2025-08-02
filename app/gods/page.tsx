@@ -63,9 +63,8 @@ export default function GodsPage() {
                              <Image 
                                 src={god.image}
                                 alt={`Portrait of ${god.name}`}
-                                layout="fill"
-                                objectFit="cover"
-                                objectPosition="top"
+                                fill
+                                style={{ objectFit: "cover", objectPosition: "top" }}
                             />
                         </div>
                         <div className="p-4">

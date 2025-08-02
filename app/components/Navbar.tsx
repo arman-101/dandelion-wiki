@@ -9,11 +9,11 @@ import { ThemeToggleButton } from './ThemeToggleButton';
 import {
     ALL_WIKI_PAGES,
     ALL_BOOKS,
-    MAIN_CHARACTERS,
     PLACES_TIRO_STATES,
     PLACES_BEYOND_DARA,
     MAIN_GODS,
-    OTHER_PAGES
+    OTHER_PAGES,
+    CHARACTERS_BY_BOOK_NAV
 } from '../data/wiki-data';
 
 // --- ICONS ---
@@ -157,13 +157,72 @@ export default function Navbar() {
                                     <span>Characters</span>
                                     <ChevronDownIcon />
                                 </button>
-                                <div className="absolute left-0 top-full mt-2 w-56 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                                <div className="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-56 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                                     <div className="py-1">
-                                        {MAIN_CHARACTERS.map(char => (
-                                            <DropdownItem key={char.path} href={char.path}>
-                                                {char.title}
-                                            </DropdownItem>
-                                        ))}
+                                        <Link href="/characters" className="flex justify-between items-center px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:[color:var(--color-accent-pink)] transition-colors">
+                                            All Characters
+                                        </Link>
+                                        <hr className="my-1 border-gray-200 dark:border-gray-600" />
+                                        <div className="relative group/submenu">
+                                            <div className="flex justify-between items-center px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:[color:var(--color-accent-pink)] transition-colors cursor-pointer">
+                                                <span>TGOK Characters</span>
+                                                <span className="text-xs">▶</span>
+                                            </div>
+                                            <div className="absolute left-full top-0 -mt-1 w-56 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover/submenu:opacity-100 group-hover/submenu:visible transition-all duration-200">
+                                                <div className="py-1">
+                                                    {CHARACTERS_BY_BOOK_NAV.TGOK.map((char) => (
+                                                        <DropdownItem key={`TGOK-${char.link}`} href={char.link}>
+                                                            {char.name}
+                                                        </DropdownItem>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="relative group/submenu">
+                                            <div className="flex justify-between items-center px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:[color:var(--color-accent-pink)] transition-colors cursor-pointer">
+                                                <span>TWOS Characters</span>
+                                                <span className="text-xs">▶</span>
+                                            </div>
+                                            <div className="absolute left-full top-0 -mt-1 w-56 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover/submenu:opacity-100 group-hover/submenu:visible transition-all duration-200">
+                                                <div className="py-1">
+                                                    {CHARACTERS_BY_BOOK_NAV.TWOS.map((char) => (
+                                                        <DropdownItem key={`TWOS-${char.link}`} href={char.link}>
+                                                            {char.name}
+                                                        </DropdownItem>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="relative group/submenu">
+                                            <div className="flex justify-between items-center px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:[color:var(--color-accent-pink)] transition-colors cursor-pointer">
+                                                <span>TVT Characters</span>
+                                                <span className="text-xs">▶</span>
+                                            </div>
+                                            <div className="absolute left-full top-0 -mt-1 w-56 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover/submenu:opacity-100 group-hover/submenu:visible transition-all duration-200">
+                                                <div className="py-1">
+                                                    {CHARACTERS_BY_BOOK_NAV.TVT.map((char) => (
+                                                        <DropdownItem key={`TVT-${char.link}`} href={char.link}>
+                                                            {char.name}
+                                                        </DropdownItem>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="relative group/submenu">
+                                            <div className="flex justify-between items-center px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:[color:var(--color-accent-pink)] transition-colors cursor-pointer">
+                                                <span>SB Characters</span>
+                                                <span className="text-xs">▶</span>
+                                            </div>
+                                            <div className="absolute left-full top-0 -mt-1 w-56 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover/submenu:opacity-100 group-hover/submenu:visible transition-all duration-200">
+                                                <div className="py-1">
+                                                    {CHARACTERS_BY_BOOK_NAV.SB.map((char) => (
+                                                        <DropdownItem key={`SB-${char.link}`} href={char.link}>
+                                                            {char.name}
+                                                        </DropdownItem>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
