@@ -19,7 +19,7 @@ export default function Home() {
         {/* Page Count */}
         <div className="mb-8">
           <Link href="/other/all-pages" className="inline-block">
-            <p className="text-sm text-gray-500 dark:text-gray-400 border border-gray-300 dark:border-gray-700 rounded-full px-4 py-1 hover:border-teal-500 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
+            <p className="text-sm text-gray-500 dark:text-gray-400 border border-gray-300 dark:border-gray-700 rounded-full px-4 py-1 hover:border-teal-500 hover:text-teal-600 dark:hover:text-teal-400 dark:hover:border-teal-500 transition-colors">
               Currently tracking <span className="font-bold text-teal-600 dark:text-teal-400">{pageCount}</span> pages
             </p>
           </Link>
