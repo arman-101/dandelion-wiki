@@ -462,7 +462,7 @@ const chapters = [
         quote: "The dandelion is a common flower, a flower of the people.",
         speaker: "Kuni Garu",
         summary: "With Mata Zyndu dead, the war is finally over. In the heavens, the gods reconcile, accepting the new order of the world. Kuni Garu prepares for his coronation as Emperor Ragin of the new Dasu Dynasty. He travels through the islands, distributing titles and rewards, naming Gin Mazoti Queen of Géjira and dealing with the political aftermath of the long war.\n\nOn the eve of the formal ceremony, he holds one last, informal banquet with his oldest friends in his hometown of Zudi. He reflects on his long journey from bandit to emperor and, in a final song, celebrates the dandelion, affirming his identity as a ruler of the common people. The book ends with Kuni poised to begin his reign, having united the Islands of Dara under a single banner once more.",
-        links: [{ name: "Kuni Garu", path: "/characters/kuni-garu" }, { name: "Gin Mazoti", path: "/characters/gin-mazoti" }, { name: "Luan Zya", path: "/characters/luan-zya" }, { name: "Zudi", path: "/places/zudi" }, { name: "The Gods of Dara", path: "/gods" }]
+        links: [{ name: "Kuni Garu", path: "/characters/kuni-garu" }, { name: "Gin Mazoti", path: "/characters/gin-mazoti" }, { name: "Luan Zya", path: "/characters/luan-zya" }, { name: "Zudi", path: "/places/zudi" }, { name: "Dara", path: "/places/dara" }, { name: "The Gods of Dara", path: "/gods" }]
     }
 ];
 

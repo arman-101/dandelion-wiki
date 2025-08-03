@@ -1,8 +1,17 @@
-import React from 'react';
-import CharacterPageTemplate from '../../components/CharacterPageTemplate';
-import { Character } from '../../data/wiki-data';
+'use client';
 
-const characterData: Character = {
+import CharacterPageTemplate from '../../components/CharacterPageTemplate';
+import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
+import { usePathname } from 'next/navigation';
+import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { getSurroundingPages } from '@/app/utils/navigationUtils';
+
+export default function EmperorThakPage() {
+  const pathname = usePathname();
+  const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CHARACTERS);
+  const returnLink = { title: 'Return to All Characters', path: '/characters' };
+
+  const characterData: Character = {
     name: "Emperor Thak",
     image: "/characters/emperor-thak.png",
     introduction: "A ruler who emerges during the final conflicts of the Dandelion Dynasty, representing the culmination of the series' complex political and cultural dynamics.",
@@ -44,8 +53,12 @@ const characterData: Character = {
             ]
         }
     ]
-};
+  };
 
-export default function EmperorThakPage() {
-    return <CharacterPageTemplate characterData={characterData} />;
+  return (
+    <>
+      <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+      <CharacterPageTemplate characterData={characterData} />
+    </>
+  );
 } 

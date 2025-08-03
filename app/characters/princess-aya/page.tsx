@@ -1,8 +1,17 @@
-import React from 'react';
-import CharacterPageTemplate from '../../components/CharacterPageTemplate';
-import { Character } from '../../data/wiki-data';
+'use client';
 
-const characterData: Character = {
+import CharacterPageTemplate from '../../components/CharacterPageTemplate';
+import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
+import { usePathname } from 'next/navigation';
+import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { getSurroundingPages } from '@/app/utils/navigationUtils';
+
+export default function PrincessAyaPage() {
+  const pathname = usePathname();
+  const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CHARACTERS);
+  const returnLink = { title: 'Return to All Characters', path: '/characters' };
+
+  const characterData: Character = {
     name: "Princess Aya",
     image: "/characters/princess-aya.png",
     introduction: "A skilled warrior and daughter of Gin Mazoti who fights against the Lyucu occupation, embodying the spirit of resistance and the legacy of her mother's military genius.",
@@ -45,8 +54,12 @@ const characterData: Character = {
             ]
         }
     ]
-};
+  };
 
-export default function PrincessAyaPage() {
-    return <CharacterPageTemplate characterData={characterData} />;
+  return (
+    <>
+      <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+      <CharacterPageTemplate characterData={characterData} />
+    </>
+  );
 } 

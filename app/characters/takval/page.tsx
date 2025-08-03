@@ -1,8 +1,17 @@
-import React from 'react';
-import CharacterPageTemplate from '../../components/CharacterPageTemplate';
-import { Character } from '../../data/wiki-data';
+'use client';
 
-const characterData: Character = {
+import CharacterPageTemplate from '../../components/CharacterPageTemplate';
+import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
+import { usePathname } from 'next/navigation';
+import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { getSurroundingPages } from '@/app/utils/navigationUtils';
+
+export default function TakvalPage() {
+  const pathname = usePathname();
+  const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CHARACTERS);
+  const returnLink = { title: 'Return to All Characters', path: '/characters' };
+
+  const characterData: Character = {
     name: "Takval",
     image: "/characters/takval.png",
     introduction: "A Lyucu leader who becomes a key figure in the occupation and governance of Dara, representing the complex challenges of ruling a conquered people.",
@@ -44,8 +53,12 @@ const characterData: Character = {
             ]
         }
     ]
-};
+  };
 
-export default function TakvalPage() {
-    return <CharacterPageTemplate characterData={characterData} />;
+  return (
+    <>
+      <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+      <CharacterPageTemplate characterData={characterData} />
+    </>
+  );
 } 

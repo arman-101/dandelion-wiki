@@ -1,6 +1,13 @@
-import ConceptPageTemplate from '../../components/ConceptPageTemplate';
+'use client';
 
-const culturalExchangeData = {
+import ConceptPageTemplate from '../../components/ConceptPageTemplate';
+import { Concept, ALL_CONCEPTS } from '../../data/wiki-data';
+import { usePathname } from 'next/navigation';
+import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { getSurroundingPages } from '@/app/utils/navigationUtils';
+
+// --- DATA FOR CULTURAL EXCHANGE ---
+const culturalExchangeData: Concept = {
     name: "Cultural Exchange",
     image: "/concepts/kuni-garu.png", // Placeholder image
     introduction: "The complex interactions and mutual influences between Dara and Lyucu cultures during occupation.",
@@ -24,5 +31,14 @@ const culturalExchangeData = {
 };
 
 export default function CulturalExchangePage() {
-    return <ConceptPageTemplate conceptData={culturalExchangeData} />;
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CONCEPTS);
+    const returnLink = { title: 'Return to All Concepts', path: '/concepts' };
+
+    return (
+        <>
+            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <ConceptPageTemplate conceptData={culturalExchangeData} />
+        </>
+    );
 } 

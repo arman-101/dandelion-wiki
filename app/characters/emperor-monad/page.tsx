@@ -1,8 +1,17 @@
-import React from 'react';
-import CharacterPageTemplate from '../../components/CharacterPageTemplate';
-import { Character } from '../../data/wiki-data';
+'use client';
 
-const characterData: Character = {
+import CharacterPageTemplate from '../../components/CharacterPageTemplate';
+import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
+import { usePathname } from 'next/navigation';
+import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { getSurroundingPages } from '@/app/utils/navigationUtils';
+
+export default function EmperorMonadPage() {
+  const pathname = usePathname();
+  const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CHARACTERS);
+  const returnLink = { title: 'Return to All Characters', path: '/characters' };
+
+  const characterData: Character = {
     name: "Emperor Monad",
     image: "/characters/emperor-monad.png",
     introduction: "The son of Emperor Ragin who faces the immense challenges of ruling during the Lyucu occupation, representing the struggle to maintain Dara's identity under foreign rule.",
@@ -45,8 +54,12 @@ const characterData: Character = {
             ]
         }
     ]
-};
+  };
 
-export default function EmperorMonadPage() {
-    return <CharacterPageTemplate characterData={characterData} />;
+  return (
+    <>
+      <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+      <CharacterPageTemplate characterData={characterData} />
+    </>
+  );
 } 

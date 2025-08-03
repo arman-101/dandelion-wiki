@@ -1,6 +1,17 @@
-import CharacterPageTemplate from '../../components/CharacterPageTemplate';
+'use client';
 
-const ragiData = {
+import CharacterPageTemplate from '../../components/CharacterPageTemplate';
+import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
+import { usePathname } from 'next/navigation';
+import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { getSurroundingPages } from '@/app/utils/navigationUtils';
+
+export default function RagiPage() {
+  const pathname = usePathname();
+  const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CHARACTERS);
+  const returnLink = { title: 'Return to All Characters', path: '/characters' };
+
+  const ragiData: Character = {
     name: "Ragi",
     image: "/characters/kuni-garu.png", // Placeholder image
     introduction: "A Lyucu leader and advisor who becomes involved in the political affairs of occupied Dara.",
@@ -22,8 +33,12 @@ const ragiData = {
             ]
         }
     ]
-};
+  };
 
-export default function RagiPage() {
-    return <CharacterPageTemplate characterData={ragiData} />;
+  return (
+    <>
+      <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+      <CharacterPageTemplate characterData={ragiData} />
+    </>
+  );
 } 
