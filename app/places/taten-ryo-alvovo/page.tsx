@@ -13,7 +13,7 @@ export default function TatenRyoAlvovoPage() {
 
   const placeData: Place = {
     name: "Taten-ryo-alvovo",
-    image: "/places/pan.png", // Placeholder image
+    image: "/places/taten-ryo-alvovo.png", // Placeholder image
     introduction: "A region that becomes significant during the later political developments, Taten-ryo-alvovo serves as a strategic location in the complex landscape of the later books.",
     infoBox: {
       "Type": "Region",

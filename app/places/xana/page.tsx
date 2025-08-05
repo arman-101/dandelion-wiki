@@ -6,48 +6,44 @@ import { usePathname } from 'next/navigation';
 import TopPageNavigation from '@/app/components/TopPageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
-// --- DATA FOR XANA (WITH FULL REFERENCES) ---
-const placeData: Place = {
+// --- DATA FOR XANA ---
+const godData: Place = {
     name: "Xana",
     image: "/places/xana.png",
-    introduction: "Xana is a powerful Tiro state in the northwest of Dara, composed of the twin islands of Rui and Dasu. Under the leadership of Emperor Mapidéré, Xana used its superior airship technology to conquer the other six states, founding the first unified Empire of Dara. Its patron god is Kiji, the Lord of the Air.",
+    introduction: "Xana is one of the Seven States of Dara, a powerful island nation that, under the leadership of King Réon (later Emperor Mapidéré), conquered the other six states to forge the first unified Xana Empire. It is the original seat of imperial power and the homeland of the story's first antagonists.",
     infoBox: {
-        Region: "Northwestern Dara",
-        Capital: "Kriphi (former)",
+        type: "Island Nation / Empire",
+        continent: { text: "Dara", link: "/places/dara" },
+        capital: { text: "Pan", link: "/places/pan" },
+        Ruler: "House of Xana (Emperor Mapidéré, Emperor Erishi)",
         PatronGod: { text: "Kiji", link: "/gods/kiji" },
-        NotableCharacters: [
-            { text: "Emperor Mapidéré", link: "/characters/emperor-mapidere" },
-            { text: "Goran Pira", link: "/characters/goran-pira" },
-            { text: "Lügo Crupo", link: "/characters/lugo-crupo" },
-        ],
+        KeyTechnology: [
+            { text: "Airships", link: "/concepts/airships" },
+            { text: "Lift Gas", link: "/concepts/lift-gas" }
+        ]
     },
     geography: [
-        { type: 'text', content: "Xana is an archipelago state, primarily consisting of the islands Rui and Dasu." },
-        { type: 'ref', data: { book: "The Grace of Kings", chapter: 20, link: "/books/the-grace-of-kings#chapter-20" } },
-        { type: 'text', content: " The island of Rui is dominated by the massive, snow-peaked volcano, Mount Kiji. A mystical lake within its crater, Lake Dako, is the sole source of the invaluable lift gas that powers the empire's airships, making it the strategic heart of Xana's military power." },
+        { type: 'text', content: "Xana is an island nation, separate from the main continent where the six Tiro states are located. Its most important geographical feature is Mount Kiji, the sole source of the mystical lift gas that powers its technologically superior airships, giving it a decisive military advantage." },
         { type: 'ref', data: { book: "The Grace of Kings", chapter: 20, link: "/books/the-grace-of-kings#chapter-20" } },
     ],
     culture: [
-        { type: 'text', content: "Xana's culture is highly organized, disciplined, and militaristic, which enabled its successful conquest of Dara. They possessed superior technology, particularly in aeronautics, giving them a decisive advantage in the Unification Wars." },
-        { type: 'ref', data: { book: "The Grace of Kings", chapter: 20, link: "/books/the-grace-of-kings#chapter-20" } },
-        { type: 'text', content: " As rulers of the empire, they established a rigid and often corrupt bureaucracy, imposing heavy taxes and forced labor (corvée) upon the conquered peoples, which eventually led to widespread rebellion." },
-        { type: 'ref', data: { book: "The Grace of Kings", chapter: 6, link: "/books/the-grace-of-kings#chapter-6" } },
+        { type: 'text', content: "Xanan culture is imperialistic, technologically advanced, and militaristic. They view the conquered Tiro states as backwards and in need of their unifying rule. Their power is symbolized by their vast airship fleet and grand imperial processions. Their patron god is Kiji, the Lord of the Air, whose dominion over the skies is reflected in Xana's aerial might." },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 1, link: "/books/the-grace-of-kings#chapter-1" } },
     ],
     history: [
         {
-            event: "The Unification Wars",
+            event: "The Unification of Dara",
             summary: [
-                { type: 'text', content: "Led by King Réon, who would later style himself Emperor Mapidéré, Xana launched a massive campaign of conquest. Using its technologically advanced fleet of airships powered by the gas from Mount Kiji, Xana systematically defeated the other six Tiro states, unifying the Islands of Dara into an empire for the first time in history." },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 4, link: "/books/the-grace-of-kings#chapter-4" } },
+                { type: 'text', content: "Led by the ambitious King Réon, Xana used its technological superiority, particularly its airships, to conquer the six Tiro states, unifying the Islands of Dara for the first time. Réon declared himself Emperor Mapidéré, establishing the Xana Dynasty with its capital at Pan." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 2, link: "/books/the-grace-of-kings#chapter-2" } },
             ]
         },
         {
             event: "The Dandelion Rebellion",
             summary: [
-                { type: 'text', content: "After the death of Mapidéré, the empire's brutal policies led to a massive rebellion across the conquered states. The Xana homeland became the last bastion of Imperial power, from which commanders like Kindo Marana and Tanno Namen attempted to quell the uprising." },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 13, link: "/books/the-grace-of-kings#chapter-13" } },
-                { type: 'text', content: " Ultimately, Kuni Garu's forces, under the command of Marshal Gin Mazoti, used Emperor Mapidéré's own abandoned Grand Tunnels to launch a surprise attack on Rui, conquering the Xana homeland and effectively ending the empire." },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 43, link: "/books/the-grace-of-kings#chapter-43" } },
+                { type: 'text', content: "After years of tyrannical rule, the oppressed Tiro states rose up in rebellion. The Xana Empire, weakened by internal corruption, political intrigue, and a foolish boy-emperor, was unable to effectively counter the combined forces of the rebels. The rebellion culminated in the capture of Pan by Kuni Garu and the death of Emperor Erishi, bringing the short-lived Xana Dynasty to an end." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 6, link: "/books/the-grace-of-kings#chapter-6" } },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 33, link: "/books/the-grace-of-kings#chapter-33" } },
             ]
         },
     ]
@@ -55,13 +51,13 @@ const placeData: Place = {
 
 export default function XanaPage() {
     const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_PLACES);
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_PLACES]);
     const returnLink = { title: 'Return to All Places', path: '/places' };
 
     return (
         <>
             <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <PlacePageTemplate placeData={placeData} />
+            <PlacePageTemplate placeData={godData} />
         </>
     );
 }

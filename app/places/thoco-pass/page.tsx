@@ -6,52 +6,44 @@ import { usePathname } from 'next/navigation';
 import TopPageNavigation from '@/app/components/TopPageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
-export default function ThocoPassPage() {
-  const pathname = usePathname();
-  const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_PLACES);
-  const returnLink = { title: 'Return to All Places', path: '/places' };
-
-  const placeData: Place = {
+// --- DATA FOR THOCO PASS ---
+const placeData: Place = {
     name: "Thoco Pass",
-    image: "/places/rima.png", // Placeholder image
-    introduction: "A strategic mountain pass that connects different regions of Dara, Thoco Pass has been a crucial route for trade, military campaigns, and cultural exchange throughout the empire's history.",
+    image: "/places/thoco-pass.png",
+    introduction: "Thoco Pass is a strategically vital mountain pass that was the site of Marshal Dazu Zyndu's greatest victories and his ultimate, tragic defeat. It stands as a symbol of both Zyndu brilliance and the betrayal that led to their downfall.",
     infoBox: {
-      "Type": "Mountain Pass",
-      "Region": "Mountainous Regions",
-      "Significance": "Strategic Route",
-      "First appearance": "The Grace of Kings",
-      "Related places": [
-        { text: "Rima", link: "/places/rima" },
-        { text: "Faça", link: "/places/faca" },
-        { text: "Cocru", link: "/places/cocru" }
-      ]
+        type: "Mountain Pass",
+        location: { text: "Cocru", link: "/places/cocru" },
+        continent: { text: "Dara", link: "/places/dara" },
+        KeyEvents: "Betrayal of Marshal Dazu Zyndu"
     },
     geography: [
-      { type: "text" as const, content: "Thoco Pass is located in the mountainous regions of Dara, providing a vital connection between different valleys and regions. The pass is characterized by its challenging terrain and strategic position, making it a natural chokepoint for any military or trade movement." }
+        { type: 'text', content: "A narrow and defensible mountain pass, Thoco Pass is a natural chokepoint, making it the perfect location for a smaller army to hold off a much larger invading force. It was the cornerstone of Marshal Zyndu's defensive strategy." },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 2, link: "/books/the-grace-of-kings#chapter-2" } },
     ],
     culture: [
-      { type: "text" as const, content: "The communities that have developed around Thoco Pass have unique cultures shaped by their position as gatekeepers of this important route. These communities have traditions of hospitality and trade, but also of defense and vigilance, as control of the pass has often meant control of regional commerce." }
+        { type: 'text', content: "For the people of Cocru, and especially for Mata Zyndu, Thoco Pass represents a place of immense historical sorrow and anger. It is the location where their greatest hero was betrayed, not by the enemy, but by his own king, a memory that fuels the Zyndu quest for vengeance." },
     ],
     history: [
-      {
-        event: "Early Trade Routes",
-        summary: [
-          { type: "text" as const, content: "Thoco Pass was originally developed as a trade route, allowing merchants and travelers to move between different regions of Dara. The pass became a vital artery for the exchange of goods, ideas, and culture between the various Tiro States." }
-        ]
-      },
-      {
-        event: "Military Significance",
-        summary: [
-          { type: "text" as const, content: "Throughout Dara's history, control of Thoco Pass has been strategically crucial for military campaigns. Armies that could secure the pass could control the flow of troops and supplies between regions, making it a key objective in many conflicts." }
-        ]
-      }
+        {
+            event: "The Xana Conquest",
+            summary: [
+                { type: 'text', content: "During the Xana invasion of Cocru, Marshal Dazu Zyndu, known as the 'Bearded Tortoise,' used the terrain of Thoco Pass to brilliantly hold off the superior Xana armies. However, his own king, suspicious of the Marshal's growing fame and power, ordered him to abandon his defensive position and meet the Xana in open battle. This foolish command led directly to the Marshal's defeat and capture. The subsequent massacre of his surrendered army by the Xana became the foundational tragedy of the Zyndu clan and a catalyst for Mata Zyndu's lifelong quest for revenge." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 2, link: "/books/the-grace-of-kings#chapter-2" } },
+            ]
+        },
     ]
-  };
+};
 
-  return (
-    <>
-      <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-      <PlacePageTemplate placeData={placeData} />
-    </>
-  );
-} 
+export default function ThocoPassPage() {
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_PLACES]);
+    const returnLink = { title: 'Return to All Places', path: '/places' };
+
+    return (
+        <>
+            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PlacePageTemplate placeData={placeData} />
+        </>
+    );
+}

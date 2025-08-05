@@ -9,7 +9,7 @@ import { getSurroundingPages } from '@/app/utils/navigationUtils';
 // --- DATA FOR CULTURAL EXCHANGE ---
 const culturalExchangeData: Concept = {
     name: "Cultural Exchange",
-    image: "/concepts/kuni-garu.png", // Placeholder image
+    image: "/concepts/cultural-exchange.png", // Placeholder image
     introduction: "The complex interactions and mutual influences between Dara and Lyucu cultures during occupation.",
     infoBox: {
         "Type": "Social Phenomenon",

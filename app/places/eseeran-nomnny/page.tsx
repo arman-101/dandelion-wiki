@@ -10,23 +10,25 @@ import { getSurroundingPages } from '@/app/utils/navigationUtils';
 const placeData: Place = {
     name: "Eseeran Nomnny",
     image: "/places/eseeran-nomnny.png",
-    introduction: "The Eseeran Nomnny is a large, mysterious southern continent that appears on world maps. It is separated from the Lyucu Lands by the Chois Sea, but its people and history remain largely unknown to the inhabitants of Dara.",
+    introduction: "Eseeran Nomnny is a mysterious southern continent, far from the conflicts of Dara and Ukyu-Gondé. It is renowned for its remote warrior monasteries and is the home of the legendary Sword-Saint.",
     infoBox: {
-        Region: "Southeastern Continent",
-        Status: "Largely unexplored by the people of Dara",
-        NotableFeatures: "Separated from Lyucu Lands by the Chois Sea",
+        type: "Continent",
+        KeyFeatures: "Warrior Monasteries",
+        KeyInhabitants: { text: "The Sword-Saint", link: "/characters/the-sword-saint" }
     },
     geography: [
-        { type: 'text', content: "Located south of Ukyu & Gondé, the Eseeran Nomnny is a massive landmass. Its specific geography, climate, and features are not detailed in the chronicles of the Dandelion Dynasty, making it a land of mystery." },
+        { type: 'text', content: "Little is known about the geography of Eseeran Nomnny beyond the fact that it contains remote, isolated mountains where its warrior monks train." },
     ],
     culture: [
-        { type: 'text', content: "The culture of the Eseeran Nomnny is unknown, as the narrative of the Dandelion Dynasty does not feature any interaction with its inhabitants." },
+        { type: 'text', content: "The continent is defined by a deep and ancient martial philosophy. The warrior monasteries teach a form of combat that is as much a spiritual and mental discipline as it is a physical one. They value humility, dedication, and the stripping away of ego to achieve true mastery. Their training is legendarily brutal and effective." },
+        { type: 'ref', data: { book: "Speaking Bones", chapter: 6, link: "/books/speaking-bones#chapter-6" } },
     ],
     history: [
         {
-            event: "Role in the Saga",
+            event: "The Training of a Marshal",
             summary: [
-                { type: 'text', content: "The Eseeran Nomnny serves primarily as a world-building element, illustrating the vastness of the world beyond the immediate conflict between Dara and the Lyucu Empire." },
+                { type: 'text', content: "Eseeran Nomnny enters the story when Aya Mazoti, humbled after her disastrous first military command, seeks out the legendary Sword-Saint to retrain her. She travels to the remote monasteries and endures the grueling regimen. This intense training transforms her from a princess playing at war into a hardened, wise, and truly formidable commander, capable of leading Dara's armies to victory." },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 6, link: "/books/speaking-bones#chapter-6" } },
             ]
         },
     ]
@@ -34,16 +36,12 @@ const placeData: Place = {
 
 export default function EseeranNomnnyPage() {
     const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_PLACES);
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_PLACES]);
     const returnLink = { title: 'Return to All Places', path: '/places' };
 
     return (
         <>
-            <TopPageNavigation
-                prevPage={prevPage}
-                nextPage={nextPage}
-                returnLink={returnLink}
-            />
+            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
             <PlacePageTemplate placeData={placeData} />
         </>
     );

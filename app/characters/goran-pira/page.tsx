@@ -9,33 +9,33 @@ import { getSurroundingPages } from '@/app/utils/navigationUtils';
 const characterData: Character = {
     name: "Goran Pira",
     image: "/characters/goran-pira.png",
-    introduction: "Goran Pira was the Imperial Chatelain and a childhood friend of Emperor Mapidéré. A master of court intrigue, he harbored a secret, decades-long grudge against the emperor and secretly orchestrated the downfall of the Xana Dynasty from the highest position of power.",
+    introduction: "Goran Pira was the Imperial Chatelain and lifelong friend to Emperor Mapidéré. Publicly the most loyal servant of the Xana Dynasty, he was secretly a master manipulator who orchestrated its downfall from within as an act of ultimate, patient vengeance.",
     infoBox: {
-        aliases: "The Chatelain",
-        occupation: "Imperial Chatelain, Prime Minister",
+        aliases: "The Chatelain, Prime Minister",
+        occupation: "Imperial Chatelain, Prime Minister of Dara",
+        placeOfBirth: { text: "Xana", link: "/places/xana" },
         status: "Deceased",
         gender: "Male",
-        affiliation: "Empire of Dara",
+        affiliation: "House of Xana, Xana Empire",
         nationality: { text: "Xana", link: "/places/xana" },
         firstAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" },
         lastAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" }
     },
     appearanceAndPersonality: [
-        { type: 'text', content: "Pira is a quiet, observant, and patient man. He appears to be a loyal and unassuming servant of the throne, but this persona masks a brilliant, calculating mind and a heart filled with a cold, burning desire for revenge. He is a master manipulator, able to play the long game and turn his enemies against each other without ever revealing his own hand." },
+        { type: 'text', content: "Pira is portrayed as a calm, observant, and unassuming figure, the perfect loyal servant. This placid exterior concealed a brilliant, cold, and calculating mind consumed by a singular, decades-long quest for revenge." },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 5, link: "/books/the-grace-of-kings#chapter-5" } },
+        { type: 'text', content: "His defining characteristic is his immense patience and his ability to manipulate people and events subtly over long periods. He is a master of the long game, willing to endure years of servitude to achieve his final goal." },
         { type: 'ref', data: { book: "The Grace of Kings", chapter: 11, link: "/books/the-grace-of-kings#chapter-11" } },
     ],
     history: [
         {
-            era: "The Secret Grudge",
+            era: "The Grace of Kings",
             summary: [
-                { type: 'text', content: "As a young man, Goran Pira fell in love with a serving woman named Lady Maing. When Emperor Mapidéré took her as a concubine and later had her and Pira's secret son killed, Pira's love turned to a deep and abiding hatred. For the rest of his life, he plotted the complete and utter destruction of the House of Xana as vengeance." },
+                { type: 'text', content: "Pira's loyalty to Emperor Mapidéré was shattered years before the story begins when the Emperor claimed Pira's lover, Lady Maing, for himself. After Maing gave birth to Pira's son, the ruthless emperor had both mother and child murdered in front of him. This transformed Pira's devotion into an unquenchable thirst for vengeance." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 11, link: "/books/the-grace-of-kings#chapter-11" } },
-            ]
-        },
-        {
-            era: "Orchestrating the Collapse",
-            summary: [
-                { type: 'text', content: "Pira was a key player in the conspiracy to enthrone the weak Prince Loshi. Later, he skillfully manipulated the young Emperor Erishi into believing that Regent Lügo Crupo was a traitor. After orchestrating Crupo's execution, Pira became Prime Minister, gaining total control of the Imperial court and using his power to ensure the rebellion succeeded and the empire he served was destroyed." },
+                { type: 'text', content: "He conspired with Lügo Crupo to place the incompetent Prince Loshi on the throne, knowing it would destabilize the empire." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 5, link: "/books/the-grace-of-kings#chapter-5" } },
+                { type: 'text', content: "Later, seeing Crupo's power growing too strong, Pira subtly manipulated Emperor Erishi, framed Crupo for treason, and had him executed. Pira was then named Prime Minister, gaining full control of the empire and taking the final step in his secret plan for its complete destruction from within." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 25, link: "/books/the-grace-of-kings#chapter-25" } },
             ]
         },
@@ -44,7 +44,7 @@ const characterData: Character = {
 
 export default function GoranPiraPage() {
     const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CHARACTERS);
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (

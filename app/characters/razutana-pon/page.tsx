@@ -6,42 +6,46 @@ import { usePathname } from 'next/navigation';
 import TopPageNavigation from '@/app/components/TopPageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
-export default function RazutanaPonPage() {
-  const pathname = usePathname();
-  const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CHARACTERS);
-  const returnLink = { title: 'Return to All Characters', path: '/characters' };
-
-  const characterData: Character = {
+const characterData: Character = {
     name: "Razutana Pon",
-    image: "/characters/kuni-garu.png", // Placeholder image
-    introduction: "A Lyucu warrior and leader who becomes involved in the occupation of Dara, representing the military aspects of Lyucu governance.",
+    image: "/characters/razutana-pon.png",
+    introduction: "Razutana Pon is a Dara scholar of the Cultivationism school and a member of Princess Théra's expedition. She is one of the adult guardians who survives the Kiri Valley massacre and protects the children in the wilderness.",
     infoBox: {
-      "Also known as": "Razutana Pon",
-      "Affiliation": "Lyucu",
-      "Role": "Warrior/Leader",
-      "First appearance": "The Veiled Throne",
-      "Related characters": [
-        { text: "Thoryo", link: "/characters/thoryo" },
-        { text: "Sataari", link: "/characters/sataari" }
-      ]
+        aliases: "The Scholar",
+        occupation: "Scholar",
+        placeOfBirth: { text: "Dara", link: "/places/dara" },
+        status: "Alive",
+        gender: "Female",
+        affiliation: "Dara Expeditionary Force, Agon Rebellion",
+        nationality: { text: "Dara", link: "/places/dara" },
+        firstAppeared: { text: "The Veiled Throne", link: "/books/the-veiled-throne" },
+        lastAppeared: { text: "The Veiled Throne", link: "/books/the-veiled-throne" }
     },
     appearanceAndPersonality: [
-      { type: "text" as const, content: "Razutana Pon exemplifies the Lyucu warrior tradition, combining tactical skill with the fierce determination that characterized the northern invaders. His personality reflects the disciplined and uncompromising nature of Lyucu military culture." }
+        { type: 'text', content: "Razutana is a dedicated scholar, though her clumsiness sometimes causes problems, such as accidentally setting off an explosion during the boarding of the Lyucu city-ship. She is courageous and resilient, surviving the destruction of the Agon base and taking on the responsibility of caring for the surviving children in a harsh, unforgiving environment." },
+        { type: 'ref', data: { book: "The Veiled Throne", chapter: 9, link: "/books/the-veiled-throne#chapter-9" } },
     ],
     history: [
-      {
-        era: "The Veiled Throne",
-        summary: [
-          { type: "text" as const, content: "Razutana Pon serves as a key warrior and leader during the Lyucu occupation of Dara, contributing to the military control and governance of the conquered territories." }
-        ]
-      }
+        {
+            era: "The Veiled Throne",
+            summary: [
+                { type: 'text', content: "A scholar on Théra's expedition, Razutana's practical knowledge is tested in the extreme. After the Lyucu attack on Kiri Valley, she and the Agon shaman Sataari become the sole adult guardians for a small band of children, including the sons of Théra. They lead the children through the desolate salt flats, a grueling journey of survival that tests their endurance to the limit." },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 17, link: "/books/the-veiled-throne#chapter-17" } },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 43, link: "/books/the-veiled-throne#chapter-43" } },
+            ]
+        },
     ]
-  };
+};
 
-  return (
-    <>
-      <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-      <CharacterPageTemplate characterData={characterData} />
-    </>
-  );
-} 
+export default function RazutanaPonPage() {
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
+    const returnLink = { title: 'Return to All Characters', path: '/characters' };
+
+    return (
+        <>
+            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <CharacterPageTemplate characterData={characterData} />
+        </>
+    );
+}

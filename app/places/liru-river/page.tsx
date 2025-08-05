@@ -6,52 +6,44 @@ import { usePathname } from 'next/navigation';
 import TopPageNavigation from '@/app/components/TopPageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
-export default function LiruRiverPage() {
-  const pathname = usePathname();
-  const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_PLACES);
-  const returnLink = { title: 'Return to All Places', path: '/places' };
-
-  const placeData: Place = {
+// --- DATA FOR LIRU RIVER ---
+const placeData: Place = {
     name: "Liru River",
-    image: "/places/cocru.png", // Placeholder image
-    introduction: "A major river system that flows through multiple states in Dara, the Liru River serves as both a vital transportation route and a natural boundary between different regions of the empire.",
+    image: "/places/liru-river.png",
+    introduction: "The Liru River is a major river system that serves as a key strategic and psychological border in Dara. It was the site of the tense, final standoff between the armies of Kuni Garu and Mata Zyndu during the Chrysanthemum-Dandelion War.",
     infoBox: {
-      "Type": "Major River",
-      "Region": "Multiple Tiro States",
-      "Significance": "Transportation and Boundary",
-      "First appearance": "The Grace of Kings",
-      "Related places": [
-        { text: "Cocru", link: "/places/cocru" },
-        { text: "Zudi", link: "/places/zudi" },
-        { text: "Pan", link: "/places/pan" }
-      ]
+        type: "River System / Border",
+        location: { text: "Cocru", link: "/places/cocru" },
+        continent: { text: "Dara", link: "/places/dara" },
+        KeyEvents: "The Standoff at Liru River"
     },
     geography: [
-      { type: "text" as const, content: "The Liru River is one of the major waterways of Dara, flowing through multiple Tiro States and serving as a natural boundary between different regions. Its waters provide irrigation for agriculture and serve as a vital transportation route for goods and people." }
+        { type: 'text', content: "The Liru River is a significant natural boundary. The cities of Dimu and Dimushi are located on its opposing banks, making the river crossing a major strategic objective in any conflict in the region." },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 23, link: "/books/the-grace-of-kings#chapter-23" } },
     ],
     culture: [
-      { type: "text" as const, content: "The Liru River has played a significant role in the cultural and economic development of the regions it flows through. River communities have developed unique traditions and ways of life, and the river has been a source of inspiration for poets and artists throughout Dara's history." }
+        { type: 'text', content: "As a strategic border, the river represents division and conflict. It is a line on the map where armies face each other, and where the fates of nations are decided." },
     ],
     history: [
-      {
-        event: "Early Settlement",
-        summary: [
-          { type: "text" as const, content: "The Liru River valley was one of the earliest areas of human settlement in Dara, with communities establishing themselves along its banks to take advantage of the fertile soil and abundant water resources. These early settlements would eventually grow into the major cities and states of the empire." }
-        ]
-      },
-      {
-        event: "Strategic Importance",
-        summary: [
-          { type: "text" as const, content: "Throughout Dara's history, the Liru River has been strategically important for military campaigns and trade. Control of key crossing points and river ports has often determined the outcome of conflicts, and the river continues to be a vital artery for the empire's economy." }
-        ]
-      }
+        {
+            event: "The Standoff",
+            summary: [
+                { type: 'text', content: "After Mata Zyndu's surprise capture of Zudi, the two armies of the former sworn brothers faced each other across the Liru River in a tense stalemate. Mata held Kuni's father and wife Jia captive in Dimu, while Kuni's forces were in Dimushi. In a tense parley, Mata threatened to execute Kuni's father, but Kuni, in a masterful and cold-blooded bluff, pretended to be utterly ruthless and uncaring. The psychological gambit worked, and Mata spared his captive's life. This standoff marked the height of the psychological warfare between the two leaders, orchestrated by Luan Zya." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 47, link: "/books/the-grace-of-kings#chapter-47" } },
+            ]
+        },
     ]
-  };
+};
 
-  return (
-    <>
-      <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-      <PlacePageTemplate placeData={placeData} />
-    </>
-  );
-} 
+export default function LiruRiverPage() {
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_PLACES]);
+    const returnLink = { title: 'Return to All Places', path: '/places' };
+
+    return (
+        <>
+            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PlacePageTemplate placeData={placeData} />
+        </>
+    );
+}

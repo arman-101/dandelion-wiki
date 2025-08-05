@@ -6,49 +6,53 @@ import { usePathname } from 'next/navigation';
 import TopPageNavigation from '@/app/components/TopPageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
-export default function CudyuRoatanPage() {
-  const pathname = usePathname();
-  const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CHARACTERS);
-  const returnLink = { title: 'Return to All Characters', path: '/characters' };
-
-  const characterData: Character = {
-    name: "Cudyü Roatan",
-    image: "/characters/kuni-garu.png", // Placeholder image
-    introduction: "A Lyucu commander and brother to Vadyu, involved in the conquest of Dara and the establishment of Lyucu rule.",
+const characterData: Character = {
+    name: "Cudyu Roatan",
+    image: "/characters/cudyu-roatan.png",
+    introduction: "Cudyu Roatan is the son of Pékyu Tenryo and brother to Tanvanaki. He is a ruthless and effective Lyucu commander, driven by a deep-seated belief in his people's superiority and their manifest destiny to conquer Dara.",
     infoBox: {
-      "Also known as": "Cudyü Roatan",
-      "Affiliation": "Lyucu",
-      "Role": "Commander",
-      "First appearance": "The Wall of Storms",
-      "Related characters": [
-        { text: "Vadyu Roatan", link: "/characters/vadyu-roatan" },
-        { text: "Pékyu Tenryo", link: "/characters/pekyu-tenryo" },
-        { text: "Oga Kidosu", link: "/characters/oga-kidosu" }
-      ]
+        aliases: "Prince Cudyu",
+        occupation: "Lyucu Commander",
+        placeOfBirth: { text: "Ukyu-Gondé", link: "/places/ukyu-gonde" },
+        status: "Alive",
+        gender: "Male",
+        relatives: "Pékyu Tenryo (father), Tanvanaki (sister)",
+        affiliation: "Lyucu Empire",
+        nationality: { text: "Lyucu", link: "/places/lyucu" },
+        firstAppeared: { text: "The Wall of Storms", link: "/books/the-wall-of-storms" },
+        lastAppeared: { text: "The Veiled Throne", link: "/books/the-veiled-throne" }
     },
     appearanceAndPersonality: [
-      { type: "text" as const, content: "Cudyü Roatan exemplifies the Lyucu military tradition, combining tactical brilliance with the fierce determination that characterized the northern invaders. His relationship with his brother Vadyu adds a personal dimension to his role in the conquest." }
+        { type: 'text', content: "Cudyu embodies the harsh, martial traditions of the Lyucu. He is a skilled warrior and commander, but he lacks his father's strategic patience and his sister's political acumen. He is straightforwardly brutal and disdainful of Dara's culture, seeing it as soft and decadent." },
+        { type: 'ref', data: { book: "The Wall of Storms", chapter: 46, link: "/books/the-wall-of-storms#chapter-46" } },
     ],
     history: [
-      {
-        era: "The Wall of Storms",
-        summary: [
-          { type: "text" as const, content: "Cudyü Roatan serves as a key commander during the Lyucu invasion of Dara, working alongside his brother Vadyu to achieve military objectives that contribute to the successful conquest of the Dandelion Dynasty." }
-        ]
-      },
-      {
-        era: "The Veiled Throne",
-        summary: [
-          { type: "text" as const, content: "Following the conquest, Cudyü Roatan continues to serve the Lyucu cause during the occupation, adapting his military skills to the challenges of maintaining control over the conquered territories." }
-        ]
-      }
+        {
+            era: "The Wall of Storms",
+            summary: [
+                { type: 'text', content: "Along with his sister, Cudyu was part of the deception used to extract information from the captive Luan Zya, telling him a fabricated story about the fate of Mapidéré's expedition." },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 46, link: "/books/the-wall-of-storms#chapter-46" } },
+            ]
+        },
+        {
+            era: "The Veiled Throne",
+            summary: [
+                { type: 'text', content: "As a leading commander in the Lyucu homeland of Ukyu-Gondé, Cudyu is tasked with crushing the Agon rebellion led by Princess Théra and Takval Aragoz. He leads a devastating surprise attack on the secret Agon base in Kiri Valley, destroying it and capturing Théra's children. He becomes the primary military antagonist to the Agon rebellion." },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 17, link: "/books/the-veiled-throne#chapter-17" } },
+            ]
+        },
     ]
-  };
+};
 
-  return (
-    <>
-      <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-      <CharacterPageTemplate characterData={characterData} />
-    </>
-  );
-} 
+export default function CudyuRoatanPage() {
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
+    const returnLink = { title: 'Return to All Characters', path: '/characters' };
+
+    return (
+        <>
+            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <CharacterPageTemplate characterData={characterData} />
+        </>
+    );
+}

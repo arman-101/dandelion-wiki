@@ -13,7 +13,7 @@ export default function TheBlossomGangPage() {
 
   const conceptData: Concept = {
     name: "The Blossom Gang",
-    image: "/concepts/dandelion.png", // Placeholder image
+    image: "/concepts/the-blossom-gang.png", // Placeholder image
     introduction: "A group of resistance fighters who become central to the struggle against Lyucu occupation, representing the hope and determination of the Dara people.",
     infoBox: {
       "Type": "Resistance Group",

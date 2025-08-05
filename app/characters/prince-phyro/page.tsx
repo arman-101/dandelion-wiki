@@ -6,91 +6,48 @@ import { usePathname } from 'next/navigation';
 import TopPageNavigation from '@/app/components/TopPageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
-// --- DATA FOR PRINCE PHYRO (WITH FULL INLINE REFERENCES FROM ALL FOUR BOOKS) ---
 const characterData: Character = {
     name: "Prince Phyro",
     image: "/characters/prince-phyro.png",
-    introduction: "Prince Phyro is the mischievous and clever youngest son of Emperor Ragin and Empress Jia. He grows from a playful child into a complex ruler who must navigate the challenges of war, political intrigue, and the weight of his crown during the Lyucu crisis.",
+    introduction: "Prince Phyro is the charismatic and martially gifted son of Emperor Ragin and Consort Risana. Favored by the military faction of the court, he grows from a mischievous boy into a determined military leader who secretly builds an army to reclaim Dara from the Lyucu, eventually ascending the throne as Emperor Monadétu.",
     infoBox: {
-        aliases: "Emperor Phyro, The Young Emperor",
-        occupation: "Prince of Dara, Emperor of Dara",
-        placeOfBirth: { text: "Pan", link: "/places/pan" },
+        aliases: "Emperor Monadétu",
+        occupation: "Prince, Emperor of Dara",
+        placeOfBirth: { text: "Zudi", link: "/places/zudi" },
         status: "Alive",
         gender: "Male",
-        relatives: "Emperor Ragin (father), Empress Jia (mother), Princess Théra (sister), Prince Timu (brother), Princess Fara (sister)",
-        affiliation: "House of Garu, Dandelion Court",
+        relatives: "Kuni Garu (father), Consort Risana (mother), Prince Timu (brother), Princess Théra (sister), Princess Fara (sister)",
+        affiliation: "Dandelion Court, Empire of Dara",
         nationality: { text: "Dara", link: "/places/dara" },
         firstAppeared: { text: "The Wall of Storms", link: "/books/the-wall-of-storms" },
         lastAppeared: { text: "Speaking Bones", link: "/books/speaking-bones" }
     },
     appearanceAndPersonality: [
-        { type: 'text', content: "Prince Phyro is described as mischievous and clever from a young age, often getting into trouble with his siblings but demonstrating quick thinking and natural leadership abilities. He has a playful spirit that endears him to others while masking his growing political awareness." },
+        { type: 'text', content: "In his youth, Phyro is mischievous and more interested in martial pursuits and spectacle than in his studies. He embodies the 'sword' side of the court, inheriting his mother's intuitive understanding of warfare and his father's charisma. As he matures, he becomes a focused and determined leader, driven by a desire to prove himself and defend his homeland." },
         { type: 'ref', data: { book: "The Wall of Storms", chapter: 1, link: "/books/the-wall-of-storms#chapter-1" } },
-        { type: 'text', content: " As he matures, Phyro develops into a thoughtful and conflicted ruler, torn between his duty to his people and his mother's pacifist policies. He possesses his father's pragmatism and his mother's political acumen, but struggles to find his own path as emperor." },
-        { type: 'ref', data: { book: "Speaking Bones", chapter: 3, link: "/books/speaking-bones#chapter-3" } },
+        { type: 'ref', data: { book: "The Wall of Storms", chapter: 11, link: "/books/the-wall-of-storms#chapter-11" } },
     ],
     history: [
         {
-            era: "Early Life and Education",
+            era: "The Wall of Storms",
             summary: [
-                { type: 'text', content: "Prince Phyro grows up in the Imperial Palace in Pan alongside his siblings, Princess Théra and Prince Timu. He receives a comprehensive education under the tutelage of Imperial Tutor Zato Ruthi, though he often chafes against the rigid structure of formal education." },
-                { type: 'ref', data: { book: "The Wall of Storms", chapter: 1, link: "/books/the-wall-of-storms#chapter-1" } },
-                { type: 'text', content: " Phyro demonstrates his cleverness and leadership abilities early on, particularly when he helps his sister Théra drive away a bully from the Three-Legged Jug tavern. His mischievous nature often gets him into trouble, but also reveals his quick thinking and ability to rally others." },
-                { type: 'ref', data: { book: "The Wall of Storms", chapter: 1, link: "/books/the-wall-of-storms#chapter-1" } },
-            ]
-        },
-        {
-            era: "The Grand Examination and Court Politics",
-            summary: [
-                { type: 'text', content: "During the first Grand Examination of the Dandelion Dynasty, Phyro witnesses the arrival of Zomi Kidosu and becomes intrigued by the brilliant scholar's unconventional thinking. He begins to question the rigid structures of Dara society and develops an interest in innovation and reform." },
-                { type: 'ref', data: { book: "The Wall of Storms", chapter: 4, link: "/books/the-wall-of-storms#chapter-4" } },
-                { type: 'text', content: " As he grows older, Phyro becomes increasingly aware of the political tensions within the court, particularly between his mother Empress Jia and the various factions vying for influence. He begins to develop his own political philosophy, influenced by his father's dandelion philosophy but with his own unique perspective." },
-                { type: 'ref', data: { book: "The Wall of Storms", chapter: 18, link: "/books/the-wall-of-storms#chapter-18" } },
-            ]
-        },
-        {
-            era: "The Lyucu Invasion and Crisis",
-            summary: [
-                { type: 'text', content: "When the Lyucu Empire invades Dara with their garinafin war beasts, Phyro witnesses the devastating power of the invaders firsthand. The fall of Pan and the capture of his family forces him to confront the limitations of Dara's traditional military and political structures." },
-                { type: 'ref', data: { book: "The Wall of Storms", chapter: 24, link: "/books/the-wall-of-storms#chapter-24" } },
-                { type: 'text', content: " During the crisis, Phyro demonstrates remarkable courage and leadership, helping to organize resistance efforts and protect civilians. He begins to formulate his own ideas about how to counter the Lyucu threat, often clashing with his mother's more cautious approach." },
+                { type: 'text', content: "As a boy, Phyro showed early signs of his adventurous spirit. He was sent by his mother, Empress Jia, to pacify the Hegemon cults in Tunoa, where he was besieged and ultimately saved by his sister Théra's intervention." },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 22, link: "/books/the-wall-of-storms#chapter-22" } },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 27, link: "/books/the-wall-of-storms#chapter-27" } },
+                { type: 'text', content: "After Théra abdicated, Phyro was named the new emperor. He traveled to Faça with his mother, Consort Risana, to investigate the silkmotic force, recognizing its potential as a new weapon." },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 39, link: "/books/the-wall-of-storms#chapter-39" } },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 55, link: "/books/the-wall-of-storms#chapter-55" } },
             ]
         },
         {
-            era: "Ascension to the Throne",
+            era: "The Veiled Throne & Speaking Bones",
             summary: [
-                { type: 'text', content: "After the death of his father Emperor Ragin, Phyro ascends to the throne as Emperor Phyro. He inherits a fractured empire facing the constant threat of Lyucu invasion, and must navigate the complex political landscape while developing his own leadership style." },
-                { type: 'ref', data: { book: "The Veiled Throne", chapter: 15, link: "/books/the-veiled-throne#chapter-15" } },
-                { type: 'text', content: " As emperor, Phyro struggles with the weight of his crown and the conflicting advice of his advisors. He is torn between his duty to prepare for war with the Lyucu and his mother's pacifist policies, which he increasingly questions." },
+                { type: 'text', content: "As the young Emperor Monadétu, Phyro chafed under his mother Jia's regency and her pacifist policies toward the Lyucu. He secretly established a garinafin training base at Tiro Cozo, working with the Lyucu defector Ouro to build a new aerial army in defiance of his mother's orders." },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 40, link: "/books/the-veiled-throne#chapter-40" } },
                 { type: 'ref', data: { book: "Speaking Bones", chapter: 3, link: "/books/speaking-bones#chapter-3" } },
-            ]
-        },
-        {
-            era: "Military Preparation and the Garinafin Training Program",
-            summary: [
-                { type: 'text', content: "At the secret garinafin training base in Tiro Cozo, Emperor Phyro oversees the development of Dara's first air force. The arrival of the Lyucu defector Ouro provides a new opportunity to train Dara pilots in the art of garinafin warfare." },
-                { type: 'ref', data: { book: "Speaking Bones", chapter: 3, link: "/books/speaking-bones#chapter-3" } },
-                { type: 'text', content: " Phyro works closely with Ouro, despite the Lyucu warrior's harsh methods and questionable loyalty. The emperor begins to develop a new understanding of warfare and the cultural differences between Dara and the Lyucu, preparing for the inevitable conflict." },
-                { type: 'ref', data: { book: "Speaking Bones", chapter: 3, link: "/books/speaking-bones#chapter-3" } },
-            ]
-        },
-        {
-            era: "Political Intrigue and the Resistance Movement",
-            summary: [
-                { type: 'text', content: "As emperor, Phyro becomes increasingly aware of the resistance movement growing within his own court. He discovers that Zomi Kidosu has been secretly building a coalition to support his sister Théra's rebellion in Ukyu-Gondé." },
-                { type: 'ref', data: { book: "Speaking Bones", chapter: 2, link: "/books/speaking-bones#chapter-2" } },
-                { type: 'text', content: " Phyro must navigate the complex political landscape, balancing his mother's influence with the growing calls for more aggressive action against the Lyucu. He begins to question whether his mother's pacifist policies are truly in the best interests of the empire." },
-                { type: 'ref', data: { book: "Speaking Bones", chapter: 8, link: "/books/speaking-bones#chapter-8" } },
-            ]
-        },
-        {
-            era: "The Weight of Leadership and Future Challenges",
-            summary: [
-                { type: 'text', content: "As Emperor Phyro continues to rule, he faces the daunting challenge of preparing his empire for war while maintaining internal stability. He must balance the demands of various factions, from the military old guard to the new civil bureaucracy." },
-                { type: 'ref', data: { book: "Speaking Bones", chapter: 3, link: "/books/speaking-bones#chapter-3" } },
-                { type: 'text', content: " Phyro's reign is marked by his struggle to find his own voice as a leader, separate from his parents' legacies. He must decide whether to continue his mother's policies of appeasement or adopt a more aggressive stance against the Lyucu threat." },
-                { type: 'ref', data: { book: "Speaking Bones", chapter: 8, link: "/books/speaking-bones#chapter-8" } },
+                { type: 'text', content: "His secret army and rebellion against his mother's strategy became a key factor in the final war for Dara. He led his new garinafin force in the desperate final assault on the Lyucu stronghold, proving himself a worthy successor to his father's legacy as a warrior-king." },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 18, link: "/books/speaking-bones#chapter-18" } },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 35, link: "/books/speaking-bones#chapter-35" } },
             ]
         },
     ]
@@ -98,7 +55,7 @@ const characterData: Character = {
 
 export default function PrincePhyroPage() {
     const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CHARACTERS);
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (

@@ -6,35 +6,36 @@ import { usePathname } from 'next/navigation';
 import TopPageNavigation from '@/app/components/TopPageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
-// --- DATA FOR WOLF'S PAW (WITH FULL REFERENCES) ---
+// --- DATA FOR WOLF'S PAW ---
 const placeData: Place = {
     name: "Wolf's Paw",
     image: "/places/wolfs-paw.png",
-    introduction: "Wolf's Paw is a large southern island that constitutes a major part of the state of Gan. It is a strategically vital location, separated from the mainland by the infamous Kishi Channel, and was the site of one of the most pivotal and brutal battles of the Dandelion Rebellion.",
+    introduction: "Wolf's Paw is a southern island, part of the state of Gan, separated from the mainland by the treacherous Kishi Channel. It was the site of one of the largest and most consequential battles of the Dandelion Rebellion, and the location of one of Mata Zyndu's most horrific atrocities.",
     infoBox: {
-        Region: "Gan, Southern Dara",
-        PatronGod: { text: "Tazu", link: "/gods/tazu" },
-        NotableFeatures: "Kishi Channel",
+        type: "Island",
+        state: { text: "Gan", link: "/places/gan" },
+        continent: { text: "Dara", link: "/places/dara" },
+        KeyLandmark: { text: "Kishi Channel", link: "/places/kishi-channel" }
     },
     geography: [
-        { type: 'text', content: "A large island that forms the heart of Gan, Wolf's Paw is separated from the Itanti Peninsula on the Big Island by the Kishi Channel. This channel is home to a massive, permanent whirlpool, making naval passage extremely dangerous and often impossible." },
+        { type: 'text', content: "A large island off the southern coast of the Big Island, its proximity to the Kishi Channel, a deadly whirlpool, makes naval passage extremely dangerous." },
         { type: 'ref', data: { book: "The Grace of Kings", chapter: 31, link: "/books/the-grace-of-kings#chapter-31" } },
     ],
     culture: [
-        { type: 'text', content: "As part of Gan, the culture on Wolf's Paw is sophisticated and trade-oriented. Its strategic position makes it a key naval territory." },
+        { type: 'text', content: "The culture of Wolf's Paw is aligned with its parent state of Gan, but its history is forever marked by the devastating battle and subsequent massacre that took place on its shores." },
     ],
     history: [
         {
             event: "Battle of Wolf's Paw",
             summary: [
-                { type: 'text', content: "This island was the site of the decisive battle where Mata Zyndu's rebel forces faced the combined Imperial armies of Kindo Marana and Tanno Namen. Despite being betrayed by his allies from Faça and Gan, Mata's personal prowess won the day, leading to the capture of Marana and the suicide of Namen." },
+                { type: 'text', content: "The island was the site of the climactic battle between the main rebel forces, led by a grief-stricken and enraged Mata Zyndu, and the Imperial armies under Kindo Marana and Tanno Namen. Despite the mid-battle betrayal of his allies from Faça and Gan, Mata's godlike fury turned the tide, leading to a crushing rebel victory. The honorable Tanno Namen took his own life, and Kindo Marana was captured." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 29, link: "/books/the-grace-of-kings#chapter-29" } },
             ]
         },
         {
-            event: "The Slaughter at Wolf's Paw",
+            event: "The Massacre at Wolf's Paw",
             summary: [
-                { type: 'text', content: "Following the battle, Mata was trapped on the island by a naval blockade. To secure passage, he made a horrific pact with the god Tazu, sacrificing 20,000 surrendered Imperial prisoners to the whirlpool in the Kishi Channel. This act earned him the name 'Butcher of Wolf's Paw' and forever stained his honor." },
+                { type: 'text', content: "After the battle, Mata's massive army was trapped on the island by the remaining Imperial navy and the deadly Kishi Channel. Tempted by the goddess Kana, Mata committed a monstrous act of cold-blooded strategy. He tricked 20,000 surrendered Imperial prisoners onto poorly built ships and sent them into the whirlpool as a human sacrifice to the sea god Tazu. The act earned Mata the infamous title 'Butcher of Wolf's Paw' and marked his definitive break from his code of honor." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 31, link: "/books/the-grace-of-kings#chapter-31" } },
             ]
         },
@@ -43,7 +44,7 @@ const placeData: Place = {
 
 export default function WolfsPawPage() {
     const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_PLACES);
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_PLACES]);
     const returnLink = { title: 'Return to All Places', path: '/places' };
 
     return (

@@ -6,52 +6,46 @@ import { usePathname } from 'next/navigation';
 import TopPageNavigation from '@/app/components/TopPageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
-export default function ZathinGulfPage() {
-  const pathname = usePathname();
-  const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_PLACES);
-  const returnLink = { title: 'Return to All Places', path: '/places' };
-
-  const placeData: Place = {
+// --- DATA FOR ZATHIN GULF ---
+const placeData: Place = {
     name: "Zathin Gulf",
-    image: "/places/gan.png", // Placeholder image
-    introduction: "A significant body of water with strategic and economic importance, the Zathin Gulf serves as a vital maritime route and a natural boundary between different regions of the Dara archipelago.",
+    image: "/places/zathin-gulf.png",
+    introduction: "The Zathin Gulf is a large gulf on the coast of the Big Island. It was the site of the massive, climactic naval and aerial battle between the invading Lyucu forces and the full military might of the Dandelion Dynasty, a battle that claimed the life of Emperor Ragin.",
     infoBox: {
-      "Type": "Maritime Gulf",
-      "Region": "Dara Archipelago",
-      "Significance": "Maritime Trade Route",
-      "First appearance": "The Wall of Storms",
-      "Related places": [
-        { text: "Gan", link: "/places/gan" },
-        { text: "Wolf's Paw", link: "/places/wolfs-paw" },
-        { text: "Kishi Channel", link: "/places/kishi-channel" }
-      ]
+        type: "Gulf / Bay",
+        location: { text: "Coast of the Big Island", link: "/places/dara" },
+        continent: { text: "Dara", link: "/places/dara" },
+        KeyEvents: "Battle of Zathin Gulf, Death of Emperor Ragin"
     },
     geography: [
-      { type: "text" as const, content: "The Zathin Gulf is a large body of water that forms a natural boundary between different parts of the Dara archipelago. The gulf's waters are navigable and have served as an important maritime route for trade and travel between the various islands and coastal regions." }
+        { type: 'text', content: "A significant coastal body of water, large enough to accommodate the two largest fleets ever assembled in the history of Dara for a final, decisive confrontation." },
     ],
     culture: [
-      { type: "text" as const, content: "The communities that have developed around the Zathin Gulf have maritime cultures shaped by their relationship with the sea. These communities are known for their seafaring traditions, fishing practices, and their role in facilitating trade and cultural exchange between different regions." }
+        { type: 'text', content: "Zathin Gulf is now a place of immense historical and national significance for the Dandelion Dynasty, a symbol of both sacrifice and ultimate victory. It is the location where the founder of the dynasty made his final stand and where the future of Dara was secured." },
     ],
     history: [
-      {
-        event: "Maritime Trade Development",
-        summary: [
-          { type: "text" as const, content: "The Zathin Gulf became an important maritime trade route as the Dara empire developed. The gulf's navigable waters made it possible for merchants and travelers to move between different parts of the archipelago, facilitating the exchange of goods, ideas, and culture." }
-        ]
-      },
-      {
-        event: "Strategic Importance",
-        summary: [
-          { type: "text" as const, content: "Throughout Dara's history, control of the Zathin Gulf has been strategically important for maritime power and trade. The gulf's position has made it a key objective for naval campaigns and a vital artery for the empire's maritime commerce." }
-        ]
-      }
+        {
+            event: "The Battle of Zathin Gulf",
+            summary: [
+                { type: 'text', content: "The battle was the culmination of the first Lyucu invasion. The Lyucu leader, Pékyu Tenryo, used a captured and dying Emperor Ragin (Kuni Garu) as a human shield on his flagship. In a final, heroic act, Kuni broke free, delivered a rousing speech naming Théra his successor, and took his own life to free his army to attack." },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 58, link: "/books/the-wall-of-storms#chapter-58" } },
+                { type: 'text', content: "The ensuing battle was a massive engagement. The Dara forces, commanded by Marshal Gin Mazoti, unveiled new technologies like silkmotic-powered crossbows and lances. Despite suffering heavy losses from betrayal within their ranks, Gin crashed her flagship into the Lyucu command vessel. In the chaos, she and Dafiro Miro dueled Pékyu Tenryo. Dafiro was killed, but Gin, with the last-minute aid of Zomi Kidosu, killed the Lyucu pékyu, shattering the invasion and ending the battle." },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 59, link: "/books/the-wall-of-storms#chapter-59" } },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 60, link: "/books/the-wall-of-storms#chapter-60" } },
+            ]
+        },
     ]
-  };
+};
 
-  return (
-    <>
-      <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-      <PlacePageTemplate placeData={placeData} />
-    </>
-  );
-} 
+export default function ZathinGulfPage() {
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_PLACES]);
+    const returnLink = { title: 'Return to All Places', path: '/places' };
+
+    return (
+        <>
+            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PlacePageTemplate placeData={placeData} />
+        </>
+    );
+}

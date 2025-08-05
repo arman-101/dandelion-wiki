@@ -13,7 +13,7 @@ export default function RatiYeraPage() {
 
   const characterData: Character = {
     name: "Rati Yera",
-    image: "/characters/kuni-garu.png", // Placeholder image
+    image: "/characters/rati-yera.png", // Placeholder image
     introduction: "A Lyucu warrior and leader who becomes involved in the occupation of Dara, representing the military aspects of Lyucu governance.",
     infoBox: {
       "Also known as": "Rati Yera",

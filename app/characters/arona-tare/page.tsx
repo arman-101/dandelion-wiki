@@ -13,7 +13,7 @@ export default function AronaTarePage() {
 
   const characterData: Character = {
     name: "Arona Taré",
-    image: "/characters/kuni-garu.png", // Placeholder image
+    image: "/characters/arona-tare.png", // Placeholder image
     introduction: "A Lyucu warrior and leader who becomes involved in the occupation of Dara, representing the military aspects of Lyucu governance.",
     infoBox: {
       "Also known as": "Arona Taré",

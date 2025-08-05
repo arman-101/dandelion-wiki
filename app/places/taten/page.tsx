@@ -6,52 +6,45 @@ import { usePathname } from 'next/navigation';
 import TopPageNavigation from '@/app/components/TopPageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
-export default function TatenPage() {
-  const pathname = usePathname();
-  const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_PLACES);
-  const returnLink = { title: 'Return to All Places', path: '/places' };
-
-  const placeData: Place = {
+// --- DATA FOR TATEN ---
+const placeData: Place = {
     name: "Taten",
-    image: "/places/pan.png", // Placeholder image
-    introduction: "A region that plays a role in the complex political landscape of the later books, Taten becomes significant during the Lyucu occupation and the resistance movement.",
+    image: "/places/taten.png",
+    introduction: "Taten is the roaming tent-city that serves as the capital for the Pékyu of the Lyucu people in their homeland of Ukyu-Gondé. It is the center of Lyucu military and political power.",
     infoBox: {
-      "Type": "Region",
-      "Location": "Dara",
-      "Significance": "Political and Strategic",
-      "First appearance": "The Veiled Throne",
-      "Related places": [
-        { text: "Lurodia Tanta", link: "/places/lurodia-tanta" },
-        { text: "Sliyusa Ki", link: "/places/sliyusa-ki" },
-        { text: "Taten-ryo-alvovo", link: "/places/taten-ryo-alvovo" }
-      ]
+        type: "Nomadic Capital City",
+        location: { text: "Ukyu & Gondé", link: "/places/ukyu-gonde" },
+        Ruler: { text: "Pékyu Tenryo", link: "/characters/pekyu-tenryo" },
+        KeyInhabitants: { text: "Lyucu", link: "/concepts/lyucu" }
     },
     geography: [
-      { type: "text" as const, content: "Taten is a region within the territories of Dara that becomes strategically important during the later events of the series. Its geographical position makes it a key location for political and military activities." }
+        { type: 'text', content: "As a nomadic city, Taten's location is not fixed. It moves across the vast scrublands of Ukyu-Gondé, following the needs of the pékyu's herds and armies. It is often situated near significant locations, such as Victory Cove, where the captured Dara city-ships were kept." },
+        { type: 'ref', data: { book: "The Veiled Throne", chapter: 1, link: "/books/the-veiled-throne#chapter-1" } },
     ],
     culture: [
-      { type: "text" as const, content: "The culture of Taten reflects the complex interactions between the original Dara inhabitants and the various forces that seek to control the region. The local population has developed unique traditions and ways of life shaped by their strategic position." }
+        { type: 'text', content: "Taten is the heart of the Lyucu's harsh, martial culture. Life in the tent-city is organized around the pékyu and the needs of the military. It is a place of warriors, garinafin riders, and the complex clan politics that define the Lyucu people." },
     ],
     history: [
-      {
-        event: "Lyucu Occupation",
-        summary: [
-          { type: "text" as const, content: "During the Lyucu occupation of Dara, Taten becomes an important location where the dynamics of conquest and resistance play out. The region's strategic value makes it a focus of attention for both the occupiers and the resistance movement." }
-        ]
-      },
-      {
-        event: "Resistance Activities",
-        summary: [
-          { type: "text" as const, content: "Taten serves as a base for resistance activities against the Lyucu occupation. The region's geography and the support of the local population make it an ideal location for guerrilla warfare and underground resistance operations." }
-        ]
-      }
+        {
+            event: "The Lyucu Power Seat",
+            summary: [
+                { type: 'text', content: "Taten was the center from which Pékyu Tenryo planned and launched his invasion of Dara. It was here that the captured Dara technology was studied and adapted for Lyucu use. It was also the site of the early political maneuvering of figures like Goztan Ryoto and the pékyu's children, Tanvanaki and Cudyu." },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 1, link: "/books/the-veiled-throne#chapter-1" } },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 49, link: "/books/the-wall-of-storms#chapter-49" } },
+            ]
+        },
     ]
-  };
+};
 
-  return (
-    <>
-      <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-      <PlacePageTemplate placeData={placeData} />
-    </>
-  );
-} 
+export default function TatenPage() {
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_PLACES]);
+    const returnLink = { title: 'Return to All Places', path: '/places' };
+
+    return (
+        <>
+            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PlacePageTemplate placeData={placeData} />
+        </>
+    );
+}

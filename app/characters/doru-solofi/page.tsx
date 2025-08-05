@@ -9,27 +9,31 @@ import { getSurroundingPages } from '@/app/utils/navigationUtils';
 const characterData: Character = {
     name: "Doru Solofi",
     image: "/characters/doru-solofi.png",
-    introduction: "Doru Solofi is a disgraced nobleman and former follower of Mata Zyndu. Alongside Noda Mi, he becomes a leader of the Hegemon Cults, a rebellion aimed at overthrowing the Dandelion Dynasty in the name of the deceased Mata.",
+    introduction: "Doru Solofi was a disgraced former king who, along with the cunning Noda Mi, became a leader of the rebellious Hegemon Cults in Tunoa. He represents the lingering resentment of the old nobility against the Dandelion Dynasty.",
     infoBox: {
-        aliases: "None",
-        occupation: "Nobleman, Rebel Leader",
+        aliases: "The Bully",
+        occupation: "Fallen King, Rebel Leader",
+        placeOfBirth: { text: "Dara", link: "/places/dara" },
         status: "Deceased",
         gender: "Male",
         affiliation: "Hegemon Cults",
-        nationality: "Cocru",
+        nationality: { text: "Dara", link: "/places/dara" },
         firstAppeared: { text: "The Wall of Storms", link: "/books/the-wall-of-storms" },
         lastAppeared: { text: "The Wall of Storms", link: "/books/the-wall-of-storms" }
     },
     appearanceAndPersonality: [
-        { type: 'text', content: "Doru is a large, physically imposing man, though he lacks true martial skill. He is bitter and resentful about his loss of status after Kuni Garu's victory. He is more of a blunt instrument than a strategist, relying on the cunning of his partner, Noda Mi, to guide their rebellion. He embodies the lingering, resentful pride of the old aristocracy that was defeated in the Chrysanthemum-Dandelion War." },
-        { type: 'ref', data: { book: "The Wall of Storms", chapter: 2, link: "/books/the-wall-of-storms#chapter-2" } },
+        { type: 'text', content: "Doru Solofi is portrayed as a brutish and resentful man. Stripped of his titles and power, he is reduced to working as a common extortionist. He is a man of action rather than thought, providing the muscle for Noda Mi's more strategic leadership of their rebellion." },
+        { type: 'ref', data: { book: "The Wall of Storms", chapter: 1, link: "/books/the-wall-of-storms#chapter-1" } },
     ],
     history: [
         {
-            era: "The Hegemon Cults",
+            era: "The Wall of Storms",
             summary: [
-                { type: 'text', content: "Years after the war, Doru Solofi met with Noda Mi in a graveyard and swore an oath to avenge Mata Zyndu and destroy Emperor Ragin. They became the leaders of the Hegemon Cults, using 'magic mirrors' to create the illusion that Mata's ghost was leading them. Their rebellion gained significant traction in the Tunoa Islands before being cleverly dismantled by Princess Théra's scientific counter-magic." },
+                { type: 'text', content: "Doru first appears as a bully in a Pan tavern, attempting to extort a storyteller. He is thwarted by the imperial children and Zomi Kidosu. Later, in a city graveyard, he is led by an avatar of the god Tazu to a meeting with another fallen king, Noda Mi. They find common cause in their hatred for Emperor Ragin and swear an oath to start a new rebellion." },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 1, link: "/books/the-wall-of-storms#chapter-1" } },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 2, link: "/books/the-wall-of-storms#chapter-2" } },
+                { type: 'text', content: "Their rebellion, centered in Tunoa, evolves into a dangerous cult venerating the ghost of Mata Zyndu, using 'magic mirrors' to build a fanatical army. The rebellion is ultimately crushed when Princess Théra arrives and uses her own mirror to expose their deception." },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 20, link: "/books/the-wall-of-storms#chapter-20" } },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 27, link: "/books/the-wall-of-storms#chapter-27" } },
             ]
         },
@@ -38,7 +42,7 @@ const characterData: Character = {
 
 export default function DoruSolofiPage() {
     const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CHARACTERS);
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (

@@ -6,43 +6,46 @@ import { usePathname } from 'next/navigation';
 import TopPageNavigation from '@/app/components/TopPageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
-// --- DATA FOR OURO ---
 const characterData: Character = {
     name: "Ouro",
-    image: "/characters/kuni-garu.png", // Placeholder image
-    introduction: "A mysterious figure who becomes involved in the final events of the series, representing the enigmatic forces that shape the destiny of Dara.",
+    image: "/characters/ouro.png",
+    introduction: "Ouro is a Lyucu defector and a master garinafin rider. He becomes the controversial and demanding trainer for Emperor Phyro's secret garinafin breeding and training program, playing a vital role in building Dara's new aerial army.",
     infoBox: {
-      "Also known as": "Ouro",
-      "Affiliation": "Unknown",
-      "Role": "Mysterious Figure",
-      "First appearance": "Speaking Bones",
-      "Related characters": [
-        { text: "The Fish-Herder", link: "/characters/the-fish-herder" },
-        { text: "The Sword-Saint", link: "/characters/the-sword-saint" }
-      ]
+        aliases: "The Garinafin Master",
+        occupation: "Garinafin Rider, Trainer",
+        placeOfBirth: { text: "Ukyu-Gondé", link: "/places/ukyu-gonde" },
+        status: "Alive",
+        gender: "Male",
+        affiliation: "Dara Imperial Air Force",
+        nationality: { text: "Lyucu", link: "/concepts/lyucu" },
+        firstAppeared: { text: "Speaking Bones", link: "/books/speaking-bones" },
+        lastAppeared: { text: "Speaking Bones", link: "/books/speaking-bones" }
     },
     appearanceAndPersonality: [
-      { type: "text" as const, content: "Ouro embodies the mysterious and otherworldly aspects of the final events, combining enigmatic presence with hidden knowledge that proves crucial to understanding the deeper forces at work in the world." }
+        { type: 'text', content: "Ouro is a harsh and demanding teacher, his methods born from the brutal traditions of the Lyucu. His loyalty is constantly questioned by the Dara pilots, and he maintains a professional distance, focused solely on the task of training an effective fighting force. He represents the difficult compromises and uneasy alliances necessary for Dara to survive." },
+        { type: 'ref', data: { book: "Speaking Bones", chapter: 3, link: "/books/speaking-bones#chapter-3" } },
     ],
     history: [
-      {
-        era: "Speaking Bones",
-        summary: [
-          { type: "text" as const, content: "Ouro emerges as a mysterious figure whose knowledge and actions play a significant role in the final resolution of the series, representing the deeper philosophical and mystical elements that underlie the conflict." }
-        ]
-      }
+        {
+            era: "Speaking Bones",
+            summary: [
+                { type: 'text', content: "A Lyucu defector, Ouro's expertise with garinafins was invaluable. He was brought to the secret base at Tiro Cozo to train Emperor Phyro's new generation of Dara-bred garinafins and their riders. His harsh, uncompromising training methods caused friction but were ultimately effective, creating the powerful aerial army that Phyro would lead in the final war against the Lyucu." },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 3, link: "/books/speaking-bones#chapter-3" } },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 14, link: "/books/speaking-bones#chapter-14" } },
+            ]
+        },
     ]
 };
 
 export default function OuroPage() {
-  const pathname = usePathname();
-  const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CHARACTERS);
-  const returnLink = { title: 'Return to All Characters', path: '/characters' };
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
+    const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
-  return (
-    <>
-      <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-      <CharacterPageTemplate characterData={characterData} />
-    </>
-  );
-} 
+    return (
+        <>
+            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <CharacterPageTemplate characterData={characterData} />
+        </>
+    );
+}

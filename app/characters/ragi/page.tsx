@@ -13,7 +13,7 @@ export default function RagiPage() {
 
   const ragiData: Character = {
     name: "Ragi",
-    image: "/characters/kuni-garu.png", // Placeholder image
+    image: "/characters/ragi.png", // Placeholder image
     introduction: "A Lyucu leader and advisor who becomes involved in the political affairs of occupied Dara.",
     infoBox: {
         "Origin": "Lyucu Lands",

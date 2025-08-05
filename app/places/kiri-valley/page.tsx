@@ -6,46 +6,45 @@ import { usePathname } from 'next/navigation';
 import TopPageNavigation from '@/app/components/TopPageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
-export default function KiriValleyPage() {
-  const pathname = usePathname();
-  const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_PLACES);
-  const returnLink = { title: 'Return to All Places', path: '/places' };
-
-  const placeData: Place = {
+// --- DATA FOR KIRI VALLEY ---
+const placeData: Place = {
     name: "Kiri Valley",
-    image: "/places/mount-kiji.png", // Placeholder image
-    introduction: "A valley that becomes significant during the later events of the series, representing the natural barriers and strategic locations that shape the conflicts of Dara.",
+    image: "/places/kiri-valley.png",
+    introduction: "Kiri Valley is a secret, hidden valley within the World's Edge Mountains of Ukyu-Gondé. It served as the main hidden base for the Agon rebellion, a place of community and preparation, before its tragic destruction.",
     infoBox: {
-      "Type": "Valley",
-      "Region": "Dara",
-      "Significance": "Strategic and Natural",
-      "First appearance": "The Wall of Storms",
-      "Related places": [
-        { text: "World's Edge Mountains", link: "/places/worlds-edge-mountains" },
-        { text: "Sea of Tears", link: "/places/sea-of-tears" },
-        { text: "Roro Hills", link: "/places/roro-hills" }
-      ]
+        type: "Hidden Valley / Rebel Base",
+        location: { text: "World's Edge Mountains", link: "/places/worlds-edge-mountains" },
+        continent: { text: "Ukyu & Gondé", link: "/places/ukyu-gonde" },
+        KeyEvents: "Destruction of the Agon Base"
     },
     geography: [
-      { type: "text" as const, content: "Kiri Valley is a geographical feature characterized by its natural barriers and strategic position, making it an important location during the military conflicts and political struggles of the later books." }
+        { type: 'text', content: "A fertile and well-hidden valley, its remote location in the massive World's Edge mountain range made it an ideal location for a secret military base, shielded from Lyucu patrols." },
     ],
     culture: [
-      { type: "text" as const, content: "The valley's cultural significance stems from its role as a natural boundary and its importance in the military and political events that shape the destiny of the people who inhabit the surrounding regions." }
+        { type: 'text', content: "For several years, Kiri Valley was the heart of the growing rebellion. It was a place where Dara technology and Agon tradition began to merge. It was here that Théra and Takval raised their sons, Tanto and Rokiri, who grew up embracing the Agon craft of building 'living bones'." },
+        { type: 'ref', data: { book: "The Veiled Throne", chapter: 26, link: "/books/the-veiled-throne#chapter-26" } },
     ],
     history: [
-      {
-        event: "Strategic Importance",
-        summary: [
-          { type: "text" as const, content: "Throughout the series, Kiri Valley serves as a strategic location where key military and political events unfold, reflecting the importance of geography in shaping the course of history." }
-        ]
-      }
+        {
+            event: "Destruction of the Rebellion's Heart",
+            summary: [
+                { type: 'text', content: "The peace of Kiri Valley was shattered when the Lyucu commander Cudyu Roatan launched a devastating surprise attack. The base was completely destroyed in the assault. The battle resulted in the heroic deaths of key rebel leaders, including Souliyan Aragoz, Toof, and Radia, and culminated in the capture of Théra and Takval's two sons. The fall of Kiri Valley was a catastrophic blow to the Agon rebellion, forcing the survivors into a desperate flight into the mountains." },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 17, link: "/books/the-veiled-throne#chapter-17" } },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 27, link: "/books/the-veiled-throne#chapter-27" } },
+            ]
+        },
     ]
-  };
+};
 
-  return (
-    <>
-      <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-      <PlacePageTemplate placeData={placeData} />
-    </>
-  );
-} 
+export default function KiriValleyPage() {
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_PLACES]);
+    const returnLink = { title: 'Return to All Places', path: '/places' };
+
+    return (
+        <>
+            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PlacePageTemplate placeData={placeData} />
+        </>
+    );
+}

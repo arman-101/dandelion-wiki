@@ -7,31 +7,38 @@ import TopPageNavigation from '@/app/components/TopPageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
 // --- DATA FOR AMU ---
-const placeData: Place = {
+const godData: Place = {
     name: "Amu",
     image: "/places/amu.png",
-    introduction: "Amu is one of the seven original states of Tiro, located in north-central Dara. It includes the island of Arulugi and the fertile mainland region of Géfica. Amu is known for its elegance, sophistication, and the divine patronage of Tututika, the goddess of agriculture and beauty.",
+    introduction: "Amu is one of the six Tiro states, an archipelago kingdom known for its powerful navy, skilled sailors, and the beauty of its people. It is the homeland of Consort Risana and the tragic Princess Kikomi.",
     infoBox: {
-        Region: "North-central Dara",
-        Capital: "Müning",
+        type: "Archipelago Kingdom (Tiro State)",
+        continent: { text: "Dara", link: "/places/dara" },
+        capital: { text: "Arulugi", link: "/places/arulugi" },
+        Ruler: "House of Kon Fiji",
         PatronGod: { text: "Tututika", link: "/gods/tututika" },
-        NotableCharacters: [
-            { text: "Consort Risana", link: "/characters/consort-risana" },
-            { text: "Princess Kikomi", link: "/characters/princess-kikomi" },
-        ],
+        KeyExports: "Fish, Timber, Ships"
     },
     geography: [
-        { type: 'text', content: "The state of Amu is split between the medium-sized island of Arulugi and the northeastern region of the Big Island." },
-        { type: 'ref', data: { book: "The Grace of Kings", chapter: 38, link: "/books/the-grace-of-kings#chapter-38" } },
+        { type: 'text', content: "Amu is an archipelago, a collection of islands defined by its deep connection to the sea. Its geography shaped its people into the finest sailors in Dara, and its forests provided the timber for its legendary navy." },
     ],
     culture: [
-        { type: 'text', content: "Amu culture is considered the most refined and sophisticated in Dara. The capital of Müning resembles a 'filigreed diadem floating over the water,' with tall, narrow houses connected by a network of arching bridges and hanging platforms." },
+        { type: 'text', content: "Amuan culture is deeply maritime. The people are known for their skill on the water and for their physical beauty, a trait often noted in characters like Princess Kikomi. The patron goddess of Amu is Tututika, who governs beauty and fresh water." },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 24, link: "/books/the-grace-of-kings#chapter-24" } },
     ],
     history: [
         {
-            event: "The Unification Wars",
+            event: "The Dandelion Rebellion",
             summary: [
-                { type: 'text', content: "During Emperor Mapidéré's conquest of the Tiro states, Amu was a key battleground. The Imperial forces under Kindo Marana eventually conquered the island of Arulugi in a major naval and aerial battle." },
+                { type: 'text', content: "Like the other Tiro states, Amu rose up against the Xana Empire. However, their powerful navy was defeated at the Battle of Arulugi by the clever logistical tactics of Kindo Marana. After the defeat, Princess Kikomi was captured and made a deal with the enemy to save her people, an act that had tragic and far-reaching consequences for the rebellion." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 24, link: "/books/the-grace-of-kings#chapter-24" } },
+            ]
+        },
+        {
+            event: "The Reign of Emperor Ragin",
+            summary: [
+                { type: 'text', content: "Under the Dandelion Dynasty, Amu's strategic importance continued. The island of Arulugi became the site of a new rebellion, this time by Duke Théca Kimo against Emperor Ragin. The rebellion was crushed thanks to the illusionary smokecraft of the Amuan native, Consort Risana, showcasing that Amu's influence on the empire continued through its people at court." },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 32, link: "/books/the-wall-of-storms#chapter-32" } },
             ]
         },
     ]
@@ -39,17 +46,13 @@ const placeData: Place = {
 
 export default function AmuPage() {
     const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_PLACES);
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_PLACES]);
     const returnLink = { title: 'Return to All Places', path: '/places' };
 
     return (
         <>
-            <TopPageNavigation
-                prevPage={prevPage}
-                nextPage={nextPage}
-                returnLink={returnLink}
-            />
-            <PlacePageTemplate placeData={placeData} />
+            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PlacePageTemplate placeData={godData} />
         </>
     );
 }

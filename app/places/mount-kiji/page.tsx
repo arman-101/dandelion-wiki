@@ -6,39 +6,40 @@ import { usePathname } from 'next/navigation';
 import TopPageNavigation from '@/app/components/TopPageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
-// --- DATA FOR MOUNT KIJI (WITH FULL REFERENCES) ---
+// --- DATA FOR MOUNT KIJI ---
 const placeData: Place = {
     name: "Mount Kiji",
     image: "/places/mount-kiji.png",
-    introduction: "Mount Kiji is a massive, snow-peaked volcano on the island of Rui. It is the single most important strategic location in Dara, as its crater lake is the sole source of the lighter-than-air gas used to power the empire's airships.",
+    introduction: "Mount Kiji is a massive, snow-peaked volcano on the island of Rui. It is the most strategically important location in Dara, as its crater lake, Lake Dako, is the sole source of the mystical lift gas that allows airships to fly.",
     infoBox: {
-        Region: "Rui, Xana",
-        Type: "Volcano / Military Base",
-        PatronGod: { text: "Kiji", link: "/gods/kiji" },
-        NotableFeatures: "Lake Dako (source of lift gas), Imperial Air Base",
+        type: "Volcano",
+        location: { text: "Rui", link: "/places/rui" },
+        continent: { text: "Dara", link: "/places/dara" },
+        ControllingDeity: { text: "Kiji", link: "/gods/kiji" },
+        KeyFeature: { text: "Lake Dako", link: "/places/lake-dako" },
+        KeyResource: { text: "Lift Gas", link: "/concepts/lift-gas" }
     },
     geography: [
-        { type: 'text', content: "A towering, snow-capped volcano, Mount Kiji is the home of the sacred and fearsome Mingén falcons. Within its crater are two lakes: the large, blue Lake Arisuso, and the smaller, emerald-green Lake Dako. The gas that bubbles up from Lake Dako is the secret to Xana's air superiority." },
+        { type: 'text', content: "A towering volcano, Mount Kiji dominates the landscape of Rui. At its summit is Lake Dako, the crater lake that produces lift gas." },
         { type: 'ref', data: { book: "The Grace of Kings", chapter: 20, link: "/books/the-grace-of-kings#chapter-20" } },
     ],
     culture: [
-        { type: 'text', content: "Mount Kiji is a place of immense military and spiritual importance. The Imperial Air Base located there is a hub of technological innovation and aeronautical engineering. For the people of Xana, the mountain is sacred to their patron god, Kiji, for whom it is named." },
+        { type: 'text', content: "The mountain is sacred to its patron god, Kiji, the Lord of the Air. The Mount Kiji Air Base, built to harvest the lift gas, is a symbol of imperial power and technological supremacy. Control of the mountain is tantamount to control of the skies of Dara." },
     ],
     history: [
         {
-            event: "The Unification Wars",
+            event: "The Xana Empire",
             summary: [
-                { type: 'text', content: "Control of Mount Kiji and its lift gas was the key that allowed Emperor Mapidéré to build his unstoppable airship fleet and conquer the other Tiro states." },
+                { type: 'text', content: "The Xana Empire's military dominance was built upon its exclusive control of Mount Kiji's lift gas. During the rebellion, Kindo Marana had to ruthlessly restore the corrupt and inefficient Air Base to functionality to rebuild the imperial fleet." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 20, link: "/books/the-grace-of-kings#chapter-20" } },
             ]
         },
         {
-            event: "The Dandelion Rebellion",
+            event: "The Lyucu Occupation",
             summary: [
-                { type: 'text', content: "During the rebellion, the air base fell into corrupt disrepair. The bureaucrat Kindo Marana was sent to restore it, successfully rebuilding the Imperial air force for a time." },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 20, link: "/books/the-grace-of-kings#chapter-20" } },
-                { type: 'text', content: " The island of Rui, and with it Mount Kiji, was eventually captured by Kuni Garu's forces in a surprise attack, a devastating blow to the Hegemon Mata Zyndu's war effort." },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 43, link: "/books/the-grace-of-kings#chapter-43" } },
+                { type: 'text', content: "After the Lyucu invaded and conquered Rui, they seized control of Mount Kiji. The hardline thane Cutanrovo Aga led a puritanical movement to erase Dara's culture, transforming the Temple of Kiji on the mountain into the Temple of Péa-Kiji. She forced the captive Prince Timu to participate in a ritual to destroy the statue of Kiji and burn the temple's sacred library. The desecration of this holy site was a source of great anger for the god Kiji and a symbol of the cultural war waged by the occupiers." },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 16, link: "/books/the-veiled-throne#chapter-16" } },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 30, link: "/books/the-veiled-throne#chapter-30" } },
             ]
         },
     ]
@@ -46,7 +47,7 @@ const placeData: Place = {
 
 export default function MountKijiPage() {
     const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_PLACES);
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_PLACES]);
     const returnLink = { title: 'Return to All Places', path: '/places' };
 
     return (

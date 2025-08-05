@@ -6,43 +6,46 @@ import { usePathname } from 'next/navigation';
 import TopPageNavigation from '@/app/components/TopPageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
-export default function TheFishHerderPage() {
-  const pathname = usePathname();
-  const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CHARACTERS);
-  const returnLink = { title: 'Return to All Characters', path: '/characters' };
-
-  // --- DATA FOR THE FISH-HERDER ---
-  const characterData: Character = {
+const characterData: Character = {
     name: "The Fish-Herder",
-    image: "/characters/kuni-garu.png", // Placeholder image
-    introduction: "A mysterious figure who plays a crucial role in the final events of the series, representing the unexpected sources of wisdom and power in the world of Dara.",
+    image: "/characters/the-fish-herder.png",
+    introduction: "The Fish-Herder is the mysterious and charismatic leader of a grassroots rebellion in the swamps of Géfica. Representing the rising power of the common folk, she organizes a formidable resistance against both the Lyucu invaders and the perceived weakness of the Dandelion Court.",
     infoBox: {
-      "Also known as": "The Fish-Herder",
-      "Affiliation": "Unknown",
-      "Role": "Mysterious Figure",
-      "First appearance": "Speaking Bones",
-      "Related characters": [
-        { text: "The Sword-Saint", link: "/characters/the-sword-saint" },
-        { text: "Ouro", link: "/characters/ouro" }
-      ]
+        aliases: "The Swamp Rebel",
+        occupation: "Rebel Leader",
+        placeOfBirth: { text: "Géfica", link: "/places/gefica" },
+        status: "Alive",
+        gender: "Female",
+        affiliation: "Géfican Resistance",
+        nationality: { text: "Géfican", link: "/places/gefica" },
+        firstAppeared: { text: "Speaking Bones", link: "/books/speaking-bones" },
+        lastAppeared: { text: "Speaking Bones", link: "/books/speaking-bones" }
     },
     appearanceAndPersonality: [
-      { type: "text" as const, content: "The Fish-Herder embodies the mysterious and enigmatic nature of the final events of the series, combining apparent simplicity with hidden depths of wisdom and power that prove crucial to the resolution of the conflict." }
+        { type: 'text', content: "The Fish-Herder's true identity is concealed, but her leadership is defined by her deep connection to the common people and her mastery of the unique geography of the swamps. She is a cunning and effective guerrilla leader, using her knowledge of the terrain to outwit a technologically superior foe." },
+        { type: 'ref', data: { book: "Speaking Bones", chapter: 4, link: "/books/speaking-bones#chapter-4" } },
     ],
     history: [
-      {
-        era: "Speaking Bones",
-        summary: [
-          { type: "text" as const, content: "The Fish-Herder emerges as a mysterious figure whose actions and decisions play a crucial role in determining the final outcome of the series, representing the unexpected sources of wisdom and power that can change the course of history." }
-        ]
-      }
+        {
+            era: "Speaking Bones",
+            summary: [
+                { type: 'text', content: "The Fish-Herder emerges as a new power in Dara, organizing the fishermen and swamp-dwellers of Géfica into a potent resistance movement. Her forces employ guerrilla tactics and a secret communication network to harass both the Lyucu and Imperial forces. She becomes a crucial, if unconventional, ally to Aya Mazoti during the Battle of Crescent Island, her forces playing a key role in the Dara victory." },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 4, link: "/books/speaking-bones#chapter-4" } },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 25, link: "/books/speaking-bones#chapter-25" } },
+            ]
+        },
     ]
-  };
+};
 
-  return (
-    <>
-      <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-      <CharacterPageTemplate characterData={characterData} />
-    </>
-  );
-} 
+export default function TheFishHerderPage() {
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
+    const returnLink = { title: 'Return to All Characters', path: '/characters' };
+
+    return (
+        <>
+            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <CharacterPageTemplate characterData={characterData} />
+        </>
+    );
+}

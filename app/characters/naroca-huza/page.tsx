@@ -9,7 +9,7 @@ import { getSurroundingPages } from '@/app/utils/navigationUtils';
 // --- DATA FOR NAROCA HUZA ---
 const characterData: Character = {
     name: "Naroca Huza",
-    image: "/characters/kuni-garu.png", // Placeholder image
+    image: "/characters/naroca-huza.png", // Placeholder image
     introduction: "A Lyucu commander and leader who participates in the governance of occupied Dara, representing the administrative aspects of Lyucu rule.",
     infoBox: {
       "Also known as": "Naroca Huza",

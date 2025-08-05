@@ -10,22 +10,36 @@ import { getSurroundingPages } from '@/app/utils/navigationUtils';
 const placeData: Place = {
     name: "Crescent Island",
     image: "/places/crescent-island.png",
-    introduction: "Crescent Island is a large, sparsely populated island in the northwest of Dara, known for its untamed wilderness. It served as a royal hunting preserve for the Xana emperors and later as a place of learning for Luan Zya and Zomi Kidosu.",
+    introduction: "Crescent Island is a remote, isolated island that serves as a key location in the education of Zomi Kidosu. It later becomes the site of a pivotal and bloody battle during the war against the Lyucu.",
     infoBox: {
-        Region: "Northwestern Dara",
-        NotableFeatures: "Unsettled wilderness, royal hunting preserve",
+        type: "Island",
+        continent: { text: "Dara", link: "/places/dara" },
+        KeyEvents: "Zomi's education, Battle of Crescent Island"
     },
     geography: [
-        { type: 'text', content: "A large, crescent-shaped island, it is located north of the Big Island. The landscape is wild and untamed, covered in dense forests and mountains. It is home to a small, isolated hamlet of people who live a traditional, simple life, largely untouched by the politics of the mainland." },
+        { type: 'text', content: "Crescent Island is remote and sparsely populated, home to small hamlets of people who live a traditional life and speak an archaic dialect. It features treacherous mountains and is prone to natural disasters like forest fires." },
+        { type: 'ref', data: { book: "The Wall of Storms", chapter: 12, link: "/books/the-wall-of-storms#chapter-12" } },
     ],
     culture: [
-        { type: 'text', content: "The island does not have a distinct widespread culture due to its lack of settlement. The small communities that exist there live in a manner close to nature, preserving ancient customs." },
+        { type: 'text', content: "The inhabitants of Crescent Island live a simple, traditional life, preserving ancient customs and language. This makes the island a living museum of Dara's history and a perfect outdoor classroom for a student of philosophy and linguistics like Zomi." },
+        { type: 'ref', data: { book: "The Wall of Storms", chapter: 12, link: "/books/the-wall-of-storms#chapter-12" } },
     ],
     history: [
         {
-            event: "Luan Zya's Tutelage of Zomi Kidosu",
+            event: "The Education of Zomi Kidosu",
             summary: [
-                { type: 'text', content: "Five years before the first Grand Examination of the Dandelion Dynasty, Luan Zya took his student, Zomi Kidosu, to Crescent Island as part of her education. Here, he taught her philosophy and engineering through practical lessons, including flying a hot-air balloon and interacting with the local hamlet." },
+                { type: 'text', content: "Luan Zya took his young student, Zomi Kidosu, to Crescent Island to continue her education. There, he taught her the deeper principles of logogram construction by communicating with an elder who spoke an archaic dialect. The island was also the site of a dramatic forest fire where Zomi's practical genius saved both the hamlet and her teacher's life." },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 12, link: "/books/the-wall-of-storms#chapter-12" } },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 14, link: "/books/the-wall-of-storms#chapter-14" } },
+            ]
+        },
+        {
+            event: "The Battle of Crescent Island",
+            summary: [
+                { type: 'text', content: "During the Lyucu War, the invaders established a foothold on Crescent Island, leading to a military stalemate. The Dandelion court gave command of the Dara fleet to the newly trained Aya Mazoti. In a multi-part, brutal battle, Aya used deception and unconventional tactics, including the aid of the Fish-Herder's swamp rebels, to break the stalemate and achieve a costly but decisive victory for Dara." },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 24, link: "/books/speaking-bones#chapter-24" } },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 25, link: "/books/speaking-bones#chapter-25" } },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 26, link: "/books/speaking-bones#chapter-26" } },
             ]
         },
     ]
@@ -33,16 +47,12 @@ const placeData: Place = {
 
 export default function CrescentIslandPage() {
     const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_PLACES);
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_PLACES]);
     const returnLink = { title: 'Return to All Places', path: '/places' };
 
     return (
         <>
-            <TopPageNavigation
-                prevPage={prevPage}
-                nextPage={nextPage}
-                returnLink={returnLink}
-            />
+            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
             <PlacePageTemplate placeData={placeData} />
         </>
     );

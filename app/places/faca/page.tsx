@@ -7,29 +7,45 @@ import TopPageNavigation from '@/app/components/TopPageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
 // --- DATA FOR FAÇA ---
-const placeData: Place = {
+const godData: Place = {
     name: "Faça",
     image: "/places/faca.png",
-    introduction: "Faça is a craggy, northern Tiro state located on the Big Island. It is known for its foggy highlands, hardy people, rich wool production, and a unique tradition of street magic based on the 'silkmotic force.' Its patron god is Rufizo, the Divine Healer.",
+    introduction: "Faça is one of the six Tiro states, a northern kingdom known for its treacherous politics and its unique mastery of the 'silkmotic force,' the practical science of static electricity.",
     infoBox: {
-        Region: "Northern Dara",
-        Capital: "Boama",
+        type: "Kingdom (Tiro State)",
+        continent: { text: "Dara", link: "/places/dara" },
+        capital: "Boama",
+        Ruler: "House of Shilué (historical), Gin Mazoti (later)",
         PatronGod: { text: "Rufizo", link: "/gods/rufizo" },
-        NotableCharacters: [
-            { text: "King Shilué", link: "/characters/king-shilue" },
-        ],
+        KeyTechnology: { text: "Silkmotic Force", link: "/concepts/silkmotic-force" },
     },
     geography: [
-        { type: 'text', content: "Faça occupies the northern half of the Big Island, characterized by rocky highlands that are often shrouded in fog." },
+        { type: 'text', content: "Faça is a northern state on the Big Island, bordering Rima. Its people are known for their ingenuity and somewhat shifty political allegiances." },
     ],
     culture: [
-        { type: 'text', content: "The people of Faça are known to be hardy and resilient, shaped by their challenging environment. The state is a major producer of wool." },
+        { type: 'text', content: "The most defining cultural aspect of Faça is the development of the silkmotic force. Initially used by street magicians for entertainment, this understanding of static electricity was later weaponized, becoming a crucial technology in the war against the Lyucu. The patron god of the kingdom is Rufizo, the Divine Healer." },
+        { type: 'ref', data: { book: "The Wall of Storms", chapter: 55, link: "/books/the-wall-of-storms#chapter-55" } },
     ],
     history: [
         {
-            event: "The Marshal's Gambit",
+            event: "The Dandelion Rebellion",
             summary: [
-                { type: 'text', content: "During the Chrysanthemum-Dandelion War, King Shilué of Faça attempted to remain neutral and play both sides. When Gin Mazoti marched her army into his territory, he welcomed her, believing he could manipulate the situation to his advantage. Gin saw through his treachery, promptly had him executed, and conquered the state, declaring herself Queen of both Rima and Faça." },
+                { type: 'text', content: "Faça, under the rule of the treacherous King Shilué, joined the rebellion against Xana. However, at the Battle of Wolf's Paw, Shilué's forces betrayed Mata Zyndu's army in the middle of the fight." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 29, link: "/books/the-grace-of-kings#chapter-29" } },
+            ]
+        },
+        {
+            event: "The Chrysanthemum-Dandelion War",
+            summary: [
+                { type: 'text', content: "During the civil war, Marshal Gin Mazoti marched her army north to break the stalemate. Believing he could play both sides, King Shilué welcomed her into his capital, Boama. Gin, having no tolerance for his disloyalty, promptly had him executed and conquered Faça in Kuni Garu's name, eventually becoming its queen." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 48, link: "/books/the-grace-of-kings#chapter-48" } },
+            ]
+        },
+        {
+            event: "The Lyucu War",
+            summary: [
+                { type: 'text', content: "During the war with the Lyucu, Prince Phyro and Consort Risana traveled to Faça to investigate the silkmotic force. They uncovered the secrets of the Ogé Jar (a Leyden jar), a device that could store and discharge powerful electrical shocks, which became the basis for the new silkmotic lances used to fight the garinafins." },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 55, link: "/books/the-wall-of-storms#chapter-55" } },
             ]
         },
     ]
@@ -37,17 +53,13 @@ const placeData: Place = {
 
 export default function FacaPage() {
     const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_PLACES);
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_PLACES]);
     const returnLink = { title: 'Return to All Places', path: '/places' };
 
     return (
         <>
-            <TopPageNavigation
-                prevPage={prevPage}
-                nextPage={nextPage}
-                returnLink={returnLink}
-            />
-            <PlacePageTemplate placeData={placeData} />
+            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PlacePageTemplate placeData={godData} />
         </>
     );
 }

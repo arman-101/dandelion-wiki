@@ -6,52 +6,60 @@ import { usePathname } from 'next/navigation';
 import TopPageNavigation from '@/app/components/TopPageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
-export default function KriphiPage() {
-  const pathname = usePathname();
-  const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_PLACES);
-  const returnLink = { title: 'Return to All Places', path: '/places' };
-
-  const placeData: Place = {
+// --- DATA FOR KRIPHI ---
+const placeData: Place = {
     name: "Kriphi",
-    image: "/places/gan.png", // Placeholder image
-    introduction: "A major city that becomes important during the later events of the series, Kriphi serves as a center of commerce, culture, and political activity in the Dara empire.",
+    image: "/places/kriphi.png",
+    introduction: "Kriphi is the capital city of the island of Rui, the heart of the old Xana homeland. During the Lyucu occupation, it becomes the capital of 'Unredeemed Dara' and the seat of power for the Lyucu rulers.",
     infoBox: {
-      "Type": "Major City",
-      "Region": "Dara Empire",
-      "Significance": "Commercial and Cultural Center",
-      "First appearance": "The Veiled Throne",
-      "Related places": [
-        { text: "Gan", link: "/places/gan" },
-        { text: "Pan", link: "/places/pan" },
-        { text: "Zudi", link: "/places/zudi" }
-      ]
+        type: "Capital City",
+        state: { text: "Rui", link: "/places/rui" },
+        continent: { text: "Dara", link: "/places/dara" },
+        Rulers: "Xana Empire, Lyucu Empire",
+        KeyResidents: [
+            { text: "Tanvanaki", link: "/characters/tanvanaki" },
+            { text: "Prince Timu", link: "/characters/prince-timu" },
+            { text: "Goztan Ryoto", link: "/characters/goztan-ryoto" }
+        ]
     },
     geography: [
-      { type: "text" as const, content: "Kriphi is located in a strategic position within the Dara empire, likely near major trade routes and waterways. The city's location has made it a natural center for commerce and cultural exchange between different regions of the empire." }
+        { type: 'text', content: "Kriphi is a major port city on the island of Rui. Its harbor is a key strategic location for naval and aerial power in the northern islands." },
+        { type: 'ref', data: { book: "The Wall of Storms", chapter: 42, link: "/books/the-wall-of-storms#chapter-42" } },
     ],
     culture: [
-      { type: "text" as const, content: "As a major urban center, Kriphi has developed a rich and diverse culture that reflects the cosmopolitan nature of the Dara empire. The city is home to merchants, scholars, artists, and people from all walks of life, creating a vibrant and dynamic cultural environment." }
+        { type: 'text', content: "Under the Lyucu, Kriphi is a city of tension and political strife. It is the center of the conflict between the hardline faction, which seeks to erase all traces of Dara culture, and the accommodationist faction, which advocates for a more integrated society. It is a place of purges, political maneuvering, and quiet resistance." },
+        { type: 'ref', data: { book: "The Veiled Throne", chapter: 25, link: "/books/the-veiled-throne#chapter-25" } },
     ],
     history: [
-      {
-        event: "Rise to Prominence",
-        summary: [
-          { type: "text" as const, content: "Kriphi emerged as an important city during the later periods of the Dara empire, growing from a smaller settlement into a major urban center. The city's growth was driven by its strategic location and the opportunities it provided for trade and cultural exchange." }
-        ]
-      },
-      {
-        event: "Role in Later Events",
-        summary: [
-          { type: "text" as const, content: "During the complex political events of the later books, Kriphi became a significant location where various factions and interests converged. The city's importance made it a focal point for political maneuvering and strategic planning." }
-        ]
-      }
+        {
+            event: "The Chrysanthemum-Dandelion War",
+            summary: [
+                { type: 'text', content: "Using the forgotten Grand Tunnels, Gin Mazoti's army launched a stunning surprise attack on Rui, and the city of Kriphi fell quickly to Kuni Garu's forces. This swift victory was a major turning point in the war against Mata Zyndu." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 43, link: "/books/the-grace-of-kings#chapter-43" } },
+            ]
+        },
+        {
+            event: "The Lyucu War",
+            summary: [
+                { type: 'text', content: "After the Lyucu conquered Rui and Dasu, Kriphi became their capital. The Battle of Kriphi Harbor was the first major victory for the Dara forces against the invaders. Gin Mazoti led a daring night attack with new flamethrower-equipped airships, destroying much of the Lyucu navy." },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 42, link: "/books/the-wall-of-storms#chapter-42" } },
+                { type: 'text', content: "It later became the center of the Lyucu court, where Prince Timu was held as a puppet emperor and where Kinri launched his daring rescue mission. The city's internal politics, dominated by the struggle between Cutanrovo Aga and Goztan Ryoto, ultimately led to the collapse of the Lyucu regime from within." },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 25, link: "/books/the-veiled-throne#chapter-25" } },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 43, link: "/books/speaking-bones#chapter-43" } },
+            ]
+        },
     ]
-  };
+};
 
-  return (
-    <>
-      <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-      <PlacePageTemplate placeData={placeData} />
-    </>
-  );
-} 
+export default function KriphiPage() {
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_PLACES]);
+    const returnLink = { title: 'Return to All Places', path: '/places' };
+
+    return (
+        <>
+            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PlacePageTemplate placeData={placeData} />
+        </>
+    );
+}

@@ -9,29 +9,37 @@ import { getSurroundingPages } from '@/app/utils/navigationUtils';
 const characterData: Character = {
     name: "King Mocri",
     image: "/characters/king-mocri.png",
-    introduction: "King Mocri was the proud and honorable king of the wealthy state of Gan during the Dandelion Rebellion. He was a respected warrior and a key member of the Tiro Alliance.",
+    introduction: "King Mocri was the proud and honorable king of Gan and a key member of the Tiro Alliance during the Dandelion Rebellion. He later became an antagonist to Mata Zyndu during the Hegemon's reign.",
     infoBox: {
-        aliases: "None",
+        aliases: "King of Gan",
         occupation: "King of Gan",
+        placeOfBirth: { text: "Gan", link: "/places/gan" },
         status: "Deceased",
         gender: "Male",
-        affiliation: "Tiro Rebellion",
+        affiliation: "Kingdom of Gan, Tiro Alliance",
         nationality: { text: "Gan", link: "/places/gan" },
-        firstAppeared: "The Grace of Kings",
-        lastAppeared: "The Wall of Storms"
+        firstAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" },
+        lastAppeared: { text: "The Wall of Storms", link: "/books/the-wall-of-storms" }
     },
     appearanceAndPersonality: [
-        { type: 'text', content: "Mocri is a classic nobleman: proud, confident in his abilities, and deeply committed to the traditions of honor and martial prowess. He is a skilled fighter and a respected leader among the Tiro kings, though his pride can sometimes border on arrogance." },
-        { type: 'ref', data: { book: "The Wall of Storms", chapter: 1, link: "/books/the-wall-of-storms#chapter-1" } },
+        { type: 'text', content: "Mocri is depicted as a proud and traditional nobleman. He believes strongly in the old aristocratic order and the honor codes that govern it. He is a brave warrior and a respected leader among the Tiro kings, though his pride can sometimes lead to conflict." },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 12, link: "/books/the-grace-of-kings#chapter-12" } },
     ],
     history: [
         {
-            era: "The Dandelion Rebellion",
+            era: "The Grace of Kings",
             summary: [
-                { type: 'text', content: "King Mocri was a central figure in the Grand Council of the Tiro Alliance. His most famous moment was his duel with Mata Zyndu, which was intended to decide who would become the Princeps of the rebellion. Though he was defeated by Mata's superior strength, the duel became a legendary tale told by storytellers for years to come." },
-                { type: 'ref', data: { book: "The Wall of Storms", chapter: 1, link: "/books/the-wall-of-storms#chapter-1" } },
-                { type: 'text', content: " Like the King of Faça, his forces pragmatically held back during the Battle of Wolf's Paw, an act seen by Mata as a betrayal." },
+                { type: 'text', content: "As King of Gan, Mocri was a central figure in the Grand Council of War, where the restored Tiro states bickered over leadership. During the Battle of Wolf's Paw, his forces, along with those from Faça, betrayed their allies mid-battle, though Mata Zyndu's prowess still secured a victory." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 12, link: "/books/the-grace-of-kings#chapter-12" } },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 29, link: "/books/the-grace-of-kings#chapter-29" } },
+            ]
+        },
+        {
+            era: "The Wall of Storms",
+            summary: [
+                { type: 'text', content: "During Mata Zyndu's reign as Hegemon, King Mocri rebelled against his rule. The storyteller in the Three-Legged Jug recounts the legendary duel between Mata and Mocri, suggesting Mocri was eventually defeated and killed by the Hegemon. This story inspires the children of Emperor Ragin." },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 1, link: "/books/the-wall-of-storms#chapter-1" } },
+                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 45, link: "/books/the-grace-of-kings#chapter-45" } },
             ]
         },
     ]
@@ -39,7 +47,7 @@ const characterData: Character = {
 
 export default function KingMocriPage() {
     const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CHARACTERS);
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (

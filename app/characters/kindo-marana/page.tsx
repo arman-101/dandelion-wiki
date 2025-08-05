@@ -9,37 +9,33 @@ import { getSurroundingPages } from '@/app/utils/navigationUtils';
 const characterData: Character = {
     name: "Kindo Marana",
     image: "/characters/kindo-marana.png",
-    introduction: "Kindo Marana was the Minister of Finance for the Xana Empire who was unexpectedly appointed Commander-in-Chief of the Imperial Army during the Dandelion Rebellion. Despite his lack of military experience, he proved to be a surprisingly pragmatic and effective commander.",
+    introduction: "Kindo Marana was the unassuming chief tax collector for the Xana Empire who, despite having no military experience, was appointed Commander-in-Chief by Lügo Crupo. He proved to be a surprisingly competent and meticulous commander, approaching war with the methodical efficiency of a bureaucrat.",
     infoBox: {
-        aliases: "None",
+        aliases: "The Tax Collector",
         occupation: "Minister of Finance, Commander-in-Chief",
+        placeOfBirth: { text: "Xana", link: "/places/xana" },
         status: "Deceased",
         gender: "Male",
-        affiliation: "Empire of Dara",
+        affiliation: "Xana Empire, Hegemon's Court",
         nationality: { text: "Xana", link: "/places/xana" },
         firstAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" },
         lastAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" }
     },
     appearanceAndPersonality: [
-        { type: 'text', content: "Marana is a meticulous and numbers-oriented bureaucrat. He is not a warrior but approaches military command like an accounting problem, focusing on logistics, resources, and practical solutions rather than glory or honor. This makes him a methodical and often underestimated opponent. While loyal to the empire, his primary motivation is efficiency and order." },
+        { type: 'text', content: "Marana is presented as a career bureaucrat, meticulous and detail-oriented. He is not a warrior by nature but applies the principles of accounting and administration to the art of war with surprising success. He is pragmatic and logical, seeing the empire's problems as a complex audit that requires careful management of assets and liabilities." },
         { type: 'ref', data: { book: "The Grace of Kings", chapter: 13, link: "/books/the-grace-of-kings#chapter-13" } },
     ],
     history: [
         {
-            era: "Appointment as Commander",
+            era: "The Grace of Kings",
             summary: [
-                { type: 'text', content: "Annoyed by Marana's constant complaints about the cost of the rebellion, Regent Lügo Crupo mockingly appointed him Commander-in-Chief. To everyone's surprise, Marana took the job seriously, applying his bureaucratic skills to organize the faltering Imperial war effort. He brought the legendary general Tanno Namen out of retirement and successfully rebuilt the Imperial air force." },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 10, link: "/books/the-grace-of-kings#chapter-10" } },
+                { type: 'text', content: "Appointed Commander-in-Chief by a dismissive Lügo Crupo, Marana methodically took inventory of the empire's weakened forces and developed a pragmatic plan to turn prisoners and laborers into soldiers." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 13, link: "/books/the-grace-of-kings#chapter-13" } },
+                { type: 'text', content: "He traveled to the Xana home island of Rui to rebuild the Imperial air force, ruthlessly executing the corrupt base administrators and restoring the fleet to its former glory. He also proved a clever naval tactician, defeating the Amu navy at the Battle of Arulugi using hidden boats and nets." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 20, link: "/books/the-grace-of-kings#chapter-20" } },
-            ]
-        },
-        {
-            era: "The Dandelion Rebellion",
-            summary: [
-                { type: 'text', content: "Marana led the Imperial forces against the Tiro rebels, achieving several key victories, including the conquest of Arulugi. He was eventually outmaneuvered and defeated by Mata Zyndu at the Battle of Wolf's Paw." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 24, link: "/books/the-grace-of-kings#chapter-24" } },
+                { type: 'text', content: "Marana was ultimately captured by Mata Zyndu's forces at the Battle of Wolf's Paw. After the war, he served Mata as a commander before being killed by the double-agent Dafiro Miro during Gin Mazoti's surprise attack on Rui." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 29, link: "/books/the-grace-of-kings#chapter-29" } },
-                { type: 'text', content: " After being held as a prisoner by Mata, he was eventually put in charge of the Hegemon's navy. He was killed by the double agent Dafiro Miro during Gin Mazoti's surprise attack on Rui." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 43, link: "/books/the-grace-of-kings#chapter-43" } },
             ]
         },
@@ -48,7 +44,7 @@ const characterData: Character = {
 
 export default function KindoMaranaPage() {
     const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CHARACTERS);
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (

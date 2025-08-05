@@ -7,29 +7,40 @@ import TopPageNavigation from '@/app/components/TopPageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
 // --- DATA FOR HAAN ---
-const placeData: Place = {
+const godData: Place = {
     name: "Haan",
     image: "/places/haan.png",
-    introduction: "Haan is a woodsy and learned Tiro state in the northern half of the Big Island, renowned for its deep philosophical traditions, prestigious academies, and skilled inventors. Its patron god is Lutho, the god of knowledge and divination.",
+    introduction: "Haan is one of the six Tiro states, renowned for its long history of scholarship, invention, and philosophy. It is the homeland of the brilliant strategist Luan Zya and becomes a center for scientific research under the Dandelion Dynasty.",
     infoBox: {
-        Region: "Northern Dara",
-        Capital: "Ginpen",
+        type: "Kingdom (Tiro State)",
+        continent: { text: "Dara", link: "/places/dara" },
+        capital: { text: "Ginpen", link: "/places/ginpen" },
+        Ruler: "House of Cosugi (historical)",
         PatronGod: { text: "Lutho", link: "/gods/lutho" },
-        NotableCharacters: [
-            { text: "Luan Zya", link: "/characters/luan-zya" },
-        ],
+        KeyExports: "Knowledge, Technology, Inventions"
     },
     geography: [
-        { type: 'text', content: "Located in the northern part of the Big Island, Haan is characterized by its dense forests and proximity to the Damu Mountains." },
+        { type: 'text', content: "Located on the Big Island, Haan is a state whose identity is defined more by its intellectual contributions than its geography. Its capital, Ginpen, is a hub of learning and innovation." },
     ],
     culture: [
-        { type: 'text', content: "Haanese culture places a profound emphasis on scholarship, philosophy, and invention. The people are known for their intellectual pursuits and contributions to the Hundred Schools of thought." },
+        { type: 'text', content: "Haan is the intellectual heart of Dara. Its culture prizes knowledge, philosophy, and invention above all else. Its people are known for their patient, scholarly nature. The patron god of Haan is Lutho, the god of knowledge, mathematics, and strategy, perfectly reflecting the values of the kingdom." },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 18, link: "/books/the-grace-of-kings#chapter-18" } },
     ],
     history: [
         {
-            event: "The Unification Wars",
+            event: "The Xana Conquest",
             summary: [
-                { type: 'text', content: "Haan was one of the last states to fall to Emperor Mapidéré's conquest, and its people harbored a deep resentment towards the Xana Empire. This resentment fueled assassination plots and resistance movements, such as Luan Zya's daring kite attack." },
+                { type: 'text', content: "During the Xana conquest, Haan's noble houses of inventors and scholars, including the family of Luan Zya, were systematically massacred. This brutal suppression of Haan's intellectual class was a major grievance that fueled the later rebellion." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 18, link: "/books/the-grace-of-kings#chapter-18" } },
+            ]
+        },
+        {
+            event: "The Dandelion Dynasty",
+            summary: [
+                { type: 'text', content: "Under Emperor Ragin, Haan's cultural importance was restored. The capital, Ginpen, became the setting for a cultural and technological renaissance led by Princess Fara and the Blossom Gang." },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 18, link: "/books/the-veiled-throne#chapter-18" } },
+                { type: 'text', content: "During the Lyucu War, Haan became a vital center for research and development. Princess Théra and Zomi Kidosu established a secret laboratory there to dissect and study the captured garinafins, leading to the scientific breakthroughs that were critical to Dara's victory." },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 53, link: "/books/the-wall-of-storms#chapter-53" } },
             ]
         },
     ]
@@ -37,17 +48,13 @@ const placeData: Place = {
 
 export default function HaanPage() {
     const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_PLACES);
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_PLACES]);
     const returnLink = { title: 'Return to All Places', path: '/places' };
 
     return (
         <>
-            <TopPageNavigation
-                prevPage={prevPage}
-                nextPage={nextPage}
-                returnLink={returnLink}
-            />
-            <PlacePageTemplate placeData={placeData} />
+            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PlacePageTemplate placeData={godData} />
         </>
     );
 }

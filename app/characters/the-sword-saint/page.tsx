@@ -6,43 +6,45 @@ import { usePathname } from 'next/navigation';
 import TopPageNavigation from '@/app/components/TopPageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
-export default function TheSwordSaintPage() {
-  const pathname = usePathname();
-  const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CHARACTERS);
-  const returnLink = { title: 'Return to All Characters', path: '/characters' };
-
-  // --- DATA FOR THE SWORD-SAINT ---
-  const characterData: Character = {
+const characterData: Character = {
     name: "The Sword-Saint",
-    image: "/characters/kuni-garu.png", // Placeholder image
-    introduction: "A legendary warrior whose actions shape the final outcome of the conflict, representing the pinnacle of martial skill and philosophical wisdom in the world of Dara.",
+    image: "/characters/the-sword-saint.png",
+    introduction: "The Sword-Saint is a legendary, near-mythical warrior from the remote monasteries of Eseeran Nomnny. She is the master who trains Aya Mazoti, transforming her from a disgraced princess into a formidable commander.",
     infoBox: {
-      "Also known as": "The Sword-Saint",
-      "Affiliation": "Unknown",
-      "Role": "Legendary Warrior",
-      "First appearance": "Speaking Bones",
-      "Related characters": [
-        { text: "The Fish-Herder", link: "/characters/the-fish-herder" },
-        { text: "Ouro", link: "/characters/ouro" }
-      ]
+        aliases: "The Master of Eseeran Nomnny",
+        occupation: "Warrior, Teacher",
+        placeOfBirth: { text: "Eseeran Nomnny", link: "/places/eseeran-nomnny" },
+        status: "Alive",
+        gender: "Female",
+        affiliation: "Monasteries of Eseeran Nomnny",
+        nationality: { text: "Eseeran", link: "/places/eseeran-nomnny" },
+        firstAppeared: { text: "Speaking Bones", link: "/books/speaking-bones" },
+        lastAppeared: { text: "Speaking Bones", link: "/books/speaking-bones" }
     },
     appearanceAndPersonality: [
-      { type: "text" as const, content: "The Sword-Saint embodies the ideal of the perfect warrior, combining unmatched martial skill with deep philosophical understanding. His personality reflects the balance between physical prowess and spiritual wisdom." }
+        { type: 'text', content: "The Sword-Saint is a figure of immense authority and skill. Her training methods are brutal and demanding, focusing as much on spiritual and mental discipline as on physical prowess. She is a master of the philosophy of the martial arts, teaching her students to find strength in humility and to understand the deeper meaning of combat." },
+        { type: 'ref', data: { book: "Speaking Bones", chapter: 6, link: "/books/speaking-bones#chapter-6" } },
     ],
     history: [
-      {
-        era: "Speaking Bones",
-        summary: [
-          { type: "text" as const, content: "The Sword-Saint emerges as a legendary figure whose martial skill and philosophical wisdom prove crucial to the resolution of the final conflict, representing the highest ideals of warrior culture in the world of Dara." }
-        ]
-      }
+        {
+            era: "Speaking Bones",
+            summary: [
+                { type: 'text', content: "After her humiliating first command, Aya Mazoti sought out the legendary Sword-Saint. In the remote mountains of Eseeran Nomnny, Aya underwent a grueling training regimen. The Sword-Saint's tutelage was the crucible that forged Aya into a true warrior, stripping away her pride and rebuilding her as a skilled and disciplined commander, worthy of her heritage." },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 6, link: "/books/speaking-bones#chapter-6" } },
+            ]
+        },
     ]
-  };
+};
 
-  return (
-    <>
-      <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-      <CharacterPageTemplate characterData={characterData} />
-    </>
-  );
-} 
+export default function TheSwordSaintPage() {
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
+    const returnLink = { title: 'Return to All Characters', path: '/characters' };
+
+    return (
+        <>
+            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <CharacterPageTemplate characterData={characterData} />
+        </>
+    );
+}

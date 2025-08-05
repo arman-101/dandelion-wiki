@@ -6,43 +6,45 @@ import { usePathname } from 'next/navigation';
 import TopPageNavigation from '@/app/components/TopPageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
-export default function TipoThoPage() {
-  const pathname = usePathname();
-  const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CHARACTERS);
-  const returnLink = { title: 'Return to All Characters', path: '/characters' };
-
-  // --- DATA FOR TIPO THO ---
-  const characterData: Character = {
+const characterData: Character = {
     name: "Tipo Tho",
-    image: "/characters/kuni-garu.png", // Placeholder image
-    introduction: "A Lyucu warrior and leader who becomes involved in the occupation of Dara, representing the military aspects of Lyucu governance.",
+    image: "/characters/tipo-tho.png",
+    introduction: "Tipo Tho is a Dara marine commander and a key military leader in Princess Théra's expedition to Ukyu-Gondé. He is a brave and capable officer, essential to the success of the rebellion's military operations.",
     infoBox: {
-      "Also known as": "Tipo Tho",
-      "Affiliation": "Lyucu",
-      "Role": "Warrior/Leader",
-      "First appearance": "The Veiled Throne",
-      "Related characters": [
-        { text: "Sataari", link: "/characters/sataari" },
-        { text: "Razutana Pon", link: "/characters/razutana-pon" }
-      ]
+        aliases: "Commander Tho",
+        occupation: "Marine Commander",
+        placeOfBirth: { text: "Dara", link: "/places/dara" },
+        status: "Alive",
+        gender: "Male",
+        affiliation: "Dara Expeditionary Force, Agon Rebellion",
+        nationality: { text: "Dara", link: "/places/dara" },
+        firstAppeared: { text: "The Veiled Throne", link: "/books/the-veiled-throne" },
+        lastAppeared: { text: "The Veiled Throne", link: "/books/the-veiled-throne" }
     },
     appearanceAndPersonality: [
-      { type: "text" as const, content: "Tipo Tho exemplifies the Lyucu warrior tradition, combining tactical skill with the fierce determination that characterized the northern invaders. His personality reflects the disciplined and uncompromising nature of Lyucu military culture." }
+        { type: 'text', content: "Tipo is a professional and highly competent military officer. He is courageous, disciplined, and fiercely loyal to Princess Théra. He represents the best of the Dara military, adapting to the unfamiliar challenges of a new continent and a new kind of warfare." },
+        { type: 'ref', data: { book: "The Veiled Throne", chapter: 9, link: "/books/the-veiled-throne#chapter-9" } },
     ],
     history: [
-      {
-        era: "The Veiled Throne",
-        summary: [
-          { type: "text" as const, content: "Tipo Tho serves as a key warrior and leader during the Lyucu occupation of Dara, contributing to the military control and governance of the conquered territories." }
-        ]
-      }
+        {
+            era: "The Veiled Throne",
+            summary: [
+                { type: 'text', content: "As a commander in Théra's expeditionary force, Tipo Tho led the daring boarding party that infiltrated the Lyucu city-ship. He and his marines drilled through the hull from the submerged flagship *Dissolver of Sorrows*, planting explosive charges and fighting a running battle through the ship's interior. His leadership was crucial to the success of this high-risk operation, which resulted in the capture of the enemy vessel." },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 9, link: "/books/the-veiled-throne#chapter-9" } },
+            ]
+        },
     ]
-  };
+};
 
-  return (
-    <>
-      <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-      <CharacterPageTemplate characterData={characterData} />
-    </>
-  );
-} 
+export default function TipoThoPage() {
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
+    const returnLink = { title: 'Return to All Characters', path: '/characters' };
+
+    return (
+        <>
+            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <CharacterPageTemplate characterData={characterData} />
+        </>
+    );
+}

@@ -6,35 +6,38 @@ import { usePathname } from 'next/navigation';
 import TopPageNavigation from '@/app/components/TopPageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
-// --- DATA FOR TAN ADÜ (WITH FULL REFERENCES) ---
+// --- DATA FOR TAN ADÜ ---
 const placeData: Place = {
     name: "Tan Adü",
     image: "/places/tan-adu.png",
-    introduction: "Tan Adü is a remote southern island, considered 'savage' by the people of the Tiro states. It is the home of a people who live in close harmony with nature and are famed for their unique skill as cruben-riders.",
+    introduction: "Tan Adü is a remote southern island, considered 'savage' by the rest of Dara. It is the home of the legendary cruben-riders, whose alliance with Kuni Garu proves to be a decisive factor in the Dandelion Rebellion.",
     infoBox: {
-        Region: "Southern Dara",
-        NotableFeatures: "Home to cruben-riders",
+        type: "Island",
+        continent: { text: "Dara", link: "/places/dara" },
+        KeyInhabitants: "Cruben-Riders",
+        KeyFeatures: "Crubens"
     },
     geography: [
-        { type: 'text', content: "A remote island located far to the south of the Big Island, Tan Adü is largely untouched by the politics and technology of the Tiro states. Its environment is wild and primal, suitable for the massive, horned sea beasts known as cruben." },
+        { type: 'text', content: "A remote island in the southern seas of Dara, isolated from the politics and conflicts of the Seven States." },
     ],
     culture: [
-        { type: 'text', content: "The people of Tan Adü live a tribal, nature-worshipping existence. While viewed as primitive by outsiders, they possess a deep and unique bond with the cruben, which they are able to ride as powerful naval mounts. This skill makes them formidable and highly sought-after allies in warfare." },
-        { type: 'ref', data: { book: "The Grace of Kings", chapter: 28, link: "/books/the-grace-of-kings#chapter-28" } },
+        { type: 'text', content: "The people of Tan Adü live in close harmony with nature, particularly the massive sea beasts known as crubens, which they ride as powerful naval mounts. While considered 'savage' by the more 'civilized' states, they possess a deep, practical wisdom. Their society is communal and values strength and a connection to the natural world. Luan Zya lived among them for a transformative period, learning their ways." },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 18, link: "/books/the-grace-of-kings#chapter-18" } },
     ],
     history: [
         {
-            event: "Luan Zya's Exile",
+            event: "The Dandelion Rebellion",
             summary: [
-                { type: 'text', content: "After his failed assassination attempt on Emperor Mapidéré, Luan Zya wandered Dara and eventually lived among the people of Tan Adü for a time, learning their customs and earning their respect." },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 18, link: "/books/the-grace-of-kings#chapter-18" } },
+                { type: 'text', content: "Following a daring plan by Luan Zya, Kuni Garu traveled to Tan Adü to recruit their cruben-riding warriors. This seemingly outlandish alliance was the key to his greatest strategic victory: a surprise amphibious and aerial assault on the Imperial capital of Pan, which he captured with his small force while the main rebel and Imperial armies were engaged elsewhere." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 28, link: "/books/the-grace-of-kings#chapter-28" } },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 30, link: "/books/the-grace-of-kings#chapter-30" } },
             ]
         },
         {
-            event: "The Capture of Pan",
+            event: "The Lyucu War",
             summary: [
-                { type: 'text', content: "During the rebellion, Luan Zya recruited the cruben-riders of Tan Adü for Kuni Garu's audacious plan to attack the Imperial capital. Their unique naval capabilities were instrumental in the surprise assault and capture of Pan, a turning point in the war." },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 30, link: "/books/the-grace-of-kings#chapter-30" } },
+                { type: 'text', content: "During the war against the Lyucu, Dafiro Miro was sent to Tan Adü to again request their aid. He learned that the Adüans could no longer command the crubens due to a change in their relationship with their gods. However, Dafiro discovered a crucial piece of technology among them: a 'fire tube' (a fire piston), which provided the key insight into the biology of the garinafins' fire breath and led to new Dara weaponry." },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 54, link: "/books/the-wall-of-storms#chapter-54" } },
             ]
         },
     ]
@@ -42,7 +45,7 @@ const placeData: Place = {
 
 export default function TanAduPage() {
     const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_PLACES);
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_PLACES]);
     const returnLink = { title: 'Return to All Places', path: '/places' };
 
     return (

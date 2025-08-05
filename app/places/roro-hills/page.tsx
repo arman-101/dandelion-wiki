@@ -6,52 +6,42 @@ import { usePathname } from 'next/navigation';
 import TopPageNavigation from '@/app/components/TopPageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
-export default function RoroHillsPage() {
-  const pathname = usePathname();
-  const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_PLACES);
-  const returnLink = { title: 'Return to All Places', path: '/places' };
-
-  const placeData: Place = {
+// --- DATA FOR RORO HILLS ---
+const placeData: Place = {
     name: "Roro Hills",
-    image: "/places/rima.png", // Placeholder image
-    introduction: "A geographical feature that plays a role in the final events of the series, the Roro Hills serve as a strategic location during the ultimate conflicts that determine the future of Dara.",
+    image: "/places/roro-hills.png",
+    introduction: "The Roro Hills are a strategically important region that became the final battleground in the war for Dara, serving as the last major stronghold for the Lyucu invaders.",
     infoBox: {
-      "Type": "Geographical Feature",
-      "Location": "Dara",
-      "Significance": "Strategic Location",
-      "First appearance": "Speaking Bones",
-      "Related places": [
-        { text: "World's Edge Mountains", link: "/places/worlds-edge-mountains" },
-        { text: "Kiri Valley", link: "/places/kiri-valley" },
-        { text: "Sea of Tears", link: "/places/sea-of-tears" }
-      ]
+        type: "Hill Range",
+        continent: { text: "Dara", link: "/places/dara" },
+        KeyEvents: "Final battle of the Lyucu War"
     },
     geography: [
-      { type: "text" as const, content: "The Roro Hills are a geographical feature characterized by their rolling terrain and strategic position. The hills provide natural advantages for defensive operations and serve as a key location during military conflicts." }
+        { type: 'text', content: "A range of hills providing a strong defensive position, making it an ideal location for a military stronghold." },
     ],
     culture: [
-      { type: "text" as const, content: "The cultural significance of the Roro Hills stems from their role in the final events of the series. The hills become a symbol of the ultimate struggle between the forces that seek to shape the future of Dara." }
+        { type: 'text', content: "The Roro Hills are not known for any specific cultural attributes, but their name is now synonymous with the final, brutal conflict that liberated Dara from the Lyucu." },
     ],
     history: [
-      {
-        event: "Final Conflicts",
-        summary: [
-          { type: "text" as const, content: "The Roro Hills become a crucial location during the final conflicts of the series, where the ultimate fate of Dara and its people is determined. The hills serve as a focal point for the resolution of long-standing conflicts." }
-        ]
-      },
-      {
-        event: "Strategic Importance",
-        summary: [
-          { type: "text" as const, content: "The strategic importance of the Roro Hills during the final events makes them a key objective for various factions. Control of the hills provides significant advantages in the ultimate struggle for the future of the world." }
-        ]
-      }
+        {
+            event: "The Final Battle for Dara",
+            summary: [
+                { type: 'text', content: "In the final stages of the war against the Lyucu, their remaining forces established a formidable stronghold in the Roro Hills. Emperor Phyro led his new garinafin army in a desperate and bloody assault on this position. The battle was a brutal, hard-fought engagement, representing the final, decisive test of Phyro's leadership and the courage of the new Dara army. The victory at the Roro Hills marked the end of the Lyucu occupation on the main continent." },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 35, link: "/books/speaking-bones#chapter-35" } },
+            ]
+        },
     ]
-  };
+};
 
-  return (
-    <>
-      <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-      <PlacePageTemplate placeData={placeData} />
-    </>
-  );
-} 
+export default function RoroHillsPage() {
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_PLACES]);
+    const returnLink = { title: 'Return to All Places', path: '/places' };
+
+    return (
+        <>
+            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PlacePageTemplate placeData={placeData} />
+        </>
+    );
+}

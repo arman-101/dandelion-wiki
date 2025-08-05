@@ -13,7 +13,7 @@ export default function CloudGarinafinsPage() {
 
   const conceptData: Concept = {
     name: "Cloud-Garinafins",
-    image: "/concepts/garinafin.png", // Placeholder image
+    image: "/concepts/cloud-garinafins.png", // Placeholder image
     introduction: "A special breed of garinafin that can fly at high altitudes, used for strategic military purposes and representing the advanced technology of the later books in the series.",
     infoBox: {
       "Type": "Advanced Garinafin",

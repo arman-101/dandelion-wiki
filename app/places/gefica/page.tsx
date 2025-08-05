@@ -13,7 +13,7 @@ export default function GeficaPage() {
 
   const placeData: Place = {
     name: "Géfica",
-    image: "/places/gan.png", // Placeholder image
+    image: "/places/gefica.png", 
     introduction: "A region with unique cultural and historical significance, Géfica becomes important during the later events of the series and plays a role in the complex political landscape.",
     infoBox: {
       "Type": "Region",

@@ -12,13 +12,19 @@ const characterData: Character = {
     image: "/characters/mata-zyndu.png",
     introduction: "Mata Zyndu, the last heir of the noble Zyndu clan, is one of the two central protagonists of The Grace of Kings. A peerless warrior driven by honor and vengeance, Mata represents the philosophy of the chrysanthemum - nobility, tradition, and unbending honor in the face of adversity.",
     infoBox: {
-        aliases: "The Hegemon, Marshal of Cocru, The Chrysanthemum",
+        aliases: "The Hegemon, Marshal of Cocru, The Chrysanthemum, The Butcher of Wolf's Paw",
         occupation: "Noble Warrior, Marshal of Cocru, Hegemon of Dara",
         placeOfBirth: { text: "Farun, Tunoa Islands", link: "/places/tunoa-islands" },
         status: "Deceased",
         gender: "Male",
-        significantOther: "Princess Kikomi (lover)",
-        relatives: "Dazu Zyndu (grandfather), Phin Zyndu (uncle), Soto Zyndu (aunt)",
+        significantOther: [
+            { text: "Princess Kikomi", link: "/characters/princess-kikomi" }
+        ],
+        relatives: [
+            { text: "Dazu Zyndu (grandfather)", link: "" },
+            { text: "Phin Zyndu (uncle)", link: "/characters/phin-zyndu" },
+            { text: "Soto Zyndu (aunt)", link: "/characters/soto-zyndu" }
+        ],
         affiliation: "House of Zyndu, Cocru Army, Hegemon's Court",
         nationality: { text: "Cocru", link: "/places/cocru" },
         firstAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" },
@@ -32,7 +38,7 @@ const characterData: Character = {
     ],
     history: [
         {
-            era: "Early Life and Family Tragedy",
+            era: "Early Life and Family Tragedy (The Grace of Kings)",
             summary: [
                 { type: 'text', content: "Born in Farun in the Tunoa Islands, Mata is the last heir of the once-great Zyndu clan. His grandfather, Marshal Dazu Zyndu, was a brilliant Cocru general known as the 'Bearded Tortoise' for his unbeatable defensive tactics against the Xana invasion." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 2, link: "/books/the-grace-of-kings#chapter-2" } },
@@ -43,7 +49,7 @@ const characterData: Character = {
             ]
         },
         {
-            era: "Rebellion and Rise to Power",
+            era: "Rebellion and Rise to Power (The Grace of Kings)",
             summary: [
                 { type: 'text', content: "When the rebellion against the Xana Empire begins, Mata seizes his opportunity for vengeance. He assassinates the local Xana commander, Datun Zatoma, and reclaims his ancestral castle, recovering his grandfather's legendary weapons: the composite bronze-and-steel sword Na-aroénna ('The Ender of Doubts') and the fearsome toothed cudgel Goremaw." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 7, link: "/books/the-grace-of-kings#chapter-7" } },
@@ -54,17 +60,17 @@ const characterData: Character = {
             ]
         },
         {
-            era: "The Hegemon and Civil War",
+            era: "The Hegemon and Civil War (The Grace of Kings)",
             summary: [
                 { type: 'text', content: "After the fall of the Xana Empire, Mata becomes consumed by paranoia and betrayal. Believing that Kuni has stolen his glory by capturing Pan first, he burns the Imperial capital to the ground and declares himself Hegemon, the new de facto ruler of the Islands of Dara." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 33, link: "/books/the-grace-of-kings#chapter-33" } },
-                { type: 'text', content: " He redraws the map of Dara, creating a new political order that suits his vision of a restored world, and exiles Kuni to the remote island of Dasu. However, his reign is marked by brutality and the tragic death of his uncle Phin at the hands of Princess Kikomi, which devastates him emotionally." },
+                { type: 'text', content: " He redraws the map of Dara, creating a new political order that suits his vision of a restored world, and exiles Kuni to the remote island of Dasu. However, his reign is marked by brutality, most notably the massacre of 20,000 prisoners at Wolf's Paw, and the tragic death of his uncle Phin at the hands of Princess Kikomi, which devastates him emotionally." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 31, link: "/books/the-grace-of-kings#chapter-31" } },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 27, link: "/books/the-grace-of-kings#chapter-27" } },
             ]
         },
         {
-            era: "Final Battle and Death",
+            era: "Final Battle and Death (The Grace of Kings)",
             summary: [
                 { type: 'text', content: "The civil war between Mata and Kuni culminates in a brutal conflict that lasts for years. After three years of grueling war, Mata's forces are starving and depleted. Kuni offers a peace treaty to divide the islands between them, which a weary Mata accepts." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 50, link: "/books/the-grace-of-kings#chapter-50" } },
@@ -79,7 +85,7 @@ const characterData: Character = {
 
 export default function MataZynduPage() {
     const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CHARACTERS);
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (

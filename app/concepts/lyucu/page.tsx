@@ -9,7 +9,7 @@ import { getSurroundingPages } from '@/app/utils/navigationUtils';
 export default function LyucuPage() {
   const conceptData: Concept = {
     name: "The Lyucu",
-    image: "/concepts/lyucu-culture.png", // Placeholder image
+    image: "/concepts/lyucu.png", // Placeholder image
     introduction: "The fierce northern people who invade Dara, bringing their own culture, technology, and way of life that challenges and transforms the established order of the Dandelion Dynasty.",
     infoBox: {
       "Origin": "Ukyu & Gondé",

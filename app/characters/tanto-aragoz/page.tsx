@@ -6,44 +6,46 @@ import { usePathname } from 'next/navigation';
 import TopPageNavigation from '@/app/components/TopPageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
-export default function TantoAragozPage() {
-  const pathname = usePathname();
-  const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CHARACTERS);
-  const returnLink = { title: 'Return to All Characters', path: '/characters' };
-
-  // --- DATA FOR TANTO ARAGOZ ---
-  const characterData: Character = {
+const characterData: Character = {
     name: "Tanto Aragoz",
-    image: "/characters/kuni-garu.png", // Placeholder image
-    introduction: "A Lyucu leader and member of the Aragoz family involved in the occupation of Dara, representing the complex dynamics of Lyucu governance.",
+    image: "/characters/tanto-aragoz.png",
+    introduction: "Tanto Aragoz is the eldest son of Princess Théra and Takval Aragoz. Raised in the harsh environment of the Agon rebellion, he is a child of two cultures, embodying the future of the alliance between Dara and the Agon.",
     infoBox: {
-      "Also known as": "Tanto Aragoz",
-      "Affiliation": "Lyucu",
-      "Role": "Leader",
-      "First appearance": "The Veiled Throne",
-      "Related characters": [
-        { text: "Volyu Aragoz", link: "/characters/volyu-aragoz" },
-        { text: "Souliyan Aragoz", link: "/characters/souliyan-aragoz" },
-        { text: "Rokiri Aragoz", link: "/characters/rokiri-aragoz" }
-      ]
+        aliases: "None",
+        occupation: "Prince",
+        placeOfBirth: { text: "Ukyu-Gondé", link: "/places/ukyu-gonde" },
+        status: "Alive",
+        gender: "Male",
+        relatives: "Princess Théra (mother), Takval Aragoz (father), Rokiri Aragoz (brother), Kuni Garu (grandfather), Jia Matiza (grandmother)",
+        affiliation: "Agon Rebellion",
+        nationality: "Daran-Agon",
+        firstAppeared: { text: "The Veiled Throne", link: "/books/the-veiled-throne" },
+        lastAppeared: { text: "The Veiled Throne", link: "/books/the-veiled-throne" }
     },
     appearanceAndPersonality: [
-      { type: "text" as const, content: "Tanto Aragoz represents the more administrative and governance-oriented side of Lyucu leadership, combining military authority with the practical skills needed to manage conquered territories." }
+        { type: 'text', content: "As a child, Tanto is more Agon than Dara, embracing the warrior culture of his father. He is skilled in the Agon craft of building 'living bones'—intricate, wind-powered mechanical toys. He initially rejects his mother's Dara heritage but represents the potential for a new, blended culture." },
+        { type: 'ref', data: { book: "The Veiled Throne", chapter: 26, link: "/books/the-veiled-throne#chapter-26" } },
     ],
     history: [
-      {
-        era: "The Veiled Throne",
-        summary: [
-          { type: "text" as const, content: "Tanto Aragoz becomes deeply involved in the governance of occupied Dara, working to establish and maintain Lyucu control while navigating the complex political and cultural landscape of the conquered territories." }
-        ]
-      }
+        {
+            era: "The Veiled Throne",
+            summary: [
+                { type: 'text', content: "Tanto was born and raised in the secret Agon base in Kiri Valley. He and his brother Rokiri were captured by the Lyucu during Cudyu Roatan's devastating attack on the base. His fate after his capture remains a central question driving the narrative forward." },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 27, link: "/books/the-veiled-throne#chapter-27" } },
+            ]
+        },
     ]
-  };
+};
 
-  return (
-    <>
-      <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-      <CharacterPageTemplate characterData={characterData} />
-    </>
-  );
-} 
+export default function TantoAragozPage() {
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
+    const returnLink = { title: 'Return to All Characters', path: '/characters' };
+
+    return (
+        <>
+            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <CharacterPageTemplate characterData={characterData} />
+        </>
+    );
+}

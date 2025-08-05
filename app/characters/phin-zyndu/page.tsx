@@ -9,34 +9,34 @@ import { getSurroundingPages } from '@/app/utils/navigationUtils';
 const characterData: Character = {
     name: "Phin Zyndu",
     image: "/characters/phin-zyndu.png",
-    introduction: "Phin Zyndu was the uncle of Mata Zyndu and the acting patriarch of the Zyndu clan following its near-destruction. He was the guardian of Mata's legacy and the driving force behind his quest for vengeance.",
+    introduction: "Phin Zyndu was the uncle of Mata Zyndu and the devoted guardian of his family's legacy. He rescued the infant Mata from the Xana purge of their clan and raised him in exile with the sole purpose of achieving vengeance.",
     infoBox: {
-        aliases: "None",
-        occupation: "Advisor, Acting Head of House Zyndu",
+        aliases: "Guardian of the Zyndu Legacy",
+        occupation: "Warrior, Advisor",
+        placeOfBirth: { text: "Cocru", link: "/places/cocru" },
         status: "Deceased",
         gender: "Male",
-        relatives: "Dazu Zyndu (father), Soto Zyndu (sister), Mata Zyndu (nephew)",
-        affiliation: "House of Zyndu, Tiro Rebellion",
+        relatives: "Dazu Zyndu (father), Mata Zyndu (nephew), Soto Zyndu (sister)",
+        affiliation: "House of Zyndu, Cocru Army",
         nationality: { text: "Cocru", link: "/places/cocru" },
         firstAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" },
         lastAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" }
     },
     appearanceAndPersonality: [
-        { type: 'text', content: "Phin is described as a large, powerful man, though not as immense as his nephew Mata. He is a stern and serious individual, consumed by the tragedy of his family and dedicated entirely to their restoration. His personality is defined by a deep-seated grief and a relentless drive for vengeance, which he instills in Mata from a young age. He is a traditionalist who believes deeply in the honor codes of the old nobility." },
+        { type: 'text', content: "Phin is portrayed as a stern and focused warrior, his entire being dedicated to the memory of his fallen family and the future of his nephew. He is a formidable fighter in his own right, though his skills are overshadowed by Mata's godlike prowess." },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 7, link: "/books/the-grace-of-kings#chapter-7" } },
+        { type: 'text', content: "His personality is defined by the constant refrain he instilled in Mata: 'Do not forget.' He is a man driven by a single, all-consuming purpose, and he serves as his nephew's loyal second-in-command and advisor throughout the early rebellion." },
         { type: 'ref', data: { book: "The Grace of Kings", chapter: 2, link: "/books/the-grace-of-kings#chapter-2" } },
     ],
     history: [
         {
-            era: "Guardian of the Legacy",
+            era: "The Grace of Kings",
             summary: [
-                { type: 'text', content: "Phin was one of the few survivors of the Xana massacre of the Zyndu clan. He rescued the infant Mata and raised him in exile on the Tunoa Islands, training him to be a peerless warrior and constantly reminding him of his duty to avenge their family. His final words to Mata before his own death were 'Do not forget.'" },
+                { type: 'text', content: "Phin was the sole adult Zyndu to escape the Xana extermination of his clan, fleeing with the infant Mata to the Tunoa Islands. For years, he trained Mata and kept the fire of vengeance alive." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 2, link: "/books/the-grace-of-kings#chapter-2" } },
-            ]
-        },
-        {
-            era: "The Dandelion Rebellion",
-            summary: [
-                { type: 'text', content: "He stood by Mata's side when he reclaimed their ancestral castle and served as his primary advisor during the early stages of the rebellion. However, his traditionalist views often clashed with the pragmatic realities of the war. He became infatuated with Princess Kikomi of Amu, a passion that would prove to be his undoing. He was murdered by Kikomi as part of her secret deal with Kindo Marana to sow discord in the rebel leadership." },
+                { type: 'text', content: "He fought alongside Mata to reclaim their ancestral castle, participating in the slaughter of the Xana garrison." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 7, link: "/books/the-grace-of-kings#chapter-7" } },
+                { type: 'text', content: "In the rebel capital of Çaruza, he, along with his nephew, fell in love with Princess Kikomi. This affection proved to be his undoing. As part of her secret pact to sow discord, Kikomi seduced Phin and then murdered him in his bed, a tragic end for the man who had survived so much to see his family's name restored." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 27, link: "/books/the-grace-of-kings#chapter-27" } },
             ]
         },
@@ -45,7 +45,7 @@ const characterData: Character = {
 
 export default function PhinZynduPage() {
     const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CHARACTERS);
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (

@@ -6,42 +6,49 @@ import { usePathname } from 'next/navigation';
 import TopPageNavigation from '@/app/components/TopPageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
-export default function ToofPage() {
-  const pathname = usePathname();
-  const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CHARACTERS);
-  const returnLink = { title: 'Return to All Characters', path: '/characters' };
-
-  const characterData: Character = {
+const characterData: Character = {
     name: "Toof",
-    image: "/characters/kuni-garu.png", // Placeholder image
-    introduction: "A Lyucu warrior and leader who becomes involved in the occupation of Dara, representing the military aspects of Lyucu governance.",
+    image: "/characters/toof.png",
+    introduction: "Toof was a Lyucu garinafin pilot who, along with his partner Radia, was captured by Princess Théra's expedition. He eventually defected and joined the Agon resistance, sacrificing his life to save Théra and her family.",
     infoBox: {
-      "Also known as": "Toof",
-      "Affiliation": "Lyucu",
-      "Role": "Warrior/Leader",
-      "First appearance": "The Veiled Throne",
-      "Related characters": [
-        { text: "Radia", link: "/characters/radia" },
-        { text: "Çami Phithadapu", link: "/characters/cami-phithadapu" }
-      ]
+        aliases: "The Defector",
+        occupation: "Garinafin Pilot",
+        placeOfBirth: { text: "Ukyu-Gondé", link: "/places/ukyu-gonde" },
+        status: "Deceased",
+        gender: "Male",
+        significantOther: { text: "Radia", link: "/characters/radia" },
+        affiliation: "Lyucu Empire, Agon Rebellion",
+        nationality: { text: "Lyucu", link: "/concepts/lyucu" },
+        firstAppeared: { text: "The Veiled Throne", link: "/books/the-veiled-throne" },
+        lastAppeared: { text: "The Veiled Throne", link: "/books/the-veiled-throne" }
     },
     appearanceAndPersonality: [
-      { type: "text" as const, content: "Toof exemplifies the Lyucu warrior tradition, combining tactical skill with the fierce determination that characterized the northern invaders. His personality reflects the disciplined and uncompromising nature of Lyucu military culture." }
+        { type: 'text', content: "Toof is a skilled and dedicated garinafin pilot who shares a deep bond with his mount, Tana. Initially a loyal Lyucu warrior, his capture and subsequent experiences with the Dara and Agon peoples lead him to question his allegiances. He is a man of honor who ultimately chooses to fight for what he believes is right, even if it means betraying his own people." },
+        { type: 'ref', data: { book: "The Veiled Throne", chapter: 7, link: "/books/the-veiled-throne#chapter-7" } },
     ],
     history: [
-      {
-        era: "The Veiled Throne",
-        summary: [
-          { type: "text" as const, content: "Toof serves as a key warrior and leader during the Lyucu occupation of Dara, contributing to the military control and governance of the conquered territories." }
-        ]
-      }
+        {
+            era: "The Veiled Throne",
+            summary: [
+                { type: 'text', content: "Toof was the pilot of the garinafin sent to investigate Théra's fleet. He was captured after Théra's forces used whale song to cripple his city-ship. Aboard the Dara vessel, he and his partner Radia were integrated into the diverse crew and began to form bonds with their former enemies." },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 7, link: "/books/the-veiled-throne#chapter-7" } },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 10, link: "/books/the-veiled-throne#chapter-10" } },
+                { type: 'text', content: "He fully committed to the Agon rebellion and fought alongside them. During the Lyucu attack on the Kiri Valley base, he and Radia made the ultimate sacrifice, leading a suicide mission to draw away pursuers, which allowed Théra, Takval, and their children to escape." },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 17, link: "/books/the-veiled-throne#chapter-17" } },
+            ]
+        },
     ]
-  };
+};
 
-  return (
-    <>
-      <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-      <CharacterPageTemplate characterData={characterData} />
-    </>
-  );
-} 
+export default function ToofPage() {
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
+    const returnLink = { title: 'Return to All Characters', path: '/characters' };
+
+    return (
+        <>
+            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <CharacterPageTemplate characterData={characterData} />
+        </>
+    );
+}

@@ -9,35 +9,33 @@ import { getSurroundingPages } from '@/app/utils/navigationUtils';
 const characterData: Character = {
     name: "Lügo Crupo",
     image: "/characters/lugo-crupo.png",
-    introduction: "Lügo Crupo was a brilliant but ruthless scholar who rose to become the Prime Minister and later the Regent of the Xana Empire. His ambition and jealousy were major factors in the instability that led to the empire's collapse.",
+    introduction: "Lügo Crupo was the ambitious, ruthless, and brilliant Prime Minister of the Xana Empire. Consumed by jealousy and a feeling of being perpetually second-best, his actions were instrumental in both the consolidation of Xana's power and its eventual, violent downfall.",
     infoBox: {
         aliases: "The Regent",
-        occupation: "Prime Minister, Regent",
+        occupation: "Scholar, Prime Minister of Dara, Regent",
+        placeOfBirth: { text: "Xana", link: "/places/xana" },
         status: "Deceased",
         gender: "Male",
-        affiliation: "Empire of Dara",
-        nationality: { text: "Cocru", link: "/places/cocru" },
+        affiliation: "House of Xana, Xana Empire",
+        nationality: { text: "Xana", link: "/places/xana" },
         firstAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" },
         lastAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" }
     },
     appearanceAndPersonality: [
-        { type: 'text', content: "Crupo is an immensely intelligent and capable administrator, but he is also deeply insecure and driven by a lifelong jealousy of his more naturally gifted rival, Tan Féüji. This insecurity manifests as a cruel and paranoid ambition. He is a master of political maneuvering but lacks a greater vision beyond his own ascent to power." },
+        { type: 'text', content: "Crupo is portrayed as a brilliant but deeply insecure man. His entire life was defined by his rivalry with the more naturally gifted scholar, Tan Féüji. This jealousy fueled his defection to Xana and his subsequent poisoning of his rival." },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 10, link: "/books/the-grace-of-kings#chapter-10" } },
+        { type: 'text', content: "As Regent, he found the actual work of governing tedious, preferring his scholarly pursuits. He was arrogant, dismissive of the growing rebellion, and prone to making rash decisions based on personal convenience, such as appointing the chief tax collector as commander-in-chief simply to be rid of him." },
         { type: 'ref', data: { book: "The Grace of Kings", chapter: 10, link: "/books/the-grace-of-kings#chapter-10" } },
     ],
     history: [
         {
-            era: "Rise to Power",
+            era: "The Grace of Kings",
             summary: [
-                { type: 'text', content: "Though low-born, Crupo's brilliance allowed him to rise through the ranks. He defected to Xana during the Unification Wars and eventually poisoned his rival to secure his position as Prime Minister under Emperor Mapidéré." },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 10, link: "/books/the-grace-of-kings#chapter-10" } },
-                { type: 'text', content: "After the emperor's death, he orchestrated the coup that placed Emperor Erishi on the throne and made himself Regent. He famously used the 'deer and horse' test to solidify his power and root out dissenters in the court." },
+                { type: 'text', content: "Crupo conspired with Goran Pira to stage a coup upon Emperor Mapidéré's death, installing Prince Loshi as the puppet Emperor Erishi. To solidify his power, he famously brought a stag into court, called it a horse, and had all ministers who disagreed executed, an event that became a symbol of his tyranny." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 5, link: "/books/the-grace-of-kings#chapter-5" } },
-            ]
-        },
-        {
-            era: "Fall from Grace",
-            summary: [
-                { type: 'text', content: "As Regent, Crupo mismanaged the response to the Dandelion Rebellion, dismissively appointing the unqualified Kindo Marana to lead the army. His reign was cut short when he was outmaneuvered by the even more cunning Goran Pira, who framed him for treason. Crupo was executed, a victim of the same paranoid court politics he had perfected." },
+                { type: 'text', content: "As the most powerful man in the empire, he governed with a mix of brilliance and lazy cruelty, his arrogance blinding him to the growing threats to the dynasty." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 10, link: "/books/the-grace-of-kings#chapter-10" } },
+                { type: 'text', content: "His reign was cut short when Goran Pira, seeing Crupo as a threat to his own plans, manipulated Emperor Erishi into believing Crupo was a traitor. Pira framed him, had him brutally tortured until he confessed to crimes he didn't commit, and then had him executed, clearing the way for Pira to become Prime Minister." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 25, link: "/books/the-grace-of-kings#chapter-25" } },
             ]
         },
@@ -46,7 +44,7 @@ const characterData: Character = {
 
 export default function LugoCrupoPage() {
     const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CHARACTERS);
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (

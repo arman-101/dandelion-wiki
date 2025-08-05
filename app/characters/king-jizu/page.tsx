@@ -9,26 +9,27 @@ import { getSurroundingPages } from '@/app/utils/navigationUtils';
 const characterData: Character = {
     name: "King Jizu",
     image: "/characters/king-jizu.png",
-    introduction: "King Jizu was a humble fisherman who was elevated to the throne of Rima during the Dandelion Rebellion. His reign was brief, but his final act of defiance made him a martyr and a powerful symbol for the rebel cause.",
+    introduction: "King Jizu was a former fisherman who was reluctantly elevated to the throne of Rima during the Dandelion Rebellion. His noble self-sacrifice in the face of certain defeat became a powerful symbol of resistance for the rebel cause.",
     infoBox: {
-        aliases: "None",
+        aliases: "The Fisherman King",
         occupation: "Fisherman, King of Rima",
+        placeOfBirth: { text: "Rima", link: "/places/rima" },
         status: "Deceased",
         gender: "Male",
-        affiliation: "Tiro Rebellion",
+        affiliation: "Kingdom of Rima, Tiro Alliance",
         nationality: { text: "Rima", link: "/places/rima" },
         firstAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" },
         lastAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" }
     },
     appearanceAndPersonality: [
-        { type: 'text', content: "Jizu is a simple and honest man, unaccustomed to power and courtly intrigue. He is a reluctant king, chosen more for his lineage than his ability to lead. Despite his weakness as a ruler, he possesses a deep well of courage and a strong sense of duty to his people." },
+        { type: 'text', content: "Jizu is portrayed as a simple, honorable man who never wanted the crown. He is out of his depth as a king, surrounded by cowardly and treacherous advisors. However, when faced with the ultimate test, he displays immense courage and a deep commitment to the honor of his people and his title." },
         { type: 'ref', data: { book: "The Grace of Kings", chapter: 15, link: "/books/the-grace-of-kings#chapter-15" } },
     ],
     history: [
         {
-            era: "The Dandelion Rebellion",
+            era: "The Grace of Kings",
             summary: [
-                { type: 'text', content: "After Rima declared its independence, Jizu was found and crowned king. His forces were quickly overwhelmed by the veteran Imperial General Tanno Namen. Betrayed by his own commanders and facing certain defeat, King Jizu refused to surrender. Instead, he set himself on fire in his throne room, an act of martyrdom that shamed his enemies and inspired the other rebels to fight on with renewed determination." },
+                { type: 'text', content: "During the rebellion, Jizu was made King of Rima. When the Xana general Tanno Namen launched a swift and brutal campaign through his kingdom, Jizu's commanders proved treacherous and his ministers offered only cowardly advice. With his capital besieged, Jizu chose a noble death over surrender. He walked out to meet General Namen, set himself on fire, and burned to death while holding the Seal of Rima. His martyrdom became a powerful rallying cry for the rebellion." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 15, link: "/books/the-grace-of-kings#chapter-15" } },
             ]
         },
@@ -37,7 +38,7 @@ const characterData: Character = {
 
 export default function KingJizuPage() {
     const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CHARACTERS);
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (

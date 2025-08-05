@@ -13,7 +13,7 @@ export default function LastBitePage() {
 
   const placeData: Place = {
     name: "Last Bite",
-    image: "/places/pan.png", // Placeholder image
+    image: "/places/last-bite.png", // Placeholder image
     introduction: "A location that becomes significant during the final conflicts of the series, Last Bite represents a crucial turning point in the struggle for the future of Dara.",
     infoBox: {
       "Type": "Strategic Location",

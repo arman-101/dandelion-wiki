@@ -9,7 +9,7 @@ import { getSurroundingPages } from '@/app/utils/navigationUtils';
 // --- DATA FOR WIDOW WASU ---
 const characterData: Character = {
     name: "Widow Wasu",
-    image: "/characters/kuni-garu.png",
+    image: "/characters/widow-wasu.png",
     introduction: "Widow Wasu is a mysterious figure who becomes involved in the resistance movement during the Lyucu occupation of Dara.",
     infoBox: {
       "Also known as": "Wasu",

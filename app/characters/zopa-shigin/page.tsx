@@ -6,46 +6,49 @@ import { usePathname } from 'next/navigation';
 import TopPageNavigation from '@/app/components/TopPageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
-// --- DATA FOR ZOPA SHIGIN ---
 const characterData: Character = {
     name: "Zopa Shigin",
-    image: "/characters/kuni-garu.png",
-    introduction: "Zopa Shigin is a sturdy corvée laborer who becomes Huno Krima's co-conspirator in the first rebellion against the Xana Empire, only to be betrayed and executed by his friend.",
+    image: "/characters/zopa-shigin.png",
+    introduction: "Zopa Shigin was a sturdy corvée laborer from Cocru and the co-conspirator of Huno Krima. He was an instrumental figure in the very beginning of the rebellion against the Xana Empire, though his life was tragically cut short by his friend's growing paranoia.",
     infoBox: {
-      "Also known as": "Shigin",
-      "Affiliation": "Cocru Rebellion",
-      "Role": "Rebel Co-Leader",
-      "First appearance": "The Grace of Kings",
-      "Related characters": [
-        { text: "Huno Krima", link: "/characters/huno-krima" },
-        { text: "Dafiro Miro", link: "/characters/dafiro-miro" },
-        { text: "King Thufi", link: "/characters/king-thufi" }
-      ]
+        aliases: "The Co-Conspirator",
+        occupation: "Corvée Laborer, Rebel Leader",
+        placeOfBirth: { text: "Cocru", link: "/places/cocru" },
+        status: "Deceased",
+        gender: "Male",
+        affiliation: "First Cocru Rebellion",
+        nationality: { text: "Cocru", link: "/places/cocru" },
+        firstAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" },
+        lastAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" }
     },
     appearanceAndPersonality: [
-      { type: "text" as const, content: "Zopa Shigin is described as a sturdy and reliable laborer who possesses both physical strength and practical wisdom. His loyalty to Huno Krima and his willingness to risk everything for the rebellion demonstrates his courage and commitment to the cause." }
+        { type: 'text', content: "Shigin is described as sturdy and is presented as the more grounded and perhaps less imaginative of the two initial rebel leaders. He is a loyal friend to Huno Krima, providing the steady support for Krima's charismatic leadership. His tragic end illustrates the corrupting nature of power and the dangers of unchecked ambition." },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 6, link: "/books/the-grace-of-kings#chapter-6" } },
     ],
     history: [
-      {
-        era: "The Grace of Kings",
-        summary: [
-          { type: "text" as const, content: "Zopa Shigin works alongside Huno Krima as a corvée laborer captain. When they face certain execution for being late to their assignment, Shigin supports Krima's desperate plan to create a fake prophecy by hiding a silk scroll in a fish." },
-          { type: "text" as const, content: "Together, they lead the rebellion that seizes the town of Napi and opens the imperial granaries to the starving populace. Shigin plays a crucial role in helping to establish the first major uprising against the Xana Empire." },
-          { type: "text" as const, content: "As the rebellion grows, Shigin remains loyal to Krima and helps him install the humble shepherd Thufi as King of Cocru. However, when Krima becomes increasingly paranoid and power-hungry, he tragically executes his trusted friend and co-conspirator Shigin, marking the beginning of his own downfall." }
-        ]
-      }
+        {
+            era: "The Grace of Kings",
+            summary: [
+                { type: 'text', content: "Facing execution alongside his friend Huno Krima for a delayed corvée assignment, Shigin helped create the fake 'fish prophecy' that sparked the first major uprising against the Xana." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 6, link: "/books/the-grace-of-kings#chapter-6" } },
+                { type: 'text', content: "He and Krima were successful in their early rebellion, finding the lost heir Thufi and placing him on the throne of Cocru." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 12, link: "/books/the-grace-of-kings#chapter-12" } },
+                { type: 'text', content: "However, as Krima's power and paranoia grew, he came to see his old friend as a threat. After declaring himself King of West Cocru, Krima had his loyal friend Zopa Shigin executed, a brutal act that marked the beginning of the end for the first rebellion." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 16, link: "/books/the-grace-of-kings#chapter-16" } },
+            ]
+        },
     ]
 };
 
 export default function ZopaShiginPage() {
-  const pathname = usePathname();
-  const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CHARACTERS);
-  const returnLink = { title: 'Return to All Characters', path: '/characters' };
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
+    const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
-  return (
-    <>
-      <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-      <CharacterPageTemplate characterData={characterData} />
-    </>
-  );
-} 
+    return (
+        <>
+            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <CharacterPageTemplate characterData={characterData} />
+        </>
+    );
+}

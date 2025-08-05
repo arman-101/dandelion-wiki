@@ -6,48 +6,48 @@ import { usePathname } from 'next/navigation';
 import TopPageNavigation from '@/app/components/TopPageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
-// --- DATA FOR HUNO KRIMA ---
 const characterData: Character = {
     name: "Huno Krima",
-    image: "/characters/kuni-garu.png",
-    introduction: "Huno Krima is the charismatic leader who sparked the first major rebellion against the Xana Empire, becoming the first 'King of West Cocru' before his tragic downfall.",
+    image: "/characters/huno-krima.png",
+    introduction: "Huno Krima was a charismatic corvée laborer from Cocru whose desperate act of defiance sparked the first major rebellion against the Xana Empire. Though his rebellion ended in failure, he was the catalyst for the larger Dandelion Rebellion.",
     infoBox: {
-      "Also known as": "King of West Cocru",
-      "Affiliation": "Cocru Rebellion",
-      "Role": "Rebel Leader",
-      "First appearance": "The Grace of Kings",
-      "Related characters": [
-        { text: "Zopa Shigin", link: "/characters/zopa-shigin" },
-        { text: "Dafiro Miro", link: "/characters/dafiro-miro" },
-        { text: "King Thufi", link: "/characters/king-thufi" },
-        { text: "Tanno Namen", link: "/characters/tanno-namen" }
-      ]
+        aliases: "The False King of West Cocru",
+        occupation: "Corvée Laborer, Rebel Leader, King",
+        placeOfBirth: { text: "Cocru", link: "/places/cocru" },
+        status: "Deceased",
+        gender: "Male",
+        affiliation: "First Cocru Rebellion",
+        nationality: { text: "Cocru", link: "/places/cocru" },
+        firstAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" },
+        lastAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" }
     },
     appearanceAndPersonality: [
-      { type: "text" as const, content: "Huno Krima is a bald, charismatic leader who possesses the ability to inspire others through his vision and determination. His journey from desperate corvée laborer to rebel king demonstrates both his leadership qualities and the tragic flaws that ultimately lead to his downfall." }
+        { type: 'text', content: "Krima is described as bald and charismatic. He possessed a natural ability to inspire hope in the desperate and oppressed. However, as he gained power, he grew increasingly arrogant, paranoid, and cruel, a stark warning about how power can corrupt." },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 6, link: "/books/the-grace-of-kings#chapter-6" } },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 16, link: "/books/the-grace-of-kings#chapter-16" } },
     ],
     history: [
-      {
-        era: "The Grace of Kings",
-        summary: [
-          { type: "text" as const, content: "Huno Krima begins as a corvée laborer captain who, facing certain execution for being late to his assignment, creates a fake prophecy by hiding a silk scroll reading 'Huno Krima Will Be King' inside a fish. This 'miracle' galvanizes his fellow laborers into rebellion." },
-          { type: "text" as const, content: "Leading the rebellion, Krima seizes the town of Napi, opens imperial granaries to the starving populace, and sparks the first major uprising against the Xana Empire. He helps install the humble shepherd Thufi as King of Cocru." },
-          { type: "text" as const, content: "However, as his power grows, Krima becomes increasingly paranoid and arrogant. He declares himself King of West Cocru, executes his co-conspirator Zopa Shigin, and rules through fear using a secret police force known as the 'Black Caps'." },
-          { type: "text" as const, content: "His disastrous reign ends when General Tanno Namen launches a devastating surprise attack on his capital, Dimu. Krima's undisciplined army collapses, and he is killed by his own fleeing soldiers, marking the pathetic end of the first rebellion." }
-        ]
-      }
+        {
+            era: "The Grace of Kings",
+            summary: [
+                { type: 'text', content: "Facing certain execution for being late to a corvée assignment, Krima and his friend Zopa Shigin created a fake prophecy by hiding a silk scroll reading 'Huno Krima Will Be King' inside a fish. This 'miracle' galvanized the other laborers into rising up. They seized the town of Napi, opened the imperial granaries, and sparked the rebellion." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 6, link: "/books/the-grace-of-kings#chapter-6" } },
+                { type: 'text', content: "His success was short-lived. After finding and installing King Thufi on the throne of Cocru, Krima grew paranoid and declared himself King of West Cocru. He executed his friend Zopa Shigin and ruled through a secret police force. His disastrous reign was cut short when General Tanno Namen launched a surprise attack on his capital. Krima's army collapsed, and he was unceremoniously killed by his own fleeing soldiers." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 16, link: "/books/the-grace-of-kings#chapter-16" } },
+            ]
+        },
     ]
 };
 
 export default function HunoKrimaPage() {
-  const pathname = usePathname();
-  const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CHARACTERS);
-  const returnLink = { title: 'Return to All Characters', path: '/characters' };
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
+    const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
-  return (
-    <>
-      <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-      <CharacterPageTemplate characterData={characterData} />
-    </>
-  );
-} 
+    return (
+        <>
+            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <CharacterPageTemplate characterData={characterData} />
+        </>
+    );
+}

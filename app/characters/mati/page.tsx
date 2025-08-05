@@ -9,7 +9,7 @@ import { getSurroundingPages } from '@/app/utils/navigationUtils';
 // --- DATA FOR MATI ---
 const characterData: Character = {
     name: "Mati",
-    image: "/characters/kuni-garu.png",
+    image: "/characters/mati.png",
     introduction: "Mati is a character who becomes involved in the resistance movement during the Lyucu occupation of Dara.",
     infoBox: {
       "Also known as": "Mati",

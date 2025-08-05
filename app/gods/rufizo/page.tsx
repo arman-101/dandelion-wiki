@@ -10,7 +10,7 @@ import { getSurroundingPages } from '@/app/utils/navigationUtils';
 const godData: God = {
     name: "Rufizo",
     image: "/gods/rufizo.png",
-    introduction: "Rufizo is the patron god of Faça, known throughout Dara as the Divine Healer. He represents compassion, restoration, and the gentle aspects of divinity.",
+    introduction: "Rufizo is the patron god of Faça, known throughout Dara as the Divine Healer. He represents compassion, restoration, and the gentle aspects of divinity, often acting as a voice of mercy.",
     infoBox: {
         Patronage: { text: "Faça", link: "/places/faca" },
         Domains: "Healing, Medicine, Compassion",
@@ -26,7 +26,7 @@ const godData: God = {
         {
             event: "Debate Over Mapidéré's Legacy",
             summary: [
-                { type: 'text', content: "Rufizo participates in the divine debate over Emperor Mapidéré's soul and legacy. He represents a more forgiving perspective, weighing the good the emperor achieved against the suffering he caused, showcasing his role as a balancer and a figure of mercy among the gods." },
+                { type: 'text', content: "Rufizo participates in the divine debate over Emperor Mapidéré's soul and legacy which takes place in the Emperor's dream. He represents a more forgiving perspective, weighing the good the emperor achieved against the suffering he caused, showcasing his role as a balancer and a figure of mercy among the gods." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 5, link: "/books/the-grace-of-kings#chapter-5" } },
             ]
         },
@@ -36,7 +36,7 @@ const godData: God = {
 
 export default function RufizoPage() {
     const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_GODS);
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_GODS]);
     const returnLink = { title: 'Return to All Gods', path: '/gods' };
 
     return (

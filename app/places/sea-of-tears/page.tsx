@@ -6,46 +6,51 @@ import { usePathname } from 'next/navigation';
 import TopPageNavigation from '@/app/components/TopPageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
-export default function SeaOfTearsPage() {
-  const pathname = usePathname();
-  const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_PLACES);
-  const returnLink = { title: 'Return to All Places', path: '/places' };
-
-  const placeData: Place = {
+// --- DATA FOR SEA OF TEARS ---
+const placeData: Place = {
     name: "Sea of Tears",
-    image: "/places/arulugi.png", // Placeholder image
-    introduction: "A body of water that becomes significant during the later events of the series, representing the emotional and symbolic weight of the conflicts that shape the destiny of Dara.",
+    image: "/places/sea-of-tears.png",
+    introduction: "The Sea of Tears is a large inland sea in Ukyu-Gondé, surrounded by vast salt flats. It is a place of ancient mystery and a grueling trial for the survivors of the Kiri Valley massacre.",
     infoBox: {
-      "Type": "Body of Water",
-      "Region": "Dara",
-      "Significance": "Symbolic and Strategic",
-      "First appearance": "The Wall of Storms",
-      "Related places": [
-        { text: "World's Edge Mountains", link: "/places/worlds-edge-mountains" },
-        { text: "Kiri Valley", link: "/places/kiri-valley" },
-        { text: "Roro Hills", link: "/places/roro-hills" }
-      ]
+        type: "Inland Sea / Salt Flats",
+        location: { text: "Ukyu & Gondé", link: "/places/ukyu-gonde" },
+        KeyFeatures: "Salt Flats, Ancient Geoglyphs"
     },
     geography: [
-      { type: "text" as const, content: "The Sea of Tears is a body of water whose name reflects the emotional and symbolic significance it holds in the later events of the series. Its geographical position makes it an important location in the military and political conflicts." }
+        { type: 'text', content: "A massive inland sea, its shores have receded over millennia to leave behind vast, desolate salt flats. This harsh, unforgiving landscape is incredibly difficult to survive in." },
+        { type: 'ref', data: { book: "The Veiled Throne", chapter: 43, link: "/books/the-veiled-throne#chapter-43" } },
     ],
     culture: [
-      { type: "text" as const, content: "The name 'Sea of Tears' carries deep cultural and symbolic meaning, representing the suffering and sacrifices made during the conflicts that shape the destiny of Dara and its people." }
+        { type: 'text', content: "The salt flats surrounding the Sea of Tears are home to ancient and mysterious geoglyphs—massive drawings of birds and other creatures etched into the landscape by a forgotten civilization. These discoveries hint at a deep, unrecorded history on the continent." },
+        { type: 'ref', data: { book: "The Veiled Throne", chapter: 43, link: "/books/the-veiled-throne#chapter-43" } },
     ],
     history: [
-      {
-        event: "Symbolic Significance",
-        summary: [
-          { type: "text" as const, content: "The Sea of Tears serves as a powerful symbol throughout the series, representing the emotional cost of the conflicts and the sacrifices made by the people of Dara in their struggle for freedom and survival." }
-        ]
-      }
+        {
+            event: "The Children's Ordeal",
+            summary: [
+                { type: 'text', content: "After the destruction of Kiri Valley, the small band of child survivors, including Théra's sons, were led by their two adult guardians on a harrowing journey across the salt flats of the Sea of Tears. This journey was a crucible, forcing the children to learn to survive and rely on each other in one of the world's most inhospitable environments. The experience forged them into a new kind of family." },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 43, link: "/books/the-veiled-throne#chapter-43" } },
+            ]
+        },
+        {
+            event: "A Gathering of Life",
+            summary: [
+                { type: 'text', content: "At the end of the entire saga, the survivors of the long wars gather on the shores of the Sea of Tears. It becomes a place of remembrance, healing, and celebration, a symbol of the hard-won peace and the beginning of a new era." },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 58, link: "/books/speaking-bones#chapter-58" } },
+            ]
+        },
     ]
-  };
+};
 
-  return (
-    <>
-      <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-      <PlacePageTemplate placeData={placeData} />
-    </>
-  );
-} 
+export default function SeaOfTearsPage() {
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_PLACES]);
+    const returnLink = { title: 'Return to All Places', path: '/places' };
+
+    return (
+        <>
+            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PlacePageTemplate placeData={placeData} />
+        </>
+    );
+}

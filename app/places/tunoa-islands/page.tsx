@@ -6,40 +6,36 @@ import { usePathname } from 'next/navigation';
 import TopPageNavigation from '@/app/components/TopPageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
-// --- DATA FOR TUNOA ISLANDS (WITH FULL REFERENCES) ---
+// --- DATA FOR TUNOA ISLANDS ---
 const placeData: Place = {
     name: "Tunoa Islands",
     image: "/places/tunoa-islands.png",
-    introduction: "The Tunoa Islands are a rugged archipelago in southern Dara that serve as the ancestral fiefdom of the Zyndu Clan. They are known for their fierce loyalty to the Zyndu name and their formidable stone castle.",
+    introduction: "The Tunoa Islands are the ancestral island fiefdom of the noble Zyndu clan. It is the place where Mata Zyndu was raised in exile, a constant reminder of his family's lost glory and his quest for vengeance.",
     infoBox: {
-        Region: "Southern Dara",
-        PatronGods: { text: "Kana & Rapa", link: "/gods" },
-        NotableFeatures: "Ancestral home of the Zyndu Clan",
-        NotableCharacters: [
-            { text: "Mata Zyndu", link: "/characters/mata-zyndu" },
-            { text: "Phin Zyndu", link: "/characters/phin-zyndu" },
-        ],
+        type: "Archipelago Fiefdom",
+        continent: { text: "Dara", link: "/places/dara" },
+        capital: "Farun",
+        Ruler: { text: "House of Zyndu", link: "/characters/mata-zyndu" },
     },
     geography: [
-        { type: 'text', content: "A chain of islands with rugged coastlines, the Tunoa Islands are dominated by the ancestral castle of the Zyndu, a strong fortress that has stood for generations." },
-        { type: 'ref', data: { book: "The Grace of Kings", chapter: 7, link: "/books/the-grace-of-kings#chapter-7" } },
+        { type: 'text', content: "An archipelago located some distance from the main continent, its relative isolation made it a suitable place for Phin Zyndu to hide and raise his nephew, Mata." },
     ],
     culture: [
-        { type: 'text', content: "The culture of the Tunoa Islands is defined by an unshakable loyalty to the Zyndu clan. Even after the clan's fall from grace, the people of Tunoa revered their memory and were among the first to flock to Mata Zyndu's banner when he began his rebellion." },
-        { type: 'ref', data: { book: "The Grace of Kings", chapter: 7, link: "/books/the-grace-of-kings#chapter-7" } },
+        { type: 'text', content: "The islands are fiercely loyal to the Zyndu clan. Even after years of Xana rule, the people harbor a deep-seated resentment against the empire and a powerful devotion to the memory of their lost lords." },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 2, link: "/books/the-grace-of-kings#chapter-2" } },
     ],
     history: [
         {
-            event: "Mata Zyndu's First Stand",
+            event: "The Dandelion Rebellion",
             summary: [
-                { type: 'text', content: "The Tunoa Islands are where Mata Zyndu began his rebellion against the Xana Empire. After being summoned by the local Xana commander, Mata assassinated him, rallied the people, and single-handedly reclaimed his ancestral castle, establishing his first base of operations." },
+                { type: 'text', content: "At the start of the rebellion, Mata Zyndu reclaimed his ancestral home in Farun by assassinating the local Xana commander, Datun Zatoma. He and his uncle Phin then single-handedly slaughtered most of the 200-man garrison. This incredible feat of arms ignited the spirit of rebellion in the Tunoa Islands, and hundreds of volunteers flocked to join Mata's cause." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 7, link: "/books/the-grace-of-kings#chapter-7" } },
             ]
         },
         {
             event: "The Hegemon Cults",
             summary: [
-                { type: 'text', content: "Years into Emperor Ragin's reign, the Tunoa Islands became a hotbed for the Hegemon Cults, groups of rebels who venerated the ghost of Mata Zyndu. Prince Phyro was sent to the islands to quell this uprising." },
+                { type: 'text', content: "During the reign of Emperor Ragin, the Tunoa Islands became a hotbed for the rebellious Hegemon Cults. Led by Noda Mi and Doru Solofi, these cults venerated the ghost of Mata Zyndu and used 'magic mirrors' to build a fanatical army, posing a serious threat to the Dandelion Dynasty." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 20, link: "/books/the-wall-of-storms#chapter-20" } },
             ]
         },
@@ -48,7 +44,7 @@ const placeData: Place = {
 
 export default function TunoaIslandsPage() {
     const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_PLACES);
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_PLACES]);
     const returnLink = { title: 'Return to All Places', path: '/places' };
 
     return (

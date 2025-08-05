@@ -6,43 +6,48 @@ import { usePathname } from 'next/navigation';
 import TopPageNavigation from '@/app/components/TopPageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
-export default function TiphanHutoPage() {
-  const pathname = usePathname();
-  const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CHARACTERS);
-  const returnLink = { title: 'Return to All Characters', path: '/characters' };
-
-  // --- DATA FOR TIPHAN HUTO ---
-  const characterData: Character = {
+const characterData: Character = {
     name: "Tiphan Huto",
-    image: "/characters/kuni-garu.png", // Placeholder image
-    introduction: "A Lyucu warrior and leader who becomes involved in the occupation of Dara, representing the military aspects of Lyucu governance.",
+    image: "/characters/tiphan-huto.png",
+    introduction: "Tiphan Huto is an ambitious and unscrupulous merchant from Ginpen. His rivalry with the Splendid Urn restaurant serves as a backdrop for the grassroots technological and cultural renaissance led by Princess Fara and the Blossom Gang.",
     infoBox: {
-      "Also known as": "Tiphan Huto",
-      "Affiliation": "Lyucu",
-      "Role": "Warrior/Leader",
-      "First appearance": "The Veiled Throne",
-      "Related characters": [
-        { text: "Kita Thu", link: "/characters/kita-thu" },
-        { text: "Mozo Mu", link: "/characters/mozo-mu" }
-      ]
+        aliases: "The Merchant of Ginpen",
+        occupation: "Merchant, Restaurateur",
+        placeOfBirth: { text: "Ginpen", link: "/places/ginpen" },
+        status: "Imprisoned",
+        gender: "Male",
+        affiliation: "Treasure Chest Restaurant",
+        nationality: { text: "Haan", link: "/places/haan" },
+        firstAppeared: { text: "The Veiled Throne", link: "/books/the-veiled-throne" },
+        lastAppeared: { text: "The Veiled Throne", link: "/books/the-veiled-throne" }
     },
     appearanceAndPersonality: [
-      { type: "text" as const, content: "Tiphan Huto exemplifies the Lyucu warrior tradition, combining tactical skill with the fierce determination that characterized the northern invaders. His personality reflects the disciplined and uncompromising nature of Lyucu military culture." }
+        { type: 'text', content: "Huto is a man of great wealth and ambition, but he lacks taste and subtlety. He believes that victory can be bought with money and brute force, a philosophy that is ultimately defeated by the ingenuity and creativity of his rivals. He is arrogant, ruthless, and not above using sabotage, coercion, and espionage to achieve his goals." },
+        { type: 'ref', data: { book: "The Veiled Throne", chapter: 18, link: "/books/the-veiled-throne#chapter-18" } },
+        { type: 'ref', data: { book: "The Veiled Throne", chapter: 20, link: "/books/the-veiled-throne#chapter-20" } },
     ],
     history: [
-      {
-        era: "The Veiled Throne",
-        summary: [
-          { type: "text" as const, content: "Tiphan Huto serves as a key warrior and leader during the Lyucu occupation of Dara, contributing to the military control and governance of the conquered territories." }
-        ]
-      }
+        {
+            era: "The Veiled Throne",
+            summary: [
+                { type: 'text', content: "Huto, the owner of the lavish Treasure Chest restaurant, engaged in a three-part contest with the humble Splendid Urn to determine the best restaurant in Ginpen. He used his wealth to hire the brilliant chef Mozo Mu and staged extravagant spectacles. When he lost the first two rounds to the cleverness of the Blossom Gang and Princess Fara, he resorted to sabotage and psychological warfare, creating a 'curse' to drive his rival out of business. He was ultimately defeated, and his criminal activities, including kidnapping artisans for the Lyucu, were exposed, leading to his capture." },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 18, link: "/books/the-veiled-throne#chapter-18" } },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 22, link: "/books/the-veiled-throne#chapter-22" } },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 46, link: "/books/the-veiled-throne#chapter-46" } },
+            ]
+        },
     ]
-  };
+};
 
-  return (
-    <>
-      <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-      <CharacterPageTemplate characterData={characterData} />
-    </>
-  );
-} 
+export default function TiphanHutoPage() {
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
+    const returnLink = { title: 'Return to All Characters', path: '/characters' };
+
+    return (
+        <>
+            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <CharacterPageTemplate characterData={characterData} />
+        </>
+    );
+}

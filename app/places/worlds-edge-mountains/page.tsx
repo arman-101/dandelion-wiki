@@ -6,46 +6,47 @@ import { usePathname } from 'next/navigation';
 import TopPageNavigation from '@/app/components/TopPageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
-export default function WorldsEdgeMountainsPage() {
-  const pathname = usePathname();
-  const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_PLACES);
-  const returnLink = { title: 'Return to All Places', path: '/places' };
-
-  const placeData: Place = {
+// --- DATA FOR WORLD'S EDGE MOUNTAINS ---
+const placeData: Place = {
     name: "World's Edge Mountains",
-    image: "/places/mount-kiji.png", // Placeholder image
-    introduction: "A formidable mountain range that serves as a natural barrier and strategic location during the later events of the series, representing the geographical challenges that shape the conflicts of Dara.",
+    image: "/places/worlds-edge-mountains.png",
+    introduction: "The World's Edge Mountains are a massive, formidable mountain range that marks the eastern boundary of the continent of Ukyu-Gondé. They serve as a place of refuge and rebirth for the Agon rebellion after a catastrophic defeat.",
     infoBox: {
-      "Type": "Mountain Range",
-      "Region": "Dara",
-      "Significance": "Natural Barrier and Strategic",
-      "First appearance": "The Wall of Storms",
-      "Related places": [
-        { text: "Kiri Valley", link: "/places/kiri-valley" },
-        { text: "Sea of Tears", link: "/places/sea-of-tears" },
-        { text: "Roro Hills", link: "/places/roro-hills" }
-      ]
+        type: "Mountain Range",
+        location: { text: "Ukyu & Gondé", link: "/places/ukyu-gonde" },
+        KeyLandmarks: "Kiri Valley, The Garinafin Boneyard"
     },
     geography: [
-      { type: "text" as const, content: "The World's Edge Mountains form a formidable natural barrier that plays a crucial role in the military and political events of the later books. Their rugged terrain and strategic position make them a key location in the conflicts that shape the destiny of Dara." }
+        { type: 'text', content: "A vast and rugged mountain range, difficult to traverse and largely unexplored. Its hidden valleys and remote peaks provide a natural sanctuary for those fleeing persecution." },
+        { type: 'ref', data: { book: "The Veiled Throne", chapter: 17, link: "/books/the-veiled-throne#chapter-17" } },
     ],
     culture: [
-      { type: "text" as const, content: "The mountains hold cultural significance as both a natural boundary and a symbol of the challenges that must be overcome. Their presence in the landscape reflects the broader themes of struggle and perseverance that run throughout the series." }
+        { type: 'text', content: "The mountains are a place of deep spiritual significance for the Agon. They contain sacred sites like the garinafin boneyard and ancient places of wisdom like the Temple of Still and Flowing Waters. It is in these mountains that the rebellion rediscovers its own history and forges a new future." },
+        { type: 'ref', data: { book: "Speaking Bones", chapter: 29, link: "/books/speaking-bones#chapter-29" } },
     ],
     history: [
-      {
-        event: "Strategic Importance",
-        summary: [
-          { type: "text" as const, content: "Throughout the series, the World's Edge Mountains serve as a strategic location where key military and political events unfold, reflecting the importance of geography in shaping the course of history and the outcome of conflicts." }
-        ]
-      }
+        {
+            event: "Refuge and Rediscovery",
+            summary: [
+                { type: 'text', content: "After the destruction of their base in Kiri Valley, Princess Théra and the other survivors fled into the World's Edge Mountains. Consumed by grief, Théra's journey through the mountains was both a physical and a psychological one." },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 45, link: "/books/the-veiled-throne#chapter-45" } },
+                { type: 'text', content: "It was here that the rebellion had its most important breakthrough. Guided by the shaman Sataari, they discovered a vast, ancient boneyard of garinafins. The bones found there, combined with the knowledge from a remote monastery, allowed them to create 'living bone' technology and the powerful 'cloud-garinafins,' giving them a devastating new weapon and turning the tide of their war against the Lyucu." },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 29, link: "/books/speaking-bones#chapter-29" } },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 31, link: "/books/speaking-bones#chapter-31" } },
+            ]
+        },
     ]
-  };
+};
 
-  return (
-    <>
-      <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-      <PlacePageTemplate placeData={placeData} />
-    </>
-  );
-} 
+export default function WorldsEdgeMountainsPage() {
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_PLACES]);
+    const returnLink = { title: 'Return to All Places', path: '/places' };
+
+    return (
+        <>
+            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PlacePageTemplate placeData={placeData} />
+        </>
+    );
+}

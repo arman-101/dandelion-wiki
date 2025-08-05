@@ -13,7 +13,7 @@ export default function SucaTironPage() {
 
   const characterData: Character = {
     name: "Suca Tiron",
-    image: "/characters/kuni-garu.png", // Placeholder image
+    image: "/characters/suca-tiron.png", // Placeholder image
     introduction: "A Lyucu warrior and leader involved in the governance of occupied Dara.",
     infoBox: {
       "Origin": "Lyucu Lands",

@@ -13,7 +13,7 @@ export default function KigoYezuPage() {
 
   const placeData: Place = {
     name: "Kigo Yezu",
-    image: "/places/pan.png", // Placeholder image
+    image: "/places/kigo-yezu.png", // Placeholder image
     introduction: "A region that plays a role in the complex political dynamics of the later books, Kigo Yezu becomes significant during the Lyucu occupation and the resistance movement.",
     infoBox: {
       "Type": "Region",

@@ -6,52 +6,49 @@ import { usePathname } from 'next/navigation';
 import TopPageNavigation from '@/app/components/TopPageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
-export default function SliyusaKiPage() {
-  const pathname = usePathname();
-  const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_PLACES);
-  const returnLink = { title: 'Return to All Places', path: '/places' };
-
-  const placeData: Place = {
+// --- DATA FOR SLIYUSA KI ---
+const placeData: Place = {
     name: "Sliyusa Ki",
-    image: "/places/pan.png", // Placeholder image
-    introduction: "A region that becomes important during the Lyucu occupation period, Sliyusa Ki serves as a strategic location in the complex political and military landscape of the later books.",
+    image: "/places/sliyusa-ki.png",
+    introduction: "Sliyusa Ki is a major oasis in the vast Lurodia Tanta desert. It is the home of Takval Aragoz's tribe and becomes the first base of operations and political center for the Agon resistance against the Lyucu.",
     infoBox: {
-      "Type": "Region",
-      "Location": "Dara",
-      "Significance": "Strategic Military Location",
-      "First appearance": "The Veiled Throne",
-      "Related places": [
-        { text: "Taten", link: "/places/taten" },
-        { text: "Lurodia Tanta", link: "/places/lurodia-tanta" },
-        { text: "Kiri Valley", link: "/places/kiri-valley" }
-      ]
+        type: "Oasis Settlement",
+        location: { text: "Lurodia Tanta", link: "/places/lurodia-tanta" },
+        continent: { text: "Ukyu & Gondé", link: "/places/ukyu-gonde" },
+        KeyResidents: [
+            { text: "Takval Aragoz", link: "/characters/takval-aragoz" },
+            { text: "Volyu Aragoz", link: "/characters/volyu-aragoz" },
+            { text: "Souliyan Aragoz", link: "/characters/souliyan-aragoz" }
+        ]
     },
     geography: [
-      { type: "text" as const, content: "Sliyusa Ki is a region with strategic geographical features that make it important for military and political control. The area's terrain and position provide advantages for both defensive and offensive operations." }
+        { type: 'text', content: "As an oasis, Sliyusa Ki is a rare point of life and water in the endless desert, making it a natural center for the exiled Agon people to gather." },
     ],
     culture: [
-      { type: "text" as const, content: "The culture of Sliyusa Ki has been shaped by its strategic importance and the various forces that have sought to control the region. The local population has developed resilience and adaptability in response to the changing political landscape." }
+        { type: 'text', content: "The oasis is the heart of the exiled Agon culture. It is a place of deep-seated traditions, warrior pride, and complex clan politics. It is here that Théra must prove her worth and forge a true alliance with a proud and skeptical people." },
+        { type: 'ref', data: { book: "The Veiled Throne", chapter: 13, link: "/books/the-veiled-throne#chapter-13" } },
     ],
     history: [
-      {
-        event: "Lyucu Occupation",
-        summary: [
-          { type: "text" as const, content: "During the Lyucu occupation of Dara, Sliyusa Ki becomes a key location for military operations and political control. The region's strategic value makes it a focus of attention for both the occupiers and resistance forces." }
-        ]
-      },
-      {
-        event: "Resistance Activities",
-        summary: [
-          { type: "text" as const, content: "Sliyusa Ki serves as a base for resistance activities against the Lyucu occupation. The region's geography and the support of the local population make it an ideal location for guerrilla warfare and underground resistance operations." }
-        ]
-      }
+        {
+            event: "The Forging of an Alliance",
+            summary: [
+                { type: 'text', content: "Sliyusa Ki is where Théra's expedition makes first contact with the exiled Agon. The welcome is hostile, led by the treacherous chieftain Volyu Aragoz. Théra, through a powerful display of rhetoric and courage, wins over the other chieftains and, with the help of Takval's mother Souliyan, deposes Volyu. The oasis then becomes the first capital of the unified Agon rebellion, where the political and personal alliance between Théra and Takval is consummated." },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 13, link: "/books/the-veiled-throne#chapter-13" } },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 14, link: "/books/the-veiled-throne#chapter-14" } },
+            ]
+        },
     ]
-  };
+};
 
-  return (
-    <>
-      <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-      <PlacePageTemplate placeData={placeData} />
-    </>
-  );
-} 
+export default function SliyusaKiPage() {
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_PLACES]);
+    const returnLink = { title: 'Return to All Places', path: '/places' };
+
+    return (
+        <>
+            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PlacePageTemplate placeData={placeData} />
+        </>
+    );
+}

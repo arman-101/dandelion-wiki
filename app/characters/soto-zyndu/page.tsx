@@ -9,35 +9,39 @@ import { getSurroundingPages } from '@/app/utils/navigationUtils';
 const characterData: Character = {
     name: "Soto Zyndu",
     image: "/characters/soto-zyndu.png",
-    introduction: "Soto Zyndu is the formidable and politically brilliant aunt of Mata Zyndu. Thought to have perished with the rest of her clan, she survives and re-emerges as a wise and influential advisor to Empress Jia, playing a crucial role from the shadows.",
+    introduction: "Soto Zyndu is the politically brilliant aunt of Mata Zyndu. Long thought dead after faking her own demise to escape the Xana, she re-emerged as a wise and influential advisor to Empress Jia Matiza and the imperial children, shaping the future of the Dandelion Dynasty from the shadows.",
     infoBox: {
-        aliases: "The Housekeeper",
-        occupation: "Noblewoman, Advisor, Housekeeper",
-        status: "Deceased",
+        aliases: "Soto the Housekeeper",
+        occupation: "Noblewoman, Housekeeper, Imperial Advisor",
+        placeOfBirth: { text: "Cocru", link: "/places/cocru" },
+        status: "Alive",
         gender: "Female",
-        relatives: "Dazu Zyndu (father), Mata Zyndu (nephew)",
+        relatives: "Dazu Zyndu (father), Phin Zyndu (brother), Mata Zyndu (nephew)",
         affiliation: "House of Zyndu, Dandelion Court",
         nationality: { text: "Cocru", link: "/places/cocru" },
         firstAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" },
-        lastAppeared: { text: "The Veiled Throne", link: "/books/the-veiled-throne" }
+        lastAppeared: { text: "The Wall of Storms", link: "/books/the-wall-of-storms" }
     },
     appearanceAndPersonality: [
-        { type: 'text', content: "Soto is an older woman with a calm and unassuming demeanor, which she uses to mask a sharp, strategic mind. She possesses the deep wisdom of the Zyndu clan but without the martial rigidity of its men. She is a master of 'soft power,' understanding that true influence is often wielded through quiet advice, careful observation, and the subtle management of relationships. She is deeply practical and patient, teaching Jia the importance of seeing politics as a long game." },
+        { type: 'text', content: "Soto appears as a mysterious and incredibly wise older woman. She possesses a profound understanding of politics, power, and human nature. She is calm, patient, and an exceptional teacher, able to convey complex political lessons through simple metaphors and guidance. Her wisdom is practical and deeply insightful, focusing on the long-term consequences of actions." },
         { type: 'ref', data: { book: "The Grace of Kings", chapter: 32, link: "/books/the-grace-of-kings#chapter-32" } },
+        { type: 'ref', data: { book: "The Wall of Storms", chapter: 11, link: "/books/the-wall-of-storms#chapter-11" } },
     ],
     history: [
         {
-            era: "Surviving the Purge",
+            era: "The Grace of Kings",
             summary: [
-                { type: 'text', content: "When the Xana Empire massacred the Zyndu clan, Soto was one of the few who managed to escape. She went into hiding for decades, living a quiet, anonymous life and observing the rise and fall of the empire from afar." },
+                { type: 'text', content: "Long believed to have died by setting fire to her own estate to escape the Xana, Soto Zyndu survived and lived in obscurity. Years later, she entered the service of Jia Matiza in Çaruza, disguised as a simple housekeeper named Soto. She became a close confidante and political mentor to Jia, advising her to embrace her power and become an active and equal partner in Kuni's ambitions. She was also instrumental in helping Kuni and Jia repair their fractured marriage." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 32, link: "/books/the-grace-of-kings#chapter-32" } },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 37, link: "/books/the-grace-of-kings#chapter-37" } },
             ]
         },
         {
-            era: "Advisor to the Empress",
+            era: "The Wall of Storms",
             summary: [
-                { type: 'text', content: "During the Chrysanthemum-Dandelion War, she revealed herself by taking a position as a housekeeper in Jia Matiza's household. She quickly became Jia's most trusted confidante and mentor, teaching her the intricacies of court politics and strategy. It was Soto who advised Jia on how to manage her complex relationship with Kuni and how to assert her own political power." },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 37, link: "/books/the-grace-of-kings#chapter-37" } },
+                { type: 'text', content: "In the imperial court at Pan, Soto took on the role of advisor and mentor to the imperial children. She provided a running commentary on the political theater of the Palace Examination, teaching Princess Théra in particular to see the hidden power struggles beneath the surface of official events. Her guidance was crucial in shaping Théra's keen political acumen." },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 11, link: "/books/the-wall-of-storms#chapter-11" } },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 17, link: "/books/the-wall-of-storms#chapter-17" } },
             ]
         },
     ]
@@ -45,7 +49,7 @@ const characterData: Character = {
 
 export default function SotoZynduPage() {
     const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CHARACTERS);
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (

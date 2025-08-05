@@ -9,55 +9,52 @@ import { getSurroundingPages } from '@/app/utils/navigationUtils';
 // --- DATA FOR ÇARUZA ---
 const placeData: Place = {
     name: "Çaruza",
-    image: "/places/cocru.png",
-    introduction: "Çaruza is the historic capital city of Cocru, serving as the political and cultural center of the kingdom and later becoming a key location during the rebellion against the Xana Empire.",
+    image: "/places/caruza.png",
+    introduction: "Çaruza is the ancient capital of the kingdom of Cocru. During the Dandelion Rebellion, it was reclaimed and served as the political headquarters for the Grand Council of the allied Tiro states.",
     infoBox: {
-      "Type": "Capital City",
-      "Region": "Cocru",
-      "Significance": "Historic capital of Cocru, center of rebellion",
-      "Related places": [
-        { text: "Cocru", link: "/places/cocru" },
-        { text: "Dimu", link: "/places/dimu" },
-        { text: "Zudi", link: "/places/zudi" }
-      ]
+        type: "Royal Capital City",
+        state: { text: "Cocru", link: "/places/cocru" },
+        continent: { text: "Dara", link: "/places/dara" },
+        KeyEvents: "Grand Council of War, Princeps's Promise"
     },
     geography: [
-      { type: "text" as const, content: "Çaruza is located in the heart of Cocru territory, serving as the kingdom's traditional capital. The city features grand architecture reflecting Cocru's proud heritage and military traditions." }
+        { type: 'text', content: "As the historical capital of Cocru, Çaruza is a place of great symbolic and political importance, located centrally within the kingdom." },
     ],
     culture: [
-      { type: "text" as const, content: "As the capital of Cocru, Çaruza embodies the kingdom's martial culture and proud traditions. The city is known for its military academies, noble houses, and the legacy of the Zyndu family." }
+        { type: 'text', content: "The city represents the heart of old Cocru nobility and tradition. Under the rebellion, it became a melting pot of the different Tiro cultures, but was also plagued by the infighting and revived rivalries of the various kings and nobles who gathered there." },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 12, link: "/books/the-grace-of-kings#chapter-12" } },
     ],
     history: [
-      {
-        event: "Cocru Capital",
-        summary: [
-          { type: "text" as const, content: "Çaruza has long served as the capital of Cocru, the kingdom known for its martial traditions and proud nobility. The city was home to many of the kingdom's most important families, including the Zyndu clan." }
-        ]
-      },
-      {
-        event: "The Rebellion",
-        summary: [
-          { type: "text" as const, content: "During the rebellion against the Xana Empire, Çaruza becomes the center of resistance activity. King Thufi calls for a Grand Council of War here, hoping to unite the newly freed Tiro states." }
-        ]
-      },
-      {
-        event: "The Chrysanthemum-Dandelion War",
-        summary: [
-          { type: "text" as const, content: "Çaruza serves as a key strategic location during the war between Kuni Garu and Mata Zyndu, with both sides vying for control of the historic capital and its symbolic importance." }
-        ]
-      }
+        {
+            event: "The Dandelion Rebellion",
+            summary: [
+                { type: 'text', content: "After being liberated from Xana rule, Çaruza became the capital of the restored kingdom of Cocru. It was here that the rebels installed the humble shepherd Thufi as the new king." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 12, link: "/books/the-grace-of-kings#chapter-12" } },
+                { type: 'text', content: "King Thufi convened the Grand Council of War in Çaruza, but it devolved into bickering. Later, backed by Mata Zyndu's military might, Thufi declared himself Princeps in the city. It was also in Çaruza that the 'Princeps's Promise' was made, granting the kingship of Géfica to whoever could capture Pan." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 26, link: "/books/the-grace-of-kings#chapter-26" } },
+            ]
+        },
+        {
+            event: "The Hegemon's Court",
+            summary: [
+                { type: 'text', content: "Princess Kikomi arrived in Çaruza as a celebrated hero after her 'escape' from the Xana. It was here that she enacted the tragic final step of her plan, murdering Phin Zyndu to sow discord between Mata and Kuni." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 27, link: "/books/the-grace-of-kings#chapter-27" } },
+                { type: 'text', content: "During Mata Zyndu's reign as Hegemon, Jia Matiza resided in Çaruza, feeling isolated in high society. It was here she hired the mysterious housekeeper Soto, who was secretly Mata's aunt, Soto Zyndu, and who became Jia's political mentor." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 32, link: "/books/the-grace-of-kings#chapter-32" } },
+            ]
+        },
     ]
 };
 
 export default function CaruzaPage() {
-  const pathname = usePathname();
-  const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_PLACES);
-  const returnLink = { title: 'Return to All Places', path: '/places' };
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_PLACES]);
+    const returnLink = { title: 'Return to All Places', path: '/places' };
 
-  return (
-    <>
-      <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-      <PlacePageTemplate placeData={placeData} />
-    </>
-  );
-} 
+    return (
+        <>
+            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PlacePageTemplate placeData={placeData} />
+        </>
+    );
+}

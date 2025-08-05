@@ -13,7 +13,7 @@ export default function MotaKiphiPage() {
 
   const characterData: Character = {
     name: "Mota Kiphi",
-    image: "/characters/kuni-garu.png", // Placeholder image
+    image: "/characters/mota-kiphi.png", // Placeholder image
     introduction: "A Lyucu warrior and leader who becomes involved in the occupation of Dara, representing the military aspects of Lyucu governance.",
     infoBox: {
       "Also known as": "Mota Kiphi",

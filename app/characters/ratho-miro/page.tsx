@@ -6,45 +6,48 @@ import { usePathname } from 'next/navigation';
 import TopPageNavigation from '@/app/components/TopPageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
-// --- DATA FOR RATHO MIRO ---
 const characterData: Character = {
     name: "Ratho Miro",
-    image: "/characters/kuni-garu.png",
-    introduction: "Ratho Miro is the younger brother of Dafiro Miro and one of the first to shed blood in the rebellion against the Xana Empire.",
+    image: "/characters/ratho-miro.png",
+    introduction: "Ratho Miro was a fierce and impulsive warrior who, along with his brother Dafiro, was one of the first to shed blood in the Dandelion Rebellion. He became a loyal and devoted follower of Mata Zyndu.",
     infoBox: {
-      "Also known as": "Ratho",
-      "Affiliation": "Cocru Rebellion",
-      "Role": "Rebel Fighter",
-      "First appearance": "The Grace of Kings",
-      "Related characters": [
-        { text: "Dafiro Miro", link: "/characters/dafiro-miro" },
-        { text: "Huno Krima", link: "/characters/huno-krima" },
-        { text: "Zopa Shigin", link: "/characters/zopa-shigin" }
-      ]
+        aliases: "The Younger Miro",
+        occupation: "Soldier, Commander",
+        placeOfBirth: { text: "Cocru", link: "/places/cocru" },
+        status: "Deceased",
+        gender: "Male",
+        relatives: "Dafiro Miro (brother)",
+        affiliation: "Cocru Army, Hegemon's Court",
+        nationality: { text: "Cocru", link: "/places/cocru" },
+        firstAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" },
+        lastAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" }
     },
     appearanceAndPersonality: [
-      { type: "text" as const, content: "Ratho Miro is a young and brave fighter who, along with his brother Dafiro, represents the new generation willing to fight against the oppressive Xana Empire. His actions help spark the broader rebellion." }
+        { type: 'text', content: "Ratho is the hot-headed and passionate counterpart to his thoughtful older brother, Dafiro. He is quick to anger and quick to act, a fierce warrior who is deeply loyal to those he respects. He is a true believer in Mata Zyndu's philosophy of martial honor and aristocratic rule." },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 23, link: "/books/the-grace-of-kings#chapter-23" } },
     ],
     history: [
-      {
-        era: "The Grace of Kings",
-        summary: [
-          { type: "text" as const, content: "Ratho Miro and his brother Dafiro are among the first to shed blood in the rebellion when they kill their corvée guards, helping to ignite the uprising led by Huno Krima and Zopa Shigin." },
-          { type: "text" as const, content: "The brothers' actions demonstrate the desperation and determination of the common people to overthrow the oppressive Xana regime, marking the beginning of a new era of resistance." }
-        ]
-      }
+        {
+            era: "The Grace of Kings",
+            summary: [
+                { type: 'text', content: "Ratho and his brother Dafiro were corvée laborers who sparked the first uprising by killing their guards and joining Huno Krima's rebellion." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 6, link: "/books/the-grace-of-kings#chapter-6" } },
+                { type: 'text', content: "He became a devoted follower of Mata Zyndu, admiring his strength and honor. He served Mata faithfully throughout the rebellion and the subsequent civil war. Ratho was one of the last loyal followers to stand with Mata in his final, heroic last stand at Rana Kida, where he died fighting for his Hegemon." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 50, link: "/books/the-grace-of-kings#chapter-50" } },
+            ]
+        },
     ]
 };
 
 export default function RathoMiroPage() {
-  const pathname = usePathname();
-  const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CHARACTERS);
-  const returnLink = { title: 'Return to All Characters', path: '/characters' };
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
+    const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
-  return (
-    <>
-      <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-      <CharacterPageTemplate characterData={characterData} />
-    </>
-  );
-} 
+    return (
+        <>
+            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <CharacterPageTemplate characterData={characterData} />
+        </>
+    );
+}

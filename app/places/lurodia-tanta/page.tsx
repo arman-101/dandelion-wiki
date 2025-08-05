@@ -6,52 +6,44 @@ import { usePathname } from 'next/navigation';
 import TopPageNavigation from '@/app/components/TopPageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
-export default function LurodiaTantaPage() {
-  const pathname = usePathname();
-  const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_PLACES);
-  const returnLink = { title: 'Return to All Places', path: '/places' };
-
-  const placeData: Place = {
+// --- DATA FOR LURODIA TANTA ---
+const placeData: Place = {
     name: "Lurodia Tanta",
-    image: "/places/pan.png", // Placeholder image
-    introduction: "A region with unique cultural and geographical features, Lurodia Tanta becomes significant during the later events of the series and the resistance against Lyucu occupation.",
+    image: "/places/lurodia-tanta.png",
+    introduction: "The Lurodia Tanta is the vast, seemingly endless desert in Ukyu-Gondé. It is the harsh domain of the exiled Agon tribes, a place of extreme hardship and a crucible for the nascent rebellion led by Princess Théra and Takval Aragoz.",
     infoBox: {
-      "Type": "Region",
-      "Location": "Dara",
-      "Significance": "Cultural and Strategic",
-      "First appearance": "The Veiled Throne",
-      "Related places": [
-        { text: "Taten", link: "/places/taten" },
-        { text: "Sliyusa Ki", link: "/places/sliyusa-ki" },
-        { text: "Kiri Valley", link: "/places/kiri-valley" }
-      ]
+        type: "Desert",
+        location: { text: "Ukyu & Gondé", link: "/places/ukyu-gonde" },
+        KeyInhabitants: { text: "Agon", link: "/concepts/agon" },
+        KeyLandmark: { text: "Sliyusa Ki", link: "/places/sliyusa-ki" }
     },
     geography: [
-      { type: "text" as const, content: "Lurodia Tanta is characterized by its unique geographical features that distinguish it from other regions of Dara. The landscape provides both natural resources and strategic advantages for those who control the area." }
+        { type: 'text', content: "An immense desert of sand and rock, the Lurodia Tanta is an extremely arid and dangerous environment. Survival is a constant struggle. Its few sources of life are the scattered oases, such as Sliyusa Ki, which are vital centers of civilization." },
+        { type: 'ref', data: { book: "The Veiled Throne", chapter: 12, link: "/books/the-veiled-throne#chapter-12" } },
     ],
     culture: [
-      { type: "text" as const, content: "The people of Lurodia Tanta have developed a distinct culture shaped by their environment and their interactions with neighboring regions. Their traditions and way of life reflect the unique challenges and opportunities of their homeland." }
+        { type: 'text', content: "The desert has shaped the Agon people who live there, making them hardy, resilient, and deeply knowledgeable about survival. Their culture is one of endurance, defined by their exile and their simmering resentment of the Lyucu who drove them there." },
     ],
     history: [
-      {
-        event: "Early History",
-        summary: [
-          { type: "text" as const, content: "Lurodia Tanta has a long history as a region within the Dara empire, with its people contributing to the cultural and economic diversity of the unified realm. The region's unique characteristics have made it a valuable part of the empire." }
-        ]
-      },
-      {
-        event: "Role in Later Events",
-        summary: [
-          { type: "text" as const, content: "During the complex political events of the later books, Lurodia Tanta becomes an important location where various factions and interests converge. The region's strategic value and cultural significance make it a focal point for political maneuvering." }
-        ]
-      }
+        {
+            event: "The Dara Expedition's Trek",
+            summary: [
+                { type: 'text', content: "After landing in Ukyu-Gondé, Princess Théra's expedition was forced to make a grueling overland trek through the Lurodia Tanta to reach the Agon oasis of Sliyusa Ki. The harsh journey tested the crew to their limits and forced Théra to innovate, leading to her invention of a solar still to create potable water. This trek was the first great trial of the rebellion." },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 12, link: "/books/the-veiled-throne#chapter-12" } },
+            ]
+        },
     ]
-  };
+};
 
-  return (
-    <>
-      <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-      <PlacePageTemplate placeData={placeData} />
-    </>
-  );
-} 
+export default function LurodiaTantaPage() {
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_PLACES]);
+    const returnLink = { title: 'Return to All Places', path: '/places' };
+
+    return (
+        <>
+            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PlacePageTemplate placeData={placeData} />
+        </>
+    );
+}

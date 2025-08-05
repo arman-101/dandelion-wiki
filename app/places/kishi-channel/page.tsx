@@ -10,23 +10,26 @@ import { getSurroundingPages } from '@/app/utils/navigationUtils';
 const placeData: Place = {
     name: "Kishi Channel",
     image: "/places/kishi-channel.png",
-    introduction: "The Kishi Channel is a notoriously treacherous strait separating the island of Wolf's Paw from the mainland's Itanti Peninsula. It is home to a massive, permanent whirlpool that makes naval passage nearly impossible.",
+    introduction: "The Kishi Channel is a notoriously treacherous strait separating the island of Wolf's Paw from the mainland of Gan. It is infamous for a massive, permanent whirlpool that makes naval passage nearly impossible, and was the site of one of the most horrific events of the Dandelion Rebellion.",
     infoBox: {
-        Region: "Between Gan and the Big Island",
-        Type: "Strait / Whirlpool",
-        PatronGod: { text: "Tazu", link: "/gods/tazu" },
+        type: "Strait / Whirlpool",
+        location: { text: "Between Gan and Wolf's Paw", link: "/places/gan" },
+        continent: { text: "Dara", link: "/places/dara" },
+        ControllingDeity: { text: "Tazu", link: "/gods/tazu" }
     },
     geography: [
-        { type: 'text', content: "The channel is defined by its powerful and deadly whirlpool, a permanent fixture of the seascape believed to be a manifestation of the chaotic god Tazu." },
+        { type: 'text', content: "The channel is defined by a massive and deadly whirlpool, a supernatural or extreme natural phenomenon that destroys any ship that enters it. This makes it a formidable naval obstacle, effectively blockading the island of Wolf's Paw from one side." },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 31, link: "/books/the-grace-of-kings#chapter-31" } },
     ],
     culture: [
-        { type: 'text', content: "The Kishi Channel is a place of legend and fear among sailors. It is seen as the domain of Tazu, a place where the god's chaotic nature is on full display." },
+        { type: 'text', content: "The Kishi Channel is a place of dread and superstition among the sailors of Dara. It is seen as the domain of the unpredictable sea god Tazu. The massacre that occurred there has only added to its dark legend, making it a place synonymous with death and sacrifice." },
     ],
     history: [
         {
-            event: "The Slaughter at Wolf's Paw",
+            event: "The Massacre at Wolf's Paw",
             summary: [
-                { type: 'text', content: "The Kishi Channel became the site of one of the most horrific events of the Chrysanthemum-Dandelion War. Trapped on Wolf's Paw by a naval blockade, Mata Zyndu made a pact with Tazu. He sacrificed 20,000 surrendered Imperial soldiers by sending them into the whirlpool on flimsy barges. In exchange, Tazu temporarily calmed the waters, allowing Mata's army to escape to the mainland." },
+                { type: 'text', content: "After his great victory at the Battle of Wolf's Paw, Mata Zyndu's army was trapped on the island. In a moment of cold-blooded desperation, and tempted by the goddess Kana, Mata made a pact with the sea god Tazu. He marched 20,000 surrendered Xana prisoners onto makeshift ships and sent them directly into the Kishi Channel's whirlpool as a human sacrifice. The sea god, pleased with the offering, calmed the waters, allowing Mata's own fleet to pass safely. This monstrous act forever stained Mata's reputation and was a key moment in his descent from honorable warrior to ruthless tyrant." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 31, link: "/books/the-grace-of-kings#chapter-31" } },
             ]
         },
     ]
@@ -34,16 +37,12 @@ const placeData: Place = {
 
 export default function KishiChannelPage() {
     const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_PLACES);
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_PLACES]);
     const returnLink = { title: 'Return to All Places', path: '/places' };
 
     return (
         <>
-            <TopPageNavigation
-                prevPage={prevPage}
-                nextPage={nextPage}
-                returnLink={returnLink}
-            />
+            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
             <PlacePageTemplate placeData={placeData} />
         </>
     );

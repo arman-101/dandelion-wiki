@@ -9,27 +9,39 @@ import { getSurroundingPages } from '@/app/utils/navigationUtils';
 const characterData: Character = {
     name: "Zato Ruthi",
     image: "/characters/zato-ruthi.png",
-    introduction: "Zato Ruthi is the stern and deeply traditional Imperial Tutor for the children of Emperor Ragin. He is a respected scholar from Haan who embodies the classical ideals of education and propriety.",
+    introduction: "Zato Ruthi was a well-meaning but militarily naive scholar-king of Rima during the Dandelion Rebellion. He later became the stern and traditional Imperial Tutor for the children of Emperor Ragin, his rigid worldview often clashing with the new era of innovation.",
     infoBox: {
-        aliases: "Imperial Tutor",
-        occupation: "Scholar, Tutor",
-        status: "Alive",
+        aliases: "King of Rima, Imperial Tutor",
+        occupation: "King, Scholar, Imperial Tutor",
+        placeOfBirth: { text: "Rima", link: "/places/rima" },
+        status: "Deceased",
         gender: "Male",
-        affiliation: "Dandelion Court",
-        nationality: { text: "Haan", link: "/places/haan" },
-        firstAppeared: { text: "The Wall of Storms", link: "/books/the-wall-of-storms" },
-        lastAppeared: "Speaking Bones"
+        relatives: "Gori Ruthi (nephew)",
+        affiliation: "Kingdom of Rima, Dandelion Court",
+        nationality: { text: "Rima", link: "/places/rima" },
+        firstAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" },
+        lastAppeared: { text: "The Wall of Storms", link: "/books/the-wall-of-storms" }
     },
     appearanceAndPersonality: [
-        { type: 'text', content: "Zato Ruthi is an elderly scholar who carries himself with an air of immense dignity and seriousness. He is a staunch traditionalist who believes in a rigorous, classical education and has little patience for the pranks and modern curiosities of his royal pupils, particularly Princess Théra. Despite his stern exterior, he is deeply dedicated to his duty and the proper upbringing of the heirs." },
+        { type: 'text', content: "Zato Ruthi is the archetypal proud, traditional scholar. He is deeply learned in the classics and believes in the moral and cultural superiority of his own traditions. This often makes him rigid, arrogant, and blind to new ideas or different ways of thinking. He is a man of principle, but his principles are often divorced from practical reality." },
         { type: 'ref', data: { book: "The Wall of Storms", chapter: 3, link: "/books/the-wall-of-storms#chapter-3" } },
+        { type: 'ref', data: { book: "The Wall of Storms", chapter: 36, link: "/books/the-wall-of-storms#chapter-36" } },
     ],
     history: [
         {
-            era: "Tutor to the Imperial Children",
+            era: "The Grace of Kings",
             summary: [
-                { type: 'text', content: "Zato Ruthi was responsible for the education of Princes Timu and Phyro, and Princess Théra. He frequently clashed with the children over their behavior, at one point attempting to resign in fury after they painted a mocking poem on his robe. He was skillfully placated by Emperor Ragin and Empress Jia, who reframed the prank as a clever apology. His traditional curriculum, focused on classics and propriety, often frustrated the engineering-minded Théra." },
+                { type: 'text', content: "As the scholar-king of Rima, his forces were utterly defeated by Marshal Gin Mazoti, who used brilliant and unconventional tactics—like damming a river to create a flash flood—that Ruthi's classical military education had not prepared him for." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 48, link: "/books/the-grace-of-kings#chapter-48" } },
+            ]
+        },
+        {
+            era: "The Wall of Storms",
+            summary: [
+                { type: 'text', content: "Years later, he served as the Imperial Tutor in Pan, frequently clashing with the mischievous imperial children and resigning in fury over their pranks." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 3, link: "/books/the-wall-of-storms#chapter-3" } },
+                { type: 'text', content: "He accompanied Prince Timu to Dasu and was chosen to lead the diplomatic mission to the newly arrived Lyucu. Blinded by his own cultural arrogance, he treated the Lyucu as simple barbarians and was completely outmaneuvered by their leader, Pékyu Tenryo, who tricked him into revealing crucial military intelligence. His diplomatic failure contributed to the swift fall of Dasu. It is presumed he died during the Lyucu conquest of the island." },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 36, link: "/books/the-wall-of-storms#chapter-36" } },
             ]
         },
     ]
@@ -37,7 +49,7 @@ const characterData: Character = {
 
 export default function ZatoRuthiPage() {
     const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CHARACTERS);
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (

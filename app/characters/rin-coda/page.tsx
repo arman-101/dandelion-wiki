@@ -9,35 +9,39 @@ import { getSurroundingPages } from '@/app/utils/navigationUtils';
 const characterData: Character = {
     name: "Rin Coda",
     image: "/characters/rin-coda.png",
-    introduction: "Rin Coda is Kuni Garu's childhood friend from Zudi. A timid and cautious scholar, he serves as a moral compass and a steady, loyal advisor to Kuni throughout his rise to power.",
+    introduction: "Rin Coda was Kuni Garu's timid and scholarly childhood friend. He rose to become the Farsight Secretary in the Dandelion Dynasty, a role akin to an intelligence minister, but he was often plagued by self-doubt and the moral compromises of his position.",
     infoBox: {
-        aliases: "None",
-        occupation: "Scholar, Imperial Advisor",
-        status: "Alive",
+        aliases: "Farsight Secretary",
+        occupation: "Scholar, Farsight Secretary",
+        placeOfBirth: { text: "Zudi", link: "/places/zudi" },
+        status: "Deceased",
         gender: "Male",
-        relatives: "Fara (wife)",
         affiliation: "Dandelion Court, Empire of Dara",
         nationality: { text: "Cocru", link: "/places/cocru" },
         firstAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" },
-        lastAppeared: { text: "Speaking Bones", link: "/books/speaking-bones" }
+        lastAppeared: { text: "The Wall of Storms", link: "/books/the-wall-of-storms" }
     },
     appearanceAndPersonality: [
-        { type: 'text', content: "Rin is described as gangly and nervous-looking. He is the opposite of Kuni in many ways: cautious where Kuni is bold, and scholarly where Kuni is street-smart. He is fundamentally decent and kind, often serving as the voice of reason and morality in Kuni's council. He is a loyal friend who is not afraid to speak difficult truths to the emperor." },
+        { type: 'text', content: "Rin is portrayed as nervous, cautious, and bookish, a stark contrast to his bold friend Kuni. He prefers study and quiet contemplation to action. While intelligent and loyal, his gentle nature is often ill-suited to the brutal realities of politics and espionage. He possesses a strong moral compass, which is severely tested by his duties." },
         { type: 'ref', data: { book: "The Grace of Kings", chapter: 1, link: "/books/the-grace-of-kings#chapter-1" } },
+        { type: 'ref', data: { book: "The Wall of Storms", chapter: 1, link: "/books/the-wall-of-storms#chapter-1" } },
     ],
     history: [
         {
-            era: "Friendship with Kuni Garu",
+            era: "The Grace of Kings",
             summary: [
-                { type: 'text', content: "Rin was with Kuni on the day of the kite attack in Zudi. He remained a loyal friend throughout Kuni's time as a bandit and was one of the first to join him after Kuni became a rebel leader. His famous proverb, 'No fish can live in perfectly clear water,' became a guiding principle for Kuni's pragmatic style of governance." },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 14, link: "/books/the-grace-of-kings#chapter-14" } },
+                { type: 'text', content: "As one of Kuni's oldest friends, Rin was a constant presence from their schoolboy days. He joined Kuni's rebellion and, despite his timid nature, served him loyally. After Kuni became emperor, Rin was appointed Farsight Secretary, overseeing the empire's network of spies and informants." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 1, link: "/books/the-grace-of-kings#chapter-1" } },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 30, link: "/books/the-grace-of-kings#chapter-30" } },
             ]
         },
         {
-            era: "The Dandelion Dynasty",
+            era: "The Wall of Storms",
             summary: [
-                { type: 'text', content: "Under Emperor Ragin, Rin became a trusted minister and a key member of the inner circle. He married Princess Théra's devoted handmaiden, Fara, further cementing his place within the Imperial family." },
-                { type: 'ref', data: { book: "The Wall of Storms", chapter: 34, link: "/books/the-wall-of-storms#chapter-34" } },
+                { type: 'text', content: "Rin oversaw the first Grand Examination, a cornerstone of the new dynasty's meritocratic principles." },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 4, link: "/books/the-wall-of-storms#chapter-4" } },
+                { type: 'text', content: "However, he became deeply entangled in Empress Jia's ruthless political machinations against Marshal Gin Mazoti. Consumed by guilt for his role in the empress's plots and the downfall of an honorable woman, Rin ultimately took his own life, unable to reconcile his duties with his conscience." },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 39, link: "/books/the-wall-of-storms#chapter-39" } },
             ]
         },
     ]
@@ -45,7 +49,7 @@ const characterData: Character = {
 
 export default function RinCodaPage() {
     const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CHARACTERS);
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (

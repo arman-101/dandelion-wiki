@@ -6,92 +6,51 @@ import { usePathname } from 'next/navigation';
 import TopPageNavigation from '@/app/components/TopPageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
-// --- DATA FOR PRINCESS THÉRA (WITH FULL INLINE REFERENCES FROM ALL FOUR BOOKS) ---
 const characterData: Character = {
     name: "Princess Théra",
     image: "/characters/princess-thera.png",
-    introduction: "Princess Théra is the brilliant and adventurous eldest daughter of Emperor Ragin and Empress Jia. She becomes a central figure in the later books, leading a daring expedition through the Wall of Storms and establishing a rebellion in Ukyu-Gondé against the Lyucu Empire.",
+    introduction: "Princess Théra is the brilliant, adventurous, and scientifically-minded eldest daughter of Emperor Ragin and Empress Jia. Possessing her father's charisma and her mother's intellect, she was secretly chosen by Kuni to be his heir. She later abdicates to lead a rebellion against the Lyucu in their homeland, becoming a legendary figure in her own right.",
     infoBox: {
-        aliases: "The Pearl of Fire, The Rebel Princess",
-        occupation: "Princess of Dara, Expedition Leader, Rebel Commander",
-        placeOfBirth: { text: "Pan", link: "/places/pan" },
+        aliases: "Empress Üna",
+        occupation: "Princess, Empress of Dara, Rebel Leader",
+        placeOfBirth: { text: "Zudi", link: "/places/zudi" },
         status: "Alive",
         gender: "Female",
         significantOther: { text: "Takval Aragoz", link: "/characters/takval-aragoz" },
-        relatives: "Emperor Ragin (father), Empress Jia (mother), Prince Timu (brother), Prince Phyro (brother), Princess Fara (sister)",
-        affiliation: "House of Garu, Dandelion Court, Agon Rebellion",
+        relatives: "Kuni Garu (father), Jia Matiza (mother), Prince Timu (brother), Prince Phyro (brother), Princess Fara (sister), Tanto Aragoz (son), Rokiri Aragoz (son)",
+        affiliation: "Dandelion Court, Dara Expeditionary Force, Agon Rebellion",
         nationality: { text: "Dara", link: "/places/dara" },
         firstAppeared: { text: "The Wall of Storms", link: "/books/the-wall-of-storms" },
         lastAppeared: { text: "Speaking Bones", link: "/books/speaking-bones" }
     },
     appearanceAndPersonality: [
-        { type: 'text', content: "Princess Théra is described as clever, adventurous, and possessing a natural leadership quality that emerges even in childhood. She has a quick wit and a talent for rallying people to her cause, as demonstrated when she helps drive away a bully from the Three-Legged Jug tavern." },
-        { type: 'ref', data: { book: "The Wall of Storms", chapter: 1, link: "/books/the-wall-of-storms#chapter-1" } },
-        { type: 'text', content: " As she matures, Théra develops into a brilliant strategist and charismatic leader, capable of inspiring loyalty and devising innovative solutions to complex problems. Her personality combines her father's pragmatism with her mother's political acumen, making her a formidable opponent and ally." },
-        { type: 'ref', data: { book: "The Wall of Storms", chapter: 18, link: "/books/the-wall-of-storms#chapter-18" } },
+        { type: 'text', content: "Théra is clever, courageous, and endlessly curious. From a young age, she displays a keen and intuitive understanding of politics, often seeing the subtext that her more literal-minded brother Timu misses." },
+        { type: 'ref', data: { book: "The Wall of Storms", chapter: 11, link: "/books/the-wall-of-storms#chapter-11" } },
+        { type: 'text', content: " She has a scientific and rational mind, seeking logical explanations for seemingly magical phenomena. This allows her to deduce the scientific principles behind the Hegemon cult's 'magic mirrors' and later, the biology of the garinafins. She is a natural leader who inspires loyalty through her intelligence and bravery." },
+        { type: 'ref', data: { book: "The Wall of Storms", chapter: 26, link: "/books/the-wall-of-storms#chapter-26" } },
+        { type: 'ref', data: { book: "The Wall of Storms", chapter: 53, link: "/books/the-wall-of-storms#chapter-53" } },
     ],
     history: [
         {
-            era: "Early Life and Education",
+            era: "The Wall of Storms",
             summary: [
-                { type: 'text', content: "Princess Théra grows up in the Imperial Palace in Pan alongside her brothers, Prince Timu and Prince Phyro. She receives a comprehensive education under the tutelage of Imperial Tutor Zato Ruthi, though she often chafes against the rigid structure of formal education." },
+                { type: 'text', content: "As a young princess, Théra, along with her brothers, saved the scholar Zomi Kidosu from an extortionist. Her father, Emperor Ragin, secretly recognized her potential and confided in Luan Zya his intention to name her as his heir, a radical break from tradition." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 1, link: "/books/the-wall-of-storms#chapter-1" } },
-                { type: 'text', content: " Her natural leadership abilities become apparent early on, as she demonstrates quick thinking and the ability to rally others to her cause. She forms a close bond with her brothers, particularly Prince Phyro, with whom she shares a mischievous streak." },
-                { type: 'ref', data: { book: "The Wall of Storms", chapter: 1, link: "/books/the-wall-of-storms#chapter-1" } },
-            ]
-        },
-        {
-            era: "The Grand Examination and Court Politics",
-            summary: [
-                { type: 'text', content: "During the first Grand Examination of the Dandelion Dynasty, Théra witnesses the arrival of Zomi Kidosu and becomes intrigued by the brilliant scholar's unconventional thinking. She begins to question the rigid structures of Dara society and the limitations placed on women and commoners." },
-                { type: 'ref', data: { book: "The Wall of Storms", chapter: 4, link: "/books/the-wall-of-storms#chapter-4" } },
-                { type: 'text', content: " As she grows older, Théra becomes increasingly aware of the political tensions within the court, particularly between her mother Empress Jia and the various factions vying for influence. She begins to develop her own political philosophy, influenced by her father's dandelion philosophy but with her own unique perspective." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 18, link: "/books/the-wall-of-storms#chapter-18" } },
-            ]
-        },
-        {
-            era: "The Lyucu Invasion and Crisis",
-            summary: [
-                { type: 'text', content: "When the Lyucu Empire invades Dara with their garinafin war beasts, Théra witnesses the devastating power of the invaders firsthand. The fall of Pan and the capture of her family forces her to confront the limitations of Dara's traditional military and political structures." },
-                { type: 'ref', data: { book: "The Wall of Storms", chapter: 24, link: "/books/the-wall-of-storms#chapter-24" } },
-                { type: 'text', content: " During the crisis, Théra demonstrates remarkable courage and leadership, helping to organize resistance efforts and protect civilians. She begins to formulate a plan to seek help from beyond the Wall of Storms, believing that the solution to Dara's problems lies in the unknown lands beyond." },
+                { type: 'text', content: "She single-handedly ended the Hegemon cult rebellion in Tunoa by using her scientific knowledge to create a counter-illusion, projecting an image that shattered the rebels' faith. This act saved her brother Phyro and cemented her reputation as a hero." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 27, link: "/books/the-wall-of-storms#chapter-27" } },
+                { type: 'text', content: "After her father's death, she was named his successor, but chose to abdicate in favor of Phyro. Instead, she married the Agon prince Takval Aragoz and led an expedition across the Wall of Storms to wage war on the Lyucu in their homeland." },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 58, link: "/books/the-wall-of-storms#chapter-58" } },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 62, link: "/books/the-wall-of-storms#chapter-62" } },
             ]
         },
         {
-            era: "The Expedition Through the Wall of Storms",
+            era: "The Veiled Throne & Speaking Bones",
             summary: [
-                { type: 'text', content: "Théra leads a daring expedition through the Wall of Storms, a seemingly impassable barrier that separates Dara from the unknown lands beyond. Her journey is aided by a pod of cruben, massive sea creatures that help guide her fleet through the treacherous waters." },
-                { type: 'ref', data: { book: "The Wall of Storms", chapter: 30, link: "/books/the-wall-of-storms#chapter-30" } },
-                { type: 'text', content: " The expedition faces numerous challenges, including encounters with Lyucu patrols and the harsh conditions of the open sea. Théra's leadership and strategic thinking prove crucial to the survival of her crew, and she begins to develop a new understanding of the world beyond Dara." },
-                { type: 'ref', data: { book: "The Veiled Throne", chapter: 7, link: "/books/the-veiled-throne#chapter-7" } },
-            ]
-        },
-        {
-            era: "Arrival in Ukyu-Gondé and Alliance with the Agon",
-            summary: [
-                { type: 'text', content: "Upon reaching Ukyu-Gondé, Théra discovers the Agon people, a nomadic tribe who have been subjugated by the Lyucu. She forms an alliance with Prince Takval Aragoz, the Agon leader, and begins to build a coalition of resistance against the Lyucu Empire." },
-                { type: 'ref', data: { book: "The Veiled Throne", chapter: 7, link: "/books/the-veiled-throne#chapter-7" } },
-                { type: 'text', content: " Théra's relationship with Takval develops into a deep partnership, both political and personal. Together, they work to unite the various factions opposed to Lyucu rule, combining Dara's technological innovations with Agon warrior traditions." },
-                { type: 'ref', data: { book: "The Veiled Throne", chapter: 8, link: "/books/the-veiled-throne#chapter-8" } },
-            ]
-        },
-        {
-            era: "The Rebellion and Guerrilla Warfare",
-            summary: [
-                { type: 'text', content: "Théra leads a sophisticated guerrilla campaign against the Lyucu, using innovative tactics that combine Dara technology with Agon mobility. Her forces achieve several significant victories, including the successful raid on a Lyucu supply convoy." },
-                { type: 'ref', data: { book: "Speaking Bones", chapter: 9, link: "/books/speaking-bones#chapter-9" } },
-                { type: 'text', content: " The rebellion gains momentum as more people join the cause, inspired by Théra's leadership and the promise of freedom from Lyucu oppression. She establishes a network of secret bases and communication systems, building a resistance movement that spans the entire region." },
-                { type: 'ref', data: { book: "Speaking Bones", chapter: 10, link: "/books/speaking-bones#chapter-10" } },
-            ]
-        },
-        {
-            era: "The Message and Return to Dara",
-            summary: [
-                { type: 'text', content: "After years of leading the rebellion, Théra sends a secret message back to Dara, encoded in a turtle shell and delivered to Zomi Kidosu. The message confirms that she is alive and continuing the fight against the Lyucu." },
-                { type: 'ref', data: { book: "Speaking Bones", chapter: 1, link: "/books/speaking-bones#chapter-1" } },
-                { type: 'text', content: " The discovery of Théra's survival reignites hope in Dara and forces the court to reconsider its policies toward the Lyucu threat. Her continued resistance serves as an inspiration to those who refuse to accept Lyucu domination." },
-                { type: 'ref', data: { book: "Speaking Bones", chapter: 2, link: "/books/speaking-bones#chapter-2" } },
+                { type: 'text', content: "In Ukyu-Gondé, Théra and Takval forged an alliance with the exiled Agon tribes and began a long, grueling rebellion. After a devastating attack on their secret base, she and the survivors were forced into exile in the World's Edge Mountains. There, they discovered a garinafin boneyard and ancient knowledge that allowed them to create new 'living bone' technologies, turning the tide of their war. Her rebellion became a crucial second front, weakening the Lyucu Empire from within and aiding the war effort back in Dara." },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 13, link: "/books/the-veiled-throne#chapter-13" } },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 20, link: "/books/speaking-bones#chapter-20" } },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 29, link: "/books/speaking-bones#chapter-29" } },
             ]
         },
     ]
@@ -99,7 +58,7 @@ const characterData: Character = {
 
 export default function PrincessTheraPage() {
     const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CHARACTERS);
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (

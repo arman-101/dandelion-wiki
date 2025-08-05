@@ -13,15 +13,16 @@ export default function ResistanceMovementPage() {
 
     const resistanceMovementData: Concept = {
         name: "Resistance Movement",
-        image: "/concepts/kuni-garu.png", // Placeholder image
-        introduction: "The organized efforts of the Dara people to resist and overthrow Lyucu occupation.",
+        image: "/concepts/resistance-movement.png", // Ensure you have an image at this path
+        introduction: "The multifaceted, organized efforts of the people of Dara to resist and ultimately overthrow the Lyucu occupation following the invasion across the Wall of Storms.",
         infoBox: {
-            "Type": "Political Movement",
+            "Type": "Political & Military Movement",
             "Primary Goal": "Liberation of Dara",
             "Key Figures": [
                 { text: "Princess Théra", link: "/characters/princess-thera" },
                 { text: "Zomi Kidosu", link: "/characters/zomi-kidosu" },
-                { text: "Princess Aya", link: "/characters/princess-aya" }
+                { text: "Aya Mazoti", link: "/characters/aya-mazoti" },
+                { text: "The Fish-Herder", link: "/characters/the-fish-herder" },
             ],
             "Book Appearances": [
                 { text: "The Veiled Throne", link: "/books/the-veiled-throne" },
@@ -29,7 +30,7 @@ export default function ResistanceMovementPage() {
             ]
         },
         details: [
-            { type: "text" as const, content: "The Resistance Movement represents the organized efforts of the Dara people to resist and ultimately overthrow the Lyucu occupation. This movement encompasses various forms of resistance, from underground networks to open rebellion, and involves people from all walks of life in Dara." }
+            { type: "text" as const, content: "The Resistance Movement represents the collective efforts of the Dara people to fight back against the Lyucu occupation. This was not a single, unified front but rather a collection of disparate groups employing various methods. It included formal military campaigns led by figures like Empress Üna (Théra) in Ukyu-Gondé, covert intelligence and technology networks managed by Farsight Secretary Zomi Kidosu, and grassroots populist rebellions sparked by mysterious figures like the 'Fish-Herder' in the swamps of Géfica. The movement symbolizes the resilience of the Dandelion Dynasty's ideals in the face of foreign conquest." }
         ]
     };
 
@@ -39,4 +40,4 @@ export default function ResistanceMovementPage() {
             <ConceptPageTemplate conceptData={resistanceMovementData} />
         </>
     );
-} 
+}

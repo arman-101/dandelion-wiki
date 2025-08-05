@@ -9,7 +9,7 @@ import { getSurroundingPages } from '@/app/utils/navigationUtils';
 // --- DATA FOR KITA THU ---
 const characterData: Character = {
     name: "Kita Thu",
-    image: "/characters/kuni-garu.png", // Placeholder image
+    image: "/characters/kita-thu.png", // Placeholder image
     introduction: "A Lyucu warrior and leader who becomes involved in the occupation of Dara, representing the military aspects of Lyucu rule.",
     infoBox: {
       "Also known as": "Kita Thu",

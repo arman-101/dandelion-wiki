@@ -6,52 +6,55 @@ import { usePathname } from 'next/navigation';
 import TopPageNavigation from '@/app/components/TopPageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
-export default function DimushiPage() {
-  const pathname = usePathname();
-  const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_PLACES);
-  const returnLink = { title: 'Return to All Places', path: '/places' };
-
-  const placeData: Place = {
+// --- DATA FOR DIMUSHI ---
+const placeData: Place = {
     name: "Dimushi",
-    image: "/places/cocru.png", // Placeholder image
-    introduction: "A city that plays a role in the complex political landscape of the Dara empire, Dimushi serves as a center of regional power and influence.",
+    image: "/places/dimushi.png",
+    introduction: "Dimushi is a bustling, rough-and-tumble port city in Amu. It is the hometown of the legendary Marshal Gin Mazoti and later becomes a haven for fugitives and a center for the resistance.",
     infoBox: {
-      "Type": "Regional City",
-      "Region": "Dara Empire",
-      "Significance": "Regional Power Center",
-      "First appearance": "The Veiled Throne",
-      "Related places": [
-        { text: "Cocru", link: "/places/cocru" },
-        { text: "Kriphi", link: "/places/kriphi" },
-        { text: "Ginpen", link: "/places/ginpen" }
-      ]
+        type: "Port City",
+        state: { text: "Amu", link: "/places/amu" },
+        continent: { text: "Dara", link: "/places/dara" },
+        KeyResidents: [
+            { text: "Gin Mazoti", link: "/characters/gin-mazoti" },
+            { text: "Kinri", link: "/characters/kinri" }
+        ]
     },
     geography: [
-      { type: "text" as const, content: "Dimushi is located in a region that has strategic importance within the Dara empire. The city's position has made it a natural center for regional governance and a key location for political and economic activities." }
+        { type: 'text', content: "A major port, Dimushi is a nexus of trade, sailors, and the criminal underworld. Its strategic location on the coast makes it a vital economic and military asset." },
     ],
     culture: [
-      { type: "text" as const, content: "Dimushi has developed a culture that reflects its role as a regional power center. The city's inhabitants are known for their political awareness and their ability to navigate the complex dynamics of imperial politics." }
+        { type: 'text', content: "Dimushi is a city of survivors. Its culture is shaped by the harsh realities of life on the streets and docks. It is a place where wit, strength, and ambition are valued above noble birth, a culture that produced a prodigy like Gin Mazoti. It has a thriving criminal underworld with its own codes of honor." },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 40, link: "/books/the-grace-of-kings#chapter-40" } },
+        { type: 'ref', data: { book: "Speaking Bones", chapter: 12, link: "/books/speaking-bones#chapter-12" } },
     ],
     history: [
-      {
-        event: "Regional Development",
-        summary: [
-          { type: "text" as const, content: "Dimushi developed as an important regional center, growing from a smaller settlement into a city that could exert influence over surrounding areas. The city's growth was driven by its strategic location and the opportunities it provided for regional governance." }
-        ]
-      },
-      {
-        event: "Political Role",
-        summary: [
-          { type: "text" as const, content: "During the complex political events of the later books, Dimushi became a significant location where regional interests and imperial politics intersected. The city's importance made it a focal point for political maneuvering and strategic planning." }
-        ]
-      }
+        {
+            event: "The Chrysanthemum-Dandelion War",
+            summary: [
+                { type: 'text', content: "During the final stalemate of the war, the two opposing armies of Kuni Garu and Mata Zyndu faced each other across the Liru River, with Kuni's forces occupying Dimushi and Mata's in the nearby city of Dimu." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 47, link: "/books/the-grace-of-kings#chapter-47" } },
+            ]
+        },
+        {
+            event: "The Lyucu War",
+            summary: [
+                { type: 'text', content: "Decades later, the fugitive Kinri (Savo Ryoto) made his way to Dimushi. There, he used his wits to form an unlikely alliance with the city's criminal underworld, including a charismatic pirate queen, to secure a ship and crew for his mission to rescue Prince Timu from the Lyucu capital." },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 12, link: "/books/speaking-bones#chapter-12" } },
+            ]
+        },
     ]
-  };
+};
 
-  return (
-    <>
-      <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-      <PlacePageTemplate placeData={placeData} />
-    </>
-  );
-} 
+export default function DimushiPage() {
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_PLACES]);
+    const returnLink = { title: 'Return to All Places', path: '/places' };
+
+    return (
+        <>
+            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PlacePageTemplate placeData={placeData} />
+        </>
+    );
+}

@@ -9,28 +9,34 @@ import { getSurroundingPages } from '@/app/utils/navigationUtils';
 const characterData: Character = {
     name: "Noda Mi",
     image: "/characters/noda-mi.png",
-    introduction: "Noda Mi is a cunning and ambitious nobleman who once served Mata Zyndu. He is the strategic mastermind behind the Hegemon Cults, a rebellion that uses technology and religious fervor to challenge the Dandelion Throne.",
+    introduction: "Noda Mi was a cunning and strategic fallen king who became the mastermind behind the rebellious Hegemon Cults. Driven by ambition and resentment, he later became a collaborator with the Lyucu invaders.",
     infoBox: {
-        aliases: "None",
-        occupation: "Nobleman, Rebel Leader",
+        aliases: "The Cunning King",
+        occupation: "Fallen King, Rebel Leader, Collaborator",
+        placeOfBirth: { text: "Dara", link: "/places/dara" },
         status: "Deceased",
         gender: "Male",
-        affiliation: "Hegemon Cults",
-        nationality: "Cocru",
+        affiliation: "Hegemon Cults, Lyucu Empire",
+        nationality: { text: "Dara", link: "/places/dara" },
         firstAppeared: { text: "The Wall of Storms", link: "/books/the-wall-of-storms" },
         lastAppeared: { text: "The Wall of Storms", link: "/books/the-wall-of-storms" }
     },
     appearanceAndPersonality: [
-        { type: 'text', content: "Noda Mi is described as having a sharp, intelligent face. He is a clever and resourceful strategist, but his ambition is poisoned by bitterness over his fall from power. He is adept at using propaganda and deception, as shown by his brilliant use of the 'magic mirrors' to create a fanatical following. He is the brains of the rebellion, complementing Doru Solofi's role as its figurehead." },
+        { type: 'text', content: "Noda Mi is portrayed as a highly intelligent and manipulative strategist. He is a master of deception and propaganda, as shown by his clever use of a cult-like scam and the 'magic mirrors' to build his rebel army. He is ambitious, patient, and utterly without scruples, willing to align with any power that will advance his own cause." },
         { type: 'ref', data: { book: "The Wall of Storms", chapter: 2, link: "/books/the-wall-of-storms#chapter-2" } },
+        { type: 'ref', data: { book: "The Wall of Storms", chapter: 20, link: "/books/the-wall-of-storms#chapter-20" } },
     ],
     history: [
         {
-            era: "The Hegemon Cults",
+            era: "The Wall of Storms",
             summary: [
-                { type: 'text', content: "Noda Mi formed a pact with Doru Solofi to overthrow Emperor Ragin. It was Noda who devised the strategy of using the 'magic mirrors' to project an image of Mata Zyndu, turning their political rebellion into a powerful religious movement. After their defeat at the hands of Princess Théra, he and Doru fled to Géjira and sought refuge with Queen Gin Mazoti, an act which created a major political crisis for the Dandelion Court." },
+                { type: 'text', content: "After being deposed by Kuni Garu, Noda Mi ran a scam in Pan based on the memory of Mata Zyndu. He formed an alliance with another fallen king, Doru Solofi, and they started a rebellion in Tunoa. Using 'magic mirrors' to project an image of the Hegemon, they amassed a large, fanatical army." },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 2, link: "/books/the-wall-of-storms#chapter-2" } },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 20, link: "/books/the-wall-of-storms#chapter-20" } },
+                { type: 'text', content: "After their rebellion was crushed by Princess Théra, Noda and Doru fled to Géjira and were granted refuge by Queen Gin Mazoti. Noda Mi later infiltrated the Dara fleet during the final Battle of Zathin Gulf, where his treacherous use of fire arrows to destroy the Imperial airships almost cost Dara the war." },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 27, link: "/books/the-wall-of-storms#chapter-27" } },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 28, link: "/books/the-wall-of-storms#chapter-28" } },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 60, link: "/books/the-wall-of-storms#chapter-60" } },
             ]
         },
     ]
@@ -38,7 +44,7 @@ const characterData: Character = {
 
 export default function NodaMiPage() {
     const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CHARACTERS);
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (

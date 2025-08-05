@@ -13,7 +13,7 @@ export default function TiroCozoPage() {
 
   const placeData: Place = {
     name: "Tiro Cozo",
-    image: "/places/pan.png", // Placeholder image
+    image: "/places/tiro-cozo.png", // Placeholder image
     introduction: "A region that becomes important during the final events of the series, Tiro Cozo serves as a strategic location in the ultimate conflicts that determine the future of Dara.",
     infoBox: {
       "Type": "Region",

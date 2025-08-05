@@ -13,7 +13,7 @@ export default function WidiTucruPage() {
 
   const characterData: Character = {
     name: "Widi Tucru",
-    image: "/characters/kuni-garu.png", // Placeholder image
+    image: "/characters/widi-tucru.png", // Placeholder image
     introduction: "A Lyucu warrior and leader who becomes involved in the occupation of Dara, representing the military aspects of Lyucu governance.",
     infoBox: {
       "Also known as": "Widi Tucru",

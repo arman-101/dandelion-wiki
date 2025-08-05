@@ -6,63 +6,55 @@ import { usePathname } from 'next/navigation';
 import TopPageNavigation from '@/app/components/TopPageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
-export default function ArulugiPage() {
-  const pathname = usePathname();
-  const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_PLACES);
-  const returnLink = { title: 'Return to All Places', path: '/places' };
-
-  const placeData: Place = {
+// --- DATA FOR ARULUGI ---
+const placeData: Place = {
     name: "Arulugi",
     image: "/places/arulugi.png",
-    introduction: "A strategically important island in the Dandelion Dynasty, known for its role in the conflict between Dara and the Lyucu invaders.",
+    introduction: "Arulugi is the capital island of the state of Amu. It is the site of a key battle during the Dandelion Rebellion and, years later, the center of a new rebellion against the Dandelion Dynasty itself.",
     infoBox: {
-      "Type": "Island",
-      "Region": "Dara",
-      "Significance": "Strategic Military Location",
-      "First appearance": "The Grace of Kings",
-      "Related places": [
-        { text: "Amu", link: "/places/amu" },
-        { text: "Pan", link: "/places/pan" },
-        { text: "Lake Tututika", link: "/places/lake-tututika" }
-      ]
+        type: "Capital Island",
+        state: { text: "Amu", link: "/places/amu" },
+        continent: { text: "Dara", link: "/places/dara" },
+        KeyResidents: [
+            { text: "Princess Kikomi", link: "/characters/princess-kikomi" },
+            { text: "Théca Kimo", link: "/characters/theca-kimo" }
+        ]
     },
     geography: [
-      { type: "text" as const, content: "Arulugi is an island located within the Dandelion Dynasty's territory, positioned strategically in relation to other important locations in Dara. The island's geography is characterized by a mix of coastal areas and inland terrain, making it both accessible by sea and defensible from land-based attacks." },
-      { type: "text" as const, content: "The island's strategic location made it an important military and commercial hub, serving as a key point for naval operations and trade routes. Its position allowed it to control access to surrounding waters and to serve as a staging area for military campaigns in the region." }
+        { type: 'text', content: "Arulugi is the main island in the Amu archipelago. Its capital, Müning, is known as the City in the Lake." },
+        { type: 'ref', data: { book: "The Wall of Storms", chapter: 32, link: "/books/the-wall-of-storms#chapter-32" } },
     ],
     culture: [
-      { type: "text" as const, content: "The culture of Arulugi reflects the broader Dara society, with its own local traditions and customs that have developed over generations. The island's inhabitants are known for their resilience and adaptability, qualities that would be tested during the Lyucu invasion." },
-      { type: "text" as const, content: "The people of Arulugi have a strong connection to the sea, with many of their traditions and livelihoods centered around maritime activities. This maritime culture influenced their response to the Lyucu invasion and their role in the broader conflict." }
+        { type: 'text', content: "The culture of Arulugi is tied to the sea and the proud naval traditions of Amu. It is a place of beauty, represented by its princess, Kikomi, and its patron goddess, Tututika." },
     ],
     history: [
-      {
-        event: "Pre-Invasion Period",
-        summary: [
-          { type: "text" as const, content: "Before the Lyucu invasion, Arulugi was a prosperous and peaceful part of the Dandelion Dynasty. The island enjoyed the benefits of the dynasty's enlightened rule, including access to education, economic opportunities, and the protection of the imperial military." },
-          { type: "text" as const, content: "During this period, Arulugi served as an important center for trade and commerce, connecting various parts of the Dandelion Dynasty and facilitating the exchange of goods and ideas. The island's strategic location made it a valuable asset for the empire." }
-        ]
-      },
-      {
-        event: "The Lyucu Invasion",
-        summary: [
-          { type: "text" as const, content: "When the Lyucu invaded Dara, Arulugi became one of the first targets of their military campaign. The island's strategic importance made it a key objective for the invaders, who recognized its value for controlling the surrounding waters and establishing a base of operations." },
-          { type: "text" as const, content: "The invasion of Arulugi was marked by fierce resistance from the local population and imperial forces. The battle for control of the island demonstrated both the determination of the Dara people to defend their homeland and the military capabilities of the Lyucu invaders." }
-        ]
-      },
-      {
-        event: "Under Lyucu Occupation",
-        summary: [
-          { type: "text" as const, content: "Following the Lyucu conquest, Arulugi came under foreign rule, experiencing significant changes in its governance and culture. The island's strategic importance meant that it remained a focus of Lyucu attention and control, with the new rulers implementing their own systems of administration and control." },
-          { type: "text" as const, content: "The occupation period was marked by both cooperation and resistance from the local population. Some inhabitants chose to work with the new rulers, while others participated in resistance activities. This complex dynamic reflected the broader challenges faced by the Dara people under Lyucu rule." }
-        ]
-      }
+        {
+            event: "The Dandelion Rebellion",
+            summary: [
+                { type: 'text', content: "The Battle of Arulugi was a major defeat for the rebellion. The Amu navy was outwitted by the Xana commander Kindo Marana's clever tactics. Following the battle, Princess Kikomi was taken captive and made her fateful deal with Marana to act as his agent, a decision that would have devastating consequences." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 24, link: "/books/the-grace-of-kings#chapter-24" } },
+            ]
+        },
+        {
+            event: "The Arulugi Rebellion",
+            summary: [
+                { type: 'text', content: "Years into Emperor Ragin's reign, Arulugi became the center of a new rebellion led by Duke Théca Kimo. The entire rebellion was a grand political gambit orchestrated by Empress Jia to consolidate her power. The conflict ended when Consort Risana used her illusionary smokecraft to help Puma Yemu's forces take the capital by surprise. Théca Kimo was defeated and executed." },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 25, link: "/books/the-wall-of-storms#chapter-25" } },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 32, link: "/books/the-wall-of-storms#chapter-32" } },
+            ]
+        },
     ]
-  };
+};
 
-  return (
-    <>
-      <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-      <PlacePageTemplate placeData={placeData} />
-    </>
-  );
-} 
+export default function ArulugiPage() {
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_PLACES]);
+    const returnLink = { title: 'Return to All Places', path: '/places' };
+
+    return (
+        <>
+            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PlacePageTemplate placeData={placeData} />
+        </>
+    );
+}

@@ -7,29 +7,44 @@ import TopPageNavigation from '@/app/components/TopPageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
 // --- DATA FOR GAN ---
-const placeData: Place = {
+const godData: Place = {
     name: "Gan",
     image: "/places/gan.png",
-    introduction: "Gan is a wealthy and sophisticated Tiro state in southern Dara, comprised of the island of Wolf's Paw and, historically, the rich mainland territory of Géjira. It is a major naval and economic power, and its patron god is Tazu, the chaotic master of the seas.",
+    introduction: "Gan is one of the six Tiro states, known as the wealthiest realm in Dara. It is a land of merchants and commerce, whose political actions are often driven by economic self-interest.",
     infoBox: {
-        Region: "Southern Dara",
-        Capital: "Toaza",
+        type: "Kingdom (Tiro State)",
+        continent: { text: "Dara", link: "/places/dara" },
+        Ruler: "House of Dalo (historical), House of Mocri (later)",
         PatronGod: { text: "Tazu", link: "/gods/tazu" },
-        NotableCharacters: [
-            { text: "King Mocri", link: "/characters/king-mocri" },
-        ],
+        KeyExports: "Luxury Goods, Trade"
     },
     geography: [
-        { type: 'text', content: "The state of Gan primarily occupies the large southern island of Wolf's Paw. It is separated from the mainland's Itanti Peninsula by the treacherous Kishi Channel, which is home to a deadly whirlpool." },
+        { type: 'text', content: "Gan's location and resources have made it the commercial hub of the Six States. Its wealth gives it significant political influence, though its military is not always the most reliable." },
     ],
     culture: [
-        { type: 'text', content: "Gan's culture is defined by its wealth, sophistication, and maritime focus. As a major trading state, its people are cosmopolitan and its merchants are influential across Dara." },
+        { type: 'text', content: "The culture of Gan is dominated by commerce and wealth. Its patron god is Tazu, the unpredictable god of chance and the sea, a fitting deity for a nation built on the risky ventures of trade. During the Dandelion Dynasty, Gan becomes the center of a rising merchant class and the Fluxist philosophy, which argues for the importance of the flow of money." },
+        { type: 'ref', data: { book: "The Wall of Storms", chapter: 13, link: "/books/the-wall-of-storms#chapter-13" } },
     ],
     history: [
         {
-            event: "The Hegemony and Dandelion Dynasty",
+            event: "The Dandelion Rebellion",
             summary: [
-                { type: 'text', content: "As punishment for their betrayal, Hegemon Mata Zyndu stripped Gan of its rich mainland territory of Géjira, which was later granted to Marshal Gin Mazoti." },
+                { type: 'text', content: "Gan joined the rebellion against the Xana Empire and was a key member of the Tiro Alliance under King Mocri." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 12, link: "/books/the-grace-of-kings#chapter-12" } },
+            ]
+        },
+        {
+            event: "The Battle of Wolf's Paw",
+            summary: [
+                { type: 'text', content: "In a stunning act of betrayal, the forces of Gan, along with those of Faça, abandoned their allies in the middle of the Battle of Wolf's Paw. Despite their treachery, Mata Zyndu's sheer prowess managed to secure a victory for the rebellion." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 29, link: "/books/the-grace-of-kings#chapter-29" } },
+            ]
+        },
+        {
+            event: "The Dandelion Dynasty",
+            summary: [
+                { type: 'text', content: "In the era of peace, a scholar from a wealthy merchant family in Gan, Naroca Huza, challenged Empress Jia's high taxes on trade during the Palace Examination. This public debate exposed a major ideological rift in the court between the agrarian traditionalists and the rising merchant class centered in Gan." },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 13, link: "/books/the-wall-of-storms#chapter-13" } },
             ]
         },
     ]
@@ -37,17 +52,13 @@ const placeData: Place = {
 
 export default function GanPage() {
     const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_PLACES);
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_PLACES]);
     const returnLink = { title: 'Return to All Places', path: '/places' };
 
     return (
         <>
-            <TopPageNavigation
-                prevPage={prevPage}
-                nextPage={nextPage}
-                returnLink={returnLink}
-            />
-            <PlacePageTemplate placeData={placeData} />
+            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PlacePageTemplate placeData={godData} />
         </>
     );
 }

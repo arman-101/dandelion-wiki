@@ -10,90 +10,71 @@ import { getSurroundingPages } from '@/app/utils/navigationUtils';
 const characterData: Character = {
     name: "Jia Matiza",
     image: "/characters/jia-matiza.png",
-    introduction: "Jia Matiza is the brilliant scholar and first wife of Emperor Ragin, who becomes Empress Jia and the political architect of the Dandelion Dynasty. Her intelligence, strategic thinking, and complex relationship with power make her one of the most influential figures in the empire.",
+    introduction: "Jia Matiza is the brilliant scholar and first wife of Kuni Garu, who becomes Empress Jia of the Dandelion Dynasty. A fiercely intelligent and politically savvy woman, she is the strategic and philosophical architect behind much of her husband's success and the dynasty's foundation. Over time, she evolves into a ruthless pragmatist, willing to make any sacrifice to ensure the long-term stability of the empire she helped build.",
     infoBox: {
-        aliases: "Empress Jia, The Political Architect",
-        occupation: "Scholar, Empress of Dara, Political Strategist",
+        aliases: "Empress Jia, Dowager Empress, Regent",
+        occupation: "Herbalist, Scholar, Empress of Dara, Regent",
         placeOfBirth: { text: "Zudi", link: "/places/zudi" },
         status: "Alive",
         gender: "Female",
-        significantOther: { text: "Emperor Ragin", link: "/characters/kuni-garu" },
-        relatives: "Princess Théra (daughter), Prince Timu (son), Prince Phyro (son), Princess Fara (daughter)",
+        significantOther: { text: "Kuni Garu", link: "/characters/kuni-garu" },
+        relatives: [
+            { text: "Prince Timu (son)", link: "/characters/prince-timu" },
+            { text: "Princess Théra (daughter)", link: "/characters/princess-thera" },
+            { text: "Prince Phyro (son, adopted)", link: "/characters/prince-phyro" },
+            { text: "Princess Fara (daughter)", link: "/characters/princess-fara" }
+        ],
         affiliation: "House of Garu, Dandelion Court",
-        nationality: { text: "Dara", link: "/places/dara" },
+        nationality: { text: "Cocru", link: "/places/cocru" },
         firstAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" },
         lastAppeared: { text: "Speaking Bones", link: "/books/speaking-bones" }
     },
     appearanceAndPersonality: [
-        { type: 'text', content: "Jia Matiza is described as beautiful and intelligent, with a sharp mind and a deep understanding of politics and human nature. She possesses a natural charisma and the ability to read people, making her an effective political operator." },
-        { type: 'ref', data: { book: "The Grace of Kings", chapter: 3, link: "/books/the-grace-of-kings#chapter-3" } },
-        { type: 'text', content: " As she matures into Empress Jia, she becomes increasingly pragmatic and calculating, willing to make difficult decisions for the good of the empire. She is a master of political intrigue and understands the importance of maintaining stability and control." },
-        { type: 'ref', data: { book: "The Wall of Storms", chapter: 3, link: "/books/the-wall-of-storms#chapter-3" } },
+        { type: 'text', content: "Jia is described as fiercely independent and brilliant, with a mind that sees the world in terms of systems and long-term consequences. In her youth, she was an accomplished herbalist who admired the dandelion for its hardiness and versatility, qualities she saw in Kuni Garu." },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 4, link: "/books/the-grace-of-kings#chapter-4" } },
+        { type: 'text', content: " As Empress, she becomes a master of political strategy, often operating from the shadows. She is willing to be seen as a villain in the annals of history if it means creating a stable, systematic empire that doesn't rely on the whims of charismatic leaders. Her love for her family is deep, but she often prioritizes the security of the state above all else, leading her to make ruthless and morally ambiguous decisions." },
+        { type: 'ref', data: { book: "The Wall of Storms", chapter: 21, link: "/books/the-wall-of-storms#chapter-21" } },
+        { type: 'text', content: " She believes in institutions over individuals and is willing to sacrifice reputations, including her own and those of her allies, to achieve her vision of lasting peace." },
+        { type: 'ref', data: { book: "The Wall of Storms", chapter: 38, link: "/books/the-wall-of-storms#chapter-38" } },
     ],
     history: [
         {
-            era: "Early Life and Meeting Kuni Garu",
+            era: "The Grace of Kings",
             summary: [
-                { type: 'text', content: "Jia Matiza grows up in Zudi, where she develops a reputation for intelligence and beauty. She first meets Kuni Garu when he cleverly defies a corrupt corvée administrator, an act that brings him to her attention and inspires him to seek a more respectable life." },
+                { type: 'text', content: "Jia first encounters Kuni Garu in Zudi when he cleverly intervenes to save a poor woman's son from conscription. Intrigued, she invites him to a party and they quickly form a deep intellectual and philosophical bond." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 3, link: "/books/the-grace-of-kings#chapter-3" } },
-                { type: 'text', content: " Jia's intelligence and spirit inspire Kuni to change his ways and pursue a more honorable path. Their relationship develops into a deep partnership based on mutual respect and shared goals." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 4, link: "/books/the-grace-of-kings#chapter-4" } },
+                { type: 'text', content: " During the rebellion, while Kuni is away, Jia feels isolated in high society but is mentored by the mysterious Soto Zyndu, who advises her to become an active and equal partner in Kuni's ambitions." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 32, link: "/books/the-grace-of-kings#chapter-32" } },
+                { type: 'text', content: " Their partnership is tested and ultimately strengthened when Kuni returns. They forgive each other's wartime transgressions and forge a new, more mature relationship based on radical honesty. Jia becomes a key political strategist, using secret correspondence to advise Kuni and build alliances while he is exiled in Dasu." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 37, link: "/books/the-grace-of-kings#chapter-37" } },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 39, link: "/books/the-grace-of-kings#chapter-39" } },
             ]
         },
         {
-            era: "The Rebellion and Rise to Power",
+            era: "The Wall of Storms",
             summary: [
-                { type: 'text', content: "During the rebellion against Emperor Mapidéré, Jia serves as Kuni's political advisor and strategist. Her understanding of court politics and human nature proves invaluable to the success of the rebellion." },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 14, link: "/books/the-grace-of-kings#chapter-14" } },
-                { type: 'text', content: " Jia's political acumen helps Kuni navigate the complex web of alliances and rivalries that characterize the rebellion. She becomes known as the 'Political Architect' of the Dandelion Dynasty, shaping the new empire's governance structure." },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 36, link: "/books/the-grace-of-kings#chapter-36" } },
+                { type: 'text', content: "As Empress, Jia's primary concern is the stability of the dynasty and the coming succession crisis between her sons. She clashes with Marshal Gin Mazoti over economic policy, representing the agrarian traditionalists against the rising merchant class." },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 13, link: "/books/the-wall-of-storms#chapter-13" } },
+                { type: 'text', content: " To secure the empire's future, she orchestrates a grand, ruthless political gambit. She secretly funds the Hegemon cults to create a crisis, frames Duke Théca Kimo for the rebellion, and uses the ensuing chaos to arrest and neutralize Gin Mazoti, her most powerful political rival." },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 25, link: "/books/the-wall-of-storms#chapter-25" } },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 29, link: "/books/the-wall-of-storms#chapter-29" } },
+                { type: 'text', content: " When the Lyucu invade, she confesses her entire plot to Gin and begs her to save Dara, forming a pragmatic alliance with her former enemy. She later orchestrates an act of biological warfare, using locusts to destroy the garinafin food supply, crippling the Lyucu's primary weapon." },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 38, link: "/books/the-wall-of-storms#chapter-38" } },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 57, link: "/books/the-wall-of-storms#chapter-57" } },
             ]
         },
         {
-            era: "Empress Jia and Court Politics",
+            era: "The Veiled Throne & Speaking Bones",
             summary: [
-                { type: 'text', content: "As Empress Jia, she becomes one of the most powerful figures in the empire, working alongside her husband to establish the Dandelion Dynasty. She plays a crucial role in managing the complex politics of the court and maintaining stability." },
-                { type: 'ref', data: { book: "The Wall of Storms", chapter: 3, link: "/books/the-wall-of-storms#chapter-3" } },
-                { type: 'text', content: " Jia's relationship with Consort Risana, Kuni's second wife, becomes a source of tension within the court. The two women represent different approaches to power and influence, creating a subtle but significant political rivalry." },
-                { type: 'ref', data: { book: "The Wall of Storms", chapter: 8, link: "/books/the-wall-of-storms#chapter-8" } },
-            ]
-        },
-        {
-            era: "The Grand Examination and Meritocracy",
-            summary: [
-                { type: 'text', content: "Jia plays a key role in establishing the Grand Examination system, which selects officials based on merit rather than birth. This innovation represents a fundamental shift in Dara's governance and reflects her commitment to creating a more just society." },
-                { type: 'ref', data: { book: "The Wall of Storms", chapter: 4, link: "/books/the-wall-of-storms#chapter-4" } },
-                { type: 'text', content: " The examination system becomes one of the Dandelion Dynasty's most important legacies, opening up opportunities for talented individuals from all backgrounds to serve the empire." },
-                { type: 'ref', data: { book: "The Wall of Storms", chapter: 9, link: "/books/the-wall-of-storms#chapter-9" } },
-            ]
-        },
-        {
-            era: "The Lyucu Crisis and Political Intrigue",
-            summary: [
-                { type: 'text', content: "When the Lyucu Empire invades Dara, Jia faces the challenge of maintaining stability while preparing for war. Her pragmatic approach to politics is tested as she must balance various factions and interests within the court." },
-                { type: 'ref', data: { book: "The Wall of Storms", chapter: 24, link: "/books/the-wall-of-storms#chapter-24" } },
-                { type: 'text', content: " During the crisis, Jia demonstrates her political skill by managing the complex web of alliances and rivalries that emerge. She becomes increasingly focused on maintaining control and stability in the face of external threats." },
-                { type: 'ref', data: { book: "The Wall of Storms", chapter: 30, link: "/books/the-wall-of-storms#chapter-30" } },
-            ]
-        },
-        {
-            era: "Conflict with Zomi Kidosu",
-            summary: [
-                { type: 'text', content: "In Speaking Bones, Jia's relationship with Zomi Kidosu becomes increasingly strained. The two women, once allies, find themselves on opposite sides of a political divide over how to respond to Princess Théra's rebellion." },
+                { type: 'text', content: "As Regent for her son, Emperor Phyro, Jia rules Dara with an iron fist. Her long-term plans often put her at odds with her children and allies. She uses the scholar rebellion against Zomi Kidosu's examination reforms to teach Zomi a harsh lesson about the power of tradition, leading to Zomi's disgrace and resignation." },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 29, link: "/books/the-veiled-throne#chapter-29" } },
+                { type: 'text', content: " In 'Speaking Bones,' upon learning that Princess Théra is alive, Jia is wary, viewing her return as a threat to the stability she has worked to build. She secretly manipulates Zomi Kidosu's nascent resistance movement, feeding them misinformation to serve her own ends." },
                 { type: 'ref', data: { book: "Speaking Bones", chapter: 2, link: "/books/speaking-bones#chapter-2" } },
-                { type: 'text', content: " Jia, ever the pragmatist, is skeptical of the message from Théra and wary of the political instability it could cause. She sees Théra's return as a threat to her carefully laid plans for the empire and her son, Emperor Phyro." },
-                { type: 'ref', data: { book: "Speaking Bones", chapter: 2, link: "/books/speaking-bones#chapter-2" } },
-                { type: 'text', content: " The conflict between Jia and Zomi represents a fundamental philosophical difference in their approaches to governance: Zomi's faith in radical transparency and innovation versus Jia's belief in control and stability." },
-                { type: 'ref', data: { book: "Speaking Bones", chapter: 5, link: "/books/speaking-bones#chapter-5" } },
-            ]
-        },
-        {
-            era: "Political Manipulation and Control",
-            summary: [
-                { type: 'text', content: "As the resistance movement grows, Jia demonstrates her mastery of political intrigue by secretly manipulating events to serve her own long-term goals. She begins to feed Zomi's network misinformation, steering the rebellion in directions that serve her interests." },
                 { type: 'ref', data: { book: "Speaking Bones", chapter: 8, link: "/books/speaking-bones#chapter-8" } },
-                { type: 'text', content: " Jia's actions reveal her ruthless pragmatism and her profound understanding of human nature. She is willing to use any means necessary to maintain control and protect the empire she helped build." },
-                { type: 'ref', data: { book: "Speaking Bones", chapter: 8, link: "/books/speaking-bones#chapter-8" } },
+                { type: 'text', content: " Her complex, decades-long political maneuvering culminates in the final war against the Lyucu, where her grand strategy is finally revealed. Her endgame is to secure a lasting peace and a stable, unified Dara, proving herself to be one of history's most formidable, if controversial, rulers." },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 38, link: "/books/speaking-bones#chapter-38" } },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 55, link: "/books/speaking-bones#chapter-55" } },
             ]
         },
     ]
@@ -101,7 +82,7 @@ const characterData: Character = {
 
 export default function JiaMatizaPage() {
     const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CHARACTERS);
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (

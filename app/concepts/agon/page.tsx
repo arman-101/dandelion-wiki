@@ -13,7 +13,7 @@ export default function AgonPage() {
 
   const conceptData: Concept = {
     name: "The Agon",
-    image: "/concepts/lyucu-culture.png", // Placeholder image
+    image: "/concepts/agon.png", // Placeholder image
     introduction: "A mysterious people from beyond the Wall of Storms who play a role in the later events of the series, representing the unknown forces that shape the destiny of Dara.",
     infoBox: {
       "Origin": "Beyond the Wall of Storms",

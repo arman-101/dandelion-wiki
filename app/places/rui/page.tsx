@@ -9,55 +9,57 @@ import { getSurroundingPages } from '@/app/utils/navigationUtils';
 // --- DATA FOR RUI ---
 const placeData: Place = {
     name: "Rui",
-    image: "/places/xana.png",
-    introduction: "Rui is the homeland of the Xana people and the heart of the Xana Empire, containing the sacred Mount Kiji and the source of the mystical lift gas that powers the empire's airships.",
+    image: "/places/rui.png",
+    introduction: "Rui is a large island that is part of the Xana nation and the symbolic heart of the old Xana homeland. It is critically important due to Mount Kiji, the sole source of the mystical lift gas that powers Dara's airships.",
     infoBox: {
-      "Type": "Island Homeland",
-      "Region": "Xana Empire",
-      "Significance": "Xana homeland, source of lift gas",
-      "Related places": [
-        { text: "Mount Kiji", link: "/places/mount-kiji" },
-        { text: "Xana", link: "/places/xana" },
-        { text: "Kriphi", link: "/places/kriphi" }
-      ]
+        type: "Island",
+        state: { text: "Xana", link: "/places/xana" },
+        continent: { text: "Dara", link: "/places/dara" },
+        capital: { text: "Kriphi", link: "/places/kriphi" },
+        KeyLandmark: { text: "Mount Kiji", link: "/places/mount-kiji" }
     },
     geography: [
-      { type: "text" as const, content: "Rui is the largest and most important of the Xana islands, featuring the sacred Mount Kiji which contains Lake Dako, the source of the mystical lift gas that gives the Xana Empire its air superiority." }
+        { type: 'text', content: "Rui is a significant island located near the smaller island of Dasu. Its most vital geographical feature is Mount Kiji and the Lake Dako at its peak, which produces the lift gas essential for air travel and warfare in Dara." },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 20, link: "/books/the-grace-of-kings#chapter-20" } },
     ],
     culture: [
-      { type: "text" as const, content: "As the homeland of the Xana people, Rui embodies the empire's culture of conquest and technological innovation. The island is home to the Mount Kiji Air Base and serves as the administrative center of the empire." }
+        { type: 'text', content: "As the Xana homeland, Rui represents the old imperial power. Under the Lyucu occupation, it becomes a center of cultural conflict, where the invaders attempt to erase Dara's traditions and syncretize the local gods, transforming the Temple of Kiji into the Temple of Péa-Kiji." },
+        { type: 'ref', data: { book: "The Veiled Throne", chapter: 16, link: "/books/the-veiled-throne#chapter-16" } },
     ],
     history: [
-      {
-        event: "Xana Homeland",
-        summary: [
-          { type: "text" as const, content: "Rui has long been the homeland of the Xana people, who discovered the mystical properties of lift gas from Mount Kiji and used this technological advantage to conquer and unite the Islands of Dara." }
-        ]
-      },
-      {
-        event: "The Rebellion",
-        summary: [
-          { type: "text" as const, content: "During the rebellion against the Xana Empire, Kindo Marana travels to Rui to rebuild the Imperial air force, discovering the Mount Kiji Air Base in disrepair and working to restore it to its former glory." }
-        ]
-      },
-      {
-        event: "The Chrysanthemum-Dandelion War",
-        summary: [
-          { type: "text" as const, content: "Rui becomes a strategic target during the war between Kuni Garu and Mata Zyndu, with Kuni's forces launching a surprise attack through the Grand Tunnels to capture the symbolic heart of the old Xana homeland." }
-        ]
-      }
+        {
+            event: "The Dandelion Rebellion",
+            summary: [
+                { type: 'text', content: "During the rebellion, the Xana bureaucrat Kindo Marana traveled to Rui to rebuild the Imperial air force. He found the Mount Kiji Air Base in a state of corrupt disrepair and ruthlessly restored it to efficiency." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 20, link: "/books/the-grace-of-kings#chapter-20" } },
+            ]
+        },
+        {
+            event: "The Chrysanthemum-Dandelion War",
+            summary: [
+                { type: 'text', content: "Rui was the target of the first major offensive in Kuni Garu's war against Mata Zyndu. Marshal Gin Mazoti led a surprise attack through the abandoned undersea Grand Tunnels, capturing the island and its capital, Kriphi. This strategic victory gave Kuni control of the airship fleet and was a turning point in the war." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 43, link: "/books/the-grace-of-kings#chapter-43" } },
+            ]
+        },
+        {
+            event: "The Lyucu War",
+            summary: [
+                { type: 'text', content: "After being conquered by the Lyucu, Rui became, along with Dasu, the heart of their occupation. It was the site of the first major Dara victory against the invaders, the Battle of Kriphi Harbor, where Gin Mazoti's fleet of new 'phantom' airships devastated the Lyucu navy. The island remained a central point of conflict for the remainder of the war." },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 42, link: "/books/the-wall-of-storms#chapter-42" } },
+            ]
+        },
     ]
 };
 
 export default function RuiPage() {
-  const pathname = usePathname();
-  const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_PLACES);
-  const returnLink = { title: 'Return to All Places', path: '/places' };
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_PLACES]);
+    const returnLink = { title: 'Return to All Places', path: '/places' };
 
-  return (
-    <>
-      <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-      <PlacePageTemplate placeData={placeData} />
-    </>
-  );
-} 
+    return (
+        <>
+            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PlacePageTemplate placeData={placeData} />
+        </>
+    );
+}
