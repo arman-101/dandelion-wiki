@@ -13,7 +13,7 @@ const godData: Place = {
     introduction: "Xana is one of the Seven States of Dara, a powerful island nation that, under the leadership of King Réon (later Emperor Mapidéré), conquered the other six states to forge the first unified Xana Empire. It is the original seat of imperial power and the homeland of the story's first antagonists.",
     infoBox: {
         type: "Island Nation / Empire",
-        continent: { text: "Dara", link: "/places/dara" },
+        continent: "Dara",
         capital: { text: "Pan", link: "/places/pan" },
         Ruler: "House of Xana (Emperor Mapidéré, Emperor Erishi)",
         PatronGod: { text: "Kiji", link: "/gods/kiji" },

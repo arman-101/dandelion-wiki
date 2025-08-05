@@ -17,7 +17,11 @@ const characterData: Character = {
         status: "Alive",
         gender: "Male",
         significantOther: { text: "Princess Fara", link: "/characters/princess-fara" },
-        relatives: "Goztan Ryoto (mother), Oga Kidosu (father), Zomi Kidosu (sister)",
+        relatives: [
+            { text: "Goztan Ryoto (mother)", link: "/characters/goztan-ryoto" },
+            { text: "Oga Kidosu (father)", link: "/characters/oga-kidosu" },
+            { text: "Zomi Kidosu (sister)", link: "/characters/zomi-kidosu" }
+        ],
         affiliation: "The Blossom Gang, Dandelion Court",
         nationality: "Lyucu-Daran",
         firstAppeared: { text: "The Veiled Throne", link: "/books/the-veiled-throne" },

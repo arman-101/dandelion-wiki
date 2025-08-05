@@ -13,7 +13,7 @@ const godData: Place = {
     introduction: "Gan is one of the six Tiro states, known as the wealthiest realm in Dara. It is a land of merchants and commerce, whose political actions are often driven by economic self-interest.",
     infoBox: {
         type: "Kingdom (Tiro State)",
-        continent: { text: "Dara", link: "/places/dara" },
+        continent: "Dara",
         Ruler: "House of Dalo (historical), House of Mocri (later)",
         PatronGod: { text: "Tazu", link: "/gods/tazu" },
         KeyExports: "Luxury Goods, Trade"

@@ -14,7 +14,7 @@ const placeData: Place = {
     infoBox: {
         type: "Island",
         state: { text: "Xana", link: "/places/xana" },
-        continent: { text: "Dara", link: "/places/dara" },
+        continent: "Dara",
         capital: { text: "Kriphi", link: "/places/kriphi" },
         KeyLandmark: { text: "Mount Kiji", link: "/places/mount-kiji" }
     },

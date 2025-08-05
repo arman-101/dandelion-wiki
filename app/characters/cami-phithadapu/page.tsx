@@ -13,11 +13,11 @@ const characterData: Character = {
     infoBox: {
         aliases: "The Whale Scholar",
         occupation: "Scholar, Scientist",
-        placeOfBirth: { text: "Dara", link: "/places/dara" },
+        placeOfBirth: "Dara",
         status: "Alive",
         gender: "Female",
         affiliation: "Dara Expeditionary Force, Agon Rebellion",
-        nationality: { text: "Dara", link: "/places/dara" },
+        nationality: "Dara",
         firstAppeared: { text: "The Veiled Throne", link: "/books/the-veiled-throne" },
         lastAppeared: { text: "The Veiled Throne", link: "/books/the-veiled-throne" }
     },

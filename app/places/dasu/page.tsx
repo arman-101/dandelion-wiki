@@ -13,7 +13,7 @@ const placeData: Place = {
     introduction: "Dasu is a small, remote, and seemingly insignificant island that becomes the crucible where the future Dandelion Dynasty is forged. Initially a place of exile for Kuni Garu, it is transformed into a beacon of innovation, meritocracy, and hope.",
     infoBox: {
         type: "Island Kingdom",
-        continent: { text: "Dara", link: "/places/dara" },
+        continent: "Dara",
         Ruler: { text: "King Kuni Garu", link: "/characters/kuni-garu" },
         KeyResidents: [
             { text: "Kuni Garu", link: "/characters/kuni-garu" },

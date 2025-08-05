@@ -13,7 +13,7 @@ const placeData: Place = {
     introduction: "Crescent Island is a remote, isolated island that serves as a key location in the education of Zomi Kidosu. It later becomes the site of a pivotal and bloody battle during the war against the Lyucu.",
     infoBox: {
         type: "Island",
-        continent: { text: "Dara", link: "/places/dara" },
+        continent: "Dara",
         KeyEvents: "Zomi's education, Battle of Crescent Island"
     },
     geography: [

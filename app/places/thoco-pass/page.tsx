@@ -14,7 +14,7 @@ const placeData: Place = {
     infoBox: {
         type: "Mountain Pass",
         location: { text: "Cocru", link: "/places/cocru" },
-        continent: { text: "Dara", link: "/places/dara" },
+        continent: "Dara",
         KeyEvents: "Betrayal of Marshal Dazu Zyndu"
     },
     geography: [

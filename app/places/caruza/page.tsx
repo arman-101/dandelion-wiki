@@ -14,7 +14,7 @@ const placeData: Place = {
     infoBox: {
         type: "Royal Capital City",
         state: { text: "Cocru", link: "/places/cocru" },
-        continent: { text: "Dara", link: "/places/dara" },
+        continent: "Dara",
         KeyEvents: "Grand Council of War, Princeps's Promise"
     },
     geography: [

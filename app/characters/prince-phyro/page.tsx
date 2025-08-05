@@ -18,7 +18,7 @@ const characterData: Character = {
         gender: "Male",
         relatives: "Kuni Garu (father), Consort Risana (mother), Prince Timu (brother), Princess Théra (sister), Princess Fara (sister)",
         affiliation: "Dandelion Court, Empire of Dara",
-        nationality: { text: "Dara", link: "/places/dara" },
+        nationality: "Dara",
         firstAppeared: { text: "The Wall of Storms", link: "/books/the-wall-of-storms" },
         lastAppeared: { text: "Speaking Bones", link: "/books/speaking-bones" }
     },

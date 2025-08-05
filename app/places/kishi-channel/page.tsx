@@ -14,7 +14,7 @@ const placeData: Place = {
     infoBox: {
         type: "Strait / Whirlpool",
         location: { text: "Between Gan and Wolf's Paw", link: "/places/gan" },
-        continent: { text: "Dara", link: "/places/dara" },
+        continent: "Dara",
         ControllingDeity: { text: "Tazu", link: "/gods/tazu" }
     },
     geography: [

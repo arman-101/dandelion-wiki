@@ -13,7 +13,7 @@ const placeData: Place = {
     introduction: "The Tunoa Islands are the ancestral island fiefdom of the noble Zyndu clan. It is the place where Mata Zyndu was raised in exile, a constant reminder of his family's lost glory and his quest for vengeance.",
     infoBox: {
         type: "Archipelago Fiefdom",
-        continent: { text: "Dara", link: "/places/dara" },
+        continent: "Dara",
         capital: "Farun",
         Ruler: { text: "House of Zyndu", link: "/characters/mata-zyndu" },
     },

@@ -19,7 +19,7 @@ const characterData: Character = {
         significantOther: { text: "Kinri (Savo Ryoto)", link: "/characters/kinri" },
         relatives: "Kuni Garu (father), Jia Matiza (mother), Prince Timu (brother), Princess Théra (sister), Prince Phyro (brother)",
         affiliation: "Dandelion Court, The Blossom Gang",
-        nationality: { text: "Dara", link: "/places/dara" },
+        nationality: "Dara",
         firstAppeared: { text: "The Wall of Storms", link: "/books/the-wall-of-storms" },
         lastAppeared: { text: "Speaking Bones", link: "/books/speaking-bones" }
     },

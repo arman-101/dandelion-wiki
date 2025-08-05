@@ -13,7 +13,7 @@ const placeData: Place = {
     introduction: "The Roro Hills are a strategically important region that became the final battleground in the war for Dara, serving as the last major stronghold for the Lyucu invaders.",
     infoBox: {
         type: "Hill Range",
-        continent: { text: "Dara", link: "/places/dara" },
+        continent: "Dara",
         KeyEvents: "Final battle of the Lyucu War"
     },
     geography: [

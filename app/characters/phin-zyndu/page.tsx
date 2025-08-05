@@ -16,6 +16,7 @@ const characterData: Character = {
         placeOfBirth: { text: "Cocru", link: "/places/cocru" },
         status: "Deceased",
         gender: "Male",
+        significantOther: { text: "Princess Kikomi", link: "/characters/princess-kikomi" },
         relatives: "Dazu Zyndu (father), Mata Zyndu (nephew), Soto Zyndu (sister)",
         affiliation: "House of Zyndu, Cocru Army",
         nationality: { text: "Cocru", link: "/places/cocru" },

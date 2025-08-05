@@ -13,11 +13,11 @@ const characterData: Character = {
     infoBox: {
         aliases: "The Bully",
         occupation: "Fallen King, Rebel Leader",
-        placeOfBirth: { text: "Dara", link: "/places/dara" },
+        placeOfBirth: "Dara",
         status: "Deceased",
         gender: "Male",
         affiliation: "Hegemon Cults",
-        nationality: { text: "Dara", link: "/places/dara" },
+        nationality: "Dara",
         firstAppeared: { text: "The Wall of Storms", link: "/books/the-wall-of-storms" },
         lastAppeared: { text: "The Wall of Storms", link: "/books/the-wall-of-storms" }
     },

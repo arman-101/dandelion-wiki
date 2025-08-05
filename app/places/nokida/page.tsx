@@ -14,7 +14,7 @@ const placeData: Place = {
     infoBox: {
         type: "Capital City",
         state: { text: "Géjira", link: "/places/gejira" },
-        continent: { text: "Dara", link: "/places/dara" },
+        continent: "Dara",
         Ruler: { text: "Queen Gin Mazoti", link: "/characters/gin-mazoti" },
         KeyResidents: [
             { text: "Gin Mazoti", link: "/characters/gin-mazoti" },

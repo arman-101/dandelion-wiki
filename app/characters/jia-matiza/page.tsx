@@ -22,7 +22,7 @@ const characterData: Character = {
             { text: "Prince Timu (son)", link: "/characters/prince-timu" },
             { text: "Princess Théra (daughter)", link: "/characters/princess-thera" },
             { text: "Prince Phyro (son, adopted)", link: "/characters/prince-phyro" },
-            { text: "Princess Fara (daughter)", link: "/characters/princess-fara" }
+            { text: "Princess Fara (daughter, adopted)", link: "/characters/princess-fara" }
         ],
         affiliation: "House of Garu, Dandelion Court",
         nationality: { text: "Cocru", link: "/places/cocru" },

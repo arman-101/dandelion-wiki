@@ -13,7 +13,7 @@ const godData: Place = {
     introduction: "Cocru is one of the most powerful and central of the six Tiro states, located on the Big Island of Dara. It is the homeland of both Kuni Garu and Mata Zyndu, and its fate is central to the entire saga.",
     infoBox: {
         type: "Kingdom (Tiro State)",
-        continent: { text: "Dara", link: "/places/dara" },
+        continent: "Dara",
         capital: { text: "Çaruza", link: "/places/caruza" },
         Ruler: "House of Zyndu (historical), House of Garu (current)",
         PatronGods: [
@@ -23,7 +23,7 @@ const godData: Place = {
         KeyCities: [
             { text: "Zudi", link: "/places/zudi" },
             { text: "Dimu", link: "" },
-            { text: "Napi", link: "" }
+            { text: "Napi", link: "" },
         ]
     },
     geography: [

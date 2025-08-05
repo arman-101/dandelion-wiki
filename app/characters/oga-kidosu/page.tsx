@@ -16,7 +16,14 @@ const characterData: Character = {
         placeOfBirth: { text: "Dasu", link: "/places/dasu" },
         status: "Deceased",
         gender: "Male",
-        relatives: "Zomi Kidosu (daughter), Aki Kidosu (wife), Savo Ryoto (Kinri) (son)",
+        significantOther: [
+            { text: "Aki Kidosu (wife)", link: "" },
+            { text: "Goztan Ryoto", link: "/characters/goztan-ryoto" }
+        ],
+        relatives: [
+            { text: "Zomi Kidosu (daughter)", link: "/characters/zomi-kidosu" },
+            { text: "Savo Ryoto (Kinri) (son)", link: "/characters/kinri" }
+        ],
         affiliation: "None",
         nationality: { text: "Dasu", link: "/places/dasu" },
         firstAppeared: { text: "The Wall of Storms", link: "/books/the-wall-of-storms" },

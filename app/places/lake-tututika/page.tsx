@@ -14,7 +14,7 @@ const placeData: Place = {
     infoBox: {
         type: "Sacred Lake",
         location: { text: "Near Pan", link: "/places/pan" },
-        continent: { text: "Dara", link: "/places/dara" },
+        continent: "Dara",
         ControllingDeity: { text: "Tututika", link: "/gods/tututika" }
     },
     geography: [

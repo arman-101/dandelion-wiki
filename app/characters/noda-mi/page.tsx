@@ -13,11 +13,11 @@ const characterData: Character = {
     infoBox: {
         aliases: "The Cunning King",
         occupation: "Fallen King, Rebel Leader, Collaborator",
-        placeOfBirth: { text: "Dara", link: "/places/dara" },
+        placeOfBirth: "Dara",
         status: "Deceased",
         gender: "Male",
         affiliation: "Hegemon Cults, Lyucu Empire",
-        nationality: { text: "Dara", link: "/places/dara" },
+        nationality: "Dara",
         firstAppeared: { text: "The Wall of Storms", link: "/books/the-wall-of-storms" },
         lastAppeared: { text: "The Wall of Storms", link: "/books/the-wall-of-storms" }
     },

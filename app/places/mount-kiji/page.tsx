@@ -14,7 +14,7 @@ const placeData: Place = {
     infoBox: {
         type: "Volcano",
         location: { text: "Rui", link: "/places/rui" },
-        continent: { text: "Dara", link: "/places/dara" },
+        continent: "Dara",
         ControllingDeity: { text: "Kiji", link: "/gods/kiji" },
         KeyFeature: { text: "Lake Dako", link: "/places/lake-dako" },
         KeyResource: { text: "Lift Gas", link: "/concepts/lift-gas" }

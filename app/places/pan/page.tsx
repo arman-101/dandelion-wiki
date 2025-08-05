@@ -14,7 +14,7 @@ const placeData: Place = {
     infoBox: {
         type: "Imperial Capital City",
         state: { text: "Xana", link: "/places/xana" },
-        continent: { text: "Dara", link: "/places/dara" },
+        continent: "Dara",
         Rulers: "Xana Empire, Dandelion Dynasty",
         KeyLandmarks: "Imperial Palace, Grand Audience Hall, Examination Hall"
     },

@@ -19,7 +19,11 @@ const characterData: Character = {
         significantOther: [
             { text: "Princess Théra", link: "/characters/princess-thera" }
         ],
-        relatives: "Oga Kidosu (father), Aki Kidosu (mother), Savo Ryoto (Kinri) (brother)",
+        relatives: [
+            { text: "Oga Kidosu (father)", link: "/characters/oga-kidosu" },
+            { text: "Aki Kidosu (mother)", link: "" },
+            { text: "Savo Ryoto (Kinri) (brother)", link: "/characters/kinri" }
+        ],
         affiliation: "Dandelion Court, Empire of Dara",
         nationality: { text: "Dasu", link: "/places/dasu" },
         firstAppeared: { text: "The Wall of Storms", link: "/books/the-wall-of-storms" },

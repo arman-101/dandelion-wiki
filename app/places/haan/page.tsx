@@ -13,7 +13,7 @@ const godData: Place = {
     introduction: "Haan is one of the six Tiro states, renowned for its long history of scholarship, invention, and philosophy. It is the homeland of the brilliant strategist Luan Zya and becomes a center for scientific research under the Dandelion Dynasty.",
     infoBox: {
         type: "Kingdom (Tiro State)",
-        continent: { text: "Dara", link: "/places/dara" },
+        continent: "Dara",
         capital: { text: "Ginpen", link: "/places/ginpen" },
         Ruler: "House of Cosugi (historical)",
         PatronGod: { text: "Lutho", link: "/gods/lutho" },

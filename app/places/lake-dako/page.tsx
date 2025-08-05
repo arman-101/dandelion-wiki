@@ -14,7 +14,7 @@ const placeData: Place = {
     infoBox: {
         type: "Crater Lake",
         location: { text: "Mount Kiji, Rui", link: "/places/mount-kiji" },
-        continent: { text: "Dara", link: "/places/dara" },
+        continent: "Dara",
         KeyResource: { text: "Lift Gas", link: "/concepts/lift-gas" }
     },
     geography: [

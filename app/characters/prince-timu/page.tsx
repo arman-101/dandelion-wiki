@@ -19,7 +19,7 @@ const characterData: Character = {
         significantOther: { text: "Tanvanaki", link: "/characters/tanvanaki" },
         relatives: "Kuni Garu (father), Jia Matiza (mother), Princess Théra (sister), Prince Phyro (brother), Princess Fara (sister)",
         affiliation: "Dandelion Court, Lyucu Occupation Government",
-        nationality: { text: "Dara", link: "/places/dara" },
+        nationality: "Dara",
         firstAppeared: { text: "The Wall of Storms", link: "/books/the-wall-of-storms" },
         lastAppeared: { text: "Speaking Bones", link: "/books/speaking-bones" }
     },

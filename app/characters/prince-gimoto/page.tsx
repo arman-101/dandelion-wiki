@@ -17,7 +17,7 @@ const characterData: Character = {
         status: "Alive",
         gender: "Male",
         relatives: [
-            { text: "Kado Garu (father)", link: "" },
+            {text: "Kado Garu (father)", link: ""},
             { text: "Kuni Garu (uncle)", link: "/characters/kuni-garu" },
             { text: "Jia Matiza (aunt)", link: "/characters/jia-matiza" },
             { text: "Prince Timu (cousin)", link: "/characters/prince-timu" },

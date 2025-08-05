@@ -14,7 +14,7 @@ const placeData: Place = {
     infoBox: {
         type: "Major City",
         state: { text: "Cocru", link: "/places/cocru" },
-        continent: { text: "Dara", link: "/places/dara" },
+        continent: "Dara",
         KeyResidents: [
             { text: "Kuni Garu", link: "/characters/kuni-garu" },
             { text: "Jia Matiza", link: "/characters/jia-matiza" },

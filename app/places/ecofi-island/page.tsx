@@ -13,7 +13,7 @@ const placeData: Place = {
     introduction: "Ecofi Island is the location where the first Emperor of Dara, Mapidéré, died. It is a place of great historical significance, as it was the site of the coup that destabilized the Xana Empire and set the stage for the Dandelion Rebellion.",
     infoBox: {
         type: "Island",
-        continent: { text: "Dara", link: "/places/dara" },
+        continent: "Dara",
         KeyEvents: "Death of Emperor Mapidéré, Forging of the False Decree"
     },
     geography: [

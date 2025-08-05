@@ -13,11 +13,11 @@ const characterData: Character = {
     infoBox: {
         aliases: "The Tutor",
         occupation: "Scholar, Tutor",
-        placeOfBirth: { text: "Dara", link: "/places/dara" },
+        placeOfBirth: "Dara",
         status: "Deceased",
         gender: "Female",
         affiliation: "None",
-        nationality: { text: "Dara", link: "/places/dara" },
+        nationality: "Dara",
         firstAppeared: { text: "The Veiled Throne", link: "/books/the-veiled-throne" },
         lastAppeared: { text: "The Veiled Throne", link: "/books/the-veiled-throne" }
     },

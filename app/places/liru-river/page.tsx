@@ -14,7 +14,7 @@ const placeData: Place = {
     infoBox: {
         type: "River System / Border",
         location: { text: "Cocru", link: "/places/cocru" },
-        continent: { text: "Dara", link: "/places/dara" },
+        continent: "Dara",
         KeyEvents: "The Standoff at Liru River"
     },
     geography: [

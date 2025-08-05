@@ -13,11 +13,11 @@ const characterData: Character = {
     infoBox: {
         aliases: "Commander Tho",
         occupation: "Marine Commander",
-        placeOfBirth: { text: "Dara", link: "/places/dara" },
+        placeOfBirth: "Dara",
         status: "Alive",
         gender: "Male",
         affiliation: "Dara Expeditionary Force, Agon Rebellion",
-        nationality: { text: "Dara", link: "/places/dara" },
+        nationality: "Dara",
         firstAppeared: { text: "The Veiled Throne", link: "/books/the-veiled-throne" },
         lastAppeared: { text: "The Veiled Throne", link: "/books/the-veiled-throne" }
     },

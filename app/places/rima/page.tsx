@@ -13,7 +13,7 @@ const godData: Place = {
     introduction: "Rima is one of the six Tiro states, a forested northern kingdom whose tragic fall during the Dandelion Rebellion provided the rebellion with one of its most potent symbols of martyrdom.",
     infoBox: {
         type: "Kingdom (Tiro State)",
-        continent: { text: "Dara", link: "/places/dara" },
+        continent: "Dara",
         Ruler: "King Jizu (Rebellion), Zato Ruthi (later), Gin Mazoti (later)",
         PatronGod: { text: "Fithowéo", link: "/gods/fithoweo" },
         KeyFeatures: "Forests"

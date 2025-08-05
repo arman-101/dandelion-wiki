@@ -16,6 +16,8 @@ const characterData: Character = {
         placeOfBirth: { text: "Ginpen", link: "/places/ginpen" },
         status: "Deceased",
         gender: "Male",
+        significantOther: { text: "Gin Mazoti", link: "/characters/gin-mazoti" },
+        relatives: { text: "Aya Mazoti (daughter)", link: "/characters/aya-mazoti" },
         affiliation: "House of Zya, Dandelion Court",
         nationality: { text: "Haan", link: "/places/haan" },
         firstAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" },

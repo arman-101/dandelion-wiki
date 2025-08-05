@@ -13,7 +13,7 @@ const godData: Place = {
     introduction: "Faça is one of the six Tiro states, a northern kingdom known for its treacherous politics and its unique mastery of the 'silkmotic force,' the practical science of static electricity.",
     infoBox: {
         type: "Kingdom (Tiro State)",
-        continent: { text: "Dara", link: "/places/dara" },
+        continent: "Dara",
         capital: "Boama",
         Ruler: "House of Shilué (historical), Gin Mazoti (later)",
         PatronGod: { text: "Rufizo", link: "/gods/rufizo" },

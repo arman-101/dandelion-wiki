@@ -14,7 +14,7 @@ const placeData: Place = {
     infoBox: {
         type: "Capital City",
         state: { text: "Rui", link: "/places/rui" },
-        continent: { text: "Dara", link: "/places/dara" },
+        continent: "Dara",
         Rulers: "Xana Empire, Lyucu Empire",
         KeyResidents: [
             { text: "Tanvanaki", link: "/characters/tanvanaki" },

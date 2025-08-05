@@ -13,12 +13,12 @@ const characterData: Character = {
     infoBox: {
         aliases: "The Marshal's Daughter",
         occupation: "Princess, Commander",
-        placeOfBirth: { text: "Dara", link: "/places/dara" },
+        placeOfBirth: "Dara",
         status: "Alive",
         gender: "Female",
         relatives: "Gin Mazoti (mother), Luan Zya (father)",
         affiliation: "Dandelion Court, Empire of Dara",
-        nationality: { text: "Dara", link: "/places/dara" },
+        nationality: "Dara",
         firstAppeared: { text: "The Veiled Throne", link: "/books/the-veiled-throne" },
         lastAppeared: { text: "Speaking Bones", link: "/books/speaking-bones" }
     },

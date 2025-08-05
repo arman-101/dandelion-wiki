@@ -19,8 +19,12 @@ const InfoBox = ({ data }: { data: Character['infoBox'] }) => (
                             {(() => {
                                 if (Array.isArray(value)) {
                                     return value.map((item, index) => (
-                                        <React.Fragment key={item.text}>
-                                            <Link href={item.link} className="text-teal-600 dark:text-teal-400 hover:underline">{item.text}</Link>
+                                        <React.Fragment key={`${item.text}-${index}`}>
+                                            {item.link && typeof item.link === 'string' && item.link !== "" ? (
+                                                <Link href={item.link} className="text-teal-600 dark:text-teal-400 hover:underline">{item.text}</Link>
+                                            ) : (
+                                                <span>{item.text}</span>
+                                            )}
                                             {index < value.length - 1 ? ', ' : ''}
                                         </React.Fragment>
                                     ));

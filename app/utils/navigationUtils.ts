@@ -6,7 +6,7 @@ import { WikiPage } from '../data/wiki-data';
  * @param pageList - The ordered array of all pages in that category.
  * @returns An object containing the previous and next page, or null if they don't exist.
  */
-export const getSurroundingPages = (currentPath: string, pageList: WikiPage[]) => {
+export const getSurroundingPages = (currentPath: string, pageList: readonly WikiPage[]) => {
   const currentIndex = pageList.findIndex(page => page.path === currentPath);
 
   // If the page isn't found, return null for both

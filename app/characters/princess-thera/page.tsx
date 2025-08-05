@@ -19,7 +19,7 @@ const characterData: Character = {
         significantOther: { text: "Takval Aragoz", link: "/characters/takval-aragoz" },
         relatives: "Kuni Garu (father), Jia Matiza (mother), Prince Timu (brother), Prince Phyro (brother), Princess Fara (sister), Tanto Aragoz (son), Rokiri Aragoz (son)",
         affiliation: "Dandelion Court, Dara Expeditionary Force, Agon Rebellion",
-        nationality: { text: "Dara", link: "/places/dara" },
+        nationality: "Dara",
         firstAppeared: { text: "The Wall of Storms", link: "/books/the-wall-of-storms" },
         lastAppeared: { text: "Speaking Bones", link: "/books/speaking-bones" }
     },

@@ -13,7 +13,7 @@ const placeData: Place = {
     introduction: "Tan Adü is a remote southern island, considered 'savage' by the rest of Dara. It is the home of the legendary cruben-riders, whose alliance with Kuni Garu proves to be a decisive factor in the Dandelion Rebellion.",
     infoBox: {
         type: "Island",
-        continent: { text: "Dara", link: "/places/dara" },
+        continent: "Dara",
         KeyInhabitants: "Cruben-Riders",
         KeyFeatures: "Crubens"
     },

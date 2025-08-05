@@ -19,6 +19,7 @@ const characterData: Character = {
         significantOther: [
             { text: "Mata Zyndu", link: "/characters/mata-zyndu" }
         ],
+        relatives: "None",
         affiliation: "Kingdom of Amu",
         nationality: { text: "Amu", link: "/places/amu" },
         firstAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" },

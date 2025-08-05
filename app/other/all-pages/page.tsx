@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { ALL_WIKI_PAGES, WikiPage } from '../../data/wiki-data';
 
 // Helper function to group pages by type
-const groupPagesByType = (pages: WikiPage[]) => {
+const groupPagesByType = (pages: readonly WikiPage[]) => {
     return pages.reduce((acc, page) => {
         const type = page.type || 'Other';
         if (!acc[type]) {

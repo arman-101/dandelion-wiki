@@ -13,8 +13,8 @@ const placeData: Place = {
     introduction: "The Zathin Gulf is a large gulf on the coast of the Big Island. It was the site of the massive, climactic naval and aerial battle between the invading Lyucu forces and the full military might of the Dandelion Dynasty, a battle that claimed the life of Emperor Ragin.",
     infoBox: {
         type: "Gulf / Bay",
-        location: { text: "Coast of the Big Island", link: "/places/dara" },
-        continent: { text: "Dara", link: "/places/dara" },
+        location: "Coast of the Big Island",
+        continent: "Dara",
         KeyEvents: "Battle of Zathin Gulf, Death of Emperor Ragin"
     },
     geography: [

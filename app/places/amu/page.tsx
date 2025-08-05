@@ -13,7 +13,7 @@ const godData: Place = {
     introduction: "Amu is one of the six Tiro states, an archipelago kingdom known for its powerful navy, skilled sailors, and the beauty of its people. It is the homeland of Consort Risana and the tragic Princess Kikomi.",
     infoBox: {
         type: "Archipelago Kingdom (Tiro State)",
-        continent: { text: "Dara", link: "/places/dara" },
+        continent: "Dara",
         capital: { text: "Arulugi", link: "/places/arulugi" },
         Ruler: "House of Kon Fiji",
         PatronGod: { text: "Tututika", link: "/gods/tututika" },
