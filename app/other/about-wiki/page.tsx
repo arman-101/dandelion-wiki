@@ -31,20 +31,76 @@ const InfoBlock = ({ icon, children }: { icon: React.ReactNode; children: React.
 
 export default function AboutMePage() {
     return (
-        <div className="max-w-3xl mx-auto px-4 py-4">
+        <div className="max-w-6xl mx-auto px-4 py-4">
 
             {/* --- Introduction --- */}
             <div className="text-center mb-16">
-                <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight mb-4">About This Wiki</h1>
-                <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight mb-6">About This Wiki</h1>
+                <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
                     Hello! I&apos;m a huge fan of Ken Liu&apos;s &ldquo;The Dandelion Dynasty&rdquo; and built this wiki to create a modern, clean, and easily searchable resource for the community.
                 </p>
+            </div>
+
+            {/* --- Support Section --- */}
+            <div className="mb-20">
+                <div className="bg-gradient-to-br from-teal-50 via-blue-50 to-indigo-50 dark:from-gray-800/50 dark:via-gray-700/50 dark:to-gray-600/50 p-8 sm:p-12 rounded-2xl border border-teal-200/50 dark:border-teal-800/50 max-w-4xl mx-auto">
+                    <div className="text-center mb-10">
+                        <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-3">Support This Wiki</h2>
+                        <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-2xl mx-auto">
+                            Your support helps keep this resource free for everyone!
+                        </p>
+                    </div>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 max-w-xl mx-auto">
+                        <div className="bg-white dark:bg-gray-800 p-5 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 dark:border-gray-700 group">
+                            <h3 className="font-bold text-gray-900 dark:text-white mb-1">The Grace of Kings</h3>
+                            <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">Book 1</p>
+                            <a href="https://amzn.to/4lYVMGM" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 font-medium text-sm group-hover:underline">
+                                Buy on Amazon <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                            </a>
+                        </div>
+                        
+                        <div className="bg-white dark:bg-gray-800 p-5 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 dark:border-gray-700 group">
+                            <h3 className="font-bold text-gray-900 dark:text-white mb-1">The Wall of Storms</h3>
+                            <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">Book 2</p>
+                            <a href="https://amzn.to/3IXJlMU" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 font-medium text-sm group-hover:underline">
+                                Buy on Amazon <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                            </a>
+                        </div>
+                        
+                        <div className="bg-white dark:bg-gray-800 p-5 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 dark:border-gray-700 group">
+                            <h3 className="font-bold text-gray-900 dark:text-white mb-1">The Veiled Throne</h3>
+                            <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">Book 3</p>
+                            <a href="https://amzn.to/3Hcrgdj" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 font-medium text-sm group-hover:underline">
+                                Buy on Amazon <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                            </a>
+                        </div>
+                        
+                        <div className="bg-white dark:bg-gray-800 p-5 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 dark:border-gray-700 group">
+                            <h3 className="font-bold text-gray-900 dark:text-white mb-1">Speaking Bones</h3>
+                            <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">Book 4</p>
+                            <a href="https://amzn.to/41kbNi5" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 font-medium text-sm group-hover:underline">
+                                Buy on Amazon <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    {/* Alternative Support */}
+                    <div className="text-center">
+                        <div className="inline-flex items-center bg-white dark:bg-gray-800 px-4 py-2 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
+                            <span className="text-gray-600 dark:text-gray-400 text-sm mr-2">Or</span>
+                            <a href="https://buymeacoffee.com/darknebulax1" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 font-medium text-sm">
+                                ☕ Cup a coffee? <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             {/* --- Tech Stack --- */}
             <div className="mb-16">
                 <h2 className="text-2xl font-bold text-center mb-8 text-gray-800 dark:text-gray-200">Technology Powering the Wiki</h2>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
                     <TechCard
                         icon={<svg viewBox="0 0 128 128"><path fill="currentColor" d="M64 0C28.7 0 0 28.7 0 64s28.7 64 64 64s64-28.7 64-64S99.3 0 64 0zm0 121.9C32.2 121.9 6.1 95.8 6.1 64S32.2 6.1 64 6.1s57.9 26.1 57.9 57.9s-26.1 57.9-57.9 57.9z" /><path fill="currentColor" d="M93.3 40L48.2 89.2L34.7 75.7l6.8-6.8l6.8 6.8l38.2-38.2l6.8 6.8z" /></svg>}
                         name="Next.js"
@@ -67,9 +123,9 @@ export default function AboutMePage() {
                     />
                 </div>
             </div>
-            
+
             {/* --- Project Notes --- */}
-            <div className="bg-slate-50 dark:bg-gray-800/50 p-6 sm:p-8 rounded-lg space-y-6">
+            <div className="bg-slate-50 dark:bg-gray-800/50 p-6 sm:p-8 rounded-lg space-y-6 max-w-4xl mx-auto">
                 <InfoBlock icon={<svg fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.158 0a.225.225 0 1 1-.45 0a.225.225 0 0 1 .45 0Z" /></svg>}>
                     Many images on this site were generated with AI to provide visual references where official or fan artwork is scarce.
                 </InfoBlock>
@@ -84,7 +140,7 @@ export default function AboutMePage() {
             </div>
 
             {/* --- Signature --- */}
-            <div className="text-center mt-16 pt-8 border-t border-gray-200 dark:border-gray-700">
+            <div className="text-center mt-16 pt-8 border-t border-gray-200 dark:border-gray-700 max-w-4xl mx-auto">
                 <p className="text-gray-500 dark:text-gray-400">- A Fan :)</p>
             </div>
         </div>
