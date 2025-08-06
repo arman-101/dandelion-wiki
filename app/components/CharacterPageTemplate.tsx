@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { Character, ContentBlock, ReferenceLink } from '../data/wiki-data';
+import { formatAsteriskToBold } from '../utils/textFormatting';
 
 // --- REUSABLE SUB-COMPONENTS FOR THE TEMPLATE ---
 
@@ -62,7 +63,7 @@ const ContentParagraph = ({ content }: { content: ContentBlock[] }) => (
     <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
         {content.map((block, index) => {
             if (block.type === 'text') {
-                return <span key={index}>{block.content}</span>;
+                return <span key={index}>{formatAsteriskToBold(block.content)}</span>;
             }
             if (block.type === 'ref') {
                 return <Reference key={index} {...block.data} />;

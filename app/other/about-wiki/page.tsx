@@ -42,57 +42,62 @@ export default function AboutMePage() {
             </div>
 
             {/* --- Support Section --- */}
-            <div className="mb-20">
-                <div className="bg-gradient-to-br from-teal-50 via-blue-50 to-indigo-50 dark:from-gray-800/50 dark:via-gray-700/50 dark:to-gray-600/50 p-8 sm:p-12 rounded-2xl border border-teal-200/50 dark:border-teal-800/50 max-w-4xl mx-auto">
-                    <div className="text-center mb-10">
-                        <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-3">Support This Wiki</h2>
-                        <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-2xl mx-auto">
-                            Your support helps keep this resource free for everyone!
-                        </p>
-                    </div>
-                    
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 max-w-xl mx-auto">
-                        <div className="bg-white dark:bg-gray-800 p-5 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 dark:border-gray-700 group">
-                            <h3 className="font-bold text-gray-900 dark:text-white mb-1">The Grace of Kings</h3>
+            <div className="bg-slate-50 dark:bg-gray-800/50 p-6 sm:p-8 rounded-lg space-y-6 max-w-4xl mx-auto mb-16">
+                <div className="text-center mb-6">
+                    <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-3">Support This Wiki</h2>
+                    <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                        Your support helps keep this resource free for everyone! Consider purchasing the books through these affiliate links.
+                    </p>
+                </div>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 dark:border-gray-700 group">
+                        <div className="text-center">
+                            <h3 className="font-bold text-gray-900 dark:text-white mb-1 text-sm">The Grace of Kings</h3>
                             <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">Book 1</p>
-                            <a href="https://amzn.to/4lYVMGM" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 font-medium text-sm group-hover:underline">
-                                Buy on Amazon <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-                            </a>
-                        </div>
-                        
-                        <div className="bg-white dark:bg-gray-800 p-5 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 dark:border-gray-700 group">
-                            <h3 className="font-bold text-gray-900 dark:text-white mb-1">The Wall of Storms</h3>
-                            <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">Book 2</p>
-                            <a href="https://amzn.to/3IXJlMU" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 font-medium text-sm group-hover:underline">
-                                Buy on Amazon <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-                            </a>
-                        </div>
-                        
-                        <div className="bg-white dark:bg-gray-800 p-5 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 dark:border-gray-700 group">
-                            <h3 className="font-bold text-gray-900 dark:text-white mb-1">The Veiled Throne</h3>
-                            <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">Book 3</p>
-                            <a href="https://amzn.to/3Hcrgdj" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 font-medium text-sm group-hover:underline">
-                                Buy on Amazon <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-                            </a>
-                        </div>
-                        
-                        <div className="bg-white dark:bg-gray-800 p-5 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 dark:border-gray-700 group">
-                            <h3 className="font-bold text-gray-900 dark:text-white mb-1">Speaking Bones</h3>
-                            <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">Book 4</p>
-                            <a href="https://amzn.to/41kbNi5" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 font-medium text-sm group-hover:underline">
-                                Buy on Amazon <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                            <a href="https://amzn.to/4lYVMGM" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 font-medium text-xs group-hover:underline">
+                                Buy on Amazon <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                             </a>
                         </div>
                     </div>
                     
-                    {/* Alternative Support */}
-                    <div className="text-center">
-                        <div className="inline-flex items-center bg-white dark:bg-gray-800 px-4 py-2 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
-                            <span className="text-gray-600 dark:text-gray-400 text-sm mr-2">Or</span>
-                            <a href="https://buymeacoffee.com/darknebulax1" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 font-medium text-sm">
-                                ☕ Cup a coffee? <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                    <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 dark:border-gray-700 group">
+                        <div className="text-center">
+                            <h3 className="font-bold text-gray-900 dark:text-white mb-1 text-sm">The Wall of Storms</h3>
+                            <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">Book 2</p>
+                            <a href="https://amzn.to/3IXJlMU" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 font-medium text-xs group-hover:underline">
+                                Buy on Amazon <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                             </a>
                         </div>
+                    </div>
+                    
+                    <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 dark:border-gray-700 group">
+                        <div className="text-center">
+                            <h3 className="font-bold text-gray-900 dark:text-white mb-1 text-sm">The Veiled Throne</h3>
+                            <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">Book 3</p>
+                            <a href="https://amzn.to/3Hcrgdj" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 font-medium text-xs group-hover:underline">
+                                Buy on Amazon <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 dark:border-gray-700 group">
+                        <div className="text-center">
+                            <h3 className="font-bold text-gray-900 dark:text-white mb-1 text-sm">Speaking Bones</h3>
+                            <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">Book 4</p>
+                            <a href="https://amzn.to/41kbNi5" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 font-medium text-xs group-hover:underline">
+                                Buy on Amazon <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div className="text-center pt-4 border-t border-gray-200 dark:border-gray-700">
+                    <div className="flex items-center justify-center space-x-3">
+                        <span className="text-gray-600 dark:text-gray-400 text-sm">Or support directly:</span>
+                        <a href="https://buymeacoffee.com/darknebulax1" target="_blank" rel="noopener noreferrer" className="inline-flex items-center bg-white dark:bg-gray-800 px-3 py-2 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 font-medium text-sm transition-all duration-200 hover:shadow-md">
+                            ☕ Buy me a coffee <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -141,7 +146,7 @@ export default function AboutMePage() {
 
             {/* --- Signature --- */}
             <div className="text-center mt-16 pt-8 border-t border-gray-200 dark:border-gray-700 max-w-4xl mx-auto">
-                <p className="text-gray-500 dark:text-gray-400">- A Fan :)</p>
+                <p className="text-gray-500 dark:text-gray-400">The Universe Is Knowable ❤️</p>
             </div>
         </div>
     );

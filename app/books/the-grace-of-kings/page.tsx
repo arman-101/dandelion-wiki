@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import BookNavigation from '../../components/BookNavigation';
 import TopPageNavigation from '../../components/TopPageNavigation';
+import { formatAsteriskToBold } from '../../utils/textFormatting';
 
 // --- FULLY REVISED & COMPLETE DATA FOR THE GRACE OF KINGS ---
 const chapters = [
@@ -565,7 +566,7 @@ export default function GraceOfKingsPage() {
                                 &ldquo;{chapter.quote}&rdquo;
                                 <span className="block text-right not-italic font-semibold mt-2">&mdash; {chapter.speaker}</span>
                             </blockquote>
-                            <div className="my-4 text-gray-700 dark:text-gray-300 prose dark:prose-invert max-w-none" style={{ whiteSpace: 'pre-line' }}>{chapter.summary}</div>
+                            <div className="my-4 text-gray-700 dark:text-gray-300 prose dark:prose-invert max-w-none" style={{ whiteSpace: 'pre-line' }}>{formatAsteriskToBold(chapter.summary)}</div>
                             <div className="flex flex-wrap gap-2 pt-4 border-t border-gray-200 dark:border-gray-700">
                                 {chapter.links.map(link => (
                                     <Link key={link.name} href={link.path} className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-sm px-3 py-1 rounded-full hover:bg-teal-600 hover:text-white transition-colors">

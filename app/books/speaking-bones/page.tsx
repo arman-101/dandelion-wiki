@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import TopPageNavigation from '../../components/TopPageNavigation';
 import BookNavigation from '@/app/components/BookNavigation';
+import { formatAsteriskToBold } from '../../utils/textFormatting';
 
 // --- ACCURATE & DETAILED DATA FOR SPEAKING BONES ---
 const chapters = [
@@ -657,7 +658,7 @@ export default function SpeakingBonesPage() {
                                 &ldquo;{chapter.quote}&rdquo;
                                 <span className="block text-right not-italic font-semibold mt-2">&mdash; {chapter.speaker}</span>
                             </blockquote>
-                            <div className="my-4 text-gray-700 dark:text-gray-300 prose dark:prose-invert max-w-none" style={{ whiteSpace: 'pre-line' }}>{chapter.summary}</div>
+                            <div className="my-4 text-gray-700 dark:text-gray-300 prose dark:prose-invert max-w-none" style={{ whiteSpace: 'pre-line' }}>{formatAsteriskToBold(chapter.summary)}</div>
                             <div className="flex flex-wrap gap-2 pt-4 border-t border-gray-200 dark:border-gray-700">
                                 {chapter.links.map(link => (
                                     <Link key={link.name} href={link.path} className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-sm px-3 py-1 rounded-full hover:bg-teal-600 hover:text-white transition-colors">

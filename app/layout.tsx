@@ -25,11 +25,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      
-      <head>
-        <link rel="icon" href="icon.png" sizes="any" />
-      </head>
-
       <body className={`${inter.className} bg-gray-50 dark:bg-gray-950 text-gray-800 dark:text-gray-200`} suppressHydrationWarning>
         <ThemeProviders>
           <div className="min-h-screen flex flex-col">

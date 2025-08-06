@@ -133,7 +133,7 @@ export const ALL_CHARACTERS_DATA = [
     { name: "The Sword-Saint", description: "A legendary warrior from Eseeran Nomnny who trains Aya Mazoti.", image: "/characters/the-sword-saint.png", link: "/characters/the-sword-saint" },
     { name: "Ouro", description: "A Lyucu defector and master garinafin rider who trains Emperor Phyro's new aerial force.", image: "/characters/ouro.png", link: "/characters/ouro" },
     { name: "Gori Ruthi", description: "Nephew of Zato Ruthi, a Moralist scholar and official in the Dandelion court.", image: "/characters/gori-ruthi.png", link: "/characters/gori-ruthi" },
-    { name: "Prince Gimoto", description: "A character who plays a role in the events of the series.", image: "/characters/prince-gimoto.png", link: "/characters/prince-gimoto" },
+    { name: "Prince Gimoto", description: "Prince Gimoto is the son of Kado Garu and the nephew of Emperor Ragin (Kuni Garu).", image: "/characters/prince-gimoto.png", link: "/characters/prince-gimoto" },
 ];
 
 // --- MASTER DATA FOR CONCEPTS LISTING PAGE ---

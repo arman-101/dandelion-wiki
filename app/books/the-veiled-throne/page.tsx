@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import BookNavigation from '../../components/BookNavigation';
 import TopPageNavigation from '../../components/TopPageNavigation';
+import { formatAsteriskToBold } from '../../utils/textFormatting';
 
 // --- ACCURATE & DETAILED DATA FOR THE VEILED THRON ---
 const chapters = [
@@ -164,7 +165,7 @@ const chapters = [
         date: "SECRET AGON BASE IN KIRI VALLEY: THE TWELFTH MONTH IN THE EIGHTH YEAR AFTER THÉRA'S DEPARTURE",
         quote: "Even if they were to invent an alphabet from scratch... how could mere writing hope to capture the nuances of tone and timbre... in short, the entirety of the experience of being alive here, in this moment?",
         speaker: "Narrator",
-        summary: "Théra, taking Thoryo's advice, decides to spend a day playing with her sons on their own terms. They show her their masterpiece: a complex, wind-powered automaton—an *arucuro tocua* or 'living bones'—made from the bones of various animals, fish scales, and slisli fly wings. Théra is stunned by the intricate engineering, a native tradition of machinery completely alien to Dara's silkpunk technology. She also has a tense confrontation with the aged shaman Adyulek over the value of oral versus written traditions. Adyulek demonstrates the power of oral storytelling with a 'voice painting' ritual, a performance using colored dust on a vibrating drum skin to create abstract images representing the tribe's history. Théra has a profound realization about the limitations of writing and the deep, embodied wisdom of Agon culture. The celebration is shattered when the secret base is discovered and attacked by a massive Lyucu force.",
+        summary: "Théra, taking Thoryo's advice, decides to spend a day playing with her sons on their own terms. They show her their masterpiece: a complex, wind-powered automaton—an *arucuro tocua* or 'living bones'—made from the bones of various animals, fish scales, and slisli fly wings. Théra is stunned by the intricate engineering, a native tradition of machinery completely alien to Dara's silkpunk technology. She also has a tense confrontation with the aged shaman Adyulek over the value of oral versus written traditions. Adyulek demonstrates the power of oral storytelling with a 'voice painting' ritual, a performance using colored dust on a vibrating drum skin to create abstract images representing the tribe's history. Théra has a profound realization about the limitations of writing and the deep, embodied wisdom of Agon culture.",
         links: [{ name: "Kiri Valley", path: "/places/kiri-valley" }, { name: "Princess Théra", path: "/characters/princess-thera" }, { name: "Tanto Aragoz", path: "/characters/tanto-aragoz" }, { name: "Rokiri Aragoz", path: "/characters/rokiri-aragoz" }]
     },
     {
@@ -526,7 +527,7 @@ export default function VeiledThronePage() {
                                 &ldquo;{chapter.quote}&rdquo;
                                 <span className="block text-right not-italic font-semibold mt-2">&mdash; {chapter.speaker}</span>
                             </blockquote>
-                            <div className="my-4 text-gray-700 dark:text-gray-300 prose dark:prose-invert max-w-none" style={{ whiteSpace: 'pre-line' }}>{chapter.summary}</div>
+                            <div className="my-4 text-gray-700 dark:text-gray-300 prose dark:prose-invert max-w-none" style={{ whiteSpace: 'pre-line' }}>{formatAsteriskToBold(chapter.summary)}</div>
                             <div className="flex flex-wrap gap-2 pt-4 border-t border-gray-200 dark:border-gray-700">
                                 {chapter.links.map(link => (
                                     <Link key={link.name} href={link.path} className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-sm px-3 py-1 rounded-full hover:bg-teal-600 hover:text-white transition-colors">
