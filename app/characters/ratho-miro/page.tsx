@@ -16,7 +16,9 @@ const characterData: Character = {
         placeOfBirth: { text: "Cocru", link: "/places/cocru" },
         status: "Deceased",
         gender: "Male",
-        relatives: "Dafiro Miro (brother)",
+        relatives: [
+            { text: "Dafiro Miro (brother)", link: "/characters/dafiro-miro" }
+        ],
         affiliation: "Cocru Army, Hegemon's Court",
         nationality: { text: "Cocru", link: "/places/cocru" },
         firstAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" },

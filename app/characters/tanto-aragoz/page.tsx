@@ -16,7 +16,13 @@ const characterData: Character = {
         placeOfBirth: { text: "Ukyu-Gondé", link: "/places/ukyu-gonde" },
         status: "Alive",
         gender: "Male",
-        relatives: "Princess Théra (mother), Takval Aragoz (father), Rokiri Aragoz (brother), Kuni Garu (grandfather), Jia Matiza (grandmother)",
+        relatives: [
+            { text: "Princess Théra (mother)", link: "/characters/princess-thera" },
+            { text: "Takval Aragoz (father)", link: "/characters/takval-aragoz" },
+            { text: "Rokiri Aragoz (brother)", link: "/characters/rokiri-aragoz" },
+            { text: "Kuni Garu (grandfather)", link: "/characters/kuni-garu" },
+            { text: "Jia Matiza (grandmother)", link: "/characters/jia-matiza" }
+        ],
         affiliation: "Agon Rebellion",
         nationality: "Daran-Agon",
         firstAppeared: { text: "The Veiled Throne", link: "/books/the-veiled-throne" },
@@ -30,7 +36,7 @@ const characterData: Character = {
         {
             era: "The Veiled Throne",
             summary: [
-                { type: 'text', content: "Tanto was born and raised in the secret Agon base in Kiri Valley. He and his brother Rokiri were captured by the Lyucu during Cudyu Roatan's devastating attack on the base. His fate after his capture remains a central question driving the narrative forward." },
+                { type: 'text', content: "Tanto was born and raised in the secret [[Agon|/concepts/agon]] base in [[Kiri Valley|/places/kiri-valley]]. He and his brother [[Rokiri Aragoz|/characters/rokiri-aragoz]] were captured by the [[Lyucu|/concepts/lyucu]] during [[Cudyu Roatan|/characters/cudyu-roatan]]'s devastating attack on the base. His fate after his capture remains a central question driving the narrative forward." },
                 { type: 'ref', data: { book: "The Veiled Throne", chapter: 27, link: "/books/the-veiled-throne#chapter-27" } },
             ]
         },

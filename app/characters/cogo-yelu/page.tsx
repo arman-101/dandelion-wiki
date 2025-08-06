@@ -29,11 +29,11 @@ const characterData: Character = {
         {
             era: "The Grace of Kings",
             summary: [
-                { type: 'text', content: "Cogo was an early friend of Kuni Garu, helping him secure a job as a corvée guard which allowed Kuni to marry Jia Matiza." },
+                { type: 'text', content: "Cogo was an early friend of [[Kuni Garu|/characters/kuni-garu]], helping him secure a job as a corvée guard which allowed Kuni to marry [[Jia Matiza|/characters/jia-matiza]]." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 4, link: "/books/the-grace-of-kings#chapter-4" } },
-                { type: 'text', content: "After Kuni captured Zudi, Cogo became his chief administrator. His most famous innovation was a lottery system where purchase receipts served as tickets, a brilliant scheme that turned every citizen into a de facto tax collector and solved the new government's revenue problems." },
+                { type: 'text', content: "After Kuni captured [[Zudi|/places/zudi]], Cogo became his chief administrator. His most famous innovation was a lottery system where purchase receipts served as tickets, a brilliant scheme that turned every citizen into a de facto tax collector and solved the new government's revenue problems." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 14, link: "/books/the-grace-of-kings#chapter-14" } },
-                { type: 'text', content: "He followed Kuni into exile on Dasu, where he oversaw the practical work of transforming the barren island into a productive and thriving state." },
+                { type: 'text', content: "He followed Kuni into exile on [[Dasu|/places/dasu]], where he oversaw the practical work of transforming the barren island into a productive and thriving state." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 36, link: "/books/the-grace-of-kings#chapter-36" } },
             ]
         },

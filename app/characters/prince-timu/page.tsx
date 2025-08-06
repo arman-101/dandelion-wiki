@@ -17,7 +17,13 @@ const characterData: Character = {
         status: "Alive",
         gender: "Male",
         significantOther: { text: "Tanvanaki", link: "/characters/tanvanaki" },
-        relatives: "Kuni Garu (father), Jia Matiza (mother), Princess Théra (sister), Prince Phyro (brother), Princess Fara (sister)",
+        relatives: [
+            { text: "Kuni Garu (father)", link: "/characters/kuni-garu" },
+            { text: "Jia Matiza (mother)", link: "/characters/jia-matiza" },
+            { text: "Princess Théra (sister)", link: "/characters/princess-thera" },
+            { text: "Prince Phyro (brother)", link: "/characters/prince-phyro" },
+            { text: "Princess Fara (sister)", link: "/characters/princess-fara" }
+        ],
         affiliation: "Dandelion Court, Lyucu Occupation Government",
         nationality: "Dara",
         firstAppeared: { text: "The Wall of Storms", link: "/books/the-wall-of-storms" },
@@ -31,18 +37,18 @@ const characterData: Character = {
         {
             era: "The Wall of Storms",
             summary: [
-                { type: 'text', content: "As part of Empress Jia's plan to give her sons experience, Timu was sent to govern the island of Dasu." },
+                { type: 'text', content: "As part of [[Empress Jia|/characters/jia-matiza]]'s plan to give her sons experience, Timu was sent to govern the island of [[Dasu|/places/dasu]]." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 22, link: "/books/the-wall-of-storms#chapter-22" } },
-                { type: 'text', content: "When the Lyucu invasion began, their forces quickly overwhelmed Dasu's defenses. Seeing the hopelessness of the situation and the slaughter of civilians, Prince Timu made the courageous choice to surrender himself to prevent further bloodshed, becoming a captive of Pékyu Tenryo." },
+                { type: 'text', content: "When the [[Lyucu|/concepts/lyucu]] invasion began, their forces quickly overwhelmed [[Dasu|/places/dasu]]'s defenses. Seeing the hopelessness of the situation and the slaughter of civilians, Prince Timu made the courageous choice to surrender himself to prevent further bloodshed, becoming a captive of [[Pekyu Tenryo|/characters/pekyu-tenryo]]." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 37, link: "/books/the-wall-of-storms#chapter-37" } },
-                { type: 'text', content: "In captivity, he fell in love with the Lyucu princess Tanvanaki (Vadyu), who manipulated him into becoming a puppet emperor for the Lyucu. Believing he was forging a path to peace, he publicly denounced his own family and claimed the throne for himself, a profound betrayal that broke his father's heart." },
+                { type: 'text', content: "In captivity, he fell in love with the [[Lyucu|/concepts/lyucu]] princess [[Tanvanaki|/characters/tanvanaki]] (Vadyu), who manipulated him into becoming a puppet emperor for the Lyucu. Believing he was forging a path to peace, he publicly denounced his own family and claimed the throne for himself, a profound betrayal that broke his father's heart." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 56, link: "/books/the-wall-of-storms#chapter-56" } },
             ]
         },
         {
             era: "The Veiled Throne & Speaking Bones",
             summary: [
-                { type: 'text', content: "As the puppet 'Emperor Thaké,' Timu's life is one of constant humiliation and compromise. He is forced by the hardline thane Cutanrovo Aga to participate in rituals to destroy the temples and books of his own culture. He tries to protect his people from the inside, but he is largely powerless, caught between his love for his new family and his duty to his old one." },
+                { type: 'text', content: "As the puppet 'Emperor Thaké,' Timu's life is one of constant humiliation and compromise. He is forced by the hardline thane [[Cutanrovo Aga|/characters/cutanrovo-aga]] to participate in rituals to destroy the temples and books of his own culture. He tries to protect his people from the inside, but he is largely powerless, caught between his love for his new family and his duty to his old one." },
                 { type: 'ref', data: { book: "The Veiled Throne", chapter: 16, link: "/books/the-veiled-throne#chapter-16" } },
                 { type: 'ref', data: { book: "The Veiled Throne", chapter: 30, link: "/books/the-veiled-throne#chapter-30" } },
                 { type: 'text', content: "His story is a tragic exploration of collaboration and resistance, as he struggles to maintain his identity and protect what he can of Dara's culture under the heel of a brutal occupation." },

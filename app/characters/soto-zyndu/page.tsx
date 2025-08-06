@@ -16,7 +16,11 @@ const characterData: Character = {
         placeOfBirth: { text: "Cocru", link: "/places/cocru" },
         status: "Alive",
         gender: "Female",
-        relatives: "Dazu Zyndu (father), Phin Zyndu (brother), Mata Zyndu (nephew)",
+        relatives: [
+            { text: "Dazu Zyndu (father)", link: "" },
+            { text: "Phin Zyndu (brother)", link: "/characters/phin-zyndu" },
+            { text: "Mata Zyndu (nephew)", link: "/characters/mata-zyndu" }
+        ],
         affiliation: "House of Zyndu, Dandelion Court",
         nationality: { text: "Cocru", link: "/places/cocru" },
         firstAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" },

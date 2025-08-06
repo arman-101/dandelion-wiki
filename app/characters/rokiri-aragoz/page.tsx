@@ -16,7 +16,13 @@ const characterData: Character = {
         placeOfBirth: { text: "Ukyu-Gondé", link: "/places/ukyu-gonde" },
         status: "Alive",
         gender: "Male",
-        relatives: "Princess Théra (mother), Takval Aragoz (father), Tanto Aragoz (brother), Kuni Garu (grandfather), Jia Matiza (grandmother)",
+        relatives: [
+            { text: "Princess Théra (mother)", link: "/characters/princess-thera" },
+            { text: "Takval Aragoz (father)", link: "/characters/takval-aragoz" },
+            { text: "Tanto Aragoz (brother)", link: "/characters/tanto-aragoz" },
+            { text: "Kuni Garu (grandfather)", link: "/characters/kuni-garu" },
+            { text: "Jia Matiza (grandmother)", link: "/characters/jia-matiza" }
+        ],
         affiliation: "Agon Rebellion",
         nationality: "Daran-Agon",
         firstAppeared: { text: "The Veiled Throne", link: "/books/the-veiled-throne" },
@@ -30,7 +36,7 @@ const characterData: Character = {
         {
             era: "The Veiled Throne",
             summary: [
-                { type: 'text', content: "Rokiri was born in the secret Agon base in Kiri Valley. He was captured by Lyucu forces under the command of his uncle, Cudyu Roatan, during the surprise attack that destroyed the base. His and his brother's capture becomes a primary motivation for Théra's continued rebellion." },
+                { type: 'text', content: "Rokiri was born in the secret [[Agon|/concepts/agon]] base in [[Kiri Valley|/places/kiri-valley]]. He was captured by [[Lyucu|/concepts/lyucu]] forces under the command of his uncle, [[Cudyu Roatan|/characters/cudyu-roatan]], during the surprise attack that destroyed the base. His and his brother's capture becomes a primary motivation for [[Princess Théra|/characters/princess-thera]]'s continued rebellion." },
                 { type: 'ref', data: { book: "The Veiled Throne", chapter: 27, link: "/books/the-veiled-throne#chapter-27" } },
             ]
         },

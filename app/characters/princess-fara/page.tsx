@@ -17,7 +17,13 @@ const characterData: Character = {
         status: "Alive",
         gender: "Female",
         significantOther: { text: "Kinri (Savo Ryoto)", link: "/characters/kinri" },
-        relatives: "Kuni Garu (father), Jia Matiza (mother), Prince Timu (brother), Princess Théra (sister), Prince Phyro (brother)",
+        relatives: [
+            { text: "Kuni Garu (father)", link: "/characters/kuni-garu" },
+            { text: "Jia Matiza (mother)", link: "/characters/jia-matiza" },
+            { text: "Prince Timu (brother)", link: "/characters/prince-timu" },
+            { text: "Princess Théra (sister)", link: "/characters/princess-thera" },
+            { text: "Prince Phyro (brother)", link: "/characters/prince-phyro" }
+        ],
         affiliation: "Dandelion Court, The Blossom Gang",
         nationality: "Dara",
         firstAppeared: { text: "The Wall of Storms", link: "/books/the-wall-of-storms" },
@@ -32,11 +38,11 @@ const characterData: Character = {
         {
             era: "The Veiled Throne",
             summary: [
-                { type: 'text', content: "Years after the war, Fara has grown into a talented young artist. Under the guise of 'Dandelion,' she travels to Ginpen and becomes embroiled in a rivalry between two restaurants. She allies with the underdog Splendid Urn and the brilliant outcasts of the Blossom Gang. Together, they use storytelling and incredible 'silkpunk' inventions—like self-driving delivery carts and a thrilling cart ride—to defeat their wealthy and unscrupulous rival, Tiphan Huto." },
+                { type: 'text', content: "Years after the war, Fara has grown into a talented young artist. Under the guise of 'Dandelion,' she travels to [[Ginpen|/places/ginpen]] and becomes embroiled in a rivalry between two restaurants. She allies with the underdog Splendid Urn and the brilliant outcasts of the [[Blossom Gang|/concepts/the-blossom-gang]]. Together, they use storytelling and incredible 'silkpunk' inventions—like self-driving delivery carts and a thrilling cart ride—to defeat their wealthy and unscrupulous rival, [[Tiphan Huto|/characters/tiphan-huto]]." },
                 { type: 'ref', data: { book: "The Veiled Throne", chapter: 18, link: "/books/the-veiled-throne#chapter-18" } },
                 { type: 'ref', data: { book: "The Veiled Throne", chapter: 21, link: "/books/the-veiled-throne#chapter-21" } },
                 { type: 'ref', data: { book: "The Veiled Throne", chapter: 22, link: "/books/the-veiled-throne#chapter-22" } },
-                { type: 'text', content: "During this time, she meets and falls in love with Kinri, a young Lyucu refugee. Their investigation into Tiphan Huto's crimes leads them to the secret Imperial research facility, Last Bite, where Kinri's true identity as Zomi Kidosu's brother is revealed. The revelation creates a painful rift between them, as Kinri embraces his Lyucu heritage." },
+                { type: 'text', content: "During this time, she meets and falls in love with [[Kinri|/characters/kinri]], a young Lyucu refugee. Their investigation into [[Tiphan Huto|/characters/tiphan-huto]]'s crimes leads them to the secret Imperial research facility, [[Last Bite|/places/last-bite]], where Kinri's true identity as [[Zomi Kidosu|/characters/zomi-kidosu]]'s brother is revealed. The revelation creates a painful rift between them, as Kinri embraces his Lyucu heritage." },
                 { type: 'ref', data: { book: "The Veiled Throne", chapter: 46, link: "/books/the-veiled-throne#chapter-46" } },
                 { type: 'ref', data: { book: "The Veiled Throne", chapter: 47, link: "/books/the-veiled-throne#chapter-47" } },
             ]

@@ -16,7 +16,9 @@ const characterData: Character = {
         placeOfBirth: { text: "Cocru", link: "/places/cocru" },
         status: "Deceased",
         gender: "Male",
-        relatives: "Ratho Miro (brother)",
+        relatives: [
+            { text: "Ratho Miro (brother)", link: "/characters/ratho-miro" }
+        ],
         affiliation: "Dandelion Court, Empire of Dara",
         nationality: { text: "Cocru", link: "/places/cocru" },
         firstAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" },

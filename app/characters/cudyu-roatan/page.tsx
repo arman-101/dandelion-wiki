@@ -16,7 +16,10 @@ const characterData: Character = {
         placeOfBirth: { text: "Ukyu-Gondé", link: "/places/ukyu-gonde" },
         status: "Alive",
         gender: "Male",
-        relatives: "Pékyu Tenryo (father), Tanvanaki (sister)",
+        relatives: [
+            { text: "Pekyu Tenryo (father)", link: "/characters/pekyu-tenryo" },
+            { text: "Tanvanaki (sister)", link: "/characters/tanvanaki" }
+        ],
         affiliation: "Lyucu Empire",
         nationality: { text: "Lyucu", link: "/places/lyucu" },
         firstAppeared: { text: "The Wall of Storms", link: "/books/the-wall-of-storms" },

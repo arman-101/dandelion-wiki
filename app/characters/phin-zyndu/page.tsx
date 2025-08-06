@@ -17,7 +17,11 @@ const characterData: Character = {
         status: "Deceased",
         gender: "Male",
         significantOther: { text: "Princess Kikomi", link: "/characters/princess-kikomi" },
-        relatives: "Dazu Zyndu (father), Mata Zyndu (nephew), Soto Zyndu (sister)",
+        relatives: [
+            { text: "Dazu Zyndu (father)", link: "" },
+            { text: "Mata Zyndu (nephew)", link: "/characters/mata-zyndu" },
+            { text: "Soto Zyndu (sister)", link: "/characters/soto-zyndu" }
+        ],
         affiliation: "House of Zyndu, Cocru Army",
         nationality: { text: "Cocru", link: "/places/cocru" },
         firstAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" },

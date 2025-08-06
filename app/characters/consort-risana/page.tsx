@@ -44,12 +44,12 @@ const characterData: Character = {
         {
             era: "The Wall of Storms",
             summary: [
-                { type: 'text', content: "As Imperial Consort, Risana became the mother of Prince Phyro and the respected leader of the court's military faction. Her gentle but firm influence provided a crucial balance to Empress Jia's more rigid, bureaucratic approach to governance." },
+                { type: 'text', content: "As Imperial Consort and mother of Prince Phyro, Risana becomes the respected leader of the court's military faction. Her gentle influence provides a crucial balance to Empress Jia's bureaucratic approach to governance." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 8, link: "/books/the-wall-of-storms#chapter-8" } },
-                { type: 'text', content: " During the rebellion of Théca Kimo in Arulugi, Risana's skills proved decisive. She used her illusionary smokecraft to create phantom ships and conceal troop movements, leading to a swift and stunning victory for the Imperial forces." },
+                { type: 'text', content: " During the rebellion of Théca Kimo in Arulugi, her illusionary smokecraft proves decisive, creating phantom ships and concealing troop movements to secure a stunning Imperial victory." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 32, link: "/books/the-wall-of-storms#chapter-32" } },
-                { type: 'text', content: " In 'The Veiled Throne' and 'Speaking Bones', Risana's influence continues through her son, Emperor Phyro, who inherits her connection to the military and her appreciation for unconventional warfare, such as the silkmotic force." },
-                { type: 'ref', data: { book: "The Wall of Storms", chapter: 55, link: "/books/the-wall-of-storms#chapter-55" } },
+                { type: 'text', content: " After the death of Emperor Ragin and the departure of Empress Üna, Empress Regent Jia sees Risana as a political rival for the regency. Jia confronts Risana and gives her an ultimatum: take her own life to ensure a stable, unified court, or risk a devastating civil war. In a final act of sacrifice for the dynasty and to protect her son's future, Risana drinks poisoned tea and dies, ceding total control of the empire to Jia." },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 62, link: "/books/the-wall-of-storms#chapter-62" } },
             ]
         },
     ]

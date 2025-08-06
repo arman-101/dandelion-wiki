@@ -17,7 +17,10 @@ const characterData: Character = {
         status: "Alive",
         gender: "Female",
         significantOther: { text: "Prince Timu", link: "/characters/prince-timu" },
-        relatives: "Pékyu Tenryo (father), Cudyu Roatan (brother)",
+        relatives: [
+            { text: "Pekyu Tenryo (father)", link: "/characters/pekyu-tenryo" },
+            { text: "Cudyu Roatan (brother)", link: "/characters/cudyu-roatan" }
+        ],
         affiliation: "Lyucu Empire",
         nationality: { text: "Lyucu", link: "/places/lyucu" },
         firstAppeared: { text: "The Wall of Storms", link: "/books/the-wall-of-storms" },

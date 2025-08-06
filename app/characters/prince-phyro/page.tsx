@@ -16,7 +16,13 @@ const characterData: Character = {
         placeOfBirth: { text: "Zudi", link: "/places/zudi" },
         status: "Alive",
         gender: "Male",
-        relatives: "Kuni Garu (father), Consort Risana (mother), Prince Timu (brother), Princess Théra (sister), Princess Fara (sister)",
+        relatives: [
+            { text: "Kuni Garu (father)", link: "/characters/kuni-garu" },
+            { text: "Consort Risana (mother)", link: "/characters/consort-risana" },
+            { text: "Prince Timu (brother)", link: "/characters/prince-timu" },
+            { text: "Princess Théra (sister)", link: "/characters/princess-thera" },
+            { text: "Princess Fara (sister)", link: "/characters/princess-fara" }
+        ],
         affiliation: "Dandelion Court, Empire of Dara",
         nationality: "Dara",
         firstAppeared: { text: "The Wall of Storms", link: "/books/the-wall-of-storms" },
@@ -31,10 +37,10 @@ const characterData: Character = {
         {
             era: "The Wall of Storms",
             summary: [
-                { type: 'text', content: "As a boy, Phyro showed early signs of his adventurous spirit. He was sent by his mother, Empress Jia, to pacify the Hegemon cults in Tunoa, where he was besieged and ultimately saved by his sister Théra's intervention." },
+                { type: 'text', content: "As a boy, Phyro showed early signs of his adventurous spirit. He was sent by his mother, [[Empress Jia|/characters/jia-matiza]], to pacify the Hegemon cults in [[Tunoa Islands|/places/tunoa-islands]], where he was besieged and ultimately saved by his sister [[Princess Théra|/characters/princess-thera]]'s intervention." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 22, link: "/books/the-wall-of-storms#chapter-22" } },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 27, link: "/books/the-wall-of-storms#chapter-27" } },
-                { type: 'text', content: "After Théra abdicated, Phyro was named the new emperor. He traveled to Faça with his mother, Consort Risana, to investigate the silkmotic force, recognizing its potential as a new weapon." },
+                { type: 'text', content: "After [[Princess Théra|/characters/princess-thera]] abdicated, Phyro was named the new emperor. He traveled to [[Faca|/places/faca]] with his mother, [[Consort Risana|/characters/consort-risana]], to investigate the [[silkmotic force|/concepts/silkmotic-force]], recognizing its potential as a new weapon." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 39, link: "/books/the-wall-of-storms#chapter-39" } },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 55, link: "/books/the-wall-of-storms#chapter-55" } },
             ]
@@ -42,7 +48,7 @@ const characterData: Character = {
         {
             era: "The Veiled Throne & Speaking Bones",
             summary: [
-                { type: 'text', content: "As the young Emperor Monadétu, Phyro chafed under his mother Jia's regency and her pacifist policies toward the Lyucu. He secretly established a garinafin training base at Tiro Cozo, working with the Lyucu defector Ouro to build a new aerial army in defiance of his mother's orders." },
+                { type: 'text', content: "As the young Emperor Monadétu, Phyro chafed under his mother [[Empress Jia|/characters/jia-matiza]]'s regency and her pacifist policies toward the [[Lyucu|/concepts/lyucu]]. He secretly established a [[garinafin|/concepts/garinafin]] training base at [[Tiro Cozo|/places/tiro-cozo]], working with the Lyucu defector [[Ouro|/characters/ouro]] to build a new aerial army in defiance of his mother's orders." },
                 { type: 'ref', data: { book: "The Veiled Throne", chapter: 40, link: "/books/the-veiled-throne#chapter-40" } },
                 { type: 'ref', data: { book: "Speaking Bones", chapter: 3, link: "/books/speaking-bones#chapter-3" } },
                 { type: 'text', content: "His secret army and rebellion against his mother's strategy became a key factor in the final war for Dara. He led his new garinafin force in the desperate final assault on the Lyucu stronghold, proving himself a worthy successor to his father's legacy as a warrior-king." },

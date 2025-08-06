@@ -39,9 +39,9 @@ const characterData: Character = {
             summary: [
                 { type: 'text', content: "An orphan from a brothel in Dimushi, Gin survived on the streets before disguising herself as a boy to work on the docks. She served in various rebel armies as a quartermaster, constantly frustrated as her brilliant strategic advice was ignored by arrogant nobles." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 40, link: "/books/the-grace-of-kings#chapter-40" } },
-                { type: 'text', content: "She eventually found her way to Kuni Garu in Dasu. After she bested his top advisor, Cogo Yelu, in a game of cüpa, Kuni recognized her genius. In a revolutionary act, he revealed her as a woman to his entire army and promoted her to Marshal." },
+                { type: 'text', content: "She eventually found her way to [[Kuni Garu|/characters/kuni-garu]] in [[Dasu|/places/dasu]]. After she bested his top advisor, [[Cogo Yelu|/characters/cogo-yelu]], in a game of cüpa, Kuni recognized her genius. In a revolutionary act, he revealed her as a woman to his entire army and promoted her to Marshal." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 41, link: "/books/the-grace-of-kings#chapter-41" } },
-                { type: 'text', content: " Gin's brilliant strategies—including the surprise attack on Rui through the Grand Tunnels and her conquest of the northern states of Rima and Faça—were the key to Kuni's victory over Mata Zyndu. For her victories, Kuni eventually named her Queen of Géjira." },
+                { type: 'text', content: " Gin's brilliant strategies—including the surprise attack on [[Rui|/places/rui]] through the Grand Tunnels and her conquest of the northern states of [[Rima|/places/rima]] and [[Faca|/places/faca]]—were the key to Kuni's victory over [[Mata Zyndu|/characters/mata-zyndu]]. For her victories, Kuni eventually named her Queen of [[Gejira|/places/gejira]]." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 43, link: "/books/the-grace-of-kings#chapter-43" } },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 48, link: "/books/the-grace-of-kings#chapter-48" } },
                  { type: 'ref', data: { book: "The Grace of Kings", chapter: 51, link: "/books/the-grace-of-kings#chapter-51" } },

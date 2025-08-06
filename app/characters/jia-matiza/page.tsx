@@ -54,14 +54,19 @@ const characterData: Character = {
         {
             era: "The Wall of Storms",
             summary: [
-                { type: 'text', content: "As Empress, Jia's primary concern is the stability of the dynasty and the coming succession crisis between her sons. She clashes with Marshal Gin Mazoti over economic policy, representing the agrarian traditionalists against the rising merchant class." },
-                { type: 'ref', data: { book: "The Wall of Storms", chapter: 13, link: "/books/the-wall-of-storms#chapter-13" } },
-                { type: 'text', content: " To secure the empire's future, she orchestrates a grand, ruthless political gambit. She secretly funds the Hegemon cults to create a crisis, frames Duke Théca Kimo for the rebellion, and uses the ensuing chaos to arrest and neutralize Gin Mazoti, her most powerful political rival." },
+                { type: 'text', content: "As Empress, Jia's primary concern becomes the long-term stability of the dynasty. Believing that powerful, independent military nobles pose a threat to lasting peace, she orchestrates a ruthless multi-year plot to neutralize them." },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 22, link: "/books/the-wall-of-storms#chapter-22" } },
+                { type: 'text', content: " She secretly funds the Hegemon cults to create a crisis, manipulates her own Farsight Secretary Rin Coda, and successfully frames Duke Théca Kimo for treason." },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 21, link: "/books/the-wall-of-storms#chapter-21" } },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 25, link: "/books/the-wall-of-storms#chapter-25" } },
+                { type: 'text', content: " Her endgame is to ensnare her greatest political rival, Marshal Gin Mazoti. Using blackmail, she coerces Zomi Kidosu into signing a false confession that implicates Gin, leading to the marshal's arrest and disgrace." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 29, link: "/books/the-wall-of-storms#chapter-29" } },
-                { type: 'text', content: " When the Lyucu invade, she confesses her entire plot to Gin and begs her to save Dara, forming a pragmatic alliance with her former enemy. She later orchestrates an act of biological warfare, using locusts to destroy the garinafin food supply, crippling the Lyucu's primary weapon." },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 30, link: "/books/the-wall-of-storms#chapter-30" } },
+                { type: 'text', content: " When the Lyucu invade, she forms a pragmatic alliance with a freed Gin and masterminds an act of biological warfare, unleashing locusts to destroy the garinafin food supply." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 38, link: "/books/the-wall-of-storms#chapter-38" } },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 57, link: "/books/the-wall-of-storms#chapter-57" } },
+                { type: 'text', content: " After Kuni's death, she becomes Regent and outmaneuvers Consort Risana for control of the court, culminating in Risana's tragic, coerced suicide." },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 62, link: "/books/the-wall-of-storms#chapter-62" } },
             ]
         },
         {

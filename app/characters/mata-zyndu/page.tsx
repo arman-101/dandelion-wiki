@@ -18,7 +18,8 @@ const characterData: Character = {
         status: "Deceased",
         gender: "Male",
         significantOther: [
-            { text: "Princess Kikomi", link: "/characters/princess-kikomi" }
+            { text: "Princess Kikomi", link: "/characters/princess-kikomi" },
+            { text: "Lady Mira", link: "/characters/lady-mira" }
         ],
         relatives: [
             { text: "Dazu Zyndu (grandfather)", link: "" },
@@ -31,10 +32,8 @@ const characterData: Character = {
         lastAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" }
     },
     appearanceAndPersonality: [
-        { type: 'text', content: "Mata Zyndu is described as physically imposing and extraordinarily strong, with a noble bearing that reflects his aristocratic heritage. His appearance is marked by his martial prowess and the weight of his family's tragic history." },
+        { type: 'text', content: "Mata Zyndu is described as physically imposing and extraordinarily strong, with a noble bearing that reflects his aristocratic heritage. [cite: 310] His most distinct feature is his rare, double-pupiled eyes, which are said to grant him supernatural sight and make it impossible for others to meet his gaze. [cite: 314, 315] His personality is defined by his unwavering commitment to honor, his deep sense of duty to his family's legacy, and his belief in the superiority of noble blood and martial virtue. He is a man of few words but immense action, whose presence commands respect and fear." },
         { type: 'ref', data: { book: "The Grace of Kings", chapter: 2, link: "/books/the-grace-of-kings#chapter-2" } },
-        { type: 'text', content: " His personality is defined by his unwavering commitment to honor, his deep sense of duty to his family's legacy, and his belief in the superiority of noble blood and martial virtue. He is a man of few words but immense action, whose presence commands respect and fear." },
-        { type: 'ref', data: { book: "The Grace of Kings", chapter: 21, link: "/books/the-grace-of-kings#chapter-21" } },
     ],
     history: [
         {
@@ -51,9 +50,9 @@ const characterData: Character = {
         {
             era: "Rebellion and Rise to Power (The Grace of Kings)",
             summary: [
-                { type: 'text', content: "When the rebellion against the Xana Empire begins, Mata seizes his opportunity for vengeance. He assassinates the local Xana commander, Datun Zatoma, and reclaims his ancestral castle, recovering his grandfather's legendary weapons: the composite bronze-and-steel sword Na-aroénna ('The Ender of Doubts') and the fearsome toothed cudgel Goremaw." },
+                { type: 'text', content: "When the rebellion against the Xana Empire begins, Mata seizes his opportunity for vengeance. He assassinates the local Xana commander and reclaims his ancestral castle, recovering his grandfather's legendary weapons: the composite bronze-and-steel sword Na-aroénna ('The Ender of Doubts') and the fearsome toothed cudgel Goremaw." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 7, link: "/books/the-grace-of-kings#chapter-7" } },
-                { type: 'text', content: " His godlike martial prowess is unleashed as he and Phin single-handedly slaughter most of the two-hundred-man Xana garrison in a brutal, bloody battle through the castle's halls. News of his incredible victory spreads, inspiring hundreds of volunteers to join his cause." },
+                { type: 'text', content: " His godlike martial prowess is unleashed as he and Phin single-handedly slaughter most of the two-hundred-man Xana garrison. News of his incredible victory spreads, inspiring hundreds of volunteers to join his cause." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 7, link: "/books/the-grace-of-kings#chapter-7" } },
                 { type: 'text', content: " He forms a crucial alliance and sworn brotherhood with Kuni Garu, becoming a key figure in the rebellion and eventually being named Marshal of Cocru." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 19, link: "/books/the-grace-of-kings#chapter-19" } },
@@ -62,21 +61,23 @@ const characterData: Character = {
         {
             era: "The Hegemon and Civil War (The Grace of Kings)",
             summary: [
-                { type: 'text', content: "After the fall of the Xana Empire, Mata becomes consumed by paranoia and betrayal. Believing that Kuni has stolen his glory by capturing Pan first, he burns the Imperial capital to the ground and declares himself Hegemon, the new de facto ruler of the Islands of Dara." },
+                { type: 'text', content: "After the fall of the Xana Empire, Mata becomes consumed by paranoia and betrayal. Believing that Kuni has stolen his glory by capturing Pan first, he burns the Imperial capital and declares himself Hegemon." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 33, link: "/books/the-grace-of-kings#chapter-33" } },
-                { type: 'text', content: " He redraws the map of Dara, creating a new political order that suits his vision of a restored world, and exiles Kuni to the remote island of Dasu. However, his reign is marked by brutality, most notably the massacre of 20,000 prisoners at Wolf's Paw, and the tragic death of his uncle Phin at the hands of Princess Kikomi, which devastates him emotionally." },
+                { type: 'text', content: " His reign is marked by brutality, most notably the massacre of 20,000 prisoners at Wolf's Paw. His emotional state deteriorates further after the tragic deaths of his uncle Phin and Princess Kikomi, which devastates him." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 31, link: "/books/the-grace-of-kings#chapter-31" } },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 27, link: "/books/the-grace-of-kings#chapter-27" } },
+                { type: 'text', content: " During this time, his only solace comes from his growing bond with Lady Mira, a woman from his homeland who becomes his confidante and reminds him of a life beyond war." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 33, link: "/books/the-grace-of-kings#chapter-33" } },
             ]
         },
         {
             era: "Final Battle and Death (The Grace of Kings)",
             summary: [
-                { type: 'text', content: "The civil war between Mata and Kuni culminates in a brutal conflict that lasts for years. After three years of grueling war, Mata's forces are starving and depleted. Kuni offers a peace treaty to divide the islands between them, which a weary Mata accepts." },
+                { type: 'text', content: "The civil war between Mata and Kuni culminates in a brutal conflict. After three years of war, Mata's forces are starving and depleted. He accepts a peace treaty from Kuni, only for Kuni to break it and launch a massive surprise attack." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 50, link: "/books/the-grace-of-kings#chapter-50" } },
-                { type: 'text', content: " However, Luan Zya convinces Kuni that true, lasting peace is impossible while Mata lives, and Kuni breaks the treaty to launch a massive surprise attack. The final confrontation takes place at Rana Kida, where Mata, surrounded and with his army's morale broken, makes a final, heroic last stand with his most loyal followers." },
+                { type: 'text', content: " The final confrontation takes place at Rana Kida, where Mata's army is surrounded. As his army's morale collapses, he returns to his tent to discover that Lady Mira has taken her own life rather than watch him die. Her death is the final blow that shatters his will." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 50, link: "/books/the-grace-of-kings#chapter-50" } },
-                { type: 'text', content: " Facing insurmountable odds, he takes his own life on a snowy beach rather than be captured, ending the long and bloody Chrysanthemum-Dandelion War." },
+                { type: 'text', content: " After a final, heroic charge, he takes his own life on a snowy beach rather than be captured, ending the long and bloody Chrysanthemum-Dandelion War." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 50, link: "/books/the-grace-of-kings#chapter-50" } },
             ]
         },

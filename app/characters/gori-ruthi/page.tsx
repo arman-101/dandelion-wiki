@@ -16,7 +16,9 @@ const characterData: Character = {
         placeOfBirth: { text: "Rima", link: "/places/rima" },
         status: "Alive",
         gender: "Male",
-        relatives: "Zato Ruthi (uncle)",
+        relatives: [
+            { text: "Zato Ruthi (uncle)", link: "/characters/zato-ruthi" }
+        ],
         affiliation: "Dandelion Court",
         nationality: { text: "Rima", link: "/places/rima" },
         firstAppeared: { text: "The Veiled Throne", link: "/books/the-veiled-throne" },

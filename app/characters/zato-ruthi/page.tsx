@@ -16,7 +16,9 @@ const characterData: Character = {
         placeOfBirth: { text: "Rima", link: "/places/rima" },
         status: "Deceased",
         gender: "Male",
-        relatives: "Gori Ruthi (nephew)",
+        relatives: [
+            { text: "Gori Ruthi (nephew)", link: "/characters/gori-ruthi" }
+        ],
         affiliation: "Kingdom of Rima, Dandelion Court",
         nationality: { text: "Rima", link: "/places/rima" },
         firstAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" },

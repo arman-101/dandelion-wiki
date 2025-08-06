@@ -16,7 +16,10 @@ const characterData: Character = {
         placeOfBirth: { text: "Ukyu-Gondé", link: "/places/ukyu-gonde" },
         status: "Deceased",
         gender: "Male",
-        relatives: "Tanvanaki (daughter), Cudyu Roatan (son)",
+        relatives: [
+            { text: "Tanvanaki (daughter)", link: "/characters/tanvanaki" },
+            { text: "Cudyu Roatan (son)", link: "/characters/cudyu-roatan" }
+        ],
         affiliation: "Lyucu Empire",
         nationality: { text: "Lyucu", link: "/places/lyucu" },
         firstAppeared: { text: "The Wall of Storms", link: "/books/the-wall-of-storms" },

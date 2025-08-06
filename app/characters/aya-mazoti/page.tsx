@@ -16,7 +16,10 @@ const characterData: Character = {
         placeOfBirth: "Dara",
         status: "Alive",
         gender: "Female",
-        relatives: "Gin Mazoti (mother), Luan Zya (father)",
+        relatives: [
+            { text: "Gin Mazoti (mother)", link: "/characters/gin-mazoti" },
+            { text: "Luan Zya (father)", link: "/characters/luan-zya" }
+        ],
         affiliation: "Dandelion Court, Empire of Dara",
         nationality: "Dara",
         firstAppeared: { text: "The Veiled Throne", link: "/books/the-veiled-throne" },

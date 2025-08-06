@@ -21,6 +21,7 @@ export const CHARACTERS_BY_BOOK_NAV = {
         { name: "Goran Pira", description: "The Imperial Chatelain who secretly orchestrated the downfall of the Xana Dynasty out of a desire for revenge.", image: "/characters/goran-pira.png", link: "/characters/goran-pira" },
         { name: "Huno Krima", description: "The charismatic corvée laborer who sparked the first major rebellion against the Xana Empire.", image: "/characters/huno-krima.png", link: "/characters/huno-krima" },
         { name: "Princess Kikomi", description: "The beautiful and tragic princess of Amu whose actions have devastating consequences.", image: "/characters/princess-kikomi.png", link: "/characters/princess-kikomi" },
+        { name: "Lady Mira", description: "A woman from Tunoa who becomes the only person to understand the conflicted heart of Mata Zyndu.", image: "/characters/lady-mira.png", link: "/characters/lady-mira" },
     ],
     TWOS: [
         { name: "Kuni Garu", description: "Now Emperor Ragin, he faces threats from within his court and from a new invasion force.", image: "/characters/kuni-garu.png", link: "/characters/kuni-garu" },
@@ -91,6 +92,7 @@ export const ALL_CHARACTERS_DATA = [
     { name: "Huno Krima", description: "The charismatic corvée laborer who sparked the first major rebellion against the Xana Empire.", image: "/characters/huno-krima.png", link: "/characters/huno-krima" },
     { name: "Zopa Shigin", description: "A sturdy corvée laborer who becomes Huno Krima's co-conspirator in the first rebellion.", image: "/characters/zopa-shigin.png", link: "/characters/zopa-shigin" },
     { name: "Soto Zyndu", description: "The politically brilliant aunt of Mata Zyndu and a secret advisor to Empress Jia.", image: "/characters/soto-zyndu.png", link: "/characters/soto-zyndu" },
+    { name: "Lady Mira", description: "An embroiderer and singer from Tunoa who becomes Mata Zyndu's confidante, representing his only connection to peace and home.", image: "/characters/lady-mira.png", link: "/characters/lady-mira" },
     // The Wall of Storms
     { name: "Princess Thera", description: "The brilliant and adventurous eldest daughter of Emperor Ragin and Empress Jia. She later becomes Empress Üna.", image: "/characters/princess-thera.png", link: "/characters/princess-thera" },
     { name: "Zomi Kidosu", description: "A radical thinker and student of Luan Zya who champions innovation and meritocracy.", image: "/characters/zomi-kidosu.png", link: "/characters/zomi-kidosu" },

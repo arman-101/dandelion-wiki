@@ -23,9 +23,9 @@ const conceptData: Concept = {
     },
     details: [
       { type: "text" as const, content: "The Chrysanthemum is the last flower to bloom against the winter, representing defiance, nobility, and the refusal to bend to harsh circumstances. This symbolism perfectly captures Mata Zyndu's philosophy and character." },
-      { type: "text" as const, content: "Unlike the common dandelion that represents Kuni Garu's philosophy of resilience and adaptability, the chrysanthemum embodies traditional values, noble birth, and an unbending code of honor that refuses to compromise even in the face of overwhelming odds." },
-      { type: "text" as const, content: "Mata Zyndu's identification with the chrysanthemum reflects his background as the last heir of a once-great noble clan, his commitment to vengeance and honor, and his refusal to adapt his principles even when they lead to his downfall." },
-      { type: "text" as const, content: "The contrast between the chrysanthemum and the dandelion represents the central philosophical conflict of the series: tradition versus innovation, nobility versus meritocracy, and rigid honor versus pragmatic survival." }
+      { type: "text" as const, content: "Unlike the common [[dandelion|/concepts/dandelion]] that represents [[Kuni Garu|/characters/kuni-garu]]'s philosophy of resilience and adaptability, the chrysanthemum embodies traditional values, noble birth, and an unbending code of honor that refuses to compromise even in the face of overwhelming odds." },
+      { type: "text" as const, content: "[[Mata Zyndu|/characters/mata-zyndu]]'s identification with the chrysanthemum reflects his background as the last heir of a once-great noble clan, his commitment to vengeance and honor, and his refusal to adapt his principles even when they lead to his downfall." },
+      { type: "text" as const, content: "The contrast between the chrysanthemum and the [[dandelion|/concepts/dandelion]] represents the central philosophical conflict of the series: tradition versus innovation, nobility versus meritocracy, and rigid honor versus pragmatic survival." }
     ]
 };
 

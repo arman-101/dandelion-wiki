@@ -17,7 +17,12 @@ const characterData: Character = {
         status: "Alive",
         gender: "Male",
         significantOther: { text: "Princess Théra", link: "/characters/princess-thera" },
-        relatives: "Souliyan Aragoz (mother), Volyu Aragoz (uncle), Tanto Aragoz (son), Rokiri Aragoz (son)",
+        relatives: [
+            { text: "Souliyan Aragoz (mother)", link: "/characters/souliyan-aragoz" },
+            { text: "Volyu Aragoz (uncle)", link: "/characters/volyu-aragoz" },
+            { text: "Tanto Aragoz (son)", link: "/characters/tanto-aragoz" },
+            { text: "Rokiri Aragoz (son)", link: "/characters/rokiri-aragoz" }
+        ],
         affiliation: "Agon Rebellion",
         nationality: { text: "Agon", link: "/concepts/agon" },
         firstAppeared: { text: "The Wall of Storms", link: "/books/the-wall-of-storms" },

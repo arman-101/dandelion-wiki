@@ -35,7 +35,7 @@ const placeData: Place = {
         {
             event: "Pre-Rebellion",
             summary: [
-                { type: 'text', content: "Zudi was the site of the failed kite attack on Emperor Mapidéré, an event that profoundly influenced the young Kuni Garu. It was also where Kuni first met his future wife, Jia Matiza, after his clever defiance of a corrupt official in the city's marketplace." },
+                { type: 'text', content: "Zudi was the site of the failed kite attack on [[Emperor Mapidere|/characters/emperor-mapidere]], an event that profoundly influenced the young [[Kuni Garu|/characters/kuni-garu]]. It was also where Kuni first met his future wife, [[Jia Matiza|/characters/jia-matiza]], after his clever defiance of a corrupt official in the city's marketplace." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 1, link: "/books/the-grace-of-kings#chapter-1" } },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 3, link: "/books/the-grace-of-kings#chapter-3" } },
             ]
@@ -43,7 +43,7 @@ const placeData: Place = {
         {
             event: "The Dandelion Rebellion",
             summary: [
-                { type: 'text', content: "Kuni Garu captured Zudi early in the rebellion and proved to be a surprisingly effective administrator, restoring order and implementing a brilliant lottery-based tax system. The city then became a key rebel stronghold. It was the site of a major battle where Kuni and Mata Zyndu combined their skills—Kuni's tricks and Mata's valor—to break a siege led by the famed Xana general, Tanno Namen." },
+                { type: 'text', content: "[[Kuni Garu|/characters/kuni-garu]] captured Zudi early in the rebellion and proved to be a surprisingly effective administrator, restoring order and implementing a brilliant lottery-based tax system. The city then became a key rebel stronghold. It was the site of a major battle where Kuni and [[Mata Zyndu|/characters/mata-zyndu]] combined their skills—Kuni's tricks and Mata's valor—to break a siege led by the famed Xana general, [[Tanno Namen|/characters/tanno-namen]]." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 14, link: "/books/the-grace-of-kings#chapter-14" } },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 22, link: "/books/the-grace-of-kings#chapter-22" } },
             ]
@@ -51,9 +51,9 @@ const placeData: Place = {
         {
             event: "The Chrysanthemum-Dandelion War",
             summary: [
-                { type: 'text', content: "During the civil war, Zudi remained a key strategic prize. In a brilliant and daring counterattack, Mata Zyndu used his entire air force to drop his soldiers into the city via battle kites, retaking it in a stunning surprise assault and trapping Kuni and his family." },
+                { type: 'text', content: "During the civil war, Zudi remained a key strategic prize. In a brilliant and daring counterattack, [[Mata Zyndu|/characters/mata-zyndu]] used his entire air force to drop his soldiers into the city via battle kites, retaking it in a stunning surprise assault and trapping Kuni and his family." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 46, link: "/books/the-grace-of-kings#chapter-46" } },
-                { type: 'text', content: "After the war, on the eve of his coronation as emperor, Kuni Garu returned to Zudi to hold one last, informal banquet with his oldest friends, honoring his humble roots in the city where his journey began." },
+                { type: 'text', content: "After the war, on the eve of his coronation as emperor, [[Kuni Garu|/characters/kuni-garu]] returned to Zudi to hold one last, informal banquet with his oldest friends, honoring his humble roots in the city where his journey began." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 51, link: "/books/the-grace-of-kings#chapter-51" } },
             ]
         },

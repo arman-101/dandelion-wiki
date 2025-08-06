@@ -16,7 +16,10 @@ const characterData: Character = {
         placeOfBirth: { text: "Pan", link: "/places/pan" },
         status: "Deceased",
         gender: "Male",
-        relatives: "Emperor Mapidéré (father), Crown Prince Pulo (brother)",
+        relatives: [
+            { text: "Emperor Mapidere (father)", link: "/characters/emperor-mapidere" },
+            { text: "Crown Prince Pulo (brother)", link: "" }
+        ],
         affiliation: "House of Xana, Xana Empire",
         nationality: { text: "Xana", link: "/places/xana" },
         firstAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" },

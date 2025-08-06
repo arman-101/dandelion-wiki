@@ -16,7 +16,10 @@ const characterData: Character = {
         placeOfBirth: { text: "Ukyu-Gondé", link: "/places/ukyu-gonde" },
         status: "Alive",
         gender: "Male",
-        relatives: "Takval Aragoz (nephew), Souliyan Aragoz (sister)",
+        relatives: [
+            { text: "Takval Aragoz (nephew)", link: "/characters/takval-aragoz" },
+            { text: "Souliyan Aragoz (sister)", link: "/characters/souliyan-aragoz" }
+        ],
         affiliation: "Agon (Exiled), Lyucu Empire",
         nationality: { text: "Agon", link: "/concepts/agon" },
         firstAppeared: { text: "The Veiled Throne", link: "/books/the-veiled-throne" },

@@ -16,7 +16,12 @@ const characterData: Character = {
         placeOfBirth: { text: "Ukyu-Gondé", link: "/places/ukyu-gonde" },
         status: "Deceased",
         gender: "Female",
-        relatives: "Takval Aragoz (son), Volyu Aragoz (brother), Tanto Aragoz (grandson), Rokiri Aragoz (grandson)",
+        relatives: [
+            { text: "Takval Aragoz (son)", link: "/characters/takval-aragoz" },
+            { text: "Volyu Aragoz (brother)", link: "/characters/volyu-aragoz" },
+            { text: "Tanto Aragoz (grandson)", link: "/characters/tanto-aragoz" },
+            { text: "Rokiri Aragoz (grandson)", link: "/characters/rokiri-aragoz" }
+        ],
         affiliation: "Agon Rebellion",
         nationality: { text: "Agon", link: "/concepts/agon" },
         firstAppeared: { text: "The Veiled Throne", link: "/books/the-veiled-throne" },
