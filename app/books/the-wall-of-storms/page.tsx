@@ -631,7 +631,7 @@ export default function WallOfStormsPage() {
                                 Purchase on Amazon <ExternalLinkIcon />
                             </a>
                             <p className="text-xs text-gray-400 dark:text-gray-500 pt-2 italic">
-                                (As an Amazon Associate, I earn from qualifying purchases.)
+                                (If you purchase the book through this link, it&apos;ll give me a small kickback!)
                             </p>
                         </div>
                     </div>

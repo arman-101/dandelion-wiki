@@ -6,7 +6,7 @@ interface PageLink {
     path: string;
 }
 
-// Define the props for our new generic component
+// Define the props for the new generic component
 interface TopPageNavigationProps {
     prevPage?: PageLink | null;
     nextPage?: PageLink | null;

@@ -78,7 +78,7 @@ export default function FeedbackModal({ isOpen, onClose }: FeedbackModalProps) {
                         </div>
                         <div className="mb-4">
                             <label htmlFor="reason" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Reason</label>
-                            <select id="reason" value={reason} onChange={(e) => setReason(e.target.value)} className="w-full px-3 py-2 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500">
+                            <select id="reason" value={reason} onChange={(e) => setReason(e.target.value)} className="w-full px-3 pr-8 py-2 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500">
                                 <option>General Feedback</option>
                                 <option>Content Suggestion</option>
                                 <option>Wiki Error</option>
@@ -98,7 +98,7 @@ export default function FeedbackModal({ isOpen, onClose }: FeedbackModalProps) {
                                 value={message} 
                                 onChange={(e) => setMessage(e.target.value)} 
                                 className="w-full px-3 py-2 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500" 
-                                placeholder="Tell us what you think..." 
+                                placeholder="Tell me what you think..." 
                                 required 
                             />
                         </div>
