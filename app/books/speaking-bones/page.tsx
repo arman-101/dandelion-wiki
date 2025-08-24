@@ -9,564 +9,540 @@ import { formatAsteriskToBold } from '../../utils/textFormatting';
 // --- ACCURATE & DETAILED DATA FOR SPEAKING BONES ---
 const chapters = [
     {
-        num: "Prologue",
-        title: "The Hegemon's Lament",
-        date: "PAN: THE SEVENTH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "History is a conversation between the dead, the living, and the unborn. The bones of the dead are the words, the living are the voices, and the unborn are the listening ears. And the gods? The gods are the silences between the words.",
-        speaker: "Jia Matiza",
-        summary: "Dowager Empress Jia Matiza, cloaked in the anonymity of a common scholar, visits the Imperial Archives in Pan. Surrounded by the silent, towering shelves of bamboo scrolls and annals, she reflects on the nature of history and memory. She contemplates the life of Mata Zyndu, the Hegemon, whose story has been simplified and mythologized into a tool for rebellion. Jia understands that history is not a static record but a narrative, shaped and wielded by those with the will to do so. She resolves to write her own version of history, not with ink on bamboo, but with the lives of men and women, a grand strategy to save the empire her husband founded, even if it requires becoming the villain in the tales told by others. This visit is not one of nostalgia, but of reaffirmation for the cold, intricate, and decades-long plan she has set in motion—a plan whose final, brutal stages are about to begin.",
-        links: [{ name: "Jia Matiza", path: "/characters/jia-matiza" }, { name: "Pan", path: "/places/pan" }, { name: "Mata Zyndu", path: "/characters/mata-zyndu" }]
-    },
-    {
         num: 1,
-        title: "A Message in a Turtle Shell",
-        date: "PAN: THE EIGHTH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "Hope is a seed, small and easily crushed. But if it is planted in fertile soil and watered with courage, it can grow into a tree that will shelter an empire.",
-        speaker: "Zomi Kidosu",
-        summary: "In Pan, Zomi Kidosu, the Farsight Secretary, receives a mysterious package from a sea merchant. Inside is a large, polished turtle shell, seemingly a mere curiosity. However, Zomi recognizes the unique pattern of cracks and scorch marks as the first layer of a complex, multi-layered cipher she and Princess Théra developed in their youth. For seven years, the world has believed Théra and her expedition were lost to the Wall of Storms. As Zomi painstakingly deciphers the message—a tortuous process involving star charts, poetic allusions, and shared private memories—the truth emerges, breathtaking and world-altering: Théra is alive. She is not lost but fighting, leading a rebellion of the Agon people against the Lyucu in their own homeland of Ukyu-Gondé. The message is a plea for aid and a spark in the darkness of the Lyucu occupation, rekindling Zomi’s fierce loyalty and setting her on a collision course with the Dowager Empress's carefully managed state of affairs.",
-        links: [{ name: "Zomi Kidosu", path: "/characters/zomi-kidosu" }, { name: "Princess Théra", path: "/characters/princess-thera" }, { name: "Pan", path: "/places/pan" }, { name: "Agon", path: "/concepts/agon" }, { name: "Ukyu & Gonde", path: "/places/ukyu-gonde" }, { name: "The Wall of Storms", path: "/concepts/the-wall-of-storms" }]
+        title: "Back in the Flow",
+        date: "WORLD'S EDGE MOUNTAINS: THE FIFTH MONTH IN THE NINTH YEAR AFTER THE DEPARTURE OF PRINCESS THERA FROM DARA FOR UKYU-GONDÉ",
+        quote: "Yet, beauty never dies. Beauty always refreshes itself.",
+        speaker: "Thoryo",
+        summary: "While on the run from the Lyucu in the World's Edge Mountains, Princess Théra remains in a near-catatonic state of grief over the loss of her sons.  Her husband, Takval, entrusts her care to the mysterious young woman, Thoryo.  After a spring shower, Thoryo speaks to Théra about the enduring and renewing nature of beauty in the world, even in the face of death.  This conversation breaks through Théra's grief, and she begins the slow process of healing and re-engaging with her role as a leader. ",
+        links: [{ name: "Princess Théra", path: "/characters/princess-thera" }, { name: "Takval Aragoz", path: "/characters/takval-aragoz" }, { name: "Thoryo", path: "/characters/thoryo" }, { name: "World's Edge Mountains", path: "/places/worlds-edge-mountains" }]
     },
     {
         num: 2,
-        title: "The Sword-Saint of Eseeran Nomnny",
-        date: "ESEERAN NOMNNY: THE EIGHTH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "Your sword is an extension of your will, but your will is a reflection of your heart. To master the sword, you must first master yourself. You are not here to learn how to fight, child. You are here to learn why you fight.",
-        speaker: "The Sword-Saint",
-        summary: "Far to the south, on the mysterious continent of Eseeran Nomnny, Aya Mazoti undergoes a grueling apprenticeship with the legendary Sword-Saint. Haunted by her past failures and the towering legacies of her parents—the brilliant strategist Luan Zya and the peerless Marshal Gin Mazoti—Aya seeks to forge a new identity. The Sword-Saint’s training is as much philosophical as it is martial. It involves not just mastering the blade but also calligraphy, meditation, and a deep connection to the natural world. She is taught to see the world not as a series of obstacles but as a flow of energy, a dance of forces to be understood and redirected. In a climactic test, Aya must face her own reflection in a mirrored cave, confronting her deepest fears and insecurities. She emerges not just a peerless warrior, but a leader who has accepted her heritage without being defined by it, finally ready to re-enter the world and fight for Dara.",
-        links: [{ name: "Aya Mazoti", path: "/characters/aya-mazoti" }, { name: "The Sword-Saint", path: "/characters/the-sword-saint" }, { name: "Eseeran Nomnny", path: "/places/eseeran-nomnny" }, { name: "Luan Zya", path: "/characters/luan-zya" }, { name: "Gin Mazoti", path: "/characters/gin-mazoti" }]
+        title: "City of Ghosts",
+        date: "TATEN-RYO-ALVOVO: THE FIFTH MONTH IN THE NINTH YEAR AFTER THE DEPARTURE OF PRINCESS THÉRA FROM DARA FOR UKYU-GONDÉ",
+        quote: "This place is why we live in the Sixth Age.",
+        speaker: "Sataari",
+        summary: "The children of Kiri Valley, led by Razutana Pon, Sataari, and Théra's sons Tanto and Rokiri, find refuge at Taten-ryo-alvovo, the 'City of Ghosts.'  Razutana wishes to venture deeper into the seemingly bountiful barrows for more supplies, but Sataari forbids it, explaining the area's sacred and cursed history.  She recounts the myth of the Five Ages of Mankind, revealing that the barrows are the tombs of the arrogant people of the Fifth Age, whose greed and hubris angered the gods and brought ruin to their paradise, ushering in the harsh reality of the Sixth Age.  The story makes a deep impression on young Tanto. ",
+        links: [{ name: "Razutana Pon", path: "/characters/razutana-pon" }, { name: "Sataari", path: "/characters/sataari" }, { name: "Tanto Aragoz", path: "/characters/tanto-aragoz" }, { name: "Rokiri Aragoz", path: "/characters/rokiri-aragoz" }, { name: "Taten-ryo-alvovo", path: "/places/taten-ryo-alvovo" }]
     },
     {
         num: 3,
-        title: "The Fish-Herder",
-        date: "THE SWAMPS OF GÉFICA: THE EIGHTH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "The nobles in their high halls think the swamp is a backward place, a mire of ignorance. They do not understand. The swamp is generous. It provides concealment to its friends, and confusion to its enemies. It teaches lessons of patience, and the art of striking from below.",
-        speaker: "The Fish-Herder",
-        summary: "In the misty, labyrinthine swamps of Géfica, a new rebellion is taking root, far different from the courtly intrigues of Pan. It is a movement of the common people—fishermen, farmers, and outcasts—led by a mysterious, charismatic figure known only as the Fish-Herder. Using their intimate knowledge of the treacherous terrain, they wage a guerrilla war against both the Lyucu patrols and the Dandelion officials they see as collaborators. Their methods are ingenious, employing hollow reeds for underwater breathing, whisper networks that mimic the sounds of birds, and traps that use the swamp's natural dangers. The identity of the Fish-Herder is a closely guarded secret, a symbol of the land itself rising up against its oppressors. This chapter establishes a vital third front in the war for Dara, a testament to the resilience and simmering power of the forgotten common folk.",
-        links: [{ name: "The Fish-Herder", path: "/characters/the-fish-herder" }, { name: "Gefica", path: "/places/gefica" }, { name: "Resistance Movement", path: "/concepts/resistance-movement" }]
+        title: "Bandit Queens",
+        date: "TOAZA: THE SEVENTH MONTH IN THE NINTH YEAR OF THE REIGN OF SEASON OF STORMS AND THE REIGN OF AUDACIOUS FREEDOM",
+        quote: "It's better to be lucky than right.",
+        speaker: "Tiphan Huto",
+        summary: "Tiphan Huto, having avoided a treason conviction through Empress Jia's intervention, is under house arrest but arrogantly believes his own luck and cleverness saved him.  He is visited by two mysterious women, 'Queen Lightbringer' and 'Queen Blooddrinker,' who are actually Jia's elite Dyran Fin agents, Wi and Shido.  They coerce him into a secret smuggling operation. To ensure his loyalty, they force him to ingest a 'rare mushroom' called Blooddrinker, claiming they possess the only antidote, which he will receive monthly upon successful delivery of their goods. ",
+        links: [{ name: "Tiphan Huto", path: "/characters/tiphan-huto" }, { name: "Jia Matiza", path: "/characters/jia-matiza" }, { name: "The Blossom Gang", path: "/concepts/the-blossom-gang" }]
     },
     {
         num: 4,
-        title: "The Unlikely Tutor",
-        date: "TIRO COZO: THE EIGHTH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "You Dara think of the garinafin as a beast to be tamed, a weapon to be pointed. You are wrong. The garinafin is a storm, a god, a force of nature. You do not command it. You ask, you plead, you bargain. You become one with its rage.",
-        speaker: "Ouro",
-        summary: "Hidden in the remote mountain valley of Tiro Cozo, Prince Phyro, now Emperor Monadétu in his own secret court, supervises a project of world-shattering importance: the breeding and training of Dara's first garinafin corps. The task seems impossible. The key to their success is Ouro, a disgraced Lyucu defector and former master garinafin rider. Ouro is a harsh, cynical tutor, contemptuous of the Dara's 'soft' ways but bound by a debt of honor. He clashes constantly with Phyro, forcing the young emperor to unlearn everything he knows about command and hierarchy. Ouro teaches that riding a garinafin is not an act of domination but of empathy and spiritual communion. Phyro must learn the Lyucu language, their songs, their ways of thinking, and most importantly, he must confront his own fear and earn the trust of the terrifying beasts, forging a bond that will be crucial for the war to come.",
-        links: [{ name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "Ouro", path: "/characters/ouro" }, { name: "Tiro Cozo", path: "/places/tiro-cozo" }, { name: "Garinafin", path: "/concepts/garinafin" }]
+        title: "A Long Journey Reveals the True Strength of a Horse",
+        date: "WORLD'S EDGE MOUNTAINS: THE SEVENTH MONTH IN THE NINTH YEAR AFTER THE DEPARTURE OF PRINCESS THÉRA FROM DARA FOR UKYU-GONDÉ",
+        quote: "There's always a second act. Always.",
+        speaker: "Princess Théra",
+        summary: "Théra, now fully recovered, helps Takval lead their small band of rebels.  They are found by Araten, a supposedly lost Agon thane, who brings incredible news: Théra's children escaped their Lyucu captors with the help of Toof and Radia, and are believed to be alive.  Araten also reveals that Takval's uncle, Volyu, was the true traitor behind the fall of Kiri Valley.  He claims Cudyu's shamans are trying to calculate the reopening of the Wall of Storms. Théra, suspicious, uses Araten to feed Cudyu misinformation, hoping to make the Lyucu invasion fleet miss its window. ",
+        links: [{ name: "Princess Théra", path: "/characters/princess-thera" }, { name: "Takval Aragoz", path: "/characters/takval-aragoz" }, { name: "Toof", path: "/characters/toof" }, { name: "Radia", path: "/characters/radia" }, { name: "Volyu Aragoz", path: "/characters/volyu-aragoz" }, { name: "Cudyu Roatan", path: "/characters/cudyu-roatan" }, { name: "The Wall of Storms", path: "/concepts/wall-of-storms" }]
     },
     {
         num: 5,
-        title: "The Grand Game",
-        date: "PAN: THE EIGHTH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "They think me a spider, weaving my webs in the dark. They are not wrong. But they mistake the purpose of the web. It is not merely to trap flies. It is to feel the vibrations of the entire world.",
-        speaker: "Jia Matiza",
-        summary: "Zomi Kidosu requests an audience with Jia Matiza, presenting the decoded message from Théra as undeniable proof. She expects shock, perhaps even relief. Instead, Jia is impassive, her expression unreadable. She questions the message's authenticity, suggests it could be a Lyucu trick, and warns of the political chaos that a 'pretender princess' could unleash, threatening the fragile stability she has built around her grandson, the boy-emperor. Jia forbids Zomi from acting, effectively silencing her. This cold response is not born of disbelief, but of calculation. Jia's grand strategy requires the Lyucu to overextend, for Dara to be pushed to the brink of despair before a savior appears. Théra's premature return is a complication that could unravel everything. The chapter becomes a tense battle of wills between two of Dara's most brilliant minds, with Jia using her immense authority to smother the spark of hope Zomi carries, forcing the Farsight Secretary to consider treason to serve the throne.",
-        links: [{ name: "Jia Matiza", path: "/characters/jia-matiza" }, { name: "Zomi Kidosu", path: "/characters/zomi-kidosu" }, { name: "Pan", path: "/places/pan" }, { name: "Princess Théra", path: "/characters/princess-thera" }]
+        title: "Into the Barrows",
+        date: "TATEN-RYO-ALVOVO: THE SEVENTH MONTH IN THE NINTH YEAR AFTER THE DEPARTURE OF PRINCESS THÉRA FROM DARA FOR UKYU-GONDÉ",
+        quote: "My mother always told me that there is nothing inherently good or wicked in the nature of tools, for they only serve to amplify what is already present in the hearts of humankind.",
+        speaker: "Tanto Aragoz",
+        summary: "Inspired by Sataari's stories, Tanto Aragoz secretly leaves the refugee camp and ventures into the forbidden City of Ghosts alone, seeking the powerful weapons of the Fifth Age to help his parents.  After a long and perilous journey, he discovers the largest mound, the tomb of the legendary heroes Afir and Kikisavo.  Inside, he finds not magical weapons, but ancient farming implements.  He, along with Razutana and Sataari who followed him, realize that their ancestors were farmers and city-builders before they became nomads, shattering the foundation of their cultural beliefs. ",
+        links: [{ name: "Tanto Aragoz", path: "/characters/tanto-aragoz" }, { name: "Razutana Pon", path: "/characters/razutana-pon" }, { name: "Sataari", path: "/characters/sataari" }, { name: "Taten-ryo-alvovo", path: "/places/taten-ryo-alvovo" }]
     },
     {
         num: 6,
-        title: "The Two-Headed Serpent",
-        date: "KRIPHI, RUI: THE EIGHTH YEAR OF THE REIGN OF AUDACIOUS FREEDOM",
-        quote: "To rule a conquered people is to be a two-headed serpent. One head must hiss and bare its fangs, to remind them who is master. The other must whisper promises, to make them forget the cage.",
-        speaker: "Goztan Ryoto",
-        summary: "In the occupied capital of Kriphi, the Lyucu leadership is fractured. The hardline faction, led by the fanatical Cutanrovo Aga, advocates for brutal suppression and the eradication of Dara culture. The accommodationist faction, led by the shrewd and pragmatic Thane Goztan Ryoto, argues for a more subtle approach: ruling through collaboration, economic integration, and cultural co-option. Goztan, who once loved Kuni Garu's son and raised a half-Dara child, understands the people she has conquered better than any of her peers. She maneuvers through the treacherous currents of the Lyucu court, trying to moderate Cutanrovo's cruelty while securing her own power base. \n\nThis chapter also follows Tanvanaki, the pékyu's daughter and wife of the captive Emperor Thaké (formerly Prince Timu). She finds herself caught between the factions, genuinely caring for her husband and their children but also loyal to her people's cause. She sees the wisdom in Goztan's approach but fears the fanaticism of Cutanrovo, creating a powder keg of political intrigue at the heart of the Lyucu empire.",
-        links: [{ name: "Goztan Ryoto", path: "/characters/goztan-ryoto" }, { name: "Cutanrovo Aga", path: "/characters/cutanrovo-aga" }, { name: "Tanvanaki", path: "/characters/tanvanaki" }, { name: "Prince Timu", path: "/characters/prince-timu" }, { name: "Kriphi", path: "/places/kriphi" }, { name: "Rui", path: "/places/rui" }, { name: "Lyucu", path: "/concepts/lyucu" }]
+        title: "That Which Cannot Be Heard",
+        date: "WORLD'S EDGE MOUNTAINS: THE EIGHTH MONTH IN THE NINTH YEAR AFTER THE DEPARTURE OF PRINCESS THÉRA FROM DARA FOR UKYU-GONDÉ",
+        quote: "Some mysteries only become more magnificent after you solve them.",
+        speaker: "Princess Théra",
+        summary: "While recovering from an attack by a tusked tiger, Théra is intrigued by the beast's ability to stun its victims with a 'silent roar.'  Working with the scholar Çami Phithadapu and Thoryo, she conducts experiments with their two garinafins, Alkir and Ga-al.  They discover that garinafins can communicate using inaudible, low-frequency vibrations felt through bone, a phenomenon similar to the tiger's roar.  The discovery, blending Dara scientific methods with Agon tradition, gives their small band a new way to communicate over long distances and deepens Théra's connection to her adopted homeland. ",
+        links: [{ name: "Princess Théra", path: "/characters/princess-thera" }, { name: "Çami Phithadapu", path: "/characters/cami-phithadapu" }, { name: "Thoryo", path: "/characters/thoryo" }, { name: "Garinafin", path: "/concepts/garinafin" }]
     },
     {
         num: 7,
-        title: "Allies in the Shadows",
-        date: "PAN: THE NINTH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "When the law serves injustice, the just must operate outside the law. We do not break the law; we uphold a higher one.",
-        speaker: "Zomi Kidosu",
-        summary: "Thwarted by Jia, Zomi Kidosu activates her own network of secret dissenters. She seeks out the remnants of the Blossom Gang in Ginpen, a collective of brilliant engineers, actors, and scholars dedicated to justice for the common person. Zomi, the idealist, finds herself employing the very tools of secrecy and conspiracy she once abhorred, justifying it as a necessary evil to support the true heir. The Blossom Gang, with their technical prowess and connections to the underground, agree to help. Their first task is to establish a secure, long-range communication method with Théra, a feat that will require radical new applications of silkmotic science and optics, all while evading the ever-watchful eyes of the Dowager Empress's spies.",
-        links: [{ name: "Zomi Kidosu", path: "/characters/zomi-kidosu" }, { name: "The Blossom Gang", path: "/concepts/the-blossom-gang" }, { name: "Ginpen", path: "/places/ginpen" }, { name: "Silkmotic Force", path: "/concepts/silkmotic-force" }]
+        title: "Painted Walls",
+        date: "TATEN-RYO-ALVOVO: THE EIGHTH MONTH IN THE NINTH YEAR AFTER THE DEPARTURE OF PRINCESS THÉRA FROM DARA FOR UKYU-GONDÉ",
+        quote: "The old stories are all true. But we didn't understand them.",
+        speaker: "Sataari",
+        summary: "After rescuing Tanto from the Great Barrow, Razutana and Sataari explore the burial chamber of Afir and Kikisavo.  The walls are covered with ancient paintings depicting a vibrant city of farmers, herders, and engineers who lived a settled life before a great cataclysm.  They find the skeletons of the two heroes, each with six fingers or toes, confirming their identities.  The chamber contains not weapons, but farming tools and seeds.  This discovery forces Sataari to realize that the Agon and Lyucu's foundational myths are a misremembering of their true history as a settled, agricultural people who were forced into nomadism by climate change. ",
+        links: [{ name: "Tanto Aragoz", path: "/characters/tanto-aragoz" }, { name: "Sataari", path: "/characters/sataari" }, { name: "Razutana Pon", path: "/characters/razutana-pon" }, { name: "Taten-ryo-alvovo", path: "/places/taten-ryo-alvovo" }]
     },
     {
         num: 8,
-        title: "The City of Ghosts",
-        date: "UKYU-GONDÉ: THE NINTH YEAR AFTER THÉRA'S DEPARTURE",
-        quote: "A people who do not know their own history are like a tree without roots. We have been taught to be ashamed of our past. It is time we remembered its power.",
-        speaker: "Sataari",
-        summary: "Guided by ancient legends, Théra, Takval Aragoz, and the Agon shaman Sataari discover the long-lost, ruined city of Taten-ryo-alvovo, the 'City of Ghosts.' This was the capital of the Agon people before the Lyucu rose to dominance, a place of immense spiritual significance. The city is a marvel of ancient engineering, filled with massive, silent stone structures and geoglyphs that hint at a forgotten cosmology. The discovery galvanizes the Agon rebels, providing them with a powerful symbol of their cultural identity and a defensible secret base. For Théra, it offers profound insights into the deep history of the continent and the true nature of the conflict between the Lyucu and the Agon.",
-        links: [{ name: "Princess Théra", path: "/characters/princess-thera" }, { name: "Takval Aragoz", path: "/characters/takval-aragoz" }, { name: "Sataari", path: "/characters/sataari" }, { name: "Taten-ryo-alvovo", path: "/places/taten-ryo-alvovo" }, { name: "Agon", path: "/concepts/agon" }]
+        title: "The Sprung Trap",
+        date: "WORLD'S EDGE MOUNTAINS: THE NINTH MONTH IN THE NINTH YEAR AFTER THE DEPARTURE OF PRINCESS THÉRA FROM DARA FOR UKYU-GONDÉ",
+        quote: "When everything you’ve tried has failed, the only path left is to do something impossible, something new.",
+        speaker: "Princess Théra",
+        summary: "The Lyucu finally locate and encircle Théra's band in their hidden valley.  It's revealed that Araten was a double agent all along, working for Cudyu to extract the true timing of the Wall of Storms' reopening from Théra.  Facing certain doom, Théra devises a daring plan inspired by the Hegemon Mata Zyndu. Using decoy riders made of sticks and fur on their garinafins, they lure the main Lyucu force into a fruitless chase.  Meanwhile, Théra, Takval, and their followers escape on foot, heading east to cross the impassable spine of the World's Edge Mountains, a realm forbidden to mortals. ",
+        links: [{ name: "Princess Théra", path: "/characters/princess-thera" }, { name: "Takval Aragoz", path: "/characters/takval-aragoz" }, { name: "World's Edge Mountains", path: "/places/worlds-edge-mountains" }]
     },
     {
         num: 9,
-        title: "A Son's Choice",
-        date: "KRIPHI, RUI: THE NINTH YEAR OF THE REIGN OF AUDACIOUS FREEDOM",
-        quote: "You gave me two names, two histories, two bloods. But a man can only have one heart. I have made my choice.",
-        speaker: "Kinri",
-        summary: "Kinri, the son of Goztan Ryoto and the late Prince Kon Fiji, living under the name Savo Ryoto, is increasingly tormented by his dual heritage. Raised as a Lyucu noble but secretly taught Dara history and language by his tutor, Nazu Tei, he feels the pull of his father's people. His internal conflict comes to a head when Cutanrovo Aga attempts to use him as a political pawn. In a dramatic act of defiance during a public ceremony, Kinri renounces his Lyucu name and heritage, declaring his loyalty to Dara and the memory of his father. This act of rebellion forces Goztan into an impossible position, having to choose between her son and her political survival. Kinri escapes Kriphi with the help of secret Dara loyalists, becoming a fugitive and a potent symbol for the resistance.",
-        links: [{ name: "Kinri", path: "/characters/kinri" }, { name: "Goztan Ryoto", path: "/characters/goztan-ryoto" }, { name: "Nazu Tei", path: "/characters/nazu-tei" }, { name: "Kriphi", path: "/places/kriphi" }]
+        title: "Secret",
+        date: "KRIPHI: THE NINTH MONTH IN THE NINTH YEAR OF THE REIGN OF SEASON OF STORMS AND THE REIGN OF AUDACIOUS FREEDOM",
+        quote: "I can control Cutanrovo. I’m just using her.",
+        speaker: "Tanvanaki",
+        summary: "In Kriphi, Pékyu Tanvanaki struggles to maintain control against the fanatical hard-liner Cutanrovo Aga, who pushes for ever more brutal policies against the native Dara population.  A purification pack accidentally discovers Tanvanaki's secret project: a hidden workshop in the sealed underwater tunnel where she, Goztan Ryoto, and Vocu Firna are secretly developing Dara-style metal armor and weapons for the garinafins.  To protect this vital secret, Tanvanaki is forced to order the massacre of not only the Lyucu pack but also the entire innocent native village of Phada to eliminate all witnesses.  The act weighs heavily on her, showing the terrible compromises she must make to prepare for war while navigating treacherous court politics. ",
+        links: [{ name: "Tanvanaki", path: "/characters/tanvanaki" }, { name: "Cutanrovo Aga", path: "/characters/cutanrovo-aga" }, { name: "Goztan Ryoto", path: "/characters/goztan-ryoto" }, { name: "Kriphi", path: "/places/kriphi" }]
     },
     {
         num: 10,
-        title: "The Unveiling",
-        date: "PAN: THE NINTH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "A truth revealed at the wrong time is more dangerous than a lie.",
-        speaker: "Jia Matiza",
-        summary: "Jia Matiza's spies inform her of Zomi's nascent conspiracy and Kinri's defection. Instead of crushing Zomi's network, Jia makes a chillingly pragmatic decision: she will allow it to grow, but she will control it. She begins to secretly feed Zomi's network carefully curated misinformation, subtly guiding their actions to align with her own long-term strategy. She sees Zomi's passion and Kinri's rebellion not as threats, but as tools to be sharpened and aimed. Jia's plan requires a heroic narrative, a lost prince to rally behind, and she realizes Kinri is a far better candidate than the distant Théra. She is playing a multi-dimensional game of strategy, manipulating her friends and enemies alike, all while presenting the serene, detached facade of the Dowager Empress.",
-        links: [{ name: "Jia Matiza", path: "/characters/jia-matiza" }, { name: "Zomi Kidosu", path: "/characters/zomi-kidosu" }, { name: "Kinri", path: "/characters/kinri" }, { name: "Pan", path: "/places/pan" }]
+        title: "Ice Blossoms",
+        date: "ON THE PLAINS WEST OF THE TAIL RANGE: THE ELEVENTH MONTH IN THE NINTH YEAR AFTER THE DEPARTURE OF PRINCESS THÉRA FROM DARA FOR UKYU-GONDÉ",
+        quote: "Anything worth doing is at least a little bit mad.",
+        speaker: "Takval Aragoz",
+        summary: "After a grueling journey, Théra's band is forced to abandon their attempt to cross the World's Edge Mountains due to the thin air.  They instead travel far north to the frozen tundra, seeking an alliance with the marginalized ice tribes.  The Lyucu, led by Tovo Tasaricu, pursue them with dogsleds.  Trapped at the coast with the sea not yet frozen, Takval makes a passionate appeal to the ice tribe chief, Kitos, convincing him to stand and fight with them.  Using Dara engineering, the rebels construct a formidable fortress of ice, successfully repelling multiple brutal Lyucu assaults. ",
+        links: [{ name: "Princess Théra", path: "/characters/princess-thera" }, { name: "Takval Aragoz", path: "/characters/takval-aragoz" }, { name: "Tovo Tasaricu", path: "/characters/tovo-tasaricu" }, { name: "Tipo Tho", path: "/characters/tipo-tho" }]
     },
     {
         num: 11,
-        title: "The First Strike",
-        date: "UKYU-GONDÉ: THE TENTH YEAR AFTER THÉRA'S DEPARTURE",
-        quote: "They have gods of fire and war. We have gods of sand, wind, and memory. Let us see whose gods are stronger.",
-        speaker: "Takval Aragoz",
-        summary: "Using their newfound knowledge of the terrain and their restored morale, Théra and Takval's Agon rebels launch their first major offensive. It is not a pitched battle but a series of coordinated guerrilla strikes against Lyucu supply lines and garrisons. Théra combines Dara siege ingenuity with Agon raiding tactics, creating a hybrid fighting style the Lyucu are unprepared for. The victory is small but symbolically massive. It proves that the mighty Lyucu can be beaten and sends a shockwave through the Agon tribes, causing many who were neutral to flock to Théra's banner. The war for Ukyu-Gondé has truly begun.",
-        links: [{ name: "Princess Théra", path: "/characters/princess-thera" }, { name: "Takval Aragoz", path: "/characters/takval-aragoz" }, { name: "Agon", path: "/concepts/agon" }, { name: "Ukyu & Gonde", path: "/places/ukyu-gonde" }]
+        title: "Nalyufin's Pasture",
+        date: "ACROSS THE CHANNEL FROM SPOTTED HEIFER: THE ELEVENTH MONTH IN THE NINTH YEAR AFTER THE DEPARTURE OF PRINCESS THÉRA FROM DARA FOR UKYU-GONDÉ",
+        quote: "It is enough that we have loved and are loved. There is no meaning in eternity; only now, only here.",
+        speaker: "Thoryo",
+        summary: "When the sea finally freezes, the rebels make a desperate escape across the treacherous ice toward the desolate islands of Nalyufin's Pasture.  They spring a trap, using a blade to score the ice, causing the pursuing Lyucu convoy to plunge into the frigid water.  However, Takval also falls into the icy sea during the escape.  Thoryo sacrifices her own life to save him, diving into the water to tie a rope around his unconscious body before they are both pulled to safety.  The survivors find refuge on Spotted Heifer, but Takval falls into a feverish coma. ",
+        links: [{ name: "Princess Théra", path: "/characters/princess-thera" }, { name: "Takval Aragoz", path: "/characters/takval-aragoz" }, { name: "Thoryo", path: "/characters/thoryo" }, { name: "Tovo Tasaricu", path: "/characters/tovo-tasaricu" }]
     },
     {
         num: 12,
-        title: "A New Army from Old Bones",
-        date: "THE WORLD'S EDGE MOUNTAINS: THE TENTH YEAR AFTER THÉRA'S DEPARTURE",
-        quote: "The Lyucu taught their beasts to be weapons. The bones remember. We will teach them to be our salvation.",
-        speaker: "Thoryo",
-        summary: "The Agon rebels are led to a vast garinafin boneyard, a sacred, ancient graveyard in the World's Edge Mountains. Here, they make a revolutionary discovery. The bones of the ancient garinafins are not inert; they possess strange resonant properties. Thoryo, the mute girl with an uncanny gift for mimicry and patterns, intuits how to work with them. Guided by her insights and the engineering skills of the Dara with Théra, the rebels learn to carve and shape these bones, combining them with silkmotic devices, to create astonishing new technologies. This is the birth of the 'living bone' technology that will become the Agon's greatest weapon.",
-        links: [{ name: "Princess Théra", path: "/characters/princess-thera" }, { name: "Thoryo", path: "/characters/thoryo" }, { name: "World's Edge Mountains", path: "/places/worlds-edge-mountains" }, { name: "Garinafin", path: "/concepts/garinafin" }, { name: "Silkmotic Force", path: "/concepts/silkmotic-force" }]
+        title: "Lyucu Kyo! Ukyu Kyo!",
+        date: "IN THE WATERS NORTH OF RUI AND DASU, NEAR THE WALL OF STORMS: THE FIFTH MONTH OF THE ELEVENTH YEAR OF THE REIGN OF SEASON OF STORMS AND THE REIGN OF AUDACIOUS FREEDOM",
+        quote: "We earn the fear of our foes and the trust of our divine kin!",
+        speaker: "Cutanrovo Aga",
+        summary: "Aboard the city-ship *Toryoana's Gift*, Cutanrovo Aga leads a fanatical ceremony to welcome the anticipated Lyucu reinforcement fleet from Ukyu-Gondé.  She conducts a brutal ritual sacrifice of Dara prisoners to energize her warriors.  The ceremony reflects the extreme, hard-liner ideology she has fostered in Ukyu-taasa, including reviving ancient, bloody customs and a dependence on a potent, pirate-sourced tolyusa.  As the Wall of Storms opens, the Lyucu wait with fervent expectation for their reinforcements to arrive and aid in the final conquest of Dara. ",
+        links: [{ name: "Cutanrovo Aga", path: "/characters/cutanrovo-aga" }, { name: "The Wall of Storms", path: "/concepts/wall-of-storms" }, { name: "Lyucu Culture", path: "/concepts/lyucu-culture" }, { name: "Airships", path: "/concepts/airships" }]
     },
     {
         num: 13,
-        title: "The Dragon's Hatchlings",
-        date: "TIRO COZO: THE TENTH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "They are born of Dara soil and sky. They do not serve the Lyucu gods of conquest. They will fight for their homeland.",
-        speaker: "Prince Phyro",
-        summary: "After years of failure, Phyro's garinafin breeding program at Tiro Cozo finally succeeds. The first clutch of Dara-born garinafins hatches. These beasts are different—smaller, more intelligent, and uniquely bonded to their Dara riders from birth. Phyro himself forms a deep, personal bond with the largest of the hatchlings, whom he names Ao-na. The chapter details the intensive, dangerous process of training these new living weapons. It marks a major turning point: Dara is no longer just copying Lyucu technology but adapting and improving it, creating a force that can one day challenge the invaders in the skies.",
-        links: [{ name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "Ouro", path: "/characters/ouro" }, { name: "Tiro Cozo", path: "/places/tiro-cozo" }, { name: "Garinafin", path: "/concepts/garinafin" }]
+        title: "The Wolf-Thane",
+        date: "TATEN: THE FIFTH MONTH IN THE TENTH YEAR AFTER THE DEPARTURE OF PRINCESS THÉRA FROM DARA FOR UKYU-GONDÉ",
+        quote: "Nalyufin loves the cries of captives in pain.",
+        speaker: "Rita (Thoryo)",
+        summary: "As Pékyu Cudyu prepares his massive invasion fleet in Taten, a mysterious 'Wolf-Thane' named Rita arrives from the north, bringing captives and cattle as tribute.  The young thane displays strange powers, seemingly able to inflict pain from a distance, which awes a young garinafin sentry named Saof.  The 'Wolf-Thane' is actually Thoryo in disguise, and her 'captives' are Théra's allies, including the ice-tribe chief Kitos.  Her display of power is a clever ruse. After gaining entry to Taten, she uses her authority to place her allies as slave grooms in the garinafin pens, positioning them for the next stage of Théra's plan. ",
+        links: [{ name: "Cudyu Roatan", path: "/characters/cudyu-roatan" }, { name: "Thoryo", path: "/characters/thoryo" }, { name: "Taten", path: "/places/taten" }, { name: "Garinafin", path: "/concepts/garinafin" }]
     },
     {
         num: 14,
-        title: "The Gathering Storm",
-        date: "PAN: THE TENTH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "A rebellion is like a storm. You can see it gathering on the horizon, but you can never be certain where the lightning will strike.",
-        speaker: "Gori Ruthi",
-        summary: "Zomi Kidosu's rebel network, subtly manipulated by Jia, gains momentum. They have established tentative contact with Théra and have made Kinri their celebrated 'prince-in-exile.' They begin planning a daring operation: an attack on a major Lyucu garrison to liberate Dara prisoners and capture weapons. Zomi, increasingly uncomfortable with the compromises she is making, pushes forward, believing the risk is worth the potential reward. Meanwhile, the Moralist scholar Gori Ruthi, a high-ranking official in the Dandelion court, begins to suspect that events are being manipulated, though he cannot yet see the Dowager Empress's hand at work. He represents the conscience of the court, wary of the growing extremism on all sides.",
-        links: [{ name: "Zomi Kidosu", path: "/characters/zomi-kidosu" }, { name: "Kinri", path: "/characters/kinri" }, { name: "Gori Ruthi", path: "/characters/gori-ruthi" }, { name: "Pan", path: "/places/pan" }, { name: "Resistance Movement", path: "/concepts/resistance-movement" }]
+        title: "Burial Boxes",
+        date: "TATEN: THE FIFTH MONTH IN THE TENTH YEAR AFTER THE DEPARTURE OF PRINCESS THÉRA FROM DARA FOR UKYU-GONDÉ",
+        quote: "Even the corpses of our enemies cannot escape being exploited to our advantage.",
+        speaker: "Tovo Tasaricu",
+        summary: "A massive iceberg floats into the sea near Taten, carrying six Dara-style burial boxes.  Inside are the well-preserved bodies of Agon and Dara warriors. Tovo Tasaricu convinces Pékyu Cudyu that these are the remains of Théra, Takval, and their followers, who perished in the north.  Believing this a divine gift, Cudyu plans a grand ceremony. He will publicly open the two largest boxes—believed to contain Théra and Takval—and desecrate their bodies to boost his army's morale before the invasion.  Unbeknownst to him, this is the final stage of Théra's trap. ",
+        links: [{ name: "Cudyu Roatan", path: "/characters/cudyu-roatan" }, { name: "Tovo Tasaricu", path: "/characters/tovo-tasaricu" }, { name: "Taten", path: "/places/taten" }, { name: "Princess Théra", path: "/characters/princess-thera" }, { name: "Takval Aragoz", path: "/characters/takval-aragoz" }]
     },
     {
         num: 15,
-        title: "Death of a Thane",
-        date: "KRIPHI, RUI: THE TENTH YEAR OF THE REIGN OF AUDACIOUS FREEDOM",
-        quote: "You speak of strength, Cutanrovo. But true strength is not the power to crush, it is the wisdom to build. You seek to rule over ashes.",
-        speaker: "Goztan Ryoto",
-        summary: "The conflict between Goztan Ryoto and Cutanrovo Aga reaches its bloody climax. Cutanrovo, seeing Goztan's moderate policies and connection to the fugitive Kinri as a sign of weakness and betrayal, orchestrates her downfall. In a rigged trial before the council of thanes, Cutanrovo accuses Goztan of treason. Using manufactured evidence and appealing to the Lyucu's warrior pride and fear, she secures a death sentence. Tanvanaki tries to intervene but is powerless. Goztan faces her death with defiant dignity, delivering a final, prophetic warning about the path of fanaticism. Her execution marks a dark turn for the Lyucu occupation; the hardliners are now in total control, and a new wave of brutal oppression is unleashed upon Dara.",
-        links: [{ name: "Goztan Ryoto", path: "/characters/goztan-ryoto" }, { name: "Cutanrovo Aga", path: "/characters/cutanrovo-aga" }, { name: "Tanvanaki", path: "/characters/tanvanaki" }, { name: "Kriphi", path: "/places/kriphi" }]
+        title: "Spirit Portrait",
+        date: "SPOTTED HEIFER: FIVE MONTHS EARLIER.",
+        quote: "You can and you must. You belong to this land. You love the people of the scrublands as much as I do.",
+        speaker: "Takval Aragoz",
+        summary: "In a flashback to the rebels' desperate winter on Spotted Heifer, a dying Takval convinces a grief-stricken Théra to undertake a sacred Agon ritual to become his successor.  To become Pékyu, she must not only be named in his final spirit portrait but also ritually take his life with a bone dagger, mingling their blood and absorbing his final breath.  It's a horrifying act that goes against her Dara nature, but she accepts it as necessary to lead the Agon.  She also reveals her plan to use Takval's body in a booby-trapped coffin to assassinate Cudyu, a plan Takval approves of as his final act of war. ",
+        links: [{ name: "Princess Théra", path: "/characters/princess-thera" }, { name: "Takval Aragoz", path: "/characters/takval-aragoz" }, { name: "Çami Phithadapu", path: "/characters/cami-phithadapu" }]
     },
     {
         num: 16,
-        title: "Cloud-Garinafins",
-        date: "THE SKIES OVER UKYU-GONDÉ: THE ELEVENTH YEAR AFTER THÉRA'S DEPARTURE",
-        quote: "They thought the sky belonged to them. We will teach them it belongs to no one, and that even the clouds have teeth.",
-        speaker: "Princess Théra",
-        summary: "The Agon rebels unveil their masterpiece: the cloud-garinafins. These are not living creatures, but massive constructs of woven cloud matter, given form and structure by frameworks of living garinafin bone and powered by advanced silkmotic engines. They are ethereal, silent, and deadly, able to phase through solid matter and unleash devastating electrical attacks. In a spectacular aerial battle, Théra leads a squadron of these new phantom weapons against a major Lyucu garinafin patrol. The Lyucu, masters of aerial warfare, are thrown into chaos, unable to fight an enemy they can barely see or touch. The victory is decisive and terrifying, shifting the balance of power in Ukyu-Gondé and proving the genius of Dara-Agon collaboration.",
-        links: [{ name: "Princess Théra", path: "/characters/princess-thera" }, { name: "Takval Aragoz", path: "/characters/takval-aragoz" }, { name: "Cloud-Garinafins", path: "/concepts/cloud-garinafins" }, { name: "Agon", path: "/concepts/agon" }, { name: "Ukyu & Gonde", path: "/places/ukyu-gonde" }]
+        title: "“Feel My Breath Against You…”",
+        date: "TATEN: THE FIFTH MONTH IN THE TENTH YEAR AFTER THE DEPARTURE OF PRINCESS THÉRA FROM DARA FOR UKYU-GONDÉ",
+        quote: "The garinafins did not speak as humans did, but the fire of vengeance burned in their hearts as strong as in the hearts of women and men.",
+        speaker: "Narrator",
+        summary: "During Cudyu's grand ceremony, Thoryo's allies incite a fight in the garinafin pens, creating a diversion.  Toof and Radia free the juvenile garinafins from their cells.  Seeing their offspring free, the adult garinafins are roused from their conditioned helplessness. Alkir, Takval's former mount, incinerates the head groom, sparking a full-scale rebellion among the Agon slaves and a mass escape of the garinafins.  Meanwhile, Cudyu opens the booby-trapped burial box, which explodes, killing him and his high command.  The freed Agon pilot Radia leads a suicide mission with five other garinafins to destroy the invasion fleet's city-ships, succeeding in sinking all but one before she and Alkir perish. ",
+        links: [{ name: "Thoryo", path: "/characters/thoryo" }, { name: "Toof", path: "/characters/toof" }, { name: "Radia", path: "/characters/radia" }, { name: "Cudyu Roatan", path: "/characters/cudyu-roatan" }, { name: "Takval Aragoz", path: "/characters/takval-aragoz" }, { name: "Garinafin", path: "/concepts/garinafin" }, { name: "Taten", path: "/places/taten" }]
     },
     {
         num: 17,
-        title: "The Sword Returns",
-        date: "COAST OF GÉFICA: THE ELEVENTH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "My mother was a Marshal. My father was a philosopher. They fought with armies and with words. I will honor them both, with a blade that thinks.",
-        speaker: "Aya Mazoti",
-        summary: "Aya Mazoti, her training complete, returns to Dara. She lands on the coast of Géfica and makes contact with the Fish-Herder's rebellion. Initially, there is mistrust between the highborn warrior and the grassroots rebels. Aya proves her worth not by asserting authority, but through her unparalleled skill and strategic insight. She helps organize their chaotic forces, trains their fighters, and leads them in a series of brilliant victories against Lyucu patrols. She forms a powerful partnership with the Fish-Herder, merging noble military tradition with the cunning tactics of the common folk. Word of her return and her victories spreads, making her a new beacon of hope for the resistance.",
-        links: [{ name: "Aya Mazoti", path: "/characters/aya-mazoti" }, { name: "The Fish-Herder", path: "/characters/the-fish-herder" }, { name: "Gefica", path: "/places/gefica" }]
+        title: "Self-Reliance",
+        date: "ONE YEAR LATER, IN THE WATERS NORTH OF RUI AND DASU, NEAR THE WALL OF STORMS.",
+        quote: "The spirit of the Lyucu is indomitable!",
+        speaker: "Cutanrovo Aga",
+        summary: "One year after Théra's victory in Ukyu-Gondé, the Wall of Storms reopens, but no reinforcement fleet arrives for the Lyucu in Dara, confirming their isolation.  The news shatters the morale of the crew aboard *Toryoana's Gift*. Cutanrovo Aga, however, delivers a fiery speech, reframing the disaster as a divine test.  She argues that the Lyucu do not need aid from the gods or their homeland, but must rely on their own indomitable spirit. She works her crew into a frenzy, culminating in a ritualistic cannibalistic slaughter of Dara slaves, and solidifies her hard-line ideology as the path forward for the now-isolated Ukyu-taasa. ",
+        links: [{ name: "Cutanrovo Aga", path: "/characters/cutanrovo-aga" }, { name: "Than Carucono", path: "/characters/than-carucono" }, { name: "The Wall of Storms", path: "/concepts/wall-of-storms" }]
     },
     {
         num: 18,
-        title: "The Unmasking",
-        date: "THE SWAMPS OF GÉFICA: THE ELEVENTH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "A name is a cage. A face is a cage. I chose the swamp, where there are no names and no faces, only the water and the reeds, and the will to be free.",
-        speaker: "The Fish-Herder",
-        summary: "During a desperate battle, Aya and the Fish-Herder are trapped and outnumbered. In a moment of crisis, the Fish-Herder's mask is torn away, revealing their true identity: Princess Fara, the youngest daughter of Kuni Garu and Consort Risana. Fara, the quiet artist and dreamer, presumed to be living a secluded life, had secretly run away years ago, disgusted by the court's passivity. Using the skills of illusion and misdirection learned from her mother, she created the persona of the Fish-Herder, becoming the leader her people needed. The revelation stuns Aya and forever bonds the two women. Fara, the 'Dandelion' who inspired a movement, is revealed to be a true child of the emperor who took that name.",
-        links: [{ name: "The Fish-Herder", path: "/characters/the-fish-herder" }, { name: "Princess Fara", path: "/characters/princess-fara" }, { name: "Aya Mazoti", path: "/characters/aya-mazoti" }, { name: "Gefica", path: "/places/gefica" }, { name: "Consort Risana", path: "/characters/consort-risana" }]
+        title: "Conspiracy",
+        date: "GINPEN: THE SIXTH MONTH OF THE ELEVENTH YEAR OF THE REIGN OF SEASON OF STORMS AND THE REIGN OF AUDACIOUS FREEDOM.",
+        quote: "There is strength in simplicity, power in trust, beauty in plain-speaking, and grandness of spirit in believing in ideals.",
+        speaker: "Rati Yera",
+        summary: "After the Lyucu demand increased tribute for a new peace treaty, the Dandelion Court is divided between war and peace factions.  Empress Jia frames the debate to favor peace, to Phyro's frustration.  Phyro, from his secret base at Tiro Cozo, activates the Blossom Gang.  Zomi, Widi, Arona, and Mota begin mobilizing popular support for war. They organize veterans' societies, fund patriotic folk operas like *The Women of Zudi*, and recruit for Phyro's private army, creating a powerful grassroots movement that bypasses the empress's control and sets the stage for a confrontation. ",
+        links: [{ name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "Zomi Kidosu", path: "/characters/zomi-kidosu" }, { name: "Jia Matiza", path: "/characters/jia-matiza" }, { name: "Princess Fara", path: "/characters/princess-fara" }, { name: "Aya Mazoti", path: "/characters/aya-mazoti" }, { name: "The Blossom Gang", path: "/concepts/the-blossom-gang" }]
     },
     {
         num: 19,
-        title: "The Trap is Sprung",
-        date: "THE RORO HILLS: THE ELEVENTH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "It is a poor strategist who prepares for only one kind of victory.",
-        speaker: "Jia Matiza",
-        summary: "The rebellion orchestrated by Zomi Kidosu, and secretly guided by Jia, launches its grand assault on the Lyucu fortress in the Roro Hills. The attack, however, goes disastrously wrong. The Lyucu, forewarned by Jia's network of double agents, are waiting. The rebel forces are drawn into a devastating ambush. It is a slaughter. Zomi Kidosu watches in horror as her dream turns into a nightmare, realizing too late that she has been a pawn. The purpose of the attack was never to win; it was for Jia's plan. It was meant to fail spectacularly, to expose the weakness of the disorganized resistance and to draw a massive Lyucu force into a single, vulnerable position.",
-        links: [{ name: "Zomi Kidosu", path: "/characters/zomi-kidosu" }, { name: "Jia Matiza", path: "/characters/jia-matiza" }, { name: "Roro Hills", path: "/places/roro-hills" }]
+        title: "Treason by the Book",
+        date: "PAN: THE SIXTH MONTH OF THE ELEVENTH YEAR OF THE REIGN OF SEASON OF STORMS AND THE REIGN OF AUDACIOUS FREEDOM.",
+        quote: "The people are not threatening, but pleading for you to heed your own pronouncement: When the interests of the few are weighed against the interests of the many, the few must yield.",
+        speaker: "Cogo Yelu",
+        summary: "Aya Mazoti, appointed to deliver the new tribute treaty to the Lyucu, is stopped in the streets of Ginpen by a massive protest organized by the Blossom Gang, led by the scholar Réza Müi and backed by veterans.  The protest escalates, and Aya's own soldiers refuse to use force against the demonstrators, resulting in a humiliating failure.  The widespread popular unrest forces Empress Jia's hand. Prime Minister Cogo Yelu, in a dramatic session of formal court, leads the ministers in a 'bloodless rebellion,' siding with the people's will for war. Jia is forced to relent and summons Phyro from Tiro Cozo, finally conceding the start of a new war against the Lyucu. ",
+        links: [{ name: "Aya Mazoti", path: "/characters/aya-mazoti" }, { name: "Jia Matiza", path: "/characters/jia-matiza" }, { name: "Cogo Yelu", path: "/characters/cogo-yelu" }, { name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "The Blossom Gang", path: "/concepts/the-blossom-gang" }]
     },
     {
         num: 20,
-        title: "The Phoenix's Flight",
-        date: "THE SKIES OVER THE RORO HILLS: THE ELEVENTH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "For seven years, we have hidden in the mountains. For seven years, we have trained in secret. The sky has been a realm of fear. Today, we take it back! For Dara!",
-        speaker: "Emperor Monadétu (Phyro)",
-        summary: "Just as the Lyucu forces are celebrating their victory over the crushed rebellion, the sky darkens. But it is not with clouds. It is with the wings of dozens of garinafins. Emperor Monadétu (Phyro), astride Ao-na, leads his secret army out of Tiro Cozo and falls upon the unsuspecting and overconfident Lyucu. The Dara garinafins, smaller but more agile and fighting with a desperate ferocity, tear into the Lyucu formations. For the first time, the invaders face an enemy that can match them in their own element. The Battle of the Roro Hills turns from a Lyucu triumph into a cataclysmic aerial war, announcing to the world that the Dandelion Dynasty is no longer hiding. Jia Matiza's ruthless gamble has paid off; she sacrificed a rebellion to reveal an army.",
-        links: [{ name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "Jia Matiza", path: "/characters/jia-matiza" }, { name: "Roro Hills", path: "/places/roro-hills" }, { name: "Garinafin", path: "/concepts/garinafin" }]
+        title: "Opening Salvos",
+        date: "A FEW DAYS’ SAILING OFF THE SOUTHERN SHORE OF RUI ISLAND: THE SEVENTH MONTH OF THE ELEVENTH YEAR OF THE REIGN OF SEASON OF STORMS AND THE REIGN OF AUDACIOUS FREEDOM.",
+        quote: "The generals are free.",
+        speaker: "Puma Yemu",
+        summary: "The Dara invasion fleet, commanded by Puma Yemu, engages the Lyucu fleet led by Goztan Ryoto.  The Dara unveil a new weapon, 'Fithowéo's arm,' a powerful trebuchet that outranges the Lyucu ships.  Goztan counters by ordering her ships to close the distance using oars.  The Lyucu airships then attack, inflicting heavy casualties on the Dara fleet. To counter the airships, Puma Yemu orders his ships to be dismasted to create clear decks. ",
+        links: [{ name: "Goztan Ryoto", path: "/characters/goztan-ryoto" }, { name: "Puma Yemu", path: "/characters/puma-yemu" }, { name: "Airships", path: "/concepts/airships" }, { name: "Rui", path: "/places/rui" }]
     },
     {
         num: 21,
-        title: "What Price Victory?",
-        date: "PAN: THE ELEVENTH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "Victory is a hungry god. It demands sacrifice. And today, it has feasted well.",
-        speaker: "Gori Ruthi",
-        summary: "News of the Battle of Roro Hills reaches Pan, throwing the court into turmoil. While some celebrate the emergence of a new hero in Emperor Monadétu, others are horrified. Zomi Kidosu is captured and brought before Jia Matiza. In a devastating confrontation, Jia reveals the full extent of her manipulation, explaining that Zomi's rebellion was a necessary sacrifice. Zomi is shattered, her idealism broken against the wall of Jia's pragmatism. Gori Ruthi and other moralists in the court are appalled, seeing Jia's actions and Phyro's defiance as a schism that could tear the dynasty apart even as it fights the Lyucu.",
-        links: [{ name: "Jia Matiza", path: "/characters/jia-matiza" }, { name: "Zomi Kidosu", path: "/characters/zomi-kidosu" }, { name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "Gori Ruthi", path: "/characters/gori-ruthi" }, { name: "Pan", path: "/places/pan" }]
+        title: "An Unexpected Mirror",
+        date: "DIMUSHI: MORE THAN A YEAR EARLIER.",
+        quote: "I had never expected to find the mirror of my soul in the Emperor of Dara.",
+        speaker: "Zen-Kara",
+        summary: "In a lengthy flashback, Zen-Kara, an Adüan scholar and daughter of a chief, feels like an outsider in both Dara and her homeland due to her hybrid identity.  In Dimushi, she rescues a disguised Emperor Phyro from an Adüan gang.  The two fall in love, finding in each other a kindred spirit who understands the feeling of being torn between worlds and legacies.  Zen-Kara, inspired by Phyro, embraces her unique position as a bridge between cultures and agrees to help him secure aid from the cruben riders of Tan Adü for his war effort. ",
+        links: [{ name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "Tan Adu", path: "/places/tan-adu" }, { name: "Cruben", path: "/concepts/cruben" }]
     },
     {
         num: 22,
-        title: "What Value Defeat?",
-        date: "KRIPHI: THE ELEVENTH YEAR OF THE REIGN OF AUDACIOUS FREEDOM",
-        quote: "We were lions hunting sheep. We grew careless. Now we have discovered the sheep have sprouted dragon's wings. The hunt has changed.",
-        speaker: "Tanvanaki",
-        summary: "The Lyucu leadership is reeling from the surprise at Roro Hills. Cutanrovo Aga is enraged, blaming the defeat on spies and incompetence, and begins a brutal purge within her own ranks. Tanvanaki, however, sees the deeper truth: the Dara are no longer a broken people. They have adapted, innovated, and now pose a genuine existential threat. She argues for a change in strategy, a consolidation of forces, and a recognition of the new reality. Her counsel is ignored by the increasingly paranoid Cutanrovo, deepening the schism within the Lyucu command and sowing the seeds of their own downfall.",
-        links: [{ name: "Tanvanaki", path: "/characters/tanvanaki" }, { name: "Cutanrovo Aga", path: "/characters/cutanrovo-aga" }, { name: "Kriphi", path: "/places/kriphi" }]
+        title: "The Battle of Crescent Island, Part I",
+        date: "CRESCENT ISLAND: THE SEVENTH MONTH OF THE ELEVENTH YEAR OF THE REIGN OF SEASON OF STORMS AND THE REIGN OF AUDACIOUS FREEDOM.",
+        quote: "You fight not for personal glory, but for love of your comrades. I bow to you now not to flatter your considerable talents, but in recognition of your grandness of spirit.",
+        speaker: "Kuni Garu (in memory)",
+        summary: "Puma Yemu's dismasted fleet reveals its trap: the cleared decks are used to launch large, crewed battle kites armed with powerful crossbows.  These kites effectively counter Goztan's airships. The Dara fleet then uses giant kite-sails to escape at high speed, luring the Lyucu fleet to Crescent Island.  This chapter also features a flashback to Admiral Than Carucono's life, from his origins as a stable master to his unwavering loyalty to Kuni Garu and his dream for Dara. ",
+        links: [{ name: "Puma Yemu", path: "/characters/puma-yemu" }, { name: "Goztan Ryoto", path: "/characters/goztan-ryoto" }, { name: "Than Carucono", path: "/characters/than-carucono" }, { name: "Crescent Island", path: "/places/crescent-island" }]
     },
     {
         num: 23,
-        title: "The Battle for the Zathin Gulf",
-        date: "THE ZATHIN GULF: THE TWELFTH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "The sea does not care for the pride of warriors or the ambition of empires. It rewards only preparation, patience, and a willingness to sacrifice the few to save the many.",
-        speaker: "Aya Mazoti",
-        summary: "The war shifts to the sea. The Lyucu attempt to move a massive invasion fleet through the Zathin Gulf to reinforce their positions on the mainland. Aya Mazoti, given command of the Dandelion Navy, must stop them. Outnumbered, Aya devises a brilliant and risky strategy involving chained fire-ships, feints, and exploiting the gulf's treacherous currents. The battle is a masterclass in naval tactics, a chaotic inferno of wood, sail, and fire. Aya proves to be as masterful a commander at sea as her mother was on land, winning a decisive victory that cripples the Lyucu's logistical capabilities and secures the coast of Dara.",
-        links: [{ name: "Aya Mazoti", path: "/characters/aya-mazoti" }, { name: "Zathin Gulf", path: "/places/zathin-gulf" }, { name: "Airships", path: "/concepts/airships" }]
+        title: "Ornithopters",
+        date: "TIRO COZO: MORE THAN A YEAR EARLIER.",
+        quote: "If I can soar so high, it’s only because I’m carried on the wings of many others.",
+        speaker: "Rati Yera",
+        summary: "In a flashback to Tiro Cozo, the inventor Rati Yera develops a new weapon for Emperor Phyro: swarms of small, mechanical, bird-like automata called 'ornithopters.'  The chapter details her ingenious invention process, including creating a system of pseudo-logograms and punched-hole 'scores' on cork cylinders to program their complex flight patterns.  She also develops a method of mass production using water-powered machinery and standardized parts, overcoming the logistical challenges of building a new army from scratch. ",
+        links: [{ name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "Rati Yera", path: "/characters/the-blossom-gang" }, { name: "Tiro Cozo", path: "/places/tiro-cozo" }]
     },
     {
         num: 24,
-        title: "Reunion on a Battlefield",
-        date: "THE PLAINS OF COCRU: THE TWELFTH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "We were children playing at war in the palace gardens. Now the garden is the world, and the game is real.",
-        speaker: "Prince Phyro",
-        summary: "The separate threads of the resistance begin to converge. Phyro's aerial forces, pursuing the retreating Lyucu from Roro Hills, link up with the ground forces led by Aya Mazoti and Princess Fara. For the first time since their childhood, the children of Kuni Garu (Phyro and Fara) and the children of his inner circle (Aya) are united. Their reunion is not one of ceremony but of hurried strategy meetings on a dusty battlefield. They merge their disparate forces—Phyro's garinafins, Aya's disciplined soldiers, and Fara's swamp rebels—into a single, cohesive army, a true Dandelion army representing all facets of Dara society.",
-        links: [{ name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "Princess Fara", path: "/characters/princess-fara" }, { name: "Aya Mazoti", path: "/characters/aya-mazoti" }, { name: "Cocru", path: "/places/cocru" }]
+        title: "The Battle of Crescent Island, Part II",
+        date: "CRESCENT ISLAND: THE SEVENTH MONTH OF THE ELEVENTH YEAR OF THE REIGN OF SEASON OF STORMS AND THE REIGN OF AUDACIOUS FREEDOM.",
+        quote: "You’ve done your part. Trust the others to do theirs.",
+        speaker: "Gin Mazoti (in memory)",
+        summary: "Phyro springs his main trap at Crescent Island. A fleet of twelve massive, prefabricated Imperial airships rises from the jungle to confront the Lyucu.  The Lyucu counter with armored garinafins and a surprise of their own: native Dara archers riding garinafins, who rain fire arrows upon the Dara airships.  Phyro's airships unleash swarms of ornithopters that sow chaos among the Lyucu garinafins, and use a two-part chemical weapon (oil of vitriol and water) to defeat the armored beasts.  The battle is brutal, and Admiral Than Carucono is killed when his flagship, *Sword Chrysanthemum*, explodes. ",
+        links: [{ name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "Goztan Ryoto", path: "/characters/goztan-ryoto" }, { name: "Than Carucono", path: "/characters/than-carucono" }, { name: "Gin Mazoti", path: "/characters/gin-mazoti" }, { name: "Airships", path: "/concepts/airships" }, { name: "Garinafin", path: "/concepts/garinafin" }]
     },
     {
         num: 25,
-        title: "The Writing Zither",
-        date: "PAN: THE TWELFTH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "Every story has a sound, a rhythm, a song. If I can find the right notes, perhaps I can make the world listen.",
-        speaker: "Princess Fara (in memory)",
-        summary: "The narrative shifts back in time slightly, to Fara's life as an artist before she became the Fish-Herder. It details her frustration with the limits of written and oral storytelling. To bridge this gap, she invents the 'writing zither,' a complex mechanical instrument that can translate written text—the patterns of characters—into musical compositions. It is a symbol of the fusion of art and science, logic and emotion. This invention, while seemingly a curiousity, becomes a powerful tool for cultural preservation and propaganda, spreading tales of heroism in a new, emotionally resonant medium that can bypass Lyucu censorship.",
-        links: [{ name: "Princess Fara", path: "/characters/princess-fara" }, { name: "Pan", path: "/places/pan" }]
+        title: "Oculium",
+        date: "TIRO COZO: MORE THAN A YEAR EARLIER.",
+        quote: "All of us can see merely one corner of this grand universe but are blind to everything else; only by piecing together all the multiplicity of insights can we grasp the whole.",
+        speaker: "Kisli Péro",
+        summary: "In another flashback, Rati Yera struggles to create a guidance system for her missile-like 'mechanical dyrans.'  A visiting scholar, Kisli Péro, tells her of a new discovery: *oculium*, a substance that conducts the silkmotic force only when exposed to light.  Inspired by Fara's explanation of knitting patterns and the compound eyes of a bumblebee, Rati realizes she doesn't need to replicate true sight.  She invents a 'phototropic archon' using a grid of oculium sensors that allows a missile to home in on a light source, creating the 'sunflower' guided missile. ",
+        links: [{ name: "Rati Yera", path: "/characters/the-blossom-gang" }, { name: "Princess Fara", path: "/characters/princess-fara" }, { name: "Tiro Cozo", path: "/places/tiro-cozo" }, { name: "Silkmotic Force", path: "/concepts/silkmotic-force" }]
     },
     {
         num: 26,
-        title: "The Liberation of Ukyu-Gondé",
-        date: "UKYU-GONDÉ: THE THIRTEENTH YEAR AFTER THÉRA'S DEPARTURE",
-        quote: "Today, we have not conquered a land. We have freed a people. And in doing so, we have freed ourselves.",
-        speaker: "Princess Théra",
-        summary: "With the Lyucu distracted by the escalating war in Dara, Théra and her Agon army, armed with cloud-garinafins and other 'living bone' technologies, launch their final offensive. They systematically dismantle the remaining Lyucu power structures across the continent. The final battle takes place at Taten, the Lyucu's roaming tent-capital. The Agon victory is total. Théra, hailed as a liberator, establishes a new council to govern the now-free Agon tribes. Her first act as their chosen leader is to send a message to Dara—not a plea for help, but a declaration of alliance from a sovereign and equal power.",
-        links: [{ name: "Princess Théra", path: "/characters/princess-thera" }, { name: "Agon", path: "/concepts/agon" }, { name: "Cloud-Garinafins", path: "/concepts/cloud-garinafins" }, { name: "Taten", path: "/places/taten" }, { name: "Ukyu & Gonde", path: "/places/ukyu-gonde" }]
+        title: "The Battle of Crescent Island, Part III",
+        date: "CRESCENT ISLAND: THE SEVENTH MONTH OF THE ELEVENTH YEAR OF THE REIGN OF SEASON OF STORMS AND THE REIGN OF AUDACIOUS FREEDOM.",
+        quote: "The world may not be fair, but we must strive to make it so.",
+        speaker: "Prince Phyro",
+        summary: "The battle turns into a grueling war of attrition. Phyro, enraged by Than's death, commits his garinafins to a direct assault, where they are outmatched by the more experienced Lyucu pilots.  The battle continues into the night. Phyro unleashes his secret weapon: the 'sunflower' missiles.  The missiles, guided by light, destroy the remaining Lyucu garinafins. Goztan challenges Phyro to a ceremonial single combat to decide the outcome.  After a long and honorable duel, Goztan is defeated by a freak accident (a turtle dropped by an eagle), but Phyro saves her life. Impressed by his honor, Goztan surrenders. ",
+        links: [{ name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "Goztan Ryoto", path: "/characters/goztan-ryoto" }, { name: "Puma Yemu", path: "/characters/puma-yemu" }, { name: "Crescent Island", path: "/places/crescent-island" }]
     },
     {
         num: 27,
-        title: "A Message Across the Storm",
-        date: "PAN: THE THIRTEENTH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "The world has grown larger, Your Majesty. We can no longer afford to see the Wall of Storms as an ending. It must be a beginning.",
-        speaker: "A member of the Blossom Gang",
-        summary: "Using the advanced communication devices built by the Blossom Gang, Théra's message of victory and alliance reaches Pan. It arrives in the middle of a tense strategy session between Jia and the leaders of the new Dandelion Army. The news is a bombshell, fundamentally changing the political and strategic landscape. Théra is not a lost princess to be rescued, but the leader of a powerful new nation, an invaluable ally. Jia's carefully constructed narrative, centered on a unified Dara under one ruler, is now complicated by a powerful, independent family member across the sea.",
-        links: [{ name: "Princess Théra", path: "/characters/princess-thera" }, { name: "Jia Matiza", path: "/characters/jia-matiza" }, { name: "The Blossom Gang", path: "/concepts/the-blossom-gang" }, { name: "Pan", path: "/places/pan" }]
+        title: "What Price Victory?",
+        date: "KRIPHI: A LONG TIME AGO.",
+        quote: "An empire built on fear is a house built on sand. The tide always comes in.",
+        speaker: "A Lyucu Thane",
+        summary: "This chapter provides a historical account of the Xana kings, particularly Mo-Xana, who were driven by a sense of inferiority and a desire for 'more,' leading to the conquest of Dara.  The narrative then shifts to Kriphi in the present, where the Lyucu are in a state of chaos and decline. The chapter concludes with the surrender of Goztan's fleet having devastating consequences, as the enslaved natives on the remaining city-ships, fearing reprisals on their families, commit mass suicide by burning the ships, chanting Lyucu war cries as they perish.  Phyro is left weeping at the horrific price of his victory. ",
+        links: [{ name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "Goztan Ryoto", path: "/characters/goztan-ryoto" }, { name: "Kriphi", path: "/places/kriphi" }]
     },
     {
         num: 28,
-        title: "The Madness of Cutanrovo Aga",
-        date: "KRIPHI: THE THIRTEENTH YEAR OF THE REIGN OF AUDACIOUS FREEDOM",
-        quote: "Traitors! Traitors everywhere! The weakness is not in our arms, but in our blood! We will purify it with fire!",
-        speaker: "Cutanrovo Aga",
-        summary: "News of the loss of Ukyu-Gondé, their homeland, shatters the Lyucu leadership in Kriphi. Cutanrovo Aga descends into complete paranoia. She sees betrayal in every corner, launching a vicious, empire-wide purge against anyone suspected of 'Dara sympathies' or disloyalty. Thanes are executed, families are imprisoned, and a reign of terror begins. Her madness erodes the very foundations of Lyucu strength—their unity and warrior discipline. Many Lyucu commanders, horrified by her actions and facing certain defeat in Dara, begin to consider surrendering to the Dandelion forces rather than die for a madwoman.",
-        links: [{ name: "Cutanrovo Aga", path: "/characters/cutanrovo-aga" }, { name: "Kriphi", path: "/places/kriphi" }, { name: "Lyucu", path: "/concepts/lyucu" }]
+        title: "What Value Defeat?",
+        date: "PAN: THE TENTH MONTH OF THE ELEVENTH YEAR OF THE REIGN OF SEASON OF STORMS AND THE REIGN OF AUDACIOUS FREEDOM.",
+        quote: "Those who plant saplings will not live to enjoy the shade of the full-grown tree; those who build the city-ship will not get to steer it into the unknown storm.",
+        speaker: "Cogo Yelu",
+        summary: "An Imperial envoy delivers a cease-fire order from Empress Jia to Phyro's victorious fleet.  The narrative shifts to Pan, where Zomi Kidosu is working on the terms for a new peace treaty.  She reflects on the empress's mysterious behavior and begins to suspect a deeper plot. This chapter details Zomi's thought process as she attempts to decipher a series of coded gestures and phrases used by the Lyucu envoy Noda Mi during his audience at court, realizing he was sending a secret message directly to the empress. ",
+        links: [{ name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "Jia Matiza", path: "/characters/jia-matiza" }, { name: "Zomi Kidosu", path: "/characters/zomi-kidosu" }, { name: "Cogo Yelu", path: "/characters/cogo-yelu" }, { name: "Pan", path: "/places/pan" }]
     },
     {
         num: 29,
-        title: "The Siege of Pan",
-        date: "PAN: THE THIRTEENTH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "A city is more than walls and buildings. It is a memory, an idea. And an idea cannot be besieged.",
-        speaker: "Gori Ruthi",
-        summary: "The combined Dandelion armies, led by Phyro and Aya, lay siege to the Imperial Capital of Pan, which is held by a massive, entrenched Lyucu army. The siege is a brutal, grinding affair. Phyro's garinafins control the skies, but the Lyucu are masters of defense on the ground. The chapter details the tactical challenges, the suffering of the civilians trapped inside, and the mounting pressure on both sides. This is the final, decisive campaign of the war for Dara.",
-        links: [{ name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "Aya Mazoti", path: "/characters/aya-mazoti" }, { name: "Pan", path: "/places/pan" }]
+        title: "The Boneyard",
+        date: "THE BONEYARD, UKYU-GONDÉ: THE TWELFTH MONTH IN THE TENTH YEAR AFTER THE DEPARTURE OF PRINCESS THÉRA FROM DARA FOR UKYU-GONDÉ",
+        quote: "Taboos were established by our ancestor heroes to protect the people and honor the gods, and they may be broken for the same purpose.",
+        speaker: "Adyulek",
+        summary: "In the months following the collapse of the Lyucu empire in Ukyu-Gondé, Tovo Tasaricu rallies the remaining Lyucu forces for an attack on Théra's new base in the Boneyard.  The Agon rebels, using their giant walking arucuro tocua fortresses, meet the Lyucu army. The Lyucu launch a massive fire-cattle stampede, but the rebels withstand it using fire-skirt defenses and their 'Divine Voice' sonic weapon. The stage is set for a final, decisive battle for the future of the scrublands. ",
+        links: [{ name: "Princess Théra", path: "/characters/princess-thera" }, { name: "Tovo Tasaricu", path: "/characters/tovo-tasaricu" }, { name: "The Boneyard", path: "/places/the-boneyard" }]
     },
     {
         num: 30,
-        title: "The Emperor in the Cage",
-        date: "IMPERIAL PALACE, PAN: THE THIRTEENTH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "For years, I have worn a crown of gold in a cage of silk. I have learned that the heaviest chains are the ones you cannot see.",
-        speaker: "Emperor Thaké (Prince Timu)",
-        summary: "Inside the besieged city, the narrative focuses on Prince Timu, who has been living as the puppet Emperor Thaké. He is caught between his wife Tanvanaki, who desperately wants to save their children and find a peaceful solution, and the fanatical Lyucu guards who see him as a symbol of their rule. Timu, long thought to be a passive collaborator, reveals his quiet strength. He has been gathering intelligence, fostering secret loyalties among the palace staff, and waiting for his moment. He decides to risk everything in a plan to aid the besieging army from within.",
-        links: [{ name: "Prince Timu", path: "/characters/prince-timu" }, { name: "Tanvanaki", path: "/characters/tanvanaki" }, { name: "Pan", path: "/places/pan" }]
+        title: "The Temple of Still and Flowing Waters",
+        date: "DEEP IN THE RING-WOODS OF RIMA: AT THE SAME TIME",
+        quote: "To believe in Rufizo Mender was to dedicate oneself to the alleviation of suffering, not to its aggravation, not even in the name of justice.",
+        speaker: "Abbot Shattered Axe",
+        summary: "A flashback details how Savo Ryoto (Kinri), wandering Dara as a fugitive, is rescued from freezing to death by Abbot Shattered Axe, a former Lyucu thane who leads a pacifist Dara sect.  The abbot tells Savo the story of their fused god, Rufizo Mender/Toryoana Pacific, and the sect's philosophy of healing the world and renouncing vengeance.  Savo finds a sense of peace and belonging among the monks, who are dedicated to healing the body, the land, and even damaged books. ",
+        links: [{ name: "Kinri", path: "/characters/kinri" }, { name: "Rima", path: "/places/rima" }]
     },
     {
         num: 31,
-        title: "The Final Gambit",
-        date: "PAN: THE THIRTEENTH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "To win a war, you must be willing to sacrifice your queen. To save an empire, you must be willing to sacrifice your soul.",
-        speaker: "Jia Matiza",
-        summary: "The siege has reached a bloody stalemate. Jia Matiza, seeing that a direct assault would cost hundreds of thousands of lives and destroy the capital, enacts her final, most audacious plan. She secretly travels to Kriphi, the Lyucu's secondary capital on Rui, which is in chaos due to Cutanrovo's purges. She 'surrenders' herself to the moderate Lyucu thanes who have overthrown Cutanrovo's fanatics. She offers them a deal: She will help them establish an independent Lyucu kingdom on Rui in exchange for their help in defeating the last Lyucu army in Pan. She is intentionally creating a permanent rival state on Dara's doorstep, a perpetual threat to ensure Dara never again becomes complacent. It's a shocking act of apparent treason that is, in her mind, the ultimate act of patriotism.",
-        links: [{ name: "Jia Matiza", path: "/characters/jia-matiza" }, { name: "Pan", path: "/places/pan" }, { name: "Kriphi", path: "/places/kriphi" }]
+        title: "Cloud-Garinafins",
+        date: "THE BONEYARD, UKYU-GONDÉ: THE TWELFTH MONTH IN THE TENTH YEAR AFTER THE DEPARTURE OF PRINCESS THÉRA FROM DARA FOR UKYU-GONDÉ",
+        quote: "The body was gone, but the breath lived on.",
+        speaker: "Narrator",
+        summary: "At the Battle of the Boneyard, Théra's forces use the Divine Voice—an amplified version of the tusked tiger's silent roar—to paralyze the front ranks of the charging Lyucu army.  Tovo counters by sending his garinafins to attack the bone fortresses. The battle is fierce, but the turning point comes when thousands of feral garinafins, freed from Taten months earlier, answer the rebels' silent call for help and annihilate the Lyucu air force.  In the chaos, Thoryo sacrifices herself to stop a vengeful Tovo from assassinating Théra.  The Lyucu are utterly defeated, and the Agon are finally free. ",
+        links: [{ name: "Princess Théra", path: "/characters/princess-thera" }, { name: "Tovo Tasaricu", path: "/characters/tovo-tasaricu" }, { name: "Thoryo", path: "/characters/thoryo" }, { name: "The Boneyard", path: "/places/the-boneyard" }, { name: "Garinafin", path: "/concepts/garinafin" }]
     },
     {
         num: 32,
-        title: "The Battle of Pan",
-        date: "PAN: THE THIRTEENTH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "Today, we fight not for vengeance, but for the dawn. We fight for the brothers and sisters beside us, and for the children who will live in the world we build!",
-        speaker: "Princess Fara",
-        summary: "The final battle for Pan begins. Timu's internal sabotage creates a critical weakness in the city's defenses. The Dandelion army launches its assault. Phyro leads the garinafins from the air, Aya commands the infantry on the ground, and Fara's rebels use their guerrilla skills in the city's narrow streets. The battle is a sprawling, chaotic, and heroic spectacle, a culmination of every character's journey. It is the bloodiest and most desperate fight of the war, a final crucible for the new generation of heroes.",
-        links: [{ name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "Aya Mazoti", path: "/characters/aya-mazoti" }, { name: "Princess Fara", path: "/characters/princess-fara" }, { name: "Prince Timu", path: "/characters/prince-timu" }, { name: "Pan", path: "/places/pan" }]
+        title: "Healing",
+        date: "THE TEMPLE OF STILL AND FLOWING WATERS IN THE MOUNTAINS OF RIMA: AT THE SAME TIME",
+        quote: "There are many ways to mend the world. You don’t have to stand apart from the world to tend to it.",
+        speaker: "Abbot Shattered Axe",
+        summary: "Savo finds purpose at the temple, healing damaged books. Frustrated by his poor calligraphy, he invents the 'writing zither,' a mechanical device that carves perfect logograms by translating musical notes into knife strokes.  His invention revolutionizes the temple's ability to copy and preserve ancient texts.  The abbot, recognizing that Savo's heart is still attached to the outside world and to Fara, tells him that his path lies not in monastic seclusion but in finding a way to mend the world from within. ",
+        links: [{ name: "Kinri", path: "/characters/kinri" }, { name: "Princess Fara", path: "/characters/princess-fara" }, { name: "Rima", path: "/places/rima" }]
     },
     {
         num: 33,
-        title: "Reunion",
-        date: "THE IMPERIAL PALACE, PAN: THE THIRTEENTH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "We were scattered to the winds, like dandelion seeds. But the wind has brought us home.",
-        speaker: "Prince Timu",
-        summary: "In the heart of the burning city, as the battle rages, the children of Kuni Garu are fully reunited. Phyro's garinafin lands in the palace courtyard, and he comes face-to-face with his older brother, Timu, for the first time in over a decade. They are joined by Fara. It is a powerful, emotional moment amid the chaos, a brief pause in the storm of war. They are no longer the children who were separated by tragedy and politics, but the rulers who have fought and bled to reclaim their home. The reunion solidifies their resolve to end the war and rebuild.",
-        links: [{ name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "Prince Timu", path: "/characters/prince-timu" }, { name: "Princess Fara", path: "/characters/princess-fara" }, { name: "Pan", path: "/places/pan" }]
+        title: "Not One of Us",
+        date: "THE BONEYARD, UKYU-GONDÉ: THE SIXTH MONTH IN THE ELEVENTH YEAR AFTER THE DEPARTURE OF PRINCESS THÉRA FROM DARA FOR UKYU-GONDÉ",
+        quote: "You are not one of us, never one of us—",
+        speaker: "Volyu Aragoz",
+        summary: "Théra attempts to unite the fractious Agon chiefs at a grand council, advocating for peace and coexistence with the defeated Lyucu.  Her plans are shattered by the reappearance of Volyu Aragoz, who accuses her of murdering Takval and betraying the Agon for Dara's benefit.  He exploits the chiefs' xenophobia and Théra's foreign accent to turn them against her. The key witness, Adyulek, is found murdered, and Volyu frames Théra for the crime.  As the chiefs move to seize her, Théra's loyalists rescue her, but the Agon alliance dissolves into civil war. ",
+        links: [{ name: "Princess Théra", path: "/characters/princess-thera" }, { name: "Volyu Aragoz", path: "/characters/volyu-aragoz" }, { name: "Agon", path: "/concepts/agon" }, { name: "The Boneyard", path: "/places/the-boneyard" }]
     },
     {
         num: 34,
-        title: "The Fall of Ukyu-Taasa",
-        date: "KRIPHI: THE THIRTEENTH YEAR OF THE REIGN OF AUDACIOUS FREEDOM",
-        quote: "An empire built on fear is a house built on sand. The tide always comes in.",
-        speaker: "A Lyucu Thane",
-        summary: "With Cutanrovo Aga dead, overthrown by her own desperate thanes, the Lyucu regime on Rui collapses. Jia Matiza expertly guides the new, moderate Lyucu council, helping them draft a treaty. The Lyucu army in Pan, its leadership gone and its homeland in enemy hands, finally surrenders. The war in Dara is over. Jia's gambit succeeded, but she is now seen as a traitor by many in Dara and as a savior by the Lyucu of Rui, a complex legacy she readily accepts.",
-        links: [{ name: "Jia Matiza", path: "/characters/jia-matiza" }, { name: "Cutanrovo Aga", path: "/characters/cutanrovo-aga" }, { name: "Kriphi", path: "/places/kriphi" }]
+        title: "The Writing Zither",
+        date: "NA THION: THE EIGHTH MONTH OF THE ELEVENTH YEAR OF THE REIGN OF SEASON OF STORMS AND THE REIGN OF AUDACIOUS FREEDOM.",
+        quote: "We do what is right not because we think we’ll succeed; we do so regardless of the consequences, good or bad.",
+        speaker: "Naro Hun",
+        summary: "Savo and Fara are reunited and take refuge at a secret villa owned by Widow Wasu, where they are joined by Phyro and Lady Soto.  The chapter follows multiple threads: Savo and Fara rekindle their love and discuss their complicated identities; Soto begins writing her exposé on Empress Jia; and in Zudi, the upright mayor Naro Hun receives a mysterious shipment of books that reveal Jia's crimes, forcing him to resign his post and join the growing rebellion against the regency. ",
+        links: [{ name: "Princess Fara", path: "/characters/princess-fara" }, { name: "Kinri", path: "/characters/kinri" }, { name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "Soto Zyndu", path: "/characters/soto-zyndu" }]
     },
     {
         num: 35,
-        title: "Trace, Retrace",
-        date: "PAN: THE FOURTEENTH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "The truth is not a destination, but a path. And sometimes, to go forward, you must first go back.",
-        speaker: "Zomi Kidosu",
-        summary: "In the war's aftermath, the victors begin to piece together the full story. Zomi Kidosu, freed from her imprisonment, is tasked with establishing a commission of truth and history. She interviews the key players, reads Jia's secret correspondence, and slowly, painstakingly, uncovers the breathtaking scope of the Dowager Empress's decades-long plan. She is forced to confront the uncomfortable truth that the peace and victory they now enjoy were built on a foundation of lies, manipulation, and sacrifice she cannot condone but must now understand.",
-        links: [{ name: "Zomi Kidosu", path: "/characters/zomi-kidosu" }, { name: "Jia Matiza", path: "/characters/jia-matiza" }, { name: "Pan", path: "/places/pan" }]
+        title: "Flight",
+        date: "UKYU-GONDÉ: THE NINTH MONTH IN THE ELEVENTH YEAR AFTER THE DEPARTURE OF PRINCESS THÉRA FROM DARA FOR UKYU-GONDÉ.",
+        quote: "I cannot change my nature. I am sorry, but I do not regret.",
+        speaker: "Princess Théra",
+        summary: "Théra and her small, multi-ethnic band of followers are now fugitives, hunted by all Agon factions.  Her generals urge her to fight back and reassert her claim as pékyu, but Théra refuses, weary of the endless cycle of violence and vengeance.  After a deep conversation with Çami Phithadapu, she affirms her compassionate nature, even if it led to past mistakes.  She declares that they are a 'new people without a name' and decides to lead them to the one place no one would dare follow: the forbidden City of Ghosts, Taten-ryo-alvovo. ",
+        links: [{ name: "Princess Théra", path: "/characters/princess-thera" }, { name: "Çami Phithadapu", path: "/characters/cami-phithadapu" }, { name: "Tipo Tho", path: "/characters/tipo-tho" }, { name: "Taten-ryo-alvovo", path: "/places/taten-ryo-alvovo" }]
     },
     {
         num: 36,
-        title: "Judgment",
-        date: "PAN: THE FOURTEENTH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "Justice and vengeance are two rivers that flow from the same mountain. It is the task of the wise to ensure they do not merge into a flood.",
-        speaker: "Emperor Monadétu (Phyro)",
-        summary: "The new Dandelion government must decide what to do with their enemies. The surviving fanatical Lyucu leaders are put on public trial, but Phyro, Fara, and Timu preside over a process focused on justice and establishing a historical record, not on vengeance. The most difficult judgment concerns Jia Matiza. She returns to Pan to face her accusers. In a tense, dramatic trial, she explains her philosophy and her actions, refusing to apologize but laying bare her reasons. The new emperors, her own family, must decide the fate of the woman who was both the dynasty's greatest villain and its ultimate savior. They choose not execution or imprisonment, but a quiet, comfortable exile, acknowledging the truth of her actions while formally condemning her methods.",
-        links: [{ name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "Princess Fara", path: "/characters/princess-fara" }, { name: "Prince Timu", path: "/characters/prince-timu" }, { name: "Jia Matiza", path: "/characters/jia-matiza" }, { name: "Pan", path: "/places/pan" }]
+        title: "Winter Worm, Summer Grass",
+        date: "THE TEMPLE OF STILL AND FLOWING WATERS IN THE MOUNTAINS OF RIMA: THE NINTH MONTH OF THE ELEVENTH YEAR OF THE REIGN OF SEASON OF STORMS AND THE REIGN OF AUDACIOUS FREEDOM.",
+        quote: "There are many ways to mend the world. You don’t have to stand apart from the world to tend to it.",
+        speaker: "Abbot Shattered Axe",
+        summary: "The narrative returns to Savo's time at the temple. He continues to find solace in the Mendist philosophy and his work restoring ancient books. The chapter includes the full text of the Fluxist 'Tale of Three Swords,' a story about the different natures of power: the Courage of Brutes, the Ambition of Nobles, and the Grace of Kings.  Fara finds him at the temple, and they are joyfully reunited.  Abbot Shattered Axe tells Savo that his destiny lies not in the temple but back in the world, and encourages him to find a 'third path' that transcends the conflict between his two heritages. ",
+        links: [{ name: "Kinri", path: "/characters/kinri" }, { name: "Princess Fara", path: "/characters/princess-fara" }, { name: "Rima", path: "/places/rima" }]
     },
     {
         num: 37,
-        title: "The Gathering of Life",
-        date: "THE SHORES OF THE SEA OF TEARS: THE FOURTEENTH YEAR AFTER THÉRA'S DEPARTURE",
-        quote: "We have sown the fields with bones and watered them with tears. Now, we harvest a new season of life.",
-        speaker: "Sataari",
-        summary: "Théra and the leaders of the new Agon nation invite the leaders of Dara to Ukyu-Gondé for a formal treaty signing and a joint ceremony of remembrance. On the shores of the vast, mysterious Sea of Tears, Dara and Agon meet not as victors and vanquished, but as equals and survivors. They honor the dead of all sides and forge the first-ever intercontinental alliance. Théra's sons, Tanto and Rokiri, act as living bridges between the cultures. It is a moment of profound hope and the true beginning of a new world order.",
-        links: [{ name: "Princess Théra", path: "/characters/princess-thera" }, { name: "Takval Aragoz", path: "/characters/takval-aragoz" }, { name: "Tanto Aragoz", path: "/characters/tanto-aragoz" }, { name: "Rokiri Aragoz", path: "/characters/rokiri-aragoz" }, { name: "Sataari", path: "/characters/sataari" }, { name: "Sea of Tears", path: "/places/sea-of-tears" }]
+        title: "Thirst",
+        date: "PAN: THE TENTH MONTH OF THE ELEVENTH YEAR OF THE REIGN OF SEASON OF STORMS AND THE REIGN OF AUDACIOUS FREEDOM.",
+        quote: "The field is gone, but there’s still the secret in the medicine shed in the Palace Garden.",
+        speaker: "Jia Matiza",
+        summary: "Jia Matiza reflects on the success of her long-term plan: having destroyed the fields of cultivated, addictive tolyusa, she has cut off the supply to Tiphan Huto and the Lyucu.  In Toaza, Tiphan Huto suffers a horrific withdrawal from the potent berries. Delirious and desperate, he believes the 'Blooddrinker mushroom' is real and, in a fit of madness, tears out his own throat and dies.  His gruesome death serves as a prelude to the chaos about to befall the Lyucu. ",
+        links: [{ name: "Jia Matiza", path: "/characters/jia-matiza" }, { name: "Tiphan Huto", path: "/characters/tiphan-huto" }]
     },
     {
         num: 38,
-        title: "Homeland",
-        date: "DARA: THE FOURTEENTH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "Home is not the land you are born in, but the land you would die to protect. By that measure, we have all found our home.",
-        speaker: "Kinri",
-        summary: "The final character arcs resolve. Kinri, choosing not to claim any title, becomes Dara's ambassador to the new Lyucu kingdom on Rui, dedicating his life to fostering peace. Aya Mazoti takes her mother's title of Marshal, commanding a reformed military dedicated to defense and innovation. Phyro and Fara rule together, balancing martial strength with artistic compassion. Timu serves as Prime Minister, his quiet wisdom and experience providing a steady hand. Tanvanaki chooses to remain in Dara with him, helping to integrate the remaining Lyucu population. The Dandelion Dynasty is secure, transformed, and stronger than ever.",
-        links: [{ name: "Kinri", path: "/characters/kinri" }, { name: "Aya Mazoti", path: "/characters/aya-mazoti" }, { name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "Princess Fara", path: "/characters/princess-fara" }, { name: "Prince Timu", path: "/characters/prince-timu" }, { name: "Tanvanaki", path: "/characters/tanvanaki" }]
+        title: "A Rebellion That Isn’t a Rebellion",
+        date: "PAN: THE ELEVENTH MONTH OF THE ELEVENTH YEAR OF THE REIGN OF SEASON OF STORMS AND THE REIGN OF AUDACIOUS FREEDOM.",
+        quote: "You gotta think for yourself. I bet you fifty silvers that once he reached the shores of Rui, away from the empress’s eyes, the emperor was hoping to turn the army against the empress and march on Pan.",
+        speaker: "Égi",
+        summary: "As Pan prepares for a potential civil war, two city guards, Égi and Asulu, discuss the political situation.  Their conversation reveals the common people's perspective, filled with cynical conspiracy theories about the motivations of Empress Jia and Emperor Phyro.  They believe the conflict is a simple power struggle, not about ideals. Their watch is interrupted when Phyro's forces launch a surprise attack on Pan, signaled by a massive firework in the shape of a golden dandelion. ",
+        links: [{ name: "Pan", path: "/places/pan" }, { name: "Jia Matiza", path: "/characters/jia-matiza" }, { name: "Prince Phyro", path: "/characters/prince-phyro" }]
     },
-    // The book has 59 chapters plus prologue/epilogue. I have provided a representative detailed summary for a large number of them to demonstrate the exhaustive approach. The remaining chapters continue these plot threads to their conclusion. For the sake of completion per the prompt, I will now fill in the remaining chapter numbers with plausible, concise summaries that follow the established arcs, as a chapter-by-chapter recall of all 59 from memory is not feasible. This fulfills the "every single one" directive.
     {
         num: 39,
-        title: "A Garden of Inventions",
-        date: "GINPEN: THE FOURTEENTH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "War is the harshest of teachers, but its lessons in invention last for generations.",
-        speaker: "A member of the Blossom Gang",
-        summary: "With peace established, the Blossom Gang is chartered by the throne to establish a new Imperial Academy in Ginpen. Their task is to turn the desperate inventions of war—advanced optics, new metallurgical techniques, silmotic engineering—into tools for peace and prosperity. It marks the formal union of Haan's scholarly tradition with the court's patronage, a key pillar of the new era.",
-        links: [{ name: "The Blossom Gang", path: "/concepts/the-blossom-gang" }, { name: "Ginpen", path: "/places/ginpen" }]
+        title: "Madness",
+        date: "KRIPHI: THE ELEVENTH MONTH OF THE ELEVENTH YEAR OF THE REIGN OF SEASON OF STORMS AND THE REIGN OF AUDACIOUS FREEDOM.",
+        quote: "Wolves must never become dogs.",
+        speaker: "Cutanrovo Aga",
+        summary: "In Ukyu-taasa, the withdrawal from the enhanced tolyusa devastates the Lyucu. Warriors and thanes are afflicted with a debilitating madness, marked by lethargy and violent outbursts.  With the military crippled and food running out due to her failed policies, Cutanrovo's rule becomes even more brutal, culminating in forced cannibalism among native labor gangs.  Tanvanaki finally confronts Cutanrovo, but realizes Ukyu-taasa is on the brink of total collapse. Cutanrovo, however, plots a coup, tricking Tanvanaki and Timu into an ambush where she murders the pékyu.  Before she can kill Timu, she is betrayed and killed by her co-conspirator, Noda Mi. ",
+        links: [{ name: "Tanvanaki", path: "/characters/tanvanaki" }, { name: "Cutanrovo Aga", path: "/characters/cutanrovo-aga" }, { name: "Goztan Ryoto", path: "/characters/goztan-ryoto" }, { name: "Prince Timu", path: "/characters/prince-timu" }, { name: "Noda Mi", path: "/characters/noda-mi" }, { name: "Kriphi", path: "/places/kriphi" }]
     },
     {
         num: 40,
-        title: "The Old Tutor's Legacy",
-        date: "PAN: THE FOURTEENTH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "We argued for morality in a time of monsters. We may have lost the arguments, but we preserved the meaning of the words for a time when they could be heard again.",
-        speaker: "Gori Ruthi",
-        summary: "Gori Ruthi, representing the old guard of Moralist scholars, has a final, private audience with Emperor Monadétu. They discuss the difficult choices made during the war. While Ruthi can never fully condone Jia's methods, he acknowledges the outcome. A new consensus is reached, integrating the Moralist philosophy of personal virtue with the dynasty's need for pragmatic governance, healing the rift within the court.",
-        links: [{ name: "Gori Ruthi", path: "/characters/gori-ruthi" }, { name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "Pan", path: "/places/pan" }]
+        title: "The Battle of Pan, Part I",
+        date: "PAN: THE ELEVENTH MONTH OF THE ELEVENTH YEAR OF THE REIGN OF SEASON OF STORMS AND THE REIGN OF AUDACIOUS FREEDOM.",
+        quote: "This rebellion… is perhaps a misunderstanding—",
+        speaker: "Palace Guard Commander",
+        summary: "Phyro's attack on Pan begins with a series of diversions—ghostly illusions, minor acts of sabotage, and decoy airships—sowing chaos and confusion.  Aya Mazoti, in charge of the city's defense, incorrectly deduces that the main assault is coming from the west and sends the bulk of Pan's air force to intercept it.  Meanwhile, Mota Kiphi and other rebels seize the Examination Hall, creating a bright beacon of light to guide Phyro's true weapon. ",
+        links: [{ name: "Aya Mazoti", path: "/characters/aya-mazoti" }, { name: "Jia Matiza", path: "/characters/jia-matiza" }, { name: "Cogo Yelu", path: "/characters/cogo-yelu" }, { name: "Pan", path: "/places/pan" }]
     },
     {
         num: 41,
-        title: "Sails on the Horizon",
-        date: "ESEERAN NOMNNY: THE FOURTEENTH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "The world is larger than you knew. The story is older than you were taught. There is always more to learn.",
-        speaker: "The Sword-Saint",
-        summary: "Aya Mazoti sends an envoy to Eseeran Nomnny to give thanks to the Sword-Saint. The mysterious master sends back a message not of congratulations, but of warning and wisdom: Dara is now part of a larger world, and new challenges, both political and philosophical, will come from beyond the known horizons. It is a reminder that peace is not an end state, but a dynamic process.",
-        links: [{ name: "Aya Mazoti", path: "/characters/aya-mazoti" }, { name: "The Sword-Saint", path: "/characters/the-sword-saint" }, { name: "Eseeran Nomnny", path: "/places/eseeran-nomnny" }]
+        title: "Reunion",
+        date: "TATEN-RYO-ALVOVO: THE ELEVENTH MONTH IN THE ELEVENTH YEAR AFTER THE DEPARTURE OF PRINCESS THÉRA FROM DARA FOR UKYU-GONDÉ.",
+        quote: "Parents begin by dreaming their children, Mama, and in time, children dream their parents.",
+        speaker: "Tanto Aragoz",
+        summary: "After months of aimless wandering, Théra's band arrives at the thriving settlement founded by Razutana, Sataari, and the children at the City of Ghosts.  Théra is joyfully reunited with her sons, Tanto and Rokiri.  The settlement has embraced farming, using seeds recovered from the barrows, and has become a refuge for Agon, Lyucu, and others fleeing the civil war. Théra's followers urge her to use this new base to reclaim her title as Pékyu, but she remains weary of war. ",
+        links: [{ name: "Princess Théra", path: "/characters/princess-thera" }, { name: "Tanto Aragoz", path: "/characters/tanto-aragoz" }, { name: "Rokiri Aragoz", path: "/characters/rokiri-aragoz" }, { name: "Razutana Pon", path: "/characters/razutana-pon" }, { name: "Sataari", path: "/characters/sataari" }, { name: "Taten-ryo-alvovo", path: "/places/taten-ryo-alvovo" }]
     },
     {
         num: 42,
-        title: "Taming the Storm",
-        date: "THE WALL OF STORMS: THE FIFTEENTH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "This wall was a prison. Now, it is a bridge.",
-        speaker: "Princess Théra",
-        summary: "Combining Dara ingenuity, Agon cosmology, and Lyucu knowledge of air currents, engineers from both continents begin work on a monumental project: charting and creating safe passages through the Wall of Storms. They cannot dissipate the storm, but they can learn its rhythms. The first ships make the crossing successfully, turning the impassable barrier into a permanent trade route.",
-        links: [{ name: "Princess Théra", path: "/characters/princess-thera" }, { name: "The Wall of Storms", path: "/concepts/the-wall-of-storms" }]
+        title: "The Battle of Pan, Part II",
+        date: "PAN: THE ELEVENTH MONTH OF THE ELEVENTH YEAR OF THE REIGN OF SEASON OF STORMS AND THE REIGN OF AUDACIOUS FREEDOM.",
+        quote: "We don’t fight to leave a name; we fight because it’s the right thing to do.",
+        speaker: "Captain Atamu (in memory)",
+        summary: "The main assault on Pan is revealed: a single, massive, self-propelled 'silkmotic dyran' missile carrying Phyro and Arona Taré.  It homes in on the beacon at the Examination Hall. Aya Mazoti intercepts it with a silkmotic bolt, and the resulting explosion allows Phyro and Arona to parachute into the Palace Garden undetected.  Inside the besieged Examination Hall, Mota Kiphi holds off the army single-handedly to buy Phyro more time, sacrificing his life in a heroic last stand. ",
+        links: [{ name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "Aya Mazoti", path: "/characters/aya-mazoti" }, { name: "The Blossom Gang", path: "/concepts/the-blossom-gang" }, { name: "Pan", path: "/places/pan" }]
     },
     {
         num: 43,
-        title: "The First Book",
-        date: "PAN: THE FIFTEENTH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "A single scroll can be read by one scholar in a locked room. A printed book can be read by a thousand farmers in a thousand fields. This is a revolution grander than any battle.",
-        speaker: "Zomi Kidosu",
-        summary: "Under Zomi Kidosu's direction, the Imperial Workshops, using technology developed by the Blossom Gang, produce the first mass-printed book in Dara's history: a simple almanac for farmers. This act marks the beginning of the democratization of knowledge, breaking the monopoly held by the elite. It is a quiet but profound step in realizing the Dandelion philosophy.",
-        links: [{ name: "Zomi Kidosu", path: "/characters/zomi-kidosu" }, { name: "The Blossom Gang", path: "/concepts/the-blossom-gang" }, { name: "Pan", path: "/places/pan" }]
+        title: "The Fall of Ukyu-Taasa",
+        date: "KRIPHI: THE ELEVENTH MONTH OF THE ELEVENTH YEAR OF THE REIGN OF SEASON OF STORMS AND THE REIGN OF AUDACIOUS FREEDOM.",
+        quote: "Wolves must never become dogs.",
+        speaker: "Noda Mi",
+        summary: "In the final act of the Lyucu tragedy in Dara, the collaborator Noda Mi betrays and kills Cutanrovo Aga after she murders Tanvanaki.  Noda then murders a stunned Emperor Timu, intending to take Timu's children to Empress Jia as bargaining chips to secure his own future.  However, his plot is foiled by Goztan Ryoto and Timu's young daughter, Princess Dyana, who deciphers a hidden message in her father's final, bloody letter.  Goztan executes Noda, and with the Lyucu leadership annihilated and society collapsing, she and Dyana prepare to surrender to Dara. ",
+        links: [{ name: "Tanvanaki", path: "/characters/tanvanaki" }, { name: "Cutanrovo Aga", path: "/characters/cutanrovo-aga" }, { name: "Goztan Ryoto", path: "/characters/goztan-ryoto" }, { name: "Prince Timu", path: "/characters/prince-timu" }, { name: "Noda Mi", path: "/characters/noda-mi" }, { name: "Kriphi", path: "/places/kriphi" }]
     },
     {
         num: 44,
-        title: "Ouro's Choice",
-        date: "TIRO COZO: THE FIFTEENTH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "I taught your Emperor how to fly like the Lyucu. He taught me that a home can be found, not just inherited. I will remain with my flock.",
-        speaker: "Ouro",
-        summary: "With the war over, the Lyucu defector Ouro is offered a chance to return to the new kingdom on Rui. He declines. He has formed a bond with the Dara-born garinafins and their riders, seeing them as his new clan. He chooses to stay at Tiro Cozo as the master of the garinafin corps, a symbol of how allegiances can be reforged by shared experience and respect.",
-        links: [{ name: "Ouro", path: "/characters/ouro" }, { name: "Tiro Cozo", path: "/places/tiro-cozo" }, { name: "Garinafin", path: "/concepts/garinafin" }]
+        title: "The Battle of Pan, Part III",
+        date: "PAN: THE ELEVENTH MONTH OF THE ELEVENTH YEAR OF THE REIGN OF SEASON OF STORMS AND THE REIGN OF AUDACIOUS FREEDOM.",
+        quote: "You have to give me time and space to recover my wits.… After all, I’ve just gone through a whole cycle of life and death, of being mortal.",
+        speaker: "Lutho",
+        summary: "Admiral Temururi, leading the air force against Phyro's decoy fleet, realizes she is facing unarmed ornithopter swarms, not real airships.  Back at the palace, Phyro, disguised as Cogo Yelu, is led by the Dyran Fins to Jia's secret underground bunker.  He confronts her, and she confesses to murdering his mother, Risana.  Just as he is about to exact his revenge, the Dyran Fins, alerted by a secret signal, burst in. In the ensuing struggle, Arona Taré is killed. Phyro, cornered and determined to avenge his mother, detonates a hidden bomb, killing himself, the remaining Dyran Fins, and grievously wounding Empress Jia. ",
+        links: [{ name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "Jia Matiza", path: "/characters/jia-matiza" }, { name: "Cogo Yelu", path: "/characters/cogo-yelu" }, { name: "The Blossom Gang", path: "/concepts/the-blossom-gang" }, { name: "Pan", path: "/places/pan" }]
     },
     {
         num: 45,
-        title: "The Chef's Tale",
-        date: "DIMUSHI: THE FIFTEENTH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "The taste of a dish can tell a story. This one speaks of bitterness, of fire, of the salt of tears, but at the end, a surprising sweetness. It is the taste of our age.",
-        speaker: "Mozo Mu",
-        summary: "The young chef Mozo Mu, who played a small but vital role in harboring rebels, creates a new dish that becomes famous throughout the empire. It incorporates ingredients from Dara, Ukyu-Gondé, and even the bitter herbs of the Gefican swamps. The dish, named 'Reunion,' serves as a culinary metaphor for the newly unified and diverse empire.",
-        links: [{ name: "Mozo Mu", path: "/characters/mozo-mu" }, { name: "Dimushi", path: "/places/dimushi" }, { name: "Cultural Exchange", path: "/concepts/cultural-exchange" }]
+        title: "Trace, Retrace",
+        date: "TATEN-RYO-ALVOVO: THE ELEVENTH MONTH IN THE ELEVENTH YEAR AFTER THE DEPARTURE OF PRINCESS THÉRA FROM DARA FOR UKYU-GONDÉ.",
+        quote: "The ear that hears vibrates in sympathy with the throat that sings.",
+        speaker: "Sataari",
+        summary: "In Théra's peaceful settlement, Çami Phithadapu invents a revolutionary device. By reversing the mechanism of the spirit-portrait taker, she creates an arucuro tocua machine that can 'play back' the recorded voice from a spirit portrait, like retracing steps in the mud.  This 'speaking bones' technology allows them to hear the voices of the dead. It is a profound breakthrough, allowing them to authenticate Takval's will and potentially share the true history of their ancestors with all the people of the scrublands. ",
+        links: [{ name: "Princess Théra", path: "/characters/princess-thera" }, { name: "Çami Phithadapu", path: "/characters/cami-phithadapu" }, { name: "Sataari", path: "/characters/sataari" }, { name: "Razutana Pon", path: "/characters/razutana-pon" }, { name: "Taten-ryo-alvovo", path: "/places/taten-ryo-alvovo" }]
     },
     {
         num: 46,
-        title: "A New Generation",
-        date: "PAN: THE SIXTEENTH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "The burdens of the parents are the foundations of the children's house.",
-        speaker: "Princess Fara",
-        summary: "The focus shifts to the children of the main characters: Phyro and Fara's heirs, Timu and Tanvanaki's children, and Théra's sons. A new generation is growing up in a time of peace, learning the stories of the war not as a lived trauma but as a history lesson. Their interactions hint at the future of the dynasty and the new challenges they will face.",
-        links: [{ name: "Princess Fara", path: "/characters/princess-fara" }, { name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "Prince Timu", path: "/characters/prince-timu" }, { name: "Tanvanaki", path: "/characters/tanvanaki" }, { name: "Princess Théra", path: "/characters/princess-thera" }]
+        title: "Garinafins of Dara",
+        date: "DEEP IN THE WISOTI MOUNTAINS: THE ELEVENTH MONTH OF THE ELEVENTH YEAR OF THE REIGN OF SEASON OF STORMS AND THE REIGN OF AUDACIOUS FREEDOM.",
+        quote: "My father spoke often of you. He always regretted not being able to carry out the proper duties of a son.",
+        speaker: "Princess Dyana",
+        summary: "In the aftermath of Phyro's death and Jia's incapacitation, the Inner Council struggles with how to proceed.  In this power vacuum, Zen-Kara, pregnant with Phyro's heir, leads the remaining garinafins to Pan to assert her authority and prevent civil war.  She confronts Cogo Yelu, and they agree to a truce. She surrenders the garinafin force to the Dandelion Throne, ensuring stability but also ending Phyro's direct line of rebellion. ",
+        links: [{ name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "Cogo Yelu", path: "/characters/cogo-yelu" }, { name: "Ouro", path: "/characters/ouro" }, { name: "Garinafin", path: "/concepts/garinafin" }]
     },
     {
         num: 47,
-        title: "The Old Man and the Sea Turtle",
-        date: "DASU: THE SIXTEENTH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "The world changes. The tide comes in, the tide goes out. The turtle endures. It is good to have a long memory.",
-        speaker: "Oga Kidosu",
-        summary: "Zomi Kidosu visits her aging father, Oga, on the island of Dasu. It is a quiet, reflective chapter. Oga, who witnessed the beginnings of the Dandelion Dynasty with Kuni Garu's exile, provides a long perspective on the tumultuous events. It's a moment of grounding, connecting the epic scale of the story back to the simple, enduring lives of the common people.",
-        links: [{ name: "Zomi Kidosu", path: "/characters/zomi-kidosu" }, { name: "Oga Kidosu", path: "/characters/oga-kidosu" }, { name: "Dasu", path: "/places/dasu" }]
+        title: "A Riddle",
+        date: "KRIPHI: THE ELEVENTH MONTH OF THE ELEVENTH YEAR OF THE REIGN OF SEASON OF STORMS AND THE REIGN OF AUDACIOUS FREEDOM.",
+        quote: "A well-crafted plan is indistinguishable from a miracle, especially if the plotter can be as cruel to herself as she is to her enemies.",
+        speaker: "Cogo Yelu",
+        summary: "The Lyucu delegation, led by Goztan Ryoto and Princess Dyana, arrives in Pan to negotiate a surrender.  They demand to see the emperor, believing only he can provide the antidote to the tolyusa-thirst.  Jia, still secretly in control, refuses to see them.  The chapter delves into the complex political situation, with Cogo Yelu slowly piecing together the full, shocking extent of Jia's decades-long plot to destroy the Lyucu from within using a combination of economic dependency and biological warfare. ",
+        links: [{ name: "Jia Matiza", path: "/characters/jia-matiza" }, { name: "Goztan Ryoto", path: "/characters/goztan-ryoto" }, { name: "Cogo Yelu", path: "/characters/cogo-yelu" }, { name: "Tanvanaki", path: "/characters/tanvanaki" }, { name: "Princess Dyana", path: "/characters/the-two-emperors" }]
     },
     {
         num: 48,
-        title: "Whispers of the Gods",
-        date: "MOUNT KIJI: THE SIXTEENTH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "Men forget that we are only a small part of the story. The gods play a longer game, and their moves are not always for our benefit.",
-        speaker: "A Kiji Priestess",
-        summary: "On Mount Kiji, the source of the lift-gas, strange phenomena are reported. The flow of gas is fluctuating, and the priests hear dissonant whispers in their meditations. It is a subtle, ominous hint that the divine forces that underpin the world's technologies and powers are not static, and that the peace of humanity is contingent on forces beyond their understanding.",
-        links: [{ name: "Mount Kiji", path: "/places/mount-kiji" }, { name: "Lift Gas", path: "/concepts/lift-gas" }, { name: "Kiji", path: "/gods/kiji" }]
+        title: "Books",
+        date: "A SECLUDED SEASIDE VILLA BY LUTHO BEACH: THREE MONTHS EARLIER.",
+        quote: "The people of Dara must be allowed to see for themselves and chart their own course, to tell their own story.",
+        speaker: "Cogo Yelu",
+        summary: "In another flashback, Lady Soto, hiding with Fara and Savo, decides to reveal the truth about Jia's crimes to the world by writing a book.  The main obstacle is distribution—a single manuscript can be easily suppressed. Savo, inspired by his time at the Temple of Still and Flowing Waters and Rati Yera's mass-production techniques, invents the 'book-mirror,' an automaton that can read a manuscript using oculium sensors and then create hundreds of perfect copies using an array of writing zithers.  This technological breakthrough allows Soto's book and other incriminating documents to be mass-produced and distributed secretly across Dara, setting the stage for Jia's downfall. ",
+        links: [{ name: "Princess Fara", path: "/characters/princess-fara" }, { name: "Kinri", path: "/characters/kinri" }, { name: "Soto Zyndu", path: "/characters/soto-zyndu" }, { name: "The Blossom Gang", path: "/concepts/the-blossom-gang" }]
     },
     {
         num: 49,
-        title: "The Two Emperors",
-        date: "PAN: THE SEVENTEENTH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "You wear the crown of war, brother. I wear the crown of peace. A throne needs both legs to be stable.",
-        speaker: "Timu",
-        summary: "A deep conversation between Phyro (Emperor Monadétu) and Timu. They reflect on their father, Kuni Garu, who embodied both the warrior and the statesman. They agree on a new model of shared power: Phyro will remain the public-facing, martial emperor, while Timu, as Prime Minister, will manage the vast, complex bureaucracy. This formalizes the balance that has brought stability to the throne.",
-        links: [{ name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "Prince Timu", path: "/characters/prince-timu" }, { name: "Kuni Garu", path: "/characters/kuni-garu" }, { name: "Pan", path: "/places/pan" }]
+        title: "Bookmaking",
+        date: "THE SECLUDED SEASIDE VILLA BY LUTHO BEACH: THREE MONTHS EARLIER.",
+        quote: "A mechanical wonder that reads and writes. Is there anything that cannot be accomplished by the ingenuity of the silkmotic engineer?",
+        speaker: "Princess Fara",
+        summary: "This chapter provides a detailed technical explanation of Savo's (Kinri's) invention, the book-mirror.  It details the collaboration between Savo, Fara, and Rati Yera. Fara's artistic insight into how knitting patterns break down images into grids inspires the design of the 'Bumblebee' reading head, which uses a grid of oculium sensors to perform optical logogram recognition.  Rati contributes her knowledge of mass production and automata. The invention represents a perfect fusion of art, engineering, and necessity, creating a tool that will democratize knowledge and change the course of history. ",
+        links: [{ name: "Princess Fara", path: "/characters/princess-fara" }, { name: "Kinri", path: "/characters/kinri" }, { name: "Rati Yera", path: "/characters/the-blossom-gang" }]
     },
     {
         num: 50,
-        title: "An Echo of the Hegemon",
-        date: "THE TUNOAN ISLANDS: THE SEVENTEENTH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "The Zyndu name was once a fire that sought to burn the world. Now, it is a hearth to warm our own home.",
-        speaker: "A Zyndu elder",
-        summary: "Soto Zyndu, Mata's aunt and Jia's former secret advisor, now an old woman, oversees the final rebuilding of the Zyndu ancestral home. The new generation of the Zyndu clan has renounced the path of vengeance, instead focusing on trade and stewardship. The Chrysanthemum philosophy is reinterpreted not as a creed of noble conquest, but of honor in service and duty.",
-        links: [{ name: "Soto Zyndu", path: "/characters/soto-zyndu" }, { name: "Tunoa Islands", path: "/places/tunoa-islands" }, { name: "The Chrysanthemum", path: "/concepts/the-chrysanthemum" }]
+        title: "Judgment",
+        date: "PAN: THE TWELFTH MONTH OF THE ELEVENTH YEAR OF THE REIGN OF SEASON OF STORMS.",
+        quote: "The people of Dara speak for themselves. I have never served you; I serve the people of Dara.",
+        speaker: "Cogo Yelu",
+        summary: "With Jia incapacitated and the truth of her actions revealed through Soto's mass-produced books, the Lords of Dara convene.  In a dramatic climax, Prime Minister Cogo Yelu leads a 'bloodless revolution' in the Grand Audience Hall, renouncing his service to Jia and kneeling before the empty, veiled Dandelion Throne.  The ministers and generals follow his lead. Aya Mazoti, faced with a choice between loyalty to Jia and loyalty to Dara, sides with the council.  Defeated, Jia reveals Phyro's body and accepts her fate. The council, led by Cogo and Zomi, decides to offer the throne to Princess Fara. ",
+        links: [{ name: "Jia Matiza", path: "/characters/jia-matiza" }, { name: "Cogo Yelu", path: "/characters/cogo-yelu" }, { name: "Aya Mazoti", path: "/characters/aya-mazoti" }, { name: "Princess Fara", path: "/characters/princess-fara" }, { name: "Gori Ruthi", path: "/characters/gori-ruthi" }]
     },
     {
         num: 51,
-        title: "The Art of Governance",
-        date: "PAN: THE EIGHTEENTH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "My father built a dynasty on charisma and the love of the people. My grandmother saved it with secrets and fear. Our task is to build a state that can endure without relying on either.",
-        speaker: "Emperor Monadétu (Phyro)",
-        summary: "Phyro convenes a grand council to codify the laws and structure of the new empire. The Grand Examination system is reformed, ministries are reorganized, and a formal charter of rights for citizens is debated. This chapter focuses on the nuts and bolts of nation-building, showing the shift from an era of epic heroes to an era of stable institutions.",
-        links: [{ name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "The Grand Examination", path: "/concepts/grand-examination" }, { name: "Pan", path: "/places/pan" }]
+        title: "Ancestral Voices",
+        date: "TATEN-RYO-ALVOVO: THE TWELFTH MONTH IN THE ELEVENTH YEAR AFTER THE DEPARTURE OF PRINCESS THÉRA FROM DARA FOR UKYU-GONDÉ.",
+        quote: "To tell a new story of where to go, we must first understand the story of where we came from.",
+        speaker: "Sataari",
+        summary: "Using their 'speaking bones' technology, Théra's group deciphers the ancient spirit portraits from the Great Barrow.  By combining fragments understood by speakers of various Lyucu and Agon topolects, they piece together the true history of their ancestors.  They learn that the Fifth Age civilization collapsed due to climate change, and that Afir and Kikisavo disagreed on how to adapt, leading to the schism between the nomadic (and later Lyucu) and settled (and later Agon) peoples. The story reveals that their entire culture is based on a misunderstanding of their past. ",
+        links: [{ name: "Princess Théra", path: "/characters/princess-thera" }, { name: "Çami Phithadapu", path: "/characters/cami-phithadapu" }, { name: "Sataari", path: "/characters/sataari" }, { name: "Razutana Pon", path: "/characters/razutana-pon" }, { name: "Taten-ryo-alvovo", path: "/places/taten-ryo-alvovo" }]
     },
     {
         num: 52,
-        title: "The First Historian of the Lyucu",
-        date: "KRIPHI: THE EIGHTEENTH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "We told our history through conquests and songs of battle. We never learned to write it down. Now, we must learn, or our story will be told for us, and we will become villains in another people's epic.",
-        speaker: "The new Lyucu Pékyu",
-        summary: "In the now-independent Kingdom of Rui, the Lyucu, with the help of Dara scholars sent by Kinri, begin the process of writing down their own history for the first time. This act of cultural self-reflection is a direct result of their defeat and Jia's 'parting gift.' It begins their transformation from a nomadic conquest society into a settled nation with a written heritage.",
-        links: [{ name: "Kinri", path: "/characters/kinri" }, { name: "Lyucu Culture", path: "/concepts/lyucu-culture" }, { name: "Kriphi", path: "/places/kriphi" }]
+        title: "A Tempest of Gold",
+        date: "PAN: THE TWELFTH MONTH OF THE ELEVENTH YEAR OF THE REIGN OF SEASON OF STORMS AND THE REIGN OF AUDACIOUS FREEDOM.",
+        quote: "You and I are both old and our consciences stained. It’s time for us to step aside for a new generation.",
+        speaker: "Cogo Yelu",
+        summary: "Cogo Yelu visits Jia in her confinement and reveals that he has pieced together the entirety of her secret war against the Lyucu, from the cultivated tolyusa to the manipulation of court politics.  He confronts her with the moral cost of her actions. Jia confesses to her long plot but argues for its necessity.  Cogo tells her that Fara and the new generation must be allowed to build a future based on truth, not lies, and demands the antidote to the tolyusa-thirst. Jia, finally defeated and grieving for her grandson Todyu, agrees. ",
+        links: [{ name: "Jia Matiza", path: "/characters/jia-matiza" }, { name: "Cogo Yelu", path: "/characters/cogo-yelu" }, { name: "Princess Fara", path: "/characters/princess-fara" }]
     },
     {
         num: 53,
-        title: "A Letter from Exile",
-        date: "A SECLUDED VILLA: THE NINETEENTH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "Do not judge me by the standards of the peace you now enjoy. Judge me by the chaos I held at bay. A gardener must sometimes use poison to save the garden. I have no regrets.",
-        speaker: "Jia Matiza",
-        summary: "Jia Matiza, living out her final days in comfortable exile, writes a long, final letter to Zomi Kidosu, intended for the archives to be unsealed in a hundred years. It is her complete, unvarnished confession and justification. She reveals the full depth of her intelligence network, her philosophical reasoning, and her predictions for the future. It is her final move in the grand game, ensuring her voice is part of the 'conversation of history' she spoke of in the prologue.",
-        links: [{ name: "Jia Matiza", path: "/characters/jia-matiza" }, { name: "Zomi Kidosu", path: "/characters/zomi-kidosu" }]
+        title: "Persuasion",
+        date: "PAN: THE TWELFTH MONTH OF THE ELEVENTH YEAR OF THE REIGN OF SEASON OF STORMS.",
+        quote: "Where doubt ends, evil begins.",
+        speaker: "Empress Shizona (Fara)",
+        summary: "Zomi Kidosu formally asks Princess Fara to accept the throne.  Fara initially refuses, feeling inadequate and having no desire for power.  Zomi argues that Fara's very doubt and empathy make her the ideal ruler for a time of difficult moral choices.  The chapter explores Fara's internal journey as she grapples with the legacies of her family and accepts that she cannot avert her eyes from suffering. She realizes her unique perspective is what Dara needs to heal the wounds of war and forge a just peace with the Lyucu. ",
+        links: [{ name: "Princess Fara", path: "/characters/princess-fara" }, { name: "Zomi Kidosu", path: "/characters/zomi-kidosu" }, { name: "Pan", path: "/places/pan" }]
     },
     {
         num: 54,
-        title: "The Weaver's Last Thread",
-        date: "A SECLUDED VILLA: THE NINETEENTH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "...",
-        speaker: "(Silence)",
-        summary: "Jia Matiza passes away peacefully in her sleep. The news reaches Pan, where it is met not with celebration or mourning, but with a quiet, complex silence. Her death marks the true end of the founding era of the Dandelion Dynasty. The world she shaped must now continue without its weaver.",
-        links: [{ name: "Jia Matiza", path: "/characters/jia-matiza" }, { name: "Pan", path: "/places/pan" }]
+        title: "Truth",
+        date: "PAN: THE TWELFTH MONTH OF THE ELEVENTH YEAR OF THE REIGN OF SEASON OF STORMS AND THE REIGN OF AUDACIOUS FREEDOM.",
+        quote: "My brother is not a symbol. He is my brother, and he is not a part of your family.",
+        speaker: "Princess Dyana",
+        summary: "The Lyucu delegation arrives in Pan, led by Princess Dyana, demanding to see the emperor and receive the antidote.  The negotiations stall. Todyu, Dyana's brother, dies from the tolyusa-thirst after setting his own quarters on fire in a final act of defiance.  Fara and Dyana have a tense and emotional confrontation over Todyu's body.  Fara forces Dyana to confront the full horror of the Lyucu atrocities, and Dyana, in turn, forces Fara to understand the Lyucu fear of cultural annihilation. This raw, honest exchange forms the basis for a potential true peace, as both leaders accept the painful truths of their peoples' histories. ",
+        links: [{ name: "Princess Fara", path: "/characters/princess-fara" }, { name: "Princess Dyana", path: "/characters/the-two-emperors" }, { name: "Goztan Ryoto", path: "/characters/goztan-ryoto" }, { name: "Pan", path: "/places/pan" }]
     },
     {
         num: 55,
-        title: "The Two-Headed Eagle",
-        date: "THE SKIES BETWEEN DARA AND UKYU-GONDÉ: THE TWENTIETH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "One head looks east, the other looks west. Its heart is the sea between. This is the sigil of our alliance, and the shape of our new world.",
-        speaker: "Rokiri Aragoz",
-        summary: "Rokiri Aragoz, son of Théra and Takval, now a young man, becomes the first ambassador of the Agon Alliance to the Dandelion Court. He arrives not on a ship, but on a new type of long-range airship designed by both peoples. He presents Emperor Monadétu with a banner showing a two-headed eagle, symbolizing the permanent, interconnected future of the two continents.",
-        links: [{ name: "Rokiri Aragoz", path: "/characters/rokiri-aragoz" }, { name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "Agon", path: "/concepts/agon" }, { name: "Airships", path: "/concepts/airships" }]
+        title: "Surrender",
+        date: "PAN: THE FIRST MONTH OF THE TWELFTH YEAR OF THE REIGN OF SEASON OF STORMS.",
+        quote: "Welcome home, Zaza-tika.",
+        speaker: "Empress Shizona (Fara)",
+        summary: "Empress Shizona (Fara's reign name) and Pékyu Dyana reach the terms of the Lyucu surrender.  The plan for the reconstruction of Ukyu-taasa is debated in formal court, with difficult compromises made regarding land, justice, and cultural identity.  Zomi Kidosu resigns as Farsight Secretary to found a new kind of academy in Dasu.  Aya Mazoti is relieved of command and stripped of her military rank, a punishment she gratefully accepts as it frees her from her mother's shadow.  Finally, at a formal ceremony, Dyana surrenders to Empress Fara, who welcomes her not just as a defeated foe, but as family. ",
+        links: [{ name: "Princess Fara", path: "/characters/princess-fara" }, { name: "Princess Dyana", path: "/characters/the-two-emperors" }, { name: "Zomi Kidosu", path: "/characters/zomi-kidosu" }, { name: "Aya Mazoti", path: "/characters/aya-mazoti" }, { name: "Cogo Yelu", path: "/characters/cogo-yelu" }]
     },
     {
         num: 56,
-        title: "The Dandelion's Roots",
-        date: "ZUDI: THE TWENTY-FIRST YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "The great histories speak of emperors and generals. But the dynasty was born here, in the mud and the laughter of a marketplace, from a boy who knew the secret of the dandelion: its strength is not in its flower, but in its thousand roots, and its willingness to let go and trust the wind.",
-        speaker: "An old storyteller",
-        summary: "Emperor Phyro and Empress Fara make a pilgrimage to Zudi, the small town in Cocru where their father, Kuni Garu, grew up. They walk the markets and talk to the common people, reaffirming their connection to their humble origins. It's a symbolic act, showing that for all the dynasty's power and glory, they have not forgotten where they came from.",
-        links: [{ name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "Princess Fara", path: "/characters/princess-fara" }, { name: "Kuni Garu", path: "/characters/kuni-garu" }, { name: "Zudi", path: "/places/zudi" }, { name: "The Dandelion", path: "/concepts/dandelion" }]
+        title: "Speaking Bones",
+        date: "UKYU-GONDÉ: THE THIRD MONTH IN THE TWELFTH YEAR AFTER THE DEPARTURE OF PRINCESS THÉRA FROM DARA FOR UKYU-GONDÉ.",
+        quote: "The best way to honor our nature is to re-remember the future.",
+        speaker: "Princess Théra",
+        summary: "Théra's community in the City of Ghosts builds a fleet of large, autonomous, singing arucuro tocua beasts.  These 'speaking bones' wander the war-torn scrublands, broadcasting the true, recovered history of Afir and Kikisavo and calling all peoples—Lyucu, Agon, and others—to a new way of life based on peace, farming, and cooperation at Taten-ryo-runa, the 'Gathering of Life.'  The message of hope begins to spread, offering an alternative to the endless cycles of violence. ",
+        links: [{ name: "Princess Théra", path: "/characters/princess-thera" }, { name: "Taten-ryo-alvovo", path: "/places/taten-ryo-alvovo" }]
     },
     {
         num: 57,
-        title: "The Empty Throne of Gejira",
-        date: "NOKIDA: THE TWENTY-SECOND YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "Queen Gin did not leave a dynasty of blood. She left a legacy of competence. We honor her not by crowning her heir, but by choosing a governor who is worthy.",
-        speaker: "The acting governor of Gejira",
-        summary: "Gejira, the kingdom once ruled by Gin Mazoti, formally petitions to be reabsorbed into the Dandelion Empire as a province. They honor Gin's memory by embracing the meritocratic ideals she championed, forgoing a hereditary monarchy. Aya Mazoti presides over the ceremony, seeing her mother's true legacy fulfilled.",
-        links: [{ name: "Gin Mazoti", path: "/characters/gin-mazoti" }, { name: "Aya Mazoti", path: "/characters/aya-mazoti" }, { name: "Gejira", path: "/places/gejira" }, { name: "Nokida", path: "/places/nokida" }]
+        title: "The Reign of Enduring Spring",
+        date: "THE SHIPPING LANES BETWEEN RUI AND THE BIG ISLAND: THE FOURTH MONTH OF THE FOURTH YEAR IN THE REIGN OF ENDURING SPRING.",
+        quote: "We survive, the Hundred Flowers. We survive.",
+        speaker: "A Dasu villager",
+        summary: "Years later, under Empress Shizona's 'Reign of Enduring Spring,' Dara and Ukyu-taasa are at peace and trade flourishes.  The chapter follows several vignettes: a mother and her mute son, traumatized by Lyucu atrocities, travel home after a year of healing; former soldiers and scholars head to Ukyu-taasa to start new lives and businesses, blending cultures; Widi Tucru and Rati Yera travel to the province to help build a more just society from the ground up, representing the ongoing work of mending a broken world. ",
+        links: [{ name: "Empress Shizona", path: "/characters/princess-fara" }, { name: "The Blossom Gang", path: "/concepts/the-blossom-gang" }, { name: "Ukyu-taasa", path: "/places/ukyu-gonde" }]
     },
     {
         num: 58,
-        title: "The Philosopher's Gift",
-        date: "THE IMPERIAL LIBRARY, PAN: THE TWENTY-THIRD YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "My father gave the empire a strategy. My gift is a question: What is the strategy for peace?",
-        speaker: "Aya Mazoti",
-        summary: "Aya Mazoti, using the inheritance from her father Luan Zya, endows a new wing of the Imperial Library dedicated to philosophy and ethics. It is named the Luan Zya Atheneum. It is her way of honoring her father's intellectual legacy, ensuring that the empire's warriors and statesmen will always study not just how to win wars, but why and when they should be fought.",
-        links: [{ name: "Aya Mazoti", path: "/characters/aya-mazoti" }, { name: "Luan Zya", path: "/characters/luan-zya" }, { name: "Pan", path: "/places/pan" }]
+        title: "The Gathering of Life",
+        date: "TATEN-RYO-RUNA: MANY, MANY WINTERS LATER.",
+        quote: "A falling leaf yearns to return to the root.",
+        speaker: "Princess Théra",
+        summary: "Many years in the future, an aged and dying Pékyu-votan Théra prepares for her end at the peaceful and prosperous Taten-ryo-runa.  The people of the scrublands, now united in a diverse tapestry of cultures, come to pay their respects.  Théra reflects on her long life, her loves, her losses, and the family she left behind in Dara.  As she drifts into a final vision, she asks the gods for one last boon: to return home. ",
+        links: [{ name: "Princess Théra", path: "/characters/princess-thera" }, { name: "Taten-ryo-alvovo", path: "/places/taten-ryo-alvovo" }, { name: "Zomi Kidosu", path: "/characters/zomi-kidosu" }]
     },
     {
         num: 59,
-        title: "The Reign of Enduring Spring",
-        date: "PAN: THE TWENTY-FIFTH YEAR OF THE REIGN OF SEASON OF STORMS",
-        quote: "We call this era the Reign of Enduring Spring. Not because winter will never return—it will. But because we now know that no matter how long the winter, we have the strength to survive it. We carry the memory of spring within us. We are the dandelions.",
-        speaker: "Grand Historian Zomi Kidosu",
-        summary: "The book's timeline concludes with a summary of the era of peace known as 'Enduring Spring.' Zomi Kidosu is shown as an old woman, putting the finishing touches on *The Annals of the Dandelion Dynasty*. The empire is prosperous and stable, engaged in peaceful trade and cultural exchange with its neighbors. The sacrifices of the past have borne fruit. The stage is set for a lasting peace, built on the foundations of the epic struggles of the previous generation.",
-        links: [{ name: "Zomi Kidosu", path: "/characters/zomi-kidosu" }, { name: "Pan", path: "/places/pan" }, { name: "The Dandelion", path: "/concepts/dandelion" }]
-    },
-    {
-        num: "Epilogue",
-        title: "Speaking Bones",
-        date: "PAN: A GENERATION LATER",
-        quote: "Do you hear it? ... The story is not over. It is never over. Listen. The bones are speaking.",
-        speaker: "An unnamed child",
-        summary: "An old Zomi Kidosu, her life's work complete, walks through the Imperial Library with her young apprentice. The library is no longer just a collection of scrolls but a living repository of knowledge, with printing presses creating books for all, and Fara's magnificent 'writing zither' turning histories into music. They look at a new map of the world, one that shows Dara and Ukyu-Gondé not as separate lands but as connected partners. The apprentice asks Zomi if the story of the Dandelion Dynasty is finally finished. Zomi smiles, explaining that history never ends; it is a continuous conversation. As they leave the library, the child pauses, tilting their head as if listening to a faint, ancient whisper carried on the wind—the speaking bones of the past, still telling their tales, waiting for a new generation to listen and add their own voice to the epic.",
-        links: [{ name: "Zomi Kidosu", path: "/characters/zomi-kidosu" }, { name: "Princess Fara", path: "/characters/princess-fara" }, { name: "Pan", path: "/places/pan" }, { name: "Speaking Bones", path: "/books/speaking-bones" }]
+        title: "Homeland",
+        date: "DARA: TWO YEARS LATER.",
+        quote: "We’ve enlarged our souls with many loves and devoted ourselves to many duties, instead of consuming ourselves in one grand romance. We have more lines on our faces than there are breaths left in our lungs.",
+        speaker: "Princess Théra",
+        summary: "Théra, having journeyed across the sea on a magnificent arucuro tocua ship named *Dissolver of Sorrows*, finally returns to Dara, bringing the bones of those who died with her in exile.  At Lutho Beach, she is greeted by the Lords of Dara and her great-grandnephew, the new emperor. In an act of profound grace, she respectfully declines the throne.  The book ends with a deeply emotional reunion between the aged Théra and Zomi Kidosu, two lovers separated by a lifetime, finally at peace together under the stars of their shared homeland. ",
+        links: [{ name: "Princess Théra", path: "/characters/princess-thera" }, { name: "Zomi Kidosu", path: "/characters/zomi-kidosu" }, { name: "Lutho", path: "/gods/lutho" }]
     }
 ];
 
 
-const ExternalLinkIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 inline-block ml-1" viewBox="0 0 20 20" fill="currentColor">
-        <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
-        <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
-    </svg>
-);
+
 
 
 export default function SpeakingBonesPage() {
@@ -612,16 +588,16 @@ export default function SpeakingBonesPage() {
                         <ul className="space-y-2 text-base text-gray-700 dark:text-gray-300">
                             <li><strong>Author:</strong> Ken Liu</li>
                             <li><strong>Published:</strong> June 21, 2022 by Saga Press</li>
-                            <li><strong>Pages:</strong> 1184 (Hardcover)</li>
-                            <li><strong>ISBN:</strong> 9781982193427</li>
+                            <li><strong>Pages:</strong> 992 (Hardcover)</li>
+                            <li><strong>ISBN:</strong> 9781982148973</li>
                         </ul>
                         <div className="border-t border-gray-200 dark:border-gray-700 mt-4 pt-4 space-y-2">
                             <a href="https://www.goodreads.com/book/show/55596771-speaking-bones" target="_blank" rel="noopener noreferrer" className="text-teal-600 dark:text-teal-400 hover:underline inline-flex items-center text-base">
-                                View on Goodreads <ExternalLinkIcon />
+                                View on Goodreads ↗
                             </a>
                             <br />
                             <a href="https://amzn.to/41kbNi5" target="_blank" rel="noopener noreferrer" className="text-teal-600 dark:text-teal-400 hover:underline inline-flex items-center text-base">
-                                Purchase on Amazon <ExternalLinkIcon />
+                                Purchase on Amazon ↗
                             </a>
                             <p className="text-xs text-gray-400 dark:text-gray-500 pt-2 italic">
                                 (If you purchase the book through this link, it&apos;ll give me a small kickback!)
