@@ -30,7 +30,7 @@ const placeData: Place = {
             summary: [
                 { type: 'text', content: "After the destruction of their base in Kiri Valley, Princess Théra and the other survivors fled into the World's Edge Mountains. Consumed by grief, Théra's journey through the mountains was both a physical and a psychological one." },
                 { type: 'ref', data: { book: "The Veiled Throne", chapter: 45, link: "/books/the-veiled-throne#chapter-45" } },
-                { type: 'text', content: "It was here that the rebellion had its most important breakthrough. Guided by the shaman Sataari, they discovered a vast, ancient boneyard of garinafins. The bones found there, combined with the knowledge from a remote monastery, allowed them to create 'living bone' technology and the powerful 'cloud-garinafins,' giving them a devastating new weapon and turning the tide of their war against the Lyucu." },
+                { type: 'text', content: "It was here that the rebellion had its most important breakthrough. Guided by the shaman Sataari, they discovered a vast, ancient boneyard of garinafins. The bones found there, combined with the knowledge from a remote monastery, allowed them to create 'living bone' technology and the powerful 'arucuro tocua beasts,' giving them a devastating new weapon and turning the tide of their war against the Lyucu." },
                 { type: 'ref', data: { book: "Speaking Bones", chapter: 29, link: "/books/speaking-bones#chapter-29" } },
                 { type: 'ref', data: { book: "Speaking Bones", chapter: 31, link: "/books/speaking-bones#chapter-31" } },
             ]

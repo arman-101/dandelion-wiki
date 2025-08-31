@@ -10,7 +10,7 @@ import { getSurroundingPages } from '@/app/utils/navigationUtils';
 const placeData: Place = {
     name: "Liru River",
     image: "/places/liru-river.png",
-    introduction: "The Liru River is a major river system that serves as a key strategic and psychological border in Dara. It was the site of the tense, final standoff between the armies of Kuni Garu and Mata Zyndu during the Chrysanthemum-Dandelion War.",
+    introduction: "The Liru River is a major river system that serves as a key strategic and psychological border in Dara. It was the site of the tense, final standoff between the armies of [[Kuni Garu|/characters/kuni-garu]] and [[Mata Zyndu|/characters/mata-zyndu]] during the Chrysanthemum-Dandelion War.",
     infoBox: {
         type: "River System / Border",
         location: { text: "Cocru", link: "/places/cocru" },
@@ -28,7 +28,7 @@ const placeData: Place = {
         {
             event: "The Standoff",
             summary: [
-                { type: 'text', content: "After Mata Zyndu's surprise capture of Zudi, the two armies of the former sworn brothers faced each other across the Liru River in a tense stalemate. Mata held Kuni's father and wife Jia captive in Dimu, while Kuni's forces were in Dimushi. In a tense parley, Mata threatened to execute Kuni's father, but Kuni, in a masterful and cold-blooded bluff, pretended to be utterly ruthless and uncaring. The psychological gambit worked, and Mata spared his captive's life. This standoff marked the height of the psychological warfare between the two leaders, orchestrated by Luan Zya." },
+                { type: 'text', content: "After [[Mata Zyndu|/characters/mata-zyndu]]'s surprise capture of Zudi, the two armies of the former sworn brothers faced each other across the Liru River in a tense stalemate. Mata held [[Kuni Garu|/characters/kuni-garu]]'s father and wife [[Jia Matiza|/characters/jia-matiza]] captive in Dimu, while Kuni's forces were in Dimushi. In a tense parley, Mata threatened to execute Kuni's father, but Kuni, in a masterful and cold-blooded bluff, pretended to be utterly ruthless and uncaring. The psychological gambit worked, and Mata spared his captive's life. This standoff marked the height of the psychological warfare between the two leaders, orchestrated by [[Luan Zya|/characters/luan-zya]]." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 47, link: "/books/the-grace-of-kings#chapter-47" } },
             ]
         },

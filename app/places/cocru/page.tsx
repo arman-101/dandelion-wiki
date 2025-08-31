@@ -53,7 +53,7 @@ const godData: Place = {
         {
             event: "The Chrysanthemum-Dandelion War",
             summary: [
-                { type: 'text', content: "After the fall of [[Xana|/places/xana]], Cocru became the seat of [[Mata Zyndu|/characters/mata-zyndu]]'s power as Hegemon. It was the central battleground in the brutal civil war between Mata and [[Kuni Garu|/characters/kuni-garu]]. The war ended with Mata's death in his homeland, at Rana Kida, and Cocru was absorbed into Kuni Garu's new, unified Dandelion Dynasty." },
+                { type: 'text', content: "After the fall of [[Xana|/places/xana]], Cocru became the seat of [[Mata Zyndu|/characters/mata-zyndu]]'s power as Hegemon. It was the central battleground in the brutal civil war between Mata and [[Kuni Garu|/characters/kuni-garu]]. The war ended with Mata's death in his homeland, at Rana Kida, and Cocru was absorbed into [[Kuni Garu|/characters/kuni-garu]]'s new, unified Dandelion Dynasty." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 50, link: "/books/the-grace-of-kings#chapter-50" } },
             ]
         },

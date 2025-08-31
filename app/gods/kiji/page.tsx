@@ -26,7 +26,7 @@ const godData: God = {
         {
             event: "Tempting Mortal Heroes",
             summary: [
-                { type: 'text', content: "Kiji has a habit of appearing to mortals in disguise to test their character. Disguised as a beggar, he tempts Gin Mazoti to betray Kuni Garu, an offer she refuses. Years later, he appears to a woman in Mata Zyndu's household, urging her to see the Hegemon's true, brutal nature and implying she should kill him." },
+                { type: 'text', content: "Kiji has a habit of appearing to mortals in disguise to test their character. Disguised as a beggar, he tempts [[Gin Mazoti|/characters/gin-mazoti]] to betray [[Kuni Garu|/characters/kuni-garu]], an offer she refuses. Years later, he appears to a woman in [[Mata Zyndu|/characters/mata-zyndu]]'s household, urging her to see the Hegemon's true, brutal nature and implying she should kill him." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 49, link: "/books/the-grace-of-kings#chapter-49" } },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 44, link: "/books/the-grace-of-kings#chapter-44" } },
             ]

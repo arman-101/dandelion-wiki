@@ -85,7 +85,7 @@ export default function ConceptPageTemplate({ conceptData }: ConceptPageTemplate
                 {/* Main Content Area */}
                 <div className="w-full lg:w-2/3 order-2 lg:order-1">
                     <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">{conceptData.name}</h1>
-                    <p className="text-lg italic text-gray-600 dark:text-gray-400 mb-8 border-l-4 border-gray-300 dark:border-gray-600 pl-4">{conceptData.introduction}</p>
+                    <p className="text-lg italic text-gray-600 dark:text-gray-400 mb-8 border-l-4 border-gray-300 dark:border-gray-600 pl-4">{formatLinksInText(conceptData.introduction)}</p>
 
                     <section id="details">
                         <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-200 border-b-2 border-teal-500 pb-2 mb-4">Details</h2>

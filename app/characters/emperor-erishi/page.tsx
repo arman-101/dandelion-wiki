@@ -39,7 +39,7 @@ const characterData: Character = {
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 5, link: "/books/the-grace-of-kings#chapter-5" } },
                 { type: 'text', content: "His reign was a disaster, marked by famine and rebellion, to which he remained utterly indifferent, delegating all power to his regents." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 9, link: "/books/the-grace-of-kings#chapter-9" } },
-                { type: 'text', content: "After Kuni Garu's forces captured Pan, Erishi was taken prisoner. He remained a terrified pawn until Mata Zyndu, in a fit of rage, burned Pan to the ground, killing the boy-emperor in the flames and ending the Xana Dynasty for good." },
+                { type: 'text', content: "After [[Kuni Garu|/characters/kuni-garu]]'s forces captured Pan, Erishi was taken prisoner. He remained a terrified pawn until [[Mata Zyndu|/characters/mata-zyndu]], in a fit of rage, burned Pan to the ground, killing the boy-emperor in the flames and ending the Xana Dynasty for good." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 30, link: "/books/the-grace-of-kings#chapter-30" } },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 33, link: "/books/the-grace-of-kings#chapter-33" } },
             ]

@@ -9,7 +9,7 @@ import { getSurroundingPages } from '@/app/utils/navigationUtils';
 const characterData: Character = {
     name: "Gin Mazoti",
     image: "/characters/gin-mazoti.png",
-    introduction: "Gin Mazoti is a military prodigy who rises from obscurity to become the first female Marshal in the history of Dara. She is Kuni Garu's most brilliant and loyal commander, known for her mastery of logistics, deception, and unconventional warfare.",
+    introduction: "Gin Mazoti is a military prodigy who rises from obscurity to become the first female Marshal in the history of Dara. She is [[Kuni Garu|/characters/kuni-garu]]'s most brilliant and loyal commander, known for her mastery of logistics, deception, and unconventional warfare.",
     infoBox: {
         aliases: "Marshal Gin, Queen of Rima and Faça, Queen of Géjira",
         occupation: "Dockworker, Quartermaster, Marshal, Queen",
@@ -30,7 +30,7 @@ const characterData: Character = {
     appearanceAndPersonality: [
         { type: 'text', content: "Gin is small and wiry, with a sharp, intelligent face. For much of her early life, she disguised herself as a boy named 'Gin' to survive and find work in a male-dominated world." },
         { type: 'ref', data: { book: "The Grace of Kings", chapter: 40, link: "/books/the-grace-of-kings#chapter-40" } },
-        { type: 'text', content: " Gin is fiercely intelligent, proud, and ambitious. She has a deep understanding of the practical realities of war, from supply lines to troop morale, which other, more glory-focused commanders often overlook. She is pragmatic and ruthless when necessary but also possesses a strong sense of honor and loyalty, particularly towards Kuni Garu, the first leader to recognize her true talent. This loyalty is tested by the god Kiji, who tempts her to betray Kuni, but she ultimately refuses, choosing faith in her lord over the path to absolute power." },
+        { type: 'text', content: " Gin is fiercely intelligent, proud, and ambitious. She has a deep understanding of the practical realities of war, from supply lines to troop morale, which other, more glory-focused commanders often overlook. She is pragmatic and ruthless when necessary but also possesses a strong sense of honor and loyalty, particularly towards [[Kuni Garu|/characters/kuni-garu]], the first leader to recognize her true talent. This loyalty is tested by the god [[Kiji|/gods/kiji]], who tempts her to betray Kuni, but she ultimately refuses, choosing faith in her lord over the path to absolute power." },
         { type: 'ref', data: { book: "The Grace of Kings", chapter: 49, link: "/books/the-grace-of-kings#chapter-49" } },
     ],
     history: [

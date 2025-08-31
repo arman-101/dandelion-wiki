@@ -31,7 +31,7 @@ const conceptData: Concept = {
         { type: 'ref', data: { book: "The Wall of Storms", chapter: 24, link: "/books/the-wall-of-storms#chapter-24" } },
         { type: 'text', content: " Princess Théra's expedition encounters garinafin in Ukyu-Gondé, where she learns about their nature and capabilities firsthand. She witnesses the deep bond between Lyucu riders and their mounts, as well as the creatures' vulnerability to certain tactics and environmental conditions." },
         { type: 'ref', data: { book: "The Veiled Throne", chapter: 7, link: "/books/the-veiled-throne#chapter-7" } },
-        { type: 'text', content: " In Speaking Bones, Dara begins to develop its own garinafin program under Emperor Phyro's leadership. The arrival of the Lyucu defector Ouro provides the empire with crucial knowledge about garinafin training and warfare, allowing them to begin building their own air force." },
+        { type: 'text', content: " In Speaking Bones, Dara begins to develop its own garinafin program under Emperor Phyro's leadership. The arrival of the Lyucu defector Ofluro provides the empire with crucial knowledge about garinafin training and warfare, allowing them to begin building their own air force." },
         { type: 'ref', data: { book: "Speaking Bones", chapter: 3, link: "/books/speaking-bones#chapter-3" } },
         { type: 'text', content: " The development of Dara's garinafin program represents a significant technological and cultural shift. The empire must adapt to a new form of warfare while also learning to care for and train creatures that are fundamentally different from any animals they have encountered before." },
         { type: 'ref', data: { book: "Speaking Bones", chapter: 3, link: "/books/speaking-bones#chapter-3" } },

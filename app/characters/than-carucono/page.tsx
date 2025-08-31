@@ -9,7 +9,7 @@ import { getSurroundingPages } from '@/app/utils/navigationUtils';
 const characterData: Character = {
     name: "Than Carucono",
     image: "/characters/than-carucono.png",
-    introduction: "Than Carucono was a cheerful former stable master who became a loyal and surprisingly competent general and admiral for Kuni Garu. His good humor and steadfastness made him a beloved member of the Dandelion Court.",
+    introduction: "Than Carucono was a cheerful former stable master who became a loyal and surprisingly competent general and admiral for [[Kuni Garu|/characters/kuni-garu]]. His good humor and steadfastness made him a beloved member of the Dandelion Court.",
     infoBox: {
         aliases: "General Than",
         occupation: "Stable Master, General, Admiral",

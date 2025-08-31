@@ -48,7 +48,7 @@ const characterData: Character = {
         {
             era: "The Veiled Throne & Speaking Bones",
             summary: [
-                { type: 'text', content: "As the young Emperor Monadétu, Phyro chafed under his mother [[Empress Jia|/characters/jia-matiza]]'s regency and her pacifist policies toward the [[Lyucu|/concepts/lyucu]]. He secretly established a [[garinafin|/concepts/garinafin]] training base at [[Tiro Cozo|/places/tiro-cozo]], working with the Lyucu defector [[Ouro|/characters/ouro]] to build a new aerial army in defiance of his mother's orders." },
+                { type: 'text', content: "As the young Emperor Monadétu, Phyro chafed under his mother [[Empress Jia|/characters/jia-matiza]]'s regency and her pacifist policies toward the [[Lyucu|/concepts/lyucu]]. He secretly established a [[garinafin|/concepts/garinafin]] training base at [[Tiro Cozo|/places/tiro-cozo]], working with the Lyucu defector [[Ofluro|/characters/ofluro]] to build a new aerial army in defiance of his mother's orders." },
                 { type: 'ref', data: { book: "The Veiled Throne", chapter: 40, link: "/books/the-veiled-throne#chapter-40" } },
                 { type: 'ref', data: { book: "Speaking Bones", chapter: 3, link: "/books/speaking-bones#chapter-3" } },
                 { type: 'text', content: "His secret army and rebellion against his mother's strategy became a key factor in the final war for Dara. He led his new garinafin force in the desperate final assault on the Lyucu stronghold, proving himself a worthy successor to his father's legacy as a warrior-king." },

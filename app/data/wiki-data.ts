@@ -53,7 +53,6 @@ export const CHARACTERS_BY_BOOK_NAV = {
         { name: "Princess Thera", description: "Leading a rebellion in Ukyu-Gondé, she seeks to cut off the Lyucu from their source of power.", image: "/characters/princess-thera.png", link: "/characters/princess-thera" },
         { name: "Zomi Kidosu", description: "As Farsight Secretary, she coordinates Dara's resistance and technological innovation.", image: "/characters/zomi-kidosu.png", link: "/characters/zomi-kidosu" },
         { name: "Aya Mazoti", description: "The daughter of Gin Mazoti, now a skilled commander seeking to restore her family's honor.", image: "/characters/aya-mazoti.png", link: "/characters/aya-mazoti" },
-        { name: "The Fish-Herder", description: "A mysterious leader of a grassroots rebellion in the swamps of Gefica.", image: "/characters/the-fish-herder.png", link: "/characters/the-fish-herder" },
         { name: "Kinri", description: "A young man of mixed Lyucu-Dara heritage who discovers his true identity as Savo Ryoto, son of Goztan.", image: "/characters/kinri.png", link: "/characters/kinri" },
         { name: "Goztan Ryoto", description: "A powerful Lyucu thane who navigates the treacherous politics of the occupation and leads the accommodationist faction.", image: "/characters/goztan-ryoto.png", link: "/characters/goztan-ryoto" },
         { name: "Tanvanaki", description: "The best garinafin pilot among the Lyucu and Pékyu Tenryo's daughter. Also known as Princess Vadyu.", image: "/characters/tanvanaki.png", link: "/characters/tanvanaki" },
@@ -131,9 +130,7 @@ export const ALL_CHARACTERS_DATA = [
     { name: "Nazu Tei", description: "A wise Dara scholar who becomes a tutor to the young Savo Ryoto (Kinri).", image: "/characters/nazu-tei.png", link: "/characters/nazu-tei" },
     // Speaking Bones
     { name: "Aya Mazoti", description: "The daughter of Gin Mazoti and Luan Zya, now a skilled commander seeking to restore her family's honor.", image: "/characters/aya-mazoti.png", link: "/characters/aya-mazoti" },
-    { name: "The Fish-Herder", description: "A mysterious leader of a grassroots rebellion in the swamps of Gefica.", image: "/characters/the-fish-herder.png", link: "/characters/the-fish-herder" },
-    { name: "The Sword-Saint", description: "A legendary warrior from Eseeran Nomnny who trains Aya Mazoti.", image: "/characters/the-sword-saint.png", link: "/characters/the-sword-saint" },
-    { name: "Ouro", description: "A Lyucu defector and master garinafin rider who trains Emperor Phyro's new aerial force.", image: "/characters/ouro.png", link: "/characters/ouro" },
+    { name: "Ofluro", description: "A Lyucu defector and master garinafin rider who trains Emperor Phyro's new aerial force.", image: "/characters/ofluro.png", link: "/characters/ofluro" },
     { name: "Gori Ruthi", description: "Nephew of Zato Ruthi, a Moralist scholar and official in the Dandelion court.", image: "/characters/gori-ruthi.png", link: "/characters/gori-ruthi" },
     { name: "Prince Gimoto", description: "Prince Gimoto is the son of Kado Garu and the nephew of Emperor Ragin (Kuni Garu).", image: "/characters/prince-gimoto.png", link: "/characters/prince-gimoto" },
 ];
@@ -157,7 +154,7 @@ export const ALL_CONCEPTS_DATA = [
     { name: "The Agon", description: "A people from the southern part of Ukyu-Gondé, ancient rivals of the Lyucu.", image: "/concepts/agon.png", link: "/concepts/agon" },
     { name: "Cultural Exchange", description: "The complex interactions and mutual influences between Dara and Lyucu cultures during occupation.", image: "/concepts/cultural-exchange.png", link: "/concepts/cultural-exchange" },
     { name: "The Blossom Gang", description: "A group of talented outcasts in Ginpen who use their skills in engineering, acting, and law to help the common folk.", image: "/concepts/the-blossom-gang.png", link: "/concepts/the-blossom-gang" },
-    { name: "Cloud-Garinafins", description: "Massive constructs of woven cloud and living bone, powered by the silkmotic force, created by the Agon rebels.", image: "/concepts/cloud-garinafins.png", link: "/concepts/cloud-garinafins" },
+    { name: "Arucuro Tocua Beasts", description: "Massive walking fortresses made of ancient bones and woven cloud, powered by the silkmotic force and created by the Agon rebels.", image: "/concepts/arucuro-tocua-beasts.png", link: "/concepts/arucuro-tocua-beasts" },
     { name: "Lyucu Culture", description: "The cultural traditions, beliefs, and way of life of the Lyucu people from beyond the Wall of Storms.", image: "/concepts/lyucu-culture.png", link: "/concepts/lyucu-culture" },
     { name: "Resistance Movement", description: "The organized efforts of the Dara people to resist and overthrow Lyucu occupation.", image: "/concepts/resistance-movement.png", link: "/concepts/resistance-movement" },
     { name: "Quotes", description: "Memorable and significant quotes from the Dandelion Dynasty series.", image: "/concepts/quotes.png", link: "/concepts/quotes" },
@@ -220,8 +217,6 @@ export const ALL_PLACES_DATA = [
     { name: "Zathin Gulf", description: "A significant body of water where the final battle against the first Lyucu invasion was fought.", image: "/places/zathin-gulf.png", link: "/places/zathin-gulf", category: "landmark" },
     // Lands Beyond the Wall of Storms
     { name: "Ukyu & Gonde", description: "The vast, harsh scrublands across the eastern sea, home to the Lyucu and Agon peoples.", image: "/places/ukyu-gonde.png", link: "/places/ukyu-gonde", category: "beyond" },
-    { name: "Eseeran Nomnny", description: "A mysterious southern continent known for its warrior monasteries and the Sword-Saint.", image: "/places/eseeran-nomnny.png", link: "/places/eseeran-nomnny", category: "beyond" },
-    { name: "Kigo Yezu", description: "A Lyucu village in occupied Rui that was the site of a massacre.", image: "/places/kigo-yezu.png", link: "/places/kigo-yezu", category: "beyond" },
     { name: "Kiri Valley", description: "A hidden valley where Théra and Takval establish their secret rebel base.", image: "/places/kiri-valley.png", link: "/places/kiri-valley", category: "beyond" },
     { name: "Last Bite", description: "A secret Imperial research facility focused on advanced technology.", image: "/places/last-bite.png", link: "/places/last-bite", category: "beyond" },
     { name: "Lurodia Tanta", description: "The vast desert in Ukyu-Gondé where the exiled Agon live.", image: "/places/lurodia-tanta.png", link: "/places/lurodia-tanta", category: "beyond" },
@@ -231,6 +226,7 @@ export const ALL_PLACES_DATA = [
     { name: "Taten-ryo-alvovo", description: "The 'City of Ghosts,' an ancient, ruined city of great spiritual power to the Agon.", image: "/places/taten-ryo-alvovo.png", link: "/places/taten-ryo-alvovo", category: "beyond" },
     { name: "Tiro Cozo", description: "The secret base where Emperor Phyro established his garinafin breeding program.", image: "/places/tiro-cozo.png", link: "/places/tiro-cozo", category: "beyond" },
     { name: "World's Edge Mountains", description: "A massive mountain range that marks the eastern boundary of Ukyu-Gondé.", image: "/places/worlds-edge-mountains.png", link: "/places/worlds-edge-mountains", category: "beyond" },
+    { name: "Kigo Yezu", description: "A Lyucu village in occupied Rui that was the site of a massacre.", image: "/places/kigo-yezu.png", link: "/places/kigo-yezu", category: "beyond" },
 ];
 
 export const ALL_PLACES: readonly WikiPage[] = ALL_PLACES_DATA
@@ -352,7 +348,6 @@ export const PLACES_TIRO_STATES: readonly WikiPage[] = [
 
 export const PLACES_BEYOND_DARA: readonly WikiPage[] = [
     { title: 'Ukyu & Gonde', path: '/places/ukyu-gonde', type: 'Place' },
-    { title: 'Eseeran Nomnny', path: '/places/eseeran-nomnny', type: 'Place' },
 ];
 
 export const MAIN_GODS: readonly WikiPage[] = ALL_GODS;

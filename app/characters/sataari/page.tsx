@@ -29,7 +29,7 @@ const characterData: Character = {
         {
             era: "The Veiled Throne & Speaking Bones",
             summary: [
-                { type: 'text', content: "Sataari leads the Agon rebels to the discovery of the ancient, ruined 'City of Ghosts,' a repository of their people's lost knowledge and spiritual power. She later guides Théra and the other survivors to the sacred garinafin boneyard in the World's Edge Mountains. This discovery is a major turning point, providing the rebellion with the materials and inspiration to create new 'living bone' technology, including the devastating cloud-garinafins, which become their most powerful weapon." },
+                { type: 'text', content: "Sataari leads the Agon rebels to the discovery of the ancient, ruined 'City of Ghosts,' a repository of their people's lost knowledge and spiritual power. She later guides Théra and the other survivors to the sacred garinafin boneyard in the World's Edge Mountains. This discovery is a major turning point, providing the rebellion with the materials and inspiration to create new 'living bone' technology, including the devastating arucuro tocua beasts, which become their most powerful weapon." },
                 { type: 'ref', data: { book: "The Veiled Throne", chapter: 10, link: "/books/the-veiled-throne#chapter-10" } },
                 { type: 'ref', data: { book: "Speaking Bones", chapter: 29, link: "/books/speaking-bones#chapter-29" } },
                 { type: 'ref', data: { book: "Speaking Bones", chapter: 56, link: "/books/speaking-bones#chapter-56" } },

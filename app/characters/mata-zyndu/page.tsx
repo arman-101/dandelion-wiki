@@ -54,14 +54,14 @@ const characterData: Character = {
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 7, link: "/books/the-grace-of-kings#chapter-7" } },
                 { type: 'text', content: " His godlike martial prowess is unleashed as he and Phin single-handedly slaughter most of the two-hundred-man Xana garrison. News of his incredible victory spreads, inspiring hundreds of volunteers to join his cause." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 7, link: "/books/the-grace-of-kings#chapter-7" } },
-                { type: 'text', content: " He forms a crucial alliance and sworn brotherhood with Kuni Garu, becoming a key figure in the rebellion and eventually being named Marshal of Cocru." },
+                { type: 'text', content: " He forms a crucial alliance and sworn brotherhood with [[Kuni Garu|/characters/kuni-garu]], becoming a key figure in the rebellion and eventually being named Marshal of Cocru." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 19, link: "/books/the-grace-of-kings#chapter-19" } },
             ]
         },
         {
             era: "The Hegemon and Civil War (The Grace of Kings)",
             summary: [
-                { type: 'text', content: "After the fall of the Xana Empire, Mata becomes consumed by paranoia and betrayal. Believing that Kuni has stolen his glory by capturing Pan first, he burns the Imperial capital and declares himself Hegemon." },
+                { type: 'text', content: "After the fall of the Xana Empire, Mata becomes consumed by paranoia and betrayal. Believing that [[Kuni Garu|/characters/kuni-garu]] has stolen his glory by capturing Pan first, he burns the Imperial capital and declares himself Hegemon." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 33, link: "/books/the-grace-of-kings#chapter-33" } },
                 { type: 'text', content: " His reign is marked by brutality, most notably the massacre of 20,000 prisoners at Wolf's Paw. His emotional state deteriorates further after the tragic deaths of his uncle Phin and Princess Kikomi, which devastates him." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 31, link: "/books/the-grace-of-kings#chapter-31" } },
@@ -73,7 +73,7 @@ const characterData: Character = {
         {
             era: "Final Battle and Death (The Grace of Kings)",
             summary: [
-                { type: 'text', content: "The civil war between Mata and Kuni culminates in a brutal conflict. After three years of war, Mata's forces are starving and depleted. He accepts a peace treaty from Kuni, only for Kuni to break it and launch a massive surprise attack." },
+                { type: 'text', content: "The civil war between Mata and [[Kuni Garu|/characters/kuni-garu]] culminates in a brutal conflict. After three years of war, Mata's forces are starving and depleted. He accepts a peace treaty from Kuni, only for Kuni to break it and launch a massive surprise attack." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 50, link: "/books/the-grace-of-kings#chapter-50" } },
                 { type: 'text', content: " The final confrontation takes place at Rana Kida, where Mata's army is surrounded. As his army's morale collapses, he returns to his tent to discover that Lady Mira has taken her own life rather than watch him die. Her death is the final blow that shatters his will." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 50, link: "/books/the-grace-of-kings#chapter-50" } },

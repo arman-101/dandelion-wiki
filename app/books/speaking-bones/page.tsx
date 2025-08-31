@@ -280,7 +280,7 @@ const chapters = [
     },
     {
         num: 31,
-        title: "Cloud-Garinafins",
+        title: "Arucuro Tocua Beasts",
         date: "THE BONEYARD, UKYU-GONDÉ: THE TWELFTH MONTH IN THE TENTH YEAR AFTER THE DEPARTURE OF PRINCESS THÉRA FROM DARA FOR UKYU-GONDÉ",
         quote: "The body was gone, but the breath lived on.",
         speaker: "Narrator",
@@ -420,7 +420,7 @@ const chapters = [
         quote: "My father spoke often of you. He always regretted not being able to carry out the proper duties of a son.",
         speaker: "Princess Dyana",
         summary: "In the aftermath of Phyro's death and Jia's incapacitation, the Inner Council struggles with how to proceed.  In this power vacuum, Zen-Kara, pregnant with Phyro's heir, leads the remaining garinafins to Pan to assert her authority and prevent civil war.  She confronts Cogo Yelu, and they agree to a truce. She surrenders the garinafin force to the Dandelion Throne, ensuring stability but also ending Phyro's direct line of rebellion. ",
-        links: [{ name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "Cogo Yelu", path: "/characters/cogo-yelu" }, { name: "Ouro", path: "/characters/ouro" }, { name: "Garinafin", path: "/concepts/garinafin" }]
+        links: [{ name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "Cogo Yelu", path: "/characters/cogo-yelu" }, { name: "Ofluro", path: "/characters/ofluro" }, { name: "Garinafin", path: "/concepts/garinafin" }]
     },
     {
         num: 47,

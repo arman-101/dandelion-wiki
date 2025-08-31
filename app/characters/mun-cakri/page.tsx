@@ -9,7 +9,7 @@ import { getSurroundingPages } from '@/app/utils/navigationUtils';
 const characterData: Character = {
     name: "Mün Çakri",
     image: "/characters/mun-cakri.png",
-    introduction: "Mün Çakri is a former butcher from Zudi who becomes one of Kuni Garu's most loyal and formidable followers. Known for his immense strength and unwavering loyalty, he serves as Kuni's unofficial bodyguard and a steadfast general in the Dandelion Court.",
+    introduction: "Mün Çakri is a former butcher from Zudi who becomes one of [[Kuni Garu|/characters/kuni-garu]]'s most loyal and formidable followers. Known for his immense strength and unwavering loyalty, he serves as Kuni's unofficial bodyguard and a steadfast general in the Dandelion Court.",
     infoBox: {
         aliases: "The Butcher",
         occupation: "Butcher, General",
@@ -30,7 +30,7 @@ const characterData: Character = {
         {
             era: "The Grace of Kings",
             summary: [
-                { type: 'text', content: "Mün Çakri's most notable early act was saving Kuni Garu's life at Mata Zyndu's treacherous victory banquet in the ruins of Pan. When an assassin attempted to kill Kuni during a sword dance, Mün used his shield and meat-carving skills to intervene, demonstrating his fierce loyalty." },
+                { type: 'text', content: "Mün Çakri's most notable early act was saving [[Kuni Garu|/characters/kuni-garu]]'s life at [[Mata Zyndu|/characters/mata-zyndu]]'s treacherous victory banquet in the ruins of Pan. When an assassin attempted to kill Kuni during a sword dance, Mün used his shield and meat-carving skills to intervene, demonstrating his fierce loyalty." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 34, link: "/books/the-grace-of-kings#chapter-34" } },
             ]
         },

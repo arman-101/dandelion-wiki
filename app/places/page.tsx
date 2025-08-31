@@ -49,7 +49,7 @@ export default function PlacesPage() {
             <PlaceSection title="Major Cities & Regions" places={placesCities} />
             <PlaceSection title="Outer Islands & Archipelagos" places={placesIslands} />
             <PlaceSection title="Geographical Landmarks" places={placesLandmarks} />
-            <PlaceSection title="Lands Beyond the Wall of Storms" places={placesBeyondDara} />
+            <PlaceSection title="Ukyu & Gonde" places={placesBeyondDara} />
         </div>
     );
 }

@@ -38,9 +38,9 @@ const placeData: Place = {
         {
             event: "The Dandelion Rebellion",
             summary: [
-                { type: 'text', content: "The city's capture was a major turning point in the rebellion. Kuni Garu, in an audacious move conceived by Luan Zya, used a small force of cruben-riders and airships to launch a surprise attack, easily taking the poorly defended capital and capturing Emperor Erishi." },
+                { type: 'text', content: "The city's capture was a major turning point in the rebellion. [[Kuni Garu|/characters/kuni-garu]], in an audacious move conceived by [[Luan Zya|/characters/luan-zya]], used a small force of cruben-riders and airships to launch a surprise attack, easily taking the poorly defended capital and capturing Emperor Erishi." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 30, link: "/books/the-grace-of-kings#chapter-30" } },
-                { type: 'text', content: "Tragically, after the war, a paranoid Mata Zyndu refused Kuni's peaceful handover of the city. Believing he had been betrayed, Mata burned Pan to the ground, killing the boy-emperor in the flames." },
+                { type: 'text', content: "Tragically, after the war, a paranoid [[Mata Zyndu|/characters/mata-zyndu]] refused [[Kuni Garu|/characters/kuni-garu]]'s peaceful handover of the city. Believing he had been betrayed, Mata burned Pan to the ground, killing the boy-emperor in the flames." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 33, link: "/books/the-grace-of-kings#chapter-33" } },
             ]
         },
