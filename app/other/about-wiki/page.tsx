@@ -39,6 +39,17 @@ export default function AboutMePage() {
                 <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
                     Hello! I&apos;m a huge fan of Ken Liu&apos;s &ldquo;The Dandelion Dynasty&rdquo; and built this wiki to create a modern, clean, and easily searchable resource for the community.
                 </p>
+                <div className="mt-6 text-gray-600 dark:text-gray-300 max-w-3xl mx-auto space-y-3">
+                    <p>
+                        This project was inspired in part by a fantastic earlier site that has since gone offline but remains preserved on the Wayback Machine: {" "}
+                        <a href="https://web.archive.org/web/20190809133811/http://dandelionwiki.com/w/Main_Page" target="_blank" rel="noopener noreferrer" className="text-teal-600 dark:text-teal-400 hover:underline">The Dandelion Dynasty Wiki (archived)</a>. Another active and helpful resource is the {" "}
+                        <a href="https://the-dandelion-dynasty.fandom.com/wiki/The_Dandelion_Dynasty_Wiki" target="_blank" rel="noopener noreferrer" className="text-teal-600 dark:text-teal-400 hover:underline">Fandom Dandelion Dynasty Wiki</a>.
+                    </p>
+                    <p>
+                        My goal here is to build an evergreen, community-driven wiki—clean, modern, and informative—so fans always have a high-quality home for this world. {" "}
+                        <Link href="/other/contributing" className="text-teal-600 dark:text-teal-400 hover:underline font-semibold">Feel free to contribute</Link> and help it grow!
+                    </p>
+                </div>
             </div>
 
             {/* --- Support Section --- */}
@@ -50,7 +61,7 @@ export default function AboutMePage() {
                     </p>
                 </div>
                 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4">
                     <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 dark:border-gray-700 group">
                         <div className="text-center">
                             <h3 className="font-bold text-gray-900 dark:text-white mb-1 text-sm">The Grace of Kings</h3>
