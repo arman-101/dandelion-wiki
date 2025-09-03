@@ -1,10 +1,9 @@
-'use client';
+import { Metadata } from 'next';
 
-import CharacterPageTemplate from '../../components/CharacterPageTemplate';
+import PageTemplate, { convertCharacterData } from '../../components/layout/PageTemplate';
+import { generateCharacterMetadata } from '@/app/utils/metadata';
 import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
-import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
-import { getSurroundingPages } from '@/app/utils/navigationUtils';
+import { CharacterNavigation } from '@/app/components/layout/PageNavigation';
 
 const characterData: Character = {
     name: "Tanno Namen",
@@ -29,27 +28,36 @@ const characterData: Character = {
         {
             era: "The Grace of Kings",
             summary: [
-                { type: 'text', content: "Brought out of retirement by Kindo Marana, Namen led a swift and brutal campaign through Rima, culminating in the martyrdom of King Jizu. He then crushed Huno Krima's rebellion at Dimu, showing his disdain for the false king's arrogance." },
+                { type: 'text', content: "As the last great general of a dying empire, Tanno Namen fought with honor against a new way of war." }
+            ]
+        },
+        {
+            era: "The Honorable Antagonist",
+            summary: [
+                { type: 'text', content: "Brought out of retirement by Kindo Marana, Namen led a swift campaign through Rima and then crushed Huno Krima's nascent rebellion at Dimu." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 15, link: "/books/the-grace-of-kings#chapter-15" } },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 16, link: "/books/the-grace-of-kings#chapter-16" } },
-                { type: 'text', content: "At the Battle of Zudi, he was outmaneuvered by the combined forces of Kuni's cunning and Mata's valor. Provoked by Kuni's taunts, he agreed to an aerial duel, which Mata won, breaking the siege." },
+                { type: 'text', content: "At the Battle of Zudi, he was outmaneuvered by the combined forces of Kuni's cunning and Mata's valor. Provoked by Kuni's taunts, he agreed to an aerial duel between champions, which his forces lost, shattering their morale and forcing a retreat." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 22, link: "/books/the-grace-of-kings#chapter-22" } },
-                { type: 'text', content: "His final stand was at the Battle of Wolf's Paw. Facing a crushing defeat at the hands of Mata Zyndu, the honorable general chose to take his own life rather than suffer the shame of surrender." },
+                { type: 'text', content: "His final stand was at the Battle of Wolf's Paw. Facing a crushing defeat at the hands of Mata Zyndu's inspired army, the honorable general chose to take his own life rather than suffer the shame of surrender, having never been defeated before." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 29, link: "/books/the-grace-of-kings#chapter-29" } },
             ]
         },
     ]
 };
 
+// Generate metadata for SEO
+export async function generateMetadata(): Promise<Metadata> {
+    return generateCharacterMetadata(characterData);
+}
+
 export default function TannoNamenPage() {
-    const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <CharacterPageTemplate characterData={characterData} />
+            <CharacterNavigation prevPage={null} nextPage={null} returnLink={returnLink} />
+            <PageTemplate pageData={convertCharacterData(characterData)} infoBoxTitle="Biographical Information" />
         </>
     );
 }

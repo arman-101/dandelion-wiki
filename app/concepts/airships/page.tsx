@@ -1,9 +1,9 @@
 'use client';
 
-import ConceptPageTemplate from '../../components/ConceptPageTemplate';
+import PageTemplate, { convertConceptData } from '../../components/layout/PageTemplate';
 import { Concept, ALL_CONCEPTS } from '../../data/wiki-data';
 import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { ConceptNavigation } from '@/app/components/layout/PageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
 // --- DATA FOR AIRSHIPS ---
@@ -14,14 +14,16 @@ const conceptData: Concept = {
     infoBox: {
         Technology: "'Silkpunk' aeronautics",
         PowerSource: { text: "Lift Gas", link: "/concepts/lift-gas" },
-        PrimaryUsers: { text: "Xana & Dandelion Dynasties", link: "/places/xana" },
-        KeyInnovation: "Battle Kites, Aerial Carriers",
+        PrimaryUsers: "Xana & Dandelion Dynasties",
+        KeyInnovations: "Battle Kites, Phantom Airships, Silkmotic Saucers",
     },
     details: [
-        { type: 'text', content: "Developed by the engineers of Xana, the first airships were hulking warships that allowed Emperor Mapidéré to conquer the Tiro states. They are constructed with materials like silk for the gas envelopes and bamboo for the framing. In battle, they serve as aerial platforms for archers and bombers." },
-        { type: 'ref', data: { book: "The Grace of Kings", chapter: 20, link: "/books/the-grace-of-kings#chapter-20" } },
-        { type: 'text', content: "Under the Dandelion Dynasty, airship technology evolved rapidly. Kuni Garu's engineers, inspired by Luan Zya, developed smaller, more agile 'battle kites' and massive aerial carriers. This innovation continued under Princess Théra, who envisioned new designs and uses for aerial power, cementing the airship as the ultimate symbol of Daran ingenuity." },
-        { type: 'ref', data: { book: "The Grace of Kings", chapter: 41, link: "/books/the-grace-of-kings#chapter-41" } },
+        { type: 'text', content: "Developed by the engineers of Xana, the first airships were hulking warships that allowed Emperor Mapidéré to conquer the Tiro states. In battle, they serve as aerial platforms for archers and bombers." },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 1, link: "/books/the-grace-of-kings#chapter-1" } },
+        { type: 'text', content: "Under the Dandelion Dynasty, airship technology evolved rapidly. Luan Zya designed superior battle kites used to great effect at the Battle of Zudi. During the Lyucu War, further innovations led by Zomi Kidosu produced skeletal 'phantom' airships equipped with flamethrowers and semi-rigid, saucer-shaped vessels powered by flammable gas and armed with silkmotic weapons." },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 22, link: "/books/the-grace-of-kings#chapter-22" } },
+        { type: 'ref', data: { book: "The Wall of Storms", chapter: 42, link: "/books/the-wall-of-storms#chapter-42" } },
+        { type: 'ref', data: { book: "The Wall of Storms", chapter: 59, link: "/books/the-wall-of-storms#chapter-59" } },
     ]
 };
 
@@ -32,8 +34,8 @@ export default function AirshipsPage() {
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <ConceptPageTemplate conceptData={conceptData} />
+            <ConceptNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PageTemplate pageData={convertConceptData(conceptData)} infoBoxTitle="Concept Information" />
         </>
     );
 }

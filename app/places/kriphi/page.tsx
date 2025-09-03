@@ -1,9 +1,9 @@
 'use client';
 
-import PlacePageTemplate from '../../components/PlacePageTemplate';
+import PageTemplate, { convertPlaceData } from '../../components/layout/PageTemplate';
 import { Place, ALL_PLACES } from '../../data/wiki-data';
 import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { PlaceNavigation } from '@/app/components/layout/PageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
 // --- DATA FOR KRIPHI ---
@@ -27,24 +27,22 @@ const placeData: Place = {
         { type: 'ref', data: { book: "The Wall of Storms", chapter: 42, link: "/books/the-wall-of-storms#chapter-42" } },
     ],
     culture: [
-        { type: 'text', content: "Under the Lyucu, Kriphi is a city of tension and political strife. It is the center of the conflict between the hardline faction, which seeks to erase all traces of Dara culture, and the accommodationist faction, which advocates for a more integrated society. It is a place of purges, political maneuvering, and quiet resistance." },
+        { type: 'text', content: "Under the Lyucu, Kriphi is a city of tension and political strife between the hardline faction, which seeks to erase all Dara culture, and the accommodationist faction, which advocates for integration. It is a place of purges, political maneuvering, and quiet resistance." },
         { type: 'ref', data: { book: "The Veiled Throne", chapter: 25, link: "/books/the-veiled-throne#chapter-25" } },
     ],
     history: [
         {
             event: "The Chrysanthemum-Dandelion War",
             summary: [
-                { type: 'text', content: "Using the forgotten Grand Tunnels, Gin Mazoti's army launched a stunning surprise attack on Rui, and the city of Kriphi fell quickly to Kuni Garu's forces. This swift victory was a major turning point in the war against Mata Zyndu." },
+                { type: 'text', content: "Using forgotten undersea tunnels, Gin Mazoti's army launched a stunning surprise attack, and Kriphi fell quickly to Kuni Garu's forces. This was a major turning point in the war against Mata Zyndu." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 43, link: "/books/the-grace-of-kings#chapter-43" } },
             ]
         },
         {
             event: "The Lyucu War",
             summary: [
-                { type: 'text', content: "After the Lyucu conquered Rui and Dasu, Kriphi became their capital. The Battle of Kriphi Harbor was the first major victory for the Dara forces against the invaders. Gin Mazoti led a daring night attack with new flamethrower-equipped airships, destroying much of the Lyucu navy." },
+                { type: 'text', content: "After the Lyucu conquest, Kriphi became their capital. The Battle of Kriphi Harbor was the first major Dara victory against the invaders, where Gin Mazoti's fleet destroyed the Lyucu navy. The city's internal politics ultimately led to the collapse of the Lyucu regime from within, culminating in the assassinations of Tanvanaki, Cutanrovo Aga, and Emperor Timu." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 42, link: "/books/the-wall-of-storms#chapter-42" } },
-                { type: 'text', content: "It later became the center of the Lyucu court, where Prince Timu was held as a puppet emperor and where Kinri launched his daring rescue mission. The city's internal politics, dominated by the struggle between Cutanrovo Aga and Goztan Ryoto, ultimately led to the collapse of the Lyucu regime from within." },
-                { type: 'ref', data: { book: "The Veiled Throne", chapter: 25, link: "/books/the-veiled-throne#chapter-25" } },
                 { type: 'ref', data: { book: "Speaking Bones", chapter: 43, link: "/books/speaking-bones#chapter-43" } },
             ]
         },
@@ -58,8 +56,8 @@ export default function KriphiPage() {
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <PlacePageTemplate placeData={placeData} />
+            <PlaceNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PageTemplate pageData={convertPlaceData(placeData)} infoBoxTitle="Location Information" />
         </>
     );
 }

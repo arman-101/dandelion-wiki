@@ -18,12 +18,13 @@ const placesCities: Place[] = ALL_PLACES_DATA.filter(p => p.category === 'city')
 const placesIslands: Place[] = ALL_PLACES_DATA.filter(p => p.category === 'island');
 const placesLandmarks: Place[] = ALL_PLACES_DATA.filter(p => p.category === 'landmark');
 const placesBeyondDara: Place[] = ALL_PLACES_DATA.filter(p => p.category === 'beyond');
+const placesEtc: Place[] = ALL_PLACES_DATA.filter(p => p.category === 'etc');
 
 
 // Helper component for rendering each section
-const PlaceSection: FC<{ title: string; places: Place[] }> = ({ title, places }) => (
+const PlaceSection: FC<{ title: string; places: Place[]; isFirst?: boolean }> = ({ title, places, isFirst = false }) => (
     <section>
-        <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white my-8 border-b pb-4">{title}</h3>
+        <h3 className={`text-3xl md:text-4xl font-bold text-gray-900 dark:text-white border-b pb-4 ${isFirst ? 'mt-0 mb-8' : 'my-8'}`}>{title}</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {places.map((place: Place) => (
                 <Link href={place.link} key={place.name} className="group bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-1 overflow-hidden">
@@ -43,13 +44,12 @@ const PlaceSection: FC<{ title: string; places: Place[] }> = ({ title, places })
 export default function PlacesPage() {
     return (
         <div>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-8 border-b pb-4">The World of the Dandelion Dynasty</h1>
-            
-            <PlaceSection title="The Seven States of Dara" places={placesCoreStates} />
+            <PlaceSection title="The Seven States of Dara" places={placesCoreStates} isFirst={true} />
             <PlaceSection title="Major Cities & Regions" places={placesCities} />
             <PlaceSection title="Outer Islands & Archipelagos" places={placesIslands} />
             <PlaceSection title="Geographical Landmarks" places={placesLandmarks} />
             <PlaceSection title="Ukyu & Gonde" places={placesBeyondDara} />
+            <PlaceSection title="Etc" places={placesEtc} />
         </div>
     );
 }

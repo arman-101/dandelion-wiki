@@ -1,10 +1,9 @@
-'use client';
+import { Metadata } from 'next';
 
-import CharacterPageTemplate from '../../components/CharacterPageTemplate';
+import PageTemplate, { convertCharacterData } from '../../components/layout/PageTemplate';
+import { generateCharacterMetadata } from '@/app/utils/metadata';
 import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
-import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
-import { getSurroundingPages } from '@/app/utils/navigationUtils';
+import { CharacterNavigation } from '@/app/components/layout/PageNavigation';
 
 const characterData: Character = {
     name: "Cutanrovo Aga",
@@ -23,38 +22,41 @@ const characterData: Character = {
     },
     appearanceAndPersonality: [
         { type: 'text', content: "Cutanrovo is a zealot, driven by a fanatical belief in the superiority of Lyucu culture and the need to purge all foreign influences. She is ruthless, ambitious, and politically savvy, using the purges to consolidate her own power and undermine her rivals, such as Goztan Ryoto and Pékyu Tanvanaki. Her actions represent the most brutal and uncompromising aspects of the Lyucu occupation." },
-        { type: 'ref', data: { book: "The Veiled Throne", chapter: 16, link: "/books/the-veiled-throne#chapter-16" } },
+        { type: 'ref', data: { book: "The Veiled Throne", chapter: 23, link: "/books/the-veiled-throne#chapter-23" } },
         { type: 'ref', data: { book: "The Veiled Throne", chapter: 25, link: "/books/the-veiled-throne#chapter-25" } },
     ],
     history: [
         {
             era: "The Veiled Throne",
             summary: [
-                { type: 'text', content: "Cutanrovo leads the puritanical movement in occupied Rui, forcing the captive Prince Timu to participate in the destruction of the Temple of Kiji and its library. She uses the defection of Goztan Ryoto's son, Savo, as a political weapon to attack the accommodationist faction, sentencing the boy and his Dara tutor to death in absentia and stripping Goztan of her power." },
-                { type: 'ref', data: { book: "The Veiled Throne", chapter: 16, link: "/books/the-veiled-throne#chapter-16" } },
+                { type: 'text', content: "Cutanrovo led a brutal puritanical movement in occupied Rui, forcing the captive Prince Timu to participate in the destruction of Dara's cultural artifacts. She used the existence of Goztan Ryoto's half-Dara son, Savo, as a political weapon to attack the accommodationist faction, cementing the hardliners' control over the Lyucu court." },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 23, link: "/books/the-veiled-throne#chapter-23" } },
                 { type: 'ref', data: { book: "The Veiled Throne", chapter: 25, link: "/books/the-veiled-throne#chapter-25" } },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 30, link: "/books/the-veiled-throne#chapter-30" } },
             ]
         },
         {
             era: "Speaking Bones",
             summary: [
-                { type: 'text', content: "Her reign of terror plunges the Lyucu court into a state of paranoia and madness. Her fanaticism ultimately leads to the collapse of the Lyucu regime from within, as her brutal policies alienate the populace and create deep divisions within the Lyucu leadership, culminating in her downfall." },
+                { type: 'text', content: "As the Lyucu occupation began to collapse due to the withdrawal from an addictive substance, Cutanrovo's rule became even more brutal. In a final bid for power, she launched a coup, murdering Pékyu Tanvanaki. However, she was immediately betrayed and killed by her own co-conspirator, the traitor Noda Mi." },
                 { type: 'ref', data: { book: "Speaking Bones", chapter: 39, link: "/books/speaking-bones#chapter-39" } },
-                { type: 'ref', data: { book: "Speaking Bones", chapter: 43, link: "/books/speaking-bones#chapter-43" } },
             ]
         },
     ]
 };
 
+// Generate metadata for SEO
+export async function generateMetadata(): Promise<Metadata> {
+    return generateCharacterMetadata(characterData);
+}
+
 export default function CutanrovoAgaPage() {
-    const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <CharacterPageTemplate characterData={characterData} />
+            <CharacterNavigation prevPage={null} nextPage={null} returnLink={returnLink} />
+            <PageTemplate pageData={convertCharacterData(characterData)} infoBoxTitle="Biographical Information" />
         </>
     );
 }

@@ -1,9 +1,9 @@
 'use client';
 
-import PlacePageTemplate from '../../components/PlacePageTemplate';
+import PageTemplate, { convertPlaceData } from '../../components/layout/PageTemplate';
 import { Place, ALL_PLACES } from '../../data/wiki-data';
 import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { PlaceNavigation } from '@/app/components/layout/PageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
 // --- DATA FOR ÇARUZA ---
@@ -28,18 +28,16 @@ const placeData: Place = {
         {
             event: "The Dandelion Rebellion",
             summary: [
-                { type: 'text', content: "After being liberated from Xana rule, Çaruza became the capital of the restored kingdom of Cocru. It was here that the rebels installed the humble shepherd Thufi as the new king." },
+                { type: 'text', content: "After being liberated, Çaruza became the capital of the restored kingdom of Cocru, where the rebels installed the humble shepherd Thufi as the new king. King Thufi convened the Grand Council of War in Çaruza, and later declared himself Princeps in the city. It was also in Çaruza that the 'Princeps's Promise' was made, a declaration that became a major catalyst for the subsequent civil war." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 12, link: "/books/the-grace-of-kings#chapter-12" } },
-                { type: 'text', content: "King Thufi convened the Grand Council of War in Çaruza, but it devolved into bickering. Later, backed by Mata Zyndu's military might, Thufi declared himself Princeps in the city. It was also in Çaruza that the 'Princeps's Promise' was made, granting the kingship of Géfica to whoever could capture Pan." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 26, link: "/books/the-grace-of-kings#chapter-26" } },
             ]
         },
         {
             event: "The Hegemon's Court",
             summary: [
-                { type: 'text', content: "Princess Kikomi arrived in Çaruza as a celebrated hero after her 'escape' from the Xana. It was here that she enacted the tragic final step of her plan, murdering Phin Zyndu to sow discord between Mata and Kuni." },
+                { type: 'text', content: "Princess Kikomi arrived in Çaruza as a celebrated hero and enacted the tragic final step of her plan, murdering Phin Zyndu. During Mata Zyndu's reign, Jia Matiza resided in Çaruza, where she was mentored by the mysterious housekeeper Soto, who was secretly Mata's aunt, Soto Zyndu." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 27, link: "/books/the-grace-of-kings#chapter-27" } },
-                { type: 'text', content: "During Mata Zyndu's reign as Hegemon, Jia Matiza resided in Çaruza, feeling isolated in high society. It was here she hired the mysterious housekeeper Soto, who was secretly Mata's aunt, Soto Zyndu, and who became Jia's political mentor." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 32, link: "/books/the-grace-of-kings#chapter-32" } },
             ]
         },
@@ -53,8 +51,8 @@ export default function CaruzaPage() {
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <PlacePageTemplate placeData={placeData} />
+            <PlaceNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PageTemplate pageData={convertPlaceData(placeData)} infoBoxTitle="Location Information" />
         </>
     );
 }

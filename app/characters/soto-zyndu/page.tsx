@@ -1,15 +1,14 @@
-'use client';
+import { Metadata } from 'next';
 
-import CharacterPageTemplate from '../../components/CharacterPageTemplate';
+import PageTemplate, { convertCharacterData } from '../../components/layout/PageTemplate';
+import { generateCharacterMetadata } from '@/app/utils/metadata';
 import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
-import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
-import { getSurroundingPages } from '@/app/utils/navigationUtils';
+import { CharacterNavigation } from '@/app/components/layout/PageNavigation';
 
 const characterData: Character = {
     name: "Soto Zyndu",
     image: "/characters/soto-zyndu.png",
-    introduction: "Soto Zyndu is the politically brilliant aunt of Mata Zyndu. Long thought dead after faking her own demise to escape the Xana, she re-emerged as a wise and influential advisor to Empress Jia Matiza and the imperial children, shaping the future of the Dandelion Dynasty from the shadows.",
+    introduction: "Soto Zyndu is the politically brilliant aunt of Mata Zyndu. Long thought dead after faking her own demise to escape the Xana, she re-emerged as a wise and influential advisor to Empress Jia and the imperial children, shaping the future of the Dandelion Dynasty from the shadows.",
     infoBox: {
         aliases: "Soto the Housekeeper",
         occupation: "Noblewoman, Housekeeper, Imperial Advisor",
@@ -24,10 +23,10 @@ const characterData: Character = {
         affiliation: "House of Zyndu, Dandelion Court",
         nationality: { text: "Cocru", link: "/places/cocru" },
         firstAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" },
-        lastAppeared: { text: "The Wall of Storms", link: "/books/the-wall-of-storms" }
+        lastAppeared: { text: "Speaking Bones", link: "/books/speaking-bones" }
     },
     appearanceAndPersonality: [
-        { type: 'text', content: "Soto appears as a mysterious and incredibly wise older woman. She possesses a profound understanding of politics, power, and human nature. She is calm, patient, and an exceptional teacher, able to convey complex political lessons through simple metaphors and guidance. Her wisdom is practical and deeply insightful, focusing on the long-term consequences of actions." },
+        { type: 'text', content: "Soto appears as an unassuming and preternaturally wise older woman. She possesses a profound understanding of politics, power, and human nature. She is calm, patient, and an exceptional teacher, able to convey complex political lessons through simple metaphors and guidance. Her wisdom is practical and deeply insightful, focusing on the long-term consequences of actions." },
         { type: 'ref', data: { book: "The Grace of Kings", chapter: 32, link: "/books/the-grace-of-kings#chapter-32" } },
         { type: 'ref', data: { book: "The Wall of Storms", chapter: 11, link: "/books/the-wall-of-storms#chapter-11" } },
     ],
@@ -35,7 +34,7 @@ const characterData: Character = {
         {
             era: "The Grace of Kings",
             summary: [
-                { type: 'text', content: "Long believed to have died by setting fire to her own estate to escape the Xana, Soto Zyndu survived and lived in obscurity. Years later, she entered the service of Jia Matiza in Çaruza, disguised as a simple housekeeper named Soto. She became a close confidante and political mentor to Jia, advising her to embrace her power and become an active and equal partner in Kuni's ambitions. She was also instrumental in helping Kuni and Jia repair their fractured marriage." },
+                { type: 'text', content: "Long believed to have committed suicide to escape the Xana purge, Soto Zyndu survived and lived in obscurity. Years later, she entered the service of Jia Matiza, disguised as a simple housekeeper. She became a close confidante and political mentor to Jia, advising her to embrace her power and helping to repair her fractured marriage with Kuni." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 32, link: "/books/the-grace-of-kings#chapter-32" } },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 37, link: "/books/the-grace-of-kings#chapter-37" } },
             ]
@@ -43,23 +42,35 @@ const characterData: Character = {
         {
             era: "The Wall of Storms",
             summary: [
-                { type: 'text', content: "In the imperial court at Pan, Soto took on the role of advisor and mentor to the imperial children. She provided a running commentary on the political theater of the Palace Examination, teaching Princess Théra in particular to see the hidden power struggles beneath the surface of official events. Her guidance was crucial in shaping Théra's keen political acumen." },
+                { type: 'text', content: "In the imperial court, Soto took on the role of advisor to the imperial children, teaching Princess Théra in particular to see the hidden power struggles beneath the surface of official events. Later, in a moment of political genius, she orchestrated the public spectacle that convinced Gin Mazoti to retake command of the army against the Lyucu." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 11, link: "/books/the-wall-of-storms#chapter-11" } },
-                { type: 'ref', data: { book: "The Wall of Storms", chapter: 17, link: "/books/the-wall-of-storms#chapter-17" } },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 52, link: "/books/the-wall-of-storms#chapter-52" } },
+            ]
+        },
+        {
+            era: "Speaking Bones",
+            summary: [
+                { type: 'text', content: "Soto's final and most significant act was to become the historian of truth against Empress Jia's tyranny. While in hiding with the rebels, she authored a scathing exposé of Jia's crimes. Using a revolutionary printing device invented by Savo Ryoto, her book was mass-produced and distributed across Dara, providing the political and moral justification for the 'bloodless rebellion' that ultimately deposed the regent." },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 34, link: "/books/speaking-bones#chapter-34" } },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 48, link: "/books/speaking-bones#chapter-48" } },
+                 { type: 'ref', data: { book: "Speaking Bones", chapter: 50, link: "/books/speaking-bones#chapter-50" } },
             ]
         },
     ]
 };
 
+// Generate metadata for SEO
+export async function generateMetadata(): Promise<Metadata> {
+    return generateCharacterMetadata(characterData);
+}
+
 export default function SotoZynduPage() {
-    const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <CharacterPageTemplate characterData={characterData} />
+            <CharacterNavigation prevPage={null} nextPage={null} returnLink={returnLink} />
+            <PageTemplate pageData={convertCharacterData(characterData)} infoBoxTitle="Biographical Information" />
         </>
     );
 }

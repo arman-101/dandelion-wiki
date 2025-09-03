@@ -1,9 +1,9 @@
 'use client';
 
-import PlacePageTemplate from '../../components/PlacePageTemplate';
+import PageTemplate, { convertPlaceData } from '../../components/layout/PageTemplate';
 import { Place, ALL_PLACES } from '../../data/wiki-data';
 import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { PlaceNavigation } from '@/app/components/layout/PageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
 // --- DATA FOR CRESCENT ISLAND ---
@@ -21,14 +21,14 @@ const placeData: Place = {
         { type: 'ref', data: { book: "The Wall of Storms", chapter: 12, link: "/books/the-wall-of-storms#chapter-12" } },
     ],
     culture: [
-        { type: 'text', content: "The inhabitants of Crescent Island live a simple, traditional life, preserving ancient customs and language. This makes the island a living museum of Dara's history and a perfect outdoor classroom for a student of philosophy and linguistics like Zomi." },
+        { type: 'text', content: "The inhabitants of Crescent Island live a simple, traditional life, preserving ancient customs and language. This makes the island a living museum of Dara's history." },
         { type: 'ref', data: { book: "The Wall of Storms", chapter: 12, link: "/books/the-wall-of-storms#chapter-12" } },
     ],
     history: [
         {
             event: "The Education of Zomi Kidosu",
             summary: [
-                { type: 'text', content: "Luan Zya took his young student, Zomi Kidosu, to Crescent Island to continue her education. There, he taught her the deeper principles of logogram construction by communicating with an elder who spoke an archaic dialect. The island was also the site of a dramatic forest fire where Zomi's practical genius saved both the hamlet and her teacher's life." },
+                { type: 'text', content: "Luan Zya took his young student, Zomi Kidosu, to Crescent Island to continue her education. It was also the site of a dramatic forest fire where Zomi's practical genius saved both the hamlet and her teacher's life." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 12, link: "/books/the-wall-of-storms#chapter-12" } },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 14, link: "/books/the-wall-of-storms#chapter-14" } },
             ]
@@ -36,9 +36,9 @@ const placeData: Place = {
         {
             event: "The Battle of Crescent Island",
             summary: [
-                { type: 'text', content: "During the Lyucu War, the invaders established a foothold on Crescent Island, leading to a military stalemate. The Dandelion court gave command of the Dara fleet to the newly trained Aya Mazoti. In a multi-part, brutal battle, Aya used deception and unconventional tactics, including the aid of the Fish-Herder's swamp rebels, to break the stalemate and achieve a costly but decisive victory for Dara." },
+                { type: 'text', content: "During the final war against the Lyucu occupation, Crescent Island was the site of a major battle. Emperor Phyro led his new, secretly built army in a multi-stage assault, using innovative technology like ornithopter swarms and 'sunflower' guided missiles to achieve a costly but decisive victory over the Lyucu fleet commanded by Goztan Ryoto." },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 22, link: "/books/speaking-bones#chapter-22" } },
                 { type: 'ref', data: { book: "Speaking Bones", chapter: 24, link: "/books/speaking-bones#chapter-24" } },
-                { type: 'ref', data: { book: "Speaking Bones", chapter: 25, link: "/books/speaking-bones#chapter-25" } },
                 { type: 'ref', data: { book: "Speaking Bones", chapter: 26, link: "/books/speaking-bones#chapter-26" } },
             ]
         },
@@ -52,8 +52,8 @@ export default function CrescentIslandPage() {
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <PlacePageTemplate placeData={placeData} />
+            <PlaceNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PageTemplate pageData={convertPlaceData(placeData)} infoBoxTitle="Location Information" />
         </>
     );
 }

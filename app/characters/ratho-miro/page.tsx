@@ -1,10 +1,9 @@
-'use client';
+import { Metadata } from 'next';
 
-import CharacterPageTemplate from '../../components/CharacterPageTemplate';
+import PageTemplate, { convertCharacterData } from '../../components/layout/PageTemplate';
+import { generateCharacterMetadata } from '@/app/utils/metadata';
 import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
-import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
-import { getSurroundingPages } from '@/app/utils/navigationUtils';
+import { CharacterNavigation } from '@/app/components/layout/PageNavigation';
 
 const characterData: Character = {
     name: "Ratho Miro",
@@ -32,24 +31,33 @@ const characterData: Character = {
         {
             era: "The Grace of Kings",
             summary: [
+                { type: 'text', content: "Ratho Miro's story is one of unwavering loyalty to his chosen leader, Mata Zyndu, from the start of the rebellion to its bitter end." }
+            ]
+        },
+        {
+            era: "A Hegemon's Man",
+            summary: [
                 { type: 'text', content: "Ratho and his brother Dafiro were corvée laborers who sparked the first uprising by killing their guards and joining Huno Krima's rebellion." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 6, link: "/books/the-grace-of-kings#chapter-6" } },
-                { type: 'text', content: "He became a devoted follower of Mata Zyndu, admiring his strength and honor. He served Mata faithfully throughout the rebellion and the subsequent civil war. Ratho was one of the last loyal followers to stand with Mata in his final, heroic last stand at Rana Kida, where he died fighting for his Hegemon." },
+                { type: 'text', content: "He became a devoted follower of Mata Zyndu, admiring his strength and honor. He served Mata faithfully throughout the rebellion and the subsequent civil war. Ratho was one of the last loyal followers to stand with Mata in his final, suicidal charge, where he died fighting for his Hegemon." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 50, link: "/books/the-grace-of-kings#chapter-50" } },
             ]
         },
     ]
 };
 
+// Generate metadata for SEO
+export async function generateMetadata(): Promise<Metadata> {
+    return generateCharacterMetadata(characterData);
+}
+
 export default function RathoMiroPage() {
-    const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <CharacterPageTemplate characterData={characterData} />
+            <CharacterNavigation prevPage={null} nextPage={null} returnLink={returnLink} />
+            <PageTemplate pageData={convertCharacterData(characterData)} infoBoxTitle="Biographical Information" />
         </>
     );
 }

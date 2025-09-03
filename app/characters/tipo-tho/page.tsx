@@ -1,10 +1,9 @@
-'use client';
+import { Metadata } from 'next';
 
-import CharacterPageTemplate from '../../components/CharacterPageTemplate';
+import PageTemplate, { convertCharacterData } from '../../components/layout/PageTemplate';
+import { generateCharacterMetadata } from '@/app/utils/metadata';
 import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
-import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
-import { getSurroundingPages } from '@/app/utils/navigationUtils';
+import { CharacterNavigation } from '@/app/components/layout/PageNavigation';
 
 const characterData: Character = {
     name: "Tipo Tho",
@@ -14,10 +13,10 @@ const characterData: Character = {
         aliases: "Commander Tho",
         occupation: "Marine Commander",
         placeOfBirth: "Dara",
-        status: "Alive",
+        status: "Deceased",
         gender: "Male",
         affiliation: "Dara Expeditionary Force, Agon Rebellion",
-        nationality: "Dara",
+        nationality: "Daran",
         firstAppeared: { text: "The Veiled Throne", link: "/books/the-veiled-throne" },
         lastAppeared: { text: "The Veiled Throne", link: "/books/the-veiled-throne" }
     },
@@ -29,22 +28,26 @@ const characterData: Character = {
         {
             era: "The Veiled Throne",
             summary: [
-                { type: 'text', content: "As a commander in Théra's expeditionary force, Tipo Tho led the daring boarding party that infiltrated the Lyucu city-ship. He and his marines drilled through the hull from the submerged flagship *Dissolver of Sorrows*, planting explosive charges and fighting a running battle through the ship's interior. His leadership was crucial to the success of this high-risk operation, which resulted in the capture of the enemy vessel." },
+                { type: 'text', content: "As a commander in Théra's expedition, Tipo Tho led the daring boarding party that infiltrated the Lyucu city-ship, a crucial first victory. He died heroically during the surprise Lyucu attack on the secret Agon base in Kiri Valley, leading a last stand to allow Princess Théra and her family to escape." },
                 { type: 'ref', data: { book: "The Veiled Throne", chapter: 9, link: "/books/the-veiled-throne#chapter-9" } },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 27, link: "/books/the-veiled-throne#chapter-27" } },
             ]
         },
     ]
 };
 
+// Generate metadata for SEO
+export async function generateMetadata(): Promise<Metadata> {
+    return generateCharacterMetadata(characterData);
+}
+
 export default function TipoThoPage() {
-    const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <CharacterPageTemplate characterData={characterData} />
+            <CharacterNavigation prevPage={null} nextPage={null} returnLink={returnLink} />
+            <PageTemplate pageData={convertCharacterData(characterData)} infoBoxTitle="Biographical Information" />
         </>
     );
 }

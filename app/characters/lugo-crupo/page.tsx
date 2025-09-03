@@ -1,10 +1,9 @@
-'use client';
+import { Metadata } from 'next';
 
-import CharacterPageTemplate from '../../components/CharacterPageTemplate';
+import PageTemplate, { convertCharacterData } from '../../components/layout/PageTemplate';
+import { generateCharacterMetadata } from '@/app/utils/metadata';
 import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
-import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
-import { getSurroundingPages } from '@/app/utils/navigationUtils';
+import { CharacterNavigation } from '@/app/components/layout/PageNavigation';
 
 const characterData: Character = {
     name: "Lügo Crupo",
@@ -13,11 +12,11 @@ const characterData: Character = {
     infoBox: {
         aliases: "The Regent",
         occupation: "Scholar, Prime Minister of Dara, Regent",
-        placeOfBirth: { text: "Xana", link: "/places/xana" },
+        placeOfBirth: "Dara",
         status: "Deceased",
         gender: "Male",
-        affiliation: "House of Xana, Xana Empire",
-        nationality: { text: "Xana", link: "/places/xana" },
+        affiliation: "Xana Empire",
+        nationality: "Daran",
         firstAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" },
         lastAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" }
     },
@@ -31,26 +30,33 @@ const characterData: Character = {
         {
             era: "The Grace of Kings",
             summary: [
-                { type: 'text', content: "Crupo conspired with Goran Pira to stage a coup upon Emperor Mapidéré's death, installing Prince Loshi as the puppet Emperor Erishi. To solidify his power, he famously brought a stag into court, called it a horse, and had all ministers who disagreed executed, an event that became a symbol of his tyranny." },
+                { type: 'text', content: "As Regent for the boy-emperor Erishi, Lügo Crupo was briefly the most powerful man in Dara, a position he wielded with arrogance and cruelty." }
+            ]
+        },
+        {
+            era: "The Arrogant Regent",
+            summary: [
+                { type: 'text', content: "Crupo conspired with Goran Pira to stage a coup upon Emperor Mapidéré's death, installing Prince Loshi as the puppet Emperor Erishi. To consolidate his power, he famously brought a stag into court, declared it a horse, and had all ministers who disagreed arrested and executed—an event that became a symbol of his absolute and terrifying control." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 5, link: "/books/the-grace-of-kings#chapter-5" } },
-                { type: 'text', content: "As the most powerful man in the empire, he governed with a mix of brilliance and lazy cruelty, his arrogance blinding him to the growing threats to the dynasty." },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 10, link: "/books/the-grace-of-kings#chapter-10" } },
-                { type: 'text', content: "His reign was cut short when Goran Pira, seeing Crupo as a threat to his own plans, manipulated Emperor Erishi into believing Crupo was a traitor. Pira framed him, had him brutally tortured until he confessed to crimes he didn't commit, and then had him executed, clearing the way for Pira to become Prime Minister." },
+                { type: 'text', content: "His reign was cut short when his co-conspirator, Goran Pira, saw him as a threat. Pira manipulated Emperor Erishi into believing Crupo was a traitor, framed him with a seditious poem, and had him brutally tortured and executed. Crupo's downfall cleared the way for Pira to become Prime Minister." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 25, link: "/books/the-grace-of-kings#chapter-25" } },
             ]
         },
     ]
 };
 
+// Generate metadata for SEO
+export async function generateMetadata(): Promise<Metadata> {
+    return generateCharacterMetadata(characterData);
+}
+
 export default function LugoCrupoPage() {
-    const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <CharacterPageTemplate characterData={characterData} />
+            <CharacterNavigation prevPage={null} nextPage={null} returnLink={returnLink} />
+            <PageTemplate pageData={convertCharacterData(characterData)} infoBoxTitle="Biographical Information" />
         </>
     );
 }

@@ -1,9 +1,9 @@
 'use client';
 
-import GodPageTemplate from '../../components/GodPageTemplate';
+import PageTemplate, { convertGodData } from '../../components/layout/PageTemplate';
 import { God, ALL_GODS } from '../../data/wiki-data';
 import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { GodNavigation } from '@/app/components/layout/PageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
 // --- DATA FOR FITHOWÉO ---
@@ -17,7 +17,7 @@ const godData: God = {
         Pawi: "Wolf",
     },
     mythology: [
-        { type: 'text', content: "Blinded by his brother Kiji during the Diaspora Wars, Fithowéo initially hid from the world in shame and self-pity. He was taught by a humble, night-blooming orchid that true sight is not limited to the eyes and that his duty was to represent not just victory, but the courage to fight against overwhelming odds. Inspired, he took obsidian stones for eyes and rejoined the world, having learned to 'see' through sound and other senses." },
+        { type: 'text', content: "Blinded by his brother Kiji during the Diaspora Wars, Fithowéo initially hid from the world in shame. He was taught by a humble, night-blooming orchid that true sight is not limited to the eyes and that his duty was to represent not just victory, but the courage to fight against overwhelming odds. He rejoined the world, having learned to 'see' through other senses." },
         { type: 'ref', data: { book: "The Wall of Storms", chapter: 6, link: "/books/the-wall-of-storms#chapter-6" } },
     ],
     appearances: [
@@ -32,7 +32,7 @@ const godData: God = {
         {
             event: "Mentoring Princess Théra",
             summary: [
-                { type: 'text', content: "Disguised as a master craftsman in the palace, Fithowéo appears to Princess Théra. He teaches her about the interference patterns of waves using a musical instrument, providing her with the crucial insight needed to understand and scientifically defeat the 'magic mirrors' used by the Hegemon cults. This act shows his role as a teacher of unconventional warfare and strategy, guiding a hero who fights with intellect rather than a sword." },
+                { type: 'text', content: "Disguised as a master craftsman, Fithowéo appears to Princess Théra. He teaches her about the interference patterns of waves using a musical instrument, providing her with the crucial insight needed to scientifically defeat the 'magic mirrors' used by the Hegemon cults. This act shows his role as a teacher of unconventional warfare and strategy." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 26, link: "/books/the-wall-of-storms#chapter-26" } },
             ]
         },
@@ -47,12 +47,8 @@ export default function FithoweoPage() {
 
     return (
         <>
-            <TopPageNavigation
-                prevPage={prevPage}
-                nextPage={nextPage}
-                returnLink={returnLink}
-            />
-            <GodPageTemplate godData={godData} />
+            <GodNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PageTemplate pageData={convertGodData(godData)} infoBoxTitle="Divine Information" />
         </>
     );
 }

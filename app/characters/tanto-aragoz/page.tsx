@@ -1,10 +1,9 @@
-'use client';
+import { Metadata } from 'next';
 
-import CharacterPageTemplate from '../../components/CharacterPageTemplate';
+import PageTemplate, { convertCharacterData } from '../../components/layout/PageTemplate';
+import { generateCharacterMetadata } from '@/app/utils/metadata';
 import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
-import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
-import { getSurroundingPages } from '@/app/utils/navigationUtils';
+import { CharacterNavigation } from '@/app/components/layout/PageNavigation';
 
 const characterData: Character = {
     name: "Tanto Aragoz",
@@ -21,37 +20,50 @@ const characterData: Character = {
             { text: "Takval Aragoz (father)", link: "/characters/takval-aragoz" },
             { text: "Rokiri Aragoz (brother)", link: "/characters/rokiri-aragoz" },
             { text: "Kuni Garu (grandfather)", link: "/characters/kuni-garu" },
-            { text: "Jia Matiza (grandmother)", link: "/characters/jia-matiza" }
+            { text: "Jia Matiza (grandmother, by adoption)", link: "/characters/jia-matiza" }
         ],
         affiliation: "Agon Rebellion",
         nationality: "Daran-Agon",
         firstAppeared: { text: "The Veiled Throne", link: "/books/the-veiled-throne" },
-        lastAppeared: { text: "The Veiled Throne", link: "/books/the-veiled-throne" }
+        lastAppeared: { text: "Speaking Bones", link: "/books/speaking-bones" }
     },
     appearanceAndPersonality: [
-        { type: 'text', content: "As a child, Tanto is more Agon than Dara, embracing the warrior culture of his father. He is skilled in the Agon craft of building 'living bones'—intricate, wind-powered mechanical toys. He initially rejects his mother's Dara heritage but represents the potential for a new, blended culture." },
-        { type: 'ref', data: { book: "The Veiled Throne", chapter: 26, link: "/books/the-veiled-throne#chapter-26" } },
+        { type: 'text', content: "As a child, Tanto is more Agon than Dara, embracing the warrior culture of his father. He initially rejects his mother's Dara heritage but shows a deep curiosity and courage that marks him as a future leader." },
+        { type: 'ref', data: { book: "The Veiled Throne", chapter: 17, link: "/books/the-veiled-throne#chapter-17" } },
     ],
     history: [
         {
             era: "The Veiled Throne",
             summary: [
-                { type: 'text', content: "Tanto was born and raised in the secret [[Agon|/concepts/agon]] base in [[Kiri Valley|/places/kiri-valley]]. He and his brother [[Rokiri Aragoz|/characters/rokiri-aragoz]] were captured by the [[Lyucu|/concepts/lyucu]] during [[Cudyu Roatan|/characters/cudyu-roatan]]'s devastating attack on the base. His fate after his capture remains a central question driving the narrative forward." },
-                { type: 'ref', data: { book: "The Veiled Throne", chapter: 27, link: "/books/the-veiled-throne#chapter-27" } },
+                { type: 'text', content: "Tanto was born and raised in the secret Agon base in Kiri Valley. After the base was destroyed, he and his brother were separated from their parents and taken by the Lyucu, before being rescued by the Agon defectors Toof and Radia." },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 17, link: "/books/the-veiled-throne#chapter-17" } },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 31, link: "/books/the-veiled-throne#chapter-31" } },
+            ]
+        },
+        {
+            era: "Speaking Bones",
+            summary: [
+                { type: 'text', content: "As a young boy, Tanto and the other children found refuge in the ancient 'City of Ghosts.' Inspired by Agon myths, he ventured into the forbidden barrows, where he discovered not weapons, but ancient farming tools. This discovery led to the profound revelation that the Agon and Lyucu were descended from a settled, agricultural people, rewriting their entire cultural history. He was later joyfully reunited with his mother, Théra." },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 2, link: "/books/speaking-bones#chapter-2" } },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 5, link: "/books/speaking-bones#chapter-5" } },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 41, link: "/books/speaking-bones#chapter-41" } },
             ]
         },
     ]
 };
 
+// Generate metadata for SEO
+export async function generateMetadata(): Promise<Metadata> {
+    return generateCharacterMetadata(characterData);
+}
+
 export default function TantoAragozPage() {
-    const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <CharacterPageTemplate characterData={characterData} />
+            <CharacterNavigation prevPage={null} nextPage={null} returnLink={returnLink} />
+            <PageTemplate pageData={convertCharacterData(characterData)} infoBoxTitle="Biographical Information" />
         </>
     );
 }

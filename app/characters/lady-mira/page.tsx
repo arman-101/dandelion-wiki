@@ -1,19 +1,17 @@
-'use client';
+import { Metadata } from 'next';
 
-import CharacterPageTemplate from '../../components/CharacterPageTemplate';
+import PageTemplate, { convertCharacterData } from '../../components/layout/PageTemplate';
+import { generateCharacterMetadata } from '@/app/utils/metadata';
 import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
-import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
-import { getSurroundingPages } from '@/app/utils/navigationUtils';
+import { CharacterNavigation } from '@/app/components/layout/PageNavigation';
 
-// --- DATA FOR LADY MIRA (WITH FULL INLINE REFERENCES) ---
 const characterData: Character = {
     name: "Lady Mira",
-    image: "/characters/lady-mira.png", // NOTE: You will need to create this image file
-    introduction: "Lady Mira is a gentle embroiderer and songstress from Tunoa who becomes Mata Zyndu's closest confidante during the final stages of the war. Described as the only woman who truly understands him, she represents a connection to his lost home and a path of peace and introspection that stands in stark contrast to his life of violence.",
+    image: "/characters/lady-mira.png",
+    introduction: "Lady Mira was a gentle embroiderer and songstress from Tunoa who became Mata Zyndu's closest confidante. Described as the only person who truly understood him, she represented a connection to his lost home and a path of peace that stood in stark contrast to his life of violence.",
     infoBox: {
-        aliases: "Mira",
-        occupation: "Embroiderer, Songstress, Confidante to the Hegemon",
+        aliases: "Mira of Tunoa",
+        occupation: "Embroiderer, Songstress",
         placeOfBirth: { text: "Tunoa Islands", link: "/places/tunoa-islands" },
         status: "Deceased",
         gender: "Female",
@@ -29,38 +27,42 @@ const characterData: Character = {
         lastAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" }
     },
     appearanceAndPersonality: [
-        { type: 'text', content: "Mira is depicted as a slender and tall woman with a dark complexion and a beautiful, haunting singing voice. Her personality is defined by a quiet strength, deep empathy, and a profound sense of introspection. She is unafraid to speak her mind to Mata, challenging his views on glory and vengeance with a gentle but firm wisdom. She finds satisfaction not in grand deeds, but in the simple, creative act of her embroidery, seeing it as a parallel to the way Mata shapes the world, albeit on a much smaller and more peaceful scale." },
+        { type: 'text', content: "Mira is depicted with a quiet strength, deep empathy, and a beautiful, haunting singing voice. She is unafraid to speak her mind to Mata, challenging his views on glory and vengeance with a gentle but firm wisdom. She finds satisfaction not in grand deeds, but in the simple, creative act of her embroidery." },
         { type: 'ref', data: { book: "The Grace of Kings", chapter: 44, link: "/books/the-grace-of-kings#chapter-44" } },
     ],
     history: [
         {
-            era: "Meeting the Hegemon (The Grace of Kings)",
+            era: "The Grace of Kings",
             summary: [
-                { type: 'text', content: "Mira travels to the smoldering ruins of Pan to find her brother, Mado, a soldier who had followed Mata Zyndu from Tunoa. She discovers he died during the chaotic looting of Emperor Mapidéré's Mausoleum. As she sings a traditional Tunoan dirge for him by the side of the road, she attracts the attention of Mata himself. Moved by the sound of his homeland and her profound grief, Mata takes her into his household, offering his protection." },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 33, link: "/books/the-grace-of-kings#chapter-33" } },
-                { type: 'text', content: " In the Hegemon's court, she becomes an object of fascination and jealousy, but she sees that Mata's interest in her stems not from desire, but from a deep longing for home. She is later visited by a disguised Kiji, who gives her the bone dagger used to kill Phin Zyndu and urges her to 'see him for who he really is,' tempting her to assassinate the Hegemon." },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 44, link: "/books/the-grace-of-kings#chapter-44" } },
+                { type: 'text', content: "Lady Mira's brief but profound relationship with Mata Zyndu offered the troubled Hegemon his only connection to peace and home." }
             ]
         },
         {
-            era: "Confidante and Tragic End (The Grace of Kings)",
+            era: "The Hegemon's Confidante",
             summary: [
-                { type: 'text', content: "Mira becomes the only person who can speak to Mata with honesty, refusing to be intimidated by his power. She gently challenges his brutal actions and his all-consuming quest for glory, trying to guide him toward a more peaceful path. She helps him understand that his cruelty is not his true nature, but a role he plays based on others' expectations. During the final standoff at Rana Kida, as Mata's army is surrounded and defeat is certain, Mira takes her own life with the bone dagger given to her by Kiji. She cannot bear to watch him die and chooses to join him in the afterlife. Her suicide is the final act that breaks Mata's spirit, leading him to make his own final, suicidal charge." },
+                { type: 'text', content: "Mira encountered Mata Zyndu in the ruins of Pan while singing a traditional Tunoan dirge for her fallen brother. Moved by the sound of his homeland, Mata took her into his household." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 33, link: "/books/the-grace-of-kings#chapter-33" } },
+                { type: 'text', content: "She became the only person who could speak to him with honesty, gently challenging his brutal actions and trying to guide him toward introspection. She was later tempted by a disguised Kiji, who gave her a bone dagger and urged her to assassinate the Hegemon." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 44, link: "/books/the-grace-of-kings#chapter-44" } },
+                { type: 'text', content: "During the final battle of the civil war, as Mata's army faced certain defeat, Mira took her own life rather than watch him die. Her suicide was the final act that broke Mata's spirit, leading him to make his own final, suicidal charge." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 50, link: "/books/the-grace-of-kings#chapter-50" } },
             ]
         },
     ]
 };
 
+// Generate metadata for SEO
+export async function generateMetadata(): Promise<Metadata> {
+    return generateCharacterMetadata(characterData);
+}
+
 export default function LadyMiraPage() {
-    const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <CharacterPageTemplate characterData={characterData} />
+            <CharacterNavigation prevPage={null} nextPage={null} returnLink={returnLink} />
+            <PageTemplate pageData={convertCharacterData(characterData)} infoBoxTitle="Biographical Information" />
         </>
     );
 }

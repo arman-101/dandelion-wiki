@@ -1,9 +1,9 @@
 'use client';
 
-import GodPageTemplate from '../../components/GodPageTemplate';
+import PageTemplate, { convertGodData } from '../../components/layout/PageTemplate';
 import { God, ALL_GODS } from '../../data/wiki-data';
 import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { GodNavigation } from '@/app/components/layout/PageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
 // --- DATA FOR RUFIZO ---
@@ -17,17 +17,22 @@ const godData: God = {
         Pawi: "Dove",
     },
     mythology: [
-        { type: 'text', content: "As one of the eight deities born to Daraméa, Rufizo embodies the principle of mending what is broken. His influence is felt not just in physical healing but also in moments of reconciliation and mercy." },
-        { type: 'ref', data: { book: "The Grace of Kings", chapter: 5, link: "/books/the-grace-of-kings#chapter-5" } },
-        { type: 'text', content: " In the ancient contest to create the calendar, Rufizo was drawn out of hiding when he could not bear to see a yearling fawn suffer from an injury, demonstrating his overwhelmingly compassionate nature." },
+        { type: 'text', content: "As one of the eight deities born to Daraméa, Rufizo embodies the principle of mending what is broken. His influence is felt not just in physical healing but also in moments of reconciliation and mercy. His overwhelmingly compassionate nature was demonstrated in the ancient contest to create the calendar, where he revealed himself because he could not bear to see a fawn suffer from an injury." },
         { type: 'ref', data: { book: "The Wall of Storms", chapter: 6, link: "/books/the-wall-of-storms#chapter-6" } },
     ],
     appearances: [
         {
-            event: "Debate Over Mapidéré's Legacy",
+            event: "The Divine Council",
             summary: [
-                { type: 'text', content: "Rufizo participates in the divine debate over Emperor Mapidéré's soul and legacy which takes place in the Emperor's dream. He represents a more forgiving perspective, weighing the good the emperor achieved against the suffering he caused, showcasing his role as a balancer and a figure of mercy among the gods." },
+                { type: 'text', content: "Rufizo participates in the divine debate in Emperor Mapidéré's dream. He represents a more forgiving perspective, weighing the good the emperor achieved against the suffering he caused, showcasing his role as a figure of mercy among the gods." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 5, link: "/books/the-grace-of-kings#chapter-5" } },
+            ]
+        },
+        {
+            event: "Legacy and Syncretism",
+            summary: [
+                { type: 'text', content: "Years after the wars, Rufizo's compassionate philosophy endured. A pacifist sect in Rima, led by the former Lyucu thane Abbot Shattered Axe, worships a fused deity named Rufizo Mender/Toryoana Pacific, dedicated to alleviating suffering and renouncing vengeance." },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 30, link: "/books/speaking-bones#chapter-30" } },
             ]
         },
     ]
@@ -41,12 +46,8 @@ export default function RufizoPage() {
 
     return (
         <>
-            <TopPageNavigation
-                prevPage={prevPage}
-                nextPage={nextPage}
-                returnLink={returnLink}
-            />
-            <GodPageTemplate godData={godData} />
+            <GodNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PageTemplate pageData={convertGodData(godData)} infoBoxTitle="Divine Information" />
         </>
     );
 }

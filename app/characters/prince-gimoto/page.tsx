@@ -1,14 +1,13 @@
-'use client';
+import { Metadata } from 'next';
 
-import CharacterPageTemplate from '../../components/CharacterPageTemplate';
+import PageTemplate, { convertCharacterData } from '../../components/layout/PageTemplate';
+import { generateCharacterMetadata } from '@/app/utils/metadata';
 import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
-import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
-import { getSurroundingPages } from '@/app/utils/navigationUtils';
+import { CharacterNavigation } from '@/app/components/layout/PageNavigation';
 
 const characterData: Character = {
     name: "Prince Gimoto",
-    image: "/characters/prince-gimoto.png", // Assuming a placeholder image exists
+    image: "/characters/prince-gimoto.png",
     introduction: "Prince Gimoto is the son of Kado Garu and the nephew of Emperor Ragin (Kuni Garu). He is a young prince of the Dandelion Dynasty's imperial family.",
     infoBox: {
         aliases: "None",
@@ -27,34 +26,34 @@ const characterData: Character = {
         ],
         affiliation: "House of Garu, Dandelion Court",
         nationality: { text: "Cocru", link: "/places/cocru" },
-        firstAppeared: { text: "The Veiled Throne", link: "/books/the-veiled-throne" }, // Based on character lists
-        lastAppeared: { text: "Speaking Bones", link: "/books/speaking-bones" } // Based on character lists
+        firstAppeared: { text: "The Veiled Throne", link: "/books/the-veiled-throne" },
+        lastAppeared: { text: "Speaking Bones", link: "/books/speaking-bones" }
     },
     appearanceAndPersonality: [
-        { type: 'text', content: "As a minor character, Prince Gimoto's appearance and personality are not extensively detailed. As a member of the imperial family, he is part of the younger generation of royals growing up in the Dandelion Court." },
+        { type: 'text', content: "As a minor character, Prince Gimoto's appearance and personality are not extensively detailed in the main narrative. As a member of the imperial family, he is part of the younger generation of royals growing up in the Dandelion Court." },
     ],
     history: [
         {
             era: "The Dandelion Dynasty",
             summary: [
-                { type: 'text', content: "Prince Gimoto is the son of Kado Garu, who is Kuni Garu's elder brother. This makes him Emperor Ragin's nephew and a prince within the wider imperial family. His presence in the court represents the continuation and expansion of the House of Garu after its rise to power." },
-                // Note: Specific chapter references are not available in the provided summaries for Prince Gimoto's actions.
-                // The reference below is based on his inclusion in the book's character list.
-                { type: 'ref', data: { book: "The Veiled Throne", chapter: 0, link: "/books/the-veiled-throne" } },
+                { type: 'text', content: "Prince Gimoto is the son of Kado Garu, Kuni Garu's elder brother. This makes him Emperor Ragin's nephew and a prince within the wider imperial family. His presence in the court represents the continuation and expansion of the House of Garu after its rise to power." },
             ]
         },
     ]
 };
 
+// Generate metadata for SEO
+export async function generateMetadata(): Promise<Metadata> {
+    return generateCharacterMetadata(characterData);
+}
+
 export default function PrinceGimotoPage() {
-    const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <CharacterPageTemplate characterData={characterData} />
+            <CharacterNavigation prevPage={null} nextPage={null} returnLink={returnLink} />
+            <PageTemplate pageData={convertCharacterData(characterData)} infoBoxTitle="Biographical Information" />
         </>
     );
 }

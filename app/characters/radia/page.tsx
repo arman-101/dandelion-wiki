@@ -1,10 +1,9 @@
-'use client';
+import { Metadata } from 'next';
 
-import CharacterPageTemplate from '../../components/CharacterPageTemplate';
+import PageTemplate, { convertCharacterData } from '../../components/layout/PageTemplate';
+import { generateCharacterMetadata } from '@/app/utils/metadata';
 import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
-import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
-import { getSurroundingPages } from '@/app/utils/navigationUtils';
+import { CharacterNavigation } from '@/app/components/layout/PageNavigation';
 
 const characterData: Character = {
     name: "Radia",
@@ -20,34 +19,43 @@ const characterData: Character = {
         affiliation: "Lyucu Empire, Agon Rebellion",
         nationality: { text: "Lyucu", link: "/concepts/lyucu" },
         firstAppeared: { text: "The Veiled Throne", link: "/books/the-veiled-throne" },
-        lastAppeared: { text: "The Veiled Throne", link: "/books/the-veiled-throne" }
+        lastAppeared: { text: "Speaking Bones", link: "/books/speaking-bones" }
     },
     appearanceAndPersonality: [
-        { type: 'text', content: "Radia is a capable Lyucu warrior, loyal to her partner Toof. Like him, her experiences as a captive among the Dara and Agon lead her to reconsider her loyalties. She is courageous and ultimately chooses to give her life to protect the leaders of the rebellion." },
+        { type: 'text', content: "Radia is a capable Lyucu warrior, loyal to her partner Toof. Like him, her experiences as a captive among the Dara and Agon lead her to reconsider her loyalties. She is courageous and ultimately chooses to give her life to protect the rebellion's future." },
         { type: 'ref', data: { book: "The Veiled Throne", chapter: 10, link: "/books/the-veiled-throne#chapter-10" } },
     ],
     history: [
         {
             era: "The Veiled Throne",
             summary: [
-                { type: 'text', content: "Radia was part of the crew of the Lyucu city-ship that pursued Théra's fleet. She was captured along with Toof after the ship was crippled." },
+                { type: 'text', content: "Radia was captured along with Toof after their city-ship was crippled by Théra's forces. After the Lyucu attack on Kiri Valley, she and Toof staged a fake betrayal, 'capturing' Théra's children to help them escape." },
                 { type: 'ref', data: { book: "The Veiled Throne", chapter: 10, link: "/books/the-veiled-throne#chapter-10" } },
-                { type: 'text', content: "She joined the Agon resistance and became a trusted member of the rebellion. During the destructive Lyucu attack on the secret base in Kiri Valley, she and Toof volunteered for a suicide mission to act as decoys, drawing away the enemy garinafins and ensuring the escape of Théra and her family." },
-                { type: 'ref', data: { book: "The Veiled Throne", chapter: 17, link: "/books/the-veiled-throne#chapter-17" } },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 31, link: "/books/the-veiled-throne#chapter-31" } },
+            ]
+        },
+        {
+            era: "Speaking Bones",
+            summary: [
+                { type: 'text', content: "In the Lyucu capital of Taten, Radia and Toof freed the captive juvenile garinafins, sparking the uprising that led to Pékyu Cudyu's death. In the ensuing chaos, Radia led a suicide mission, piloting a garinafin to destroy the Lyucu invasion fleet's city-ships. She succeeded in sinking all but one before perishing in the attack." },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 16, link: "/books/speaking-bones#chapter-16" } },
             ]
         },
     ]
 };
 
+// Generate metadata for SEO
+export async function generateMetadata(): Promise<Metadata> {
+    return generateCharacterMetadata(characterData);
+}
+
 export default function RadiaPage() {
-    const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <CharacterPageTemplate characterData={characterData} />
+            <CharacterNavigation prevPage={null} nextPage={null} returnLink={returnLink} />
+            <PageTemplate pageData={convertCharacterData(characterData)} infoBoxTitle="Biographical Information" />
         </>
     );
 }

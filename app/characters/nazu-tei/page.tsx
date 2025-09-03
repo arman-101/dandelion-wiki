@@ -1,10 +1,9 @@
-'use client';
+import { Metadata } from 'next';
 
-import CharacterPageTemplate from '../../components/CharacterPageTemplate';
+import PageTemplate, { convertCharacterData } from '../../components/layout/PageTemplate';
+import { generateCharacterMetadata } from '@/app/utils/metadata';
 import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
-import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
-import { getSurroundingPages } from '@/app/utils/navigationUtils';
+import { CharacterNavigation } from '@/app/components/layout/PageNavigation';
 
 const characterData: Character = {
     name: "Nazu Tei",
@@ -17,36 +16,39 @@ const characterData: Character = {
         status: "Deceased",
         gender: "Female",
         affiliation: "None",
-        nationality: "Dara",
+        nationality: "Daran",
         firstAppeared: { text: "The Veiled Throne", link: "/books/the-veiled-throne" },
         lastAppeared: { text: "The Veiled Throne", link: "/books/the-veiled-throne" }
     },
     appearanceAndPersonality: [
         { type: 'text', content: "Nazu Tei is a woman of great intellect and moral courage. She believes in teaching her students not just facts, but how to think critically and question official narratives. She is brave, facing down the brutal Lyucu purges with dignity and a commitment to the truth, even at the cost of her own life." },
-        { type: 'ref', data: { book: "The Veiled Throne", chapter: 23, link: "/books/the-veiled-throne#chapter-23" } },
+        { type: 'ref', data: { book: "The Veiled Throne", chapter: 22, link: "/books/the-veiled-throne#chapter-22" } },
     ],
     history: [
         {
             era: "The Veiled Throne",
             summary: [
-                { type: 'text', content: "Nazu Tei served as a tutor to the young Savo Ryoto, teaching him Dara history and philosophy through the game of zamaki. She opened his mind to the idea that the histories he had been taught were incomplete and biased. When the hardliner Cutanrovo Aga began her cultural purges, Nazu Tei was arrested for possessing 'contraband' teaching materials. Despite Savo's attempts to save her, she was imprisoned and sentenced to death, but not before imparting one last, crucial lesson to her student about distinguishing true stories from false ones." },
+                { type: 'text', content: "Nazu Tei served as a secret tutor to the young Lyucu thane Savo Ryoto, teaching him Dara history and philosophy. When the hardliner Cutanrovo Aga began her cultural purges, Nazu Tei was arrested. Despite Savo's attempts to save her, she was imprisoned and sentenced to death, but not before imparting one last, crucial lesson to her student about listening to his heart to find the truth." },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 22, link: "/books/the-veiled-throne#chapter-22" } },
                 { type: 'ref', data: { book: "The Veiled Throne", chapter: 23, link: "/books/the-veiled-throne#chapter-23" } },
                 { type: 'ref', data: { book: "The Veiled Throne", chapter: 24, link: "/books/the-veiled-throne#chapter-24" } },
-                { type: 'ref', data: { book: "The Veiled Throne", chapter: 28, link: "/books/the-veiled-throne#chapter-28" } },
             ]
         },
     ]
 };
 
+// Generate metadata for SEO
+export async function generateMetadata(): Promise<Metadata> {
+    return generateCharacterMetadata(characterData);
+}
+
 export default function NazuTeiPage() {
-    const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <CharacterPageTemplate characterData={characterData} />
+            <CharacterNavigation prevPage={null} nextPage={null} returnLink={returnLink} />
+            <PageTemplate pageData={convertCharacterData(characterData)} infoBoxTitle="Biographical Information" />
         </>
     );
 }

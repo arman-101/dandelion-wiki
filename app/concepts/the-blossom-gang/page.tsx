@@ -1,40 +1,49 @@
 'use client';
 
-import ConceptPageTemplate from '../../components/ConceptPageTemplate';
+import PageTemplate, { convertConceptData } from '../../components/layout/PageTemplate';
 import { Concept, ALL_CONCEPTS } from '../../data/wiki-data';
 import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { ConceptNavigation } from '@/app/components/layout/PageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
-export default function TheBlossomGangPage() {
-  const pathname = usePathname();
-  const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CONCEPTS);
-  const returnLink = { title: 'Return to All Concepts', path: '/concepts' };
-
-  const conceptData: Concept = {
+const conceptData: Concept = {
     name: "The Blossom Gang",
-    image: "/concepts/the-blossom-gang.png", // Placeholder image
-    introduction: "A group of resistance fighters who become central to the struggle against Lyucu occupation, representing the hope and determination of the Dara people.",
+    image: "/concepts/the-blossom-gang.png",
+    introduction: "The Blossom Gang is a group of talented outcasts based in Ginpen who use their unique skills in engineering, law, and performance art to help the common folk. They become key allies of Princess Fara and later, a crucial part of the resistance against Empress Jia's regency.",
     infoBox: {
-      "Type": "Resistance Group",
-      "Affiliation": "Dara Resistance",
-      "Significance": "Anti-Lyucu Resistance",
-      "Related concepts": [
-        { text: "Resistance Movement", link: "/concepts/resistance-movement" },
-        { text: "The Dandelion", link: "/concepts/dandelion" }
+      "Type": "Activist Collective / 'Family of Choice'",
+      "Base of Operations": { text: "Ginpen", link: "/places/ginpen" },
+      "Key Members": "Rati Yera, Widi Tucru, Arona Taré, Mota Kiphi",
+      "Key Allies": [
+          { text: "Princess Fara", link: "/characters/princess-fara" },
+          { text: "Kinri", link: "/characters/kinri" },
+          { text: "Emperor Phyro", link: "/characters/prince-phyro" }
       ]
     },
     details: [
-      { type: "text" as const, content: "The Blossom Gang is a resistance organization that emerges during the Lyucu occupation of Dara, bringing together individuals from various backgrounds who are committed to fighting against the northern invaders and restoring Dara's independence." },
-      { type: "text" as const, content: "The group's name reflects the hope and resilience of the Dara people, using the symbolism of blossoms to represent the potential for renewal and rebirth even in the darkest times of occupation and oppression." },
-      { type: "text" as const, content: "The Blossom Gang's activities and strategies become central to the resistance movement, demonstrating the power of organized resistance and the importance of unity in the face of overwhelming odds." }
+        { type: 'text', content: "The Blossom Gang is a 'family of choice' composed of brilliant individuals failed by the system: Rati Yera, a master machinist; Widi Tucru, a brilliant litigator; Arona Taré, an actress and master of disguise; and Mota Kiphi, a stoic strongman. Their philosophy is one of freedom, creativity, and using their talents to help the common people." },
+        { type: 'ref', data: { book: "The Veiled Throne", chapter: 34, link: "/books/the-veiled-throne#chapter-34" } },
+        { type: 'text', content: "They ally with Princess Fara and Kinri to defeat the unscrupulous merchant Tiphan Huto in a restaurant contest, not with wealth, but with superior ingenuity and storytelling, creating marvels like self-driving delivery carts. Their investigation exposes Huto's criminal activities, including kidnapping artisans for the Lyucu." },
+        { type: 'ref', data: { book: "The Veiled Throne", chapter: 42, link: "/books/the-veiled-throne#chapter-42" } },
+        { type: 'ref', data: { book: "The Veiled Throne", chapter: 46, link: "/books/the-veiled-throne#chapter-46" } },
+        { type: 'text', content: "Later, they are activated by Emperor Phyro to build a grassroots movement for war. They organize veterans and fund propaganda to bypass Empress Jia's control, leading the protest that forces her to declare war. Mota Kiphi dies heroically during Phyro's final attack on Pan." },
+        { type: 'ref', data: { book: "Speaking Bones", chapter: 18, link: "/books/speaking-bones#chapter-18" } },
+        { type: 'ref', data: { book: "Speaking Bones", chapter: 19, link: "/books/speaking-bones#chapter-19" } },
+        { type: 'ref', data: { book: "Speaking Bones", chapter: 42, link: "/books/speaking-bones#chapter-42" } },
     ]
-  };
+};
 
-  return (
-    <>
-      <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-      <ConceptPageTemplate conceptData={conceptData} />
-    </>
-  );
-} 
+export default function TheBlossomGangPage() {
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CONCEPTS);
+    const returnLink = { title: 'Return to All Concepts', path: '/concepts' };
+
+    const pageData = convertConceptData(conceptData);
+
+    return (
+        <>
+            <ConceptNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PageTemplate pageData={pageData} infoBoxTitle="Concept Information" />
+        </>
+    );
+}

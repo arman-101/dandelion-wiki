@@ -1,10 +1,9 @@
-'use client';
+import { Metadata } from 'next';
 
-import CharacterPageTemplate from '../../components/CharacterPageTemplate';
+import PageTemplate, { convertCharacterData } from '../../components/layout/PageTemplate';
+import { generateCharacterMetadata } from '@/app/utils/metadata';
 import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
-import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
-import { getSurroundingPages } from '@/app/utils/navigationUtils';
+import { CharacterNavigation } from '@/app/components/layout/PageNavigation';
 
 const characterData: Character = {
     name: "King Shilué",
@@ -22,31 +21,40 @@ const characterData: Character = {
         lastAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" }
     },
     appearanceAndPersonality: [
-        { type: 'text', content: "Shiluá is characterized by his opportunism and lack of conviction. He is a political chameleon, willing to betray any alliance if he believes it will benefit him. His cleverness is not matched by wisdom, and he ultimately overplays his hand." },
+        { type: 'text', content: "Shilué is characterized by his opportunism and lack of conviction. He is a political chameleon, willing to betray any alliance if he believes it will benefit him. His cleverness is not matched by wisdom, and he ultimately overplays his hand." },
         { type: 'ref', data: { book: "The Grace of Kings", chapter: 48, link: "/books/the-grace-of-kings#chapter-48" } },
     ],
     history: [
         {
             era: "The Grace of Kings",
             summary: [
-                { type: 'text', content: "During the Battle of Wolf's Paw, King Shilué's forces, along with those of Gan, betrayed Mata Zyndu and the Tiro Alliance." },
+                { type: 'text', content: "King Shilué's short and treacherous reign serves as a cautionary tale for the ambitious but disloyal nobles of the rebellion." }
+            ]
+        },
+        {
+            era: "A Treacherous Reign",
+            summary: [
+                { type: 'text', content: "During the Battle of Wolf's Paw, King Shilué's forces, along with those of Gan, betrayed Mata Zyndu and the Tiro Alliance, switching sides mid-battle to support the Empire." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 29, link: "/books/the-grace-of-kings#chapter-29" } },
-                { type: 'text', content: "Years later, during the war between Kuni and Mata, Marshal Gin Mazoti marched her army into the northern states. Believing he could manipulate the situation to his advantage, King Shilué welcomed her into his capital. Gin, having no patience for his disloyalty, promptly had him executed and conquered his kingdom in Kuni's name." },
+                { type: 'text', content: "Years later, during the war between Kuni and Mata, Marshal Gin Mazoti marched her army into the northern states. Believing he could manipulate the situation, King Shilué welcomed her into his capital, intending to betray her. Gin, having confirmed his treachery, had him executed at his own banquet and conquered his kingdom." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 48, link: "/books/the-grace-of-kings#chapter-48" } },
             ]
         },
     ]
 };
 
+// Generate metadata for SEO
+export async function generateMetadata(): Promise<Metadata> {
+    return generateCharacterMetadata(characterData);
+}
+
 export default function KingShiluePage() {
-    const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <CharacterPageTemplate characterData={characterData} />
+            <CharacterNavigation prevPage={null} nextPage={null} returnLink={returnLink} />
+            <PageTemplate pageData={convertCharacterData(characterData)} infoBoxTitle="Biographical Information" />
         </>
     );
 }

@@ -1,9 +1,9 @@
 'use client';
 
-import GodPageTemplate from '../../components/GodPageTemplate';
+import PageTemplate, { convertGodData } from '../../components/layout/PageTemplate';
 import { God, ALL_GODS } from '../../data/wiki-data';
 import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { GodNavigation } from '@/app/components/layout/PageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
 // --- DATA FOR LUTHO ---
@@ -18,10 +18,8 @@ const godData: God = {
         SacredText: { text: "Gitré Üthu", link: "/concepts/gitre-uthu" }
     },
     mythology: [
-        { type: 'text', content: "Lutho represents wisdom, calculation, and strategic thinking. His pawi, the sea turtle, symbolizes longevity and the slow but steady accumulation of knowledge. He values intellect and careful planning over brute force." },
-        { type: 'ref', data: { book: "The Grace of Kings", chapter: 18, link: "/books/the-grace-of-kings#chapter-18" } },
-        { type: 'text', content: "He is a key figure in the divine order, often acting as a balancing force to the more chaotic or warlike gods." },
-        { type: 'ref', data: { book: "The Grace of Kings", chapter: 5, link: "/books/the-grace-of-kings#chapter-5" } },
+        { type: 'text', content: "Lutho represents wisdom, calculation, and strategic thinking. His pawi, the sea turtle, symbolizes longevity and the slow but steady accumulation of knowledge. A young Zomi Kidosu once witnessed a divine battle between Lutho's sea turtle and Tazu's shark in the sky above Dasu." },
+        { type: 'ref', data: { book: "The Wall of Storms", chapter: 5, link: "/books/the-wall-of-storms#chapter-5" } },
     ],
     appearances: [
         {
@@ -34,7 +32,7 @@ const godData: God = {
         {
             event: "Joining the Mortal Realm",
             summary: [
-                { type: 'text', content: "During the debate among the gods regarding the Lyucu invasion, Lutho decides that the pact of non-interference has its limits. Believing the mortals need guidance, he chooses to take on mortal form to join Princess Théra's expedition. It is implied he becomes the mysterious, mimic-gifted child Thoryo, who provides crucial, intuitive insights that save the expedition." },
+                { type: 'text', content: "During the debate among the gods regarding the Lyucu invasion, Lutho decides that the pact of non-interference has its limits. Believing the mortals need guidance, he chooses to take on mortal form to join Princess Théra's expedition. It is heavily implied he becomes the mysterious, mimic-gifted child Thoryo." },
                 { type: 'ref', data: { book: "The Veiled Throne", chapter: 11, link: "/books/the-veiled-throne#chapter-11" } },
             ]
         },
@@ -48,8 +46,8 @@ export default function LuthoPage() {
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <GodPageTemplate godData={godData} />
+            <GodNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PageTemplate pageData={convertGodData(godData)} infoBoxTitle="Divine Information" />
         </>
     );
 }

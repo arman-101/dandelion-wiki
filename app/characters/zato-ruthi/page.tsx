@@ -1,10 +1,9 @@
-'use client';
+import { Metadata } from 'next';
 
-import CharacterPageTemplate from '../../components/CharacterPageTemplate';
+import PageTemplate, { convertCharacterData } from '../../components/layout/PageTemplate';
+import { generateCharacterMetadata } from '@/app/utils/metadata';
 import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
-import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
-import { getSurroundingPages } from '@/app/utils/navigationUtils';
+import { CharacterNavigation } from '@/app/components/layout/PageNavigation';
 
 const characterData: Character = {
     name: "Zato Ruthi",
@@ -33,31 +32,35 @@ const characterData: Character = {
         {
             era: "The Grace of Kings",
             summary: [
-                { type: 'text', content: "As the scholar-king of Rima, his forces were utterly defeated by Marshal Gin Mazoti, who used brilliant and unconventional tactics—like damming a river to create a flash flood—that Ruthi's classical military education had not prepared him for." },
+                { type: 'text', content: "As the scholar-king of Rima during the civil war, Ruthi's forces were utterly defeated by Marshal Gin Mazoti, who used brilliant and unconventional tactics—like damming a river to create a flash flood—that Ruthi's classical military education had not prepared him for." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 48, link: "/books/the-grace-of-kings#chapter-48" } },
             ]
         },
         {
             era: "The Wall of Storms",
             summary: [
-                { type: 'text', content: "Years later, he served as the Imperial Tutor in Pan, frequently clashing with the mischievous imperial children and resigning in fury over their pranks." },
+                { type: 'text', content: "Years later, he served as the Imperial Tutor in Pan, frequently clashing with the mischievous imperial children." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 3, link: "/books/the-wall-of-storms#chapter-3" } },
-                { type: 'text', content: "He accompanied Prince Timu to Dasu and was chosen to lead the diplomatic mission to the newly arrived Lyucu. Blinded by his own cultural arrogance, he treated the Lyucu as simple barbarians and was completely outmaneuvered by their leader, Pékyu Tenryo, who tricked him into revealing crucial military intelligence. His diplomatic failure contributed to the swift fall of Dasu. It is presumed he died during the Lyucu conquest of the island." },
+                { type: 'text', content: "He accompanied Prince Timu to Dasu and led the diplomatic mission to the newly arrived Lyucu. Blinded by cultural arrogance, he treated the Lyucu as simple barbarians and was completely outmaneuvered by their leader, Pékyu Tenryo, who tricked him into revealing crucial military intelligence. His diplomatic failure contributed directly to the swift fall of Dasu, during which he was killed." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 36, link: "/books/the-wall-of-storms#chapter-36" } },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 37, link: "/books/the-wall-of-storms#chapter-37" } },
             ]
         },
     ]
 };
 
+// Generate metadata for SEO
+export async function generateMetadata(): Promise<Metadata> {
+    return generateCharacterMetadata(characterData);
+}
+
 export default function ZatoRuthiPage() {
-    const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <CharacterPageTemplate characterData={characterData} />
+            <CharacterNavigation prevPage={null} nextPage={null} returnLink={returnLink} />
+            <PageTemplate pageData={convertCharacterData(characterData)} infoBoxTitle="Biographical Information" />
         </>
     );
 }

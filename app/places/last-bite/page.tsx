@@ -1,57 +1,51 @@
 'use client';
 
-import PlacePageTemplate from '../../components/PlacePageTemplate';
+import PageTemplate, { convertPlaceData } from '../../components/layout/PageTemplate';
 import { Place, ALL_PLACES } from '../../data/wiki-data';
 import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { PlaceNavigation } from '@/app/components/layout/PageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
-export default function LastBitePage() {
-  const pathname = usePathname();
-  const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_PLACES);
-  const returnLink = { title: 'Return to All Places', path: '/places' };
-
-  const placeData: Place = {
+// --- DATA FOR LAST BITE ---
+const placeData: Place = {
     name: "Last Bite",
-    image: "/places/last-bite.png", // Placeholder image
-    introduction: "A location that becomes significant during the final conflicts of the series, Last Bite represents a crucial turning point in the struggle for the future of Dara.",
+    image: "/places/last-bite.png",
+    introduction: "Last Bite is a secret Imperial research facility that becomes the site of a shocking revelation, fundamentally altering the lives of several key characters and the political landscape of Dara.",
     infoBox: {
-      "Type": "Strategic Location",
-      "Location": "Dara",
-      "Significance": "Final Conflict Location",
-      "First appearance": "Speaking Bones",
-      "Related places": [
-        { text: "World's Edge Mountains", link: "/places/worlds-edge-mountains" },
-        { text: "Sea of Tears", link: "/places/sea-of-tears" },
-        { text: "Kiri Valley", link: "/places/kiri-valley" }
-      ]
+        Type: "Secret Research Facility",
+        Location: "Dara",
+        Significance: "Revelation of Kinri's and Zomi's parentage",
+        FirstAppearance: { text: "The Veiled Throne", link: "/books/the-veiled-throne" },
+        KeyEvents: "Infiltration by the Blossom Gang"
     },
     geography: [
-      { type: "text" as const, content: "Last Bite is a location with unique geographical features that make it strategically important during the final conflicts of the series. The area's terrain and position provide advantages for the forces that control it." }
+        { type: 'text', content: "The location of Last Bite is clandestine, known only to the highest echelons of the Dandelion Court's intelligence services. It is a place of secrets and advanced research." },
     ],
     culture: [
-      { type: "text" as const, content: "The cultural significance of Last Bite stems from its role in the final events of the series. The location becomes a symbol of the ultimate struggle between the forces that seek to shape the future of Dara." }
+        { type: 'text', content: "The 'culture' of Last Bite is one of secrecy and scientific inquiry. It houses sensitive information and projects vital to the security and future of the Dandelion Dynasty." },
     ],
     history: [
-      {
-        event: "Final Conflict",
-        summary: [
-          { type: "text" as const, content: "Last Bite becomes the site of a crucial battle or confrontation during the final events of the series. The outcome of events at this location has profound implications for the future of Dara and its people." }
-        ]
-      },
-      {
-        event: "Symbolic Significance",
-        summary: [
-          { type: "text" as const, content: "The name 'Last Bite' carries symbolic meaning, representing the final opportunity for the various factions to achieve their goals and shape the destiny of the world. The location becomes a focal point for the resolution of long-standing conflicts." }
-        ]
-      }
+        {
+            event: "The Family Revelation",
+            summary: [
+                { type: 'text', content: "After uncovering Tiphan Huto's criminal enterprise, the Blossom Gang and Princess Fara decided to infiltrate Last Bite, believing it held secrets about Marshal Gin Mazoti's death. Once inside, Kinri, disguised as his half-sister Zomi Kidosu, discovered a secret study belonging to the real Zomi." },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 46, link: "/books/the-veiled-throne#chapter-46" } },
+                { type: 'text', content: "In a dramatic confrontation, Zomi herself appeared. Through the turtle shell given to him by his mother, Kinri and Zomi discovered they were long-lost half-siblings, both fathered by Oga Kidosu. The revelation forced Kinri to embrace his true identity as Savo Ryoto and become a fugitive, shattering his romance with Fara." },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 47, link: "/books/the-veiled-throne#chapter-47" } },
+            ]
+        },
     ]
-  };
+};
 
-  return (
-    <>
-      <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-      <PlacePageTemplate placeData={placeData} />
-    </>
-  );
-} 
+export default function LastBitePage() {
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_PLACES]);
+    const returnLink = { title: 'Return to All Places', path: '/places' };
+
+    return (
+        <>
+            <PlaceNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PageTemplate pageData={convertPlaceData(placeData)} infoBoxTitle="Location Information" />
+        </>
+    );
+}

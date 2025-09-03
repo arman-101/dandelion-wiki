@@ -2,8 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import TopPageNavigation from '../../components/TopPageNavigation';
-import BookNavigation from '@/app/components/BookNavigation';
+import { TopNavigation, BottomNavigation } from '../../components/layout/PageNavigation';
 import { formatAsteriskToBold } from '../../utils/textFormatting';
 
 // --- ACCURATE & DETAILED DATA FOR SPEAKING BONES ---
@@ -24,7 +23,7 @@ const chapters = [
         quote: "This place is why we live in the Sixth Age.",
         speaker: "Sataari",
         summary: "The children of Kiri Valley, led by Razutana Pon, Sataari, and Théra's sons Tanto and Rokiri, find refuge at Taten-ryo-alvovo, the 'City of Ghosts.'  Razutana wishes to venture deeper into the seemingly bountiful barrows for more supplies, but Sataari forbids it, explaining the area's sacred and cursed history.  She recounts the myth of the Five Ages of Mankind, revealing that the barrows are the tombs of the arrogant people of the Fifth Age, whose greed and hubris angered the gods and brought ruin to their paradise, ushering in the harsh reality of the Sixth Age.  The story makes a deep impression on young Tanto. ",
-        links: [{ name: "Razutana Pon", path: "/characters/razutana-pon" }, { name: "Sataari", path: "/characters/sataari" }, { name: "Tanto Aragoz", path: "/characters/tanto-aragoz" }, { name: "Rokiri Aragoz", path: "/characters/rokiri-aragoz" }, { name: "Taten-ryo-alvovo", path: "/places/taten-ryo-alvovo" }]
+        links: [{ name: "Razutana Pon", path: "/characters/razutana-pon" }, { name: "Sataari", path: "/characters/sataari" }, { name: "Tanto Aragoz", path: "/characters/tanto-aragoz" }, { name: "Rokiri Aragoz", path: "/characters/rokiri-aragoz" }, { name: "Kiri Valley", path: "/places/kiri-valley" }, { name: "Taten-ryo-alvovo", path: "/places/taten-ryo-alvovo" }]
     },
     {
         num: 3,
@@ -42,7 +41,7 @@ const chapters = [
         quote: "There's always a second act. Always.",
         speaker: "Princess Théra",
         summary: "Théra, now fully recovered, helps Takval lead their small band of rebels.  They are found by Araten, a supposedly lost Agon thane, who brings incredible news: Théra's children escaped their Lyucu captors with the help of Toof and Radia, and are believed to be alive.  Araten also reveals that Takval's uncle, Volyu, was the true traitor behind the fall of Kiri Valley.  He claims Cudyu's shamans are trying to calculate the reopening of the Wall of Storms. Théra, suspicious, uses Araten to feed Cudyu misinformation, hoping to make the Lyucu invasion fleet miss its window. ",
-        links: [{ name: "Princess Théra", path: "/characters/princess-thera" }, { name: "Takval Aragoz", path: "/characters/takval-aragoz" }, { name: "Toof", path: "/characters/toof" }, { name: "Radia", path: "/characters/radia" }, { name: "Volyu Aragoz", path: "/characters/volyu-aragoz" }, { name: "Cudyu Roatan", path: "/characters/cudyu-roatan" }, { name: "The Wall of Storms", path: "/concepts/wall-of-storms" }]
+        links: [{ name: "Princess Théra", path: "/characters/princess-thera" }, { name: "Takval Aragoz", path: "/characters/takval-aragoz" }, { name: "Toof", path: "/characters/toof" }, { name: "Radia", path: "/characters/radia" }, { name: "Volyu Aragoz", path: "/characters/volyu-aragoz" }, { name: "Cudyu Roatan", path: "/characters/cudyu-roatan" }, { name: "The Wall of Storms", path: "/concepts/wall-of-storms" }, { name: "Kiri Valley", path: "/places/kiri-valley" }]
     },
     {
         num: 5,
@@ -51,7 +50,7 @@ const chapters = [
         quote: "My mother always told me that there is nothing inherently good or wicked in the nature of tools, for they only serve to amplify what is already present in the hearts of humankind.",
         speaker: "Tanto Aragoz",
         summary: "Inspired by Sataari's stories, Tanto Aragoz secretly leaves the refugee camp and ventures into the forbidden City of Ghosts alone, seeking the powerful weapons of the Fifth Age to help his parents.  After a long and perilous journey, he discovers the largest mound, the tomb of the legendary heroes Afir and Kikisavo.  Inside, he finds not magical weapons, but ancient farming implements.  He, along with Razutana and Sataari who followed him, realize that their ancestors were farmers and city-builders before they became nomads, shattering the foundation of their cultural beliefs. ",
-        links: [{ name: "Tanto Aragoz", path: "/characters/tanto-aragoz" }, { name: "Razutana Pon", path: "/characters/razutana-pon" }, { name: "Sataari", path: "/characters/sataari" }, { name: "Taten-ryo-alvovo", path: "/places/taten-ryo-alvovo" }]
+        links: [{ name: "Tanto Aragoz", path: "/characters/tanto-aragoz" }, { name: "Razutana Pon", path: "/characters/razutana-pon" }, { name: "Sataari", path: "/characters/sataari" }]
     },
     {
         num: 6,
@@ -69,7 +68,7 @@ const chapters = [
         quote: "The old stories are all true. But we didn't understand them.",
         speaker: "Sataari",
         summary: "After rescuing Tanto from the Great Barrow, Razutana and Sataari explore the burial chamber of Afir and Kikisavo.  The walls are covered with ancient paintings depicting a vibrant city of farmers, herders, and engineers who lived a settled life before a great cataclysm.  They find the skeletons of the two heroes, each with six fingers or toes, confirming their identities.  The chamber contains not weapons, but farming tools and seeds.  This discovery forces Sataari to realize that the Agon and Lyucu's foundational myths are a misremembering of their true history as a settled, agricultural people who were forced into nomadism by climate change. ",
-        links: [{ name: "Tanto Aragoz", path: "/characters/tanto-aragoz" }, { name: "Sataari", path: "/characters/sataari" }, { name: "Razutana Pon", path: "/characters/razutana-pon" }, { name: "Taten-ryo-alvovo", path: "/places/taten-ryo-alvovo" }]
+        links: [{ name: "Tanto Aragoz", path: "/characters/tanto-aragoz" }, { name: "Sataari", path: "/characters/sataari" }, { name: "Razutana Pon", path: "/characters/razutana-pon" }]
     },
     {
         num: 8,
@@ -96,7 +95,7 @@ const chapters = [
         quote: "Anything worth doing is at least a little bit mad.",
         speaker: "Takval Aragoz",
         summary: "After a grueling journey, Théra's band is forced to abandon their attempt to cross the World's Edge Mountains due to the thin air.  They instead travel far north to the frozen tundra, seeking an alliance with the marginalized ice tribes.  The Lyucu, led by Tovo Tasaricu, pursue them with dogsleds.  Trapped at the coast with the sea not yet frozen, Takval makes a passionate appeal to the ice tribe chief, Kitos, convincing him to stand and fight with them.  Using Dara engineering, the rebels construct a formidable fortress of ice, successfully repelling multiple brutal Lyucu assaults. ",
-        links: [{ name: "Princess Théra", path: "/characters/princess-thera" }, { name: "Takval Aragoz", path: "/characters/takval-aragoz" }, { name: "Tovo Tasaricu", path: "/characters/tovo-tasaricu" }, { name: "Tipo Tho", path: "/characters/tipo-tho" }]
+        links: [{ name: "Princess Théra", path: "/characters/princess-thera" }, { name: "Takval Aragoz", path: "/characters/takval-aragoz" }, { name: "Tipo Tho", path: "/characters/tipo-tho" }, { name: "World's Edge Mountains", path: "/places/worlds-edge-mountains" }]
     },
     {
         num: 11,
@@ -105,7 +104,7 @@ const chapters = [
         quote: "It is enough that we have loved and are loved. There is no meaning in eternity; only now, only here.",
         speaker: "Thoryo",
         summary: "When the sea finally freezes, the rebels make a desperate escape across the treacherous ice toward the desolate islands of Nalyufin's Pasture.  They spring a trap, using a blade to score the ice, causing the pursuing Lyucu convoy to plunge into the frigid water.  However, Takval also falls into the icy sea during the escape.  Thoryo sacrifices her own life to save him, diving into the water to tie a rope around his unconscious body before they are both pulled to safety.  The survivors find refuge on Spotted Heifer, but Takval falls into a feverish coma. ",
-        links: [{ name: "Princess Théra", path: "/characters/princess-thera" }, { name: "Takval Aragoz", path: "/characters/takval-aragoz" }, { name: "Thoryo", path: "/characters/thoryo" }, { name: "Tovo Tasaricu", path: "/characters/tovo-tasaricu" }]
+        links: [{ name: "Princess Théra", path: "/characters/princess-thera" }, { name: "Takval Aragoz", path: "/characters/takval-aragoz" }, { name: "Thoryo", path: "/characters/thoryo" }]
     },
     {
         num: 12,
@@ -123,7 +122,7 @@ const chapters = [
         quote: "Nalyufin loves the cries of captives in pain.",
         speaker: "Rita (Thoryo)",
         summary: "As Pékyu Cudyu prepares his massive invasion fleet in Taten, a mysterious 'Wolf-Thane' named Rita arrives from the north, bringing captives and cattle as tribute.  The young thane displays strange powers, seemingly able to inflict pain from a distance, which awes a young garinafin sentry named Saof.  The 'Wolf-Thane' is actually Thoryo in disguise, and her 'captives' are Théra's allies, including the ice-tribe chief Kitos.  Her display of power is a clever ruse. After gaining entry to Taten, she uses her authority to place her allies as slave grooms in the garinafin pens, positioning them for the next stage of Théra's plan. ",
-        links: [{ name: "Cudyu Roatan", path: "/characters/cudyu-roatan" }, { name: "Thoryo", path: "/characters/thoryo" }, { name: "Taten", path: "/places/taten" }, { name: "Garinafin", path: "/concepts/garinafin" }]
+        links: [{ name: "Cudyu Roatan", path: "/characters/cudyu-roatan" }, { name: "Thoryo", path: "/characters/thoryo" }, { name: "Garinafin", path: "/concepts/garinafin" }]
     },
     {
         num: 14,
@@ -132,7 +131,7 @@ const chapters = [
         quote: "Even the corpses of our enemies cannot escape being exploited to our advantage.",
         speaker: "Tovo Tasaricu",
         summary: "A massive iceberg floats into the sea near Taten, carrying six Dara-style burial boxes.  Inside are the well-preserved bodies of Agon and Dara warriors. Tovo Tasaricu convinces Pékyu Cudyu that these are the remains of Théra, Takval, and their followers, who perished in the north.  Believing this a divine gift, Cudyu plans a grand ceremony. He will publicly open the two largest boxes—believed to contain Théra and Takval—and desecrate their bodies to boost his army's morale before the invasion.  Unbeknownst to him, this is the final stage of Théra's trap. ",
-        links: [{ name: "Cudyu Roatan", path: "/characters/cudyu-roatan" }, { name: "Tovo Tasaricu", path: "/characters/tovo-tasaricu" }, { name: "Taten", path: "/places/taten" }, { name: "Princess Théra", path: "/characters/princess-thera" }, { name: "Takval Aragoz", path: "/characters/takval-aragoz" }]
+        links: [{ name: "Cudyu Roatan", path: "/characters/cudyu-roatan" }, { name: "Princess Théra", path: "/characters/princess-thera" }, { name: "Takval Aragoz", path: "/characters/takval-aragoz" }]
     },
     {
         num: 15,
@@ -150,7 +149,7 @@ const chapters = [
         quote: "The garinafins did not speak as humans did, but the fire of vengeance burned in their hearts as strong as in the hearts of women and men.",
         speaker: "Narrator",
         summary: "During Cudyu's grand ceremony, Thoryo's allies incite a fight in the garinafin pens, creating a diversion.  Toof and Radia free the juvenile garinafins from their cells.  Seeing their offspring free, the adult garinafins are roused from their conditioned helplessness. Alkir, Takval's former mount, incinerates the head groom, sparking a full-scale rebellion among the Agon slaves and a mass escape of the garinafins.  Meanwhile, Cudyu opens the booby-trapped burial box, which explodes, killing him and his high command.  The freed Agon pilot Radia leads a suicide mission with five other garinafins to destroy the invasion fleet's city-ships, succeeding in sinking all but one before she and Alkir perish. ",
-        links: [{ name: "Thoryo", path: "/characters/thoryo" }, { name: "Toof", path: "/characters/toof" }, { name: "Radia", path: "/characters/radia" }, { name: "Cudyu Roatan", path: "/characters/cudyu-roatan" }, { name: "Takval Aragoz", path: "/characters/takval-aragoz" }, { name: "Garinafin", path: "/concepts/garinafin" }, { name: "Taten", path: "/places/taten" }]
+        links: [{ name: "Thoryo", path: "/characters/thoryo" }, { name: "Toof", path: "/characters/toof" }, { name: "Radia", path: "/characters/radia" }, { name: "Cudyu Roatan", path: "/characters/cudyu-roatan" }, { name: "Takval Aragoz", path: "/characters/takval-aragoz" }, { name: "Garinafin", path: "/concepts/garinafin" }]
     },
     {
         num: 17,
@@ -168,7 +167,7 @@ const chapters = [
         quote: "There is strength in simplicity, power in trust, beauty in plain-speaking, and grandness of spirit in believing in ideals.",
         speaker: "Rati Yera",
         summary: "After the Lyucu demand increased tribute for a new peace treaty, the Dandelion Court is divided between war and peace factions.  Empress Jia frames the debate to favor peace, to Phyro's frustration.  Phyro, from his secret base at Tiro Cozo, activates the Blossom Gang.  Zomi, Widi, Arona, and Mota begin mobilizing popular support for war. They organize veterans' societies, fund patriotic folk operas like *The Women of Zudi*, and recruit for Phyro's private army, creating a powerful grassroots movement that bypasses the empress's control and sets the stage for a confrontation. ",
-        links: [{ name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "Zomi Kidosu", path: "/characters/zomi-kidosu" }, { name: "Jia Matiza", path: "/characters/jia-matiza" }, { name: "Princess Fara", path: "/characters/princess-fara" }, { name: "Aya Mazoti", path: "/characters/aya-mazoti" }, { name: "The Blossom Gang", path: "/concepts/the-blossom-gang" }]
+        links: [{ name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "Zomi Kidosu", path: "/characters/zomi-kidosu" }, { name: "Jia Matiza", path: "/characters/jia-matiza" }, { name: "Princess Fara", path: "/characters/princess-fara" }, { name: "Aya Mazoti", path: "/characters/aya-mazoti" }, { name: "The Blossom Gang", path: "/concepts/the-blossom-gang" }, { name: "Tiro Cozo", path: "/places/tiro-cozo" }]
     },
     {
         num: 19,
@@ -177,7 +176,7 @@ const chapters = [
         quote: "The people are not threatening, but pleading for you to heed your own pronouncement: When the interests of the few are weighed against the interests of the many, the few must yield.",
         speaker: "Cogo Yelu",
         summary: "Aya Mazoti, appointed to deliver the new tribute treaty to the Lyucu, is stopped in the streets of Ginpen by a massive protest organized by the Blossom Gang, led by the scholar Réza Müi and backed by veterans.  The protest escalates, and Aya's own soldiers refuse to use force against the demonstrators, resulting in a humiliating failure.  The widespread popular unrest forces Empress Jia's hand. Prime Minister Cogo Yelu, in a dramatic session of formal court, leads the ministers in a 'bloodless rebellion,' siding with the people's will for war. Jia is forced to relent and summons Phyro from Tiro Cozo, finally conceding the start of a new war against the Lyucu. ",
-        links: [{ name: "Aya Mazoti", path: "/characters/aya-mazoti" }, { name: "Jia Matiza", path: "/characters/jia-matiza" }, { name: "Cogo Yelu", path: "/characters/cogo-yelu" }, { name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "The Blossom Gang", path: "/concepts/the-blossom-gang" }]
+        links: [{ name: "Aya Mazoti", path: "/characters/aya-mazoti" }, { name: "Jia Matiza", path: "/characters/jia-matiza" }, { name: "Cogo Yelu", path: "/characters/cogo-yelu" }, { name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "The Blossom Gang", path: "/concepts/the-blossom-gang" }, { name: "Tiro Cozo", path: "/places/tiro-cozo" }]
     },
     {
         num: 20,
@@ -213,7 +212,7 @@ const chapters = [
         quote: "If I can soar so high, it’s only because I’m carried on the wings of many others.",
         speaker: "Rati Yera",
         summary: "In a flashback to Tiro Cozo, the inventor Rati Yera develops a new weapon for Emperor Phyro: swarms of small, mechanical, bird-like automata called 'ornithopters.'  The chapter details her ingenious invention process, including creating a system of pseudo-logograms and punched-hole 'scores' on cork cylinders to program their complex flight patterns.  She also develops a method of mass production using water-powered machinery and standardized parts, overcoming the logistical challenges of building a new army from scratch. ",
-        links: [{ name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "Rati Yera", path: "/characters/the-blossom-gang" }, { name: "Tiro Cozo", path: "/places/tiro-cozo" }]
+        links: [{ name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "The Blossom Gang", path: "/concepts/the-blossom-gang" }, { name: "Tiro Cozo", path: "/places/tiro-cozo" }]
     },
     {
         num: 24,
@@ -231,7 +230,7 @@ const chapters = [
         quote: "All of us can see merely one corner of this grand universe but are blind to everything else; only by piecing together all the multiplicity of insights can we grasp the whole.",
         speaker: "Kisli Péro",
         summary: "In another flashback, Rati Yera struggles to create a guidance system for her missile-like 'mechanical dyrans.'  A visiting scholar, Kisli Péro, tells her of a new discovery: *oculium*, a substance that conducts the silkmotic force only when exposed to light.  Inspired by Fara's explanation of knitting patterns and the compound eyes of a bumblebee, Rati realizes she doesn't need to replicate true sight.  She invents a 'phototropic archon' using a grid of oculium sensors that allows a missile to home in on a light source, creating the 'sunflower' guided missile. ",
-        links: [{ name: "Rati Yera", path: "/characters/the-blossom-gang" }, { name: "Princess Fara", path: "/characters/princess-fara" }, { name: "Tiro Cozo", path: "/places/tiro-cozo" }, { name: "Silkmotic Force", path: "/concepts/silkmotic-force" }]
+        links: [{ name: "The Blossom Gang", path: "/concepts/the-blossom-gang" }, { name: "Princess Fara", path: "/characters/princess-fara" }, { name: "Tiro Cozo", path: "/places/tiro-cozo" }, { name: "Silkmotic Force", path: "/concepts/silkmotic-force" }]
     },
     {
         num: 26,
@@ -267,7 +266,7 @@ const chapters = [
         quote: "Taboos were established by our ancestor heroes to protect the people and honor the gods, and they may be broken for the same purpose.",
         speaker: "Adyulek",
         summary: "In the months following the collapse of the Lyucu empire in Ukyu-Gondé, Tovo Tasaricu rallies the remaining Lyucu forces for an attack on Théra's new base in the Boneyard.  The Agon rebels, using their giant walking arucuro tocua fortresses, meet the Lyucu army. The Lyucu launch a massive fire-cattle stampede, but the rebels withstand it using fire-skirt defenses and their 'Divine Voice' sonic weapon. The stage is set for a final, decisive battle for the future of the scrublands. ",
-        links: [{ name: "Princess Théra", path: "/characters/princess-thera" }, { name: "Tovo Tasaricu", path: "/characters/tovo-tasaricu" }, { name: "The Boneyard", path: "/places/the-boneyard" }]
+        links: [{ name: "Princess Théra", path: "/characters/princess-thera" }]
     },
     {
         num: 30,
@@ -285,7 +284,7 @@ const chapters = [
         quote: "The body was gone, but the breath lived on.",
         speaker: "Narrator",
         summary: "At the Battle of the Boneyard, Théra's forces use the Divine Voice—an amplified version of the tusked tiger's silent roar—to paralyze the front ranks of the charging Lyucu army.  Tovo counters by sending his garinafins to attack the bone fortresses. The battle is fierce, but the turning point comes when thousands of feral garinafins, freed from Taten months earlier, answer the rebels' silent call for help and annihilate the Lyucu air force.  In the chaos, Thoryo sacrifices herself to stop a vengeful Tovo from assassinating Théra.  The Lyucu are utterly defeated, and the Agon are finally free. ",
-        links: [{ name: "Princess Théra", path: "/characters/princess-thera" }, { name: "Tovo Tasaricu", path: "/characters/tovo-tasaricu" }, { name: "Thoryo", path: "/characters/thoryo" }, { name: "The Boneyard", path: "/places/the-boneyard" }, { name: "Garinafin", path: "/concepts/garinafin" }]
+        links: [{ name: "Princess Théra", path: "/characters/princess-thera" }, { name: "Thoryo", path: "/characters/thoryo" }, { name: "Garinafin", path: "/concepts/garinafin" }]
     },
     {
         num: 32,
@@ -303,7 +302,7 @@ const chapters = [
         quote: "You are not one of us, never one of us—",
         speaker: "Volyu Aragoz",
         summary: "Théra attempts to unite the fractious Agon chiefs at a grand council, advocating for peace and coexistence with the defeated Lyucu.  Her plans are shattered by the reappearance of Volyu Aragoz, who accuses her of murdering Takval and betraying the Agon for Dara's benefit.  He exploits the chiefs' xenophobia and Théra's foreign accent to turn them against her. The key witness, Adyulek, is found murdered, and Volyu frames Théra for the crime.  As the chiefs move to seize her, Théra's loyalists rescue her, but the Agon alliance dissolves into civil war. ",
-        links: [{ name: "Princess Théra", path: "/characters/princess-thera" }, { name: "Volyu Aragoz", path: "/characters/volyu-aragoz" }, { name: "Agon", path: "/concepts/agon" }, { name: "The Boneyard", path: "/places/the-boneyard" }]
+        links: [{ name: "Princess Théra", path: "/characters/princess-thera" }, { name: "Volyu Aragoz", path: "/characters/volyu-aragoz" }, { name: "Agon", path: "/concepts/agon" }]
     },
     {
         num: 34,
@@ -375,7 +374,7 @@ const chapters = [
         quote: "Parents begin by dreaming their children, Mama, and in time, children dream their parents.",
         speaker: "Tanto Aragoz",
         summary: "After months of aimless wandering, Théra's band arrives at the thriving settlement founded by Razutana, Sataari, and the children at the City of Ghosts.  Théra is joyfully reunited with her sons, Tanto and Rokiri.  The settlement has embraced farming, using seeds recovered from the barrows, and has become a refuge for Agon, Lyucu, and others fleeing the civil war. Théra's followers urge her to use this new base to reclaim her title as Pékyu, but she remains weary of war. ",
-        links: [{ name: "Princess Théra", path: "/characters/princess-thera" }, { name: "Tanto Aragoz", path: "/characters/tanto-aragoz" }, { name: "Rokiri Aragoz", path: "/characters/rokiri-aragoz" }, { name: "Razutana Pon", path: "/characters/razutana-pon" }, { name: "Sataari", path: "/characters/sataari" }, { name: "Taten-ryo-alvovo", path: "/places/taten-ryo-alvovo" }]
+        links: [{ name: "Princess Théra", path: "/characters/princess-thera" }, { name: "Tanto Aragoz", path: "/characters/tanto-aragoz" }, { name: "Rokiri Aragoz", path: "/characters/rokiri-aragoz" }, { name: "Razutana Pon", path: "/characters/razutana-pon" }, { name: "Sataari", path: "/characters/sataari" }]
     },
     {
         num: 42,
@@ -420,7 +419,7 @@ const chapters = [
         quote: "My father spoke often of you. He always regretted not being able to carry out the proper duties of a son.",
         speaker: "Princess Dyana",
         summary: "In the aftermath of Phyro's death and Jia's incapacitation, the Inner Council struggles with how to proceed.  In this power vacuum, Zen-Kara, pregnant with Phyro's heir, leads the remaining garinafins to Pan to assert her authority and prevent civil war.  She confronts Cogo Yelu, and they agree to a truce. She surrenders the garinafin force to the Dandelion Throne, ensuring stability but also ending Phyro's direct line of rebellion. ",
-        links: [{ name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "Cogo Yelu", path: "/characters/cogo-yelu" }, { name: "Ofluro", path: "/characters/ofluro" }, { name: "Garinafin", path: "/concepts/garinafin" }]
+        links: [{ name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "Cogo Yelu", path: "/characters/cogo-yelu" }, { name: "Garinafin", path: "/concepts/garinafin" }]
     },
     {
         num: 47,
@@ -429,7 +428,7 @@ const chapters = [
         quote: "A well-crafted plan is indistinguishable from a miracle, especially if the plotter can be as cruel to herself as she is to her enemies.",
         speaker: "Cogo Yelu",
         summary: "The Lyucu delegation, led by Goztan Ryoto and Princess Dyana, arrives in Pan to negotiate a surrender.  They demand to see the emperor, believing only he can provide the antidote to the tolyusa-thirst.  Jia, still secretly in control, refuses to see them.  The chapter delves into the complex political situation, with Cogo Yelu slowly piecing together the full, shocking extent of Jia's decades-long plot to destroy the Lyucu from within using a combination of economic dependency and biological warfare. ",
-        links: [{ name: "Jia Matiza", path: "/characters/jia-matiza" }, { name: "Goztan Ryoto", path: "/characters/goztan-ryoto" }, { name: "Cogo Yelu", path: "/characters/cogo-yelu" }, { name: "Tanvanaki", path: "/characters/tanvanaki" }, { name: "Princess Dyana", path: "/characters/the-two-emperors" }]
+        links: [{ name: "Jia Matiza", path: "/characters/jia-matiza" }, { name: "Goztan Ryoto", path: "/characters/goztan-ryoto" }, { name: "Cogo Yelu", path: "/characters/cogo-yelu" }, { name: "Tanvanaki", path: "/characters/tanvanaki" }]
     },
     {
         num: 48,
@@ -447,7 +446,7 @@ const chapters = [
         quote: "A mechanical wonder that reads and writes. Is there anything that cannot be accomplished by the ingenuity of the silkmotic engineer?",
         speaker: "Princess Fara",
         summary: "This chapter provides a detailed technical explanation of Savo's (Kinri's) invention, the book-mirror.  It details the collaboration between Savo, Fara, and Rati Yera. Fara's artistic insight into how knitting patterns break down images into grids inspires the design of the 'Bumblebee' reading head, which uses a grid of oculium sensors to perform optical logogram recognition.  Rati contributes her knowledge of mass production and automata. The invention represents a perfect fusion of art, engineering, and necessity, creating a tool that will democratize knowledge and change the course of history. ",
-        links: [{ name: "Princess Fara", path: "/characters/princess-fara" }, { name: "Kinri", path: "/characters/kinri" }, { name: "Rati Yera", path: "/characters/the-blossom-gang" }]
+        links: [{ name: "Princess Fara", path: "/characters/princess-fara" }, { name: "Kinri", path: "/characters/kinri" }, { name: "The Blossom Gang", path: "/concepts/the-blossom-gang" }]
     },
     {
         num: 50,
@@ -492,7 +491,7 @@ const chapters = [
         quote: "My brother is not a symbol. He is my brother, and he is not a part of your family.",
         speaker: "Princess Dyana",
         summary: "The Lyucu delegation arrives in Pan, led by Princess Dyana, demanding to see the emperor and receive the antidote.  The negotiations stall. Todyu, Dyana's brother, dies from the tolyusa-thirst after setting his own quarters on fire in a final act of defiance.  Fara and Dyana have a tense and emotional confrontation over Todyu's body.  Fara forces Dyana to confront the full horror of the Lyucu atrocities, and Dyana, in turn, forces Fara to understand the Lyucu fear of cultural annihilation. This raw, honest exchange forms the basis for a potential true peace, as both leaders accept the painful truths of their peoples' histories. ",
-        links: [{ name: "Princess Fara", path: "/characters/princess-fara" }, { name: "Princess Dyana", path: "/characters/the-two-emperors" }, { name: "Goztan Ryoto", path: "/characters/goztan-ryoto" }, { name: "Pan", path: "/places/pan" }]
+        links: [{ name: "Princess Fara", path: "/characters/princess-fara" }, { name: "Goztan Ryoto", path: "/characters/goztan-ryoto" }, { name: "Pan", path: "/places/pan" }]
     },
     {
         num: 55,
@@ -501,7 +500,7 @@ const chapters = [
         quote: "Welcome home, Zaza-tika.",
         speaker: "Empress Shizona (Fara)",
         summary: "Empress Shizona (Fara's reign name) and Pékyu Dyana reach the terms of the Lyucu surrender.  The plan for the reconstruction of Ukyu-taasa is debated in formal court, with difficult compromises made regarding land, justice, and cultural identity.  Zomi Kidosu resigns as Farsight Secretary to found a new kind of academy in Dasu.  Aya Mazoti is relieved of command and stripped of her military rank, a punishment she gratefully accepts as it frees her from her mother's shadow.  Finally, at a formal ceremony, Dyana surrenders to Empress Fara, who welcomes her not just as a defeated foe, but as family. ",
-        links: [{ name: "Princess Fara", path: "/characters/princess-fara" }, { name: "Princess Dyana", path: "/characters/the-two-emperors" }, { name: "Zomi Kidosu", path: "/characters/zomi-kidosu" }, { name: "Aya Mazoti", path: "/characters/aya-mazoti" }, { name: "Cogo Yelu", path: "/characters/cogo-yelu" }]
+        links: [{ name: "Princess Fara", path: "/characters/princess-fara" }, { name: "Zomi Kidosu", path: "/characters/zomi-kidosu" }, { name: "Aya Mazoti", path: "/characters/aya-mazoti" }, { name: "Cogo Yelu", path: "/characters/cogo-yelu" }]
     },
     {
         num: 56,
@@ -546,21 +545,12 @@ const chapters = [
 
 
 export default function SpeakingBonesPage() {
-    const bookNav = {
-        prevBook: { title: "The Veiled Throne", link: "/books/the-veiled-throne" },
-        nextBook: null
-    };
-
-    const prevPageData = { title: "The Veiled Throne", path: "/books/the-veiled-throne" };
-    const nextPageData = null;
-    const returnLinkData = { title: "Return to Series Overview", path: "/books" };
-
     return (
         <div>
-            <TopPageNavigation
-                prevPage={prevPageData}
-                nextPage={nextPageData}
-                returnLink={returnLinkData}
+            <TopNavigation
+                prevPage={{ title: "The Veiled Throne", path: "/books/the-veiled-throne" }}
+                nextPage={null}
+                returnLink={{ title: "Return to Series Overview", path: "/books" }}
             />
 
             <div className="flex flex-col md:flex-row gap-8 items-start mb-12">
@@ -646,7 +636,12 @@ export default function SpeakingBonesPage() {
                     </div>
                 ))}
             </div>
-            <BookNavigation prevBook={bookNav.prevBook} nextBook={bookNav.nextBook} />
+            
+            <BottomNavigation
+                prevItem={{ title: "The Veiled Throne", path: "/books/the-veiled-throne" }}
+                nextItem={null}
+                bottomNavType="book"
+            />
         </div>
     );
 }

@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import BookNavigation from '../../components/BookNavigation';
-import TopPageNavigation from '../../components/TopPageNavigation';
+import { TopNavigation, BottomNavigation } from '../../components/layout/PageNavigation';
 import { formatAsteriskToBold } from '../../utils/textFormatting';
 
 // --- ACCURATE & DETAILED DATA FOR THE VEILED THRONE ---
@@ -112,7 +111,7 @@ const chapters = [
         quote: "If there’s going to be death because of me, whether it’s the horses or you or anyone else, the least I can do is not look away. That would be barbaric.",
         speaker: "Princess Thera",
         summary: "Théra's expedition makes landfall in the desolate desert of Lurodia Tanta, home of the exiled Agon tribes. They begin a grueling trek toward the oasis of Sliyusa Ki. As their water supplies dwindle dangerously, Thoryo has a moment of childlike insight, wishing they could 'make dew.' This inspires Théra to invent a solar still, a device that uses the sun's heat to distill pure, drinkable water from cactus juice and even urine. Her ingenuity saves the expedition from certain death.",
-        links: [{ name: "Lurodia Tanta", path: "/places/lurodia-tanta" }, { name: "Princess Thera", path: "/characters/princess-thera" }, { name: "Takval Aragoz", path: "/characters/takval-aragoz" }, { name: "Thoryo", path: "/characters/thoryo" }]
+        links: [{ name: "Princess Thera", path: "/characters/princess-thera" }, { name: "Takval Aragoz", path: "/characters/takval-aragoz" }, { name: "Thoryo", path: "/characters/thoryo" }, { name: "Lurodia Tanta", path: "/places/lurodia-tanta" }, { name: "Sliyusa Ki", path: "/places/sliyusa-ki" }]
     },
     {
         num: 13,
@@ -121,7 +120,7 @@ const chapters = [
         quote: "You claim to speak for the Agon, yet your people are huddled here in the desert, eking out a life of terror in the shadow of your Lyucu masters.",
         speaker: "Princess Thera",
         summary: "The expedition reaches the oasis of Sliyusa Ki, but the welcome is tense. Takval's uncle, Volyu Aragoz, chief of the exiled Agon, is a broken man who survives by appeasing the Lyucu. He dismisses Théra's group as weak refugees and demands they submit as vassals. In a powerful, defiant speech, Théra confronts Volyu's cowardice and reminds the assembled Agon chieftains of their proud warrior heritage. Her courage wins them over, and they force a humiliated Volyu to agree to an alliance of equals.",
-        links: [{ name: "Sliyusa Ki", path: "/places/sliyusa-ki" }, { name: "Princess Thera", path: "/characters/princess-thera" }, { name: "Takval Aragoz", path: "/characters/takval-aragoz" }, { name: "Volyu Aragoz", path: "/characters/volyu-aragoz" }]
+        links: [{ name: "Princess Thera", path: "/characters/princess-thera" }, { name: "Takval Aragoz", path: "/characters/takval-aragoz" }, { name: "Volyu Aragoz", path: "/characters/volyu-aragoz" }, { name: "Sliyusa Ki", path: "/places/sliyusa-ki" }]
     },
     {
         num: 14,
@@ -130,7 +129,7 @@ const chapters = [
         quote: "The heart isn’t a fixed pool like a water bubble in the grass sea; it grows and swells like the ocean.",
         speaker: "Princess Thera",
         summary: "Takval's mother, Souliyan, reveals the full extent of Volyu's treachery: he has been systematically betraying Agon rebels to the Lyucu for years. Realizing Volyu intended to betray them as well, they stage a bloodless coup. They spare his life, forcing him to continue as a figurehead chief, now an unwitting double agent. The alliance is sealed with the marriage of Théra and Takval, which deepens into genuine partnership. Théra discovers she is pregnant. As a final act of hope, they carve a coded message onto the shells of sea turtles and release them, praying word of their mission reaches Dara.",
-        links: [{ name: "Sliyusa Ki", path: "/places/sliyusa-ki" }, { name: "Princess Thera", path: "/characters/princess-thera" }, { name: "Takval Aragoz", path: "/characters/takval-aragoz" }, { name: "Souliyan Aragoz", path: "/characters/souliyan-aragoz" }, { name: "Zomi Kidosu", path: "/characters/zomi-kidosu" }]
+        links: [{ name: "Princess Thera", path: "/characters/princess-thera" }, { name: "Takval Aragoz", path: "/characters/takval-aragoz" }, { name: "Souliyan Aragoz", path: "/characters/souliyan-aragoz" }, { name: "Zomi Kidosu", path: "/characters/zomi-kidosu" }]
     },
     {
         num: 15,
@@ -157,7 +156,7 @@ const chapters = [
         quote: "This. Is. Not. Dara.",
         speaker: "Tanto Aragoz",
         summary: "At the secret Agon base in Kiri Valley, Théra tries to celebrate the Dara High-Autumn Festival with her sons, Tanto and Rokiri. The boys, raised as Agon, reject the traditional moonbread and the logogram playing blocks their mother made. Théra is heartbroken, feeling her children are rejecting their Dara heritage. The chapter poignantly illustrates the challenges of raising bicultural children and Théra's growing sense of isolation and failure. A talk with Thoryo helps her realize she must engage with Agon culture on its own terms, not just impose her own.",
-        links: [{ name: "Kiri Valley", path: "/places/kiri-valley" }, { name: "Princess Thera", path: "/characters/princess-thera" }, { name: "Tanto Aragoz", path: "/characters/tanto-aragoz" }, { name: "Rokiri Aragoz", path: "/characters/rokiri-aragoz" }, { name: "Thoryo", path: "/characters/thoryo" }]
+        links: [{ name: "Princess Thera", path: "/characters/princess-thera" }, { name: "Tanto Aragoz", path: "/characters/tanto-aragoz" }, { name: "Rokiri Aragoz", path: "/characters/rokiri-aragoz" }, { name: "Thoryo", path: "/characters/thoryo" }]
     },
     {
         num: 18,
@@ -175,7 +174,7 @@ const chapters = [
         quote: "A clever woodpecker... will continue to try out new trees even after it has made a choice for nesting... Or if the tree it has chosen starts to die.",
         speaker: "Lady Ragi",
         summary: "Lady Ragi, Empress Jia's adopted daughter, leads a tribute mission to Kriphi. She meets with the Dara traitor Noda Mi, now a high-ranking Lyucu official. Under the cover of a smuggling deal, Ragi probes Noda's loyalty, using metaphors of birds and trees to suggest the Lyucu regime is weakening and that he should reconsider his allegiances. The opportunistic Noda agrees to pass a seemingly simple message from Jia to her son, Timu, in exchange for a crate of priceless wine. Their entire conversation is overheard by a nameless Lyucu spy clinging to the outside of the ship.",
-        links: [{ name: "Kriphi", path: "/places/kriphi" }, { name: "Lady Ragi", path: "/characters/gori-ruthi" }, { name: "Noda Mi", path: "/characters/noda-mi" }, { name: "Jia Matiza", path: "/characters/jia-matiza" }]
+        links: [{ name: "Kriphi", path: "/places/kriphi" }, { name: "Noda Mi", path: "/characters/noda-mi" }, { name: "Jia Matiza", path: "/characters/jia-matiza" }]
     },
     {
         num: 20,
@@ -184,7 +183,7 @@ const chapters = [
         quote: "It’s always easy to negotiate with people like him, because all he cares about is himself.",
         speaker: "Princess Thera",
         summary: "Takval's treacherous uncle, Volyu, arrives at the Kiri Valley base. He brings intelligence that Pékyu Cudyu and all major Lyucu thanes will soon gather for a ceremony, presenting a perfect opportunity for a decisive strike. Théra, Takval, and Souliyan debate the strategy. Takval skillfully manipulates his uncle, securing his cooperation as a spy while giving him no real power. The plan is set for a surprise attack on the Lyucu capital of Taten that could end the war in Ukyu-Gondé.",
-        links: [{ name: "Kiri Valley", path: "/places/kiri-valley" }, { name: "Princess Thera", path: "/characters/princess-thera" }, { name: "Takval Aragoz", path: "/characters/takval-aragoz" }, { name: "Volyu Aragoz", path: "/characters/volyu-aragoz" }, { name: "Souliyan Aragoz", path: "/characters/souliyan-aragoz" }]
+        links: [{ name: "Princess Thera", path: "/characters/princess-thera" }, { name: "Takval Aragoz", path: "/characters/takval-aragoz" }, { name: "Volyu Aragoz", path: "/characters/volyu-aragoz" }, { name: "Souliyan Aragoz", path: "/characters/souliyan-aragoz" }]
     },
     {
         num: 21,
@@ -211,7 +210,7 @@ const chapters = [
         quote: "The discovery of an unauthorized native teacher... constitutes a military emergency, and all Imperial edicts... are hereby suspended.",
         speaker: "Cutanrovo Aga",
         summary: "Cutanrovo Aga's purges reach the village of Kigo Yezu. She searches for Savo and Nazu Tei. Savo reveals himself, hoping to de-escalate, but his naive intervention backfires when he accidentally confirms the forbidden master-pupil relationship. Cutanrovo seizes this as proof of a conspiracy. She brutally tortures the village elder's baby to extract a 'confession' about hidden 'contraband' (an old zamaki set), then orders the entire village massacred by garinafin fire. Savo and Nazu Tei are arrested. The chapter is a horrifying depiction of the purges' brutality and the tragic consequences of Savo's good intentions.",
-        links: [{ name: "Kigo Yezu", path: "/places/kigo-yezu" }, { name: "Kinri", path: "/characters/kinri" }, { name: "Nazu Tei", path: "/characters/nazu-tei" }, { name: "Cutanrovo Aga", path: "/characters/cutanrovo-aga" }]
+        links: [{ name: "Kinri", path: "/characters/kinri" }, { name: "Nazu Tei", path: "/characters/nazu-tei" }, { name: "Cutanrovo Aga", path: "/characters/cutanrovo-aga" }, { name: "Kigo Yezu", path: "/places/kigo-yezu" }]
     },
     {
         num: 24,
@@ -238,7 +237,7 @@ const chapters = [
         quote: "My heart is heavy with doubt, but I am not the pékyu nor the Princess of Dara.",
         speaker: "Souliyan Aragoz",
         summary: "The combined Agon and Dara forces at the Kiri Valley base celebrate the Winter Festival. The mood is festive but tense, as everyone anticipates the coming attack on Taten. Volyu Aragoz arrives with more intelligence, solidifying the plan. Souliyan expresses deep misgivings about attacking the Lyucu during a sacred festival, fearing divine anger, but is overruled by Théra and Takval's strategic calculations. The celebration continues with a storytelling dance, but the joyous occasion is shattered when the valley comes under a massive, fiery surprise attack from Lyucu garinafins.",
-        links: [{ name: "Kiri Valley", path: "/places/kiri-valley" }, { name: "Princess Thera", path: "/characters/princess-thera" }, { name: "Takval Aragoz", path: "/characters/takval-aragoz" }, { name: "Volyu Aragoz", path: "/characters/volyu-aragoz" }, { name: "Souliyan Aragoz", path: "/characters/souliyan-aragoz" }]
+        links: [{ name: "Princess Thera", path: "/characters/princess-thera" }, { name: "Takval Aragoz", path: "/characters/takval-aragoz" }, { name: "Volyu Aragoz", path: "/characters/volyu-aragoz" }, { name: "Souliyan Aragoz", path: "/characters/souliyan-aragoz" }]
     },
     {
         num: 27,
@@ -247,7 +246,7 @@ const chapters = [
         quote: "The aspen wishes to stand still, but the wind does not stop.",
         speaker: "Narrator",
         summary: "The Lyucu surprise attack, led by Pékyu Cudyu himself and guided by the traitor Volyu Aragoz, devastates Kiri Valley. The Agon-Dara alliance is shattered, their base is burned, and their forces are scattered. Souliyan Aragoz and the Dara commanders Nméji Gon and Tipo Tho lead heroic last stands, sacrificing themselves to allow a small group to escape. Théra and Takval flee into the mountains with a handful of warriors and the children, their dream of rebellion in ruins. Théra is consumed by guilt, blaming her strategic decisions for the disaster. The chapter ends with the survivors as desperate refugees, facing a harsh winter in the wilderness with little hope.",
-        links: [{ name: "Kiri Valley", path: "/places/kiri-valley" }, { name: "Princess Thera", path: "/characters/princess-thera" }, { name: "Takval Aragoz", path: "/characters/takval-aragoz" }, { name: "Souliyan Aragoz", path: "/characters/souliyan-aragoz" }, { name: "Cudyu Roatan", path: "/characters/cudyu-roatan" }]
+        links: [{ name: "Princess Thera", path: "/characters/princess-thera" }, { name: "Takval Aragoz", path: "/characters/takval-aragoz" }, { name: "Souliyan Aragoz", path: "/characters/souliyan-aragoz" }, { name: "Cudyu Roatan", path: "/characters/cudyu-roatan" }]
     },
     {
         num: 28,
@@ -382,7 +381,7 @@ const chapters = [
         quote: "The Every-Mother demands that we survive winter in this forbidden place—it’s up to us to see how many of us will make it.",
         speaker: "Sataari",
         summary: "This chapter follows the escaped children, led by Sataari and Razutana, on their journey. They discover massive, ancient geoglyphs—drawings of birds and creatures etched into the salt flats by a forgotten civilization. This moment of wonder hints at the deep, mysterious history of Ukyu-Gondé. They finally arrive at their destination: Taten-ryo-alvovo, the 'City of Ghosts,' an ancient and sacred Agon ruin where they must try to survive the harsh winter.",
-        links: [{ name: "Sea of Tears", path: "/places/sea-of-tears" }, { name: "Sataari", path: "/characters/sataari" }, { name: "Razutana Pon", path: "/characters/razutana-pon" }, { name: "Taten-ryo-alvovo", path: "/places/taten-ryo-alvovo" }, { name: "Tanto Aragoz", path: "/characters/tanto-aragoz" }]
+        links: [{ name: "Sataari", path: "/characters/sataari" }, { name: "Razutana Pon", path: "/characters/razutana-pon" }, { name: "Tanto Aragoz", path: "/characters/tanto-aragoz" }, { name: "Sea of Tears", path: "/places/sea-of-tears" }, { name: "Taten-ryo-alvovo", path: "/places/taten-ryo-alvovo" }]
     },
     {
         num: 44,
@@ -400,7 +399,7 @@ const chapters = [
         quote: "I am useless. I’ve ruined everything.",
         speaker: "Princess Thera",
         summary: "In the aftermath of the Kiri Valley disaster, Théra is consumed by guilt and grief. She has completely withdrawn from her leadership role, leaving Takval and the other survivors to fend for themselves. The chapter is a powerful depiction of depression and trauma, as she struggles with the weight of her failures and the loss of her children. Her journey through the mountains is a journey through her own internal landscape of despair, feeling completely isolated and useless.",
-        links: [{ name: "World's Edge Mountains", path: "/places/worlds-edge-mountains" }, { name: "Princess Thera", path: "/characters/princess-thera" }, { name: "Takval Aragoz", path: "/characters/takval-aragoz" }]
+        links: [{ name: "Princess Thera", path: "/characters/princess-thera" }, { name: "Takval Aragoz", path: "/characters/takval-aragoz" }]
     },
     {
         num: 46,
@@ -409,7 +408,7 @@ const chapters = [
         quote: "Love, once given, cannot be rescinded.",
         speaker: "Princess Fara",
         summary: "The Blossom Gang, with Kinri and Fara, investigate Tiphan Huto's warehouse, suspecting it's a front. They discover he is kidnapping skilled artisans for the Lyucu. They set a trap, leading to his capture by the magistrate. Afterward, they decide to infiltrate Last Bite, a secret Imperial research facility, to uncover the truth about Gin Mazoti's death, which Mota believes is being covered up by the state.",
-        links: [{ name: "Last Bite", path: "/places/last-bite" }, { name: "The Blossom Gang", path: "/concepts/the-blossom-gang" }, { name: "Kinri", path: "/characters/kinri" }, { name: "Princess Fara", path: "/characters/princess-fara" }]
+        links: [{ name: "The Blossom Gang", path: "/concepts/the-blossom-gang" }, { name: "Kinri", path: "/characters/kinri" }, { name: "Princess Fara", path: "/characters/princess-fara" }, { name: "Last Bite", path: "/places/last-bite" }]
     },
     {
         num: 47,
@@ -418,7 +417,7 @@ const chapters = [
         quote: "My name is Savo Ryoto.",
         speaker: "Savo Ryoto (Kinri)",
         summary: "The Blossom Gang and Fara successfully infiltrate Last Bite. Kinri, disguised as Zomi Kidosu, discovers a secret study filled with objects from his past, including the turtle shell his mother gave him. He realizes the study belongs to Zomi. Zomi herself appears, and through the turtle shell, she and Kinri discover they are long-lost half-siblings, both fathered by Oga Kidosu. Kinri is forced to confront the truth about his identity and his family's complex history. He chooses to embrace his Lyucu heritage and his identity as Savo Ryoto, a decision that creates a painful rift between him and Fara. The chapter ends with Savo escaping Last Bite, now a fugitive with a new understanding of himself and his place in the world.",
-        links: [{ name: "Last Bite", path: "/places/last-bite" }, { name: "Kinri", path: "/characters/kinri" }, { name: "Zomi Kidosu", path: "/characters/zomi-kidosu" }, { name: "Princess Fara", path: "/characters/princess-fara" }, { name: "The Blossom Gang", path: "/concepts/the-blossom-gang" }, { name: "Oga Kidosu", path: "/characters/oga-kidosu" }]
+        links: [{ name: "Kinri", path: "/characters/kinri" }, { name: "Zomi Kidosu", path: "/characters/zomi-kidosu" }, { name: "Princess Fara", path: "/characters/princess-fara" }, { name: "The Blossom Gang", path: "/concepts/the-blossom-gang" }, { name: "Oga Kidosu", path: "/characters/oga-kidosu" }, { name: "Last Bite", path: "/places/last-bite" }]
     }
 ];
 
@@ -431,21 +430,12 @@ const ExternalLinkIcon = () => (
 
 
 export default function VeiledThronePage() {
-    const bookNav = {
-        prevBook: { title: "The Wall of Storms", link: "/books/the-wall-of-storms" },
-        nextBook: { title: "Speaking Bones", link: "/books/speaking-bones" }
-    };
-
-    const prevPageData = { title: "The Wall of Storms", path: "/books/the-wall-of-storms" };
-    const nextPageData = { title: "Speaking Bones", path: "/books/speaking-bones" };
-    const returnLinkData = { title: "Return to Series Overview", path: "/books" };
-
     return (
         <div>
-            <TopPageNavigation
-                prevPage={prevPageData}
-                nextPage={nextPageData}
-                returnLink={returnLinkData}
+            <TopNavigation
+                prevPage={{ title: "The Wall of Storms", path: "/books/the-wall-of-storms" }}
+                nextPage={{ title: "Speaking Bones", path: "/books/speaking-bones" }}
+                returnLink={{ title: "Return to Series Overview", path: "/books" }}
             />
 
             <div className="flex flex-col md:flex-row gap-8 items-start mb-12">
@@ -530,7 +520,12 @@ export default function VeiledThronePage() {
                     </div>
                 ))}
             </div>
-            <BookNavigation prevBook={bookNav.prevBook} nextBook={bookNav.nextBook} />
+            
+            <BottomNavigation
+                prevItem={{ title: "The Wall of Storms", path: "/books/the-wall-of-storms" }}
+                nextItem={{ title: "Speaking Bones", path: "/books/speaking-bones" }}
+                bottomNavType="book"
+            />
         </div>
     );
 }

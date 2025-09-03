@@ -1,35 +1,34 @@
-'use client';
+import { Metadata } from 'next';
 
-import CharacterPageTemplate from '../../components/CharacterPageTemplate';
+import PageTemplate, { convertCharacterData } from '../../components/layout/PageTemplate';
+import { generateCharacterMetadata } from '@/app/utils/metadata';
 import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
-import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
-import { getSurroundingPages } from '@/app/utils/navigationUtils';
+import { CharacterNavigation } from '@/app/components/layout/PageNavigation';
 
 const characterData: Character = {
     name: "Prince Phyro",
     image: "/characters/prince-phyro.png",
-    introduction: "Prince Phyro is the charismatic and martially gifted son of Emperor Ragin and Consort Risana. Favored by the military faction of the court, he grows from a mischievous boy into a determined military leader who secretly builds an army to reclaim Dara from the Lyucu, eventually ascending the throne as Emperor Monadétu.",
+    introduction: "Prince Phyro is the charismatic and martially gifted son of Emperor Ragin and Consort Risana. Favored by the military faction of the court, he grows from a mischievous boy into a determined military leader who rebels against his mother's regency, a path that ends in tragedy.",
     infoBox: {
         aliases: "Emperor Monadétu",
         occupation: "Prince, Emperor of Dara",
-        placeOfBirth: { text: "Zudi", link: "/places/zudi" },
-        status: "Alive",
+        placeOfBirth: { text: "Pan", link: "/places/pan" },
+        status: "Deceased",
         gender: "Male",
         relatives: [
             { text: "Kuni Garu (father)", link: "/characters/kuni-garu" },
             { text: "Consort Risana (mother)", link: "/characters/consort-risana" },
-            { text: "Prince Timu (brother)", link: "/characters/prince-timu" },
-            { text: "Princess Théra (sister)", link: "/characters/princess-thera" },
+            { text: "Prince Timu (brother, by adoption)", link: "/characters/prince-timu" },
+            { text: "Princess Théra (sister, by adoption)", link: "/characters/princess-thera" },
             { text: "Princess Fara (sister)", link: "/characters/princess-fara" }
         ],
         affiliation: "Dandelion Court, Empire of Dara",
-        nationality: "Dara",
+        nationality: "Daran",
         firstAppeared: { text: "The Wall of Storms", link: "/books/the-wall-of-storms" },
         lastAppeared: { text: "Speaking Bones", link: "/books/speaking-bones" }
     },
     appearanceAndPersonality: [
-        { type: 'text', content: "In his youth, Phyro is mischievous and more interested in martial pursuits and spectacle than in his studies. He embodies the 'sword' side of the court, inheriting his mother's intuitive understanding of warfare and his father's charisma. As he matures, he becomes a focused and determined leader, driven by a desire to prove himself and defend his homeland." },
+        { type: 'text', content: "In his youth, Phyro is restless and more interested in martial pursuits than his studies. He embodies the 'sword' side of the court, inheriting his mother's intuitive understanding of warfare and his father's charisma. As he matures, he becomes a focused and determined leader, driven by a desire to prove himself and a conviction that only military strength can protect Dara." },
         { type: 'ref', data: { book: "The Wall of Storms", chapter: 1, link: "/books/the-wall-of-storms#chapter-1" } },
         { type: 'ref', data: { book: "The Wall of Storms", chapter: 11, link: "/books/the-wall-of-storms#chapter-11" } },
     ],
@@ -37,37 +36,51 @@ const characterData: Character = {
         {
             era: "The Wall of Storms",
             summary: [
-                { type: 'text', content: "As a boy, Phyro showed early signs of his adventurous spirit. He was sent by his mother, [[Empress Jia|/characters/jia-matiza]], to pacify the Hegemon cults in [[Tunoa Islands|/places/tunoa-islands]], where he was besieged and ultimately saved by his sister [[Princess Théra|/characters/princess-thera]]'s intervention." },
+                { type: 'text', content: "As the martial son of the emperor, Phyro was groomed by the 'Swords' faction as their champion for the throne." }
+            ]
+        },
+        {
+            era: "The Martial Prince",
+            summary: [
+                { type: 'text', content: "As a boy, he was sent by Empress Jia to pacify the Hegemon cults in Tunoa, where he was besieged and ultimately saved by his sister Théra's intervention. After Théra abdicated, Phyro was named the heir. With his mother, Consort Risana, he investigated the silkmotic force, recognizing its potential as a new weapon." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 22, link: "/books/the-wall-of-storms#chapter-22" } },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 27, link: "/books/the-wall-of-storms#chapter-27" } },
-                { type: 'text', content: "After [[Princess Théra|/characters/princess-thera]] abdicated, Phyro was named the new emperor. He traveled to [[Faca|/places/faca]] with his mother, [[Consort Risana|/characters/consort-risana]], to investigate the [[silkmotic force|/concepts/silkmotic-force]], recognizing its potential as a new weapon." },
-                { type: 'ref', data: { book: "The Wall of Storms", chapter: 39, link: "/books/the-wall-of-storms#chapter-39" } },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 55, link: "/books/the-wall-of-storms#chapter-55" } },
             ]
         },
         {
-            era: "The Veiled Throne & Speaking Bones",
+            era: "The Veiled Throne",
             summary: [
-                { type: 'text', content: "As the young Emperor Monadétu, Phyro chafed under his mother [[Empress Jia|/characters/jia-matiza]]'s regency and her pacifist policies toward the [[Lyucu|/concepts/lyucu]]. He secretly established a [[garinafin|/concepts/garinafin]] training base at [[Tiro Cozo|/places/tiro-cozo]], working with the Lyucu defector [[Ofluro|/characters/ofluro]] to build a new aerial army in defiance of his mother's orders." },
+                { type: 'text', content: "As the young Emperor Monadétu, Phyro chafed under Empress Jia's regency and her pacifist policies. In defiance, he secretly established a garinafin training base at Tiro Cozo and worked with the Blossom Gang to build a clandestine army." },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 18, link: "/books/the-veiled-throne#chapter-18" } },
                 { type: 'ref', data: { book: "The Veiled Throne", chapter: 40, link: "/books/the-veiled-throne#chapter-40" } },
-                { type: 'ref', data: { book: "Speaking Bones", chapter: 3, link: "/books/speaking-bones#chapter-3" } },
-                { type: 'text', content: "His secret army and rebellion against his mother's strategy became a key factor in the final war for Dara. He led his new garinafin force in the desperate final assault on the Lyucu stronghold, proving himself a worthy successor to his father's legacy as a warrior-king." },
-                { type: 'ref', data: { book: "Speaking Bones", chapter: 18, link: "/books/speaking-bones#chapter-18" } },
-                { type: 'ref', data: { book: "Speaking Bones", chapter: 35, link: "/books/speaking-bones#chapter-35" } },
+            ]
+        },
+        {
+            era: "Speaking Bones",
+            summary: [
+                { type: 'text', content: "Phyro's secret army eventually forced Jia's hand, initiating the final war with the Lyucu. He won a major victory at the Battle of Crescent Island, proving himself a brilliant commander." },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 19, link: "/books/speaking-bones#chapter-19" } },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 26, link: "/books/speaking-bones#chapter-26" } },
+                { type: 'text', content: "However, upon learning that Jia had murdered his mother, his quest for justice turned to one of vengeance. He launched a surprise attack on Pan, confronted Jia in her secret bunker, and detonated a bomb, killing himself in a final, tragic attempt to execute his mother." },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 44, link: "/books/speaking-bones#chapter-44" } },
             ]
         },
     ]
 };
 
+// Generate metadata for SEO
+export async function generateMetadata(): Promise<Metadata> {
+    return generateCharacterMetadata(characterData);
+}
+
 export default function PrincePhyroPage() {
-    const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <CharacterPageTemplate characterData={characterData} />
+            <CharacterNavigation prevPage={null} nextPage={null} returnLink={returnLink} />
+            <PageTemplate pageData={convertCharacterData(characterData)} infoBoxTitle="Biographical Information" />
         </>
     );
 }

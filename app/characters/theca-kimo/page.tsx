@@ -1,10 +1,9 @@
-'use client';
+import { Metadata } from 'next';
 
-import CharacterPageTemplate from '../../components/CharacterPageTemplate';
+import PageTemplate, { convertCharacterData } from '../../components/layout/PageTemplate';
+import { generateCharacterMetadata } from '@/app/utils/metadata';
 import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
-import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
-import { getSurroundingPages } from '@/app/utils/navigationUtils';
+import { CharacterNavigation } from '@/app/components/layout/PageNavigation';
 
 const characterData: Character = {
     name: "Théca Kimo",
@@ -17,7 +16,7 @@ const characterData: Character = {
         status: "Deceased",
         gender: "Male",
         affiliation: "Hegemon's Court, Arulugi Rebellion",
-        nationality: { text: "Géfica", link: "/places/gefica" },
+        nationality: "Daran",
         firstAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" },
         lastAppeared: { text: "The Wall of Storms", link: "/books/the-wall-of-storms" }
     },
@@ -29,16 +28,15 @@ const characterData: Character = {
         {
             era: "The Grace of Kings",
             summary: [
-                { type: 'text', content: "Initially one of Mata Zyndu's key allies and a Duke of Géfica, Théca Kimo pragmatically defected to Kuni Garu's side during the civil war, recognizing that Kuni's faction was the stronger 'gang'." },
+                { type: 'text', content: "Initially one of Mata Zyndu's dukes, Théca Kimo pragmatically defected to Kuni Garu's side during the civil war, recognizing that Kuni's faction was the stronger 'gang' and more likely to win." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 45, link: "/books/the-grace-of-kings#chapter-45" } },
             ]
         },
         {
             era: "The Wall of Storms",
             summary: [
-                { type: 'text', content: "During the reign of Emperor Ragin, he was a member of the 'Swords' faction at court, feeling that his martial skills were undervalued in an era of peace." },
+                { type: 'text', content: "During the reign of Emperor Ragin, he was a member of the 'Swords' faction, feeling his martial skills were undervalued. He became the unwitting pawn in Empress Jia's grand political scheme. She secretly funded a rebellion and then fabricated evidence to frame Kimo as the mastermind. Trapped and believing he had no other choice, Kimo reluctantly declared rebellion, falling perfectly into Jia's trap. His forces were defeated in Arulugi through Consort Risana's smokecraft, and he was executed for treason." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 8, link: "/books/the-wall-of-storms#chapter-8" } },
-                { type: 'text', content: "He became the unwitting pawn in Empress Jia's grand political scheme. She secretly funded the Hegemon cults and then fabricated evidence to make it appear that Kimo was the mastermind behind the rebellion. Trapped and believing he had been framed, Kimo reluctantly declared rebellion, falling perfectly into Jia's trap. His forces were defeated in Arulugi through the use of Consort Risana's smokecraft, and he was executed." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 25, link: "/books/the-wall-of-storms#chapter-25" } },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 32, link: "/books/the-wall-of-storms#chapter-32" } },
             ]
@@ -46,15 +44,18 @@ const characterData: Character = {
     ]
 };
 
+// Generate metadata for SEO
+export async function generateMetadata(): Promise<Metadata> {
+    return generateCharacterMetadata(characterData);
+}
+
 export default function ThecaKimoPage() {
-    const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <CharacterPageTemplate characterData={characterData} />
+            <CharacterNavigation prevPage={null} nextPage={null} returnLink={returnLink} />
+            <PageTemplate pageData={convertCharacterData(characterData)} infoBoxTitle="Biographical Information" />
         </>
     );
 }

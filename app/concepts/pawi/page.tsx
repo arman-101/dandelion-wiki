@@ -1,9 +1,9 @@
 'use client';
 
-import ConceptPageTemplate from '../../components/ConceptPageTemplate';
+import PageTemplate, { convertConceptData } from '../../components/layout/PageTemplate';
 import { Concept, ALL_CONCEPTS } from '../../data/wiki-data';
 import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { ConceptNavigation } from '@/app/components/layout/PageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
 // --- DATA FOR PAWI ---
@@ -14,12 +14,14 @@ const conceptData: Concept = {
     infoBox: {
         Type: "Divine Animal Companions",
         AssociatedWith: { text: "The Gods of Dara", link: "/gods" },
-        Examples: "Kiji's Falcon, Lutho's Sea Turtle, Fithowéo's Wolf",
+        Examples: "Kiji's Falcon, Lutho's Turtle, Tazu's Shark, Kana & Rapa's Ravens",
     },
     details: [
-        { type: 'text', content: "The pawi are more than mere pets; they are extensions of their respective gods' domains and personalities. For example, Kiji, the god of air, is represented by the swift Mingén falcon, while Tazu, the chaotic god of the sea, is represented by the shark. These animals are often revered and considered sacred by the mortals who worship that particular god." },
-        { type: 'ref', data: { book: "The Wall of Storms", chapter: 6, link: "/books/the-wall-of-storms#chapter-6" } },
-        { type: 'text', content: "The gods can observe the mortal world through the eyes of their pawi and sometimes use them to interact with mortals, though this is rare. The tale of the Calendrical Dozen, a contest to find the hidden gods, revolved around mortals trying to lure out the deities by appealing to the nature of their pawi." },
+        { type: 'text', content: "The pawi are extensions of their respective gods' domains and personalities. For example, Kiji, the god of air, is represented by the swift Mingén falcon, while Tazu, the chaotic god of the sea, is represented by the shark." },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 20, link: "/books/the-grace-of-kings#chapter-20" } },
+        { type: 'text', content: "The gods can observe the mortal world through the eyes of their pawi. A young Zomi Kidosu witnessed a fantastical battle in the sky between the pawi of Lutho (a great sea turtle) and Tazu (a monstrous shark). Years later, when the hardliner Cutanrovo Aga massacred the priests at the Temple of Kiji, the god's pawi, a giant Mingén falcon, appeared in response." },
+        { type: 'ref', data: { book: "The Wall of Storms", chapter: 5, link: "/books/the-wall-of-storms#chapter-5" } },
+        { type: 'ref', data: { book: "The Veiled Throne", chapter: 30, link: "/books/the-veiled-throne#chapter-30" } },
     ]
 };
 
@@ -30,8 +32,8 @@ export default function PawiPage() {
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <ConceptPageTemplate conceptData={conceptData} />
+            <ConceptNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PageTemplate pageData={convertConceptData(conceptData)} infoBoxTitle="Concept Information" />
         </>
     );
 }

@@ -1,9 +1,9 @@
 'use client';
 
-import PlacePageTemplate from '../../components/PlacePageTemplate';
+import PageTemplate, { convertPlaceData } from '../../components/layout/PageTemplate';
 import { Place, ALL_PLACES } from '../../data/wiki-data';
 import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { PlaceNavigation } from '@/app/components/layout/PageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
 // --- DATA FOR WORLD'S EDGE MOUNTAINS ---
@@ -14,23 +14,23 @@ const placeData: Place = {
     infoBox: {
         type: "Mountain Range",
         location: { text: "Ukyu & Gondé", link: "/places/ukyu-gonde" },
-        KeyLandmarks: "Kiri Valley, The Garinafin Boneyard"
+        KeyLandmarks: "Kiri Valley, The Boneyard"
     },
     geography: [
         { type: 'text', content: "A vast and rugged mountain range, difficult to traverse and largely unexplored. Its hidden valleys and remote peaks provide a natural sanctuary for those fleeing persecution." },
-        { type: 'ref', data: { book: "The Veiled Throne", chapter: 17, link: "/books/the-veiled-throne#chapter-17" } },
+        { type: 'ref', data: { book: "The Veiled Throne", chapter: 27, link: "/books/the-veiled-throne#chapter-27" } },
     ],
     culture: [
-        { type: 'text', content: "The mountains are a place of deep spiritual significance for the Agon. They contain sacred sites like the garinafin boneyard and ancient places of wisdom like the Temple of Still and Flowing Waters. It is in these mountains that the rebellion rediscovers its own history and forges a new future." },
-        { type: 'ref', data: { book: "Speaking Bones", chapter: 29, link: "/books/speaking-bones#chapter-29" } },
+        { type: 'text', content: "The mountains are a place of deep spiritual significance for the Agon. They contain sacred sites that allow the rebellion to rediscover its history and forge a new future." },
     ],
     history: [
         {
             event: "Refuge and Rediscovery",
             summary: [
-                { type: 'text', content: "After the destruction of their base in Kiri Valley, Princess Théra and the other survivors fled into the World's Edge Mountains. Consumed by grief, Théra's journey through the mountains was both a physical and a psychological one." },
+                { type: 'text', content: "After the destruction of their base in Kiri Valley, Princess Théra and the other survivors fled into the World's Edge Mountains. Her journey through the mountains was both a physical and a psychological one, as she recovered from her grief." },
                 { type: 'ref', data: { book: "The Veiled Throne", chapter: 45, link: "/books/the-veiled-throne#chapter-45" } },
-                { type: 'text', content: "It was here that the rebellion had its most important breakthrough. Guided by the shaman Sataari, they discovered a vast, ancient boneyard of garinafins. The bones found there, combined with the knowledge from a remote monastery, allowed them to create 'living bone' technology and the powerful 'arucuro tocua beasts,' giving them a devastating new weapon and turning the tide of their war against the Lyucu." },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 1, link: "/books/speaking-bones#chapter-1" } },
+                { type: 'text', content: "It was here that the rebellion discovered a vast, ancient garinafin boneyard. The bones provided them with the materials to create new 'living bone' technology and the powerful 'arucuro tocua beasts,' turning the tide of their war against the Lyucu." },
                 { type: 'ref', data: { book: "Speaking Bones", chapter: 29, link: "/books/speaking-bones#chapter-29" } },
                 { type: 'ref', data: { book: "Speaking Bones", chapter: 31, link: "/books/speaking-bones#chapter-31" } },
             ]
@@ -45,8 +45,8 @@ export default function WorldsEdgeMountainsPage() {
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <PlacePageTemplate placeData={placeData} />
+            <PlaceNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PageTemplate pageData={convertPlaceData(placeData)} infoBoxTitle="Location Information" />
         </>
     );
 }

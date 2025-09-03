@@ -1,9 +1,9 @@
 'use client';
 
-import PlacePageTemplate from '../../components/PlacePageTemplate';
+import PageTemplate, { convertPlaceData } from '../../components/layout/PageTemplate';
 import { Place, ALL_PLACES } from '../../data/wiki-data';
 import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { PlaceNavigation } from '@/app/components/layout/PageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
 // --- DATA FOR RUI ---
@@ -19,32 +19,25 @@ const placeData: Place = {
         KeyLandmark: { text: "Mount Kiji", link: "/places/mount-kiji" }
     },
     geography: [
-        { type: 'text', content: "Rui is a significant island located near the smaller island of Dasu. Its most vital geographical feature is Mount Kiji and the Lake Dako at its peak, which produces the lift gas essential for air travel and warfare in Dara." },
+        { type: 'text', content: "Rui is a significant island located near Dasu. Its most vital geographical feature is Mount Kiji, which produces the lift gas essential for air travel and warfare in Dara." },
         { type: 'ref', data: { book: "The Grace of Kings", chapter: 20, link: "/books/the-grace-of-kings#chapter-20" } },
     ],
     culture: [
-        { type: 'text', content: "As the Xana homeland, Rui represents the old imperial power. Under the Lyucu occupation, it becomes a center of cultural conflict, where the invaders attempt to erase Dara's traditions and syncretize the local gods, transforming the Temple of Kiji into the Temple of Péa-Kiji." },
+        { type: 'text', content: "As the Xana homeland, Rui represents the old imperial power. Under the Lyucu occupation, it becomes a center of cultural conflict, where the invaders attempt to erase Dara's traditions and syncretize the local gods." },
         { type: 'ref', data: { book: "The Veiled Throne", chapter: 16, link: "/books/the-veiled-throne#chapter-16" } },
     ],
     history: [
         {
-            event: "The Dandelion Rebellion",
-            summary: [
-                { type: 'text', content: "During the rebellion, the Xana bureaucrat Kindo Marana traveled to Rui to rebuild the Imperial air force. He found the Mount Kiji Air Base in a state of corrupt disrepair and ruthlessly restored it to efficiency." },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 20, link: "/books/the-grace-of-kings#chapter-20" } },
-            ]
-        },
-        {
             event: "The Chrysanthemum-Dandelion War",
             summary: [
-                { type: 'text', content: "Rui was the target of the first major offensive in Kuni Garu's war against Mata Zyndu. Marshal Gin Mazoti led a surprise attack through the abandoned undersea Grand Tunnels, capturing the island and its capital, Kriphi. This strategic victory gave Kuni control of the airship fleet and was a turning point in the war." },
+                { type: 'text', content: "Rui was the target of the first major offensive in Kuni Garu's war against Mata Zyndu. Marshal Gin Mazoti led a surprise attack through abandoned undersea tunnels, capturing the island. This strategic victory gave Kuni control of the airship fleet and was a turning point in the war." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 43, link: "/books/the-grace-of-kings#chapter-43" } },
             ]
         },
         {
             event: "The Lyucu War",
             summary: [
-                { type: 'text', content: "After being conquered by the Lyucu, Rui became, along with Dasu, the heart of their occupation. It was the site of the first major Dara victory against the invaders, the Battle of Kriphi Harbor, where Gin Mazoti's fleet of new 'phantom' airships devastated the Lyucu navy. The island remained a central point of conflict for the remainder of the war." },
+                { type: 'text', content: "After being conquered by the Lyucu, Rui became the heart of their occupation. It was the site of the first major Dara victory against the invaders, the Battle of Kriphi Harbor, where Gin Mazoti's fleet devastated the Lyucu navy." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 42, link: "/books/the-wall-of-storms#chapter-42" } },
             ]
         },
@@ -58,8 +51,8 @@ export default function RuiPage() {
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <PlacePageTemplate placeData={placeData} />
+            <PlaceNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PageTemplate pageData={convertPlaceData(placeData)} infoBoxTitle="Location Information" />
         </>
     );
 }

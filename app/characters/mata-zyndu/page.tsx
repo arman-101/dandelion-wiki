@@ -1,16 +1,15 @@
-'use client';
+import { Metadata } from 'next';
 
-import CharacterPageTemplate from '../../components/CharacterPageTemplate';
+import PageTemplate, { convertCharacterData } from '../../components/layout/PageTemplate';
+import { generateCharacterMetadata } from '@/app/utils/metadata';
 import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
-import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
-import { getSurroundingPages } from '@/app/utils/navigationUtils';
+import { CharacterNavigation } from '@/app/components/layout/PageNavigation';
 
 // --- DATA FOR MATA ZYNDU (WITH FULL INLINE REFERENCES) ---
 const characterData: Character = {
     name: "Mata Zyndu",
     image: "/characters/mata-zyndu.png",
-    introduction: "Mata Zyndu, the last heir of the noble Zyndu clan, is one of the two central protagonists of The Grace of Kings. A peerless warrior driven by honor and vengeance, Mata represents the philosophy of the chrysanthemum - nobility, tradition, and unbending honor in the face of adversity.",
+    introduction: "Mata Zyndu, the last heir of the noble Zyndu clan, is one of the two central protagonists of *The Grace of Kings*. A peerless warrior driven by a powerful code of honor and a deep-seated need for vengeance, Mata represents the philosophy of the chrysanthemum—nobility, tradition, and unbending strength in the face of adversity.",
     infoBox: {
         aliases: "The Hegemon, Marshal of Cocru, The Chrysanthemum, The Butcher of Wolf's Paw",
         occupation: "Noble Warrior, Marshal of Cocru, Hegemon of Dara",
@@ -32,67 +31,68 @@ const characterData: Character = {
         lastAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" }
     },
     appearanceAndPersonality: [
-        { type: 'text', content: "Mata Zyndu is described as physically imposing and extraordinarily strong, with a noble bearing that reflects his aristocratic heritage. [cite: 310] His most distinct feature is his rare, double-pupiled eyes, which are said to grant him supernatural sight and make it impossible for others to meet his gaze. [cite: 314, 315] His personality is defined by his unwavering commitment to honor, his deep sense of duty to his family's legacy, and his belief in the superiority of noble blood and martial virtue. He is a man of few words but immense action, whose presence commands respect and fear." },
+        { type: 'text', content: "Mata Zyndu is a giant of a man, physically imposing and extraordinarily strong, with a noble bearing that reflects his aristocratic heritage. His most distinct feature is his rare, double-pupiled eyes, which are said to grant him supernatural sight." },
         { type: 'ref', data: { book: "The Grace of Kings", chapter: 2, link: "/books/the-grace-of-kings#chapter-2" } },
+        { type: 'text', content: "His personality is defined by an unwavering commitment to honor, a deep sense of duty to his family's legacy, and a belief in the superiority of noble blood and martial virtue. He is a man of few words but immense action, whose presence commands both respect and fear. While he values honor, his single-minded pursuit of vengeance can lead him to acts of shocking brutality, revealing a dark, ruthless streak beneath his noble exterior." },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 23, link: "/books/the-grace-of-kings#chapter-23" } },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 31, link: "/books/the-grace-of-kings#chapter-31" } },
     ],
     history: [
         {
-            era: "Early Life and Family Tragedy (The Grace of Kings)",
+            era: "The Grace of Kings",
             summary: [
-                { type: 'text', content: "Born in Farun in the Tunoa Islands, Mata is the last heir of the once-great Zyndu clan. His grandfather, Marshal Dazu Zyndu, was a brilliant Cocru general known as the 'Bearded Tortoise' for his unbeatable defensive tactics against the Xana invasion." },
+                { type: 'text', content: "Mata Zyndu's entire life is defined by the tragic history of his clan and his singular quest to restore its honor." }
+            ]
+        },
+        {
+            era: "A Legacy of Vengeance",
+            summary: [
+                { type: 'text', content: "Born in the Tunoa Islands, Mata is the last heir of the once-great Zyndu clan. His grandfather, Marshal Dazu Zyndu, was a brilliant general betrayed by his own king during the Xana invasion. After being forced to surrender, Dazu's army was buried alive." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 2, link: "/books/the-grace-of-kings#chapter-2" } },
-                { type: 'text', content: " However, Dazu was betrayed by his own suspicious king, forced into an open battle, and captured. The Xana general Gotha Tonyeti reneged on his promise of safety and had Dazu's entire surrendered army buried alive. The Zyndu Clan was systematically exterminated, with only Mata's uncle Phin escaping with the infant Mata." },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 2, link: "/books/the-grace-of-kings#chapter-2" } },
-                { type: 'text', content: " Raised in exile with the singular purpose of vengeance, Mata's life has been shaped by his uncle's constant refrain: 'Do not forget.'" },
+                { type: 'text', content: "Emperor Mapidéré then ordered the extermination of the entire Zyndu clan. Only Mata's uncle, Phin Zyndu, escaped, saving the infant Mata. Raised in exile and poverty, Mata was forged by his uncle's all-consuming purpose, embodied by the constant refrain: 'Do not forget.'" },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 2, link: "/books/the-grace-of-kings#chapter-2" } },
             ]
         },
         {
-            era: "Rebellion and Rise to Power (The Grace of Kings)",
+            era: "The Rebellion and Rise to Power",
             summary: [
-                { type: 'text', content: "When the rebellion against the Xana Empire begins, Mata seizes his opportunity for vengeance. He assassinates the local Xana commander and reclaims his ancestral castle, recovering his grandfather's legendary weapons: the composite bronze-and-steel sword Na-aroénna ('The Ender of Doubts') and the fearsome toothed cudgel Goremaw." },
+                { type: 'text', content: "When rebellion against the Xana Empire begins, Mata seizes his opportunity. He assassinates the local Xana commander, reclaims his ancestral castle, and recovers his family's legendary weapons: the sword Na-aroénna ('The Ender of Doubts') and the cudgel Goremaw." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 7, link: "/books/the-grace-of-kings#chapter-7" } },
-                { type: 'text', content: " His godlike martial prowess is unleashed as he and Phin single-handedly slaughter most of the two-hundred-man Xana garrison. News of his incredible victory spreads, inspiring hundreds of volunteers to join his cause." },
+                { type: 'text', content: "In a display of godlike martial prowess, he and Phin slaughter the Xana garrison, inspiring hundreds to join his cause. He forms a sworn brotherhood with Kuni Garu, becoming a key military leader in the rebellion." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 7, link: "/books/the-grace-of-kings#chapter-7" } },
-                { type: 'text', content: " He forms a crucial alliance and sworn brotherhood with [[Kuni Garu|/characters/kuni-garu]], becoming a key figure in the rebellion and eventually being named Marshal of Cocru." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 19, link: "/books/the-grace-of-kings#chapter-19" } },
+                { type: 'text', content: "However, the first signs of his ruthlessness appear after the fall of Dimu, where he orders the massacre of the surrendered garrison, creating the first true fracture in his friendship with Kuni." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 23, link: "/books/the-grace-of-kings#chapter-23" } },
             ]
         },
         {
-            era: "The Hegemon and Civil War (The Grace of Kings)",
+            era: "Hegemon and the Civil War",
             summary: [
-                { type: 'text', content: "After the fall of the Xana Empire, Mata becomes consumed by paranoia and betrayal. Believing that [[Kuni Garu|/characters/kuni-garu]] has stolen his glory by capturing Pan first, he burns the Imperial capital and declares himself Hegemon." },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 33, link: "/books/the-grace-of-kings#chapter-33" } },
-                { type: 'text', content: " His reign is marked by brutality, most notably the massacre of 20,000 prisoners at Wolf's Paw. His emotional state deteriorates further after the tragic deaths of his uncle Phin and Princess Kikomi, which devastates him." },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 31, link: "/books/the-grace-of-kings#chapter-31" } },
+                { type: 'text', content: "Mata's descent into tyranny is hastened by personal tragedy, particularly the murder of his uncle Phin and the death of Princess Kikomi, which leave him emotionally shattered." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 27, link: "/books/the-grace-of-kings#chapter-27" } },
-                { type: 'text', content: " During this time, his only solace comes from his growing bond with Lady Mira, a woman from his homeland who becomes his confidante and reminds him of a life beyond war." },
+                { type: 'text', content: "After his victory at the Battle of Wolf's Paw, he commits his most monstrous act: sacrificing 20,000 surrendered prisoners to the sea, earning the epithet 'Butcher of Wolf's Paw.'" },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 31, link: "/books/the-grace-of-kings#chapter-31" } },
+                { type: 'text', content: "Believing Kuni Garu stole his glory by capturing Pan first, Mata burns the capital, kills the boy-emperor, and declares himself Hegemon, sparking a new civil war." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 33, link: "/books/the-grace-of-kings#chapter-33" } },
-            ]
-        },
-        {
-            era: "Final Battle and Death (The Grace of Kings)",
-            summary: [
-                { type: 'text', content: "The civil war between Mata and [[Kuni Garu|/characters/kuni-garu]] culminates in a brutal conflict. After three years of war, Mata's forces are starving and depleted. He accepts a peace treaty from Kuni, only for Kuni to break it and launch a massive surprise attack." },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 50, link: "/books/the-grace-of-kings#chapter-50" } },
-                { type: 'text', content: " The final confrontation takes place at Rana Kida, where Mata's army is surrounded. As his army's morale collapses, he returns to his tent to discover that Lady Mira has taken her own life rather than watch him die. Her death is the final blow that shatters his will." },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 50, link: "/books/the-grace-of-kings#chapter-50" } },
-                { type: 'text', content: " After a final, heroic charge, he takes his own life on a snowy beach rather than be captured, ending the long and bloody Chrysanthemum-Dandelion War." },
+                { type: 'text', content: "The brutal war culminates in Mata's army being surrounded and on the verge of collapse. The final blow comes when he discovers his confidante, Lady Mira, has taken her own life rather than watch him die. Cradling her body, he leads a final, suicidal charge and ultimately takes his own life on a snowy beach, ending the Chrysanthemum-Dandelion War." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 50, link: "/books/the-grace-of-kings#chapter-50" } },
             ]
         },
     ]
 };
 
+// Generate metadata for SEO
+export async function generateMetadata(): Promise<Metadata> {
+    return generateCharacterMetadata(characterData);
+}
+
 export default function MataZynduPage() {
-    const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <CharacterPageTemplate characterData={characterData} />
+            <CharacterNavigation prevPage={null} nextPage={null} returnLink={returnLink} />
+            <PageTemplate pageData={convertCharacterData(characterData)} infoBoxTitle="Biographical Information" />
         </>
     );
 }

@@ -1,9 +1,9 @@
 'use client';
 
-import PlacePageTemplate from '../../components/PlacePageTemplate';
+import PageTemplate, { convertPlaceData } from '../../components/layout/PageTemplate';
 import { Place, ALL_PLACES } from '../../data/wiki-data';
 import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { PlaceNavigation } from '@/app/components/layout/PageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
 // --- DATA FOR GÉJIRA ---
@@ -26,7 +26,7 @@ const placeData: Place = {
         { type: 'text', content: "Géjira is a significant and resource-rich territory on the Big Island, representing a major portion of the lands once known as Géfica. Its strategic importance makes it a powerful seat for its ruler." },
     ],
     culture: [
-        { type: 'text', content: "Under Queen Gin Mazoti's rule, Géjira became the heart of the 'Swords' faction of the Dandelion Court—a culture that valued martial prowess, loyalty, and a degree of independence. It also became known as a sanctuary for dissenters, as Gin granted refuge to the defeated rebel leaders Noda Mi and Doru Solofi, asserting her kingdom's autonomy." },
+        { type: 'text', content: "Under Queen Gin Mazoti's rule, Géjira became the heart of the 'Swords' faction of the Dandelion Court—a culture that valued martial prowess, loyalty, and a degree of independence. It also became known as a sanctuary for dissenters, as Gin granted refuge to the defeated rebel leaders Noda Mi and Doru Solofi." },
         { type: 'ref', data: { book: "The Wall of Storms", chapter: 8, link: "/books/the-wall-of-storms#chapter-8" } },
         { type: 'ref', data: { book: "The Wall of Storms", chapter: 28, link: "/books/the-wall-of-storms#chapter-28" } },
     ],
@@ -34,14 +34,14 @@ const placeData: Place = {
         {
             event: "Founding after the Rebellion",
             summary: [
-                { type: 'text', content: "Following the end of the Chrysanthemum-Dandelion War, the newly crowned Emperor Ragin (Kuni Garu) rewarded his most brilliant commander for her loyalty and strategic genius. He named Gin Mazoti the Queen of Géjira, making her the first woman to rule a major state in Dara in her own right." },
+                { type: 'text', content: "Following the end of the Chrysanthemum-Dandelion War, the newly crowned Emperor Ragin rewarded his most brilliant commander, naming Gin Mazoti the Queen of Géjira. This made her the first woman to rule a major state in Dara in her own right." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 51, link: "/books/the-grace-of-kings#chapter-51" } },
             ]
         },
         {
             event: "A Center of Dissent",
             summary: [
-                { type: 'text', content: "During the reign of Emperor Ragin, Géjira served as an important political center. The radical scholar Zomi Kidosu served in Queen Gin's court at Nokida for a time. After the Hegemon Cults were defeated in Tunoa, the fugitive leaders Noda Mi and Doru Solofi fled to Géjira. Queen Gin, on the advice of Zomi, granted them and their followers refuge. This act was a clear assertion of her power and independence, and it created significant political friction with Empress Jia, ultimately contributing to Jia's plot against the Marshal." },
+                { type: 'text', content: "During the reign of Emperor Ragin, Géjira served as an important political center. Zomi Kidosu served in Queen Gin's court at Nokida for a time. After the Hegemon Cults were defeated, the fugitive leaders Noda Mi and Doru Solofi fled to Géjira. Gin's decision to grant them refuge was a clear assertion of her power and created significant political friction with Empress Jia." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 23, link: "/books/the-wall-of-storms#chapter-23" } },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 28, link: "/books/the-wall-of-storms#chapter-28" } },
             ]
@@ -56,8 +56,8 @@ export default function GejiraPage() {
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <PlacePageTemplate placeData={placeData} />
+            <PlaceNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PageTemplate pageData={convertPlaceData(placeData)} infoBoxTitle="Location Information" />
         </>
     );
 }

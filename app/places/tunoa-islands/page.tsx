@@ -1,9 +1,9 @@
 'use client';
 
-import PlacePageTemplate from '../../components/PlacePageTemplate';
+import PageTemplate, { convertPlaceData } from '../../components/layout/PageTemplate';
 import { Place, ALL_PLACES } from '../../data/wiki-data';
 import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { PlaceNavigation } from '@/app/components/layout/PageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
 // --- DATA FOR TUNOA ISLANDS ---
@@ -28,14 +28,14 @@ const placeData: Place = {
         {
             event: "The Dandelion Rebellion",
             summary: [
-                { type: 'text', content: "At the start of the rebellion, Mata Zyndu reclaimed his ancestral home in Farun by assassinating the local Xana commander, Datun Zatoma. He and his uncle Phin then single-handedly slaughtered most of the 200-man garrison. This incredible feat of arms ignited the spirit of rebellion in the Tunoa Islands, and hundreds of volunteers flocked to join Mata's cause." },
+                { type: 'text', content: "At the start of the rebellion, Mata Zyndu reclaimed his ancestral home here by assassinating the local Xana commander. This incredible feat of arms ignited the spirit of rebellion in the Tunoa Islands, and hundreds of volunteers flocked to join Mata's cause." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 7, link: "/books/the-grace-of-kings#chapter-7" } },
             ]
         },
         {
             event: "The Hegemon Cults",
             summary: [
-                { type: 'text', content: "During the reign of Emperor Ragin, the Tunoa Islands became a hotbed for the rebellious Hegemon Cults. Led by Noda Mi and Doru Solofi, these cults venerated the ghost of Mata Zyndu and used 'magic mirrors' to build a fanatical army, posing a serious threat to the Dandelion Dynasty." },
+                { type: 'text', content: "During the reign of Emperor Ragin, the Tunoa Islands became a hotbed for the rebellious Hegemon Cults. Led by Noda Mi and Doru Solofi, these cults venerated the ghost of Mata Zyndu, posing a serious threat to the Dandelion Dynasty." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 20, link: "/books/the-wall-of-storms#chapter-20" } },
             ]
         },
@@ -49,8 +49,8 @@ export default function TunoaIslandsPage() {
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <PlacePageTemplate placeData={placeData} />
+            <PlaceNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PageTemplate pageData={convertPlaceData(placeData)} infoBoxTitle="Location Information" />
         </>
     );
 }

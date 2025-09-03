@@ -1,10 +1,9 @@
-'use client';
+import { Metadata } from 'next';
 
-import CharacterPageTemplate from '../../components/CharacterPageTemplate';
+import PageTemplate, { convertCharacterData } from '../../components/layout/PageTemplate';
+import { generateCharacterMetadata } from '@/app/utils/metadata';
 import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
-import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
-import { getSurroundingPages } from '@/app/utils/navigationUtils';
+import { CharacterNavigation } from '@/app/components/layout/PageNavigation';
 
 const characterData: Character = {
     name: "Takval Aragoz",
@@ -14,7 +13,7 @@ const characterData: Character = {
         aliases: "Prince of the Agon",
         occupation: "Prince, Rebel Leader",
         placeOfBirth: { text: "Ukyu-Gondé", link: "/places/ukyu-gonde" },
-        status: "Alive",
+        status: "Deceased",
         gender: "Male",
         significantOther: { text: "Princess Théra", link: "/characters/princess-thera" },
         relatives: [
@@ -26,10 +25,10 @@ const characterData: Character = {
         affiliation: "Agon Rebellion",
         nationality: { text: "Agon", link: "/concepts/agon" },
         firstAppeared: { text: "The Wall of Storms", link: "/books/the-wall-of-storms" },
-        lastAppeared: { text: "The Veiled Throne", link: "/books/the-veiled-throne" }
+        lastAppeared: { text: "Speaking Bones", link: "/books/speaking-bones" }
     },
     appearanceAndPersonality: [
-        { type: 'text', content: "Takval is a proud and capable warrior, deeply rooted in the traditions of his Agon heritage. He is a skilled fighter and a natural leader. His relationship with Théra is a journey of cultural exchange and mutual respect, as he learns to appreciate her scientific approach to problems, while she learns to value the strength of his people's traditions. He is a bridge between two cultures, embodying the potential for a new, syncretic way of life." },
+        { type: 'text', content: "Takval is a proud and capable warrior, deeply rooted in the traditions of his Agon heritage. He is a skilled fighter and a natural leader. His relationship with Théra is a journey of cultural exchange and mutual respect, as he learns to appreciate her scientific approach while she learns to value his people's traditions. He is a bridge between two cultures, embodying the potential for a new way of life." },
         { type: 'ref', data: { book: "The Veiled Throne", chapter: 7, link: "/books/the-veiled-throne#chapter-7" } },
         { type: 'ref', data: { book: "The Veiled Throne", chapter: 12, link: "/books/the-veiled-throne#chapter-12" } },
     ],
@@ -37,33 +36,42 @@ const characterData: Character = {
         {
             era: "The Wall of Storms",
             summary: [
-                { type: 'text', content: "Takval was brought to Dara as a political hostage, part of a contingent of Agon who were offered as allies to the Dandelion Dynasty. He married Princess Théra to forge an alliance, and he joined her expedition across the Wall of Storms to his homeland." },
+                { type: 'text', content: "Takval arrived in Dara as a messenger and prince of the Agon. He married Princess Théra to forge a crucial military alliance and joined her expedition across the Wall of Storms to his homeland." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 62, link: "/books/the-wall-of-storms#chapter-62" } },
             ]
         },
         {
             era: "The Veiled Throne",
             summary: [
-                { type: 'text', content: "In Ukyu-Gondé, he and Théra worked to unite the exiled Agon tribes. He was forced to confront the treachery of his own uncle, Volyu, who was a Lyucu collaborator. With Théra's help, he deposed his uncle and solidified his leadership of the Agon resistance." },
+                { type: 'text', content: "In Ukyu-Gondé, he and Théra worked to unite the exiled Agon tribes, deposing his traitorous uncle, Volyu. His partnership with Théra, both personal and strategic, became the cornerstone of the Agon rebellion, though they suffered a devastating defeat at Kiri Valley." },
                 { type: 'ref', data: { book: "The Veiled Throne", chapter: 13, link: "/books/the-veiled-throne#chapter-13" } },
-                { type: 'ref', data: { book: "The Veiled Throne", chapter: 14, link: "/books/the-veiled-throne#chapter-14" } },
-                { type: 'text', content: "He fought bravely in numerous battles, including the raid on the Lyucu city-ship and the defense of their secret base in Kiri Valley. His partnership with Théra, both personal and strategic, became the cornerstone of the Agon rebellion." },
-                { type: 'ref', data: { book: "The Veiled Throne", chapter: 9, link: "/books/the-veiled-throne#chapter-9" } },
-                { type: 'ref', data: { book: "The Veiled Throne", chapter: 17, link: "/books/the-veiled-throne#chapter-17" } },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 27, link: "/books/the-veiled-throne#chapter-27" } },
+            ]
+        },
+        {
+            era: "Speaking Bones",
+            summary: [
+                { type: 'text', content: "While leading the surviving rebels through the frozen north, Takval was gravely injured after falling into an icy sea. In a final, heroic act, the dying Takval convinced Théra to ritually kill him as part of a sacred Agon succession ceremony, making her his heir. He consented for his body to be used in a booby-trapped coffin, a final gambit that successfully assassinated the Lyucu leader Pékyu Cudyu." },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 11, link: "/books/speaking-bones#chapter-11" } },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 15, link: "/books/speaking-bones#chapter-15" } },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 16, link: "/books/speaking-bones#chapter-16" } },
             ]
         },
     ]
 };
 
+// Generate metadata for SEO
+export async function generateMetadata(): Promise<Metadata> {
+    return generateCharacterMetadata(characterData);
+}
+
 export default function TakvalAragozPage() {
-    const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <CharacterPageTemplate characterData={characterData} />
+            <CharacterNavigation prevPage={null} nextPage={null} returnLink={returnLink} />
+            <PageTemplate pageData={convertCharacterData(characterData)} infoBoxTitle="Biographical Information" />
         </>
     );
 }

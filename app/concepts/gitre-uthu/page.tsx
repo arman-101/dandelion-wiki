@@ -1,9 +1,9 @@
 'use client';
 
-import ConceptPageTemplate from '../../components/ConceptPageTemplate';
+import PageTemplate, { convertConceptData } from '../../components/layout/PageTemplate';
 import { Concept, ALL_CONCEPTS } from '../../data/wiki-data';
 import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { ConceptNavigation } from '@/app/components/layout/PageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
 // --- DATA FOR GITRÉ ÜTHU ---
@@ -14,13 +14,16 @@ const conceptData: Concept = {
     infoBox: {
         Type: "Magical Artifact",
         GivenBy: { text: "Lutho", link: "/gods/lutho" },
-        GivenTo: { text: "Luan Zya", link: "/characters/luan-zya" },
+        Owner: { text: "Luan Zya", link: "/characters/luan-zya" },
         Content: "Military Strategy, Philosophy, History",
     },
     details: [
-        { type: 'text', content: "After his failed kite attack, a wandering Luan Zya encountered a mysterious teacher—the god Lutho in disguise—who gave him the book. The pages of Gitré Üthu are blank, but when a reader contemplates a problem, the book fills with relevant text, diagrams, and historical precedents, written in the blood of all the scholars who came before." },
+        { type: 'text', content: "After his failed kite attack, a wandering Luan Zya encountered the god Lutho in disguise, who gave him the book. The pages of Gitré Üthu are blank, but when a reader contemplates a problem, the book fills with relevant text and diagrams." },
         { type: 'ref', data: { book: "The Grace of Kings", chapter: 18, link: "/books/the-grace-of-kings#chapter-18" } },
-        { type: 'text', content: "The book is not a simple instruction manual; it offers possibilities and perspectives, requiring a wise reader to interpret and apply its lessons. It served as Luan Zya's most powerful tool, providing the strategic insights that allowed Kuni Garu's small band of rebels to challenge and ultimately defeat a mighty empire." },
+        { type: 'text', content: "The book is not a simple instruction manual; it offers possibilities and perspectives, requiring a wise reader to interpret its lessons. It served as Luan Zya's most powerful tool, providing the strategic insights that allowed Kuni Garu's rebels to defeat a mighty empire." },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 28, link: "/books/the-grace-of-kings#chapter-28" } },
+        { type: 'text', content: "Luan Zya died clutching the book, and inside, his student Zomi Kidosu found a final, coded message containing the secret to defeating the Lyucu invasion fleet." },
+        { type: 'ref', data: { book: "The Wall of Storms", chapter: 51, link: "/books/the-wall-of-storms#chapter-51" } },
     ]
 };
 
@@ -31,8 +34,8 @@ export default function GitreUthuPage() {
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <ConceptPageTemplate conceptData={conceptData} />
+            <ConceptNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PageTemplate pageData={convertConceptData(conceptData)} infoBoxTitle="Concept Information" />
         </>
     );
 }

@@ -1,9 +1,9 @@
 'use client';
 
-import PlacePageTemplate from '../../components/PlacePageTemplate';
+import PageTemplate, { convertPlaceData } from '../../components/layout/PageTemplate';
 import { Place, ALL_PLACES } from '../../data/wiki-data';
 import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { PlaceNavigation } from '@/app/components/layout/PageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
 // --- DATA FOR UKYU & GONDÉ ---
@@ -24,19 +24,19 @@ const placeData: Place = {
         ]
     },
     geography: [
-        { type: 'text', content: "The continent is primarily composed of vast, harsh scrublands and deserts, such as the Lurodia Tanta. This unforgiving environment forged its inhabitants into hardy, nomadic peoples. It is a land of massive scale, with geographical features like the World's Edge Mountains and the Sea of Tears." },
+        { type: 'text', content: "The continent is primarily composed of vast, harsh scrublands and deserts. This unforgiving environment forged its inhabitants into hardy, nomadic peoples." },
         { type: 'ref', data: { book: "The Wall of Storms", chapter: 48, link: "/books/the-wall-of-storms#chapter-48" } },
     ],
     culture: [
-        { type: 'text', content: "The dominant cultures are the Lyucu and the Agon, two peoples shaped by their symbiotic and often brutal relationship with the flying war beasts, the garinafins. Their societies are nomadic, martial, and organized into clans, valuing strength and survival above all else. It is a land of deep history, with ancient, forgotten civilizations evidenced by the massive geoglyphs in the salt flats." },
+        { type: 'text', content: "The dominant cultures are the Lyucu and the Agon, two peoples shaped by their symbiotic and often brutal relationship with the flying war beasts, the garinafins. Their societies are nomadic and martial, valuing strength and survival above all else. The land also holds the secrets of a forgotten, settled civilization, whose history is rediscovered by Théra's children." },
         { type: 'ref', data: { book: "The Wall of Storms", chapter: 48, link: "/books/the-wall-of-storms#chapter-48" } },
-        { type: 'ref', data: { book: "The Veiled Throne", chapter: 43, link: "/books/the-veiled-throne#chapter-43" } },
+        { type: 'ref', data: { book: "Speaking Bones", chapter: 7, link: "/books/speaking-bones#chapter-7" } },
     ],
     history: [
         {
             event: "The Lost Expedition",
             summary: [
-                { type: 'text', content: "Ukyu & Gondé was the destination of Emperor Mapidéré's lost expedition. The Dara fleet, after surviving the Wall of Storms, was not destroyed by plague as the Lyucu later claimed, but was systematically tricked, disarmed, and enslaved by the cunning Pékyu Tenryo. For years, the Lyucu learned Dara's technology and tactics from their captives before slaughtering them." },
+                { type: 'text', content: "Ukyu & Gondé was the destination of Emperor Mapidéré's lost expedition. The Dara fleet was systematically tricked, disarmed, and enslaved by the cunning Pékyu Tenryo, who used their knowledge to build his invasion force." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 47, link: "/books/the-wall-of-storms#chapter-47" } },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 49, link: "/books/the-wall-of-storms#chapter-49" } },
             ]
@@ -44,7 +44,7 @@ const placeData: Place = {
         {
             event: "The Dara Rebellion",
             summary: [
-                { type: 'text', content: "After the Lyucu invasion of Dara, Ukyu & Gondé became the target of a counter-invasion led by Princess Théra and Takval Aragoz. They forged an alliance with the exiled Agon tribes and waged a long guerrilla war against the Lyucu empire from within its own borders, creating a critical second front that was instrumental in the ultimate defeat of the Lyucu." },
+                { type: 'text', content: "The continent became the target of a counter-invasion led by Princess Théra and Takval Aragoz. They forged an alliance with the exiled Agon tribes and waged a long guerrilla war against the Lyucu empire from within its own borders, a critical second front that was instrumental in their ultimate defeat." },
                 { type: 'ref', data: { book: "The Veiled Throne", chapter: 13, link: "/books/the-veiled-throne#chapter-13" } },
             ]
         },
@@ -58,8 +58,8 @@ export default function UkyuGondePage() {
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <PlacePageTemplate placeData={placeData} />
+            <PlaceNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PageTemplate pageData={convertPlaceData(placeData)} infoBoxTitle="Location Information" />
         </>
     );
 }

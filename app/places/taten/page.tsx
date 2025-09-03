@@ -1,9 +1,9 @@
 'use client';
 
-import PlacePageTemplate from '../../components/PlacePageTemplate';
+import PageTemplate, { convertPlaceData } from '../../components/layout/PageTemplate';
 import { Place, ALL_PLACES } from '../../data/wiki-data';
 import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { PlaceNavigation } from '@/app/components/layout/PageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
 // --- DATA FOR TATEN ---
@@ -18,19 +18,19 @@ const placeData: Place = {
         KeyInhabitants: { text: "Lyucu", link: "/concepts/lyucu" }
     },
     geography: [
-        { type: 'text', content: "As a nomadic city, Taten's location is not fixed. It moves across the vast scrublands of Ukyu-Gondé, following the needs of the pékyu's herds and armies. It is often situated near significant locations, such as Victory Cove, where the captured Dara city-ships were kept." },
+        { type: 'text', content: "As a nomadic city, Taten's location is not fixed. It moves across the vast scrublands of Ukyu-Gondé, following the needs of the pékyu's herds and armies." },
         { type: 'ref', data: { book: "The Veiled Throne", chapter: 1, link: "/books/the-veiled-throne#chapter-1" } },
     ],
     culture: [
-        { type: 'text', content: "Taten is the heart of the Lyucu's harsh, martial culture. Life in the tent-city is organized around the pékyu and the needs of the military. It is a place of warriors, garinafin riders, and the complex clan politics that define the Lyucu people." },
+        { type: 'text', content: "Taten is the heart of the Lyucu's harsh, martial culture. Life in the tent-city is organized around the pékyu and the needs of the military. It is a place of warriors, garinafin riders, and complex clan politics." },
     ],
     history: [
         {
-            event: "The Lyucu Power Seat",
+            event: "Center of the Invasion",
             summary: [
-                { type: 'text', content: "Taten was the center from which Pékyu Tenryo planned and launched his invasion of Dara. It was here that the captured Dara technology was studied and adapted for Lyucu use. It was also the site of the early political maneuvering of figures like Goztan Ryoto and the pékyu's children, Tanvanaki and Cudyu." },
+                { type: 'text', content: "Taten was the center from which Pékyu Tenryo planned and launched his invasion of Dara. Years later, after his death, his son Pékyu Cudyu prepared a massive reinforcement fleet there. However, the city became the site of his downfall when Théra's rebels infiltrated the city, sparked a garinafin uprising, and assassinated Cudyu with a booby-trapped coffin, destroying his invasion fleet before it could set sail." },
                 { type: 'ref', data: { book: "The Veiled Throne", chapter: 1, link: "/books/the-veiled-throne#chapter-1" } },
-                { type: 'ref', data: { book: "The Wall of Storms", chapter: 49, link: "/books/the-wall-of-storms#chapter-49" } },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 16, link: "/books/speaking-bones#chapter-16" } },
             ]
         },
     ]
@@ -43,8 +43,8 @@ export default function TatenPage() {
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <PlacePageTemplate placeData={placeData} />
+            <PlaceNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PageTemplate pageData={convertPlaceData(placeData)} infoBoxTitle="Location Information" />
         </>
     );
 }

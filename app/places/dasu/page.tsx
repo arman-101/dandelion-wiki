@@ -1,9 +1,9 @@
 'use client';
 
-import PlacePageTemplate from '../../components/PlacePageTemplate';
+import PageTemplate, { convertPlaceData } from '../../components/layout/PageTemplate';
 import { Place, ALL_PLACES } from '../../data/wiki-data';
 import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { PlaceNavigation } from '@/app/components/layout/PageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
 // --- DATA FOR DASU ---
@@ -34,7 +34,7 @@ const placeData: Place = {
         {
             event: "Kuni Garu's Exile",
             summary: [
-                { type: 'text', content: "After the Dandelion Rebellion, Mata Zyndu 'rewarded' Kuni Garu with the kingship of Dasu, intending it as an effective exile. To lull Mata's spies, Kuni burned his fleet upon arrival, signaling he had no intention of leaving. In secret, however, he and his followers began transforming the island into a powerful state." },
+                { type: 'text', content: "Mata Zyndu 'rewarded' Kuni Garu with the kingship of Dasu, intending it as an exile. In secret, however, Kuni and his followers began transforming the island into a powerful state." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 35, link: "/books/the-grace-of-kings#chapter-35" } },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 36, link: "/books/the-grace-of-kings#chapter-36" } },
             ]
@@ -42,7 +42,7 @@ const placeData: Place = {
         {
             event: "The Rise of a New Power",
             summary: [
-                { type: 'text', content: "Dasu became the staging ground for Kuni's eventual return to power. It was here that he recruited Marshal Gin Mazoti and, with the help of Luan Zya, built a new kind of army and state. From Dasu, Gin launched the surprise attack on the neighboring island of Rui through the Grand Tunnels, a decisive first strike in the Chrysanthemum-Dandelion War." },
+                { type: 'text', content: "Dasu became the staging ground for Kuni's return to power. It was here that he recruited Marshal Gin Mazoti. From Dasu, Gin launched the surprise attack on the neighboring island of Rui through undersea tunnels, a decisive first strike in the civil war." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 41, link: "/books/the-grace-of-kings#chapter-41" } },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 43, link: "/books/the-grace-of-kings#chapter-43" } },
             ]
@@ -50,7 +50,7 @@ const placeData: Place = {
         {
             event: "The Lyucu Invasion",
             summary: [
-                { type: 'text', content: "Years later, Dasu was the first place in Dara to be attacked by the invading Lyucu fleet. The island's defenses were overwhelmed, and Prince Timu, who was governing the island, was forced to surrender to save his people from slaughter. Dasu, along with Rui, became the heart of the Lyucu occupation." },
+                { type: 'text', content: "Years later, Dasu was the first place in Dara to be attacked by the invading Lyucu fleet. The island's defenses were overwhelmed, and Prince Timu, who was governing the island, was forced to surrender to save his people from slaughter. Dasu became the heart of the Lyucu occupation." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 35, link: "/books/the-wall-of-storms#chapter-35" } },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 37, link: "/books/the-wall-of-storms#chapter-37" } },
             ]
@@ -65,8 +65,8 @@ export default function DasuPage() {
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <PlacePageTemplate placeData={placeData} />
+            <PlaceNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PageTemplate pageData={convertPlaceData(placeData)} infoBoxTitle="Location Information" />
         </>
     );
 }

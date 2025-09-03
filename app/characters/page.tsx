@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ALL_CHARACTERS_DATA } from '../data/wiki-data'; // Import the master list

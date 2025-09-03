@@ -1,15 +1,14 @@
-'use client';
+import { Metadata } from 'next';
 
-import CharacterPageTemplate from '../../components/CharacterPageTemplate';
+import PageTemplate, { convertCharacterData } from '../../components/layout/PageTemplate';
+import { generateCharacterMetadata } from '@/app/utils/metadata';
 import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
-import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
-import { getSurroundingPages } from '@/app/utils/navigationUtils';
+import { CharacterNavigation } from '@/app/components/layout/PageNavigation';
 
 const characterData: Character = {
     name: "King Mocri",
     image: "/characters/king-mocri.png",
-    introduction: "King Mocri was the proud and honorable king of Gan and a key member of the Tiro Alliance during the Dandelion Rebellion. He later became an antagonist to Mata Zyndu during the Hegemon's reign.",
+    introduction: "King Mocri was the proud and honorable king of Gan and a key member of the Tiro Alliance during the Dandelion Rebellion.",
     infoBox: {
         aliases: "King of Gan",
         occupation: "King of Gan",
@@ -29,7 +28,13 @@ const characterData: Character = {
         {
             era: "The Grace of Kings",
             summary: [
-                { type: 'text', content: "As King of Gan, Mocri was a central figure in the Grand Council of War, where the restored Tiro states bickered over leadership. During the Battle of Wolf's Paw, his forces, along with those from Faça, betrayed their allies mid-battle, though Mata Zyndu's prowess still secured a victory." },
+                { type: 'text', content: "As a leader of the restored Tiro states, King Mocri's actions highlighted the deep-seated rivalries that plagued the rebellion." }
+            ]
+        },
+        {
+            era: "A King of the Old Order",
+            summary: [
+                { type: 'text', content: "As King of Gan, Mocri was a central figure in the Grand Council of War, which was paralyzed by infighting. During the critical Battle of Wolf's Paw, his forces from Gan, along with those from Faça, betrayed their allies mid-battle and switched sides to support the Empire." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 12, link: "/books/the-grace-of-kings#chapter-12" } },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 29, link: "/books/the-grace-of-kings#chapter-29" } },
             ]
@@ -37,23 +42,31 @@ const characterData: Character = {
         {
             era: "The Wall of Storms",
             summary: [
-                { type: 'text', content: "During Mata Zyndu's reign as Hegemon, King Mocri rebelled against his rule. The storyteller in the Three-Legged Jug recounts the legendary duel between Mata and Mocri, suggesting Mocri was eventually defeated and killed by the Hegemon. This story inspires the children of Emperor Ragin." },
+                { type: 'text', content: "King Mocri's fate after the rebellion becomes the subject of a famous tale." }
+            ]
+        },
+        {
+            era: "A Legendary Duel",
+            summary: [
+                { type: 'text', content: "Years later, a storyteller in Pan recounts the legendary duel between Hegemon Mata Zyndu and King Mocri, who had evidently rebelled against Mata's rule. This tale of honor from a bygone era had become a popular story, inspiring the children of Emperor Ragin." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 1, link: "/books/the-wall-of-storms#chapter-1" } },
-                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 45, link: "/books/the-grace-of-kings#chapter-45" } },
             ]
         },
     ]
 };
 
+// Generate metadata for SEO
+export async function generateMetadata(): Promise<Metadata> {
+    return generateCharacterMetadata(characterData);
+}
+
 export default function KingMocriPage() {
-    const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <CharacterPageTemplate characterData={characterData} />
+            <CharacterNavigation prevPage={null} nextPage={null} returnLink={returnLink} />
+            <PageTemplate pageData={convertCharacterData(characterData)} infoBoxTitle="Biographical Information" />
         </>
     );
 }

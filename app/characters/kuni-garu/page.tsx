@@ -1,19 +1,19 @@
 'use client';
 
-import CharacterPageTemplate from '../../components/CharacterPageTemplate';
+import PageTemplate, { convertCharacterData } from '../../components/layout/PageTemplate';
 import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
 import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { CharacterNavigation } from '@/app/components/layout/PageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
 // --- DATA FOR KUNI GARU (WITH FULL INLINE REFERENCES) ---
 const characterData: Character = {
     name: "Kuni Garu",
     image: "/characters/kuni-garu.png",
-    introduction: "Kuni Garu, later known by his regnal name Emperor Ragin, is one of the two central protagonists of The Grace of Kings and the founder of the Dandelion Dynasty. A charismatic bandit who rises from humble origins to become emperor, Kuni represents the philosophy of the dandelion - resilience, adaptability, and strength found in common places.",
+    introduction: "Kuni Garu, later known by his regnal name Emperor Ragin, is one of the two central protagonists of *The Grace of Kings* and the founder of the Dandelion Dynasty. A charismatic and clever rogue who rises from humble origins to become emperor, Kuni represents the philosophy of the dandelion—resilience, adaptability, and strength found in common places.",
     infoBox: {
         aliases: "Emperor Ragin, The Dandelion, King of Dasu, Duke of Zudi",
-        occupation: "Bandit, Corvée Guard, Duke of Zudi, King of Dasu, Emperor of Dara",
+        occupation: "Bandit, Corvée Guard, Duke, King, Emperor of Dara",
         placeOfBirth: { text: "Zudi", link: "/places/zudi" },
         status: "Deceased",
         gender: "Male",
@@ -37,55 +37,67 @@ const characterData: Character = {
         lastAppeared: { text: "The Wall of Storms", link: "/books/the-wall-of-storms" }
     },
     appearanceAndPersonality: [
-        { type: 'text', content: "In his youth, Kuni is described as stocky and well-muscled, with long, narrow eyes that glint with sly intelligence. His appearance reflects his common origins - he is not conventionally handsome but possesses a natural charisma that draws people to him." },
+        { type: 'text', content: "In his youth, Kuni is described as having long, narrow eyes that glint with sly intelligence. He is not conventionally handsome but possesses a natural charisma that draws people to him, a trait he uses to masterfully talk his way out of trouble." },
         { type: 'ref', data: { book: "The Grace of Kings", chapter: 1, link: "/books/the-grace-of-kings#chapter-1" } },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 3, link: "/books/the-grace-of-kings#chapter-3" } },
         { type: 'text', content: " As emperor, his well-cut robes could not quite disguise his beer belly, a testament to his humble tastes and refusal to adopt the pretensions of nobility." },
         { type: 'ref', data: { book: "The Wall of Storms", chapter: 3, link: "/books/the-wall-of-storms#chapter-3" } },
-        { type: 'text', content: " He is a pragmatist at heart, valuing substance over style and people over protocol. His defining traits are his charisma, his boundless empathy for the common person, and his genius for unconventional, often audacious, solutions to complex problems." },
-        { type: 'ref', data: { book: "The Grace of Kings", chapter: 3, link: "/books/the-grace-of-kings#chapter-3" } },
-        { type: 'text', content: " While he can be roguish and is not above using deception, his actions are guided by a deep-seated desire for a just and stable world where the lowly are not trampled by the powerful. He takes up farming as a hobby to honor his family roots and to remind himself of the lives of common people." },
+        { type: 'text', content: " He is a pragmatist at heart, valuing substance over style and people over protocol. His defining traits are his boundless empathy for the common person and his genius for unconventional, often audacious, solutions to complex problems. This is symbolized by his personal emblem, the dandelion, which he admires for its resilience, practicality, and resourcefulness." },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 4, link: "/books/the-grace-of-kings#chapter-4" } },
+        { type: 'text', content: " While he can be roguish and is not above using deception, his actions are guided by a deep-seated desire for a just and stable world where the lowly are not trampled by the powerful. He later takes up farming as a hobby to honor his family roots and to remind himself of the lives of common people." },
         { type: 'ref', data: { book: "The Wall of Storms", chapter: 18, link: "/books/the-wall-of-storms#chapter-18" } },
     ],
     history: [
         {
-            era: "Early Life and Awakening (The Grace of Kings)",
+            era: "The Grace of Kings",
             summary: [
-                { type: 'text', content: "Born in Zudi to a family of minor merchants, Kuni Garu preferred play to study, leading a small street gang and living a carefree existence. His life was aimless until he witnessed an assassination attempt on Emperor Mapidéré during an Imperial Procession, which revealed the emperor's mortality and sparked a fundamental change in him." },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 1, link: "/books/the-grace-of-kings#chapter-1" } },
-                { type: 'text', content: " His clever defiance of a corrupt corvée administrator, where he impersonated a merchant's son to save a poor family, brought him to the attention of Jia Matiza, whose intelligence and spirit inspired him to seek a more respectable life." },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 3, link: "/books/the-grace-of-kings#chapter-3" } },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 4, link: "/books/the-grace-of-kings#chapter-4" } },
+                { type: 'text', content: "Kuni Garu's journey from a street rogue in Zudi to the emperor of Dara unfolds throughout the first book of the Dandelion Dynasty." }
             ]
         },
         {
-            era: "Rebellion against Xana Empire (The Grace of Kings)",
+            era: "Rebellion Against the Xana Empire",
             summary: [
-                { type: 'text', content: "Forced into outlawry after his prisoners deserted to join Huno Krima's rebellion, Kuni became the leader of an 'honorable' bandit crew in the Er-Mé Mountains. He quickly proved to be a natural leader, using his charisma and unorthodox tactics to build a loyal following." },
+                { type: 'text', content: "Kuni's life changed upon witnessing the mortality of Emperor Mapidéré, and he was inspired by the brilliant Jia Matiza to seek a more respectable life." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 1, link: "/books/the-grace-of-kings#chapter-1" } },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 4, link: "/books/the-grace-of-kings#chapter-4" } },
+                { type: 'text', content: "Forced into outlawry after his corvée prisoners deserted, he became a bandit leader, learning pragmatism after an early, bloody failure." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 8, link: "/books/the-grace-of-kings#chapter-8" } },
-                { type: 'text', content: " He formed a crucial alliance and sworn brotherhood with the noble warrior Mata Zyndu, and with the strategic genius of Luan Zya, became a key figure in the rebellion. His capture of Zudi demonstrated his administrative skills, and his daring capture of the Imperial capital, Pan, using cruben-riders from Tan Adü, cemented his reputation as a brilliant strategist." },
+                { type: 'text', content: "His natural leadership flourished during the rebellion. He liberated his hometown, forged a sworn brotherhood with the warrior Mata Zyndu, and gained the allegiance of the strategist Luan Zya." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 14, link: "/books/the-grace-of-kings#chapter-14" } },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 19, link: "/books/the-grace-of-kings#chapter-19" } },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 28, link: "/books/the-grace-of-kings#chapter-28" } },
+                { type: 'text', content: "His greatest military triumph was the surprise capture of the Imperial capital, Pan, using cruben-riders, which effectively ended the Xana Dynasty." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 30, link: "/books/the-grace-of-kings#chapter-30" } },
             ]
         },
         {
-            era: "Chrysanthemum-Dandelion War (The Grace of Kings)",
+            era: "The Chrysanthemum-Dandelion War",
             summary: [
-                { type: 'text', content: "After the fall of the empire, a bitter rivalry grew between Kuni and Mata Zyndu. Exiled to the remote island of Dasu, Kuni, with the help of Marshal Gin Mazoti and his wives Jia and Risana, built a new kind of state founded on innovation and meritocracy." },
+                { type: 'text', content: "After Mata Zyndu burned Pan and declared himself Hegemon, a bitter civil war erupted. Kuni was exiled to the remote island of Dasu, where, with the help of Marshal Gin Mazoti and his wives, he built an innovative new state founded on meritocracy." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 33, link: "/books/the-grace-of-kings#chapter-33" } },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 36, link: "/books/the-grace-of-kings#chapter-36" } },
-                { type: 'ref', data: { book: "The Grace of Kings", chapter: 41, link: "/books/the-grace-of-kings#chapter-41" } },
-                { type: 'text', content: " He eventually launched a counter-attack against Mata's hegemony, a brutal civil war that ended with Mata's death at Rana Kida and Kuni's ascension as the sole ruler of the islands." },
+                { type: 'text', content: "Launching a counter-attack through abandoned undersea tunnels, Kuni waged a brutal war against Mata. The conflict ended with Mata's defeat and suicide, leaving Kuni the undisputed ruler of the islands." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 43, link: "/books/the-grace-of-kings#chapter-43" } },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 50, link: "/books/the-grace-of-kings#chapter-50" } },
+                { type: 'text', content: "He was crowned Emperor Ragin, the first Dandelion Emperor of a unified Dara, reaffirming his identity as an emperor of the common people." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 51, link: "/books/the-grace-of-kings#chapter-51" } },
             ]
         },
         {
-            era: "Reign of Four Placid Seas (The Wall of Storms)",
+            era: "The Wall of Storms",
             summary: [
-                { type: 'text', content: "As Emperor Ragin, Kuni established a dynasty focused on peace and innovation. He grappled with the complexities of ruling a vast empire, the personal challenges of his fractured family, and his secret plan to name Princess Théra as his heir. His reign was ultimately defined by the arrival of the Lyucu Empire, forcing him and a new generation of heroes to defend Dara against a seemingly invincible foe." },
-                { type: 'ref', data: { book: "The Wall of Storms", chapter: 2, link: "/books/the-wall-of-storms#chapter-2" } },
+                { type: 'text', content: "As Emperor Ragin, Kuni's reign is tested by internal court politics and the arrival of a devastating foreign invasion." }
+            ]
+        },
+        {
+            era: "Reign and the Lyucu War",
+            summary: [
+                { type: 'text', content: "Kuni's reign was focused on peace, but his court was fractured by political infighting between the 'swords' and the 'abacus' factions. He secretly planned to bypass his sons and name the brilliant Princess Théra as his heir to avert a future civil war." },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 8, link: "/books/the-wall-of-storms#chapter-8" } },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 18, link: "/books/the-wall-of-storms#chapter-18" } },
-                { type: 'text', content: "During the Lyucu invasion, Kuni was captured and used as a human shield by Pékyu Tenryo at the Battle of Zathin Gulf. In a final act of defiance, he delivered a speech to his army, named Théra his successor, and took his own life." },
+                { type: 'text', content: "The arrival of the Lyucu invasion force shattered this peace. Heartbroken by the betrayal of his son, Prince Timu, who became a puppet emperor for the invaders, and weakened by illness, Kuni was captured." },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 56, link: "/books/the-wall-of-storms#chapter-56" } },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 58, link: "/books/the-wall-of-storms#chapter-58" } },
+                { type: 'text', content: "Chained to the mast of the Lyucu flagship at the Battle of Zathin Gulf, he delivered a final, rousing speech to his army, named Théra his successor, and took his own life to free his soldiers from having to protect him." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 58, link: "/books/the-wall-of-storms#chapter-58" } },
             ]
         },
@@ -97,10 +109,16 @@ export default function KuniGaruPage() {
     const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
+    const pageData = convertCharacterData(characterData);
+
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <CharacterPageTemplate characterData={characterData} />
+            <CharacterNavigation 
+                prevPage={prevPage} 
+                nextPage={nextPage} 
+                returnLink={returnLink} 
+            />
+            <PageTemplate pageData={pageData} infoBoxTitle="Biographical Information" />
         </>
     );
 }

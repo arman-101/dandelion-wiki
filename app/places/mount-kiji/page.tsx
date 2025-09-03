@@ -1,9 +1,9 @@
 'use client';
 
-import PlacePageTemplate from '../../components/PlacePageTemplate';
+import PageTemplate, { convertPlaceData } from '../../components/layout/PageTemplate';
 import { Place, ALL_PLACES } from '../../data/wiki-data';
 import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { PlaceNavigation } from '@/app/components/layout/PageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
 // --- DATA FOR MOUNT KIJI ---
@@ -24,20 +24,20 @@ const placeData: Place = {
         { type: 'ref', data: { book: "The Grace of Kings", chapter: 20, link: "/books/the-grace-of-kings#chapter-20" } },
     ],
     culture: [
-        { type: 'text', content: "The mountain is sacred to its patron god, Kiji, the Lord of the Air. The Mount Kiji Air Base, built to harvest the lift gas, is a symbol of imperial power and technological supremacy. Control of the mountain is tantamount to control of the skies of Dara." },
+        { type: 'text', content: "The mountain is sacred to its patron god, Kiji, the Lord of the Air. The Mount Kiji Air Base, built to harvest the lift gas, is a symbol of imperial power and technological supremacy." },
     ],
     history: [
         {
             event: "The Xana Empire",
             summary: [
-                { type: 'text', content: "The Xana Empire's military dominance was built upon its exclusive control of Mount Kiji's lift gas. During the rebellion, Kindo Marana had to ruthlessly restore the corrupt and inefficient Air Base to functionality to rebuild the imperial fleet." },
+                { type: 'text', content: "The Xana Empire's military dominance was built upon its exclusive control of Mount Kiji's lift gas. During the rebellion, Kindo Marana had to ruthlessly restore the corrupt Air Base to functionality to rebuild the imperial fleet." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 20, link: "/books/the-grace-of-kings#chapter-20" } },
             ]
         },
         {
             event: "The Lyucu Occupation",
             summary: [
-                { type: 'text', content: "After the Lyucu invaded and conquered Rui, they seized control of Mount Kiji. The hardline thane Cutanrovo Aga led a puritanical movement to erase Dara's culture, transforming the Temple of Kiji on the mountain into the Temple of Péa-Kiji. She forced the captive Prince Timu to participate in a ritual to destroy the statue of Kiji and burn the temple's sacred library. The desecration of this holy site was a source of great anger for the god Kiji and a symbol of the cultural war waged by the occupiers." },
+                { type: 'text', content: "After the Lyucu invaded, they seized control of Mount Kiji. The hardline thane Cutanrovo Aga led a puritanical movement to erase Dara's culture, transforming the Temple of Kiji into the Temple of Péa-Kiji and destroying its sacred library and artifacts. The desecration of this holy site was a source of great anger for the god Kiji." },
                 { type: 'ref', data: { book: "The Veiled Throne", chapter: 16, link: "/books/the-veiled-throne#chapter-16" } },
                 { type: 'ref', data: { book: "The Veiled Throne", chapter: 30, link: "/books/the-veiled-throne#chapter-30" } },
             ]
@@ -52,8 +52,8 @@ export default function MountKijiPage() {
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <PlacePageTemplate placeData={placeData} />
+            <PlaceNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PageTemplate pageData={convertPlaceData(placeData)} infoBoxTitle="Location Information" />
         </>
     );
 }

@@ -1,10 +1,9 @@
-'use client';
+import { Metadata } from 'next';
 
-import CharacterPageTemplate from '../../components/CharacterPageTemplate';
+import PageTemplate, { convertCharacterData } from '../../components/layout/PageTemplate';
+import { generateCharacterMetadata } from '@/app/utils/metadata';
 import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
-import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
-import { getSurroundingPages } from '@/app/utils/navigationUtils';
+import { CharacterNavigation } from '@/app/components/layout/PageNavigation';
 
 const characterData: Character = {
     name: "Goran Pira",
@@ -31,9 +30,15 @@ const characterData: Character = {
         {
             era: "The Grace of Kings",
             summary: [
+                { type: 'text', content: "Goran Pira's story is one of singular, patient revenge, carried out from the very heart of the empire he sought to destroy." }
+            ]
+        },
+        {
+            era: "The Long Vengeance",
+            summary: [
                 { type: 'text', content: "Pira's loyalty to Emperor Mapidéré was shattered years before the story begins when the Emperor claimed Pira's lover, Lady Maing, for himself. After Maing gave birth to Pira's son, the ruthless emperor had both mother and child murdered in front of him. This transformed Pira's devotion into an unquenchable thirst for vengeance." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 11, link: "/books/the-grace-of-kings#chapter-11" } },
-                { type: 'text', content: "He conspired with Lügo Crupo to place the incompetent Prince Loshi on the throne, knowing it would destabilize the empire." },
+                { type: 'text', content: "He conspired with Lügo Crupo to place the incompetent Prince Loshi on the throne as Emperor Erishi, knowing it would destabilize the empire and hasten its ruin." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 5, link: "/books/the-grace-of-kings#chapter-5" } },
                 { type: 'text', content: "Later, seeing Crupo's power growing too strong, Pira subtly manipulated Emperor Erishi, framed Crupo for treason, and had him executed. Pira was then named Prime Minister, gaining full control of the empire and taking the final step in his secret plan for its complete destruction from within." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 25, link: "/books/the-grace-of-kings#chapter-25" } },
@@ -42,15 +47,18 @@ const characterData: Character = {
     ]
 };
 
+// Generate metadata for SEO
+export async function generateMetadata(): Promise<Metadata> {
+    return generateCharacterMetadata(characterData);
+}
+
 export default function GoranPiraPage() {
-    const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <CharacterPageTemplate characterData={characterData} />
+            <CharacterNavigation prevPage={null} nextPage={null} returnLink={returnLink} />
+            <PageTemplate pageData={convertCharacterData(characterData)} infoBoxTitle="Biographical Information" />
         </>
     );
 }

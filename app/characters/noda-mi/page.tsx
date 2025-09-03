@@ -1,15 +1,14 @@
-'use client';
+import { Metadata } from 'next';
 
-import CharacterPageTemplate from '../../components/CharacterPageTemplate';
+import PageTemplate, { convertCharacterData } from '../../components/layout/PageTemplate';
+import { generateCharacterMetadata } from '@/app/utils/metadata';
 import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
-import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
-import { getSurroundingPages } from '@/app/utils/navigationUtils';
+import { CharacterNavigation } from '@/app/components/layout/PageNavigation';
 
 const characterData: Character = {
     name: "Noda Mi",
     image: "/characters/noda-mi.png",
-    introduction: "Noda Mi was a cunning and strategic fallen king who became the mastermind behind the rebellious Hegemon Cults. Driven by ambition and resentment, he later became a collaborator with the Lyucu invaders.",
+    introduction: "Noda Mi was a cunning and strategic fallen king who became the mastermind behind the rebellious Hegemon Cults. Driven by ambition and resentment, he was a master of deception who later became a collaborator with the Lyucu invaders.",
     infoBox: {
         aliases: "The Cunning King",
         occupation: "Fallen King, Rebel Leader, Collaborator",
@@ -17,12 +16,12 @@ const characterData: Character = {
         status: "Deceased",
         gender: "Male",
         affiliation: "Hegemon Cults, Lyucu Empire",
-        nationality: "Dara",
+        nationality: "Daran",
         firstAppeared: { text: "The Wall of Storms", link: "/books/the-wall-of-storms" },
-        lastAppeared: { text: "The Wall of Storms", link: "/books/the-wall-of-storms" }
+        lastAppeared: { text: "Speaking Bones", link: "/books/speaking-bones" }
     },
     appearanceAndPersonality: [
-        { type: 'text', content: "Noda Mi is portrayed as a highly intelligent and manipulative strategist. He is a master of deception and propaganda, as shown by his clever use of a cult-like scam and the 'magic mirrors' to build his rebel army. He is ambitious, patient, and utterly without scruples, willing to align with any power that will advance his own cause." },
+        { type: 'text', content: "Noda Mi is portrayed as a highly intelligent and manipulative strategist. He is a master of propaganda, as shown by his clever use of a cult-like scam and the 'magic mirrors' to build his rebel army. He is ambitious, patient, and utterly without scruples, willing to align with any power that will advance his own cause." },
         { type: 'ref', data: { book: "The Wall of Storms", chapter: 2, link: "/books/the-wall-of-storms#chapter-2" } },
         { type: 'ref', data: { book: "The Wall of Storms", chapter: 20, link: "/books/the-wall-of-storms#chapter-20" } },
     ],
@@ -30,27 +29,41 @@ const characterData: Character = {
         {
             era: "The Wall of Storms",
             summary: [
-                { type: 'text', content: "After being deposed by Kuni Garu, Noda Mi ran a scam in Pan based on the memory of Mata Zyndu. He formed an alliance with another fallen king, Doru Solofi, and they started a rebellion in Tunoa. Using 'magic mirrors' to project an image of the Hegemon, they amassed a large, fanatical army." },
+                { type: 'text', content: "Noda Mi formed an alliance with Doru Solofi and started a rebellion in Tunoa. Using 'magic mirrors' to project an image of Mata Zyndu, they amassed a fanatical army. After their rebellion was crushed by Princess Théra, Noda fled and later resurfaced as a traitor during the Lyucu War, nearly costing Dara the victory at the Battle of Zathin Gulf." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 2, link: "/books/the-wall-of-storms#chapter-2" } },
-                { type: 'ref', data: { book: "The Wall of Storms", chapter: 20, link: "/books/the-wall-of-storms#chapter-20" } },
-                { type: 'text', content: "After their rebellion was crushed by Princess Théra, Noda and Doru fled to Géjira and were granted refuge by Queen Gin Mazoti. Noda Mi later infiltrated the Dara fleet during the final Battle of Zathin Gulf, where his treacherous use of fire arrows to destroy the Imperial airships almost cost Dara the war." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 27, link: "/books/the-wall-of-storms#chapter-27" } },
-                { type: 'ref', data: { book: "The Wall of Storms", chapter: 28, link: "/books/the-wall-of-storms#chapter-28" } },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 60, link: "/books/the-wall-of-storms#chapter-60" } },
+            ]
+        },
+        {
+            era: "The Veiled Throne",
+            summary: [
+                { type: 'text', content: "As a high-ranking collaborator in the Lyucu occupation government, Noda Mi served as a secret go-between for Empress Jia and her captive son, Timu, all while plotting his own survival and advancement." },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 19, link: "/books/the-veiled-throne#chapter-19" } },
+            ]
+        },
+        {
+            era: "Speaking Bones",
+            summary: [
+                { type: 'text', content: "In the final, chaotic collapse of the Lyucu regime, Noda Mi made his last play for power. He betrayed and killed the hardliner Cutanrovo Aga after she murdered Pékyu Tanvanaki. He then murdered the stunned Emperor Timu, intending to use Timu's children as bargaining chips. His plot was foiled by Goztan Ryoto, who executed him for his treachery." },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 43, link: "/books/speaking-bones#chapter-43" } },
             ]
         },
     ]
 };
 
+// Generate metadata for SEO
+export async function generateMetadata(): Promise<Metadata> {
+    return generateCharacterMetadata(characterData);
+}
+
 export default function NodaMiPage() {
-    const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <CharacterPageTemplate characterData={characterData} />
+            <CharacterNavigation prevPage={null} nextPage={null} returnLink={returnLink} />
+            <PageTemplate pageData={convertCharacterData(characterData)} infoBoxTitle="Biographical Information" />
         </>
     );
 }

@@ -1,10 +1,9 @@
-'use client';
+import { Metadata } from 'next';
 
-import CharacterPageTemplate from '../../components/CharacterPageTemplate';
+import PageTemplate, { convertCharacterData } from '../../components/layout/PageTemplate';
+import { generateCharacterMetadata } from '@/app/utils/metadata';
 import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
-import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
-import { getSurroundingPages } from '@/app/utils/navigationUtils';
+import { CharacterNavigation } from '@/app/components/layout/PageNavigation';
 
 const characterData: Character = {
     name: "Razutana Pon",
@@ -17,9 +16,9 @@ const characterData: Character = {
         status: "Alive",
         gender: "Female",
         affiliation: "Dara Expeditionary Force, Agon Rebellion",
-        nationality: "Dara",
+        nationality: "Daran",
         firstAppeared: { text: "The Veiled Throne", link: "/books/the-veiled-throne" },
-        lastAppeared: { text: "The Veiled Throne", link: "/books/the-veiled-throne" }
+        lastAppeared: { text: "Speaking Bones", link: "/books/speaking-bones" }
     },
     appearanceAndPersonality: [
         { type: 'text', content: "Razutana is a dedicated scholar, though her clumsiness sometimes causes problems, such as accidentally setting off an explosion during the boarding of the Lyucu city-ship. She is courageous and resilient, surviving the destruction of the Agon base and taking on the responsibility of caring for the surviving children in a harsh, unforgiving environment." },
@@ -29,23 +28,35 @@ const characterData: Character = {
         {
             era: "The Veiled Throne",
             summary: [
-                { type: 'text', content: "A scholar on Théra's expedition, Razutana's practical knowledge is tested in the extreme. After the Lyucu attack on Kiri Valley, she and the Agon shaman Sataari become the sole adult guardians for a small band of children, including the sons of Théra. They lead the children through the desolate salt flats, a grueling journey of survival that tests their endurance to the limit." },
-                { type: 'ref', data: { book: "The Veiled Throne", chapter: 17, link: "/books/the-veiled-throne#chapter-17" } },
+                { type: 'text', content: "A scholar on Théra's expedition, Razutana's practical knowledge was tested in the extreme. After the Lyucu attack on Kiri Valley, she and the Agon shaman Sataari became the sole adult guardians for a small band of children, including the sons of Théra, and led them to safety." },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 27, link: "/books/the-veiled-throne#chapter-27" } },
                 { type: 'ref', data: { book: "The Veiled Throne", chapter: 43, link: "/books/the-veiled-throne#chapter-43" } },
+            ]
+        },
+        {
+            era: "Speaking Bones",
+            summary: [
+                { type: 'text', content: "Razutana was a key part of the community at the 'City of Ghosts,' helping to establish a new settlement and rediscovering the Agon's true agricultural history. She was present for the final reunion with Princess Théra and became a founding member of the new, peaceful society at Taten-ryo-runa." },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 2, link: "/books/speaking-bones#chapter-2" } },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 7, link: "/books/speaking-bones#chapter-7" } },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 41, link: "/books/speaking-bones#chapter-41" } },
             ]
         },
     ]
 };
 
+// Generate metadata for SEO
+export async function generateMetadata(): Promise<Metadata> {
+    return generateCharacterMetadata(characterData);
+}
+
 export default function RazutanaPonPage() {
-    const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <CharacterPageTemplate characterData={characterData} />
+            <CharacterNavigation prevPage={null} nextPage={null} returnLink={returnLink} />
+            <PageTemplate pageData={convertCharacterData(characterData)} infoBoxTitle="Biographical Information" />
         </>
     );
 }

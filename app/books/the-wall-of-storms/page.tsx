@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import BookNavigation from '../../components/BookNavigation';
-import TopPageNavigation from '../../components/TopPageNavigation';
+import { TopNavigation, BottomNavigation } from '../../components/layout/PageNavigation';
 import { formatAsteriskToBold } from '../../utils/textFormatting';
 
 // --- ACCURATE & DETAILED DATA FOR THE WALL OF STORMS ---
@@ -21,8 +20,8 @@ const chapters = [
         date: "PAN: THE SECOND MONTH IN THE SIXTH YEAR OF THE REIGN OF FOUR PLACID SEAS.",
         quote: "The gods meant for us to meet here today, and we can reclaim the glory that is our due from the weed-emperor.",
         speaker: "Noda Mi",
-        summary: "As a heavy snowstorm muffles the city of Pan, a divine conversation unfolds on the wind. The gods Tazu, Lord of Chance; Kiji, the Vengeful Fire; and Fithowéo, the Blind God of War, observe the mortal realm. Tazu notes that Emperor Ragin's throne, established through the betrayal of Mata Zyndu, carries a 'dark stain at the origin.' This inherent flaw, they concur, is a seed of future conflict, a debt of honor that must one day be paid in blood.\n\nElsewhere in the city, the disgraced bully from the tavern, revealed to be Doru Solofi, the deposed king of Cocru, wanders in a drunken haze of self-pity. He is led by a mysterious, urchin-like boy—an avatar of Tazu in disguise—to a desolate city graveyard. There, among the snow-dusted tombstones, he discovers another fallen noble, the cunning and manipulative Noda Mi, former king of Faca. Noda Mi is running a sophisticated scam, preying on the discontented by pretending to channel the ghost of Mata Zyndu. He sees in Doru Solofi not a pathetic drunk, but a fellow aristocrat stripped of his birthright, a vessel for a shared and burning resentment. Recognizing their mutual ambition and hatred for the 'weed-emperor,' Kuni Garu, they swear a blood oath. In the cold heart of the cemetery, two fallen kings plant the seeds of a rebellion, one that will be nurtured by a potent mixture of misplaced honor and calculated deceit.",
-        links: [{ name: "Pan", path: "/places/pan" }, { name: "Tazu", path: "/gods/tazu" }, { name: "Kiji", path: "/gods/kiji" }, { name: "Fithowéo", path: "/gods/fithoweo" }, { name: "Doru Solofi", path: "/characters/doru-solofi" }, { name: "Noda Mi", path: "/characters/noda-mi" }]
+        summary: "As a heavy snowstorm muffles the city of Pan, a divine conversation unfolds on the wind. The gods Tazu, Lord of Chance; Kana, the Vengeful Fire; and Fithowéo, the Blind God of War, observe the mortal realm. Tazu notes that Emperor Ragin's throne, established through the betrayal of Mata Zyndu, carries a 'dark stain at the origin.' This inherent flaw, they concur, is a seed of future conflict, a debt of honor that must one day be paid in blood.\n\nElsewhere in the city, the disgraced bully from the tavern, revealed to be Doru Solofi, the deposed king of Cocru, wanders in a drunken haze of self-pity. He is led by a mysterious, urchin-like boy—an avatar of Tazu in disguise—to a desolate city graveyard. There, among the snow-dusted tombstones, he discovers another fallen noble, the cunning and manipulative Noda Mi, former king of Faca. Noda Mi is running a sophisticated scam, preying on the discontented by pretending to channel the ghost of Mata Zyndu. He sees in Doru Solofi not a pathetic drunk, but a fellow aristocrat stripped of his birthright, a vessel for a shared and burning resentment. Recognizing their mutual ambition and hatred for the 'weed-emperor,' Kuni Garu, they swear a blood oath. In the cold heart of the cemetery, two fallen kings plant the seeds of a rebellion, one that will be nurtured by a potent mixture of misplaced honor and calculated deceit.",
+        links: [{ name: "Pan", path: "/places/pan" }, { name: "Tazu", path: "/gods/tazu" }, { name: "Kana", path: "/gods/kana" }, { name: "Fithowéo", path: "/gods/fithoweo" }, { name: "Doru Solofi", path: "/characters/doru-solofi" }, { name: "Noda Mi", path: "/characters/noda-mi" }]
     },
     {
         num: 3,
@@ -400,9 +399,9 @@ const chapters = [
         quote: "The universe is knowable.",
         speaker: "Luan Zya",
         summary: "This chapter recounts the fate of Luan Zya, who set sail on his voyage of exploration three years prior. Using a massive, specially designed kite to ascend to the upper atmosphere, he becomes the first man from Dara to chart the high-altitude wind currents. It is there he discovers the Wall of Storms, a colossal, permanent typhoon system that isolates the islands of Dara from the rest of the world. In a daring act of scientific curiosity, he pilots his kite directly into the heart of the storm and is struck by lightning. He survives the crash, finding himself adrift in a strange new ocean. After months of drifting, saved from starvation only by the unexpected kindness of a herd of crubens, his knowledge of the natural world allows him to start a signal fire on a piece of driftwood. He is eventually 'rescued' by a passing ship, a vessel of the Lyucu people.",
-        links: [{ name: "Luan Zya", path: "/characters/luan-zya" }, { name: "The Wall of Storms", path: "/concepts/the-wall-of-storms" }, { name: "Cruben", path: "/concepts/cruben" }, { name: "Gitré Üthu", path: "/concepts/gitre-uthu" }]
+        links: [{ name: "Luan Zya", path: "/characters/luan-zya" }, { name: "The Wall of Storms", path: "/concepts/wall-of-storms" }, { name: "Cruben", path: "/concepts/cruben" }, { name: "Gitré Üthu", path: "/concepts/gitre-uthu" }]
     },
-    
+
     {
         num: 45,
         title: "An Interlude",
@@ -419,7 +418,7 @@ const chapters = [
         quote: "Welcome to Ukyu, the country of the Lyucu.",
         speaker: "Cudyu Roatan",
         summary: "Luan Zya's time among the Lyucu is detailed. After being 'rescued' at sea, he is nursed back to health, only to find himself a prisoner, albeit a comfortable one, living in a cell carved into the back of a colossal garinafin. He is introduced to the children of the pékyu, the charming but ruthless Cudyu and the sharp, intelligent Vadyu (who the reader recognizes as Tanvanaki). They spin a carefully constructed lie for him, a fabricated history in which Emperor Mapidéré's lost expedition arrived peacefully, shared their knowledge with the 'primitive' Lyucu, and then tragically perished from a plague. It is a masterful deception, designed to win Luan's trust and manipulate him into sharing his own vast scientific knowledge for their own purposes.",
-        links: [{ name: "Luan Zya", path: "/characters/luan-zya" }, { name: "Garinafin", path: "/concepts/garinafin" }, { name: "Ukyu & Gondé", path: "/places/ukyu-gonde" }, { name: "Cudyu Roatan", path: "/characters/cudyu-roatan" }, { name: "Tanvanaki", path: "/characters/tanvanaki" }]
+        links: [{ name: "Luan Zya", path: "/characters/luan-zya" }, { name: "Garinafin", path: "/concepts/garinafin" }, { name: "Cudyu Roatan", path: "/characters/cudyu-roatan" }, { name: "Tanvanaki", path: "/characters/tanvanaki" }]
     },
     {
         num: 47,
@@ -428,8 +427,8 @@ const chapters = [
         quote: "Are you from Dara?",
         speaker: "Oga Kidosu",
         summary: "While exploring his strange prison, Luan Zya discovers a hidden, lower cell. There, chained in the darkness, he finds another man from Dara: Oga Kidosu, Zomi's father, who was lost at sea nearly two decades earlier. Oga reveals the brutal, true history of Mapidéré's expedition. After his own fishing boat was destroyed, Oga was carried by a giant sea turtle to the shores of Ukyu, where he was immediately enslaved by the Lyucu. He recounts the horrifying truth: the expedition from Dara was not wiped out by plague. They were systematically tricked, disarmed, slaughtered, and enslaved by the cunning Pékyu Tenryo. Luan realizes with dawning horror that the prince and princess have been lying to him, and that he is a pawn in a decades-long plan to conquer and enslave his homeland.",
-        links: [{ name: "Luan Zya", path: "/characters/luan-zya" }, { name: "Oga Kidosu", path: "/characters/oga-kidosu" }, { name: "Emperor Mapidéré", path: "/characters/emperor-mapidere" }, { name: "Ukyu & Gondé", path: "/places/ukyu-gonde" }]
-    },    
+        links: [{ name: "Luan Zya", path: "/characters/luan-zya" }, { name: "Oga Kidosu", path: "/characters/oga-kidosu" }, { name: "Emperor Mapidéré", path: "/characters/emperor-mapidere" }]
+    },
     {
         num: 48,
         title: "The Lyucu and Agon",
@@ -437,7 +436,7 @@ const chapters = [
         quote: "Control of the garinafins is now the foundation of both the cultures of the Lyucu and the Agon.",
         speaker: "Oga Kidosu",
         summary: "Oga Kidosu continues his story, painting a grim picture of the land of Ukyu and its people. He describes the harsh, nomadic life of the Lyucu and their ancient rivals, the Agon, a culture forged by the unforgiving landscape and endless tribal warfare. He recounts the rise of the current ruler, Pékyu Tenryo, who was sent as a child hostage to the Agon. There, he learned their ways, their tactics, and their weaknesses. Upon his return, he used this knowledge to wage a brilliant and ruthless campaign of conquest, uniting the warring Lyucu tribes under his iron-fisted rule. Oga's story reveals the Lyucu to be a highly disciplined, pragmatic, and brutal people, whose entire society is built around the mastery of the garinafins and the art of war.",
-        links: [{ name: "Pékyu Tenryo", path: "/characters/pekyu-tenryo" }, { name: "Garinafin", path: "/concepts/garinafin" }, { name: "Ukyu & Gondé", path: "/places/ukyu-gonde" }, { name: "Agon", path: "/concepts/agon" }]
+        links: [{ name: "Pékyu Tenryo", path: "/characters/pekyu-tenryo" }, { name: "Garinafin", path: "/concepts/garinafin" }, { name: "Agon", path: "/concepts/agon" }]
     },
     {
         num: 49,
@@ -446,7 +445,7 @@ const chapters = [
         quote: "We are the instruments of the All-Father, meant to cleanse that land of its indolent masters and to take it for our own.",
         speaker: "Pékyu Tenryo",
         summary: "The arrival of Emperor Mapidéré's fleet is shown from the Lyucu perspective. Pékyu Tenryo, immediately recognizing the technological superiority but cultural arrogance of the Dara, feigns submission. For years, he plays the role of a servile, primitive king, allowing his people to absorb every piece of knowledge they can from the invaders: advanced shipbuilding, metalworking, written language, and military strategy. He learns of the fertile, rich lands of Dara, a paradise compared to his own harsh homeland. When he has learned all he can, he orchestrates a sudden, violent, and devastating betrayal, slaughtering the unprepared Dara expedition and enslaving the survivors. He then uses their captured ships and their own stolen knowledge as the foundation for his great dream: the invasion and conquest of Dara, a land he sees as a divine inheritance.",
-        links: [{ name: "Ukyu & Gondé", path: "/places/ukyu-gonde" }, { name: "Pékyu Tenryo", path: "/characters/pekyu-tenryo" }, { name: "Emperor Mapidéré", path: "/characters/emperor-mapidere" }]
+        links: [{ name: "Pékyu Tenryo", path: "/characters/pekyu-tenryo" }, { name: "Emperor Mapidéré", path: "/characters/emperor-mapidere" }]
     },
     {
         num: 50,
@@ -455,7 +454,7 @@ const chapters = [
         quote: "Your sages speak endlessly of the value of human life and the lack of distinction between acts of commission and omission. Yet here you are, trying to pretend that you’re different from the man holding the stone knife.",
         speaker: "Pékyu Tenryo",
         summary: "Now fully aware of the Lyucu's horrifying plan, Luan Zya is confronted by Pékyu Tenryo. The pékyu demands that Luan provide him with the scientific knowledge needed to navigate the Wall of Storms. When Luan refuses, Tenryo resorts to psychological torture, brutally torturing Oga Kidosu in front of him. Unable to watch Zomi's father suffer, Luan capitulates. He provides the complex meteorological calculations needed to find the safe passage through the storm, but secretly, he builds a subtle flaw into the equations, a flaw that will prove fatal to a future fleet. Both Luan and Oga are taken aboard the invasion fleet as prisoners. In a final, desperate act of sabotage, Luan manages to set fire to the garinafin's food supply, knowing it will be his last act.",
-        links: [{ name: "Luan Zya", path: "/characters/luan-zya" }, { name: "Oga Kidosu", path: "/characters/oga-kidosu" }, { name: "The Wall of Storms", path: "/concepts/the-wall-of-storms" }, { name: "Pékyu Tenryo", path: "/characters/pekyu-tenryo" }]
+        links: [{ name: "Luan Zya", path: "/characters/luan-zya" }, { name: "Oga Kidosu", path: "/characters/oga-kidosu" }, { name: "The Wall of Storms", path: "/concepts/wall-of-storms" }, { name: "Pékyu Tenryo", path: "/characters/pekyu-tenryo" }]
     },
     {
         num: 51,
@@ -576,22 +575,12 @@ const ExternalLinkIcon = () => (
 
 
 export default function WallOfStormsPage() {
-    const bookNav = {
-        prevBook: { title: "The Grace of Kings", link: "/books/the-grace-of-kings" },
-        nextBook: { title: "The Veiled Throne", link: "/books/the-veiled-throne" }
-    };
-
-    const prevPageData = { title: "The Grace of Kings", path: "/books/the-grace-of-kings" };
-    const nextPageData = { title: "The Veiled Throne", path: "/books/the-veiled-throne" };
-    const returnLinkData = { title: "Return to Series Overview", path: "/books" };
-
-
     return (
         <div>
-            <TopPageNavigation
-                prevPage={prevPageData}
-                nextPage={nextPageData}
-                returnLink={returnLinkData}
+            <TopNavigation
+                prevPage={{ title: "The Grace of Kings", path: "/books/the-grace-of-kings" }}
+                nextPage={{ title: "The Veiled Throne", path: "/books/the-veiled-throne" }}
+                returnLink={{ title: "Return to Series Overview", path: "/books" }}
             />
 
             {/* --- BOOK HEADER --- */}
@@ -678,8 +667,12 @@ export default function WallOfStormsPage() {
                     </div>
                 ))}
             </div>
-            <BookNavigation prevBook={bookNav.prevBook} nextBook={bookNav.nextBook} />
 
+            <BottomNavigation
+                prevItem={{ title: "The Grace of Kings", path: "/books/the-grace-of-kings" }}
+                nextItem={{ title: "The Veiled Throne", path: "/books/the-veiled-throne" }}
+                bottomNavType="book"
+            />
         </div>
     );
 }

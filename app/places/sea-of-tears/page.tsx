@@ -1,20 +1,20 @@
 'use client';
 
-import PlacePageTemplate from '../../components/PlacePageTemplate';
+import PageTemplate, { convertPlaceData } from '../../components/layout/PageTemplate';
 import { Place, ALL_PLACES } from '../../data/wiki-data';
 import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { PlaceNavigation } from '@/app/components/layout/PageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
 // --- DATA FOR SEA OF TEARS ---
 const placeData: Place = {
     name: "Sea of Tears",
     image: "/places/sea-of-tears.png",
-    introduction: "The Sea of Tears is a large inland sea in Ukyu-Gondé, surrounded by vast salt flats. It is a place of ancient mystery and a grueling trial for the survivors of the Kiri Valley massacre.",
+    introduction: "The Sea of Tears is a large inland sea in Ukyu-Gondé, surrounded by vast salt flats. It is a place of ancient mystery and a grueling trial for the child survivors of the Kiri Valley massacre.",
     infoBox: {
         type: "Inland Sea / Salt Flats",
         location: { text: "Ukyu & Gondé", link: "/places/ukyu-gonde" },
-        KeyFeatures: "Salt Flats, Ancient Geoglyphs"
+        KeyFeatures: "Salt Flats, Ancient Geologlyphs"
     },
     geography: [
         { type: 'text', content: "A massive inland sea, its shores have receded over millennia to leave behind vast, desolate salt flats. This harsh, unforgiving landscape is incredibly difficult to survive in." },
@@ -28,15 +28,8 @@ const placeData: Place = {
         {
             event: "The Children's Ordeal",
             summary: [
-                { type: 'text', content: "After the destruction of Kiri Valley, the small band of child survivors, including Théra's sons, were led by their two adult guardians on a harrowing journey across the salt flats of the Sea of Tears. This journey was a crucible, forcing the children to learn to survive and rely on each other in one of the world's most inhospitable environments. The experience forged them into a new kind of family." },
+                { type: 'text', content: "After the destruction of Kiri Valley, the small band of child survivors, including Théra's sons, were led by their two adult guardians on a harrowing journey across the salt flats of the Sea of Tears. This journey was a crucible, forcing the children to learn to survive and rely on each other in one of the world's most inhospitable environments." },
                 { type: 'ref', data: { book: "The Veiled Throne", chapter: 43, link: "/books/the-veiled-throne#chapter-43" } },
-            ]
-        },
-        {
-            event: "A Gathering of Life",
-            summary: [
-                { type: 'text', content: "At the end of the entire saga, the survivors of the long wars gather on the shores of the Sea of Tears. It becomes a place of remembrance, healing, and celebration, a symbol of the hard-won peace and the beginning of a new era." },
-                { type: 'ref', data: { book: "Speaking Bones", chapter: 58, link: "/books/speaking-bones#chapter-58" } },
             ]
         },
     ]
@@ -49,8 +42,8 @@ export default function SeaOfTearsPage() {
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <PlacePageTemplate placeData={placeData} />
+            <PlaceNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PageTemplate pageData={convertPlaceData(placeData)} infoBoxTitle="Location Information" />
         </>
     );
 }

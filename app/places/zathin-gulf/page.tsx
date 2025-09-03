@@ -1,9 +1,9 @@
 'use client';
 
-import PlacePageTemplate from '../../components/PlacePageTemplate';
+import PageTemplate, { convertPlaceData } from '../../components/layout/PageTemplate';
 import { Place, ALL_PLACES } from '../../data/wiki-data';
 import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { PlaceNavigation } from '@/app/components/layout/PageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
 // --- DATA FOR ZATHIN GULF ---
@@ -27,9 +27,9 @@ const placeData: Place = {
         {
             event: "The Battle of Zathin Gulf",
             summary: [
-                { type: 'text', content: "The battle was the culmination of the first Lyucu invasion. The Lyucu leader, Pékyu Tenryo, used a captured and dying Emperor Ragin (Kuni Garu) as a human shield on his flagship. In a final, heroic act, Kuni broke free, delivered a rousing speech naming Théra his successor, and took his own life to free his army to attack." },
+                { type: 'text', content: "The battle was the culmination of the first Lyucu invasion. The Lyucu leader, Pékyu Tenryo, used a captured and dying Emperor Ragin as a human shield. In a final, heroic act, Kuni broke free, named Théra his successor, and took his own life." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 58, link: "/books/the-wall-of-storms#chapter-58" } },
-                { type: 'text', content: "The ensuing battle was a massive engagement. The Dara forces, commanded by Marshal Gin Mazoti, unveiled new technologies like silkmotic-powered crossbows and lances. Despite suffering heavy losses from betrayal within their ranks, Gin crashed her flagship into the Lyucu command vessel. In the chaos, she and Dafiro Miro dueled Pékyu Tenryo. Dafiro was killed, but Gin, with the last-minute aid of Zomi Kidosu, killed the Lyucu pékyu, shattering the invasion and ending the battle." },
+                { type: 'text', content: "The ensuing battle was a massive engagement where the Dara forces, commanded by Marshal Gin Mazoti, unveiled new technologies. Despite suffering heavy losses, Gin crashed her flagship into the Lyucu command vessel and, with the aid of Zomi Kidosu, killed the Lyucu pékyu, shattering the invasion." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 59, link: "/books/the-wall-of-storms#chapter-59" } },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 60, link: "/books/the-wall-of-storms#chapter-60" } },
             ]
@@ -44,8 +44,8 @@ export default function ZathinGulfPage() {
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <PlacePageTemplate placeData={placeData} />
+            <PlaceNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PageTemplate pageData={convertPlaceData(placeData)} infoBoxTitle="Location Information" />
         </>
     );
 }

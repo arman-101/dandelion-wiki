@@ -1,40 +1,45 @@
 'use client';
 
-import ConceptPageTemplate from '../../components/ConceptPageTemplate';
+import PageTemplate, { convertConceptData } from '../../components/layout/PageTemplate';
 import { Concept, ALL_CONCEPTS } from '../../data/wiki-data';
 import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { ConceptNavigation } from '@/app/components/layout/PageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
-export default function AgonPage() {
-  const pathname = usePathname();
-  const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CONCEPTS);
-  const returnLink = { title: 'Return to All Concepts', path: '/concepts' };
-
-  const conceptData: Concept = {
+// --- DATA FOR THE AGON ---
+const conceptData: Concept = {
     name: "The Agon",
-    image: "/concepts/agon.png", // Placeholder image
-    introduction: "A mysterious people from beyond the Wall of Storms who play a role in the later events of the series, representing the unknown forces that shape the destiny of Dara.",
+    image: "/concepts/agon.png",
+    introduction: "The Agon are a nomadic people from the southern part of Ukyu-Gondé and the ancient rivals of the Lyucu. Long exiled to the deserts, they become crucial allies to Princess Théra in her rebellion against the Lyucu empire.",
     infoBox: {
-      "Origin": "Beyond the Wall of Storms",
-      "Culture": "Mysterious",
-      "Significance": "Unknown Forces",
-      "Related concepts": [
-        { text: "The Wall of Storms", link: "/concepts/wall-of-storms" },
-        { text: "The Lyucu", link: "/concepts/lyucu" }
+      "Origin": { text: "Ukyu & Gondé", link: "/places/ukyu-gonde" },
+      "Culture": "Exiled Warrior Society",
+      "Key Figures": [
+        { text: "Takval Aragoz", link: "/characters/takval-aragoz" },
+        { text: "Souliyan Aragoz", link: "/characters/souliyan-aragoz" }
       ]
     },
     details: [
-      { type: "text" as const, content: "The Agon are a mysterious people whose origins and nature remain largely unknown throughout much of the series. Their appearance in the later books introduces new elements of mystery and complexity to the world of Dara." },
-      { type: "text" as const, content: "The Agon's relationship to the Lyucu and the people of Dara is complex and often ambiguous, representing the broader theme of unknown forces and hidden knowledge that runs throughout the series." },
-      { type: "text" as const, content: "The role of the Agon in the final events of the series adds layers of philosophical and mystical depth to the resolution of the conflicts that have shaped the destiny of Dara and its people." }
+        { type: 'text', content: "Like the Lyucu, the Agon are a hardy, nomadic people whose culture is shaped by the harsh scrublands and their relationship with garinafins. After being defeated by a unified Lyucu under Pékyu Tenryo, many Agon tribes were exiled to the great desert of Lurodia Tanta." },
+        { type: 'ref', data: { book: "The Wall of Storms", chapter: 48, link: "/books/the-wall-of-storms#chapter-48" } },
+        { type: 'text', content: "Princess Théra and her husband, the Agon prince Takval Aragoz, forged an alliance with the exiled tribes to wage a guerrilla war against the Lyucu. This rebellion was nearly destroyed, but the survivors discovered a garinafin boneyard and developed new 'living bone' technology." },
+        { type: 'ref', data: { book: "The Veiled Throne", chapter: 13, link: "/books/the-veiled-throne#chapter-13" } },
+        { type: 'ref', data: { book: "Speaking Bones", chapter: 29, link: "/books/speaking-bones#chapter-29" } },
+        { type: 'text', content: "A pivotal moment for the Agon was the rediscovery of their true history. By exploring the ancient 'City of Ghosts,' they learned that they, like the Lyucu, were descended from a settled, agricultural society, shattering their foundational myths and opening the door to a new, peaceful future." },
+        { type: 'ref', data: { book: "Speaking Bones", chapter: 7, link: "/books/speaking-bones#chapter-7" } },
+        { type: 'ref', data: { book: "Speaking Bones", chapter: 51, link: "/books/speaking-bones#chapter-51" } },
     ]
-  };
+};
 
-  return (
-    <>
-      <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-      <ConceptPageTemplate conceptData={conceptData} />
-    </>
-  );
-} 
+export default function AgonPage() {
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CONCEPTS);
+    const returnLink = { title: 'Return to All Concepts', path: '/concepts' };
+
+    return (
+        <>
+            <ConceptNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PageTemplate pageData={convertConceptData(conceptData)} infoBoxTitle="Concept Information" />
+        </>
+    );
+}

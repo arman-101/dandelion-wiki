@@ -1,10 +1,9 @@
-'use client';
+import { Metadata } from 'next';
 
-import CharacterPageTemplate from '../../components/CharacterPageTemplate';
+import PageTemplate, { convertCharacterData } from '../../components/layout/PageTemplate';
+import { generateCharacterMetadata } from '@/app/utils/metadata';
 import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
-import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
-import { getSurroundingPages } from '@/app/utils/navigationUtils';
+import { CharacterNavigation } from '@/app/components/layout/PageNavigation';
 
 const characterData: Character = {
     name: "Huno Krima",
@@ -30,24 +29,33 @@ const characterData: Character = {
         {
             era: "The Grace of Kings",
             summary: [
-                { type: 'text', content: "Facing certain execution for being late to a corvée assignment, Krima and his friend Zopa Shigin created a fake prophecy by hiding a silk scroll reading 'Huno Krima Will Be King' inside a fish. This 'miracle' galvanized the other laborers into rising up. They seized the town of Napi, opened the imperial granaries, and sparked the rebellion." },
+                { type: 'text', content: "Huno Krima's rise and fall is the story of the rebellion's first charismatic leader, a man who gave people hope before being consumed by the power he attained." }
+            ]
+        },
+        {
+            era: "The Fish Prophecy and a False Crown",
+            summary: [
+                { type: 'text', content: "Facing certain execution for being late to a corvée assignment, Krima and his friend Zopa Shigin created a fake prophecy by hiding a silk scroll reading 'Huno Krima Will Be King' inside a fish. This 'miracle' galvanized the other laborers into rising up and sparking the rebellion." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 6, link: "/books/the-grace-of-kings#chapter-6" } },
-                { type: 'text', content: "His success was short-lived. After finding and installing King Thufi on the throne of Cocru, Krima grew paranoid and declared himself King of West Cocru. He executed his friend Zopa Shigin and ruled through a secret police force. His disastrous reign was cut short when General Tanno Namen launched a surprise attack on his capital. Krima's army collapsed, and he was unceremoniously killed by his own fleeing soldiers." },
+                { type: 'text', content: "His success was short-lived. After finding and installing King Thufi, Krima grew paranoid and declared himself King of West Cocru. He murdered his friend Zopa Shigin and ruled through a secret police force. His disastrous reign was cut short when General Tanno Namen launched a surprise attack. Krima's army collapsed, and he was unceremoniously killed by his own fleeing soldiers, an end contemptuously witnessed by Mata Zyndu." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 16, link: "/books/the-grace-of-kings#chapter-16" } },
             ]
         },
     ]
 };
 
+// Generate metadata for SEO
+export async function generateMetadata(): Promise<Metadata> {
+    return generateCharacterMetadata(characterData);
+}
+
 export default function HunoKrimaPage() {
-    const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <CharacterPageTemplate characterData={characterData} />
+            <CharacterNavigation prevPage={null} nextPage={null} returnLink={returnLink} />
+            <PageTemplate pageData={convertCharacterData(characterData)} infoBoxTitle="Biographical Information" />
         </>
     );
 }

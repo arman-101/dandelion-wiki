@@ -1,10 +1,9 @@
-'use client';
+import { Metadata } from 'next';
 
-import CharacterPageTemplate from '../../components/CharacterPageTemplate';
+import PageTemplate, { convertCharacterData } from '../../components/layout/PageTemplate';
+import { generateCharacterMetadata } from '@/app/utils/metadata';
 import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
-import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
-import { getSurroundingPages } from '@/app/utils/navigationUtils';
+import { CharacterNavigation } from '@/app/components/layout/PageNavigation';
 
 const characterData: Character = {
     name: "Gori Ruthi",
@@ -32,23 +31,26 @@ const characterData: Character = {
         {
             era: "The Veiled Throne & Speaking Bones",
             summary: [
-                { type: 'text', content: "Gori Ruthi serves as an official in the Dandelion court. He is assigned to report on Princess Aya Mazoti's first military command, a mission that ends in disaster. His letters to the court highlight his by-the-book mentality and his inability to grasp the realities of military command. He remains a figure in the court who represents the old, traditionalist way of thinking, often in contrast to the innovators and pragmatists who drive the story." },
+                { type: 'text', content: "Gori Ruthi serves as an official in the Dandelion court. He was assigned to report on Princess Aya Mazoti's disastrous first military command. Later, he was part of the council of ministers who, led by Cogo Yelu, defied Empress Jia and sided with the will of the people, leading to the regent's downfall." },
                 { type: 'ref', data: { book: "The Veiled Throne", chapter: 40, link: "/books/the-veiled-throne#chapter-40" } },
-                { type: 'ref', data: { book: "Speaking Bones", chapter: 42, link: "/books/speaking-bones#chapter-42" } },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 50, link: "/books/speaking-bones#chapter-50" } },
             ]
         },
     ]
 };
 
+// Generate metadata for SEO
+export async function generateMetadata(): Promise<Metadata> {
+    return generateCharacterMetadata(characterData);
+}
+
 export default function GoriRuthiPage() {
-    const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <CharacterPageTemplate characterData={characterData} />
+            <CharacterNavigation prevPage={null} nextPage={null} returnLink={returnLink} />
+            <PageTemplate pageData={convertCharacterData(characterData)} infoBoxTitle="Biographical Information" />
         </>
     );
 }

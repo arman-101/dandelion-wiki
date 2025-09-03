@@ -1,10 +1,9 @@
-'use client';
+import { Metadata } from 'next';
 
-import CharacterPageTemplate from '../../components/CharacterPageTemplate';
+import PageTemplate, { convertCharacterData } from '../../components/layout/PageTemplate';
+import { generateCharacterMetadata } from '@/app/utils/metadata';
 import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
-import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
-import { getSurroundingPages } from '@/app/utils/navigationUtils';
+import { CharacterNavigation } from '@/app/components/layout/PageNavigation';
 
 const characterData: Character = {
     name: "Pékyu Tenryo",
@@ -21,21 +20,26 @@ const characterData: Character = {
             { text: "Cudyu Roatan (son)", link: "/characters/cudyu-roatan" }
         ],
         affiliation: "Lyucu Empire",
-        nationality: { text: "Lyucu", link: "/places/lyucu" },
+        nationality: { text: "Lyucu", link: "/concepts/lyucu" },
         firstAppeared: { text: "The Wall of Storms", link: "/books/the-wall-of-storms" },
         lastAppeared: { text: "The Wall of Storms", link: "/books/the-wall-of-storms" }
     },
     appearanceAndPersonality: [
-        { type: 'text', content: "Tenryo is the epitome of a pragmatic and ruthless leader, forged by a life of harshness and war. He is a master of the long game, feigning submission and ignorance for years to learn the secrets of the technologically superior Dara. He is patient, cunning, and completely devoid of sentiment when it comes to achieving his goals. He is not a man of honor in the Dara sense; he is a survivor and a conqueror who will use any means necessary to secure a future for his people." },
+        { type: 'text', content: "Tenryo is the epitome of a pragmatic and ruthless leader, forged by a life of harshness and war. He is a master of the long game, feigning submission and ignorance for years to learn the secrets of the technologically superior Dara. He is patient, cunning, and completely devoid of sentiment when it comes to achieving his goals. He is a conqueror who will use any means necessary to secure a future for his people." },
         { type: 'ref', data: { book: "The Wall of Storms", chapter: 49, link: "/books/the-wall-of-storms#chapter-49" } },
     ],
     history: [
         {
             era: "The Wall of Storms",
             summary: [
-                { type: 'text', content: "Tenryo's backstory is one of brutal pragmatism. Sent as a hostage to the rival Agon tribe as a boy, he learned their ways and returned to unite all the Lyucu tribes under his iron-fisted rule." },
+                { type: 'text', content: "Pékyu Tenryo's entire life was a decades-long strategic gambit to conquer the rich lands of Dara for his people." }
+            ]
+        },
+        {
+            era: "The Conqueror from Beyond the Storms",
+            summary: [
+                { type: 'text', content: "Tenryo's backstory is one of brutal pragmatism. He united the warring Lyucu tribes under his rule. When Emperor Mapidéré's expedition arrived, Tenryo played the part of a servile barbarian, allowing his people to absorb Dara's technology. When the time was right, he led a violent uprising, enslaved the entire expedition, and used their ships to launch his own invasion." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 48, link: "/books/the-wall-of-storms#chapter-48" } },
-                { type: 'text', content: "When Emperor Mapidéré's expedition arrived, Tenryo played the part of a servile barbarian, allowing his people to learn Dara's technology and tactics. When the time was right, he led a violent uprising, enslaved the entire expedition, and used their city-ships to launch his own invasion of Dara." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 49, link: "/books/the-wall-of-storms#chapter-49" } },
                 { type: 'text', content: "He personally oversaw the initial invasion, outmaneuvering Zato Ruthi and conquering Dasu. His campaign culminated in the Battle of Zathin Gulf, where he used the captured Emperor Ragin as a human shield. He was killed in a final duel aboard his flagship by Gin Mazoti and Zomi Kidosu." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 36, link: "/books/the-wall-of-storms#chapter-36" } },
@@ -46,15 +50,18 @@ const characterData: Character = {
     ]
 };
 
+// Generate metadata for SEO
+export async function generateMetadata(): Promise<Metadata> {
+    return generateCharacterMetadata(characterData);
+}
+
 export default function PekyuTenryoPage() {
-    const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <CharacterPageTemplate characterData={characterData} />
+            <CharacterNavigation prevPage={null} nextPage={null} returnLink={returnLink} />
+            <PageTemplate pageData={convertCharacterData(characterData)} infoBoxTitle="Biographical Information" />
         </>
     );
 }

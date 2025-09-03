@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import BookNavigation from '../../components/BookNavigation';
-import TopPageNavigation from '../../components/TopPageNavigation';
+import { TopNavigation, BottomNavigation } from '../../components/layout/PageNavigation';
 import { formatAsteriskToBold } from '../../utils/textFormatting';
 
 // --- FULLY REVISED & COMPLETE DATA FOR THE GRACE OF KINGS ---
@@ -40,7 +39,7 @@ const chapters = [
         quote: "All life is an experiment. Who can plan so far ahead?",
         speaker: "Kuni Garu",
         summary: "Jia Matiza, a brilliant and fiercely independent young woman, is a skilled herbalist who has consistently thwarted her family's attempts to marry her off, systematically humiliating a series of unsuitable suitors. Her sharp mind is matched only by her desire for a partner who is her intellectual equal, a desire shaped by a childhood dream of a man who promised her a life of hardship and joy that would be sung of for a thousand years. At a welcoming party for her father, she once again encounters Kuni Garu as he attempts to bluff his way in using the 'Fin Crukédori' alias. Amused by his audacity and recognizing him from the marketplace, she invites him in as her guest.\n\nThey are instantly drawn to each other, engaging in witty banter that reveals a deep philosophical connection. During their courtship, they walk through the countryside, where Jia explains her admiration for the dandelion—a common weed she sees as a symbol of resilience, practicality, and resourcefulness. Kuni sees the same qualities in himself and is deeply moved by her perception. Inspired by her belief in him and a desire to build a life with her, Kuni decides to abandon his aimless ways. He asks his friend, the city clerk Cogo Yelu, to secure him a respectable government job as a guard for the Corvée Department. With a steady income, he formally asks for Jia's hand. Her father, Gilo, despite his misgivings about Kuni's reputation, reluctantly agrees. They marry and begin a quiet life, but Kuni finds his new, monotonous job stifling. He feels like a dandelion seed, tethered and waiting for a great wind to carry him to his true destiny.",
-        links: [{ name: "Zudi", path: "/places/zudi" }, { name: "Jia Matiza", path: "/characters/jia-matiza" }, { name: "Kuni Garu", path: "/characters/kuni-garu" }, { name: "Dandelion", path: "/concepts/dandelion" }, { name: "Cogo Yelu", path: "/characters/cogo-yel" }]
+        links: [{ name: "Zudi", path: "/places/zudi" }, { name: "Jia Matiza", path: "/characters/jia-matiza" }, { name: "Kuni Garu", path: "/characters/kuni-garu" }, { name: "Dandelion", path: "/concepts/dandelion" }, { name: "Cogo Yelu", path: "/characters/cogo-yelu" }]
     },
     {
         num: 5,
@@ -130,7 +129,7 @@ const chapters = [
         quote: "No fish can live in perfectly clear water.",
         speaker: "Rin Coda",
         summary: "Kuni Garu's bandit gang storms Zudi. After the vacillating mayor attempts to betray him, Kuni uses his loyalists inside the city to spread rumors of a liberating army, inciting the populace to rise up and open the gates. Hailed as a hero, Kuni is proclaimed the Duke of Zudi by popular acclamation. He proves to be a surprisingly adept and diligent ruler, working tirelessly to restore order, secure the roads for trade, and win the support of the city's elders and bureaucrats. When faced with a tax revenue crisis, his advisor Cogo Yelu invents a brilliant scheme: a public lottery where purchase receipts from vendors serve as tickets. The system ingeniously turns every citizen into a tax inspector, forcing merchants to report their true income. While building his administration, Kuni also begins the difficult task of training his followers into a disciplined army, preparing for the inevitable imperial counterattack.",
-        links: [{ name: "Zudi", path: "/places/zudi" }, { name: "Kuni Garu", path: "/characters/kuni-garu" }, { name: "Cogo Yelu", path: "/characters/cogo-yel" }, { name: "Rin Coda", path: "/characters/rin-coda" }]
+        links: [{ name: "Zudi", path: "/places/zudi" }, { name: "Kuni Garu", path: "/characters/kuni-garu" }, { name: "Rin Coda", path: "/characters/rin-coda" }]
     },
     {
         num: 15,
@@ -310,7 +309,7 @@ const chapters = [
         quote: "You are a good friend, but you’re also a fool.",
         speaker: "Mata Zyndu",
         summary: "In the desolate ruins of Pan, Hegemon Mata Zyndu holds a victory banquet and summons Kuni Garu, intending to publicly shame and possibly execute him for his perceived betrayal. Kuni courageously attends, accompanied only by Luan Zya and his loyal, formidable butcher-general, Mün Çakri. Kuni delivers a masterful and heartfelt speech, professing that his actions were only ever intended to pave the way for Mata's ultimate triumph. The tense standoff is broken when one of Mata's advisors, Torulu Pering, signals for an assassin to kill Kuni during a celebratory sword dance. However, Mün Çakri intervenes, using his massive shield and meat-carving prowess to protect his lord. Moved by Kuni's apparent sincerity and impressed by Mün's fierce loyalty, Mata spares Kuni's life, but the chasm between the two former brothers is now deeper than ever.",
-        links: [{ name: "Pan", path: "/places/pan" }, { name: "Kuni Garu", path: "/characters/kuni-garu" }, { name: "Mata Zyndu", path: "/characters/mata-zyndu" }, { name: "Luan Zya", path: "/characters/luan-zya" }, { name: "Mün Çakri", path: "/characters/mun-cakr" }]
+        links: [{ name: "Pan", path: "/places/pan" }, { name: "Kuni Garu", path: "/characters/kuni-garu" }, { name: "Mata Zyndu", path: "/characters/mata-zyndu" }, { name: "Luan Zya", path: "/characters/luan-zya" }, { name: "Mün Çakri", path: "/characters/mun-cakri" }]
     },
     {
         num: 35,
@@ -328,7 +327,7 @@ const chapters = [
         quote: "I’m coming home, my beloved, center of my heart.",
         speaker: "Kuni Garu",
         summary: "Exiled to the barren island of Dasu, Kuni Garu and his followers must put on a performance of contentment for Mata Zyndu's spies, who watch them constantly from the neighboring island of Rui. As a grand gesture of his supposed acceptance of his fate, Kuni follows Luan Zya's cunning advice and burns his entire fleet of transport ships upon arrival, signaling to the Hegemon that he has no means or intention of leaving his island prison. While his administrator, Cogo Yelu, begins the practical and difficult work of building a functional state from nothing, Kuni establishes a secret line of communication with Jia. Using invisible ink made from dandelion milk, they exchange letters, plotting a seemingly impossible strategy for Kuni's return to power from the edge of the world.",
-        links: [{ name: "Dasu", path: "/places/dasu" }, { name: "Kuni Garu", path: "/characters/kuni-garu" }, { name: "Jia Matiza", path: "/characters/jia-matiza" }, { name: "Cogo Yelu", path: "/characters/cogo-yel" }, { name: "Luan Zya", path: "/characters/luan-zya" }]
+        links: [{ name: "Dasu", path: "/places/dasu" }, { name: "Kuni Garu", path: "/characters/kuni-garu" }, { name: "Jia Matiza", path: "/characters/jia-matiza" }, { name: "Luan Zya", path: "/characters/luan-zya" }]
     },
     {
         num: 37,
@@ -373,7 +372,7 @@ const chapters = [
         quote: "A woman is often weaker than a man physically, and that means she must use a different set of techniques when she wishes to overcome a stronger opponent.",
         speaker: "Gin Mazoti",
         summary: "After months of petitioning, Gin Mazoti is finally granted an audience with Kuni Garu in Dasu. She proves her strategic genius by handily defeating his chief minister, Cogo Yelu, in a game of cüpa. Impressed and true to his meritocratic ideals, Kuni makes a revolutionary decision: he reveals Gin's true identity as a woman to his entire army and appoints her as his Marshal. Despite the initial shock and sexist resistance from his commanders, Gin quickly earns their absolute respect by implementing highly innovative and brutally effective training methods. She institutes realistic war games and, with Lady Risana's help, establishes a women's auxiliary corps, forging Kuni's small, isolated army into a uniquely modern and formidable fighting force.",
-        links: [{ name: "Dasu", path: "/places/dasu" }, { name: "Gin Mazoti", path: "/characters/gin-mazoti" }, { name: "Kuni Garu", path: "/characters/kuni-garu" }, { name: "Consort Risana", path: "/characters/consort-risana" }, { name: "Cogo Yelu", path: "/characters/cogo-yel" }]
+        links: [{ name: "Dasu", path: "/places/dasu" }, { name: "Gin Mazoti", path: "/characters/gin-mazoti" }, { name: "Kuni Garu", path: "/characters/kuni-garu" }, { name: "Consort Risana", path: "/characters/consort-risana" }]
     },
     {
         num: 42,
@@ -477,21 +476,12 @@ const ExternalLinkIcon = () => (
 
 
 export default function GraceOfKingsPage() {
-    const bookNav = {
-        prevBook: null,
-        nextBook: { title: "The Wall of Storms", link: "/books/the-wall-of-storms" }
-    };
-
-    const prevPageData = null;
-    const nextPageData = { title: "The Wall of Storms", path: "/books/the-wall-of-storms" };
-    const returnLinkData = { title: "Return to Series Overview", path: "/books" };
-
     return (
         <div>
-            <TopPageNavigation
-                prevPage={prevPageData}
-                nextPage={nextPageData}
-                returnLink={returnLinkData}
+            <TopNavigation
+                prevPage={null}
+                nextPage={{ title: "The Wall of Storms", path: "/books/the-wall-of-storms" }}
+                returnLink={{ title: "Return to Series Overview", path: "/books" }}
             />
 
             {/* --- BOOK HEADER --- */}
@@ -579,7 +569,11 @@ export default function GraceOfKingsPage() {
                 ))}
             </div>
 
-            <BookNavigation prevBook={bookNav.prevBook} nextBook={bookNav.nextBook} />
+            <BottomNavigation
+                prevItem={null}
+                nextItem={{ title: "The Wall of Storms", path: "/books/the-wall-of-storms" }}
+                bottomNavType="book"
+            />
         </div>
     );
 }

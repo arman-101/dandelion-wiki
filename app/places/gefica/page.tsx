@@ -1,57 +1,50 @@
 'use client';
 
-import PlacePageTemplate from '../../components/PlacePageTemplate';
+import PageTemplate, { convertPlaceData } from '../../components/layout/PageTemplate';
 import { Place, ALL_PLACES } from '../../data/wiki-data';
 import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { PlaceNavigation } from '@/app/components/layout/PageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
-export default function GeficaPage() {
-  const pathname = usePathname();
-  const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_PLACES);
-  const returnLink = { title: 'Return to All Places', path: '/places' };
-
-  const placeData: Place = {
+// --- DATA FOR GÉFICA ---
+const placeData: Place = {
     name: "Géfica",
-    image: "/places/gefica.png", 
-    introduction: "A region with unique cultural and historical significance, Géfica becomes important during the later events of the series and plays a role in the complex political landscape.",
+    image: "/places/gefica.png",
+    introduction: "Géfica is a rich and strategically vital territory in Dara. It is most famous for being the subject of the 'Princeps's Promise,' a declaration that became a major catalyst for the civil war between Kuni Garu and Mata Zyndu.",
     infoBox: {
-      "Type": "Region",
-      "Location": "Dara",
-      "Significance": "Cultural and Historical",
-      "First appearance": "The Veiled Throne",
-      "Related places": [
-        { text: "Gan", link: "/places/gan" },
-        { text: "Kriphi", link: "/places/kriphi" },
-        { text: "Zathin Gulf", link: "/places/zathin-gulf" }
-      ]
+        Type: "Territory / Region",
+        Location: "Dara",
+        Significance: "The subject of the Princeps's Promise",
+        FirstAppearance: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" },
+        RelatedPlace: { text: "Géjira", link: "/places/gejira" }
     },
     geography: [
-      { type: "text" as const, content: "Géfica is a region with distinctive geographical features that contribute to its cultural and historical importance. The landscape provides both natural resources and strategic advantages for the people who inhabit the area." }
+        { type: 'text', content: "Géfica is described as a rich and strategically important territory, making its promised kingship a prize worthy of the greatest commanders of the rebellion." }
     ],
     culture: [
-      { type: "text" as const, content: "The culture of Géfica is characterized by its unique traditions and way of life, shaped by the region's geography and its interactions with neighboring areas. The local population has developed distinct customs and practices that reflect their environment and history." }
+        { type: 'text', content: "As a territory whose ownership was a major point of contention, the culture of Géfica is defined by its status as a great prize, coveted by the powerful." }
     ],
     history: [
-      {
-        event: "Early History",
-        summary: [
-          { type: "text" as const, content: "Géfica has a long history as a region within the Dara empire, with its people contributing to the cultural and economic diversity of the unified realm. The region's unique characteristics have made it a valuable part of the empire." }
-        ]
-      },
-      {
-        event: "Role in Later Events",
-        summary: [
-          { type: "text" as const, content: "During the complex political events of the later books, Géfica becomes an important location where various factions and interests converge. The region's cultural and historical significance makes it a focal point for political maneuvering and strategic planning." }
-        ]
-      }
+        {
+            event: "The Princeps's Promise",
+            summary: [
+                { type: 'text', content: "During the Dandelion Rebellion, the leader of the allied forces, King Thufi, made a binding public promise: any commander who captured the Imperial capital of Pan would be granted kingship over Géfica. This promise was aimed at motivating Kuni Garu, but when Kuni succeeded, Mata Zyndu felt betrayed, believing the glory and the prize were rightfully his. Mata declared the promise null and void, a key event that shattered their friendship and ignited the Chrysanthemum-Dandelion War." },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 26, link: "/books/the-grace-of-kings#chapter-26" } },
+                { type: 'ref', data: { book: "The Grace of Kings", chapter: 33, link: "/books/the-grace-of-kings#chapter-33" } },
+            ]
+        },
     ]
-  };
+};
 
-  return (
-    <>
-      <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-      <PlacePageTemplate placeData={placeData} />
-    </>
-  );
-} 
+export default function GeficaPage() {
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_PLACES]);
+    const returnLink = { title: 'Return to All Places', path: '/places' };
+
+    return (
+        <>
+            <PlaceNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PageTemplate pageData={convertPlaceData(placeData)} infoBoxTitle="Location Information" />
+        </>
+    );
+}

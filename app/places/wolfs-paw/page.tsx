@@ -1,16 +1,16 @@
 'use client';
 
-import PlacePageTemplate from '../../components/PlacePageTemplate';
+import PageTemplate, { convertPlaceData } from '../../components/layout/PageTemplate';
 import { Place, ALL_PLACES } from '../../data/wiki-data';
 import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { PlaceNavigation } from '@/app/components/layout/PageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
 // --- DATA FOR WOLF'S PAW ---
 const placeData: Place = {
     name: "Wolf's Paw",
     image: "/places/wolfs-paw.png",
-    introduction: "Wolf's Paw is a southern island, part of the state of Gan, separated from the mainland by the treacherous Kishi Channel. It was the site of one of the largest and most consequential battles of the Dandelion Rebellion, and the location of one of Mata Zyndu's most horrific atrocities.",
+    introduction: "Wolf's Paw is a southern island, part of the state of Gan, separated from the mainland by the treacherous Kishi Channel. It was the site of one of the largest battles of the Dandelion Rebellion and one of Mata Zyndu's most horrific atrocities.",
     infoBox: {
         type: "Island",
         state: { text: "Gan", link: "/places/gan" },
@@ -18,7 +18,7 @@ const placeData: Place = {
         KeyLandmark: { text: "Kishi Channel", link: "/places/kishi-channel" }
     },
     geography: [
-        { type: 'text', content: "A large island off the southern coast of the Big Island, its proximity to the Kishi Channel, a deadly whirlpool, makes naval passage extremely dangerous." },
+        { type: 'text', content: "A large island off the southern coast, its proximity to the Kishi Channel, a deadly whirlpool, makes naval passage extremely dangerous." },
         { type: 'ref', data: { book: "The Grace of Kings", chapter: 31, link: "/books/the-grace-of-kings#chapter-31" } },
     ],
     culture: [
@@ -28,14 +28,14 @@ const placeData: Place = {
         {
             event: "Battle of Wolf's Paw",
             summary: [
-                { type: 'text', content: "The island was the site of the climactic battle between the main rebel forces, led by a grief-stricken and enraged Mata Zyndu, and the Imperial armies under Kindo Marana and Tanno Namen. Despite the mid-battle betrayal of his allies from Faça and Gan, Mata's godlike fury turned the tide, leading to a crushing rebel victory. The honorable Tanno Namen took his own life, and Kindo Marana was captured." },
+                { type: 'text', content: "The island was the site of the climactic battle between the main rebel forces, led by a grief-stricken Mata Zyndu, and the Imperial armies. Despite the mid-battle betrayal of his allies, Mata's godlike fury turned the tide, leading to a crushing rebel victory." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 29, link: "/books/the-grace-of-kings#chapter-29" } },
             ]
         },
         {
             event: "The Massacre at Wolf's Paw",
             summary: [
-                { type: 'text', content: "After the battle, Mata's massive army was trapped on the island by the remaining Imperial navy and the deadly Kishi Channel. Tempted by the goddess Kana, Mata committed a monstrous act of cold-blooded strategy. He tricked 20,000 surrendered Imperial prisoners onto poorly built ships and sent them into the whirlpool as a human sacrifice to the sea god Tazu. The act earned Mata the infamous title 'Butcher of Wolf's Paw' and marked his definitive break from his code of honor." },
+                { type: 'text', content: "After the battle, Mata's army was trapped on the island. Tempted by the goddess Kana, Mata committed a monstrous act, sacrificing 20,000 surrendered prisoners to the sea god Tazu. The act earned Mata the infamous title 'Butcher of Wolf's Paw' and marked his definitive break from his code of honor." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 31, link: "/books/the-grace-of-kings#chapter-31" } },
             ]
         },
@@ -49,8 +49,8 @@ export default function WolfsPawPage() {
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <PlacePageTemplate placeData={placeData} />
+            <PlaceNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PageTemplate pageData={convertPlaceData(placeData)} infoBoxTitle="Location Information" />
         </>
     );
 }

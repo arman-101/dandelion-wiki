@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
-import ScrollToTopButton from './components/ScrollToTopButton'
-import ThemeProviders from './components/ThemeProviders'
+import Navbar from './components/layout/Navbar'
+import Footer from './components/layout/Footer'
+import ScrollToTopButton from './components/ui/ScrollToTopButton'
+import ThemeProviders from './components/layout/ThemeProviders'
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 

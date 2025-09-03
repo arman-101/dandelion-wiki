@@ -1,22 +1,24 @@
-'use client';
+import { Metadata } from 'next';
 
-import CharacterPageTemplate from '../../components/CharacterPageTemplate';
+import PageTemplate, { convertCharacterData } from '../../components/layout/PageTemplate';
+import { generateCharacterMetadata } from '@/app/utils/metadata';
 import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
-import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
-import { getSurroundingPages } from '@/app/utils/navigationUtils';
+import { CharacterNavigation } from '@/app/components/layout/PageNavigation';
 
 const characterData: Character = {
     name: "Princess Théra",
     image: "/characters/princess-thera.png",
-    introduction: "Princess Théra is the brilliant, adventurous, and scientifically-minded eldest daughter of Emperor Ragin and Empress Jia. Possessing her father's charisma and her mother's intellect, she was secretly chosen by Kuni to be his heir. She later abdicates to lead a rebellion against the Lyucu in their homeland, becoming a legendary figure in her own right.",
+    introduction: "Princess Théra is the brilliant, adventurous, and scientifically-minded eldest daughter of Emperor Ragin and Empress Jia. Possessing her father's charisma and her mother's intellect, she was secretly chosen by Kuni to be his heir. She later leads a rebellion against the Lyucu in their homeland, becoming a legendary figure in her own right.",
     infoBox: {
-        aliases: "Empress Üna",
+        aliases: "Empress Üna, Pékyu-votan Théra",
         occupation: "Princess, Empress of Dara, Rebel Leader",
-        placeOfBirth: { text: "Zudi", link: "/places/zudi" },
+        placeOfBirth: { text: "Pan", link: "/places/pan" },
         status: "Alive",
         gender: "Female",
-        significantOther: { text: "Takval Aragoz", link: "/characters/takval-aragoz" },
+        significantOther: [
+            { text: "Takval Aragoz", link: "/characters/takval-aragoz" },
+            { text: "Zomi Kidosu", link: "/characters/zomi-kidosu" }
+        ],
         relatives: [
             { text: "Kuni Garu (father)", link: "/characters/kuni-garu" },
             { text: "Jia Matiza (mother)", link: "/characters/jia-matiza" },
@@ -27,14 +29,14 @@ const characterData: Character = {
             { text: "Rokiri Aragoz (son)", link: "/characters/rokiri-aragoz" }
         ],
         affiliation: "Dandelion Court, Dara Expeditionary Force, Agon Rebellion",
-        nationality: "Dara",
+        nationality: "Daran",
         firstAppeared: { text: "The Wall of Storms", link: "/books/the-wall-of-storms" },
         lastAppeared: { text: "Speaking Bones", link: "/books/speaking-bones" }
     },
     appearanceAndPersonality: [
-        { type: 'text', content: "Théra is clever, courageous, and endlessly curious. From a young age, she displays a keen and intuitive understanding of politics, often seeing the subtext that her more literal-minded brother Timu misses." },
+        { type: 'text', content: "Théra is clever, courageous, and endlessly curious. From a young age, she displays a keen and intuitive understanding of politics, often seeing the subtext that her brother Timu misses." },
         { type: 'ref', data: { book: "The Wall of Storms", chapter: 11, link: "/books/the-wall-of-storms#chapter-11" } },
-        { type: 'text', content: " She has a scientific and rational mind, seeking logical explanations for seemingly magical phenomena. This allows her to deduce the scientific principles behind the Hegemon cult's 'magic mirrors' and later, the biology of the garinafins. She is a natural leader who inspires loyalty through her intelligence and bravery." },
+        { type: 'text', content: "She has a scientific mind, seeking logical explanations for seemingly magical phenomena. This allows her to deduce the principles behind the Hegemon cult's 'magic mirrors' and later, the biology of the garinafins. She is a natural leader who inspires loyalty through her intelligence and bravery." },
         { type: 'ref', data: { book: "The Wall of Storms", chapter: 26, link: "/books/the-wall-of-storms#chapter-26" } },
         { type: 'ref', data: { book: "The Wall of Storms", chapter: 53, link: "/books/the-wall-of-storms#chapter-53" } },
     ],
@@ -42,37 +44,55 @@ const characterData: Character = {
         {
             era: "The Wall of Storms",
             summary: [
-                { type: 'text', content: "As a young princess, Théra, along with her brothers, saved the scholar [[Zomi Kidosu|/characters/zomi-kidosu]] from an extortionist. Her father, Emperor Ragin, secretly recognized her potential and confided in [[Luan Zya|/characters/luan-zya]] his intention to name her as his heir, a radical break from tradition." },
-                { type: 'ref', data: { book: "The Wall of Storms", chapter: 1, link: "/books/the-wall-of-storms#chapter-1" } },
+                { type: 'text', content: "As a young princess, Théra's brilliance was recognized early by her father, who secretly intended to name her as his heir. She proved his faith was well-placed when she became a hero of the realm." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 18, link: "/books/the-wall-of-storms#chapter-18" } },
-                { type: 'text', content: "She single-handedly ended the Hegemon cult rebellion in [[Tunoa Islands|/places/tunoa-islands]] by using her scientific knowledge to create a counter-illusion, projecting an image that shattered the rebels' faith. This act saved her brother [[Prince Phyro|/characters/prince-phyro]] and cemented her reputation as a hero." },
+            ]
+        },
+        {
+            era: "A Princess of a New Age",
+            summary: [
+                { type: 'text', content: "Théra single-handedly ended the Hegemon cult rebellion by using her scientific knowledge to create a superior illusion, shattering the rebels' faith. She also collaborated closely with Zomi Kidosu on scientific research, and their friendship blossomed into love." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 27, link: "/books/the-wall-of-storms#chapter-27" } },
-                { type: 'text', content: "After her father's death, she was named his successor, but chose to abdicate in favor of [[Prince Phyro|/characters/prince-phyro]]. Instead, she married the Agon prince [[Takval Aragoz|/characters/takval-aragoz]] and led an expedition across the [[Wall of Storms|/concepts/wall-of-storms]] to wage war on the [[Lyucu|/concepts/lyucu]] in their homeland." },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 53, link: "/books/the-wall-of-storms#chapter-53" } },
+                { type: 'text', content: "After her father's death, she was named his successor but chose to abdicate. Instead, she married the Agon prince Takval Aragoz and led an expedition across the Wall of Storms to wage war on the Lyucu in their homeland." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 58, link: "/books/the-wall-of-storms#chapter-58" } },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 62, link: "/books/the-wall-of-storms#chapter-62" } },
             ]
         },
         {
-            era: "The Veiled Throne & Speaking Bones",
+            era: "The Veiled Throne",
             summary: [
-                { type: 'text', content: "In [[Ukyu & Gonde|/places/ukyu-gonde]], Théra and [[Takval Aragoz|/characters/takval-aragoz]] forged an alliance with the exiled [[Agon|/concepts/agon]] tribes and began a long, grueling rebellion. After a devastating attack on their secret base, she and the survivors were forced into exile in the [[World's Edge Mountains|/places/worlds-edge-mountains]]. There, they discovered a [[garinafin|/concepts/garinafin]] boneyard and ancient knowledge that allowed them to create new 'living bone' technologies, turning the tide of their war. Her rebellion became a crucial second front, weakening the [[Lyucu|/concepts/lyucu]] Empire from within and aiding the war effort back in Dara." },
+                { type: 'text', content: "In Ukyu-Gondé, Théra forged an alliance with exiled Agon tribes and began a long, grueling rebellion. After a devastating betrayal and attack on their secret base, she and the survivors were forced into exile, and she fell into a deep depression over the loss of her children." },
                 { type: 'ref', data: { book: "The Veiled Throne", chapter: 13, link: "/books/the-veiled-throne#chapter-13" } },
-                { type: 'ref', data: { book: "Speaking Bones", chapter: 20, link: "/books/speaking-bones#chapter-20" } },
-                { type: 'ref', data: { book: "Speaking Bones", chapter: 29, link: "/books/speaking-bones#chapter-29" } },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 27, link: "/books/the-veiled-throne#chapter-27" } },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 45, link: "/books/the-veiled-throne#chapter-45" } },
+            ]
+        },
+        {
+            era: "Speaking Bones",
+            summary: [
+                { type: 'text', content: "After recovering from her grief, Théra led her band of rebels through a series of desperate gambits, culminating in a brilliant plan that led to the death of the Lyucu leader Pékyu Cudyu and the destruction of his invasion fleet. Betrayed by the Agon, she led her multi-ethnic followers to the forbidden 'City of Ghosts,' where she was reunited with her sons. There, they used new 'speaking bones' technology to broadcast a message of peace and their people's true history across the land. Years later, she returned to Dara an old woman for an emotional final reunion with Zomi Kidosu." },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 1, link: "/books/speaking-bones#chapter-1" } },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 16, link: "/books/speaking-bones#chapter-16" } },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 33, link: "/books/speaking-bones#chapter-33" } },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 59, link: "/books/speaking-bones#chapter-59" } },
             ]
         },
     ]
 };
 
+// Generate metadata for SEO
+export async function generateMetadata(): Promise<Metadata> {
+    return generateCharacterMetadata(characterData);
+}
+
 export default function PrincessTheraPage() {
-    const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <CharacterPageTemplate characterData={characterData} />
+            <CharacterNavigation prevPage={null} nextPage={null} returnLink={returnLink} />
+            <PageTemplate pageData={convertCharacterData(characterData)} infoBoxTitle="Biographical Information" />
         </>
     );
 }

@@ -1,10 +1,9 @@
-'use client';
+import { Metadata } from 'next';
 
-import CharacterPageTemplate from '../../components/CharacterPageTemplate';
+import PageTemplate, { convertCharacterData } from '../../components/layout/PageTemplate';
+import { generateCharacterMetadata } from '@/app/utils/metadata';
 import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
-import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
-import { getSurroundingPages } from '@/app/utils/navigationUtils';
+import { CharacterNavigation } from '@/app/components/layout/PageNavigation';
 
 const characterData: Character = {
     name: "Pon Naye",
@@ -17,7 +16,7 @@ const characterData: Character = {
         status: "Deceased",
         gender: "Male",
         affiliation: "Dara Imperial Air Force",
-        nationality: "Dara",
+        nationality: "Daran",
         firstAppeared: { text: "The Wall of Storms", link: "/books/the-wall-of-storms" },
         lastAppeared: { text: "The Wall of Storms", link: "/books/the-wall-of-storms" }
     },
@@ -29,22 +28,31 @@ const characterData: Character = {
         {
             era: "The Wall of Storms",
             summary: [
-                { type: 'text', content: "Commander Pon Naye led a squadron of new 'phantom' airships during Marshal Gin's daring counter-invasion of Rui. During the Battle of Kriphi Harbor, his squadron launched a devastating surprise attack on the Lyucu fleet. When a garinafin attacked his ship, Pon Naye made the ultimate sacrifice, ordering his crew to abandon ship while he steered the damaged vessel on a suicidal ramming course, successfully killing the war beast and securing a key moment in Dara's first victory against the invaders." },
+                { type: 'text', content: "Commander Pon Naye's singular appearance is marked by one of the most heroic acts of the Lyucu War." }
+            ]
+        },
+        {
+            era: "A Hero's Sacrifice",
+            summary: [
+                { type: 'text', content: "Commander Naye led a squadron of new 'phantom' airships during Marshal Gin's counter-invasion of Rui. During the Battle of Kriphi Harbor, when a garinafin attacked his ship, Pon Naye made the ultimate sacrifice. He ordered his crew to abandon ship while he steered the damaged vessel on a suicidal ramming course, successfully killing the war beast and securing a key moment in Dara's first victory against the invaders." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 42, link: "/books/the-wall-of-storms#chapter-42" } },
             ]
         },
     ]
 };
 
+// Generate metadata for SEO
+export async function generateMetadata(): Promise<Metadata> {
+    return generateCharacterMetadata(characterData);
+}
+
 export default function PonNayePage() {
-    const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <CharacterPageTemplate characterData={characterData} />
+            <CharacterNavigation prevPage={null} nextPage={null} returnLink={returnLink} />
+            <PageTemplate pageData={convertCharacterData(characterData)} infoBoxTitle="Biographical Information" />
         </>
     );
 }

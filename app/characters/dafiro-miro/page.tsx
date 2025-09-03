@@ -1,10 +1,9 @@
-'use client';
+import { Metadata } from 'next';
 
-import CharacterPageTemplate from '../../components/CharacterPageTemplate';
+import PageTemplate, { convertCharacterData } from '../../components/layout/PageTemplate';
+import { generateCharacterMetadata } from '@/app/utils/metadata';
 import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
-import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
-import { getSurroundingPages } from '@/app/utils/navigationUtils';
+import { CharacterNavigation } from '@/app/components/layout/PageNavigation';
 
 const characterData: Character = {
     name: "Dafiro Miro",
@@ -32,34 +31,49 @@ const characterData: Character = {
         {
             era: "The Grace of Kings",
             summary: [
+                { type: 'text', content: "Dafiro's journey began at the very start of the rebellion, where his cleverness and loyalty set him on a path to the heart of the new empire." }
+            ]
+        },
+        {
+            era: "A Rebel's Rise",
+            summary: [
                 { type: 'text', content: "Dafiro and his brother Ratho were corvée laborers who sparked the first uprising by killing their guards and joining Huno Krima's rebellion." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 6, link: "/books/the-grace-of-kings#chapter-6" } },
-                { type: 'text', content: "During the Chrysanthemum-Dandelion War, he seemingly served Hegemon Mata Zyndu's commander, Kindo Marana. However, he was secretly working as a double agent for Kuni Garu. During Gin Mazoti's surprise attack on Rui, he revealed his true allegiance by killing Marana at a critical moment." },
+                { type: 'text', content: "During the Chrysanthemum-Dandelion War, he seemingly served Hegemon Mata Zyndu's commander, Kindo Marana. However, he was secretly working as a double agent for Kuni Garu. During Gin Mazoti's surprise attack on Rui, he revealed his true allegiance by assassinating Marana at a critical moment." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 43, link: "/books/the-grace-of-kings#chapter-43" } },
             ]
         },
         {
             era: "The Wall of Storms",
             summary: [
-                { type: 'text', content: "As Captain of the Palace Guards, Dafiro served as Emperor Ragin's secret agent. He was sent to offer the imprisoned Gin Mazoti a chance to escape, an offer her pride forced her to refuse." },
+                { type: 'text', content: "As a trusted agent of the Dandelion Throne, Dafiro undertook several crucial missions before making the ultimate sacrifice." }
+            ]
+        },
+        {
+            era: "The Emperor's Man",
+            summary: [
+                { type: 'text', content: "As Captain of the Palace Guards, Dafiro served as Emperor Ragin's secret agent, attempting to free the imprisoned Gin Mazoti. He later undertook a diplomatic mission to Tan Adü, where he discovered their 'fire tube' technology." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 33, link: "/books/the-wall-of-storms#chapter-33" } },
-                { type: 'text', content: "He travels to Tan Adü to request the aid of the cruben-riders, where he discovers their 'fire tube' technology. In the final battle at Zathin Gulf, he fought bravely alongside Gin Mazoti, dying in the duel against Pékyu Tenryo." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 54, link: "/books/the-wall-of-storms#chapter-54" } },
+                { type: 'text', content: "In the final battle at Zathin Gulf, he boarded the Lyucu flagship with Gin Mazoti and died fighting bravely in the duel against Pékyu Tenryo." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 60, link: "/books/the-wall-of-storms#chapter-60" } },
             ]
         },
     ]
 };
 
+// Generate metadata for SEO
+export async function generateMetadata(): Promise<Metadata> {
+    return generateCharacterMetadata(characterData);
+}
+
 export default function DafiroMiroPage() {
-    const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <CharacterPageTemplate characterData={characterData} />
+            <CharacterNavigation prevPage={null} nextPage={null} returnLink={returnLink} />
+            <PageTemplate pageData={convertCharacterData(characterData)} infoBoxTitle="Biographical Information" />
         </>
     );
 }

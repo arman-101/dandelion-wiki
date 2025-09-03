@@ -1,10 +1,9 @@
-'use client';
+import { Metadata } from 'next';
 
-import CharacterPageTemplate from '../../components/CharacterPageTemplate';
+import PageTemplate, { convertCharacterData } from '../../components/layout/PageTemplate';
+import { generateCharacterMetadata } from '@/app/utils/metadata';
 import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
-import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
-import { getSurroundingPages } from '@/app/utils/navigationUtils';
+import { CharacterNavigation } from '@/app/components/layout/PageNavigation';
 
 const characterData: Character = {
     name: "Ofluro",
@@ -18,34 +17,37 @@ const characterData: Character = {
         gender: "Male",
         affiliation: "Dara Imperial Air Force",
         nationality: { text: "Lyucu", link: "/concepts/lyucu" },
-        firstAppeared: { text: "Speaking Bones", link: "/books/speaking-bones" },
+        firstAppeared: { text: "The Veiled Throne", link: "/books/the-veiled-throne" },
         lastAppeared: { text: "Speaking Bones", link: "/books/speaking-bones" }
     },
     appearanceAndPersonality: [
-        { type: 'text', content: "Ofluro is a harsh and demanding teacher, his methods born from the brutal traditions of the Lyucu. His loyalty is constantly questioned by the Dara pilots, and he maintains a professional distance, focused solely on the task of training an effective fighting force. He represents the difficult compromises and uneasy alliances necessary for Dara to survive." },
-        { type: 'ref', data: { book: "Speaking Bones", chapter: 3, link: "/books/speaking-bones#chapter-3" } },
+        { type: 'text', content: "Ofluro is a harsh and demanding teacher, his methods born from the brutal traditions of the Lyucu. His loyalty is constantly questioned by the Dara, and he maintains a professional distance, focused solely on the task of training an effective fighting force. He represents the difficult compromises and uneasy alliances necessary for Dara to survive." },
+        { type: 'ref', data: { book: "The Veiled Throne", chapter: 18, link: "/books/the-veiled-throne#chapter-18" } },
     ],
     history: [
         {
-            era: "Speaking Bones",
+            era: "The Veiled Throne & Speaking Bones",
             summary: [
-                { type: 'text', content: "A Lyucu defector, Ofluro's expertise with garinafins was invaluable. He was brought to the secret base at Tiro Cozo to train Emperor Phyro's new generation of Dara-bred garinafins and their riders. His harsh, uncompromising training methods caused friction but were ultimately effective, creating the powerful aerial army that Phyro would lead in the final war against the Lyucu." },
-                { type: 'ref', data: { book: "Speaking Bones", chapter: 3, link: "/books/speaking-bones#chapter-3" } },
-                { type: 'ref', data: { book: "Speaking Bones", chapter: 14, link: "/books/speaking-bones#chapter-14" } },
+                { type: 'text', content: "A Lyucu defector, Ofluro's expertise with garinafins was invaluable. He was brought to the secret base at Tiro Cozo to train Emperor Phyro's new generation of Dara-bred garinafins and their riders. His harsh, uncompromising training methods caused friction but were ultimately effective, creating the powerful aerial army that Phyro led in the final war against the Lyucu." },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 18, link: "/books/the-veiled-throne#chapter-18" } },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 26, link: "/books/speaking-bones#chapter-26" } },
             ]
         },
     ]
 };
 
+// Generate metadata for SEO
+export async function generateMetadata(): Promise<Metadata> {
+    return generateCharacterMetadata(characterData);
+}
+
 export default function OfluroPage() {
-    const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <CharacterPageTemplate characterData={characterData} />
+            <CharacterNavigation prevPage={null} nextPage={null} returnLink={returnLink} />
+            <PageTemplate pageData={convertCharacterData(characterData)} infoBoxTitle="Biographical Information" />
         </>
     );
 }

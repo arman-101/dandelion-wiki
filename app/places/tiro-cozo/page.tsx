@@ -1,57 +1,58 @@
 'use client';
 
-import PlacePageTemplate from '../../components/PlacePageTemplate';
+import PageTemplate, { convertPlaceData } from '../../components/layout/PageTemplate';
 import { Place, ALL_PLACES } from '../../data/wiki-data';
 import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { PlaceNavigation } from '@/app/components/layout/PageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
-export default function TiroCozoPage() {
-  const pathname = usePathname();
-  const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_PLACES);
-  const returnLink = { title: 'Return to All Places', path: '/places' };
-
-  const placeData: Place = {
+// --- DATA FOR TIRO COZO ---
+const placeData: Place = {
     name: "Tiro Cozo",
-    image: "/places/tiro-cozo.png", // Placeholder image
-    introduction: "A region that becomes important during the final events of the series, Tiro Cozo serves as a strategic location in the ultimate conflicts that determine the future of Dara.",
+    image: "/places/tiro-cozo.png",
+    introduction: "Tiro Cozo is the secret military base where Emperor Phyro established his clandestine garinafin breeding and training program. It was the birthplace of Dara's new aerial army, created in defiance of Empress Jia's regency.",
     infoBox: {
-      "Type": "Region",
-      "Location": "Dara",
-      "Significance": "Final Events Location",
-      "First appearance": "Speaking Bones",
-      "Related places": [
-        { text: "Last Bite", link: "/places/last-bite" },
-        { text: "World's Edge Mountains", link: "/places/worlds-edge-mountains" },
-        { text: "Sea of Tears", link: "/places/sea-of-tears" }
-      ]
+        Type: "Secret Military Base",
+        Location: "Dara",
+        Significance: "Birthplace of Dara's garinafin army",
+        FirstAppearance: { text: "The Veiled Throne", link: "/books/the-veiled-throne" },
+        KeyTechnology: [
+            { text: "Garinafin Breeding", link: "/concepts/garinafin" },
+            { text: "Ornithopters", link: "" },
+            { text: "'Sunflower' Missiles", link: "" }
+        ]
     },
     geography: [
-      { type: "text" as const, content: "Tiro Cozo is a region with strategic geographical features that make it important during the final events of the series. The area's terrain and position provide advantages for the forces that control it during the ultimate conflicts." }
+        { type: 'text', content: "Tiro Cozo's location is a closely guarded secret, chosen for its isolation to allow for the development of a new army away from the eyes of Empress Jia and the Imperial Court in Pan." },
     ],
     culture: [
-      { type: "text" as const, content: "The culture of Tiro Cozo has been shaped by its role in the final events of the series. The local population has developed unique traditions and ways of life that reflect their position at the center of world-changing events." }
+        { type: 'text', content: "The culture of Tiro Cozo was one of intense, focused military innovation. It was here that Dara's brightest engineers, like Rati Yera, and warriors worked under the command of Emperor Phyro and the harsh tutelage of the Lyucu defector Ofluro to master a new form of warfare." },
+        { type: 'ref', data: { book: "Speaking Bones", chapter: 23, link: "/books/speaking-bones#chapter-23" } },
     ],
     history: [
-      {
-        event: "Final Events",
-        summary: [
-          { type: "text" as const, content: "Tiro Cozo becomes a crucial location during the final events of the series, where the ultimate fate of Dara and its people is determined. The region serves as a focal point for the resolution of long-standing conflicts and the shaping of the world's future." }
-        ]
-      },
-      {
-        event: "Strategic Importance",
-        summary: [
-          { type: "text" as const, content: "The strategic importance of Tiro Cozo during the final conflicts makes it a key objective for various factions. Control of the region provides significant advantages in the ultimate struggle for the future of the world." }
-        ]
-      }
+        {
+            event: "The Emperor's Secret Army",
+            summary: [
+                { type: 'text', content: "Frustrated by his mother's pacifist policies, Emperor Phyro established Tiro Cozo as a secret base to build his own army. He worked with Zomi Kidosu and the Blossom Gang to circumvent Jia's authority and secure funding and personnel." },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 18, link: "/books/the-veiled-throne#chapter-18" } },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 40, link: "/books/the-veiled-throne#chapter-40" } },
+                { type: 'text', content: "The base became a hub of invention, where Rati Yera developed swarms of mechanical 'ornithopters' and light-guided 'sunflower' missiles. The garinafin force and new technologies created at Tiro Cozo were decisive in the final war against the Lyucu." },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 23, link: "/books/speaking-bones#chapter-23" } },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 25, link: "/books/speaking-bones#chapter-25" } },
+            ]
+        },
     ]
-  };
+};
 
-  return (
-    <>
-      <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-      <PlacePageTemplate placeData={placeData} />
-    </>
-  );
-} 
+export default function TiroCozoPage() {
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_PLACES]);
+    const returnLink = { title: 'Return to All Places', path: '/places' };
+
+    return (
+        <>
+            <PlaceNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PageTemplate pageData={convertPlaceData(placeData)} infoBoxTitle="Location Information" />
+        </>
+    );
+}

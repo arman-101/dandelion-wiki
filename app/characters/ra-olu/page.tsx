@@ -1,10 +1,9 @@
-'use client';
+import { Metadata } from 'next';
 
-import CharacterPageTemplate from '../../components/CharacterPageTemplate';
+import PageTemplate, { convertCharacterData } from '../../components/layout/PageTemplate';
+import { generateCharacterMetadata } from '@/app/utils/metadata';
 import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
-import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
-import { getSurroundingPages } from '@/app/utils/navigationUtils';
+import { CharacterNavigation } from '@/app/components/layout/PageNavigation';
 
 const characterData: Character = {
     name: "Ra Olu",
@@ -29,7 +28,13 @@ const characterData: Character = {
         {
             era: "The Wall of Storms",
             summary: [
-                { type: 'text', content: "As regent of Dasu, Ra Olu served Prince Timu. After the Lyucu conquered the island, he quickly became a collaborator. He advised Pékyu Tenryo on methods of control, such as collective punishment and rewarding informants. He also aided in the syncretization of the Dara and Lyucu gods, a key tool of cultural suppression. It was he who wrote the ultimatum to the Dandelion Court on Tenryo's behalf, a letter Zomi Kidosu later deconstructed to find hidden intelligence." },
+                { type: 'text', content: "Ra Olu's story is a portrait of pragmatic collaboration in the face of overwhelming force." }
+            ]
+        },
+        {
+            era: "The Collaborator of Dasu",
+            summary: [
+                { type: 'text', content: "After the Lyucu conquered Dasu, Ra Olu quickly became a collaborator. He advised Pékyu Tenryo on methods of control, such as collective punishment and rewarding informants, and aided in the syncretization of the Dara and Lyucu gods. It was he who penned the ultimatum to the Dandelion Court on Tenryo's behalf, a letter Zomi Kidosu later deconstructed to find hidden intelligence." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 35, link: "/books/the-wall-of-storms#chapter-35" } },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 40, link: "/books/the-wall-of-storms#chapter-40" } },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 41, link: "/books/the-wall-of-storms#chapter-41" } },
@@ -38,15 +43,18 @@ const characterData: Character = {
     ]
 };
 
+// Generate metadata for SEO
+export async function generateMetadata(): Promise<Metadata> {
+    return generateCharacterMetadata(characterData);
+}
+
 export default function RaOluPage() {
-    const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <CharacterPageTemplate characterData={characterData} />
+            <CharacterNavigation prevPage={null} nextPage={null} returnLink={returnLink} />
+            <PageTemplate pageData={convertCharacterData(characterData)} infoBoxTitle="Biographical Information" />
         </>
     );
 }

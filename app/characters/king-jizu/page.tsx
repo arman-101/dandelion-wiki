@@ -1,10 +1,9 @@
-'use client';
+import { Metadata } from 'next';
 
-import CharacterPageTemplate from '../../components/CharacterPageTemplate';
+import PageTemplate, { convertCharacterData } from '../../components/layout/PageTemplate';
+import { generateCharacterMetadata } from '@/app/utils/metadata';
 import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
-import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
-import { getSurroundingPages } from '@/app/utils/navigationUtils';
+import { CharacterNavigation } from '@/app/components/layout/PageNavigation';
 
 const characterData: Character = {
     name: "King Jizu",
@@ -29,22 +28,31 @@ const characterData: Character = {
         {
             era: "The Grace of Kings",
             summary: [
-                { type: 'text', content: "During the rebellion, Jizu was made King of Rima. When the Xana general Tanno Namen launched a swift and brutal campaign through his kingdom, Jizu's commanders proved treacherous and his ministers offered only cowardly advice. With his capital besieged, Jizu chose a noble death over surrender. He walked out to meet General Namen, set himself on fire, and burned to death while holding the Seal of Rima. His martyrdom became a powerful rallying cry for the rebellion." },
+                { type: 'text', content: "King Jizu's short reign and heroic death became a potent symbol of noble sacrifice for the rebellion." }
+            ]
+        },
+        {
+            era: "The Fisherman King's Martyrdom",
+            summary: [
+                { type: 'text', content: "When the Xana general Tanno Namen launched a swift and brutal campaign through Rima, Jizu's commanders proved treacherous and his ministers offered only cowardly advice. With his capital besieged, Jizu chose an honorable death over a dishonorable life. He walked out alone to meet Namen's army and, after securing a promise that his people would be spared, set himself ablaze. His martyrdom became a powerful rallying cry for the rebellion." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 15, link: "/books/the-grace-of-kings#chapter-15" } },
             ]
         },
     ]
 };
 
+// Generate metadata for SEO
+export async function generateMetadata(): Promise<Metadata> {
+    return generateCharacterMetadata(characterData);
+}
+
 export default function KingJizuPage() {
-    const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <CharacterPageTemplate characterData={characterData} />
+            <CharacterNavigation prevPage={null} nextPage={null} returnLink={returnLink} />
+            <PageTemplate pageData={convertCharacterData(characterData)} infoBoxTitle="Biographical Information" />
         </>
     );
 }

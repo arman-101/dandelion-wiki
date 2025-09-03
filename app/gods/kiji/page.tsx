@@ -1,9 +1,9 @@
 'use client';
 
-import GodPageTemplate from '../../components/GodPageTemplate';
+import PageTemplate, { convertGodData } from '../../components/layout/PageTemplate';
 import { God, ALL_GODS } from '../../data/wiki-data';
 import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { GodNavigation } from '@/app/components/layout/PageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
 // --- DATA FOR KIJI ---
@@ -17,16 +17,16 @@ const godData: God = {
         Pawi: "Mingén Falcon",
     },
     mythology: [
-        { type: 'text', content: "As one of the eight children of Daraméa and Thasoluo, Kiji is a central figure in the Dara pantheon. He is often depicted as proud and concerned with grand visions and the sweep of history, sometimes at the expense of mortal details. It was his mystical lift gas from Mount Kiji that gave the Xana Empire its air superiority." },
+        { type: 'text', content: "As a central figure in the Dara pantheon, Kiji is often depicted as proud and concerned with grand visions and the sweep of history. It was the mystical lift gas from his sacred home, Mount Kiji, that gave the Xana Empire its air superiority." },
         { type: 'ref', data: { book: "The Grace of Kings", chapter: 20, link: "/books/the-grace-of-kings#chapter-20" } },
-        { type: 'text', content: " During the Diaspora Wars, he blinded his brother Fithowéo in a duel, an act that defined their later relationship." },
+        { type: 'text', content: " In the ancient Diaspora Wars, he blinded his brother Fithowéo in a duel, an act that defined their later relationship." },
         { type: 'ref', data: { book: "The Wall of Storms", chapter: 6, link: "/books/the-wall-of-storms#chapter-6" } },
     ],
     appearances: [
         {
             event: "Tempting Mortal Heroes",
             summary: [
-                { type: 'text', content: "Kiji has a habit of appearing to mortals in disguise to test their character. Disguised as a beggar, he tempts [[Gin Mazoti|/characters/gin-mazoti]] to betray [[Kuni Garu|/characters/kuni-garu]], an offer she refuses. Years later, he appears to a woman in [[Mata Zyndu|/characters/mata-zyndu]]'s household, urging her to see the Hegemon's true, brutal nature and implying she should kill him." },
+                { type: 'text', content: "Kiji has a habit of appearing to mortals in disguise to test their character. As a beggar, he tempts Gin Mazoti to betray Kuni Garu, an offer she refuses. Later, he appears to Lady Mira, giving her a bone dagger and urging her to see Mata Zyndu's true nature, implying she should kill him." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 49, link: "/books/the-grace-of-kings#chapter-49" } },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 44, link: "/books/the-grace-of-kings#chapter-44" } },
             ]
@@ -34,9 +34,9 @@ const godData: God = {
         {
             event: "The Lyucu Invasion",
             summary: [
-                { type: 'text', content: "After the Lyucu invade and occupy his home islands of Rui and Dasu, Kiji is the most vocal of the gods in his anger. He is outraged by the desecration of his sacred Mount Kiji and the syncretization of his worship with that of the Lyucu god Péa. He is constantly frustrated by the other gods' adherence to their pact of non-interference." },
+                { type: 'text', content: "After the Lyucu occupy his home islands, Kiji is the most vocal of the gods in his anger. He is outraged by the desecration of Mount Kiji and the merging of his worship with that of the Lyucu god Péa. This is exemplified when the hardliner Cutanrovo Aga destroys his temple, massacres his clergy, and his pawi appears in response." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 40, link: "/books/the-wall-of-storms#chapter-40" } },
-                { type: 'ref', data: { book: "The Wall of Storms", chapter: 45, link: "/books/the-wall-of-storms#chapter-45" } },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 30, link: "/books/the-veiled-throne#chapter-30" } },
             ]
         },
     ]
@@ -50,12 +50,8 @@ export default function KijiPage() {
 
     return (
         <>
-            <TopPageNavigation
-                prevPage={prevPage}
-                nextPage={nextPage}
-                returnLink={returnLink}
-            />
-            <GodPageTemplate godData={godData} />
+            <GodNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PageTemplate pageData={convertGodData(godData)} infoBoxTitle="Divine Information" />
         </>
     );
 }

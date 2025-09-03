@@ -1,9 +1,9 @@
 'use client';
 
-import GodPageTemplate from '../../components/GodPageTemplate';
+import PageTemplate, { convertGodData } from '../../components/layout/PageTemplate';
 import { God, ALL_GODS } from '../../data/wiki-data';
 import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { GodNavigation } from '@/app/components/layout/PageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
 // --- DATA FOR RAPA ---
@@ -18,8 +18,8 @@ const godData: God = {
         Twin: { text: "Kana", link: "/gods/kana" },
     },
     mythology: [
-        { type: 'text', content: "Rapa is the counterpart to her fiery twin, Kana. She embodies the peace of sleep and the patient, enduring power of ice. In the story of the Calendrical Dozen, the alliance of fire and ice between the twins allowed them to be among the first to find the hidden gods, showcasing their powerful synergy." },
-        { type: 'ref', data: { book: "The Wall of Storms", chapter: 6, link: "/books/the-wall-of-storms#chapter-6" } },
+        { type: 'text', content: "Rapa is the counterpart to her fiery twin, Kana. She embodies the peace of sleep and the patient, enduring power of ice. Their alliance as fire and ice is a representation of the dual nature of existence." },
+        { type: 'ref', data: { book: "The Grace of Kings", chapter: 5, link: "/books/the-grace-of-kings#chapter-5" } },
     ],
     appearances: [
         {
@@ -40,12 +40,8 @@ export default function RapaPage() {
 
     return (
         <>
-            <TopPageNavigation
-                prevPage={prevPage}
-                nextPage={nextPage}
-                returnLink={returnLink}
-            />
-            <GodPageTemplate godData={godData} />
+            <GodNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PageTemplate pageData={convertGodData(godData)} infoBoxTitle="Divine Information" />
         </>
     );
 }

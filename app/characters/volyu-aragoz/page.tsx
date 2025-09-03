@@ -1,10 +1,9 @@
-'use client';
+import { Metadata } from 'next';
 
-import CharacterPageTemplate from '../../components/CharacterPageTemplate';
+import PageTemplate, { convertCharacterData } from '../../components/layout/PageTemplate';
+import { generateCharacterMetadata } from '@/app/utils/metadata';
 import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
-import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
-import { getSurroundingPages } from '@/app/utils/navigationUtils';
+import { CharacterNavigation } from '@/app/components/layout/PageNavigation';
 
 const characterData: Character = {
     name: "Volyu Aragoz",
@@ -23,7 +22,7 @@ const characterData: Character = {
         affiliation: "Agon (Exiled), Lyucu Empire",
         nationality: { text: "Agon", link: "/concepts/agon" },
         firstAppeared: { text: "The Veiled Throne", link: "/books/the-veiled-throne" },
-        lastAppeared: { text: "The Veiled Throne", link: "/books/the-veiled-throne" }
+        lastAppeared: { text: "Speaking Bones", link: "/books/speaking-bones" }
     },
     appearanceAndPersonality: [
         { type: 'text', content: "Volyu is portrayed as a proud and hostile leader. He is deeply resentful of the Lyucu but chooses collaboration out of a sense of pragmatism and a desire to preserve his own power. He is treacherous and untrustworthy, viewing Théra and her Dara followers with suspicion and disdain." },
@@ -33,24 +32,35 @@ const characterData: Character = {
         {
             era: "The Veiled Throne",
             summary: [
-                { type: 'text', content: "When Théra and Takval's expedition reached the Agon oasis, they were given a hostile welcome by Volyu. He demanded that Théra submit to him in vassalage, but was publicly shamed and outmaneuvered by Théra's powerful rhetoric." },
+                { type: 'text', content: "When Théra and Takval's expedition reached his oasis, Volyu was revealed to have been betraying Agon rebels to the Lyucu for years. Théra and Takval staged a coup, deposing him but sparing his life to use him as a double agent." },
                 { type: 'ref', data: { book: "The Veiled Throne", chapter: 13, link: "/books/the-veiled-throne#chapter-13" } },
-                { type: 'text', content: "It was revealed that Volyu had been betraying Agon rebels to the Lyucu for years. Théra and Takval staged a coup, deposing him but sparing his life to maintain the illusion of Agon loyalty while they secretly built their rebellion." },
                 { type: 'ref', data: { book: "The Veiled Throne", chapter: 14, link: "/books/the-veiled-throne#chapter-14" } },
+                { type: 'text', content: "In an act of ultimate betrayal, he later guided the Lyucu forces to the secret rebel base in Kiri Valley, leading to its destruction." },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 27, link: "/books/the-veiled-throne#chapter-27" } },
+            ]
+        },
+        {
+            era: "Speaking Bones",
+            summary: [
+                { type: 'text', content: "After Théra's forces defeated the Lyucu, Volyu reappeared at a grand council of Agon chiefs. He accused Théra of murdering Takval and betraying their people, exploiting the chiefs' xenophobia to turn them against her. His actions shattered the new Agon alliance and plunged the region into civil war." },
+                { type: 'ref', data: { book: "Speaking Bones", chapter: 33, link: "/books/speaking-bones#chapter-33" } },
             ]
         },
     ]
 };
 
+// Generate metadata for SEO
+export async function generateMetadata(): Promise<Metadata> {
+    return generateCharacterMetadata(characterData);
+}
+
 export default function VolyuAragozPage() {
-    const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <CharacterPageTemplate characterData={characterData} />
+            <CharacterNavigation prevPage={null} nextPage={null} returnLink={returnLink} />
+            <PageTemplate pageData={convertCharacterData(characterData)} infoBoxTitle="Biographical Information" />
         </>
     );
 }

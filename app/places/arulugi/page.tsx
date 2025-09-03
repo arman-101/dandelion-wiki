@@ -1,9 +1,9 @@
 'use client';
 
-import PlacePageTemplate from '../../components/PlacePageTemplate';
+import PageTemplate, { convertPlaceData } from '../../components/layout/PageTemplate';
 import { Place, ALL_PLACES } from '../../data/wiki-data';
 import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { PlaceNavigation } from '@/app/components/layout/PageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
 // --- DATA FOR ARULUGI ---
@@ -21,7 +21,7 @@ const placeData: Place = {
         ]
     },
     geography: [
-        { type: 'text', content: "Arulugi is the main island in the Amu archipelago. Its capital, Müning, is known as the City in the Lake." },
+        { type: 'text', content: "Arulugi is the main island in the Amu archipelago. Its capital is known as the City in the Lake." },
         { type: 'ref', data: { book: "The Wall of Storms", chapter: 32, link: "/books/the-wall-of-storms#chapter-32" } },
     ],
     culture: [
@@ -31,14 +31,14 @@ const placeData: Place = {
         {
             event: "The Dandelion Rebellion",
             summary: [
-                { type: 'text', content: "The Battle of Arulugi was a major defeat for the rebellion. The Amu navy was outwitted by the Xana commander Kindo Marana's clever tactics. Following the battle, Princess Kikomi was taken captive and made her fateful deal with Marana to act as his agent, a decision that would have devastating consequences." },
+                { type: 'text', content: "The Battle of Arulugi was a major defeat for the rebellion. The Amu navy was outwitted by the Xana commander Kindo Marana's clever tactics. Following the battle, Princess Kikomi was taken captive and made her fateful deal with Marana to act as his agent." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 24, link: "/books/the-grace-of-kings#chapter-24" } },
             ]
         },
         {
             event: "The Arulugi Rebellion",
             summary: [
-                { type: 'text', content: "Years into Emperor Ragin's reign, Arulugi became the center of a new rebellion led by Duke Théca Kimo. The entire rebellion was a grand political gambit orchestrated by Empress Jia to consolidate her power. The conflict ended when Consort Risana used her illusionary smokecraft to help Puma Yemu's forces take the capital by surprise. Théca Kimo was defeated and executed." },
+                { type: 'text', content: "Years into Emperor Ragin's reign, Arulugi became the center of a new rebellion led by Duke Théca Kimo. The entire rebellion was a grand political gambit orchestrated by Empress Jia. The conflict ended when Consort Risana used her illusionary smokecraft to help Puma Yemu's forces take the capital by surprise." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 25, link: "/books/the-wall-of-storms#chapter-25" } },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 32, link: "/books/the-wall-of-storms#chapter-32" } },
             ]
@@ -53,8 +53,8 @@ export default function ArulugiPage() {
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <PlacePageTemplate placeData={placeData} />
+            <PlaceNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PageTemplate pageData={convertPlaceData(placeData)} infoBoxTitle="Location Information" />
         </>
     );
 }

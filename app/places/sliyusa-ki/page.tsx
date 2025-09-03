@@ -1,9 +1,9 @@
 'use client';
 
-import PlacePageTemplate from '../../components/PlacePageTemplate';
+import PageTemplate, { convertPlaceData } from '../../components/layout/PageTemplate';
 import { Place, ALL_PLACES } from '../../data/wiki-data';
 import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { PlaceNavigation } from '@/app/components/layout/PageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
 // --- DATA FOR SLIYUSA KI ---
@@ -32,7 +32,7 @@ const placeData: Place = {
         {
             event: "The Forging of an Alliance",
             summary: [
-                { type: 'text', content: "Sliyusa Ki is where Théra's expedition makes first contact with the exiled Agon. The welcome is hostile, led by the treacherous chieftain Volyu Aragoz. Théra, through a powerful display of rhetoric and courage, wins over the other chieftains and, with the help of Takval's mother Souliyan, deposes Volyu. The oasis then becomes the first capital of the unified Agon rebellion, where the political and personal alliance between Théra and Takval is consummated." },
+                { type: 'text', content: "Sliyusa Ki is where Théra's expedition made first contact with the exiled Agon. After a hostile welcome, Théra won over the chieftains and, with the help of Takval's mother Souliyan, deposed the treacherous chieftain Volyu. The oasis then became the first capital of the unified Agon rebellion." },
                 { type: 'ref', data: { book: "The Veiled Throne", chapter: 13, link: "/books/the-veiled-throne#chapter-13" } },
                 { type: 'ref', data: { book: "The Veiled Throne", chapter: 14, link: "/books/the-veiled-throne#chapter-14" } },
             ]
@@ -47,8 +47,8 @@ export default function SliyusaKiPage() {
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <PlacePageTemplate placeData={placeData} />
+            <PlaceNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PageTemplate pageData={convertPlaceData(placeData)} infoBoxTitle="Location Information" />
         </>
     );
 }

@@ -1,41 +1,47 @@
 'use client';
 
-import ConceptPageTemplate from '../../components/ConceptPageTemplate';
+import PageTemplate, { convertConceptData } from '../../components/layout/PageTemplate';
 import { Concept, ALL_CONCEPTS } from '../../data/wiki-data';
 import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { ConceptNavigation } from '@/app/components/layout/PageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
-export default function LyucuPage() {
-  const conceptData: Concept = {
+// --- DATA FOR THE LYUCU ---
+const conceptData: Concept = {
     name: "The Lyucu",
-    image: "/concepts/lyucu.png", // Placeholder image
-    introduction: "The fierce northern people who invade Dara, bringing their own culture, technology, and way of life that challenges and transforms the established order of the Dandelion Dynasty.",
+    image: "/concepts/lyucu.png",
+    introduction: "The Lyucu are a hardy, nomadic, and warlike people from the continent of Ukyu-Gondé. Their society is built around military prowess and a deep connection to their flying, fire-breathing war beasts, the garinafins. Their invasion of Dara presents an existential threat to the Dandelion Dynasty.",
     infoBox: {
-      "Origin": "Ukyu & Gondé",
-      "Culture": "Warrior Society",
-      "Technology": "Garinafins, Advanced Military",
-      "Related concepts": [
-        { text: "Garinafin", link: "/concepts/garinafin" },
-        { text: "The Wall of Storms", link: "/concepts/wall-of-storms" },
-        { text: "Lyucu Culture", link: "/concepts/lyucu-culture" }
+      "Origin": { text: "Ukyu & Gondé", link: "/places/ukyu-gonde" },
+      "Culture": "Nomadic Warrior Society",
+      "Key Technology": { text: "Garinafins", link: "/concepts/garinafin" },
+      "Key Figures": [
+        { text: "Pékyu Tenryo", link: "/characters/pekyu-tenryo" },
+        { text: "Tanvanaki", link: "/characters/tanvanaki" },
+        { text: "Goztan Ryoto", link: "/characters/goztan-ryoto" }
       ]
     },
     details: [
-      { type: "text" as const, content: "The Lyucu are a fierce and technologically advanced people from the northern continent of Ukyu, separated from Dara by the seemingly impassable Wall of Storms. Their society is built around military prowess, with garinafins serving as their primary military advantage." },
-      { type: "text" as const, content: "Lyucu culture emphasizes strength, discipline, and conquest, with a hierarchical social structure that values martial skill and strategic thinking. Their invasion of Dara represents a fundamental challenge to the established order and cultural values of the Dandelion Dynasty." },
-      { type: "text" as const, content: "The Lyucu bring with them not only military might but also a different worldview and set of values that force the people of Dara to question their own traditions and assumptions. This cultural clash becomes a central theme of the later books in the series." }
+        { type: 'text', content: "The Lyucu culture was forged by the harsh, unforgiving landscape of their homeland. Their society values strength, discipline, and conquest, with a social structure based on martial skill. Their entire way of life and military doctrine is founded on their mastery of the garinafins." },
+        { type: 'ref', data: { book: "The Wall of Storms", chapter: 48, link: "/books/the-wall-of-storms#chapter-48" } },
+        { type: 'text', content: "Their long-planned invasion of Dara began decades earlier, when Pékyu Tenryo deceived and enslaved Emperor Mapidéré's lost expedition, using their knowledge to build an invasion fleet." },
+        { type: 'ref', data: { book: "The Wall of Storms", chapter: 49, link: "/books/the-wall-of-storms#chapter-49" } },
+        { type: 'text', content: "During their occupation of parts of Dara, the Lyucu were split between two factions: the hardliners, led by the fanatical Cutanrovo Aga, who sought to erase all Dara culture; and the accommodationists, led by Goztan Ryoto, who advocated for a more pragmatic approach. This internal conflict, combined with a crippling addiction to a substance secretly supplied by Empress Jia, led to their eventual collapse from within." },
+        { type: 'ref', data: { book: "The Veiled Throne", chapter: 25, link: "/books/the-veiled-throne#chapter-25" } },
+        { type: 'ref', data: { book: "Speaking Bones", chapter: 37, link: "/books/speaking-bones#chapter-37" } },
+        { type: 'ref', data: { book: "Speaking Bones", chapter: 39, link: "/books/speaking-bones#chapter-39" } },
     ]
-  };
+};
 
-  const pathname = usePathname();
-  const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CONCEPTS);
-  const returnLink = { title: 'Return to All Concepts', path: '/concepts' };
+export default function LyucuPage() {
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CONCEPTS);
+    const returnLink = { title: 'Return to All Concepts', path: '/concepts' };
 
-  return (
-    <>
-      <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-      <ConceptPageTemplate conceptData={conceptData} />
-    </>
-  );
-} 
+    return (
+        <>
+            <ConceptNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PageTemplate pageData={convertConceptData(conceptData)} infoBoxTitle="Concept Information" />
+        </>
+    );
+}

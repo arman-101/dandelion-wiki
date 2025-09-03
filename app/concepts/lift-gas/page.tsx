@@ -1,9 +1,9 @@
 'use client';
 
-import ConceptPageTemplate from '../../components/ConceptPageTemplate';
+import PageTemplate, { convertConceptData } from '../../components/layout/PageTemplate';
 import { Concept, ALL_CONCEPTS } from '../../data/wiki-data';
 import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { ConceptNavigation } from '@/app/components/layout/PageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
 // --- DATA FOR LIFT GAS ---
@@ -18,10 +18,12 @@ const conceptData: Concept = {
         StrategicImportance: "Essential for airship construction",
     },
     details: [
-        { type: 'text', content: "The gas bubbles up from the depths of Lake Dako, a small, emerald-green lake within the crater of the volcano Mount Kiji on the island of Rui. The secrets of its extraction and refinement were closely guarded by the Xana Empire, giving them a technological monopoly that allowed for their conquest of Dara." },
+        { type: 'text', content: "The gas bubbles up from the depths of Lake Dako within the crater of the volcano Mount Kiji. The secrets of its extraction were closely guarded by the Xana Empire, giving them a technological monopoly that allowed for their conquest of Dara." },
         { type: 'ref', data: { book: "The Grace of Kings", chapter: 20, link: "/books/the-grace-of-kings#chapter-20" } },
-        { type: 'text', content: "Because Mount Kiji is the only known source in the world, its capture is a primary strategic objective in every major war. When [[Gin Mazoti|/characters/gin-mazoti]] captured Rui for [[Kuni Garu|/characters/kuni-garu]] by surprise, it effectively crippled [[Mata Zyndu|/characters/mata-zyndu]]'s ability to build new airships, a turning point in the Chrysanthemum-Dandelion War." },
+        { type: 'text', content: "Because Mount Kiji is the only known source, its capture is a primary strategic objective in every major war. When Gin Mazoti captured Rui for Kuni Garu, it effectively crippled Mata Zyndu's ability to build new airships, a turning point in the civil war." },
         { type: 'ref', data: { book: "The Grace of Kings", chapter: 43, link: "/books/the-grace-of-kings#chapter-43" } },
+        { type: 'text', content: "When the Lyucu invaded, they learned of the gas's location from a duped Zato Ruthi and made seizing Mount Kiji a top priority." },
+        { type: 'ref', data: { book: "The Wall of Storms", chapter: 36, link: "/books/the-wall-of-storms#chapter-36" } },
     ]
 };
 
@@ -32,8 +34,8 @@ export default function LiftGasPage() {
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <ConceptPageTemplate conceptData={conceptData} />
+            <ConceptNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PageTemplate pageData={convertConceptData(conceptData)} infoBoxTitle="Concept Information" />
         </>
     );
 }

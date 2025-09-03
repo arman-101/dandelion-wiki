@@ -1,15 +1,14 @@
-'use client';
+import { Metadata } from 'next';
 
-import CharacterPageTemplate from '../../components/CharacterPageTemplate';
+import PageTemplate, { convertCharacterData } from '../../components/layout/PageTemplate';
+import { generateCharacterMetadata } from '@/app/utils/metadata';
 import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
-import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
-import { getSurroundingPages } from '@/app/utils/navigationUtils';
+import { CharacterNavigation } from '@/app/components/layout/PageNavigation';
 
 const characterData: Character = {
     name: "Rin Coda",
     image: "/characters/rin-coda.png",
-    introduction: "Rin Coda was [[Kuni Garu|/characters/kuni-garu]]'s timid and scholarly childhood friend. He rose to become the Farsight Secretary in the Dandelion Dynasty, a role akin to an intelligence minister, but he was often plagued by self-doubt and the moral compromises of his position.",
+    introduction: "Rin Coda was Kuni Garu's timid and scholarly childhood friend. He rose to become the Farsight Secretary in the Dandelion Dynasty, a role akin to an intelligence minister, but he was ultimately broken by the moral compromises of his position.",
     infoBox: {
         aliases: "Farsight Secretary",
         occupation: "Scholar, Farsight Secretary",
@@ -30,7 +29,13 @@ const characterData: Character = {
         {
             era: "The Grace of Kings",
             summary: [
-                { type: 'text', content: "As one of Kuni's oldest friends, Rin was a constant presence from their schoolboy days. He joined Kuni's rebellion and, despite his timid nature, served him loyally. After Kuni became emperor, Rin was appointed Farsight Secretary, overseeing the empire's network of spies and informants." },
+                { type: 'text', content: "As one of Kuni's oldest friends, Rin was a constant presence from their schoolboy days in Zudi, serving loyally throughout the rebellion." }
+            ]
+        },
+        {
+            era: "Friend and Advisor",
+            summary: [
+                { type: 'text', content: "Rin was by Kuni's side when they witnessed the kite attack on Emperor Mapidéré. He later joined Kuni's rebellion and was one of the key friends who helped ground the new emperor, reminding him of his purpose after Kuni was tempted by imperial decadence upon capturing Pan." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 1, link: "/books/the-grace-of-kings#chapter-1" } },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 30, link: "/books/the-grace-of-kings#chapter-30" } },
             ]
@@ -38,24 +43,34 @@ const characterData: Character = {
         {
             era: "The Wall of Storms",
             summary: [
-                { type: 'text', content: "Rin oversaw the first Grand Examination, a cornerstone of the new dynasty's meritocratic principles." },
+                { type: 'text', content: "Appointed to a high-stakes position at court, Rin's gentle nature was tragically exploited, leading to his downfall." }
+            ]
+        },
+        {
+            era: "The Farsight Secretary's Burden",
+            summary: [
+                { type: 'text', content: "As Farsight Secretary, Rin oversaw the first Grand Examination. However, he was subtly manipulated by Empress Jia into pursuing conspiracies. His intelligence failures regarding the Hegemon Cults and his unwitting role in Jia's plot against Gin Mazoti weighed heavily on him." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 4, link: "/books/the-wall-of-storms#chapter-4" } },
-                { type: 'text', content: "However, he became deeply entangled in Empress Jia's ruthless political machinations against Marshal Gin Mazoti. Consumed by guilt for his role in the empress's plots and the downfall of an honorable woman, Rin ultimately took his own life, unable to reconcile his duties with his conscience." },
+                { type: 'ref', data: { book: "The Wall of Storms", chapter: 20, link: "/books/the-wall-of-storms#chapter-20" } },
+                { type: 'text', content: "Consumed by guilt for his part in the downfall of honorable people, Rin ultimately took his own life, leaving behind a confession that exposed the empress's machinations." },
                 { type: 'ref', data: { book: "The Wall of Storms", chapter: 39, link: "/books/the-wall-of-storms#chapter-39" } },
             ]
         },
     ]
 };
 
+// Generate metadata for SEO
+export async function generateMetadata(): Promise<Metadata> {
+    return generateCharacterMetadata(characterData);
+}
+
 export default function RinCodaPage() {
-    const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <CharacterPageTemplate characterData={characterData} />
+            <CharacterNavigation prevPage={null} nextPage={null} returnLink={returnLink} />
+            <PageTemplate pageData={convertCharacterData(characterData)} infoBoxTitle="Biographical Information" />
         </>
     );
 }

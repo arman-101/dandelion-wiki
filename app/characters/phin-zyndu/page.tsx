@@ -1,10 +1,9 @@
-'use client';
+import { Metadata } from 'next';
 
-import CharacterPageTemplate from '../../components/CharacterPageTemplate';
+import PageTemplate, { convertCharacterData } from '../../components/layout/PageTemplate';
+import { generateCharacterMetadata } from '@/app/utils/metadata';
 import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
-import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
-import { getSurroundingPages } from '@/app/utils/navigationUtils';
+import { CharacterNavigation } from '@/app/components/layout/PageNavigation';
 
 const characterData: Character = {
     name: "Phin Zyndu",
@@ -37,7 +36,13 @@ const characterData: Character = {
         {
             era: "The Grace of Kings",
             summary: [
-                { type: 'text', content: "Phin was the sole adult Zyndu to escape the Xana extermination of his clan, fleeing with the infant Mata to the Tunoa Islands. For years, he trained Mata and kept the fire of vengeance alive." },
+                { type: 'text', content: "Phin Zyndu was the sole survivor of his generation, a man whose life was dedicated to preserving his family's name and legacy of vengeance." }
+            ]
+        },
+        {
+            era: "A Life for Vengeance",
+            summary: [
+                { type: 'text', content: "As a boy of thirteen, Phin was the sole adult Zyndu to escape the Xana extermination of his clan, fleeing with the infant Mata to the Tunoa Islands. For years, he trained Mata and kept the fire of vengeance alive." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 2, link: "/books/the-grace-of-kings#chapter-2" } },
                 { type: 'text', content: "He fought alongside Mata to reclaim their ancestral castle, participating in the slaughter of the Xana garrison." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 7, link: "/books/the-grace-of-kings#chapter-7" } },
@@ -48,15 +53,18 @@ const characterData: Character = {
     ]
 };
 
+// Generate metadata for SEO
+export async function generateMetadata(): Promise<Metadata> {
+    return generateCharacterMetadata(characterData);
+}
+
 export default function PhinZynduPage() {
-    const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <CharacterPageTemplate characterData={characterData} />
+            <CharacterNavigation prevPage={null} nextPage={null} returnLink={returnLink} />
+            <PageTemplate pageData={convertCharacterData(characterData)} infoBoxTitle="Biographical Information" />
         </>
     );
 }

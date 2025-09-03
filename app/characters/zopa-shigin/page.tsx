@@ -1,10 +1,9 @@
-'use client';
+import { Metadata } from 'next';
 
-import CharacterPageTemplate from '../../components/CharacterPageTemplate';
+import PageTemplate, { convertCharacterData } from '../../components/layout/PageTemplate';
+import { generateCharacterMetadata } from '@/app/utils/metadata';
 import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
-import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
-import { getSurroundingPages } from '@/app/utils/navigationUtils';
+import { CharacterNavigation } from '@/app/components/layout/PageNavigation';
 
 const characterData: Character = {
     name: "Zopa Shigin",
@@ -22,33 +21,42 @@ const characterData: Character = {
         lastAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" }
     },
     appearanceAndPersonality: [
-        { type: 'text', content: "Shigin is described as sturdy and is presented as the more grounded and perhaps less imaginative of the two initial rebel leaders. He is a loyal friend to Huno Krima, providing the steady support for Krima's charismatic leadership. His tragic end illustrates the corrupting nature of power and the dangers of unchecked ambition." },
+        { type: 'text', content: "Shigin is described as powerfully built and is presented as the more grounded of the two initial rebel leaders. He is a loyal friend to Huno Krima, providing steady support for Krima's charismatic leadership. His tragic end illustrates the corrupting nature of power and the dangers of unchecked ambition." },
         { type: 'ref', data: { book: "The Grace of Kings", chapter: 6, link: "/books/the-grace-of-kings#chapter-6" } },
     ],
     history: [
         {
             era: "The Grace of Kings",
             summary: [
-                { type: 'text', content: "Facing execution alongside his friend Huno Krima for a delayed corvée assignment, Shigin helped create the fake 'fish prophecy' that sparked the first major uprising against the Xana." },
+                { type: 'text', content: "Zopa Shigin was a key figure at the dawn of the rebellion, whose loyalty was tragically repaid with betrayal." }
+            ]
+        },
+        {
+            era: "The First Rebel's Right Hand",
+            summary: [
+                { type: 'text', content: "Facing execution alongside Huno Krima for a delayed corvée assignment, Shigin helped create the fake 'fish prophecy' that sparked the first major uprising against the Xana." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 6, link: "/books/the-grace-of-kings#chapter-6" } },
                 { type: 'text', content: "He and Krima were successful in their early rebellion, finding the lost heir Thufi and placing him on the throne of Cocru." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 12, link: "/books/the-grace-of-kings#chapter-12" } },
-                { type: 'text', content: "However, as Krima's power and paranoia grew, he came to see his old friend as a threat. After declaring himself King of West Cocru, Krima had his loyal friend Zopa Shigin executed, a brutal act that marked the beginning of the end for the first rebellion." },
+                { type: 'text', content: "However, as Krima's power and paranoia grew, he came to see his old friend as a threat. After declaring himself King of West Cocru, Krima had Zopa Shigin secretly murdered, a brutal act that marked the beginning of his own downfall." },
                 { type: 'ref', data: { book: "The Grace of Kings", chapter: 16, link: "/books/the-grace-of-kings#chapter-16" } },
             ]
         },
     ]
 };
 
+// Generate metadata for SEO
+export async function generateMetadata(): Promise<Metadata> {
+    return generateCharacterMetadata(characterData);
+}
+
 export default function ZopaShiginPage() {
-    const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <CharacterPageTemplate characterData={characterData} />
+            <CharacterNavigation prevPage={null} nextPage={null} returnLink={returnLink} />
+            <PageTemplate pageData={convertCharacterData(characterData)} infoBoxTitle="Biographical Information" />
         </>
     );
 }

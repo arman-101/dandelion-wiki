@@ -1,33 +1,33 @@
 'use client';
 
-import PlacePageTemplate from '../../components/PlacePageTemplate';
+import PageTemplate, { convertPlaceData } from '../../components/layout/PageTemplate';
 import { Place, ALL_PLACES } from '../../data/wiki-data';
 import { usePathname } from 'next/navigation';
-import TopPageNavigation from '@/app/components/TopPageNavigation';
+import { PlaceNavigation } from '@/app/components/layout/PageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
 // --- DATA FOR RORO HILLS ---
 const placeData: Place = {
     name: "Roro Hills",
     image: "/places/roro-hills.png",
-    introduction: "The Roro Hills are a strategically important region that became the final battleground in the war for Dara, serving as the last major stronghold for the Lyucu invaders.",
+    introduction: "The Roro Hills are a strategically important region that became a significant battleground in the final war to liberate Dara from Lyucu occupation.",
     infoBox: {
         type: "Hill Range",
         continent: "Dara",
-        KeyEvents: "Final battle of the Lyucu War"
+        KeyEvents: "Battle of the Roro Hills"
     },
     geography: [
         { type: 'text', content: "A range of hills providing a strong defensive position, making it an ideal location for a military stronghold." },
     ],
     culture: [
-        { type: 'text', content: "The Roro Hills are not known for any specific cultural attributes, but their name is now synonymous with the final, brutal conflict that liberated Dara from the Lyucu." },
+        { type: 'text', content: "The Roro Hills are not known for specific cultural attributes, but their name is now synonymous with the final conflicts that liberated Dara." },
     ],
     history: [
         {
-            event: "The Final Battle for Dara",
+            event: "The War of Restoration",
             summary: [
-                { type: 'text', content: "In the final stages of the war against the Lyucu, their remaining forces established a formidable stronghold in the Roro Hills. Emperor Phyro led his new garinafin army in a desperate and bloody assault on this position. The battle was a brutal, hard-fought engagement, representing the final, decisive test of Phyro's leadership and the courage of the new Dara army. The victory at the Roro Hills marked the end of the Lyucu occupation on the main continent." },
-                { type: 'ref', data: { book: "Speaking Bones", chapter: 35, link: "/books/speaking-bones#chapter-35" } },
+                { type: 'text', content: "The Roro Hills became the new capital and stronghold for the Lyucu occupation forces under Pékyu Tanvanaki after the Dara victory at Crescent Island. It was from here that she received intelligence about the impending reopening of the Wall of Storms." },
+                { type: 'ref', data: { book: "The Veiled Throne", chapter: 21, link: "/books/the-veiled-throne#chapter-21" } },
             ]
         },
     ]
@@ -40,8 +40,8 @@ export default function RoroHillsPage() {
 
     return (
         <>
-            <TopPageNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <PlacePageTemplate placeData={placeData} />
+            <PlaceNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
+            <PageTemplate pageData={convertPlaceData(placeData)} infoBoxTitle="Location Information" />
         </>
     );
 }
