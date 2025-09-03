@@ -11,50 +11,23 @@ A fan-made, comprehensive, and beautifully designed encyclopedia for Ken Liu's e
   - *The Veiled Throne* - The occupation and resistance
   - *Speaking Bones* - The final confrontation and resolution
 
-- **68+ Characters**: Extensive character profiles including:
-  - Main protagonists and antagonists from all four books
-  - Supporting characters with detailed backstories
-  - Character relationships and development arcs
-  - Character appearances organized by book
-
-- **44+ Places**: Complete geographical coverage including:
-  - The Seven States of Dara (Amu, Cocru, Faca, Gan, Haan, Rima, Xana)
-  - Major cities and capitals (Pan, Zudi, Caruza, Ginpen, Dimushi, Kriphi)
-  - Islands and archipelagos (Dasu, Rui, Arulugi, Crescent Island, Tan Adu)
-  - Geographical landmarks (Mount Kiji, Lake Dako, Kishi Channel, Thoco Pass)
-  - Lands beyond the Wall of Storms (Ukyu-Gondé, Eseeran Nomnny, Lurodia Tanta)
-
-- **8 Gods**: Complete pantheon coverage with mythology and appearances
-  - Fithoweo, Kana, Kiji, Lutho, Rapa, Rufizo, Tazu, Tututika
-
-- **21+ Concepts**: In-depth exploration of silkpunk technology and world-building
-  - Technology: Airships, Lift Gas, Silkmotic Force, Cloud-Garinafins
-  - Philosophy: The Dandelion, The Chrysanthemum, Swords vs. Abacus
-  - Culture: Lyucu Culture, Cultural Exchange, The Grand Examination
-  - Creatures: Garinafin, Cruben, Pawi
-  - Organizations: The Blossom Gang, Resistance Movement
-
+- **Characters**: Extensive character profiles including:
+- **Places**: Complete geographical coverage
+- **Gods**: Complete pantheon coverage with mythology and appearances
+- **Concepts**: In-depth exploration of silkpunk technology and world-building
 - **Maps**: Visual representations of the world of Dara and beyond
 
 ### 🔍 **Advanced Search & Navigation**
 - **Live Search**: Real-time search across all 100+ wiki pages
 - **Smart Filtering**: Search results categorized by content type
 - **Cross-References**: Extensive internal linking between related articles
-- **Book-Based Navigation**: Characters and events organized by book
 - **Complete Site Index**: Alphabetical listing of all pages by category
 
 ### 🎨 **User Experience Features**
 - **Light & Dark Mode**: Beautiful theme switcher for comfortable reading
 - **Fully Responsive**: Optimized for desktop, tablet, and mobile devices
 - **Modern UI**: Clean, accessible design inspired by the series' aesthetic
-- **Scroll-to-Top**: Convenient navigation for long articles
 - **Feedback System**: User feedback collection for continuous improvement
-
-### 📱 **Technical Features**
-- **Performance Optimized**: Fast loading with Next.js and optimized images
-- **SEO Friendly**: Proper metadata and structured content
-- **Analytics**: Built-in performance and usage tracking
-- **Accessibility**: WCAG compliant design and navigation
 
 ## 🛠️ Tech Stack
 
@@ -65,16 +38,6 @@ A fan-made, comprehensive, and beautifully designed encyclopedia for Ken Liu's e
 - **next-themes** – For seamless light/dark mode switching
 - **Vercel Analytics** – For performance monitoring and insights
 - **Lucide React** – For beautiful, consistent icons
-
-## 📊 Content Statistics
-
-- **Total Pages**: 100+ individual wiki pages
-- **Characters**: 68+ detailed character profiles
-- **Places**: 44+ locations with geography and history
-- **Concepts**: 21+ silkpunk technologies and philosophies
-- **Gods**: 8 divine beings with complete mythology
-- **Books**: 4 complete book summaries and analyses
-- **Images**: 100+ character, place, and concept illustrations
 
 ## 🎨 A Note on Art
 
@@ -104,6 +67,100 @@ Much of the character, conceptual, and location artwork on this wiki was generat
 ## 📝 Contributing
 
 This is a fan project celebrating Ken Liu's *The Dandelion Dynasty* series. While contributions are welcome, please ensure all content respects the original work and follows fair use guidelines.
+
+### How to Contribute (Fork & PR)
+
+1. Fork the repository
+   - Repository: [`arman-101/dandelion-wiki`](https://github.com/arman-101/dandelion-wiki)
+2. Create a feature branch
+   ```bash
+   git checkout -b feat/add-kuni-garu-page
+   ```
+3. Make your changes locally and run the app
+   ```bash
+   npm install
+   npm run dev
+   ```
+4. Commit with a clear message
+   ```bash
+   git add .
+   git commit -m "feat(characters): add Kuni Garu page and register in index"
+   ```
+5. Push and open a Pull Request (PR)
+   ```bash
+   git push origin feat/add-kuni-garu-page
+   ```
+   - In your PR, briefly describe what you added/changed and include screenshots if UI-related.
+
+### Content Guidelines
+
+- Be faithful to the canon (book references welcome and encouraged).
+- Keep tone neutral and encyclopedic.
+- Prefer concise sections over long walls of text.
+- Use internal links for cross-references where relevant (e.g., `/characters/jia-matiza`).
+- Add citations using the existing reference structure when possible.
+
+### How to Add or Update Pages
+
+The site uses statically defined page data objects and master indexes for listing/search. Pages live under category folders, and summary cards come from `app/data/wiki-data.ts`.
+
+General rules:
+- Slugs are lowercase and hyphenated (e.g., `kuni-garu`).
+- Images go in `public/<category>/<slug>.png` (PNG preferred).
+- Register the page in the corresponding master list so it appears on index pages and search.
+
+#### Characters
+1. Create a new page file by copying an existing one (e.g., `app/characters/kuni-garu/page.tsx`).
+   - Path: `app/characters/<slug>/page.tsx`
+   - Export a `Character`-shaped `characterData` object and render it with `PageTemplate`.
+2. Add/replace an image at `public/characters/<slug>.png`.
+3. Register it in `app/data/wiki-data.ts` by adding an entry to `ALL_CHARACTERS_DATA`:
+   - Include `name`, `description`, `image`, and `link` (e.g., `"/characters/<slug>"`).
+   - The `ALL_CHARACTERS` export is generated from `ALL_CHARACTERS_DATA` automatically.
+
+#### Places
+1. Create a new page at `app/places/<slug>/page.tsx` (copy any place page as a template).
+2. Add `public/places/<slug>.png`.
+3. Register it by appending an item to `ALL_PLACES_DATA` in `app/data/wiki-data.ts`:
+   - Provide `name`, `description`, `image`, `link`, and `category` (e.g., `"state" | "city" | "island" | "landmark" | "beyond" | "etc"`).
+   - `ALL_PLACES` is generated from `ALL_PLACES_DATA`.
+
+#### Gods
+1. Create a new page at `app/gods/<slug>/page.tsx`.
+2. Add `public/gods/<slug>.png`.
+3. Register it by adding to `ALL_GODS` in `app/data/wiki-data.ts`:
+   - `{ title: '<Name>', path: '/gods/<slug>', type: 'God' }`.
+
+#### Concepts
+1. Create a new page at `app/concepts/<slug>/page.tsx`.
+2. Add `public/concepts/<slug>.png`.
+3. Register it by adding to `ALL_CONCEPTS_DATA` in `app/data/wiki-data.ts`.
+   - `ALL_CONCEPTS` is generated from `ALL_CONCEPTS_DATA`.
+
+### Updating Existing Pages
+
+- Edit the relevant `page.tsx` file under its category (e.g., `app/characters/<slug>/page.tsx`).
+- If you change the image, update the file in `public/<category>/<slug>.png` and ensure the path matches.
+- If you change a page name or slug, also update its entry in `app/data/wiki-data.ts` so listings/search stay correct.
+
+### Local Validation Checklist
+
+- `npm run dev` starts without errors.
+- New page renders at the correct route (e.g., `/characters/<slug>`).
+- Appears in the category index page and in global search.
+- Links in the infobox and content blocks resolve correctly.
+
+### Credits & Attribution
+
+- PR authors will be credited in the Contributors section of the repository and optionally in page footers when applicable.
+- Please include source notes or book chapter references in your PR description for factual additions.
+- Artwork and images: if you contribute original art, include how you want to be credited; AI-generated images will be marked accordingly.
+
+### Support the Project
+
+If you find this project useful and want to support continued development and content curation, donations are appreciated:
+
+- Buy Me a Coffee: `https://buymeacoffee.com/darknebulax1`
 
 ## 📄 License
 
