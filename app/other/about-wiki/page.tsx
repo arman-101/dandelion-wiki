@@ -34,12 +34,12 @@ export default function AboutMePage() {
         <div className="max-w-6xl mx-auto px-4 py-4">
 
             {/* --- Introduction --- */}
-            <div className="text-center mb-16">
+            <div className="text-center mb-4">
                 <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight mb-6">About This Wiki</h1>
                 <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
                     Hello! I&apos;m a huge fan of Ken Liu&apos;s &ldquo;The Dandelion Dynasty&rdquo; and built this wiki to create a modern, clean, and easily searchable resource for the community.
                 </p>
-                <div className="mt-6 text-gray-600 dark:text-gray-300 max-w-3xl mx-auto space-y-3">
+                <div className="text-lg mt-6 text-gray-600 dark:text-gray-300 max-w-3xl mx-auto space-y-3">
                     <p>
                         This project was inspired in part by a fantastic earlier site that has since gone offline but remains preserved on the Wayback Machine: {" "}
                         <a href="https://web.archive.org/web/20190809133811/http://dandelionwiki.com/w/Main_Page" target="_blank" rel="noopener noreferrer" className="text-teal-600 dark:text-teal-400 hover:underline">The Dandelion Dynasty Wiki (archived)</a>. Another active and helpful resource is the {" "}
@@ -53,7 +53,7 @@ export default function AboutMePage() {
             </div>
 
             {/* --- Support Section --- */}
-            <div className="bg-slate-50 dark:bg-gray-800/50 p-6 sm:p-8 rounded-lg space-y-6 max-w-4xl mx-auto mb-16">
+            <div className="bg-slate-50 dark:bg-gray-800/50 p-6 sm:p-8 rounded-lg space-y-6 max-w-4xl mx-auto mb-4">
                 <div className="text-center mb-6">
                     <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-3">Support This Wiki</h2>
                     <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
@@ -114,7 +114,7 @@ export default function AboutMePage() {
             </div>
 
             {/* --- Tech Stack --- */}
-            <div className="mb-16">
+            <div className="mb-4">
                 <h2 className="text-2xl font-bold text-center mb-8 text-gray-800 dark:text-gray-200">Technology Powering the Wiki</h2>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
                     <TechCard
@@ -156,7 +156,7 @@ export default function AboutMePage() {
             </div>
 
             {/* --- Signature --- */}
-            <div className="text-center mt-16 pt-8 border-t border-gray-200 dark:border-gray-700 max-w-4xl mx-auto">
+            <div className="text-center mt-4 pt-8 border-t border-gray-200 dark:border-gray-700 max-w-4xl mx-auto">
                 <p className="text-gray-500 dark:text-gray-400">The Universe Is Knowable ❤️</p>
             </div>
         </div>
