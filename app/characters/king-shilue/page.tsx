@@ -1,9 +1,11 @@
-import { Metadata } from 'next';
+'use client';
+import { usePathname } from 'next/navigation';
 
 import PageTemplate, { convertCharacterData } from '../../components/layout/PageTemplate';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
 import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
 import { CharacterNavigation } from '@/app/components/layout/PageNavigation';
+import { getSurroundingPages } from '@/app/utils/navigationUtils';
 
 const characterData: Character = {
     name: "King Shilué",
@@ -43,17 +45,18 @@ const characterData: Character = {
     ]
 };
 
-// Generate metadata for SEO
-export async function generateMetadata(): Promise<Metadata> {
-    return generateCharacterMetadata(characterData);
-}
-
 export default function KingShiluePage() {
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
     const returnLink = { title: 'Return to All Characters', path: '/characters' };
 
     return (
         <>
-            <CharacterNavigation prevPage={null} nextPage={null} returnLink={returnLink} />
+            <CharacterNavigation 
+                prevPage={prevPage} 
+                nextPage={nextPage} 
+                returnLink={returnLink} 
+            />
             <PageTemplate pageData={convertCharacterData(characterData)} infoBoxTitle="Biographical Information" />
         </>
     );
