@@ -65,7 +65,7 @@ export default function AboutMePage() {
                     <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 dark:border-gray-700 group">
                         <div className="text-center">
                             <h3 className="font-bold text-gray-900 dark:text-white mb-1 text-sm">The Grace of Kings</h3>
-                            <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">Book 1</p>
+                            <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">Book 1</p>
                             <a href="https://amzn.to/4lYVMGM" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 font-medium text-xs group-hover:underline">
                                 Buy on Amazon <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                             </a>
@@ -75,7 +75,7 @@ export default function AboutMePage() {
                     <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 dark:border-gray-700 group">
                         <div className="text-center">
                             <h3 className="font-bold text-gray-900 dark:text-white mb-1 text-sm">The Wall of Storms</h3>
-                            <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">Book 2</p>
+                            <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">Book 2</p>
                             <a href="https://amzn.to/3IXJlMU" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 font-medium text-xs group-hover:underline">
                                 Buy on Amazon <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                             </a>
@@ -85,7 +85,7 @@ export default function AboutMePage() {
                     <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 dark:border-gray-700 group">
                         <div className="text-center">
                             <h3 className="font-bold text-gray-900 dark:text-white mb-1 text-sm">The Veiled Throne</h3>
-                            <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">Book 3</p>
+                            <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">Book 3</p>
                             <a href="https://amzn.to/3Hcrgdj" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 font-medium text-xs group-hover:underline">
                                 Buy on Amazon <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                             </a>
@@ -95,7 +95,7 @@ export default function AboutMePage() {
                     <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 dark:border-gray-700 group">
                         <div className="text-center">
                             <h3 className="font-bold text-gray-900 dark:text-white mb-1 text-sm">Speaking Bones</h3>
-                            <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">Book 4</p>
+                            <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">Book 4</p>
                             <a href="https://amzn.to/41kbNi5" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 font-medium text-xs group-hover:underline">
                                 Buy on Amazon <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                             </a>
@@ -146,7 +146,7 @@ export default function AboutMePage() {
                     Many images on this site were generated with AI to provide visual references where official or fan artwork is scarce.
                 </InfoBlock>
                 <InfoBlock icon={<svg fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" /></svg>}>
-                    A huge credit goes to the community-run <Link href="https://the-dandelion-dynasty.fandom.com/wiki/The_Dandelion_Dynasty_Wiki" target="_blank" rel="noopener noreferrer" className="font-semibold text-teal-600 dark:text-teal-400 hover:underline">Dandelion Dynasty Fandom Wiki</Link>, an invaluable resource for cross-referencing information.
+                    Credit to these 2 communities - <Link href="https://the-dandelion-dynasty.fandom.com/wiki/The_Dandelion_Dynasty_Wiki" target="_blank" rel="noopener noreferrer" className="font-semibold text-teal-600 dark:text-teal-400 hover:underline">Dandelion Dynasty Fandom Wiki</Link> and <Link href="https://web.archive.org/web/20190809133811/http://dandelionwiki.com/w/Main_Page" target="_blank" rel="noopener noreferrer" className="font-semibold text-teal-600 dark:text-teal-400 hover:underline">The Dandelion Dynasty Wiki (offline)</Link>.
                 </InfoBlock>
                 <InfoBlock icon={<svg fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" /></svg>}>
                     <div>
