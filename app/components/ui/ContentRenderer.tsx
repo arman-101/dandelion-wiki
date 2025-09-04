@@ -1,4 +1,3 @@
-import React from 'react';
 import { ContentBlock } from '../../data/wiki-data';
 import { formatLinksInText } from '../../utils/textFormatting';
 import Reference from './Reference';

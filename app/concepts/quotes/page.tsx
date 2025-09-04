@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import React from 'react';
 import { usePathname } from 'next/navigation';
 import { ALL_CONCEPTS } from '@/app/data/wiki-data';
 import { ConceptNavigation } from '@/app/components/layout/PageNavigation';

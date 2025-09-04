@@ -138,8 +138,8 @@ export function useLocalStorage<T>(key: string, defaultValue: T) {
         try {
             const item = window.localStorage.getItem(key);
             return item ? JSON.parse(item) : defaultValue;
-        } catch (error) {
-            console.warn(`Error reading localStorage key "${key}":`, error);
+        } catch {
+            // Silently handle localStorage errors in SSR environments
             return defaultValue;
         }
     });
@@ -152,8 +152,8 @@ export function useLocalStorage<T>(key: string, defaultValue: T) {
             if (typeof window !== 'undefined') {
                 window.localStorage.setItem(key, JSON.stringify(valueToStore));
             }
-        } catch (error) {
-            console.warn(`Error setting localStorage key "${key}":`, error);
+        } catch {
+            // Silently handle localStorage errors in SSR environments
         }
     }, [key, value]);
 

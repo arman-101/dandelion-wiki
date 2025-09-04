@@ -1,17 +1,17 @@
 import Link from 'next/link';
-import React from 'react';
+import { ReactNode } from 'react';
 
 // --- Icon Components for UI clarity ---
 
-const TechIcon = ({ children }: { children: React.ReactNode }) => (
+const TechIcon = ({ children }: { children: ReactNode }) => (
     <div className="h-10 w-10 text-teal-500 mb-3">{children}</div>
 );
 
-const InfoIcon = ({ children }: { children: React.ReactNode }) => (
+const InfoIcon = ({ children }: { children: ReactNode }) => (
     <div className="flex-shrink-0 h-6 w-6 text-teal-500 mt-1 mr-4">{children}</div>
 );
 
-const TechCard = ({ icon, name, description }: { icon: React.ReactNode; name: string; description: string; }) => (
+const TechCard = ({ icon, name, description }: { icon: ReactNode; name: string; description: string; }) => (
     <div className="bg-white dark:bg-gray-800/50 p-4 rounded-lg text-center shadow-sm hover:shadow-lg transition-shadow duration-300">
         <div className="flex justify-center">
             <TechIcon>{icon}</TechIcon>
@@ -21,7 +21,7 @@ const TechCard = ({ icon, name, description }: { icon: React.ReactNode; name: st
     </div>
 );
 
-const InfoBlock = ({ icon, children }: { icon: React.ReactNode; children: React.ReactNode; }) => (
+const InfoBlock = ({ icon, children }: { icon: ReactNode; children: ReactNode; }) => (
     <div className="flex items-start not-prose">
         <InfoIcon>{icon}</InfoIcon>
         <div className="text-gray-600 dark:text-gray-300">{children}</div>

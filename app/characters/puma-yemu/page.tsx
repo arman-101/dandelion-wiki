@@ -2,7 +2,6 @@
 import { usePathname } from 'next/navigation';
 
 import PageTemplate, { convertCharacterData } from '../../components/layout/PageTemplate';
-import { generateCharacterMetadata } from '@/app/utils/metadata';
 import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
 import { CharacterNavigation } from '@/app/components/layout/PageNavigation';
 import { getSurroundingPages } from '@/app/utils/navigationUtils';

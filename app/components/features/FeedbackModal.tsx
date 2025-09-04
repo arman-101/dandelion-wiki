@@ -46,8 +46,7 @@ export default function FeedbackModal({ isOpen, onClose }: FeedbackModalProps) {
             } else {
                 setStatus('Oops! There was a problem submitting your feedback.');
             }
-        } catch (_error) { // Fixed: Renamed 'error' to '_error' to resolve lint warning
-            console.log(_error);
+        } catch {
             setStatus('Oops! There was a problem submitting your feedback.');
         }
     };

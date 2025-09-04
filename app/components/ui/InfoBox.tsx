@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React from 'react';
+import { Fragment } from 'react';
 import { formatLabel } from '../../utils/stringUtils';
 
 // Generic types for InfoBox data
@@ -28,7 +28,7 @@ export default function InfoBox({ title, data, className = "" }: InfoBoxProps) {
     const renderValue = (value: InfoBoxValue) => {
         if (Array.isArray(value)) {
             return value.map((item, index) => (
-                <React.Fragment key={`${item.text}-${index}`}>
+                <Fragment key={`${item.text}-${index}`}>
                     {item.link && item.link !== "" ? (
                         <Link href={item.link} className="text-teal-600 dark:text-teal-400 hover:underline">
                             {item.text}
@@ -37,7 +37,7 @@ export default function InfoBox({ title, data, className = "" }: InfoBoxProps) {
                         <span>{item.text}</span>
                     )}
                     {index < value.length - 1 ? ', ' : ''}
-                </React.Fragment>
+                </Fragment>
             ));
         } else if (typeof value === 'object' && 'link' in value) {
             return value.link && value.link !== "" ? (
