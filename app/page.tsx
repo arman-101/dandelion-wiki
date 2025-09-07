@@ -7,18 +7,18 @@ export default function Home() {
   const pageCount = ALL_WIKI_PAGES.length;
   
   return (
-    <div className="max-w-4xl mx-auto">
+    <div className="max-w-4xl mx-auto h-full flex flex-col justify-center">
       {/* Hero Section */}
-      <div className="text-center mb-12">
+      <div className="text-center mb-8">
         <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
           The Dandelion Dynasty Wiki
         </h1>
-        <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
+        <p className="text-xl text-gray-600 dark:text-gray-300 mb-6">
            An encyclopedia for the epic silkpunk saga by <Link href="/other/about-author" className="text-teal-600 dark:text-teal-400 hover:underline">Ken Liu</Link>
         </p>
 
         {/* Page Count */}
-        <div className="mb-8">
+        <div className="mb-6">
           <Link href="/other/all-pages" className="inline-block">
             <p className="text-sm text-gray-500 dark:text-gray-400 border border-gray-300 dark:border-gray-700 rounded-full px-4 py-1 hover:border-teal-500 hover:text-teal-600 dark:hover:text-teal-400 dark:hover:border-teal-500 transition-colors">
               Currently tracking <span className="font-bold text-teal-600 dark:text-teal-400">{pageCount}</span> pages
