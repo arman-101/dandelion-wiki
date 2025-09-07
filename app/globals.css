@@ -5,13 +5,61 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  
+  /* Brand Colors */
+  --color-primary: #0d9488;        /* teal-600 */
+  --color-primary-light: #14b8a6;  /* teal-500 */
+  --color-primary-dark: #0f766e;   /* teal-700 */
   --color-accent-pink: #F5BABB;
+  --color-accent-pink-dark: #e8a8a9;
+  
+  /* Text Colors */
+  --color-text-primary: #111827;   /* gray-900 */
+  --color-text-secondary: #374151; /* gray-700 */
+  --color-text-muted: #4b5563;     /* gray-600 - darker for better contrast */
+  --color-text-light: #6b7280;     /* gray-500 - darker for better contrast */
+  
+  /* Background Colors */
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f9fafb;    /* gray-50 */
+  --color-bg-tertiary: #f3f4f6;    /* gray-100 */
+  --color-bg-card: #ffffff;
+  
+  /* Border Colors */
+  --color-border-primary: #d1d5db;  /* gray-300 */
+  --color-border-secondary: #e5e7eb; /* gray-200 */
+  
+  /* Interactive Colors */
+  --color-link: #0d9488;            /* teal-600 */
+  --color-link-hover: #14b8a6;      /* teal-500 */
+  --color-link-dark: #2dd4bf;       /* teal-400 */
+  --color-link-dark-hover: #5eead4; /* teal-300 */
 }
 
 /* Dark mode styles */
 .dark {
   --background: #0a0a0a;
   --foreground: #ededed;
+  
+  /* Text Colors - Dark Mode */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #e5e7eb;  /* gray-200 */
+  --color-text-muted: #d1d5db;      /* gray-300 - lighter for dark mode */
+  --color-text-light: #9ca3af;      /* gray-400 - lighter for dark mode */
+  
+  /* Background Colors - Dark Mode */
+  --color-bg-primary: #0a0a0a;
+  --color-bg-secondary: #030712;     /* gray-950 */
+  --color-bg-tertiary: #111827;     /* gray-900 */
+  --color-bg-card: #1f2937;         /* gray-800 */
+  
+  /* Border Colors - Dark Mode */
+  --color-border-primary: #374151;  /* gray-700 */
+  --color-border-secondary: #4b5563; /* gray-600 */
+  
+  /* Interactive Colors - Dark Mode */
+  --color-link: #2dd4bf;            /* teal-400 */
+  --color-link-hover: #5eead4;      /* teal-300 */
 }
 
 @media (prefers-color-scheme: dark) {

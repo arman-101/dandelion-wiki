@@ -11,7 +11,7 @@ const ukyuGondeLocations = ALL_PLACES_DATA.filter(
 export default function MapsPage() {
     return (
         <div className="max-w-5xl mx-auto px-4">
-            <h1 className="text-4xl font-bold text-center mb-8 text-gray-900 dark:text-white">World Maps</h1>
+            <h1 className="text-4xl font-bold text-center mb-8 text-text-primary dark:text-text-primary">World Maps</h1>
 
             {/* Map Section for Dara */}
             <div className="mb-12">
@@ -29,15 +29,15 @@ export default function MapsPage() {
                     </div>
                     {/* Information and Links */}
                     <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-inner">
-                        <h3 className="text-xl font-bold mb-3 text-teal-600 dark:text-teal-400">About this Map</h3>
-                        <p className="text-gray-700 dark:text-gray-300 mb-4">
+                        <h3 className="text-xl font-bold mb-3 text-link dark:text-link-dark">About this Map</h3>
+                        <p className="text-text-secondary dark:text-text-secondary mb-4">
                             This map shows the primary setting for much of the saga: the seven Tiro States and surrounding islands that comprise the continent of Dara.
                         </p>
                         <h4 className="text-lg font-semibold mb-2 text-gray-800 dark:text-gray-200">The Seven States:</h4>
                         <ul className="list-disc list-inside space-y-1">
                             {PLACES_TIRO_STATES.map(place => (
                                 <li key={place.path}>
-                                    <Link href={place.path} className="text-teal-600 dark:text-teal-400 hover:underline">
+                                    <Link href={place.path} className="text-link dark:text-link-dark hover:underline">
                                         {place.title}
                                     </Link>
                                 </li>
@@ -62,15 +62,15 @@ export default function MapsPage() {
                     </div>
                     {/* Information and Links */}
                     <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-inner">
-                        <h3 className="text-xl font-bold mb-3 text-teal-600 dark:text-teal-400">About this Map</h3>
-                        <p className="text-gray-700 dark:text-gray-300 mb-4">
+                        <h3 className="text-xl font-bold mb-3 text-link dark:text-link-dark">About this Map</h3>
+                        <p className="text-text-secondary dark:text-text-secondary mb-4">
                             This map depicts the continent across the Wall of Storms, including the Lyucu homeland of Ukyu and the vast desert of Gondé, home to the Agon.
                         </p>
                         <h4 className="text-lg font-semibold mb-2 text-gray-800 dark:text-gray-200">Key Locations:</h4>
                         <ul className="list-disc list-inside space-y-1">
                              {ukyuGondeLocations.map(place => (
                                 <li key={place.path}>
-                                    <Link href={place.path} className="text-teal-600 dark:text-teal-400 hover:underline">
+                                    <Link href={place.path} className="text-link dark:text-link-dark hover:underline">
                                         {place.title}
                                     </Link>
                                 </li>

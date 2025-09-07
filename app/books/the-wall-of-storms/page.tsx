@@ -597,30 +597,30 @@ export default function WallOfStormsPage() {
                 </div>
                 <div className="w-full md:w-2/3">
                     <div>
-                        <p className="text-lg text-gray-500 dark:text-gray-400 font-semibold mb-1">The Dandelion Dynasty #2</p>
-                        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">The Wall of Storms</h1>
+                        <p className="text-lg text-text-light dark:text-text-light font-semibold mb-1">The Dandelion Dynasty #2</p>
+                        <h1 className="text-4xl md:text-5xl font-bold text-text-primary dark:text-text-primary mb-6">The Wall of Storms</h1>
                         <div className="prose prose-lg dark:prose-invert max-w-none mb-8">
                             <p>Emperor Kuni Garu, now known as Emperor Ragin, has reigned for years, and his dynasty seems secure. But the peace is fragile. Kuni’s children, the heirs to the empire, are coming of age, each with their own ambitions. And across the ocean, a new threat is stirring—an invasion force of unparalleled power, shielded by a seemingly impenetrable wall of storms, is preparing to cross the sea and challenge the Dandelion Throne.</p>
                         </div>
                     </div>
-                    <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md border border-gray-200 dark:border-gray-700">
-                        <h3 className="font-bold text-xl mb-4 text-teal-600 dark:text-teal-400">Book Details</h3>
-                        <ul className="space-y-2 text-base text-gray-700 dark:text-gray-300">
+                    <div className="bg-bg-card dark:bg-bg-card p-6 rounded-lg shadow-md border border-border-secondary dark:border-border-primary">
+                        <h3 className="font-bold text-xl mb-4 text-link dark:text-link-dark">Book Details</h3>
+                        <ul className="space-y-2 text-base text-text-secondary dark:text-text-secondary">
                             <li><strong>Author:</strong> Ken Liu</li>
                             <li><strong>Published:</strong> October 4, 2016 by Saga Press</li>
                             <li><strong>Pages:</strong> 880 (Hardcover)</li>
                             <li><strong>ISBN:</strong> 9781481424332</li>
                             <li><strong>Awards:</strong> Locus Award Nominee for Best Fantasy Novel (2017)</li>
                         </ul>
-                        <div className="border-t border-gray-200 dark:border-gray-700 mt-4 pt-4 space-y-2">
-                            <a href="https://www.goodreads.com/book/show/18952381-the-wall-of-storms" target="_blank" rel="noopener noreferrer" className="text-teal-600 dark:text-teal-400 hover:underline inline-flex items-center text-base">
+                        <div className="border-t border-border-secondary dark:border-border-primary mt-4 pt-4 space-y-2">
+                            <a href="https://www.goodreads.com/book/show/18952381-the-wall-of-storms" target="_blank" rel="noopener noreferrer" className="text-link dark:text-link-dark hover:underline inline-flex items-center text-base">
                                 View on Goodreads <ExternalLinkIcon />
                             </a>
                             <br />
-                            <a href="https://amzn.to/3IXJlMU" target="_blank" rel="noopener noreferrer" className="text-teal-600 dark:text-teal-400 hover:underline inline-flex items-center text-base">
+                            <a href="https://amzn.to/3IXJlMU" target="_blank" rel="noopener noreferrer" className="text-link dark:text-link-dark hover:underline inline-flex items-center text-base">
                                 Purchase on Amazon <ExternalLinkIcon />
                             </a>
-                            <p className="text-xs text-gray-400 dark:text-gray-500 pt-2 italic">
+                            <p className="text-xs text-text-light dark:text-gray-500 pt-2 italic">
                                 (If you purchase the book through this link, it&apos;ll give me a small kickback!)
                             </p>
                         </div>
@@ -629,8 +629,8 @@ export default function WallOfStormsPage() {
             </div>
 
             {/* --- TABLE OF CONTENTS --- */}
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md mb-12">
-                <h2 className="text-2xl font-bold mb-4 border-b pb-2 border-gray-300 dark:border-gray-600">Contents</h2>
+            <div className="bg-bg-card dark:bg-bg-card p-6 rounded-lg shadow-md mb-12">
+                <h2 className="text-2xl font-bold mb-4 border-b pb-2 border-gray-300 dark:border-border-secondary">Contents</h2>
                 <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-2">
                     {chapters.map(chapter => (
                         <li key={chapter.num}>
@@ -647,18 +647,18 @@ export default function WallOfStormsPage() {
                 {chapters.map(chapter => (
                     <div key={chapter.num} id={`chapter-${chapter.num}`} className="pt-4 scroll-mt-20">
                         <div className="border-l-4 border-teal-500 pl-4 mb-4">
-                            <h3 className="text-2xl font-bold text-gray-900 dark:text-white">{chapter.num} - {chapter.title}</h3>
-                            <p className="text-sm text-gray-500 dark:text-gray-400 italic">{chapter.date}</p>
+                            <h3 className="text-2xl font-bold text-text-primary dark:text-text-primary">{chapter.num} - {chapter.title}</h3>
+                            <p className="text-sm text-text-light dark:text-text-light italic">{chapter.date}</p>
                         </div>
-                        <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-                            <blockquote className="border-l-4 border-gray-300 dark:border-gray-600 p-4 italic text-gray-600 dark:text-gray-300 text-left">
+                        <div className="bg-bg-card dark:bg-bg-card p-6 rounded-lg shadow-md">
+                            <blockquote className="border-l-4 border-gray-300 dark:border-border-secondary p-4 italic text-text-muted dark:text-text-muted text-left">
                                 &ldquo;{chapter.quote}&rdquo;
                                 <span className="block text-right not-italic font-semibold mt-2">&mdash; {chapter.speaker}</span>
                             </blockquote>
-                            <div className="my-4 text-gray-700 dark:text-gray-300 prose dark:prose-invert max-w-none" style={{ whiteSpace: 'pre-line' }}>{formatAsteriskToBold(chapter.summary)}</div>
-                            <div className="flex flex-wrap gap-2 pt-4 border-t border-gray-200 dark:border-gray-700">
+                            <div className="my-4 text-text-secondary dark:text-text-secondary prose dark:prose-invert max-w-none" style={{ whiteSpace: 'pre-line' }}>{formatAsteriskToBold(chapter.summary)}</div>
+                            <div className="flex flex-wrap gap-2 pt-4 border-t border-border-secondary dark:border-border-primary">
                                 {chapter.links.map(link => (
-                                    <Link key={link.name} href={link.path} className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-sm px-3 py-1 rounded-full hover:bg-teal-600 hover:text-white transition-colors">
+                                    <Link key={link.name} href={link.path} className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-sm px-3 py-1 rounded-full hover:bg-primary hover:text-white transition-colors">
                                         {link.name}
                                     </Link>
                                 ))}

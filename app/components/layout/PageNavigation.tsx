@@ -29,11 +29,11 @@ export function TopNavigation({
     returnLink
 }: Pick<PageNavigationProps, 'prevPage' | 'nextPage' | 'returnLink'>) {
     return (
-        <div className="grid grid-cols-3 items-center mb-8 border-b border-gray-200 dark:border-gray-700 pb-4">
+        <div className="grid grid-cols-3 items-center mb-8 border-b border-border-secondary dark:border-border-primary pb-4">
             {/* Previous Page Link */}
             <div className="text-left">
                 {prevPage ? (
-                    <Link href={prevPage.path} className="inline-flex items-center text-gray-500 dark:text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 transition-colors">
+                    <Link href={prevPage.path} className="inline-flex items-center text-text-light dark:text-text-light hover:text-teal-500 dark:hover:text-teal-400 transition-colors">
                         <ArrowLeftIcon />
                         <span className="hidden md:inline text-sm font-semibold">{prevPage.title}</span>
                     </Link>
@@ -42,7 +42,7 @@ export function TopNavigation({
 
             {/* Return to Overview Link */}
             <div className="text-center">
-                <Link href={returnLink.path} className="text-sm font-semibold text-gray-600 dark:text-gray-300 hover:underline hover:text-teal-500 dark:hover:text-teal-400 transition-colors">
+                <Link href={returnLink.path} className="text-sm font-semibold text-text-muted dark:text-text-muted hover:underline hover:text-teal-500 dark:hover:text-teal-400 transition-colors">
                     {returnLink.title}
                 </Link>
             </div>
@@ -50,7 +50,7 @@ export function TopNavigation({
             {/* Next Page Link */}
             <div className="text-right">
                 {nextPage ? (
-                    <Link href={nextPage.path} className="inline-flex items-center text-gray-500 dark:text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 transition-colors">
+                    <Link href={nextPage.path} className="inline-flex items-center text-text-light dark:text-text-light hover:text-teal-500 dark:hover:text-teal-400 transition-colors">
                         <span className="hidden md:inline text-sm font-semibold">{nextPage.title}</span>
                         <ArrowRightIcon />
                     </Link>
@@ -84,7 +84,7 @@ export function BottomNavigation({
     const bottomLabels = getBottomNavLabels();
 
     return (
-        <div className="mt-16 flex justify-between items-center border-t border-gray-200 dark:border-gray-700 pt-8">
+        <div className="mt-16 flex justify-between items-center border-t border-border-secondary dark:border-border-primary pt-8">
             <div>
                 {prevItem && (
                     <Link href={prevItem.path} className="inline-flex items-center px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-md hover:text-teal-500 dark:hover:text-teal-400 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">

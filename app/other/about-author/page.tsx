@@ -16,7 +16,7 @@ const SocialLink = ({ name, url, icon }: typeof socialLinks[0]) => (
         rel="noopener noreferrer"
         className="flex items-center gap-2 sm:gap-3 bg-white dark:bg-gray-700/50 hover:bg-teal-100 dark:hover:bg-teal-800/60 shadow-sm hover:shadow-md px-3 sm:px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105"
     >
-        <span className="w-5 h-5 text-gray-600 dark:text-gray-300">{icon}</span>
+        <span className="w-5 h-5 text-text-muted dark:text-text-muted">{icon}</span>
         <span className="font-medium text-sm text-gray-800 dark:text-gray-200">{name}</span>
     </a>
 );
@@ -40,14 +40,14 @@ export default function KenLiuPage() {
                     </div>
                     {/* Info Column */}
                     <div className="md:col-span-2 p-8 md:p-12">
-                        <h1 className="text-4xl md:text-5xl font-extrabold text-teal-600 dark:text-teal-400 tracking-tight">Ken Liu</h1>
-                        <p className="mt-2 text-lg font-medium text-gray-500 dark:text-gray-400">Author, Translator, Programmer</p>
+                        <h1 className="text-4xl md:text-5xl font-extrabold text-link dark:text-link-dark tracking-tight">Ken Liu</h1>
+                        <p className="mt-2 text-lg font-medium text-text-light dark:text-text-light">Author, Translator, Programmer</p>
                         
-                        <p className="mt-6 text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+                        <p className="mt-6 text-base text-text-secondary dark:text-text-secondary leading-relaxed">
                             Ken Liu is an American author of science fiction and fantasy. His &ldquo;silkpunk&rdquo; epic fantasy series, The Dandelion Dynasty, reimagines the founding of the Han dynasty in a new world with its own unique technology and mythology. A winner of the Nebula, Hugo, and World Fantasy awards, he is celebrated for his thought-provoking stories that often explore themes of tradition, technology, and the human condition.
                         </p>
                         
-                        <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700/50">
+                        <div className="mt-8 pt-8 border-t border-border-secondary dark:border-border-primary/50">
                              <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">Connect Online</h3>
                              <div className="flex flex-wrap gap-3">
                                 {socialLinks.map(link => (

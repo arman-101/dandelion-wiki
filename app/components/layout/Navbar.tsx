@@ -25,7 +25,7 @@ interface DropdownItemProps {
 }
 
 const DropdownItem = ({ href, children }: DropdownItemProps) => (
-    <Link href={href} className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:[color:var(--color-accent-pink)] transition-colors">
+    <Link href={href} className="block px-4 py-2 text-sm text-text-secondary dark:text-text-secondary hover:bg-bg-tertiary dark:hover:bg-border-primary hover:[color:var(--color-accent-pink)] transition-colors">
         {children}
     </Link>
 );
@@ -37,11 +37,11 @@ export default function Navbar() {
 
     return (
         <>
-            <nav className="bg-white dark:bg-gray-900 shadow-md sticky top-0 z-50">
+            <nav className="bg-bg-primary dark:bg-bg-tertiary shadow-md sticky top-0 z-50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between h-16">
                         <div className="flex items-center">
-                            <Link href="/" className="flex-shrink-0 flex items-center gap-3 text-2xl font-bold text-teal-600 dark:text-teal-400">
+                            <Link href="/" className="flex-shrink-0 flex items-center gap-3 text-2xl font-bold text-link dark:text-link-dark">
                                 <Image src="/icon.png" alt="Wiki Icon" width={32} height={32} className="rounded-md" />
                                 TDD Wiki
                             </Link>
@@ -49,17 +49,17 @@ export default function Navbar() {
 
                         <div className="hidden lg:flex items-center gap-2">
                             {/* Main Nav Links */}
-                            <Link href="/" className="text-gray-700 dark:text-gray-300 hover:[color:var(--color-accent-pink)] px-3 py-2 rounded-md text-base font-medium transition-colors">
+                            <Link href="/" className="text-text-secondary dark:text-text-secondary hover:[color:var(--color-accent-pink)] px-3 py-2 rounded-md text-base font-medium transition-colors">
                                 Home
                             </Link>
                             
                             {/* Books Dropdown */}
                             <div className="relative group">
-                                <button onClick={() => router.push('/books')} className="flex items-center text-gray-700 dark:text-gray-300 hover:[color:var(--color-accent-pink)] px-3 py-2 rounded-md text-base font-medium transition-colors focus:outline-none cursor-pointer">
+                                <button onClick={() => router.push('/books')} className="flex items-center text-text-secondary dark:text-text-secondary hover:[color:var(--color-accent-pink)] px-3 py-2 rounded-md text-base font-medium transition-colors focus:outline-none cursor-pointer">
                                     <span>Books</span>
                                     <ChevronDownIcon />
                                 </button>
-                                <div className="absolute left-0 top-full mt-2 w-56 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                                <div className="absolute left-0 top-full mt-2 w-56 rounded-md shadow-lg bg-bg-primary dark:bg-bg-card ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                                     <div className="py-1">
                                         {ALL_BOOKS.map(book => (
                                             <DropdownItem key={book.path} href={book.path}>
@@ -72,25 +72,25 @@ export default function Navbar() {
                             
                             {/* Characters Dropdown */}
                             <div className="relative group">
-                                <button onClick={() => router.push('/characters')} className="flex items-center text-gray-700 dark:text-gray-300 hover:[color:var(--color-accent-pink)] px-3 py-2 rounded-md text-base font-medium transition-colors focus:outline-none cursor-pointer">
+                                <button onClick={() => router.push('/characters')} className="flex items-center text-text-secondary dark:text-text-secondary hover:[color:var(--color-accent-pink)] px-3 py-2 rounded-md text-base font-medium transition-colors focus:outline-none cursor-pointer">
                                     <span>Characters</span>
                                     <ChevronDownIcon />
                                 </button>
-                                <div className="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-56 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                                <div className="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-56 rounded-md shadow-lg bg-bg-card dark:bg-bg-card ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                                     <div className="py-1">
-                                        <Link href="/characters" className="flex justify-between items-center px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:[color:var(--color-accent-pink)] transition-colors">
+                                        <Link href="/characters" className="flex justify-between items-center px-4 py-2 text-sm text-text-secondary dark:text-text-secondary hover:bg-bg-tertiary dark:hover:bg-border-primary hover:[color:var(--color-accent-pink)] transition-colors">
                                             All Characters
                                         </Link>
-                                        <hr className="my-1 border-gray-200 dark:border-gray-600" />
+                                        <hr className="my-1 border-border-secondary dark:border-border-secondary" />
                                         
                                         {/* Character submenus */}
                                         {Object.entries(CHARACTERS_BY_BOOK_NAV).map(([bookKey, characters]) => (
                                             <div key={bookKey} className="relative group/submenu">
-                                                <div className="flex justify-between items-center px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:[color:var(--color-accent-pink)] transition-colors">
+                                                <div className="flex justify-between items-center px-4 py-2 text-sm text-text-secondary dark:text-text-secondary hover:bg-bg-tertiary dark:hover:bg-border-primary hover:[color:var(--color-accent-pink)] transition-colors">
                                                     <span>{bookKey} Characters</span>
                                                     <span className="text-xs">▶</span>
                                                 </div>
-                                                <div className="absolute left-full top-0 -mt-1 w-56 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover/submenu:opacity-100 group-hover/submenu:visible transition-all duration-200">
+                                                <div className="absolute left-full top-0 -mt-1 w-56 rounded-md shadow-lg bg-bg-card dark:bg-bg-card ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover/submenu:opacity-100 group-hover/submenu:visible transition-all duration-200">
                                                     <div className="py-1">
                                                         {characters.map((char) => (
                                                             <DropdownItem key={`${bookKey}-${char.link}`} href={char.link}>
@@ -107,26 +107,26 @@ export default function Navbar() {
                             
                             {/* More Dropdown */}
                             <div className="relative group">
-                                <button className="flex items-center text-gray-700 dark:text-gray-300 hover:[color:var(--color-accent-pink)] px-3 py-2 rounded-md text-base font-medium transition-colors focus:outline-none">
+                                <button className="flex items-center text-text-secondary dark:text-text-secondary hover:[color:var(--color-accent-pink)] px-3 py-2 rounded-md text-base font-medium transition-colors focus:outline-none">
                                     <span>More</span>
                                     <ChevronDownIcon />
                                 </button>
-                                <div className="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-56 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                                <div className="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-56 rounded-md shadow-lg bg-bg-card dark:bg-bg-card ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                                     <div className="py-1">
                                         <div className="relative group/submenu">
-                                            <Link href="/places" className="flex justify-between items-center px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:[color:var(--color-accent-pink)] transition-colors">
+                                            <Link href="/places" className="flex justify-between items-center px-4 py-2 text-sm text-text-secondary dark:text-text-secondary hover:bg-bg-tertiary dark:hover:bg-border-primary hover:[color:var(--color-accent-pink)] transition-colors">
                                                 <span>Places</span>
                                                 <span className="text-xs">▶</span>
                                             </Link>
-                                            <div className="absolute left-full top-0 -mt-1 w-56 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover/submenu:opacity-100 group-hover/submenu:visible transition-all duration-200">
-                                                <div className="py-1 font-semibold text-xs px-4 pt-2 pb-1 text-gray-400">Tiro States</div>
+                                            <div className="absolute left-full top-0 -mt-1 w-56 rounded-md shadow-lg bg-bg-card dark:bg-bg-card ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover/submenu:opacity-100 group-hover/submenu:visible transition-all duration-200">
+                                                <div className="py-1 font-semibold text-xs px-4 pt-2 pb-1 text-text-light">Tiro States</div>
                                                 {PLACES_TIRO_STATES.map(p => (
                                                     <DropdownItem key={p.path} href={p.path}>
                                                         {p.title}
                                                     </DropdownItem>
                                                 ))}
-                                                <hr className="my-1 border-gray-200 dark:border-gray-600" />
-                                                <div className="py-1 font-semibold text-xs px-4 pt-1 pb-1 text-gray-400">Beyond Dara</div>
+                                                <hr className="my-1 border-border-secondary dark:border-border-secondary" />
+                                                <div className="py-1 font-semibold text-xs px-4 pt-1 pb-1 text-text-light">Beyond Dara</div>
                                                 {PLACES_BEYOND_DARA.map(p => (
                                                     <DropdownItem key={p.path} href={p.path}>
                                                         {p.title}
@@ -135,11 +135,11 @@ export default function Navbar() {
                                             </div>
                                         </div>
                                         <div className="relative group/submenu">
-                                            <Link href="/gods" className="flex justify-between items-center px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:[color:var(--color-accent-pink)] transition-colors">
+                                            <Link href="/gods" className="flex justify-between items-center px-4 py-2 text-sm text-text-secondary dark:text-text-secondary hover:bg-bg-tertiary dark:hover:bg-border-primary hover:[color:var(--color-accent-pink)] transition-colors">
                                                 <span>Gods</span>
                                                 <span className="text-xs">▶</span>
                                             </Link>
-                                            <div className="absolute left-full top-0 -mt-1 w-56 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover/submenu:opacity-100 group-hover/submenu:visible transition-all duration-200">
+                                            <div className="absolute left-full top-0 -mt-1 w-56 rounded-md shadow-lg bg-bg-card dark:bg-bg-card ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover/submenu:opacity-100 group-hover/submenu:visible transition-all duration-200">
                                                 <div className="py-1">
                                                     {MAIN_GODS.map(g => (
                                                         <DropdownItem key={g.path} href={g.path}>
@@ -151,7 +151,7 @@ export default function Navbar() {
                                         </div>
                                         <DropdownItem href="/concepts">Concepts</DropdownItem>
                                         <DropdownItem href="/maps">Maps</DropdownItem>
-                                        <hr className="my-1 border-gray-200 dark:border-gray-600" />
+                                        <hr className="my-1 border-border-secondary dark:border-border-secondary" />
                                         {OTHER_PAGES.map(page => (
                                             <DropdownItem key={page.path} href={page.path}>
                                                 {page.title}
@@ -162,13 +162,13 @@ export default function Navbar() {
                             </div>
                             
                             {/* Action Items */}
-                            <div className="flex items-center border-l border-gray-200 dark:border-gray-700 ml-4 pl-4 gap-2">
+                            <div className="flex items-center border-l border-border-secondary dark:border-border-primary ml-4 pl-4 gap-2">
                                 <SearchBar />
                                 <ThemeToggleButton />
-                                <button onClick={() => setIsModalOpen(true)} className="px-4 py-2 bg-teal-600 text-white rounded-md text-sm font-medium hover:bg-teal-700 transition-all whitespace-nowrap">
+                                <button onClick={() => setIsModalOpen(true)} className="px-4 py-2 bg-primary text-white rounded-md text-sm font-medium hover:bg-primary-dark transition-all whitespace-nowrap">
                                     Feedback
                                 </button>
-                                <a href="https://buymeacoffee.com/darknebulax1" target='_blank' rel="noopener noreferrer" className="p-2 rounded-full text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-[--color-accent-pink] transition-colors" aria-label="Buy Me A Coffee">
+                                <a href="https://buymeacoffee.com/darknebulax1" target='_blank' rel="noopener noreferrer" className="p-2 rounded-full text-text-light dark:text-text-light hover:bg-bg-tertiary dark:hover:bg-border-primary hover:text-[--color-accent-pink] transition-colors" aria-label="Buy Me A Coffee">
                                     <CoffeeIcon />
                                 </a>
                             </div>
@@ -176,7 +176,7 @@ export default function Navbar() {
 
                         {/* Mobile Menu Button */}
                         <div className="-mr-2 flex lg:hidden">
-                            <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="bg-gray-100 dark:bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none ml-2">
+                            <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="bg-bg-tertiary dark:bg-bg-card inline-flex items-center justify-center p-2 rounded-md text-text-light hover:text-text-primary hover:bg-border-primary dark:hover:bg-border-primary focus:outline-none ml-2">
                                 {isMobileMenuOpen ? <XIcon /> : <MenuIcon />}
                             </button>
                         </div>
@@ -185,43 +185,43 @@ export default function Navbar() {
 
                 {/* Mobile Menu */}
                 {isMobileMenuOpen && (
-                    <div className="lg:hidden border-t border-gray-200 dark:border-gray-800">
+                    <div className="lg:hidden border-t border-border-secondary dark:border-border-primary">
                         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                             <div className="p-2">
                                 <SearchBar />
                             </div>
-                            <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">
+                            <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="text-text-secondary dark:text-text-secondary hover:bg-bg-tertiary dark:hover:bg-border-primary block px-3 py-2 rounded-md text-base font-medium">
                                 Home
                             </Link>
-                            <Link href="/books" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">
+                            <Link href="/books" onClick={() => setIsMobileMenuOpen(false)} className="text-text-secondary dark:text-text-secondary hover:bg-bg-tertiary dark:hover:bg-border-primary block px-3 py-2 rounded-md text-base font-medium">
                                 Books
                             </Link>
-                            <Link href="/characters" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">
+                            <Link href="/characters" onClick={() => setIsMobileMenuOpen(false)} className="text-text-secondary dark:text-text-secondary hover:bg-bg-tertiary dark:hover:bg-border-primary block px-3 py-2 rounded-md text-base font-medium">
                                 Characters
                             </Link>
-                            <Link href="/places" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">
+                            <Link href="/places" onClick={() => setIsMobileMenuOpen(false)} className="text-text-secondary dark:text-text-secondary hover:bg-bg-tertiary dark:hover:bg-border-primary block px-3 py-2 rounded-md text-base font-medium">
                                 Places
                             </Link>
-                            <Link href="/gods" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">
+                            <Link href="/gods" onClick={() => setIsMobileMenuOpen(false)} className="text-text-secondary dark:text-text-secondary hover:bg-bg-tertiary dark:hover:bg-border-primary block px-3 py-2 rounded-md text-base font-medium">
                                 Gods
                             </Link>
-                            <Link href="/concepts" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">
+                            <Link href="/concepts" onClick={() => setIsMobileMenuOpen(false)} className="text-text-secondary dark:text-text-secondary hover:bg-bg-tertiary dark:hover:bg-border-primary block px-3 py-2 rounded-md text-base font-medium">
                                 Concepts
                             </Link>
-                            <Link href="/maps" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">
+                            <Link href="/maps" onClick={() => setIsMobileMenuOpen(false)} className="text-text-secondary dark:text-text-secondary hover:bg-bg-tertiary dark:hover:bg-border-primary block px-3 py-2 rounded-md text-base font-medium">
                                 Maps
                             </Link>
-                            <hr className="my-1 border-gray-200 dark:border-gray-600" />
+                            <hr className="my-1 border-border-secondary dark:border-border-secondary" />
                             {OTHER_PAGES.map(page => (
-                                <Link key={page.path} href={page.path} onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">
+                                <Link key={page.path} href={page.path} onClick={() => setIsMobileMenuOpen(false)} className="text-text-secondary dark:text-text-secondary hover:bg-bg-tertiary dark:hover:bg-border-primary block px-3 py-2 rounded-md text-base font-medium">
                                     {page.title}
                                 </Link>
                             ))}
-                            <Link href="https://buymeacoffee.com/darknebulax1" target='_blank' className="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">
+                            <Link href="https://buymeacoffee.com/darknebulax1" target='_blank' className="text-text-secondary dark:text-text-secondary hover:bg-bg-tertiary dark:hover:bg-border-primary block px-3 py-2 rounded-md text-base font-medium">
                                 Cup a coffee?
                             </Link>
-                            <hr className="my-1 border-gray-200 dark:border-gray-600" />
-                            <button onClick={() => { setIsModalOpen(true); setIsMobileMenuOpen(false); }} className="w-full text-left text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">
+                            <hr className="my-1 border-border-secondary dark:border-border-secondary" />
+                            <button onClick={() => { setIsModalOpen(true); setIsMobileMenuOpen(false); }} className="w-full text-left text-text-secondary dark:text-text-secondary hover:bg-bg-tertiary dark:hover:bg-border-primary block px-3 py-2 rounded-md text-base font-medium">
                                 Feedback
                             </button>
                             <div className="flex items-center justify-start p-2">

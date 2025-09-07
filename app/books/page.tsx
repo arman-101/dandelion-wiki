@@ -35,10 +35,10 @@ const books = [
 export default function BooksPage() {
     return (
         <div>
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-8 border-b pb-4">The Dandelion Dynasty Series</h1>
+            <h1 className="text-3xl md:text-4xl font-bold text-text-primary dark:text-text-primary mb-8 border-b pb-4">The Dandelion Dynasty Series</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {books.map((book) => (
-                    <Link href={book.link} key={book.title} className="group bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-1 overflow-hidden">
+                    <Link href={book.link} key={book.title} className="group bg-bg-card dark:bg-bg-card rounded-lg shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-1 overflow-hidden">
                         <div className="relative w-full h-80">
                              <Image 
                                 src={book.coverImage}
@@ -48,9 +48,9 @@ export default function BooksPage() {
                             />
                         </div>
                         <div className="p-4">
-                            <p className="text-sm text-gray-500 dark:text-gray-400">{book.series}</p>
-                            <h2 className="text-xl font-bold text-gray-900 dark:text-white mt-1 group-hover:text-teal-500 transition-colors">{book.title}</h2>
-                            <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">{book.description}</p>
+                            <p className="text-sm text-text-light dark:text-text-light">{book.series}</p>
+                            <h2 className="text-xl font-bold text-text-primary dark:text-text-primary mt-1 group-hover:text-teal-500 transition-colors">{book.title}</h2>
+                            <p className="text-sm text-text-muted dark:text-text-muted mt-2">{book.description}</p>
                         </div>
                     </Link>
                 ))}

@@ -24,16 +24,16 @@ const placesEtc: Place[] = ALL_PLACES_DATA.filter(p => p.category === 'etc');
 // Helper component for rendering each section
 const PlaceSection: FC<{ title: string; places: Place[]; isFirst?: boolean }> = ({ title, places, isFirst = false }) => (
     <section>
-        <h3 className={`text-3xl md:text-4xl font-bold text-gray-900 dark:text-white border-b pb-4 ${isFirst ? 'mt-0 mb-8' : 'my-8'}`}>{title}</h3>
+        <h3 className={`text-3xl md:text-4xl font-bold text-text-primary dark:text-text-primary border-b pb-4 ${isFirst ? 'mt-0 mb-8' : 'my-8'}`}>{title}</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {places.map((place: Place) => (
-                <Link href={place.link} key={place.name} className="group bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-1 overflow-hidden">
+                <Link href={place.link} key={place.name} className="group bg-bg-card dark:bg-bg-card rounded-lg shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-1 overflow-hidden">
                     <div className="relative w-full h-64">
                          <Image src={place.image} alt={`Image of ${place.name}`} fill style={{ objectFit: "cover", objectPosition: "center" }} />
                     </div>
                     <div className="p-4">
-                        <h3 className="text-xl font-bold text-gray-900 dark:text-white mt-1 group-hover:[color:var(--color-accent-pink)] transition-colors">{place.name}</h3>
-                        <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">{place.description}</p>
+                        <h3 className="text-xl font-bold text-text-primary dark:text-text-primary mt-1 group-hover:[color:var(--color-accent-pink)] transition-colors">{place.name}</h3>
+                        <p className="text-sm text-text-muted dark:text-text-muted mt-2">{place.description}</p>
                     </div>
                 </Link>
             ))}

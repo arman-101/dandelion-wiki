@@ -25,7 +25,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} bg-gray-50 dark:bg-gray-950 text-gray-800 dark:text-gray-200`} suppressHydrationWarning>
+      <body className={`${inter.className} bg-bg-secondary dark:bg-bg-secondary text-text-secondary dark:text-text-secondary`} suppressHydrationWarning>
         <ThemeProviders>
           <div className="min-h-screen flex flex-col">
             <Navbar />

@@ -11,7 +11,7 @@ interface ContentRendererProps {
  * Renders content blocks with mixed text and references
  * Handles both text formatting and reference links consistently
  */
-export default function ContentRenderer({ content, className = "text-gray-700 dark:text-gray-300 leading-relaxed" }: ContentRendererProps) {
+export default function ContentRenderer({ content, className = "text-text-secondary dark:text-text-secondary leading-relaxed" }: ContentRendererProps) {
     return (
         <p className={className}>
             {content.map((block, index) => {

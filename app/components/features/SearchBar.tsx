@@ -49,13 +49,13 @@ export default function SearchBar({
                     onBlur={() => setTimeout(() => setIsFocused(false), 200)}
                     className="w-full pl-10 pr-4 py-2 bg-gray-100 dark:bg-gray-700 border border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 dark:focus:ring-teal-400 transition-colors"
                 />
-                <div className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+                <div className="absolute left-3 top-1/2 transform -translate-y-1/2 text-text-light">
                     <SearchIcon />
                 </div>
             </div>
             
             {isFocused && results.length > 0 && (
-                <ul className="absolute z-10 w-full mt-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-lg shadow-lg max-h-60 overflow-y-auto">
+                <ul className="absolute z-10 w-full mt-1 bg-bg-card dark:bg-bg-card border border-border-secondary dark:border-border-secondary rounded-lg shadow-lg max-h-60 overflow-y-auto">
                     {results.map(page => (
                         <li key={page.path}>
                             <a
@@ -65,7 +65,7 @@ export default function SearchBar({
                             >
                                 <div className="flex justify-between items-center">
                                     <span>{page.title}</span>
-                                    <span className="text-xs italic text-gray-400 dark:text-gray-500">{page.type}</span>
+                                    <span className="text-xs italic text-text-light dark:text-gray-500">{page.type}</span>
                                 </div>
                             </a>
                         </li>

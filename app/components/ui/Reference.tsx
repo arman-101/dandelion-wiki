@@ -21,7 +21,7 @@ export default function Reference({ book, chapter, link }: ReferenceProps) {
     return (
         <Link 
             href={link} 
-            className="text-xs text-teal-600 dark:text-teal-400 hover:underline mx-1"
+            className="text-xs text-link dark:text-link-dark hover:underline mx-1"
         >
             [{acronym}-{chapter}]
         </Link>

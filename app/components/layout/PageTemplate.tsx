@@ -92,10 +92,10 @@ export default function PageTemplate({
             <div className="flex flex-col lg:flex-row gap-8">
                 {/* Main Content Area */}
                 <div className="w-full lg:w-2/3 order-2 lg:order-1">
-                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+                    <h1 className="text-4xl md:text-5xl font-bold text-text-primary dark:text-text-primary mb-4">
                         {pageData.name}
                     </h1>
-                    <p className="text-lg italic text-gray-600 dark:text-gray-400 mb-8 border-l-4 border-gray-300 dark:border-gray-600 pl-4">
+                    <p className="text-lg italic text-text-muted dark:text-text-light mb-8 border-l-4 border-gray-300 dark:border-border-secondary pl-4">
                         {formatLinksInText(pageData.introduction)}
                     </p>
 

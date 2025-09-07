@@ -20,7 +20,7 @@ export const ThemeToggleButton = () => {
   if (!mounted) {
     return (
       <button
-        className="p-2 rounded-md text-gray-500 hover:bg-gray-100 transition-colors border border-gray-300"
+        className="p-2 rounded-md text-text-light hover:bg-bg-tertiary transition-colors border border-border-primary"
         disabled
       >
         <Sun size={20} />
@@ -33,7 +33,7 @@ export const ThemeToggleButton = () => {
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 rounded-md text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-[--color-accent-pink] transition-colors border border-gray-300 dark:border-gray-600"
+      className="p-2 rounded-md text-text-light dark:text-text-light hover:bg-bg-tertiary dark:hover:bg-border-primary hover:text-[--color-accent-pink] transition-colors border border-border-primary dark:border-border-secondary"
       aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`}
     >
       {isDark ? <Sun size={20} /> : <Moon size={20} />}

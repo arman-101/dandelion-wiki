@@ -264,7 +264,7 @@ export default function QuotesPage() {
         <>
             <ConceptNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
             <div className="max-w-4xl mx-auto px-4">
-                <h1 className="text-4xl font-bold text-center mb-10 text-gray-900 dark:text-white">Memorable Quotes</h1>
+                <h1 className="text-4xl font-bold text-center mb-10 text-text-primary dark:text-text-primary">Memorable Quotes</h1>
                 <div className="space-y-8">
                     {quotes.map((quote, index) => (
                         <div key={index} className="border-l-4 border-teal-500 pl-6">
@@ -272,7 +272,7 @@ export default function QuotesPage() {
                                 &ldquo;{quote.text}&rdquo;
                             </blockquote>
                             <div className="mt-4 text-right">
-                                <p className="font-semibold text-gray-700 dark:text-gray-300">
+                                <p className="font-semibold text-text-secondary dark:text-text-secondary">
                                     {quote.characterLink ? (
                                         <Link href={quote.characterLink} className="hover:text-teal-500 transition-colors">
                                             - {quote.speaker}
@@ -281,7 +281,7 @@ export default function QuotesPage() {
                                         `- ${quote.speaker}`
                                     )}
                                 </p>
-                                <p className="text-sm text-gray-500 dark:text-gray-400">
+                                <p className="text-sm text-text-light dark:text-text-light">
                                     from <Link href={quote.bookLink} className="italic hover:underline">{quote.book}</Link>
                                 </p>
                             </div>
