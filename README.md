@@ -155,6 +155,7 @@ General rules:
 - PR authors will be credited in the Contributors section of the repository and optionally in page footers when applicable.
 - Please include source notes or book chapter references in your PR description for factual additions.
 - Artwork and images: if you contribute original art, include how you want to be credited; AI-generated images will be marked accordingly.
+- **Icons**: Tree icon by [Flaticon](https://www.flaticon.com/free-icon/tree_1067751) - used under their free license.
 
 ### Support the Project
 
