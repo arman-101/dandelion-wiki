@@ -70,14 +70,14 @@ export default function FeedbackModal({ isOpen, onClose }: FeedbackModalProps) {
                                 id="email" 
                                 value={email} 
                                 onChange={(e) => setEmail(e.target.value)} 
-                                className="w-full px-3 py-2 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-border-secondary rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500" 
+                                className="w-full px-3 py-2 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-border-secondary rounded-md focus:outline-none focus:ring-2 focus:ring-primary" 
                                 placeholder="So I can reply to you" 
                                 required 
                             />
                         </div>
                         <div className="mb-4">
                             <label htmlFor="reason" className="block text-sm font-medium text-text-secondary dark:text-text-secondary mb-1">Reason</label>
-                            <select id="reason" value={reason} onChange={(e) => setReason(e.target.value)} className="w-full px-3 pr-8 py-2 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-border-secondary rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500">
+                            <select id="reason" value={reason} onChange={(e) => setReason(e.target.value)} className="w-full px-3 pr-8 py-2 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-border-secondary rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
                                 <option>General Feedback</option>
                                 <option>Content Suggestion</option>
                                 <option>Wiki Error</option>
@@ -96,7 +96,7 @@ export default function FeedbackModal({ isOpen, onClose }: FeedbackModalProps) {
                                 rows={4} 
                                 value={message} 
                                 onChange={(e) => setMessage(e.target.value)} 
-                                className="w-full px-3 py-2 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-border-secondary rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500" 
+                                className="w-full px-3 py-2 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-border-secondary rounded-md focus:outline-none focus:ring-2 focus:ring-primary" 
                                 placeholder="Tell me what you think..." 
                                 required 
                             />

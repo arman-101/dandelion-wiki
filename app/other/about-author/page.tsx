@@ -14,7 +14,7 @@ const SocialLink = ({ name, url, icon }: typeof socialLinks[0]) => (
         href={url}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center gap-2 sm:gap-3 bg-white dark:bg-gray-700/50 hover:bg-teal-100 dark:hover:bg-teal-800/60 shadow-sm hover:shadow-md px-3 sm:px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105"
+        className="flex items-center gap-2 sm:gap-3 bg-white dark:bg-gray-700/50 hover:bg-primary/20 dark:hover:bg-accent-pink/30/60 shadow-sm hover:shadow-md px-3 sm:px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105"
     >
         <span className="w-5 h-5 text-text-muted dark:text-text-muted">{icon}</span>
         <span className="font-medium text-sm text-gray-800 dark:text-gray-200">{name}</span>

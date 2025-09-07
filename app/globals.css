@@ -6,11 +6,11 @@
   --background: #ffffff;
   --foreground: #171717;
   
-  /* Brand Colors */
+  /* Brand Colors - Original Teal */
   --color-primary: #0d9488;        /* teal-600 */
   --color-primary-light: #14b8a6;  /* teal-500 */
   --color-primary-dark: #0f766e;   /* teal-700 */
-  --color-accent-pink: #F5BABB;
+  --color-accent-pink: #F5BABB;    /* original pink */
   --color-accent-pink-dark: #e8a8a9;
   
   /* Text Colors */

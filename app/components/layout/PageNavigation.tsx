@@ -33,7 +33,7 @@ export function TopNavigation({
             {/* Previous Page Link */}
             <div className="text-left">
                 {prevPage ? (
-                    <Link href={prevPage.path} className="inline-flex items-center text-text-light dark:text-text-light hover:text-teal-500 dark:hover:text-teal-400 transition-colors">
+                    <Link href={prevPage.path} className="inline-flex items-center text-text-light dark:text-text-light hover:text-primary dark:hover:text-accent-pink transition-colors">
                         <ArrowLeftIcon />
                         <span className="hidden md:inline text-sm font-semibold">{prevPage.title}</span>
                     </Link>
@@ -42,7 +42,7 @@ export function TopNavigation({
 
             {/* Return to Overview Link */}
             <div className="text-center">
-                <Link href={returnLink.path} className="text-sm font-semibold text-text-muted dark:text-text-muted hover:underline hover:text-teal-500 dark:hover:text-teal-400 transition-colors">
+                <Link href={returnLink.path} className="text-sm font-semibold text-text-muted dark:text-text-muted hover:underline hover:text-primary dark:hover:text-accent-pink transition-colors">
                     {returnLink.title}
                 </Link>
             </div>
@@ -50,7 +50,7 @@ export function TopNavigation({
             {/* Next Page Link */}
             <div className="text-right">
                 {nextPage ? (
-                    <Link href={nextPage.path} className="inline-flex items-center text-text-light dark:text-text-light hover:text-teal-500 dark:hover:text-teal-400 transition-colors">
+                    <Link href={nextPage.path} className="inline-flex items-center text-text-light dark:text-text-light hover:text-primary dark:hover:text-accent-pink transition-colors">
                         <span className="hidden md:inline text-sm font-semibold">{nextPage.title}</span>
                         <ArrowRightIcon />
                     </Link>
@@ -87,7 +87,7 @@ export function BottomNavigation({
         <div className="mt-16 flex justify-between items-center border-t border-border-secondary dark:border-border-primary pt-8">
             <div>
                 {prevItem && (
-                    <Link href={prevItem.path} className="inline-flex items-center px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-md hover:text-teal-500 dark:hover:text-teal-400 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                    <Link href={prevItem.path} className="inline-flex items-center px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-md hover:text-primary dark:hover:text-accent-pink hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
                         <ArrowLeftIcon />
                         <div className="hidden md:block ml-2">
                             <p className="text-xs">{bottomLabels.prev}</p>
@@ -98,7 +98,7 @@ export function BottomNavigation({
             </div>
             <div>
                 {nextItem && (
-                    <Link href={nextItem.path} className="inline-flex items-center px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-md hover:text-teal-500 dark:hover:text-teal-400 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                    <Link href={nextItem.path} className="inline-flex items-center px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-md hover:text-primary dark:hover:text-accent-pink hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
                         <div className="hidden md:block mr-2">
                             <p className="text-xs text-right">{bottomLabels.next}</p>
                             <p className="font-bold">{nextItem.title}</p>

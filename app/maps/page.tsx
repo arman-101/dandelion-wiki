@@ -15,7 +15,7 @@ export default function MapsPage() {
 
             {/* Map Section for Dara */}
             <div className="mb-12">
-                <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-200 border-b-2 border-teal-500 pb-2 mb-6">The Islands of Dara</h2>
+                <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-200 border-b-2 border-primary-light pb-2 mb-6">The Islands of Dara</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {/* Map Image */}
                     <div className="md:col-span-2 relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
@@ -49,7 +49,7 @@ export default function MapsPage() {
 
             {/* Map Section for Ukyu & Gondé */}
             <div>
-                <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-200 border-b-2 border-teal-500 pb-2 mb-6">Ukyu &amp; Gondé</h2>
+                <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-200 border-b-2 border-primary-light pb-2 mb-6">Ukyu &amp; Gondé</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {/* Map Image */}
                     <div className="md:col-span-2 relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg">

@@ -487,7 +487,7 @@ export default function VeiledThronePage() {
                 <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-2">
                     {chapters.map(chapter => (
                         <li key={chapter.num}>
-                            <a href={`#chapter-${chapter.num}`} className="text-teal-600 dark:text-gray-300 hover:text-[--color-accent-pink] hover:underline transition-colors">
+                            <a href={`#chapter-${chapter.num}`} className="text-primary dark:text-accent-pink hover:text-[--color-accent-pink] hover:underline transition-colors">
                                 {chapter.num} - {chapter.title}
                             </a>
                         </li>
@@ -499,7 +499,7 @@ export default function VeiledThronePage() {
             <div className="space-y-12">
                 {chapters.map(chapter => (
                     <div key={chapter.num} id={`chapter-${chapter.num}`} className="pt-4 scroll-mt-20">
-                        <div className="border-l-4 border-teal-500 pl-4 mb-4">
+                        <div className="border-l-4 border-primary-light pl-4 mb-4">
                             <h3 className="text-2xl font-bold text-text-primary dark:text-text-primary">{chapter.num} - {chapter.title}</h3>
                             <p className="text-sm text-text-light dark:text-text-light italic">{chapter.date}</p>
                         </div>

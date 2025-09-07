@@ -4,11 +4,11 @@ import { ReactNode } from 'react';
 // --- Icon Components for UI clarity ---
 
 const TechIcon = ({ children }: { children: ReactNode }) => (
-    <div className="h-10 w-10 text-teal-500 mb-3">{children}</div>
+    <div className="h-10 w-10 text-primary mb-3">{children}</div>
 );
 
 const InfoIcon = ({ children }: { children: ReactNode }) => (
-    <div className="flex-shrink-0 h-6 w-6 text-teal-500 mt-1 mr-4">{children}</div>
+    <div className="flex-shrink-0 h-6 w-6 text-primary mt-1 mr-4">{children}</div>
 );
 
 const TechCard = ({ icon, name, description }: { icon: ReactNode; name: string; description: string; }) => (
@@ -66,7 +66,7 @@ export default function AboutMePage() {
                         <div className="text-center">
                             <h3 className="font-bold text-text-primary dark:text-text-primary mb-1 text-sm">The Grace of Kings</h3>
                             <p className="text-sm text-text-light dark:text-text-light mb-1">Book 1</p>
-                            <a href="https://amzn.to/4lYVMGM" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-link dark:text-link-dark hover:text-teal-700 dark:hover:text-teal-300 font-medium text-xs group-hover:underline">
+                            <a href="https://amzn.to/4lYVMGM" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-link dark:text-link-dark hover:text-primary-dark dark:hover:text-accent-pink font-medium text-xs group-hover:underline">
                                 Buy on Amazon <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                             </a>
                         </div>
@@ -76,7 +76,7 @@ export default function AboutMePage() {
                         <div className="text-center">
                             <h3 className="font-bold text-text-primary dark:text-text-primary mb-1 text-sm">The Wall of Storms</h3>
                             <p className="text-sm text-text-light dark:text-text-light mb-1">Book 2</p>
-                            <a href="https://amzn.to/3IXJlMU" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-link dark:text-link-dark hover:text-teal-700 dark:hover:text-teal-300 font-medium text-xs group-hover:underline">
+                            <a href="https://amzn.to/3IXJlMU" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-link dark:text-link-dark hover:text-primary-dark dark:hover:text-accent-pink font-medium text-xs group-hover:underline">
                                 Buy on Amazon <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                             </a>
                         </div>
@@ -86,7 +86,7 @@ export default function AboutMePage() {
                         <div className="text-center">
                             <h3 className="font-bold text-text-primary dark:text-text-primary mb-1 text-sm">The Veiled Throne</h3>
                             <p className="text-sm text-text-light dark:text-text-light mb-1">Book 3</p>
-                            <a href="https://amzn.to/3Hcrgdj" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-link dark:text-link-dark hover:text-teal-700 dark:hover:text-teal-300 font-medium text-xs group-hover:underline">
+                            <a href="https://amzn.to/3Hcrgdj" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-link dark:text-link-dark hover:text-primary-dark dark:hover:text-accent-pink font-medium text-xs group-hover:underline">
                                 Buy on Amazon <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                             </a>
                         </div>
@@ -96,7 +96,7 @@ export default function AboutMePage() {
                         <div className="text-center">
                             <h3 className="font-bold text-text-primary dark:text-text-primary mb-1 text-sm">Speaking Bones</h3>
                             <p className="text-sm text-text-light dark:text-text-light mb-1">Book 4</p>
-                            <a href="https://amzn.to/41kbNi5" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-link dark:text-link-dark hover:text-teal-700 dark:hover:text-teal-300 font-medium text-xs group-hover:underline">
+                            <a href="https://amzn.to/41kbNi5" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-link dark:text-link-dark hover:text-primary-dark dark:hover:text-accent-pink font-medium text-xs group-hover:underline">
                                 Buy on Amazon <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                             </a>
                         </div>
@@ -106,7 +106,7 @@ export default function AboutMePage() {
                 <div className="text-center pt-4 border-t border-border-secondary dark:border-border-primary">
                     <div className="flex items-center justify-center space-x-3">
                         <span className="text-text-muted dark:text-text-light text-sm">Or support directly:</span>
-                        <a href="https://buymeacoffee.com/darknebulax1" target="_blank" rel="noopener noreferrer" className="inline-flex items-center bg-bg-card dark:bg-bg-card px-3 py-2 rounded-lg shadow-sm border border-border-secondary dark:border-border-primary text-link dark:text-link-dark hover:text-teal-700 dark:hover:text-teal-300 font-medium text-sm transition-all duration-200 hover:shadow-md">
+                        <a href="https://buymeacoffee.com/darknebulax1" target="_blank" rel="noopener noreferrer" className="inline-flex items-center bg-bg-card dark:bg-bg-card px-3 py-2 rounded-lg shadow-sm border border-border-secondary dark:border-border-primary text-link dark:text-link-dark hover:text-primary-dark dark:hover:text-accent-pink font-medium text-sm transition-all duration-200 hover:shadow-md">
                             ☕ Buy me a coffee <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                         </a>
                     </div>

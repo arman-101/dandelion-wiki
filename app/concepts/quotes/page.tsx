@@ -267,14 +267,14 @@ export default function QuotesPage() {
                 <h1 className="text-4xl font-bold text-center mb-10 text-text-primary dark:text-text-primary">Memorable Quotes</h1>
                 <div className="space-y-8">
                     {quotes.map((quote, index) => (
-                        <div key={index} className="border-l-4 border-teal-500 pl-6">
+                        <div key={index} className="border-l-4 border-primary-light pl-6">
                             <blockquote className="text-xl italic text-gray-800 dark:text-gray-200 leading-relaxed">
                                 &ldquo;{quote.text}&rdquo;
                             </blockquote>
                             <div className="mt-4 text-right">
                                 <p className="font-semibold text-text-secondary dark:text-text-secondary">
                                     {quote.characterLink ? (
-                                        <Link href={quote.characterLink} className="hover:text-teal-500 transition-colors">
+                                        <Link href={quote.characterLink} className="hover:text-primary transition-colors">
                                             - {quote.speaker}
                                         </Link>
                                     ) : (

@@ -27,7 +27,7 @@ export default function AllPages() {
             <div className="space-y-12">
                 {pageTypes.map(type => (
                     <div key={type}>
-                        <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-200 border-b-2 border-teal-500 pb-2 mb-6">{type}s</h2>
+                        <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-200 border-b-2 border-primary-light pb-2 mb-6">{type}s</h2>
                         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-3">
                             {groupedPages[type].map(page => (
                                 <li key={page.path}>
