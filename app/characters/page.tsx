@@ -1,7 +1,13 @@
-'use client';
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ALL_CHARACTERS_DATA } from '../data/wiki-data'; // Import the master list
+import { generatePageMetadata } from '@/app/utils/metadata';
+
+export const metadata: Metadata = generatePageMetadata(
+    'Characters',
+    'Meet all the characters from The Dandelion Dynasty series - heroes, villains, gods, and legends from the world of Dara created by Ken Liu.'
+);
 
 export default function CharactersPage() {
     return (

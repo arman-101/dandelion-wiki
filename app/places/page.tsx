@@ -1,7 +1,14 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
 import { ALL_PLACES_DATA } from '../data/wiki-data'; // Import the new master data list
+import { generatePageMetadata } from '@/app/utils/metadata';
+
+export const metadata: Metadata = generatePageMetadata(
+    'Places',
+    'Discover all the locations from The Dandelion Dynasty series - from the Tiro States of Dara to distant lands like Ukyu & Gondé. Explore cities, islands, mountains, and more.'
+);
 
 // --- TYPE DEFINITION FOR A PLACE ---
 interface Place {

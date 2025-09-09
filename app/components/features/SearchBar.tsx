@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { ALL_WIKI_PAGES } from '../../data/wiki-data';
 import { SearchIcon } from '../ui/Icons';
+import { fuzzySearch } from '../../utils/stringUtils';
 
 interface SearchBarProps {
     className?: string;
@@ -25,7 +26,7 @@ export default function SearchBar({
             return;
         }
         const filtered = ALL_WIKI_PAGES.filter(page =>
-            page.title.toLowerCase().includes(searchTerm.toLowerCase())
+            fuzzySearch(page.title, searchTerm)
         );
         setResults(filtered);
     }, [searchTerm]);

@@ -13,7 +13,7 @@ function extractSlugFromImage(imagePath: string, folder: 'characters' | 'places'
 }
 
 export function generateCharacterMetadata(character: Character): Metadata {
-    const title = `${character.name} — Character | Dandelion Dynasty Wiki`;
+    const title = `${character.name}`;
     const description = truncate(character.introduction || `${character.name} from The Dandelion Dynasty.`);
     const imageUrl = typeof character.image === 'string' ? character.image : '';
     const slug = imageUrl ? extractSlugFromImage(imageUrl, 'characters') : null;
@@ -23,7 +23,7 @@ export function generateCharacterMetadata(character: Character): Metadata {
         title,
         description,
         openGraph: {
-            title,
+            title: `${character.name} | The Dandelion Dynasty Wiki`,
             description,
             images: imageUrl ? [{ url: imageUrl }] : undefined,
             url,
@@ -31,7 +31,7 @@ export function generateCharacterMetadata(character: Character): Metadata {
         },
         twitter: {
             card: 'summary_large_image',
-            title,
+            title: `${character.name} | The Dandelion Dynasty Wiki`,
             description,
             images: imageUrl ? [imageUrl] : undefined
         }
@@ -39,7 +39,7 @@ export function generateCharacterMetadata(character: Character): Metadata {
 }
 
 export function generatePlaceMetadata(place: Place): Metadata {
-    const title = `${place.name} — Place | Dandelion Dynasty Wiki`;
+    const title = `${place.name}`;
     const description = truncate(place.introduction || `${place.name} in The Dandelion Dynasty.`);
     const imageUrl = typeof place.image === 'string' ? place.image : '';
     const slug = imageUrl ? extractSlugFromImage(imageUrl, 'places') : null;
@@ -49,7 +49,7 @@ export function generatePlaceMetadata(place: Place): Metadata {
         title,
         description,
         openGraph: {
-            title,
+            title: `${place.name} | The Dandelion Dynasty Wiki`,
             description,
             images: imageUrl ? [{ url: imageUrl }] : undefined,
             url,
@@ -57,7 +57,7 @@ export function generatePlaceMetadata(place: Place): Metadata {
         },
         twitter: {
             card: 'summary_large_image',
-            title,
+            title: `${place.name} | The Dandelion Dynasty Wiki`,
             description,
             images: imageUrl ? [imageUrl] : undefined
         }
@@ -65,7 +65,7 @@ export function generatePlaceMetadata(place: Place): Metadata {
 }
 
 export function generateGodMetadata(god: God): Metadata {
-    const title = `${god.name} — God | Dandelion Dynasty Wiki`;
+    const title = `${god.name}`;
     const description = truncate(god.introduction || `${god.name} from the Dara pantheon.`);
     const imageUrl = typeof god.image === 'string' ? god.image : '';
     const slug = imageUrl ? extractSlugFromImage(imageUrl, 'gods') : null;
@@ -75,7 +75,7 @@ export function generateGodMetadata(god: God): Metadata {
         title,
         description,
         openGraph: {
-            title,
+            title: `${god.name} | The Dandelion Dynasty Wiki`,
             description,
             images: imageUrl ? [{ url: imageUrl }] : undefined,
             url,
@@ -83,7 +83,7 @@ export function generateGodMetadata(god: God): Metadata {
         },
         twitter: {
             card: 'summary_large_image',
-            title,
+            title: `${god.name} | The Dandelion Dynasty Wiki`,
             description,
             images: imageUrl ? [imageUrl] : undefined
         }
@@ -91,7 +91,7 @@ export function generateGodMetadata(god: God): Metadata {
 }
 
 export function generateConceptMetadata(concept: Concept): Metadata {
-    const title = `${concept.name} — Concept | Dandelion Dynasty Wiki`;
+    const title = `${concept.name}`;
     const description = truncate(concept.introduction || `${concept.name} concept from The Dandelion Dynasty.`);
     const imageUrl = typeof concept.image === 'string' ? concept.image : '';
     const slug = imageUrl ? extractSlugFromImage(imageUrl, 'concepts') : null;
@@ -101,7 +101,7 @@ export function generateConceptMetadata(concept: Concept): Metadata {
         title,
         description,
         openGraph: {
-            title,
+            title: `${concept.name} | The Dandelion Dynasty Wiki`,
             description,
             images: imageUrl ? [{ url: imageUrl }] : undefined,
             url,
@@ -109,9 +109,51 @@ export function generateConceptMetadata(concept: Concept): Metadata {
         },
         twitter: {
             card: 'summary_large_image',
-            title,
+            title: `${concept.name} | The Dandelion Dynasty Wiki`,
             description,
             images: imageUrl ? [imageUrl] : undefined
+        }
+    };
+}
+
+// Book metadata generator
+export function generateBookMetadata(bookTitle: string, description?: string): Metadata {
+    const title = `${bookTitle}`;
+    const desc = truncate(description || `${bookTitle} from The Dandelion Dynasty series by Ken Liu.`);
+
+    return {
+        title,
+        description: desc,
+        openGraph: {
+            title: `${bookTitle} | The Dandelion Dynasty Wiki`,
+            description: desc,
+            type: 'article'
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: `${bookTitle} | The Dandelion Dynasty Wiki`,
+            description: desc
+        }
+    };
+}
+
+// Generic page metadata generator
+export function generatePageMetadata(pageTitle: string, description?: string): Metadata {
+    const title = `${pageTitle}`;
+    const desc = truncate(description || `${pageTitle} - The Dandelion Dynasty Wiki`);
+
+    return {
+        title,
+        description: desc,
+        openGraph: {
+            title: `${pageTitle} | The Dandelion Dynasty Wiki`,
+            description: desc,
+            type: 'website'
+        },
+        twitter: {
+            card: 'summary',
+            title: `${pageTitle} | The Dandelion Dynasty Wiki`,
+            description: desc
         }
     };
 }

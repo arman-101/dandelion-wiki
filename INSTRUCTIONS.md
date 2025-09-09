@@ -227,45 +227,243 @@ hover:text-link, hover:bg-primary, hover:border-primary-light
 - CSS variables for custom components
 - Consistent color patterns
 
-## 📄 Creating New Pages
+## 📄 Creating New Pages with SEO & Titles
 
-### 1. Individual Pages (Characters, Gods, etc.)
+### 🎯 **CRITICAL: SEO & Title Requirements**
+
+**ALL new pages MUST follow the server/client component pattern for proper SEO and page titles.**
+
+### 1. Individual Pages (Characters, Gods, Places, Concepts)
 
 **File Location**: `app/[category]/[page-name]/page.tsx`
 
-**Template Structure**:
+**Required Pattern**: Server Component + Client Component
+
+#### Step 1: Create the Server Component (page.tsx)
 ```tsx
-import { PageTemplate } from '../../components/layout/PageTemplate';
-import { InfoBox } from '../../components/ui/InfoBox';
-import { ContentRenderer } from '../../components/ui/ContentRenderer';
+import type { Metadata } from 'next';
+import { Character } from '../../data/wiki-data'; // or Concept, Place, God
+import { generateCharacterMetadata } from '@/app/utils/metadata'; // or generateConceptMetadata, etc.
+import CharacterNameClient from './CharacterNameClient';
+
+// --- DATA FOR CHARACTER NAME ---
+const characterData: Character = {
+    name: "Character Name",
+    image: "/characters/character-name.png",
+    introduction: "Brief introduction about the character...",
+    infoBox: {
+        aliases: "Alias Name",
+        occupation: "Occupation",
+        placeOfBirth: "Birth Place",
+        status: "Alive/Dead",
+        gender: "Male/Female",
+        // ... other info
+    },
+    appearanceAndPersonality: [
+        { type: 'text', content: "Description of appearance and personality..." },
+        { type: 'ref', data: { book: "Book Name", chapter: 1, link: "/books/book-name#chapter-1" } },
+    ],
+    history: [
+        {
+            era: "Book Name",
+            summary: [
+                { type: 'text', content: "Historical events..." },
+                { type: 'ref', data: { book: "Book Name", chapter: 5, link: "/books/book-name#chapter-5" } },
+            ]
+        },
+    ]
+};
+
+export const metadata: Metadata = generateCharacterMetadata(characterData);
 
 export default function CharacterNamePage() {
-  return (
-    <PageTemplate 
-      title="Character Name"
-      subtitle="Brief description"
-      category="Characters"
-    >
-      <InfoBox 
-        title="Quick Info"
-        items={[
-          { label: "Status", value: "Alive/Dead" },
-          { label: "Origin", value: "Place name" },
-          // ... more info
-        ]}
-      />
-      
-      <ContentRenderer content={`
-        ## Background
-        Character background content...
-        
-        ## Key Events
-        Important events...
-      `} />
-    </PageTemplate>
-  );
+    return <CharacterNameClient characterData={characterData} />;
 }
 ```
+
+#### Step 2: Create the Client Component (CharacterNameClient.tsx)
+```tsx
+'use client';
+
+import { usePathname } from 'next/navigation';
+import PageTemplate, { convertCharacterData } from '../../components/layout/PageTemplate';
+import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
+import { CharacterNavigation } from '@/app/components/layout/PageNavigation';
+import { getSurroundingPages } from '@/app/utils/navigationUtils';
+
+interface CharacterNameClientProps {
+    characterData: Character;
+}
+
+export default function CharacterNameClient({ characterData }: CharacterNameClientProps) {
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
+    const returnLink = { title: 'Return to All Characters', path: '/characters' };
+
+    return (
+        <>
+            <CharacterNavigation 
+                prevPage={prevPage} 
+                nextPage={nextPage} 
+                returnLink={returnLink} 
+            />
+            <PageTemplate pageData={convertCharacterData(characterData)} infoBoxTitle="Biographical Information" />
+        </>
+    );
+}
+```
+
+### 2. Page Types & Metadata Functions
+
+#### Character Pages
+- **Server Component**: `page.tsx` with `generateCharacterMetadata(characterData)`
+- **Client Component**: `[Name]Client.tsx` with `CharacterNavigation`
+- **Data Type**: `Character` from `wiki-data.ts`
+- **Navigation**: `ALL_CHARACTERS` array
+
+#### Concept Pages
+- **Server Component**: `page.tsx` with `generateConceptMetadata(conceptData)`
+- **Client Component**: `[Name]Client.tsx` with `ConceptNavigation`
+- **Data Type**: `Concept` from `wiki-data.ts`
+- **Navigation**: `ALL_CONCEPTS` array
+
+#### Place Pages
+- **Server Component**: `page.tsx` with `generatePlaceMetadata(placeData)`
+- **Client Component**: `[Name]Client.tsx` with `PlaceNavigation`
+- **Data Type**: `Place` from `wiki-data.ts`
+- **Navigation**: `ALL_PLACES` array
+
+#### God Pages
+- **Server Component**: `page.tsx` with `generateGodMetadata(godData)`
+- **Client Component**: `[Name]Client.tsx` with `GodNavigation`
+- **Data Type**: `God` from `wiki-data.ts`
+- **Navigation**: `ALL_GODS` array
+
+### 3. Special Pages (Quotes, etc.)
+
+For pages that don't follow the standard pattern:
+
+```tsx
+import type { Metadata } from 'next';
+import SpecialPageClient from './SpecialPageClient';
+
+export const metadata: Metadata = {
+    title: 'Page Title',
+    description: 'Page description for SEO...',
+    openGraph: {
+        title: 'Page Title | The Dandelion Dynasty Wiki',
+        description: 'Page description for social media...',
+        type: 'website'
+    },
+    twitter: {
+        card: 'summary',
+        title: 'Page Title | The Dandelion Dynasty Wiki',
+        description: 'Page description for Twitter...'
+    }
+};
+
+export default function SpecialPage() {
+    return <SpecialPageClient />;
+}
+```
+
+### 4. Title Format Requirements
+
+**ALL pages must follow this exact format:**
+- **Home**: "Home | The Dandelion Dynasty Wiki"
+- **Characters**: "Character Name | The Dandelion Dynasty Wiki"
+- **Concepts**: "Concept Name | The Dandelion Dynasty Wiki"
+- **Places**: "Place Name | The Dandelion Dynasty Wiki"
+- **Gods**: "God Name | The Dandelion Dynasty Wiki"
+- **Books**: "Book Name | The Dandelion Dynasty Wiki"
+
+### 5. File Naming Conventions
+
+#### Client Component Names
+- **Characters**: `KuniGaruClient.tsx`, `MataZynduClient.tsx`
+- **Concepts**: `GarinafinClient.tsx`, `TheDandelionClient.tsx`
+- **Places**: `PanClient.tsx`, `XanaClient.tsx`
+- **Gods**: `KijiClient.tsx`, `FithoweoClient.tsx`
+
+**Rules:**
+- Remove spaces and special characters
+- Use PascalCase
+- Add "Client" suffix
+- Match the data name exactly
+
+#### Server Component Names
+- **Characters**: `KuniGaruPage()`, `MataZynduPage()`
+- **Concepts**: `GarinafinPage()`, `TheDandelionPage()`
+- **Places**: `PanPage()`, `XanaPage()`
+- **Gods**: `KijiPage()`, `FithoweoPage()`
+
+### 6. SEO Checklist
+
+Before creating any new page, ensure:
+
+- [ ] **Server Component**: Exports `metadata` using appropriate `generate*Metadata` function
+- [ ] **Client Component**: Handles all interactive functionality
+- [ ] **Title Format**: Follows "Name | The Dandelion Dynasty Wiki" pattern
+- [ ] **Description**: Includes relevant, descriptive content
+- [ ] **OpenGraph**: Proper social media metadata
+- [ ] **Twitter Cards**: Twitter-specific metadata
+- [ ] **Navigation**: Proper prev/next navigation
+- [ ] **Data Registration**: Added to appropriate data arrays in `wiki-data.ts`
+
+### 7. Common Mistakes to Avoid
+
+❌ **Don't:**
+- Put `'use client'` in server components
+- Export `metadata` from client components
+- Use hardcoded titles without the "Wiki" suffix
+- Forget to create client components for interactive pages
+- Skip the navigation setup
+
+✅ **Do:**
+- Always use the server/client pattern
+- Follow the exact title format
+- Include proper metadata for SEO
+- Test that titles appear correctly in browser
+- Ensure navigation works properly
+
+### 8. Metadata Utility Functions
+
+**Location**: `app/utils/metadata.ts`
+
+The following functions generate proper SEO metadata for each page type:
+
+#### Available Functions:
+- `generateCharacterMetadata(characterData)` - For character pages
+- `generateConceptMetadata(conceptData)` - For concept pages  
+- `generatePlaceMetadata(placeData)` - For place pages
+- `generateGodMetadata(godData)` - For god pages
+- `generateBookMetadata(bookData)` - For book pages
+- `generatePageMetadata(title, description)` - For general pages
+
+#### Example Usage:
+```tsx
+import { generateCharacterMetadata } from '@/app/utils/metadata';
+
+export const metadata: Metadata = generateCharacterMetadata(characterData);
+```
+
+#### What These Functions Provide:
+- **Title**: "Page Name | The Dandelion Dynasty Wiki"
+- **Description**: SEO-optimized description
+- **OpenGraph**: Social media sharing metadata
+- **Twitter Cards**: Twitter-specific metadata
+- **Keywords**: Relevant search terms
+
+### 9. Testing Your New Pages
+
+After creating a new page:
+
+1. **Build Test**: Run `npm run build` to ensure no errors
+2. **Title Check**: Visit the page and verify the browser title
+3. **Navigation Test**: Check prev/next navigation works
+4. **Search Test**: Ensure the page appears in search results
+5. **Responsive Test**: Check mobile/desktop layouts
+6. **Dark Mode Test**: Verify dark mode works correctly
 
 ### 2. Category Listing Pages
 
@@ -603,5 +801,25 @@ When working with this codebase:
 4. **Test responsive design** and dark mode
 5. **Follow TypeScript** strict mode requirements
 6. **Maintain consistency** with existing code style
+7. **🚨 CRITICAL: Follow SEO & Title Requirements** for all new pages
+8. **Use server/client component pattern** for proper metadata
+9. **Test page titles** appear correctly in browser
+10. **Ensure proper navigation** between pages
+
+### 🎯 **SEO & Title Requirements (MANDATORY)**
+
+**EVERY new page MUST:**
+- Use the server/client component pattern
+- Export proper `metadata` using utility functions
+- Follow the exact title format: "Name | The Dandelion Dynasty Wiki"
+- Include OpenGraph and Twitter metadata
+- Have proper navigation (prev/next/return links)
+- Be registered in the appropriate data arrays
+
+**NEVER:**
+- Create pages without proper metadata
+- Use hardcoded titles without "Wiki" suffix
+- Mix server and client code in the same component
+- Skip the navigation setup
 
 This wiki is a labor of love for the Dandelion Dynasty series. Maintain the high quality and attention to detail that makes it special! ✨

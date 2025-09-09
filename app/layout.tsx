@@ -11,10 +11,41 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'The Dandelion Dynasty Wiki',
-  description: 'An encyclopedia for the epic silkpunk saga by Ken Liu.',
+  title: {
+    template: '%s | The Dandelion Dynasty Wiki',
+    default: 'The Dandelion Dynasty Wiki'
+  },
+  description: 'The ultimate encyclopedia for Ken Liu\'s epic silkpunk fantasy series. Explore characters, places, gods, concepts, and more from the world of Dara.',
+  keywords: ['Dandelion Dynasty', 'Ken Liu', 'silkpunk', 'fantasy', 'wiki', 'encyclopedia', 'Dara', 'Grace of Kings', 'Wall of Storms', 'Veiled Throne', 'Speaking Bones'],
+  authors: [{ name: 'Dandelion Dynasty Wiki Community' }],
+  creator: 'Dandelion Dynasty Wiki',
+  publisher: 'Dandelion Dynasty Wiki',
   icons: {
     icon: '/icon.png',
+  },
+  openGraph: {
+    title: 'The Dandelion Dynasty Wiki',
+    description: 'The ultimate encyclopedia for Ken Liu\'s epic silkpunk fantasy series. Explore characters, places, gods, concepts, and more from the world of Dara.',
+    url: 'https://dandelion-wiki.vercel.app',
+    siteName: 'The Dandelion Dynasty Wiki',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'The Dandelion Dynasty Wiki',
+    description: 'The ultimate encyclopedia for Ken Liu\'s epic silkpunk fantasy series.',
+    creator: '@dandeliondynastywiki'
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 }
 

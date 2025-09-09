@@ -78,3 +78,34 @@ export function stripMarkdown(text: string): string {
         .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1') // Remove markdown links, keep text
         .trim();
 }
+
+/**
+ * Normalizes text for search by removing accents and special characters
+ * This allows searching for "corve" to match "corvée"
+ * @param text - The text to normalize
+ * @returns Normalized text for searching
+ * @example normalizeForSearch('Corvée Labor') => 'corvee labor'
+ * @example normalizeForSearch('Künī') => 'kuni'
+ */
+export function normalizeForSearch(text: string): string {
+    return text
+        .toLowerCase()
+        .normalize('NFD') // Decompose accented characters
+        .replace(/[\u0300-\u036f]/g, '') // Remove accent marks
+        .replace(/[^\w\s]/g, '') // Remove special characters except letters, numbers, and spaces
+        .trim();
+}
+
+/**
+ * Checks if a search term matches text, handling special characters
+ * @param text - The text to search in
+ * @param searchTerm - The term to search for
+ * @returns True if the search term matches the text
+ * @example fuzzySearch('Corvée Labor', 'corve') => true
+ * @example fuzzySearch('Künī Garu', 'kuni') => true
+ */
+export function fuzzySearch(text: string, searchTerm: string): boolean {
+    const normalizedText = normalizeForSearch(text);
+    const normalizedSearchTerm = normalizeForSearch(searchTerm);
+    return normalizedText.includes(normalizedSearchTerm);
+}

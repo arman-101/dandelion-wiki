@@ -1,10 +1,9 @@
-'use client';
 
-import PageTemplate, { convertConceptData } from '../../components/layout/PageTemplate';
-import { Concept, ALL_CONCEPTS } from '../../data/wiki-data';
-import { usePathname } from 'next/navigation';
-import { ConceptNavigation } from '@/app/components/layout/PageNavigation';
-import { getSurroundingPages } from '@/app/utils/navigationUtils';
+
+import type { Metadata } from 'next';
+import { Concept } from '../../data/wiki-data';
+import { generateConceptMetadata } from '@/app/utils/metadata';
+import SilkmoticForceClient from './SilkmoticForceClient.tsx';
 
 // --- DATA FOR SILKMOTIC FORCE ---
 const conceptData: Concept = {
@@ -28,15 +27,8 @@ const conceptData: Concept = {
     ]
 };
 
-export default function SilkmoticForcePage() {
-    const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CONCEPTS);
-    const returnLink = { title: 'Return to All Concepts', path: '/concepts' };
+export const metadata: Metadata = generateConceptMetadata(conceptData);
 
-    return (
-        <>
-            <ConceptNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <PageTemplate pageData={convertConceptData(conceptData)} infoBoxTitle="Concept Information" />
-        </>
-    );
+export default function SilkmoticForcePage() {
+    return <SilkmoticForceClient conceptData={conceptData} />;
 }

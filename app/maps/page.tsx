@@ -1,6 +1,13 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ALL_PLACES_DATA, PLACES_TIRO_STATES } from '../data/wiki-data';
+import { generatePageMetadata } from '@/app/utils/metadata';
+
+export const metadata: Metadata = generatePageMetadata(
+    'Maps',
+    'Explore detailed maps of the world of Dara from The Dandelion Dynasty series. View the Tiro States, Ukyu & Gondé territories, and other geographical locations.'
+);
 
 // Filter the master list to get only the locations for the Ukyu & Gondé map.
 const ukyuGondeLocations = ALL_PLACES_DATA.filter(

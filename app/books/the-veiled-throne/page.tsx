@@ -1,7 +1,14 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { TopNavigation, BottomNavigation } from '../../components/layout/PageNavigation';
 import { formatAsteriskToBold } from '../../utils/textFormatting';
+import { generateBookMetadata } from '@/app/utils/metadata';
+
+export const metadata: Metadata = generateBookMetadata(
+    'The Veiled Throne',
+    'The third book in The Dandelion Dynasty series by Ken Liu. The vanquished people of Dara plot rebellion under the yoke of the mighty Lyucu Empire.'
+);
 
 // --- ACCURATE & DETAILED DATA FOR THE VEILED THRONE ---
 const chapters = [

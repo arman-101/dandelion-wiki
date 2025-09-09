@@ -1,4 +1,11 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
+import { generatePageMetadata } from '@/app/utils/metadata';
+
+export const metadata: Metadata = generatePageMetadata(
+    'Contributing',
+    'Help improve The Dandelion Dynasty Wiki! Learn how to contribute content, report issues, and help build the ultimate encyclopedia for Ken Liu\'s silkpunk fantasy series.'
+);
 
 export default function ContributingPage() {
     return (

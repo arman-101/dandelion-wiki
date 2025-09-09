@@ -1,5 +1,12 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import { generatePageMetadata } from '@/app/utils/metadata';
+
+export const metadata: Metadata = generatePageMetadata(
+    'Gods',
+    'Meet the gods and goddesses of the Dara pantheon from The Dandelion Dynasty series. Learn about Kiji, Tututika, Kana, Rapa, and other divine beings who shape the world of Dara.'
+);
 
 const godsData = [
     {

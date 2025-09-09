@@ -1,9 +1,14 @@
-'use client';
-
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { TopNavigation, BottomNavigation } from '../../components/layout/PageNavigation';
 import { formatAsteriskToBold } from '../../utils/textFormatting';
+import { generateBookMetadata } from '@/app/utils/metadata';
+
+export const metadata: Metadata = generateBookMetadata(
+    'Speaking Bones',
+    'The fourth book in The Dandelion Dynasty series by Ken Liu. A new generation of heroes rises to fight the final war for the future of Dara.'
+);
 
 // --- ACCURATE & DETAILED DATA FOR SPEAKING BONES ---
 const chapters = [

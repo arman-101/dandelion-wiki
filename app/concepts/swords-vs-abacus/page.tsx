@@ -1,10 +1,9 @@
-'use client';
 
-import PageTemplate, { convertConceptData } from '../../components/layout/PageTemplate';
-import { ConceptNavigation } from '../../components/layout/PageNavigation';
-import { Concept, ALL_CONCEPTS } from '../../data/wiki-data';
-import { usePathname } from 'next/navigation';
-import { getSurroundingPages } from '@/app/utils/navigationUtils';
+
+import type { Metadata } from 'next';
+import { Concept } from '../../data/wiki-data';
+import { generateConceptMetadata } from '@/app/utils/metadata';
+import SwordsVsAbacusClient from './SwordsVsAbacusClient';
 
 // --- DATA FOR SWORDS VS. ABACUS ---
 const conceptData: Concept = {
@@ -29,15 +28,8 @@ const conceptData: Concept = {
     ]
 };
 
-export default function SwordsVsAbacusPage() {
-    const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CONCEPTS);
-    const returnLink = { title: 'Return to All Concepts', path: '/concepts' };
+export const metadata: Metadata = generateConceptMetadata(conceptData);
 
-    return (
-        <>
-            <ConceptNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <PageTemplate pageData={convertConceptData(conceptData)} infoBoxTitle="Concept Information" />
-        </>
-    );
+export default function SwordsVsAbacusPage() {
+    return <SwordsVsAbacusClient conceptData={conceptData} />;
 }

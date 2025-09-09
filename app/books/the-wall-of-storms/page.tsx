@@ -1,7 +1,14 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { TopNavigation, BottomNavigation } from '../../components/layout/PageNavigation';
 import { formatAsteriskToBold } from '../../utils/textFormatting';
+import { generateBookMetadata } from '@/app/utils/metadata';
+
+export const metadata: Metadata = generateBookMetadata(
+    'The Wall of Storms',
+    'The second book in The Dandelion Dynasty series by Ken Liu. Emperor Ragin\'s peaceful reign is threatened by a new invasion from across the sea.'
+);
 
 // --- ACCURATE & DETAILED DATA FOR THE WALL OF STORMS ---
 const chapters = [

@@ -1,10 +1,9 @@
-'use client';
 
-import PageTemplate, { convertPlaceData } from '../../components/layout/PageTemplate';
-import { Place, ALL_PLACES } from '../../data/wiki-data';
-import { usePathname } from 'next/navigation';
-import { PlaceNavigation } from '@/app/components/layout/PageNavigation';
-import { getSurroundingPages } from '@/app/utils/navigationUtils';
+
+import type { Metadata } from 'next';
+import { Place } from '../../data/wiki-data';
+import { generatePlaceMetadata } from '@/app/utils/metadata';
+import KishiChannelClient from './KishiChannelClient.tsx';
 
 // --- DATA FOR KISHI CHANNEL ---
 const placeData: Place = {
@@ -35,15 +34,8 @@ const placeData: Place = {
     ]
 };
 
-export default function KishiChannelPage() {
-    const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_PLACES]);
-    const returnLink = { title: 'Return to All Places', path: '/places' };
+export const metadata: Metadata = generatePlaceMetadata(placeData);
 
-    return (
-        <>
-            <PlaceNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <PageTemplate pageData={convertPlaceData(placeData)} infoBoxTitle="Location Information" />
-        </>
-    );
+export default function KishiChannelPage() {
+    return <KishiChannelClient placeData={placeData} />;
 }

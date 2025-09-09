@@ -1,10 +1,20 @@
-'use client';
+import type { Metadata } from 'next';
+import QuotesClient from './QuotesClient';
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { ALL_CONCEPTS } from '@/app/data/wiki-data';
-import { ConceptNavigation } from '@/app/components/layout/PageNavigation';
-import { getSurroundingPages } from '@/app/utils/navigationUtils';
+export const metadata: Metadata = {
+    title: 'Quotes',
+    description: 'Memorable quotes from The Dandelion Dynasty series by Ken Liu. Explore the wisdom, wit, and philosophy of characters from The Grace of Kings, The Wall of Storms, The Veiled Throne, and Speaking Bones.',
+    openGraph: {
+        title: 'Quotes | The Dandelion Dynasty Wiki',
+        description: 'Memorable quotes from The Dandelion Dynasty series by Ken Liu.',
+        type: 'website'
+    },
+    twitter: {
+        card: 'summary',
+        title: 'Quotes | The Dandelion Dynasty Wiki',
+        description: 'Memorable quotes from The Dandelion Dynasty series by Ken Liu.'
+    }
+};
 
 const quotes = [
     // --- The Grace of Kings ---
@@ -256,39 +266,5 @@ const quotes = [
 
 
 export default function QuotesPage() {
-    const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CONCEPTS);
-    const returnLink = { title: 'Return to All Concepts', path: '/concepts' };
-
-    return (
-        <>
-            <ConceptNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <div className="max-w-4xl mx-auto px-4">
-                <h1 className="text-4xl font-bold text-center mb-10 text-text-primary dark:text-text-primary">Memorable Quotes</h1>
-                <div className="space-y-8">
-                    {quotes.map((quote, index) => (
-                        <div key={index} className="border-l-4 border-primary-light pl-6">
-                            <blockquote className="text-xl italic text-gray-800 dark:text-gray-200 leading-relaxed">
-                                &ldquo;{quote.text}&rdquo;
-                            </blockquote>
-                            <div className="mt-4 text-right">
-                                <p className="font-semibold text-text-secondary dark:text-text-secondary">
-                                    {quote.characterLink ? (
-                                        <Link href={quote.characterLink} className="hover:text-primary transition-colors">
-                                            - {quote.speaker}
-                                        </Link>
-                                    ) : (
-                                        `- ${quote.speaker}`
-                                    )}
-                                </p>
-                                <p className="text-sm text-text-light dark:text-text-light">
-                                    from <Link href={quote.bookLink} className="italic hover:underline">{quote.book}</Link>
-                                </p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </>
-    );
+    return <QuotesClient />;
 }

@@ -1,7 +1,14 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { TopNavigation, BottomNavigation } from '../../components/layout/PageNavigation';
 import { formatAsteriskToBold } from '../../utils/textFormatting';
+import { generateBookMetadata } from '@/app/utils/metadata';
+
+export const metadata: Metadata = generateBookMetadata(
+    'The Grace of Kings',
+    'The first book in The Dandelion Dynasty series by Ken Liu. Two men rebel together against tyranny—and then become the deadliest of enemies. Follow Kuni Garu and Mata Zyndu in this epic silkpunk fantasy.'
+);
 
 // --- FULLY REVISED & COMPLETE DATA FOR THE GRACE OF KINGS ---
 const chapters = [

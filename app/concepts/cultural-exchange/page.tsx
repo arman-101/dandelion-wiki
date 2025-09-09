@@ -1,10 +1,9 @@
-'use client';
 
-import PageTemplate, { convertConceptData } from '../../components/layout/PageTemplate';
-import { Concept, ALL_CONCEPTS } from '../../data/wiki-data';
-import { usePathname } from 'next/navigation';
-import { ConceptNavigation } from '@/app/components/layout/PageNavigation';
-import { getSurroundingPages } from '@/app/utils/navigationUtils';
+
+import type { Metadata } from 'next';
+import { Concept } from '../../data/wiki-data';
+import { generateConceptMetadata } from '@/app/utils/metadata';
+import CulturalExchangeClient from './CulturalExchangeClient';
 
 // --- DATA FOR CULTURAL EXCHANGE ---
 const conceptData: Concept = {
@@ -28,17 +27,8 @@ const conceptData: Concept = {
     ]
 };
 
+export const metadata: Metadata = generateConceptMetadata(conceptData);
+
 export default function CulturalExchangePage() {
-    const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CONCEPTS);
-    const returnLink = { title: 'Return to All Concepts', path: '/concepts' };
-
-    const pageData = convertConceptData(conceptData);
-
-    return (
-        <>
-            <ConceptNavigation prevPage={prevPage} nextPage={nextPage} returnLink={returnLink} />
-            <PageTemplate pageData={pageData} infoBoxTitle="Concept Information" />
-        </>
-    );
+    return <CulturalExchangeClient conceptData={conceptData} />;
 }

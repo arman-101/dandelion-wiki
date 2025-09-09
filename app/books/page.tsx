@@ -1,5 +1,12 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import { generatePageMetadata } from '@/app/utils/metadata';
+
+export const metadata: Metadata = generatePageMetadata(
+    'Books',
+    'Explore all four books in The Dandelion Dynasty series by Ken Liu - The Grace of Kings, The Wall of Storms, The Veiled Throne, and Speaking Bones.'
+);
 
 const books = [
     {

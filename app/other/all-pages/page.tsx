@@ -1,5 +1,12 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ALL_WIKI_PAGES, WikiPage } from '../../data/wiki-data';
+import { generatePageMetadata } from '@/app/utils/metadata';
+
+export const metadata: Metadata = generatePageMetadata(
+    'All Pages',
+    'Browse all pages in The Dandelion Dynasty Wiki. Complete index of characters, places, gods, concepts, books, and more from Ken Liu\'s epic silkpunk fantasy series.'
+);
 
 // Helper function to group pages by type
 const groupPagesByType = (pages: readonly WikiPage[]) => {
@@ -21,14 +28,14 @@ export default function AllPages() {
     const pageTypes = Object.keys(groupedPages).sort(); // Sort the categories themselves
 
     return (
-        <div className="max-w-6xl mx-auto px-4 py-8">
+        <div className="max-w-7xl mx-auto px-4 py-8">
             <h1 className="text-4xl font-bold text-center mb-12 text-text-primary dark:text-text-primary">Complete Site Index</h1>
 
             <div className="space-y-12">
                 {pageTypes.map(type => (
                     <div key={type}>
                         <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-200 border-b-2 border-primary-light pb-2 mb-6">{type}s</h2>
-                        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-3">
+                        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-6 gap-y-3">
                             {groupedPages[type].map(page => (
                                 <li key={page.path}>
                                     <Link href={page.path} className="text-link dark:text-link-dark hover:underline hover:text-[--color-accent-pink)] transition-colors">

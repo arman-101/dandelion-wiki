@@ -1,7 +1,14 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 // Import the new master list from your central data file
 import { ALL_CONCEPTS_DATA } from '../data/wiki-data';
+import { generatePageMetadata } from '@/app/utils/metadata';
+
+export const metadata: Metadata = generatePageMetadata(
+    'Concepts',
+    'Explore key concepts from The Dandelion Dynasty series - silkpunk technology, political systems, cultural practices, and unique elements from Ken Liu\'s world of Dara.'
+);
 
 export default function ConceptsPage() {
     return (

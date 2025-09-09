@@ -1,10 +1,8 @@
-'use client';
 
-import PageTemplate, { convertConceptData } from '../../components/layout/PageTemplate';
-import { ConceptNavigation } from '../../components/layout/PageNavigation';
-import { Concept, ALL_CONCEPTS } from '../../data/wiki-data';
-import { usePathname } from 'next/navigation';
-import { getSurroundingPages } from '@/app/utils/navigationUtils';
+import type { Metadata } from 'next';
+import { Concept } from '../../data/wiki-data';
+import { generateConceptMetadata } from '@/app/utils/metadata';
+import TheDandelionClient from './TheDandelionClient';
 
 // --- DATA FOR THE DANDELION CONCEPT ---
 const conceptData: Concept = {
@@ -27,21 +25,8 @@ const conceptData: Concept = {
     ]
 };
 
-export default function DandelionPage() {
-    const pathname = usePathname();
-    const { prevPage, nextPage } = getSurroundingPages(pathname, ALL_CONCEPTS);
-    const returnLink = { title: 'Return to All Concepts', path: '/concepts' };
-    
-    const pageData = convertConceptData(conceptData);
+export const metadata: Metadata = generateConceptMetadata(conceptData);
 
-    return (
-        <>
-            <ConceptNavigation 
-                prevPage={prevPage} 
-                nextPage={nextPage} 
-                returnLink={returnLink} 
-            />
-            <PageTemplate pageData={pageData} infoBoxTitle="Concept Information" />
-        </>
-    );
+export default function TheDandelionPage() {
+    return <TheDandelionClient conceptData={conceptData} />;
 }
