@@ -1,10 +1,12 @@
 'use client';
 
 import Link from 'next/link';
+import { useState } from 'react';
 import { ALL_WIKI_PAGES } from './data/wiki-data';
 
 export default function Home() {
   const pageCount = ALL_WIKI_PAGES.length;
+  const [showSpoilerWarning, setShowSpoilerWarning] = useState(false);
   
   return (
     <div className="max-w-4xl mx-auto h-full flex flex-col justify-center">
@@ -17,13 +19,24 @@ export default function Home() {
            An encyclopedia for the epic silkpunk saga by <Link href="/other/about-author" className="text-teal-600 dark:text-teal-400 hover:underline">Ken Liu</Link>
         </p>
 
-        {/* Page Count */}
-        <div className="mb-6">
+        {/* Page Count and Spoiler Warning Button */}
+        <div className="mb-6 flex items-center justify-center gap-4">
           <Link href="/other/all-pages" className="inline-block">
             <p className="text-sm text-gray-500 dark:text-gray-400 border border-gray-300 dark:border-gray-700 rounded-full px-4 py-1 hover:border-teal-500 hover:text-teal-600 dark:hover:text-teal-400 dark:hover:border-teal-500 transition-colors">
               Currently tracking <span className="font-bold text-teal-600 dark:text-teal-400">{pageCount}</span> pages
             </p>
           </Link>
+          
+          {/* Spoiler Warning Button */}
+          <button
+            onClick={() => setShowSpoilerWarning(true)}
+            className="inline-flex items-center gap-2 text-sm text-amber-600 dark:text-amber-400 border border-amber-300 dark:border-amber-600 rounded-full px-4 py-1 hover:bg-amber-50 dark:hover:bg-amber-900/20 hover:border-amber-400 dark:hover:border-amber-500 transition-colors"
+          >
+            <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+            </svg>
+            Spoiler Warning
+          </button>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -101,6 +114,46 @@ export default function Home() {
           </Link>
         </div>
       </div>
+
+      {/* Spoiler Warning Modal */}
+      {showSpoilerWarning && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+          onClick={() => setShowSpoilerWarning(false)}
+        >
+          <div 
+            className="bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-md w-full p-6"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-start gap-3">
+              <div className="flex-shrink-0">
+                <svg className="h-6 w-6 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                </svg>
+              </div>
+              <div className="flex-1">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+                  ⚠️ Spoiler Warning
+                </h3>
+                <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
+                  This wiki contains detailed information about all four books in <em>The Dandelion Dynasty</em> series, including major plot points, character developments, and story outcomes.
+                </p>
+                <p className="text-sm font-medium text-amber-700 dark:text-amber-300 mb-4">
+                  If you haven&apos;t finished the series yet, proceed with caution!
+                </p>
+                <div className="flex justify-end">
+                  <button
+                    onClick={() => setShowSpoilerWarning(false)}
+                    className="px-4 py-2 bg-teal-600 hover:bg-teal-700 text-white text-sm font-medium rounded-lg transition-colors"
+                  >
+                    I Understand
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
