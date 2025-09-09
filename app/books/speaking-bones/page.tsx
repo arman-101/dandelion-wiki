@@ -32,7 +32,7 @@ const chapters = [
         quote: "It's better to be lucky than right.",
         speaker: "Tiphan Huto",
         summary: "Tiphan Huto, having avoided a treason conviction through Empress Jia's intervention, is under house arrest but arrogantly believes his own luck and cleverness saved him.  He is visited by two mysterious women, 'Queen Lightbringer' and 'Queen Blooddrinker,' who are actually Jia's elite Dyran Fin agents, Wi and Shido.  They coerce him into a secret smuggling operation. To ensure his loyalty, they force him to ingest a 'rare mushroom' called Blooddrinker, claiming they possess the only antidote, which he will receive monthly upon successful delivery of their goods. ",
-        links: [{ name: "Tiphan Huto", path: "/characters/tiphan-huto" }, { name: "Jia Matiza", path: "/characters/jia-matiza" }, { name: "The Blossom Gang", path: "/concepts/the-blossom-gang" }]
+        links: [{ name: "Tiphan Huto", path: "/characters/tiphan-huto" }, { name: "Jia Matiza", path: "/characters/jia-matiza" }]
     },
     {
         num: 4,
@@ -112,8 +112,8 @@ const chapters = [
         date: "IN THE WATERS NORTH OF RUI AND DASU, NEAR THE WALL OF STORMS: THE FIFTH MONTH OF THE ELEVENTH YEAR OF THE REIGN OF SEASON OF STORMS AND THE REIGN OF AUDACIOUS FREEDOM",
         quote: "We earn the fear of our foes and the trust of our divine kin!",
         speaker: "Cutanrovo Aga",
-        summary: "Aboard the city-ship *Toryoana's Gift*, Cutanrovo Aga leads a fanatical ceremony to welcome the anticipated Lyucu reinforcement fleet from Ukyu-Gondé.  She conducts a brutal ritual sacrifice of Dara prisoners to energize her warriors.  The ceremony reflects the extreme, hard-liner ideology she has fostered in Ukyu-taasa, including reviving ancient, bloody customs and a dependence on a potent, pirate-sourced tolyusa.  As the Wall of Storms opens, the Lyucu wait with fervent expectation for their reinforcements to arrive and aid in the final conquest of Dara. ",
-        links: [{ name: "Cutanrovo Aga", path: "/characters/cutanrovo-aga" }, { name: "The Wall of Storms", path: "/concepts/wall-of-storms" }, { name: "Lyucu Culture", path: "/concepts/lyucu-culture" }, { name: "Airships", path: "/concepts/airships" }]
+        summary: "Aboard the city-ship *Toryoana's Gift*, Cutanrovo Aga leads a fanatical ceremony to welcome the anticipated Lyucu reinforcement fleet from Ukyu-Gondé. She conducts a ceremonial ritual invoking Lyucu traditions and tolyusa use to energize her warriors, reflecting her hard-line ideology. As the Wall of Storms opens, the Lyucu wait with fervent expectation for their reinforcements to arrive and aid in the final conquest of Dara.",
+        links: [{ name: "Cutanrovo Aga", path: "/characters/cutanrovo-aga" }, { name: "The Wall of Storms", path: "/concepts/wall-of-storms" }, { name: "Lyucu", path: "/concepts/lyucu" }, { name: "Airships", path: "/concepts/airships" }]
     },
     {
         num: 13,
@@ -157,8 +157,8 @@ const chapters = [
         date: "ONE YEAR LATER, IN THE WATERS NORTH OF RUI AND DASU, NEAR THE WALL OF STORMS.",
         quote: "The spirit of the Lyucu is indomitable!",
         speaker: "Cutanrovo Aga",
-        summary: "One year after Théra's victory in Ukyu-Gondé, the Wall of Storms reopens, but no reinforcement fleet arrives for the Lyucu in Dara, confirming their isolation.  The news shatters the morale of the crew aboard *Toryoana's Gift*. Cutanrovo Aga, however, delivers a fiery speech, reframing the disaster as a divine test.  She argues that the Lyucu do not need aid from the gods or their homeland, but must rely on their own indomitable spirit. She works her crew into a frenzy, culminating in a ritualistic cannibalistic slaughter of Dara slaves, and solidifies her hard-line ideology as the path forward for the now-isolated Ukyu-taasa. ",
-        links: [{ name: "Cutanrovo Aga", path: "/characters/cutanrovo-aga" }, { name: "Than Carucono", path: "/characters/than-carucono" }, { name: "The Wall of Storms", path: "/concepts/wall-of-storms" }]
+        summary: "One year after Théra's victory in Ukyu-Gondé, the Wall of Storms reopens, but no reinforcement fleet arrives for the Lyucu in Dara, confirming their isolation. The news shatters the morale of the crew aboard *Toryoana's Gift*. Cutanrovo Aga delivers a fiery speech, reframing the disaster as a divine test. She argues that the Lyucu must rely on their own indomitable spirit, rallying her warriors with a hard-line ideology of independence and strength.",
+        links: [{ name: "Cutanrovo Aga", path: "/characters/cutanrovo-aga" }, { name: "The Wall of Storms", path: "/concepts/wall-of-storms" }, { name: "Lyucu", path: "/concepts/lyucu" }]
     },
     {
         num: 18,
@@ -244,11 +244,11 @@ const chapters = [
     {
         num: 27,
         title: "What Price Victory?",
-        date: "KRIPHI: A LONG TIME AGO.",
+        date: "KRIPHI: THE SEVENTH MONTH OF THE ELEVENTH YEAR OF THE REIGN OF SEASON OF STORMS AND THE REIGN OF AUDACIOUS FREEDOM.",
         quote: "An empire built on fear is a house built on sand. The tide always comes in.",
-        speaker: "A Lyucu Thane",
-        summary: "This chapter provides a historical account of the Xana kings, particularly Mo-Xana, who were driven by a sense of inferiority and a desire for 'more,' leading to the conquest of Dara.  The narrative then shifts to Kriphi in the present, where the Lyucu are in a state of chaos and decline. The chapter concludes with the surrender of Goztan's fleet having devastating consequences, as the enslaved natives on the remaining city-ships, fearing reprisals on their families, commit mass suicide by burning the ships, chanting Lyucu war cries as they perish.  Phyro is left weeping at the horrific price of his victory. ",
-        links: [{ name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "Goztan Ryoto", path: "/characters/goztan-ryoto" }, { name: "Kriphi", path: "/places/kriphi" }]
+        speaker: "Narrator",
+        summary: "In the aftermath of the Battle of Crescent Island, Phyro grapples with the devastating consequences of victory. The enslaved natives on the Lyucu city-ships, fearing reprisals on their families, commit mass suicide by burning the ships, chanting Lyucu war cries as they perish. Phyro is left weeping at the horrific price of his victory, questioning the moral cost of war.",
+        links: [{ name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "Goztan Ryoto", path: "/characters/goztan-ryoto" }, { name: "Kriphi", path: "/places/kriphi" }, { name: "Crescent Island", path: "/places/crescent-island" }]
     },
     {
         num: 28,
@@ -274,8 +274,8 @@ const chapters = [
         date: "DEEP IN THE RING-WOODS OF RIMA: AT THE SAME TIME",
         quote: "To believe in Rufizo Mender was to dedicate oneself to the alleviation of suffering, not to its aggravation, not even in the name of justice.",
         speaker: "Abbot Shattered Axe",
-        summary: "A flashback details how Savo Ryoto (Kinri), wandering Dara as a fugitive, is rescued from freezing to death by Abbot Shattered Axe, a former Lyucu thane who leads a pacifist Dara sect.  The abbot tells Savo the story of their fused god, Rufizo Mender/Toryoana Pacific, and the sect's philosophy of healing the world and renouncing vengeance.  Savo finds a sense of peace and belonging among the monks, who are dedicated to healing the body, the land, and even damaged books. ",
-        links: [{ name: "Kinri", path: "/characters/kinri" }, { name: "Rima", path: "/places/rima" }]
+        summary: "A flashback details how Savo Ryoto (Kinri), wandering Dara as a fugitive, is rescued from exhaustion and pursuit by Abbot Shattered Axe, a former Lyucu thane who leads a pacifist Dara sect. The abbot shares the philosophy of their fused god, Rufizo Mender/Toryoana Pacific, a concept of healing and unity rather than vengeance. Savo finds peace and belonging among the monks, who are dedicated to healing the body, the land, and even damaged books.",
+        links: [{ name: "Kinri", path: "/characters/kinri" }, { name: "Rima", path: "/places/rima" }, { name: "Rufizo Mender", path: "/gods/rufizo" }]
     },
     {
         num: 31,
@@ -355,8 +355,8 @@ const chapters = [
         date: "KRIPHI: THE ELEVENTH MONTH OF THE ELEVENTH YEAR OF THE REIGN OF SEASON OF STORMS AND THE REIGN OF AUDACIOUS FREEDOM.",
         quote: "Wolves must never become dogs.",
         speaker: "Cutanrovo Aga",
-        summary: "In Ukyu-taasa, the withdrawal from the enhanced tolyusa devastates the Lyucu. Warriors and thanes are afflicted with a debilitating madness, marked by lethargy and violent outbursts.  With the military crippled and food running out due to her failed policies, Cutanrovo's rule becomes even more brutal, culminating in forced cannibalism among native labor gangs.  Tanvanaki finally confronts Cutanrovo, but realizes Ukyu-taasa is on the brink of total collapse. Cutanrovo, however, plots a coup, tricking Tanvanaki and Timu into an ambush where she murders the pékyu.  Before she can kill Timu, she is betrayed and killed by her co-conspirator, Noda Mi. ",
-        links: [{ name: "Tanvanaki", path: "/characters/tanvanaki" }, { name: "Cutanrovo Aga", path: "/characters/cutanrovo-aga" }, { name: "Goztan Ryoto", path: "/characters/goztan-ryoto" }, { name: "Prince Timu", path: "/characters/prince-timu" }, { name: "Noda Mi", path: "/characters/noda-mi" }, { name: "Kriphi", path: "/places/kriphi" }]
+        summary: "In Ukyu-taasa, tolyusa withdrawal devastates the Lyucu, causing lethargy and violent outbursts. With the military crippled and food scarce due to her failed policies, Cutanrovo Aga's rule grows brutal. She orchestrates a coup, manipulating events to isolate Tanvanaki and killing her in a confrontation after Tanvanaki challenges her authority. Timu is present but not directly targeted. Cutanrovo is then betrayed and killed by Noda Mi, influenced by Jia's schemes to destabilize the Lyucu.",
+        links: [{ name: "Tanvanaki", path: "/characters/tanvanaki" }, { name: "Cutanrovo Aga", path: "/characters/cutanrovo-aga" }, { name: "Prince Timu", path: "/characters/prince-timu" }, { name: "Noda Mi", path: "/characters/noda-mi" }, { name: "Jia Matiza", path: "/characters/jia-matiza" }, { name: "Kriphi", path: "/places/kriphi" }]
     },
     {
         num: 40,
@@ -400,8 +400,8 @@ const chapters = [
         date: "PAN: THE ELEVENTH MONTH OF THE ELEVENTH YEAR OF THE REIGN OF SEASON OF STORMS AND THE REIGN OF AUDACIOUS FREEDOM.",
         quote: "You have to give me time and space to recover my wits.… After all, I’ve just gone through a whole cycle of life and death, of being mortal.",
         speaker: "Lutho",
-        summary: "Admiral Temururi, leading the air force against Phyro's decoy fleet, realizes she is facing unarmed ornithopter swarms, not real airships.  Back at the palace, Phyro, disguised as Cogo Yelu, is led by the Dyran Fins to Jia's secret underground bunker.  He confronts her, and she confesses to murdering his mother, Risana.  Just as he is about to exact his revenge, the Dyran Fins, alerted by a secret signal, burst in. In the ensuing struggle, Arona Taré is killed. Phyro, cornered and determined to avenge his mother, detonates a hidden bomb, killing himself, the remaining Dyran Fins, and grievously wounding Empress Jia. ",
-        links: [{ name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "Jia Matiza", path: "/characters/jia-matiza" }, { name: "Cogo Yelu", path: "/characters/cogo-yelu" }, { name: "The Blossom Gang", path: "/concepts/the-blossom-gang" }, { name: "Pan", path: "/places/pan" }]
+        summary: "Admiral Temururi, leading the air force against Phyro's decoy fleet, realizes she faces unarmed ornithopter swarms. At the palace, Phyro, disguised as Cogo Yelu, is led by the Dyran Fins to Jia’s secret underground bunker. He confronts her, and she confesses to murdering his mother, Risana. As the Dyran Fins burst in, Arona Taré is killed. Phyro detonates a silkmotic device, killing himself and incapacitating Jia, whose condition remains uncertain. The Dyran Fins survive, but Jia later eliminates them to allow for an illusion of a coup by Cogo.",
+        links: [{ name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "Jia Matiza", path: "/characters/jia-matiza" }, { name: "Cogo Yelu", path: "/characters/cogo-yelu" }, { name: "The Blossom Gang", path: "/concepts/the-blossom-gang" }, { name: "Pan", path: "/places/pan" }, { name: "Silkmotic Force", path: "/concepts/silkmotic-force" }]
     },
     {
         num: 45,
@@ -418,8 +418,8 @@ const chapters = [
         date: "DEEP IN THE WISOTI MOUNTAINS: THE ELEVENTH MONTH OF THE ELEVENTH YEAR OF THE REIGN OF SEASON OF STORMS AND THE REIGN OF AUDACIOUS FREEDOM.",
         quote: "My father spoke often of you. He always regretted not being able to carry out the proper duties of a son.",
         speaker: "Princess Dyana",
-        summary: "In the aftermath of Phyro's death and Jia's incapacitation, the Inner Council struggles with how to proceed.  In this power vacuum, Zen-Kara, pregnant with Phyro's heir, leads the remaining garinafins to Pan to assert her authority and prevent civil war.  She confronts Cogo Yelu, and they agree to a truce. She surrenders the garinafin force to the Dandelion Throne, ensuring stability but also ending Phyro's direct line of rebellion. ",
-        links: [{ name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "Cogo Yelu", path: "/characters/cogo-yelu" }, { name: "Garinafin", path: "/concepts/garinafin" }]
+        summary: "In the aftermath of Phyro's death and Jia's incapacitation, Zen-Kara leads the remaining garinafin forces to Pan to assert her authority and prevent civil war. She negotiates with Cogo Yelu, surrendering the garinafin force to the Dandelion Throne to ensure stability, honoring Phyro's legacy through her strategic leadership.",
+        links: [{ name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "Cogo Yelu", path: "/characters/cogo-yelu" }, { name: "Zen-Kara", path: "/characters/zen-kara" }, { name: "Garinafin", path: "/concepts/garinafin" }]
     },
     {
         num: 47,
