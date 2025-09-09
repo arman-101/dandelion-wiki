@@ -8,7 +8,7 @@ const chapters = [
     {
         num: 1,
         title: "A Night Run",
-        date: "TATEN, UKYU-GONDÉ: THE FIFTH MONTH IN THE TWELFTH YEAR AFTER STRANGERS FROM AFAR ARRIVED",
+        date: "TATEN, THE SEAT OF THE PÉKYU OF THE LYUCU IN UKYU-GONDÉ: THE FIFTH MONTH IN THE TWELFTH YEAR AFTER STRANGERS FROM AFAR ARRIVED IN THEIR CITY-SHIPS, CLAIMING TO SERVE SOMEONE NAMED \"MAPIDÉRÉ\" (BY DARA RECKONING, THIS IS THE FIFTH MONTH IN THE FIRST YEAR IN THE REIGN OF FOUR PLACID SEAS, WHEN KUNI GARU PROCLAIMED HIMSELF EMPEROR RAGIN AND ESTABLISHED HIS CAPITAL IN REBUILT PAN)",
         quote: "I'd love to see either of you try maintaining a peaceful household with four husbands.",
         speaker: "Goztan Ryoto",
         summary: "Goztan Ryoto, tiger-thane of the Five Tribes of the Antler, frustrated by the bickering of her four husbands, goes for a night run through the Lyucu capital of Taten. She runs beyond the city to Victory Cove, where the captured Dara city-ships are anchored. Her path is blocked by two young guards, whom she easily disarms. The confrontation is interrupted by ten-year-old Vadyu (Tanvanaki), daughter of Pékyu Tenryo. She has snuck out to ride Korva, a young garinafin she wants to bond with. Seeing the garinafin is exhausted and overheating, Goztan uses her expertise to care for it. As Goztan reminisces about her own youth, Vadyu, mistakenly believing Goztan is an Agon spy, clubs her from behind and knocks her unconscious.",
@@ -17,7 +17,7 @@ const chapters = [
     {
         num: 2,
         title: "A Secret Expedition",
-        date: "VICTORY COVE, UKYU-GONDÉ: THE FIFTH MONTH IN THE TWELFTH YEAR AFTER STRANGERS FROM AFAR ARRIVED",
+        date: "VICTORY COVE, UKYU-GONDÉ: THE FIFTH MONTH IN THE TWELFTH YEAR AFTER STRANGERS FROM AFAR ARRIVED IN THEIR CITY-SHIPS (KNOWN IN DARA AS THE FIRST YEAR IN THE REIGN OF FOUR PLACID SEAS)",
         quote: "A cruben begets a cruben, a dyran begets a dyran, and an octopus's daughter can crack eight oysters all at the same time.",
         speaker: "Oga Kidosu",
         summary: "Goztan awakens bound and captive by a bonfire. The warriors present are part of a secret expedition preparing to sail to Dara. The storyteller entertaining them is a Dara slave she vaguely recognizes: Oga Kidosu. Vadyu interrogates Goztan, revealing her reason for suspicion: Goztan once mentioned her mother was the thane before her, but when declaring her lineage to the guards, she named her father. To Vadyu, this contradiction proves Goztan is an imposter, as Lyucu succession is strictly matrilineal. Goztan is trapped by the child's logic and her own complex past, realizing she will miss her crucial dawn audience with the pékyu.",
@@ -26,7 +26,7 @@ const chapters = [
     {
         num: 3,
         title: "The Message on the Turtle Shell",
-        date: "UKYU-GONDÉ: THE YEAR THE CITY-SHIPS ARRIVED FROM DARA",
+        date: "UKYU-GONDÉ: THE YEAR THE CITY-SHIPS ARRIVED FROM DARA (KNOWN IN DARA AS THE FIRST YEAR IN THE REIGN OF RIGHTEOUS FORCE, WHEN EMPEROR ERISHI ASCENDED TO THE THRONE AFTER THE DEATH OF EMPEROR MAPIDÉRÉ)",
         quote: "A lie became the truth when enough people had reasons to pretend it was true.",
         speaker: "Narrator",
         summary: "A flashback to twelve years prior, when Admiral Krita's fleet arrived. A young Goztan volunteers to be a 'companion' to the Dara invaders to act as a spy. While serving the arrogant Captain Dathama, she witnesses him about to whip Lyucu litter-bearers. The moment is interrupted by the peasant Oga Kidosu, who stages the 'discovery' of a turtle shell with markings etched using a Lyucu technique. Dathama, ignorant and ambitious, interprets it as a divine sign legitimizing the conquest. Goztan understands the ruse is meant to save the litter-bearers and plays along, feigning a fit of religious terror at the 'portent,' which convinces the superstitious Dara.",
@@ -35,7 +35,7 @@ const chapters = [
     {
         num: 4,
         title: "Storytellers",
-        date: "UKYU-GONDÉ: THE YEAR THE CITY-SHIPS ARRIVED FROM DARA",
+        date: "UKYU-GONDÉ: THE YEAR THE CITY-SHIPS ARRIVED FROM DARA (KNOWN IN DARA AS THE FIRST YEAR IN THE REIGN OF RIGHTEOUS FORCE, WHEN EMPEROR ERISHI ASCENDED TO THE THRONE AFTER THE DEATH OF EMPEROR MAPIDÉRÉ)",
         quote: "The race of humankind grows toward infinity, even as the nature of each individual is limited.",
         speaker: "Tazu",
         summary: "After the turtle shell incident, Goztan confronts Oga, who surprises her by speaking Lyucu. They find common ground in their shared oppression and exchange myths. Oga tells a Dara parable about perspective (a whale and a shrimp), while Goztan shares the Lyucu creation myth of Kikisavo and Afir. The fragile bond shatters when Goztan realizes Oga has altered his story, weaving in Lyucu cultural elements. She sees this not as empathy but as colonial appropriation, a trivialization of her sacred traditions. Convinced the cultural gulf between them is unbridgeable, she turns away from him in anger.",
@@ -44,7 +44,7 @@ const chapters = [
     {
         num: 5,
         title: "Birthright",
-        date: "UKYU-GONDÉ: THE YEAR THE CITY-SHIPS ARRIVED FROM DARA",
+        date: "UKYU-GONDÉ: THE YEAR THE CITY-SHIPS ARRIVED FROM DARA (KNOWN IN DARA AS THE FIRST YEAR IN THE REIGN OF RIGHTEOUS FORCE, WHEN EMPEROR ERISHI ASCENDED TO THE THRONE AFTER THE DEATH OF EMPEROR MAPIDÉRÉ)",
         quote: "In war, we become more like our enemies, whether we want to or not.",
         speaker: "Pekyu Tenryo",
         summary: "The flashback continues. After the Lyucu seize the city-ships, Goztan, pregnant by her captor, suffers a miscarriage. Her mother, Thane Tenlek Ryoto, uses this as a pretext to disinherit her, claiming her nature is 'tainted.' The true reason is political anger over Goztan refusing to claim Dara spoils. In a heated confrontation, Goztan's father, Dayu, is killed by Tenlek. Exiled, Goztan becomes a reaver, building a new tribe from outcasts and forging alliances. She eventually returns to challenge and kill her mother, taking her birthright. To honor her father and spite her mother, she claims her lineage through Dayu, a shocking break from matrilineal tradition which Pékyu Tenryo accepts.",
@@ -53,7 +53,7 @@ const chapters = [
     {
         num: 6,
         title: "It's My Nature",
-        date: "VICTORY COVE, UKYU-GONDÉ: THE FIFTH MONTH IN THE TWELFTH YEAR AFTER STRANGERS FROM AFAR ARRIVED",
+        date: "VICTORY COVE, UKYU-GONDÉ: THE FIFTH MONTH IN THE TWELFTH YEAR AFTER STRANGERS FROM AFAR ARRIVED IN THEIR CITY-SHIPS (KNOWN IN DARA AS THE FIRST YEAR IN THE REIGN OF FOUR PLACID SEAS)",
         quote: "Aphorisms can’t help you survive, but the ability to hold in mind competing ideals just might.",
         speaker: "Oga Kidosu",
         summary: "Returning to the present, Goztan explains her patrilineal declaration to a stunned Vadyu. Oga concludes his story for the warriors—about a shark raised by dolphins who acts on both its natures to save others. Vadyu brings Oga to identify Goztan. Oga cleverly confirms Goztan’s identity and heroism without betraying her confidence, finally convincing Vadyu to release her. Vadyu decides to confess her own disobedience to her father. Alone for a moment, Goztan and Oga share a final, tense exchange. Oga reveals he has been trying to subtly educate the Lyucu youth with Dara ideals, a last, desperate hope for peace. A fragile, unspoken understanding passes between them as they part.",
@@ -62,7 +62,7 @@ const chapters = [
     {
         num: 7,
         title: "A Chase Beyond the Storms",
-        date: "JUST BEYOND THE WALL OF STORMS: THE FIFTH MONTH IN THE FIRST YEAR OF THE REIGN OF SEASON OF STORMS",
+        date: "JUST BEYOND THE WALL OF STORMS: THE FIFTH MONTH IN THE FIRST YEAR OF THE REIGN OF SEASON OF STORMS (HALF A YEAR AFTER THE DEATHS OF EMPEROR RAGIN AND PÉKYU TENRYO DURING THE BATTLE OF ZATHIN GULF)",
         quote: "Every single person on this expedition is irreplaceable... We’re not going to jump to sacrifice as the first solution to every problem. That’s the easy way out.",
         speaker: "Princess Thera",
         summary: "The narrative leaps forward eight years. Princess Théra, now leading an expedition to the Lyucu homeland, has successfully passed through the Wall of Storms with a small fleet. They are spotted by a lone Lyucu city-ship that survived the Wall's closing. The Lyucu ship dispatches a single, weakened garinafin to investigate. Théra and her husband, the Agon prince Takval, devise an ingenious defense: they construct and fly ten enormous kites shaped like tusked tigers, the garinafins' natural predators. The terrifying spectacle proves too much for the malnourished and psychologically fragile garinafin, which flees in terror, buying the Dara fleet precious time.",
@@ -107,7 +107,7 @@ const chapters = [
     {
         num: 12,
         title: "Lurodia Tanta",
-        date: "LURODIA TANTA, UKYU-GONDÉ: THE FIFTH MONTH IN THE SECOND YEAR SINCE THÉRA DEPARTED DARA",
+        date: "SOMEWHERE IN LURODIA TANTA, THE ENDLESS DESERT OF UKYU-GONDÉ: THE FIFTH MONTH IN THE SECOND YEAR AFTER PRINCESS THÉRA DEPARTED DARA (KNOWN IN DARA AS THE SECOND YEAR OF THE REIGN OF SEASON OF STORMS)",
         quote: "If there’s going to be death because of me, whether it’s the horses or you or anyone else, the least I can do is not look away. That would be barbaric.",
         speaker: "Princess Thera",
         summary: "Théra's expedition makes landfall in the desolate desert of Lurodia Tanta, home of the exiled Agon tribes. They begin a grueling trek toward the oasis of Sliyusa Ki. As their water supplies dwindle dangerously, Thoryo has a moment of childlike insight, wishing they could 'make dew.' This inspires Théra to invent a solar still, a device that uses the sun's heat to distill pure, drinkable water from cactus juice and even urine. Her ingenuity saves the expedition from certain death.",
@@ -116,7 +116,7 @@ const chapters = [
     {
         num: 13,
         title: "An Unwelcome Welcome",
-        date: "THE OASIS OF SLIYUSA KI, UKYU-GONDÉ: THE FIFTH MONTH IN THE SECOND YEAR SINCE THÉRA DEPARTED DARA",
+        date: "THE OASIS OF SLIYUSA KI, UKYU-GONDÉ: THE FIFTH MONTH IN THE SECOND YEAR SINCE PRINCESS THÉRA DEPARTED DARA (KNOWN IN DARA AS THE SECOND YEAR OF THE REIGN OF SEASON OF STORMS)",
         quote: "You claim to speak for the Agon, yet your people are huddled here in the desert, eking out a life of terror in the shadow of your Lyucu masters.",
         speaker: "Princess Thera",
         summary: "The expedition reaches the oasis of Sliyusa Ki, but the welcome is tense. Takval's uncle, Volyu Aragoz, chief of the exiled Agon, is a broken man who survives by appeasing the Lyucu. He dismisses Théra's group as weak refugees and demands they submit as vassals. In a powerful, defiant speech, Théra confronts Volyu's cowardice and reminds the assembled Agon chieftains of their proud warrior heritage. Her courage wins them over, and they force a humiliated Volyu to agree to an alliance of equals.",
@@ -125,7 +125,7 @@ const chapters = [
     {
         num: 14,
         title: "Commitment",
-        date: "THE OASIS OF SLIYUSA KI, UKYU-GONDÉ: THE FIFTH MONTH IN THE SECOND YEAR SINCE THÉRA DEPARTED DARA",
+        date: "THE OASIS OF SLIYUSA KI, UKYU-GONDÉ: THE FIFTH MONTH IN THE SECOND YEAR SINCE PRINCESS THÉRA DEPARTED DARA (KNOWN IN DARA AS THE SECOND YEAR OF THE REIGN OF SEASON OF STORMS)",
         quote: "The heart isn’t a fixed pool like a water bubble in the grass sea; it grows and swells like the ocean.",
         speaker: "Princess Thera",
         summary: "Takval's mother, Souliyan, reveals the full extent of Volyu's treachery: he has been systematically betraying Agon rebels to the Lyucu for years. Realizing Volyu intended to betray them as well, they stage a bloodless coup. They spare his life, forcing him to continue as a figurehead chief, now an unwitting double agent. The alliance is sealed with the marriage of Théra and Takval, which deepens into genuine partnership. Théra discovers she is pregnant. As a final act of hope, they carve a coded message onto the shells of sea turtles and release them, praying word of their mission reaches Dara.",
@@ -134,7 +134,7 @@ const chapters = [
     {
         num: 15,
         title: "Camera Obscura",
-        date: "PAN: THE SIXTH MONTH IN THE EIGHTH YEAR OF THE REIGN OF SEASON OF STORMS",
+        date: "PAN: THE SIXTH MONTH IN THE EIGHTH YEAR OF THE REIGN OF SEASON OF STORMS (KNOWN AS THE EIGHTH YEAR OF THE REIGN OF AUDACIOUS FREEDOM IN UKYU-TAASA, AND THE EIGHTH YEAR SINCE PRINCESS THÉRA DEPARTED DARA FOR UKYU-GONDÉ)",
         quote: "It’s more fun to paint the way I want to rather than copy the work of the gods anyway.",
         speaker: "Princess Fara",
         summary: "Eight years after Théra's departure, a fragile peace holds in Dara, but the Dandelion Court is tense. Jia rules as Regent for Emperor Phyro, a young man eager for war. Princess Fara, the youngest sibling, has grown into an artist. Disdaining politics, she builds a camera obscura in the palace garden—a dark room with a lens that projects an inverted image of the outside world onto a wall. She uses it to study painting and perception. The device serves as a metaphor for the novel's themes: the difficulty of seeing truth clearly, the inversion of power, and the subjective nature of reality. Fara and Phyro share a moment of connection, but their differing priorities—art versus war—highlight the family's deep divisions.",
@@ -143,7 +143,7 @@ const chapters = [
     {
         num: 16,
         title: "The Temple of Péa-Kiji",
-        date: "MEANWHILE, BY THE SHORES OF LAKE ARISUSO ON MOUNT KIJI, RUI",
+        date: "MEANWHILE, BY THE SHORES OF LAKE ARISUSO ON MOUNT KIJI, RUI: THE EIGHTH MONTH IN THE EIGHTH YEAR OF THE REIGN OF AUDACIOUS FREEDOM",
         quote: "If only the other ministers took as much interest as you do in the lives of the people of Dara.",
         speaker: "Prince Timu",
         summary: "In occupied Rui, at the Temple of Péa-Kiji, the merged Lyucu-Dara deity, we see the fragile domestic life of Prince Timu (now puppet Emperor Thaké) and Pékyu Tanvanaki. Their deep political and philosophical disagreements are reflected in their children, Todyu and Dyana, who are caught between Lyucu and Dara cultures. The arrival of Tanvanaki, fresh from brutally suppressing a Dara rebellion, highlights the chasm between her ruthless pragmatism and Timu's idealism. The scene is a microcosm of the cultural war and failing assimilation policy in Unredeemed Dara.",
@@ -152,7 +152,7 @@ const chapters = [
     {
         num: 17,
         title: "Moonbread",
-        date: "KIRI VALLEY: THE NINTH MONTH IN THE EIGHTH YEAR AFTER THÉRA DEPARTED DARA",
+        date: "MEANWHILE, AT THE SECRET AGON BASE IN KIRI VALLEY, IN THE FOOTHILLS OF THE WORLD'S EDGE MOUNTAINS",
         quote: "This. Is. Not. Dara.",
         speaker: "Tanto Aragoz",
         summary: "At the secret Agon base in Kiri Valley, Théra tries to celebrate the Dara High-Autumn Festival with her sons, Tanto and Rokiri. The boys, raised as Agon, reject the traditional moonbread and the logogram playing blocks their mother made. Théra is heartbroken, feeling her children are rejecting their Dara heritage. The chapter poignantly illustrates the challenges of raising bicultural children and Théra's growing sense of isolation and failure. A talk with Thoryo helps her realize she must engage with Agon culture on its own terms, not just impose her own.",
@@ -161,7 +161,7 @@ const chapters = [
     {
         num: 18,
         title: "The Veiled Throne",
-        date: "PAN: THE SIXTH MONTH IN THE EIGHTH YEAR OF THE REIGN OF SEASON OF STORMS",
+        date: "PAN: THE SIXTH MONTH IN THE EIGHTH YEAR OF THE REIGN OF SEASON OF STORMS (KNOWN AS THE EIGHTH YEAR OF THE REIGN OF AUDACIOUS FREEDOM IN UKYU-TAASA, AND THE EIGHTH YEAR SINCE PRINCESS THÉRA DEPARTED FOR UKYU-GONDÉ)",
         quote: "You’re not ready.",
         speaker: "Jia Matiza",
         summary: "Emperor Phyro attends a meeting of the Inner Council in Pan, chafing under his mother Jia's regency. He is forced to sit behind a veiled screen, a symbol of his limited power. He proposes sending a Lyucu defector named Ofluro to train his secret garinafin force at Tiro Cozo. Jia is skeptical, seeing Ofluro as a potential spy. The Prime Minister, Cogo Yelu, masterfully outmaneuvers Jia with legalistic arguments, forcing her to grant asylum to Ofluro and his family, effectively giving Phyro what he wants. The chapter highlights the deep political and ideological rift between mother and son regarding the future of Dara and the threat from Unredeemed Dara.",
@@ -170,7 +170,7 @@ const chapters = [
     {
         num: 19,
         title: "Spies",
-        date: "KRIPHI: THE EIGHTH MONTH IN THE EIGHTH YEAR OF THE REIGN OF AUDACIOUS FREEDOM",
+        date: "KRIPHI, CAPITAL OF UKYU-TAASA: THE EIGHTH MONTH IN THE EIGHTH YEAR OF THE REIGN OF AUDACIOUS FREEDOM (KNOWN IN DARA PROPER AS THE REIGN OF SEASON OF STORMS)",
         quote: "A clever woodpecker... will continue to try out new trees even after it has made a choice for nesting... Or if the tree it has chosen starts to die.",
         speaker: "Lady Ragi",
         summary: "Lady Ragi, Empress Jia's adopted daughter, leads a tribute mission to Kriphi. She meets with the Dara traitor Noda Mi, now a high-ranking Lyucu official. Under the cover of a smuggling deal, Ragi probes Noda's loyalty, using metaphors of birds and trees to suggest the Lyucu regime is weakening and that he should reconsider his allegiances. The opportunistic Noda agrees to pass a seemingly simple message from Jia to her son, Timu, in exchange for a crate of priceless wine. Their entire conversation is overheard by a nameless Lyucu spy clinging to the outside of the ship.",
@@ -260,7 +260,7 @@ const chapters = [
     {
         num: 29,
         title: "The Grand Examination",
-        date: "PAN: THE THIRD MONTH IN THE NINTH YEAR OF THE REIGN OF SEASON OF STORMS",
+        date: "PAN: THE THIRD MONTH IN THE NINTH YEAR OF THE REIGN OF SEASON OF STORMS AND THE REIGN OF AUDACIOUS FREEDOM (TWENTY-SIX MONTHS UNTIL THE REOPENING OF THE WALL OF STORMS)",
         quote: "The people most affected by change are also the ones who know best how to change.",
         speaker: "Jia Matiza",
         summary: "Zomi Kidosu's reform of the Grand Examination—requiring essays in the vernacular—sparks a rebellion of scholars. Empress Jia uses the crisis to teach Zomi a lesson about the power of tradition and the deep cultural significance of Ano logograms, which are not just a script but a connection to the people's collective memory. Humbled, Zomi rescinds the rule and is publicly disgraced, choosing to leave Pan to focus on research. The chapter is a deep dive into the philosophy of language, tradition, and the politics of reform.",
@@ -269,7 +269,7 @@ const chapters = [
     {
         num: 30,
         title: "Pit",
-        date: "BY THE SHORES OF LAKE ARISUSO ON MOUNT KIJI, RUI: THE THIRD MONTH IN THE NINTH YEAR OF THE REIGN OF SEASON OF STORMS",
+        date: "BY THE SHORES OF LAKE ARISUSO ON MOUNT KIJI, RUI: THE THIRD MONTH IN THE NINTH YEAR OF THE REIGN OF SEASON OF STORMS AND THE REIGN OF AUDACIOUS FREEDOM (TWENTY-SIX MONTHS UNTIL THE REOPENING OF THE WALL OF STORMS)",
         quote: "Dara-raaki must be destroyed! We will remake Ukyu-taasa into a paradise!",
         speaker: "Cutanrovo Aga",
         summary: "The narrative returns to Cutanrovo Aga's purge at the Temple of Péa-Kiji. She has the massive wooden statue of the god toppled and chopped into pieces. She then forces the temple clergy and captured scholars to throw the temple's entire library, a priceless repository of Xana culture and knowledge, into a giant pit with the statue fragments. The priests begin to pray, and a giant Mingén falcon, Kiji's pawi, appears. Cutanrovo, in a frenzy of zealous defiance, orders her soldiers to attack the unarmed clergy, massacring them.",
@@ -287,7 +287,7 @@ const chapters = [
     {
         num: 32,
         title: "The Play",
-        date: "GINPEN: THE FOURTH MONTH IN THE NINTH YEAR OF THE REIGN OF SEASON OF STORMS",
+        date: "GINPEN: THE FOURTH MONTH IN THE NINTH YEAR OF THE REIGN OF SEASON OF STORMS AND THE REIGN OF AUDACIOUS FREEDOM (TWENTY-FIVE MONTHS UNTIL THE REOPENING OF THE WALL OF STORMS)",
         quote: "Even when a snowstorm kills a thousand flowers, the buried thasé-teki dreams of summer bloom.",
         speaker: "Narrator",
         summary: "Kinri sees a street play by Mota Kiphi and Arona Taré about the Battle of Zathin Gulf, which portrays Gin Mazoti as a hero and Pékyu Tenryo as a tyrant. The play deeply troubles him, conflicting with the Lyucu version of history. Afterward, Princess Fara's ('Dandelion') horse is spooked. Kinri and Mota both rush to save her, and Mota's incredible strength stops the horse cold. Kinri is drawn to the Blossom Gang's camaraderie and Fara's spirit. The incident solidifies the bond between the main characters.",
@@ -296,7 +296,7 @@ const chapters = [
     {
         num: 33,
         title: "Treasure",
-        date: "MEANWHILE, IN KRIPHI.",
+        date: "MEANWHILE, IN KRIPHI",
         quote: "I get the feeling that you’re also digging down here in part because you don’t want to be outside.",
         speaker: "Goztan Ryoto",
         summary: "In Kriphi, Goztan Ryoto is horrified to see Cutanrovo's 'purification packs' using captured Dara prisoners for live-target practice for Lyucu children. She rescues the prisoners and seeks out her ally Vocu Firna. She finds him secretly digging a pit under his old mansion to hide 'treasures'—banned Dara books and art—from Cutanrovo's destruction. The chapter highlights the quiet resistance of the accommodationist Lyucu. Meanwhile, a desperate Tanvanaki, facing famine and plague after the purges, is forced to write to Empress Jia and demand even more tribute.",
@@ -319,6 +319,15 @@ const chapters = [
         speaker: "Widow Wasu",
         summary: "Tiphan Huto, humiliated by his encounter with the Blossom Gang, formally challenges the Splendid Urn to a series of three contests for the title of 'Best Restaurant in Ginpen.' The contests will be judged by the city's elite. The first round is cooking. The Splendid Urn's head chef is so terrified upon learning that Huto has hired Mozo Mu—a descendant of the legendary chef Suda Mu—that he has a nervous breakdown. The Blossom Gang, Kinri, and Fara ('Dandelion') join forces with the Splendid Urn to spy on the competition and prepare for the contest.",
         links: [{ name: "Ginpen", path: "/places/ginpen" }, { name: "Tiphan Huto", path: "/characters/tiphan-huto" }, { name: "Mozo Mu", path: "/characters/mozo-mu" }, { name: "Kinri", path: "/characters/kinri" }, { name: "Princess Fara", path: "/characters/princess-fara" }]
+    },
+    {
+        num: 36,
+        title: "Two Thanes",
+        date: "KIRI VALLEY, IN THE FOOTHILLS OF THE WORLD’S EDGE MOUNTAINS: THE TWELFTH MONTH IN THE EIGHTH YEAR AFTER THE DEPARTURE OF PRINCESS THÉRA FROM DARA FOR UKYU-GONDÉ (SEVENTEEN MONTHS UNTIL THE LYUCU MUST LAUNCH THEIR NEW INVASION FLEET TO DARA)",
+        quote: "The victory is incomplete. I have the body of a tusked tiger but not the head.",
+        speaker: "Cudyu Roatan",
+        summary: "The chapter explores the aftermath of the Kiri Valley massacre through dual perspectives. Volyu Aragoz, after betraying Théra and Takval to Pékyu Cudyu, is shocked when Cudyu turns on him, imprisoning him in a bone cage and planning to hand him over to the Agon elders for judgment on the deaths of thousands. Meanwhile, Cudyu reflects on his costly victory, frustrated by failing to capture Théra and Takval or uncover their secret about the Wall of Storms. He interrogates defectors Toof and Radia, who deliver captured children (including disguised Tanto and Rokiri). Suspecting the defectors' eagerness to execute the children hides a secret, Cudyu spares them as leverage against potential escaped parents. Later, Toof and Radia orchestrate the children's escape on garinafins, faking injuries to delay pursuit and cover their aid, honoring their adopted 'tribe' despite the risks.",
+        links: [{ name: "Volyu Aragoz", path: "/characters/volyu-aragoz" }, { name: "Cudyu Roatan", path: "/characters/cudyu-roatan" }, { name: "Toof", path: "/characters/toof" }, { name: "Radia", path: "/characters/radia" }, { name: "Sataari", path: "/characters/sataari" }, { name: "Razutana Pon", path: "/characters/razutana-pon" }, { name: "Tanto Aragoz", path: "/characters/tanto-aragoz" }, { name: "Rokiri Aragoz", path: "/characters/rokiri-aragoz" }]
     },
     {
         num: 37,
@@ -350,7 +359,7 @@ const chapters = [
     {
         num: 40,
         title: "Letters",
-        date: "DIMUSHI: THE SIXTH MONTH IN THE NINTH YEAR OF THE REIGN OF SEASON OF STORMS",
+        date: "DIMUSHI: THE SIXTH MONTH IN THE NINTH YEAR OF THE REIGN OF SEASON OF STORMS AND THE REIGN OF AUDACIOUS FREEDOM (TWENTY-THREE MONTHS UNTIL THE REOPENING OF THE WALL OF STORMS)",
         quote: "An inflexible general uses cavalry to counter cavalry... a flexible general sees the commonality between all realms of war.",
         speaker: "Gin Mazoti (from her treatise)",
         summary: "This chapter consists of letters between key characters, revealing their plans and inner conflicts. Gori Ruthi reports on Princess Aya Mazoti's disastrous first military command, where she rigidly follows her mother's treatise with poor results. Fara writes to Aya with sisterly encouragement. Emperor Phyro writes to Zomi, revealing his secret project to build a garinafin force and asking for her help in circumventing Empress Jia's authority to fund it. The letters expose the growing political tensions and secret plots being hatched by the younger generation.",
@@ -413,7 +422,7 @@ const chapters = [
     {
         num: 47,
         title: "Family",
-        date: "LAST BITE: THE SEVENTH MONTH IN THE NINTH YEAR OF THE REIGN OF SEASON OF STORMS",
+        date: "LAST BITE: THE SEVENTH MONTH IN THE NINTH YEAR OF THE REIGN OF SEASON OF STORMS AND THE REIGN OF AUDACIOUS FREEDOM (TWENTY-TWO MONTHS UNTIL THE REOPENING OF THE WALL OF STORMS)",
         quote: "My name is Savo Ryoto.",
         speaker: "Savo Ryoto (Kinri)",
         summary: "The Blossom Gang and Fara successfully infiltrate Last Bite. Kinri, disguised as Zomi Kidosu, discovers a secret study filled with objects from his past, including the turtle shell his mother gave him. He realizes the study belongs to Zomi. Zomi herself appears, and through the turtle shell, she and Kinri discover they are long-lost half-siblings, both fathered by Oga Kidosu. Kinri is forced to confront the truth about his identity and his family's complex history. He chooses to embrace his Lyucu heritage and his identity as Savo Ryoto, a decision that creates a painful rift between him and Fara. The chapter ends with Savo escaping Last Bite, now a fugitive with a new understanding of himself and his place in the world.",
