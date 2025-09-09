@@ -163,7 +163,7 @@ export default function QuotesClient() {
                     {quotes.map((quote, index) => (
                         <div key={index} className="bg-background-secondary dark:bg-background-secondary border border-border-primary dark:border-border-primary rounded-lg p-6 shadow-sm">
                             <blockquote className="text-lg italic text-text-primary dark:text-text-primary mb-4 leading-relaxed">
-                                "{quote.text}"
+                                &ldquo;{quote.text}&rdquo;
                             </blockquote>
                             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                                 <p className="text-text-secondary dark:text-text-secondary">

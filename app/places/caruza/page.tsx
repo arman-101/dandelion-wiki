@@ -3,7 +3,7 @@
 import type { Metadata } from 'next';
 import { Place } from '../../data/wiki-data';
 import { generatePlaceMetadata } from '@/app/utils/metadata';
-import ÇaruzaClient from './ÇaruzaClient.tsx';
+import CaruzaClient from './ÇaruzaClient.tsx';
 
 // --- DATA FOR ÇARUZA ---
 const placeData: Place = {
@@ -46,5 +46,5 @@ const placeData: Place = {
 export const metadata: Metadata = generatePlaceMetadata(placeData);
 
 export default function ÇaruzaPage() {
-    return <ÇaruzaClient placeData={placeData} />;
+    return <CaruzaClient placeData={placeData} />;
 }

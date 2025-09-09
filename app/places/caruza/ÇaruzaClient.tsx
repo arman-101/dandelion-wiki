@@ -10,7 +10,7 @@ interface ÇaruzaClientProps {
     placeData: Place;
 }
 
-export default function ÇaruzaClient({ placeData }: ÇaruzaClientProps) {
+export default function CaruzaClient({ placeData }: ÇaruzaClientProps) {
     const pathname = usePathname();
     const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_PLACES]);
     const returnLink = { title: 'Return to All Places', path: '/places' };
