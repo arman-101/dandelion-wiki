@@ -152,11 +152,21 @@ export default function Navbar() {
                                         <DropdownItem href="/concepts">Concepts</DropdownItem>
                                         <DropdownItem href="/maps">Maps</DropdownItem>
                                         <hr className="my-1 border-border-secondary dark:border-border-secondary" />
-                                        {OTHER_PAGES.map(page => (
-                                            <DropdownItem key={page.path} href={page.path}>
-                                                {page.title}
-                                            </DropdownItem>
-                                        ))}
+                                        <div className="relative group/submenu">
+                                            <Link href="/other/pages" className="flex justify-between items-center px-4 py-2 text-sm text-text-secondary dark:text-text-secondary hover:bg-bg-tertiary dark:hover:bg-border-primary hover:[color:var(--color-accent-pink)] transition-colors">
+                                                <span>Other Pages</span>
+                                                <span className="text-xs">▶</span>
+                                            </Link>
+                                            <div className="absolute left-full top-0 -mt-1 w-56 rounded-md shadow-lg bg-bg-card dark:bg-bg-card ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover/submenu:opacity-100 group-hover/submenu:visible transition-all duration-200">
+                                                <div className="py-1">
+                                                    {OTHER_PAGES.map(page => (
+                                                        <DropdownItem key={page.path} href={page.path}>
+                                                            {page.title}
+                                                        </DropdownItem>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -212,8 +222,11 @@ export default function Navbar() {
                                 Maps
                             </Link>
                             <hr className="my-1 border-border-secondary dark:border-border-secondary" />
+                            <div className="px-3 py-2 text-sm font-semibold text-text-light dark:text-text-light">
+                                Other Pages
+                            </div>
                             {OTHER_PAGES.map(page => (
-                                <Link key={page.path} href={page.path} onClick={() => setIsMobileMenuOpen(false)} className="text-text-secondary dark:text-text-secondary hover:bg-bg-tertiary dark:hover:bg-border-primary block px-3 py-2 rounded-md text-base font-medium">
+                                <Link key={page.path} href={page.path} onClick={() => setIsMobileMenuOpen(false)} className="text-text-secondary dark:text-text-secondary hover:bg-bg-tertiary dark:hover:bg-border-primary block px-6 py-2 rounded-md text-sm font-medium">
                                     {page.title}
                                 </Link>
                             ))}

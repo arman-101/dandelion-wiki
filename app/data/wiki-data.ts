@@ -356,6 +356,12 @@ export const OTHER_PAGES: readonly WikiPage[] = [
     { title: 'About the Author', path: '/other/about-author', type: 'Other' },
     { title: 'Contributing', path: '/other/contributing', type: 'Other' },
     { title: 'All Pages', path: '/other/all-pages', type: 'Other'},
+    { title: 'Glossary', path: '/other/glossary', type: 'Other'},
+];
+
+// Add the Other Pages listing page to the main navigation
+export const OTHER_PAGES_LISTING: readonly WikiPage[] = [
+    { title: 'Other Pages', path: '/other/pages', type: 'Other' },
 ];
 
 // UPDATED: Comprehensive list of ALL pages for site-wide navigation and search
@@ -367,6 +373,7 @@ export const ALL_WIKI_PAGES: readonly WikiPage[] = [
     { title: 'Gods', path: '/gods', type: 'God' },
     { title: 'Concepts', path: '/concepts', type: 'Concept' },
     { title: 'Maps', path: '/maps', type: 'Map' },
+    ...OTHER_PAGES_LISTING,
     ...OTHER_PAGES,
     
     // Then, spread in all the individual pages from the detailed lists
