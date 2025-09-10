@@ -221,19 +221,15 @@ export default function Navbar() {
                             <Link href="/maps" onClick={() => setIsMobileMenuOpen(false)} className="text-text-secondary dark:text-text-secondary hover:bg-bg-tertiary dark:hover:bg-border-primary block px-3 py-2 rounded-md text-base font-medium">
                                 Maps
                             </Link>
-                            <hr className="my-1 border-border-secondary dark:border-border-secondary" />
-                            <div className="px-3 py-2 text-sm font-semibold text-text-light dark:text-text-light">
+                            <Link href="/other/pages" onClick={() => setIsMobileMenuOpen(false)} className="text-text-secondary dark:text-text-secondary hover:bg-bg-tertiary dark:hover:bg-border-primary block px-3 py-2 rounded-md text-base font-medium">
                                 Other Pages
-                            </div>
-                            {OTHER_PAGES.map(page => (
-                                <Link key={page.path} href={page.path} onClick={() => setIsMobileMenuOpen(false)} className="text-text-secondary dark:text-text-secondary hover:bg-bg-tertiary dark:hover:bg-border-primary block px-6 py-2 rounded-md text-sm font-medium">
-                                    {page.title}
-                                </Link>
-                            ))}
+                            </Link>
+
+                            <hr className="my-1 border-border-secondary dark:border-border-secondary" />
+                            
                             <Link href="https://buymeacoffee.com/darknebulax1" target='_blank' className="text-text-secondary dark:text-text-secondary hover:bg-bg-tertiary dark:hover:bg-border-primary block px-3 py-2 rounded-md text-base font-medium">
                                 Cup a coffee?
                             </Link>
-                            <hr className="my-1 border-border-secondary dark:border-border-secondary" />
                             <button onClick={() => { setIsModalOpen(true); setIsMobileMenuOpen(false); }} className="w-full text-left text-text-secondary dark:text-text-secondary hover:bg-bg-tertiary dark:hover:bg-border-primary block px-3 py-2 rounded-md text-base font-medium">
                                 Feedback
                             </button>
