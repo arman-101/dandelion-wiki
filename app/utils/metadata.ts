@@ -18,15 +18,19 @@ export function generateCharacterMetadata(character: Character): Metadata {
     const imageUrl = typeof character.image === 'string' ? character.image : '';
     const slug = imageUrl ? extractSlugFromImage(imageUrl, 'characters') : null;
     const url = slug ? `/characters/${slug}` : undefined;
+    const canonicalUrl = url ? `https://dandelion-wiki.vercel.app${url}` : undefined;
 
     return {
         title,
         description,
+        alternates: {
+            canonical: canonicalUrl
+        },
         openGraph: {
             title: `${character.name} | The Dandelion Dynasty Wiki`,
             description,
             images: imageUrl ? [{ url: imageUrl }] : undefined,
-            url,
+            url: canonicalUrl,
             type: 'article'
         },
         twitter: {
@@ -44,15 +48,19 @@ export function generatePlaceMetadata(place: Place): Metadata {
     const imageUrl = typeof place.image === 'string' ? place.image : '';
     const slug = imageUrl ? extractSlugFromImage(imageUrl, 'places') : null;
     const url = slug ? `/places/${slug}` : undefined;
+    const canonicalUrl = url ? `https://dandelion-wiki.vercel.app${url}` : undefined;
 
     return {
         title,
         description,
+        alternates: {
+            canonical: canonicalUrl
+        },
         openGraph: {
             title: `${place.name} | The Dandelion Dynasty Wiki`,
             description,
             images: imageUrl ? [{ url: imageUrl }] : undefined,
-            url,
+            url: canonicalUrl,
             type: 'article'
         },
         twitter: {
@@ -70,15 +78,19 @@ export function generateGodMetadata(god: God): Metadata {
     const imageUrl = typeof god.image === 'string' ? god.image : '';
     const slug = imageUrl ? extractSlugFromImage(imageUrl, 'gods') : null;
     const url = slug ? `/gods/${slug}` : undefined;
+    const canonicalUrl = url ? `https://dandelion-wiki.vercel.app${url}` : undefined;
 
     return {
         title,
         description,
+        alternates: {
+            canonical: canonicalUrl
+        },
         openGraph: {
             title: `${god.name} | The Dandelion Dynasty Wiki`,
             description,
             images: imageUrl ? [{ url: imageUrl }] : undefined,
-            url,
+            url: canonicalUrl,
             type: 'article'
         },
         twitter: {
@@ -96,15 +108,19 @@ export function generateConceptMetadata(concept: Concept): Metadata {
     const imageUrl = typeof concept.image === 'string' ? concept.image : '';
     const slug = imageUrl ? extractSlugFromImage(imageUrl, 'concepts') : null;
     const url = slug ? `/concepts/${slug}` : undefined;
+    const canonicalUrl = url ? `https://dandelion-wiki.vercel.app${url}` : undefined;
 
     return {
         title,
         description,
+        alternates: {
+            canonical: canonicalUrl
+        },
         openGraph: {
             title: `${concept.name} | The Dandelion Dynasty Wiki`,
             description,
             images: imageUrl ? [{ url: imageUrl }] : undefined,
-            url,
+            url: canonicalUrl,
             type: 'article'
         },
         twitter: {
@@ -117,16 +133,21 @@ export function generateConceptMetadata(concept: Concept): Metadata {
 }
 
 // Book metadata generator
-export function generateBookMetadata(bookTitle: string, description?: string): Metadata {
+export function generateBookMetadata(bookTitle: string, description?: string, slug?: string): Metadata {
     const title = `${bookTitle}`;
     const desc = truncate(description || `${bookTitle} from The Dandelion Dynasty series by Ken Liu.`);
+    const canonicalUrl = slug ? `https://dandelion-wiki.vercel.app/books/${slug}` : undefined;
 
     return {
         title,
         description: desc,
+        alternates: {
+            canonical: canonicalUrl
+        },
         openGraph: {
             title: `${bookTitle} | The Dandelion Dynasty Wiki`,
             description: desc,
+            url: canonicalUrl,
             type: 'article'
         },
         twitter: {
@@ -138,16 +159,21 @@ export function generateBookMetadata(bookTitle: string, description?: string): M
 }
 
 // Generic page metadata generator
-export function generatePageMetadata(pageTitle: string, description?: string): Metadata {
+export function generatePageMetadata(pageTitle: string, description?: string, slug?: string): Metadata {
     const title = `${pageTitle}`;
     const desc = truncate(description || `${pageTitle} - The Dandelion Dynasty Wiki`);
+    const canonicalUrl = slug ? `https://dandelion-wiki.vercel.app${slug}` : undefined;
 
     return {
         title,
         description: desc,
+        alternates: {
+            canonical: canonicalUrl
+        },
         openGraph: {
             title: `${pageTitle} | The Dandelion Dynasty Wiki`,
             description: desc,
+            url: canonicalUrl,
             type: 'website'
         },
         twitter: {

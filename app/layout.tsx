@@ -7,10 +7,15 @@ import ScrollToTopButton from './components/ui/ScrollToTopButton'
 import ThemeProviders from './components/layout/ThemeProviders'
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { generateWebsiteStructuredData } from './utils/structuredData'
 
 const inter = Inter({ subsets: ['latin'] })
 
+// Generate website structured data once
+const websiteStructuredData = generateWebsiteStructuredData()
+
 export const metadata: Metadata = {
+  metadataBase: new URL('https://dandelion-wiki.vercel.app'),
   title: {
     template: '%s | The Dandelion Dynasty Wiki',
     default: 'The Dandelion Dynasty Wiki'
@@ -22,6 +27,9 @@ export const metadata: Metadata = {
   publisher: 'Dandelion Dynasty Wiki',
   icons: {
     icon: '/icon.png',
+  },
+  alternates: {
+    canonical: 'https://dandelion-wiki.vercel.app'
   },
   openGraph: {
     title: 'The Dandelion Dynasty Wiki',
@@ -56,6 +64,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteStructuredData),
+          }}
+        />
+      </head>
       <body className={`${inter.className} bg-bg-secondary dark:bg-bg-secondary text-text-secondary dark:text-text-secondary`} suppressHydrationWarning>
         <ThemeProviders>
           <div className="min-h-screen flex flex-col">
