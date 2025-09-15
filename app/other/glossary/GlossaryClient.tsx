@@ -166,24 +166,11 @@ const glossaryTerms: GlossaryTerm[] = [
     { term: "Votan-sa-taasa", definition: "\"older-and-younger\"; sisters (or siblings)", book: "Speaking Bones", culture: "Lyucu/Agon" },
 ];
 
-const bookOrder = [
-    "The Grace of Kings",
-    "The Wall of Storms", 
-    "The Veiled Throne",
-    "Speaking Bones"
-];
-
-const bookLinks = {
-    "The Grace of Kings": "/books/the-grace-of-kings",
-    "The Wall of Storms": "/books/the-wall-of-storms",
-    "The Veiled Throne": "/books/the-veiled-throne",
-    "Speaking Bones": "/books/speaking-bones"
-};
 
 export default function GlossaryClient() {
-    // Remove duplicates by creating a unique set based on term + culture
+    // Remove duplicates by creating a unique set based on term name only
     const uniqueTerms = glossaryTerms.reduce((acc, term) => {
-        const key = `${term.term}-${term.culture || 'general'}`;
+        const key = term.term.toLowerCase();
         if (!acc.has(key)) {
             acc.set(key, term);
         }
@@ -192,21 +179,20 @@ export default function GlossaryClient() {
 
     const deduplicatedTerms = Array.from(uniqueTerms.values());
 
-    // Group terms by book and culture
-    const groupedTerms: Record<string, Record<string, GlossaryTerm[]>> = {};
+    // Group terms by culture only
+    const groupedTerms: Record<string, GlossaryTerm[]> = {};
     
-    bookOrder.forEach(book => {
-        const bookTerms = deduplicatedTerms.filter(term => term.book === book);
-        if (bookTerms.length > 0) {
-            groupedTerms[book] = {};
-            bookTerms.forEach(term => {
-                const culture = term.culture || 'General';
-                if (!groupedTerms[book][culture]) {
-                    groupedTerms[book][culture] = [];
-                }
-                groupedTerms[book][culture].push(term);
-            });
+    deduplicatedTerms.forEach(term => {
+        const culture = term.culture || 'Dara';
+        if (!groupedTerms[culture]) {
+            groupedTerms[culture] = [];
         }
+        groupedTerms[culture].push(term);
+    });
+
+    // Sort terms within each culture alphabetically
+    Object.keys(groupedTerms).forEach(culture => {
+        groupedTerms[culture].sort((a, b) => a.term.localeCompare(b.term));
     });
 
     return (
@@ -217,58 +203,43 @@ export default function GlossaryClient() {
                 </h1>
                 <p className="text-text-secondary dark:text-text-light text-lg leading-relaxed">
                     A comprehensive glossary of terms, concepts, and vocabulary from Ken Liu&apos;s Dandelion Dynasty series. 
-                    This collection includes Daran, Lyucu, and Agon terminology, organized by book and culture.
+                    This collection includes Daran, Lyucu, and Agon terminology, organized by culture.
                 </p>
             </div>
 
             <div className="space-y-12">
-                {Object.entries(groupedTerms).map(([book, cultures]) => (
-                    <div key={book} className="space-y-8">
+                {Object.entries(groupedTerms).map(([culture, terms]) => (
+                    <div key={culture} className="space-y-6">
                         <h2 className="text-2xl md:text-3xl font-bold text-text-primary dark:text-text-primary border-b pb-2">
-                            <Link 
-                                href={bookLinks[book as keyof typeof bookLinks]} 
-                                className="text-link hover:text-link-hover dark:text-link-dark hover:dark:text-accent-pink transition-colors duration-200"
-                            >
-                                {book}
-                            </Link>
+                            {culture}
                         </h2>
                         
-                        {Object.entries(cultures).map(([culture, terms]) => (
-                            <div key={`${book}-${culture}`} className="space-y-4">
-                                {culture !== 'General' && (
-                                    <h3 className="text-xl md:text-2xl font-semibold text-text-primary dark:text-text-primary">
-                                        {culture}
-                                    </h3>
-                                )}
-                                
-                                <div className="grid gap-4">
-                                    {terms.map((term, index) => (
-                                        <div 
-                                            key={`${term.term}-${index}`}
-                                            className="bg-bg-card dark:bg-bg-card rounded-lg p-6 shadow-sm border border-border-primary dark:border-border-secondary"
-                                        >
-                                            <div className="flex flex-col gap-2">
-                                                <dt className="font-bold text-lg text-primary dark:text-primary-light">
-                                                    {term.wikiLink ? (
-                                                        <Link 
-                                                            href={term.wikiLink}
-                                                            className="text-primary hover:text-link-hover dark:text-primary-light hover:dark:text-accent-pink transition-colors duration-200"
-                                                        >
-                                                            {term.term}
-                                                        </Link>
-                                                    ) : (
-                                                        term.term
-                                                    )}
-                                                </dt>
-                                                <dd className="text-text-secondary dark:text-text-light leading-relaxed">
-                                                    {term.definition}
-                                                </dd>
-                                            </div>
-                                        </div>
-                                    ))}
+                        <div className="grid gap-4">
+                            {terms.map((term, index) => (
+                                <div 
+                                    key={`${term.term}-${index}`}
+                                    className="bg-bg-card dark:bg-bg-card rounded-lg p-6 shadow-sm border border-border-primary dark:border-border-secondary"
+                                >
+                                    <div className="flex flex-col gap-2">
+                                        <dt className="font-bold text-lg text-primary dark:text-primary-light">
+                                            {term.wikiLink ? (
+                                                <Link 
+                                                    href={term.wikiLink}
+                                                    className="text-primary hover:text-link-hover dark:text-primary-light hover:dark:text-accent-pink transition-colors duration-200"
+                                                >
+                                                    {term.term}
+                                                </Link>
+                                            ) : (
+                                                term.term
+                                            )}
+                                        </dt>
+                                        <dd className="text-text-secondary dark:text-text-light leading-relaxed">
+                                            {term.definition}
+                                        </dd>
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
                 ))}
             </div>
