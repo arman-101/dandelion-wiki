@@ -357,6 +357,7 @@ export const OTHER_PAGES: readonly WikiPage[] = [
     { title: 'Contributing', path: '/other/contributing', type: 'Other' },
     { title: 'All Pages', path: '/other/all-pages', type: 'Other'},
     { title: 'Glossary', path: '/other/glossary', type: 'Other'},
+    { title: 'Updates', path: '/other/updates', type: 'Other'},
 ];
 
 // Add the Other Pages listing page to the main navigation

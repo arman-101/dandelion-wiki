@@ -61,7 +61,8 @@ function getPageDescription(title: string): string {
         'About the Author': 'Discover information about Ken Liu, the author of the Dandelion Dynasty series.',
         'Contributing': 'Guidelines and information for contributing to the wiki.',
         'All Pages': 'A comprehensive list of all pages in the wiki.',
-        'Glossary': 'A comprehensive glossary of terms, concepts, and vocabulary from the series.'
+        'Glossary': 'A comprehensive glossary of terms, concepts, and vocabulary from the series.',
+        'Updates': 'Track the development history and updates to the Dandelion Dynasty Wiki.'
     };
     
     return descriptions[title] || 'Additional information and resources for the Dandelion Dynasty Wiki.';
