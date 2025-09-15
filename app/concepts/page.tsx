@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
 // Import the new master list from your central data file
 import { ALL_CONCEPTS_DATA } from '../data/wiki-data';
@@ -18,16 +17,8 @@ export default function ConceptsPage() {
                 {/* Use the imported ALL_CONCEPTS_DATA list to render the cards */}
                 {ALL_CONCEPTS_DATA.map((concept) => (
                     <Link href={concept.link} key={concept.name} className="group bg-bg-card dark:bg-bg-card rounded-lg shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-1 overflow-hidden">
-                        <div className="relative w-full h-64">
-                             <Image 
-                                src={concept.image}
-                                alt={`Image representing ${concept.name}`}
-                                fill
-                                style={{ objectFit: "cover", objectPosition: "center" }}
-                            />
-                        </div>
-                        <div className="p-4">
-                            <h2 className="text-xl font-bold text-text-primary dark:text-text-primary mt-1 group-hover:text-[color:var(--color-accent-pink)] transition-colors">{concept.name}</h2>
+                        <div className="p-6">
+                            <h2 className="text-xl font-bold text-text-primary dark:text-text-primary group-hover:text-[color:var(--color-accent-pink)] transition-colors">{concept.name}</h2>
                             <p className="text-sm text-text-muted dark:text-text-muted mt-2">{concept.description}</p>
                         </div>
                     </Link>

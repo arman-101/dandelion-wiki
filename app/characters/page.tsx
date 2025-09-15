@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
 import { ALL_CHARACTERS_DATA } from '../data/wiki-data'; // Import the master list
 import { generatePageMetadata } from '@/app/utils/metadata';
@@ -17,16 +16,8 @@ export default function CharactersPage() {
                 {/* Use the imported list to render the character cards */}
                 {ALL_CHARACTERS_DATA.map((char) => (
                     <Link href={char.link} key={char.name} className="group bg-bg-card dark:bg-bg-card rounded-lg shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-1 overflow-hidden">
-                        <div className="relative w-full h-64">
-                             <Image 
-                                src={char.image}
-                                alt={`Portrait of ${char.name}`}
-                                fill
-                                style={{ objectFit: "cover", objectPosition: "top" }}
-                            />
-                        </div>
-                        <div className="p-4">
-                            <h2 className="text-xl font-bold text-text-primary dark:text-text-primary mt-1 group-hover:text-[color:var(--color-accent-pink)] transition-colors">{char.name}</h2>
+                        <div className="p-6">
+                            <h2 className="text-xl font-bold text-text-primary dark:text-text-primary group-hover:text-[color:var(--color-accent-pink)] transition-colors">{char.name}</h2>
                             <p className="text-sm text-text-muted dark:text-text-muted mt-2">{char.description}</p>
                         </div>
                     </Link>

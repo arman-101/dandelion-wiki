@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
 import { generatePageMetadata } from '@/app/utils/metadata';
 
@@ -66,16 +65,8 @@ export default function GodsPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                 {godsData.map((god) => (
                     <Link href={god.link} key={god.name} className="group bg-bg-card dark:bg-bg-card rounded-lg shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-1 overflow-hidden">
-                        <div className="relative w-full h-64">
-                             <Image 
-                                src={god.image}
-                                alt={`Portrait of ${god.name}`}
-                                fill
-                                style={{ objectFit: "cover", objectPosition: "top" }}
-                            />
-                        </div>
-                        <div className="p-4">
-                            <h2 className="text-xl font-bold text-text-primary dark:text-text-primary mt-1 group-hover:[color:var(--color-accent-pink)] transition-colors">{god.name}</h2>
+                        <div className="p-6">
+                            <h2 className="text-xl font-bold text-text-primary dark:text-text-primary group-hover:[color:var(--color-accent-pink)] transition-colors">{god.name}</h2>
                             <p className="text-sm text-text-muted dark:text-text-muted mt-2">{god.description}</p>
                         </div>
                     </Link>

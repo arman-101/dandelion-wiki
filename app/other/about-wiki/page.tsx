@@ -148,9 +148,6 @@ export default function AboutMePage() {
 
             {/* --- Project Notes --- */}
             <div className="bg-slate-50 dark:bg-gray-800/50 p-6 sm:p-8 rounded-lg space-y-6 max-w-4xl mx-auto">
-                <InfoBlock icon={<svg fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.158 0a.225.225 0 1 1-.45 0a.225.225 0 0 1 .45 0Z" /></svg>}>
-                    Many images on this site were generated with AI to provide visual references where official or fan artwork is scarce.
-                </InfoBlock>
                 <InfoBlock icon={<svg fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" /></svg>}>
                     Credit to these 2 communities - <Link href="https://the-dandelion-dynasty.fandom.com/wiki/The_Dandelion_Dynasty_Wiki" target="_blank" rel="noopener noreferrer" className="font-semibold text-link dark:text-link-dark hover:underline">Dandelion Dynasty Fandom Wiki</Link> and <Link href="https://web.archive.org/web/20190809133811/http://dandelionwiki.com/w/Main_Page" target="_blank" rel="noopener noreferrer" className="font-semibold text-link dark:text-link-dark hover:underline">The Dandelion Dynasty Wiki (offline)</Link>.
                 </InfoBlock>

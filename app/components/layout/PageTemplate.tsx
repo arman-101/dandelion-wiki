@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import React from 'react';
 import { formatLinksInText } from '../../utils/textFormatting';
 import InfoBox, { InfoBoxData } from '../ui/InfoBox';
@@ -104,18 +103,9 @@ export default function PageTemplate({
                     </div>
                 </div>
 
-                {/* Sidebar with Image and InfoBox */}
+                {/* Sidebar with InfoBox only */}
                 <div className="w-full lg:w-1/3 order-1 lg:order-2">
                     <div className="sticky top-24">
-                        <div className="relative w-full h-96 mb-4">
-                            <Image 
-                                src={pageData.image}
-                                alt={`Image of ${pageData.name}`}
-                                fill
-                                style={{ objectFit: "cover" }}
-                                className="rounded-lg shadow-lg"
-                            />
-                        </div>
                         <InfoBox 
                             title={infoBoxTitle}
                             data={pageData.infoBox}

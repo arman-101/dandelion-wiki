@@ -313,6 +313,162 @@ export default function CharacterNameClient({ characterData }: CharacterNameClie
 }
 ```
 
+### 🖼️ Adding Images to Individual Pages
+
+**Current State**: Individual pages (characters, gods, places, concepts) use `PageTemplate` component which currently displays only the `InfoBox` in the sidebar.
+
+**To Add Images Back to Individual Pages:**
+
+#### Option 1: Modify PageTemplate Component
+**File**: `app/components/layout/PageTemplate.tsx`
+
+Add image display in the sidebar before the InfoBox:
+
+```tsx
+import React from 'react';
+import Image from 'next/image'; // Add this import
+import { formatLinksInText } from '../../utils/textFormatting';
+import InfoBox, { InfoBoxData } from '../ui/InfoBox';
+import ContentRenderer from '../ui/ContentRenderer';
+import { ContentBlock } from '../../data/wiki-data';
+
+// ... existing code ...
+
+export default function PageTemplate({ 
+    pageData, 
+    infoBoxTitle,
+    className = "" 
+}: PageTemplateProps) {
+    // ... existing renderSection function ...
+
+    return (
+        <div className={className}>
+            <div className="flex flex-col lg:flex-row gap-8">
+                {/* Main Content Area */}
+                <div className="w-full lg:w-2/3 order-2 lg:order-1">
+                    <h1 className="text-4xl md:text-5xl font-bold text-text-primary dark:text-text-primary mb-4">
+                        {pageData.name}
+                    </h1>
+                    <p className="text-lg italic text-text-muted dark:text-text-light mb-8 border-l-4 border-gray-300 dark:border-border-secondary pl-4">
+                        {formatLinksInText(pageData.introduction)}
+                    </p>
+
+                    <div className="space-y-8">
+                        {pageData.sections.map(renderSection)}
+                    </div>
+                </div>
+
+                {/* Sidebar with Image and InfoBox */}
+                <div className="w-full lg:w-1/3 order-1 lg:order-2">
+                    <div className="sticky top-24 space-y-6">
+                        {/* Add Image Display */}
+                        {pageData.image && (
+                            <div className="relative w-full h-80 rounded-lg overflow-hidden shadow-lg">
+                                <Image 
+                                    src={pageData.image}
+                                    alt={`Image of ${pageData.name}`}
+                                    fill
+                                    style={{ objectFit: "cover", objectPosition: "top" }}
+                                />
+                            </div>
+                        )}
+                        
+                        <InfoBox 
+                            title={infoBoxTitle}
+                            data={pageData.infoBox}
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
+```
+
+#### Option 2: Create Custom Page Layout
+For pages that need different image layouts, create a custom component:
+
+```tsx
+'use client';
+
+import Image from 'next/image';
+import { usePathname } from 'next/navigation';
+import { Character, ALL_CHARACTERS } from '../../data/wiki-data';
+import { CharacterNavigation } from '@/app/components/layout/PageNavigation';
+import { getSurroundingPages } from '@/app/utils/navigationUtils';
+import InfoBox from '@/app/components/ui/InfoBox';
+
+interface CustomCharacterClientProps {
+    characterData: Character;
+}
+
+export default function CustomCharacterClient({ characterData }: CustomCharacterClientProps) {
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...ALL_CHARACTERS]);
+    const returnLink = { title: 'Return to All Characters', path: '/characters' };
+
+    return (
+        <>
+            <CharacterNavigation 
+                prevPage={prevPage} 
+                nextPage={nextPage} 
+                returnLink={returnLink} 
+            />
+            
+            <div className="max-w-6xl mx-auto px-4 py-8">
+                <div className="flex flex-col lg:flex-row gap-8">
+                    {/* Main Content */}
+                    <div className="w-full lg:w-2/3">
+                        <h1 className="text-4xl md:text-5xl font-bold text-text-primary dark:text-text-primary mb-4">
+                            {characterData.name}
+                        </h1>
+                        {/* Add your content sections here */}
+                    </div>
+
+                    {/* Sidebar with Image */}
+                    <div className="w-full lg:w-1/3">
+                        <div className="sticky top-24 space-y-6">
+                            {/* Character Image */}
+                            <div className="relative w-full h-80 rounded-lg overflow-hidden shadow-lg">
+                                <Image 
+                                    src={characterData.image}
+                                    alt={`Portrait of ${characterData.name}`}
+                                    fill
+                                    style={{ objectFit: "cover", objectPosition: "top" }}
+                                />
+                            </div>
+                            
+                            {/* Info Box */}
+                            <InfoBox 
+                                title="Biographical Information"
+                                data={characterData.infoBox}
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
+    );
+}
+```
+
+**Image Requirements:**
+- **File Format**: PNG preferred, JPG acceptable
+- **Location**: `public/[category]/[slug].png`
+- **Dimensions**: Minimum 400x400px, recommended 800x800px
+- **Aspect Ratio**: Square (1:1) works best for consistent display
+- **File Size**: Optimize for web (under 500KB recommended)
+
+**Data Structure Requirements:**
+Ensure your data includes the `image` property:
+```typescript
+const characterData: Character = {
+    name: "Character Name",
+    image: "/characters/character-name.png", // Add this
+    // ... rest of data
+};
+```
+
 ### 2. Page Types & Metadata Functions
 
 #### Character Pages
@@ -469,7 +625,7 @@ After creating a new page:
 
 **File Location**: `app/[category]/page.tsx`
 
-**Template Structure**:
+**Template Structure (Text-Only Version)**:
 ```tsx
 'use client';
 
@@ -505,6 +661,74 @@ export default function CategoryPage() {
   );
 }
 ```
+
+**Template Structure (With Images Version)**:
+```tsx
+'use client';
+
+import Image from 'next/image';
+import Link from 'next/link';
+import { CATEGORY_DATA } from '../data/wiki-data';
+
+export default function CategoryPage() {
+  return (
+    <div className="max-w-6xl mx-auto">
+      <h1 className="text-3xl md:text-4xl font-bold text-text-primary dark:text-text-primary mb-8 border-b pb-4">
+        Category Name
+      </h1>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {CATEGORY_DATA.map(item => (
+          <Link 
+            href={item.link} 
+            key={item.name}
+            className="group bg-bg-card dark:bg-bg-card rounded-lg shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-1 overflow-hidden"
+          >
+            <div className="relative w-full h-64">
+              <Image 
+                src={item.image}
+                alt={`Image of ${item.name}`}
+                fill
+                style={{ objectFit: "cover", objectPosition: "top" }}
+              />
+            </div>
+            <div className="p-4">
+              <h2 className="text-xl font-bold text-text-primary dark:text-text-primary mt-1 group-hover:text-link dark:group-hover:text-accent-pink transition-colors">
+                {item.name}
+              </h2>
+              <p className="text-sm text-text-muted dark:text-text-light mt-2">
+                {item.description}
+              </p>
+            </div>
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+}
+```
+
+**To Add Images Back to Listing Pages:**
+
+1. **Import Image Component**: Add `import Image from 'next/image';` at the top
+2. **Add Image Container**: Insert the image div before the text content:
+   ```tsx
+   <div className="relative w-full h-64">
+     <Image 
+       src={item.image}
+       alt={`Image of ${item.name}`}
+       fill
+       style={{ objectFit: "cover", objectPosition: "top" }}
+     />
+   </div>
+   ```
+3. **Adjust Text Padding**: Change `p-6` to `p-4` in the text container
+4. **Ensure Data Has Images**: Make sure your data includes `image` property for each item
+
+**Image Positioning Options:**
+- `objectPosition: "top"` - For character portraits (faces at top)
+- `objectPosition: "center"` - For general images
+- `objectPosition: "bottom"` - For images where bottom is important
 
 ### 3. Adding New Category to Homepage
 
@@ -732,6 +956,77 @@ npm run dev
 - [ ] Dark mode works
 - [ ] Colors use centralized system
 
+## 🖼️ Image Management
+
+### Current Image Status
+**As of latest update**: Images have been removed from:
+- ✅ **Listing Pages**: Characters, Gods, Places, Concepts (text-only cards)
+- ✅ **Individual Pages**: All character, god, place, and concept pages (InfoBox only in sidebar)
+
+### Quick Image Restoration Guide
+
+#### For Listing Pages (Characters, Gods, Places, Concepts)
+**Files to modify**: `app/[category]/page.tsx`
+
+1. **Add Image import**: `import Image from 'next/image';`
+2. **Add image container** before text content:
+   ```tsx
+   <div className="relative w-full h-64">
+     <Image 
+       src={item.image}
+       alt={`Image of ${item.name}`}
+       fill
+       style={{ objectFit: "cover", objectPosition: "top" }}
+     />
+   </div>
+   ```
+3. **Adjust padding**: Change `p-6` to `p-4` in text container
+
+#### For Individual Pages
+**File to modify**: `app/components/layout/PageTemplate.tsx`
+
+1. **Add Image import**: `import Image from 'next/image';`
+2. **Add image display** in sidebar before InfoBox:
+   ```tsx
+   {pageData.image && (
+     <div className="relative w-full h-80 rounded-lg overflow-hidden shadow-lg">
+       <Image 
+         src={pageData.image}
+         alt={`Image of ${pageData.name}`}
+         fill
+         style={{ objectFit: "cover", objectPosition: "top" }}
+       />
+     </div>
+   )}
+   ```
+
+### Image File Organization
+```
+public/
+├── characters/          # Character portraits
+│   ├── kuni-garu.png
+│   ├── mata-zyndu.png
+│   └── ...
+├── gods/               # God representations
+│   ├── kiji.png
+│   ├── fithoweo.png
+│   └── ...
+├── places/             # Location images
+│   ├── pan.png
+│   ├── xana.png
+│   └── ...
+└── concepts/           # Concept illustrations
+    ├── garinafin.png
+    ├── cruben.png
+    └── ...
+```
+
+### Image Optimization Tips
+- **Format**: PNG for transparency, JPG for photos
+- **Size**: 400x400px minimum, 800x800px recommended
+- **Compression**: Use tools like TinyPNG or ImageOptim
+- **Alt Text**: Always include descriptive alt text for accessibility
+
 ## 🚨 Common Pitfalls
 
 ### 1. Color System
@@ -753,6 +1048,11 @@ npm run dev
 - Follow the directory structure
 - Use kebab-case for URLs and file names
 - Keep related files together
+
+### 5. Image Management
+- **Don't** forget to add `image` property to data objects
+- **Do** use Next.js Image component for optimization
+- **Remember** to update both listing and individual pages consistently
 
 ## 🎯 Best Practices
 
