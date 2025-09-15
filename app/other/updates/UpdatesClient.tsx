@@ -28,6 +28,7 @@ const updates: Update[] = [
             '🏷️ **Search Titles**: Enhanced search results with proper page titles and descriptions',
             '⚠️ **Spoiler Warnings**: Added appropriate spoiler warnings to protect new readers',
             '📄 **New Pages**: Added "Other Pages" section, comprehensive "Glossary" page, and "Updates" page',
+            '🖼️ **AI Image Removal**: Removed AI-generated images from all listing pages and individual pages for cleaner, text-focused design',
             '🛠️ **Technical Improvements**: Bug fixes, performance optimizations, and code improvements'
         ]
     },
