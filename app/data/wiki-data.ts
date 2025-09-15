@@ -354,7 +354,6 @@ export const MAIN_GODS: readonly WikiPage[] = ALL_GODS;
 export const OTHER_PAGES: readonly WikiPage[] = [
     { title: 'About This Wiki', path: '/other/about-wiki', type: 'Other' },
     { title: 'About the Author', path: '/other/about-author', type: 'Other' },
-    { title: 'Contributing', path: '/other/contributing', type: 'Other' },
     { title: 'All Pages', path: '/other/all-pages', type: 'Other'},
     { title: 'Glossary', path: '/other/glossary', type: 'Other'},
     { title: 'Updates', path: '/other/updates', type: 'Other'},

@@ -164,9 +164,9 @@ export default function UpdatesClient() {
 
             <div className="mt-8 text-center">
                 <p className="text-text-muted dark:text-text-light text-sm">
-                    Want to contribute or report issues? Check out our{' '}
-                    <a href="/other/contributing" className="text-link dark:text-link-dark hover:underline">
-                        Contributing Guide
+                    For bugs, inaccuracies, or suggestions, please email: {' '}
+                    <a href="mailto:darknebulax1@gmail.com" className="text-link dark:text-link-dark hover:underline">
+                        darknebulax1@gmail.com
                     </a>
                 </p>
             </div>

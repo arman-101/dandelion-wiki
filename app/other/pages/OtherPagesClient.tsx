@@ -12,7 +12,7 @@ export default function OtherPagesClient() {
                 </h1>
                 <p className="text-text-secondary dark:text-text-light text-lg leading-relaxed">
                     Additional resources and information about the Dandelion Dynasty Wiki, including about pages, 
-                    contributing guidelines, and other helpful resources for readers and contributors.
+                    glossary, updates, and other helpful resources for readers.
                 </p>
             </div>
 
@@ -59,7 +59,6 @@ function getPageDescription(title: string): string {
     const descriptions: Record<string, string> = {
         'About This Wiki': 'Learn about the purpose, features, and history of the Dandelion Dynasty Wiki.',
         'About the Author': 'Discover information about Ken Liu, the author of the Dandelion Dynasty series.',
-        'Contributing': 'Guidelines and information for contributing to the wiki.',
         'All Pages': 'A comprehensive list of all pages in the wiki.',
         'Glossary': 'A comprehensive glossary of terms, concepts, and vocabulary from the series.',
         'Updates': 'Track the development history and updates to the Dandelion Dynasty Wiki.'

@@ -53,8 +53,7 @@ export default function AboutMePage() {
                         <a href="https://the-dandelion-dynasty.fandom.com/wiki/The_Dandelion_Dynasty_Wiki" target="_blank" rel="noopener noreferrer" className="text-link dark:text-link-dark hover:underline">Fandom Dandelion Dynasty Wiki</a>.
                     </p>
                     <p>
-                        My goal here is to build an evergreen, community-driven wiki—clean, modern, and informative—so fans always have a high-quality home for this world. {" "}
-                        <Link href="/other/contributing" className="text-link dark:text-link-dark hover:underline font-semibold">Feel free to contribute</Link> and help it grow!
+                        My goal here is to build an evergreen, community-driven wiki—clean, modern, and informative—so fans always have a high-quality home for this world.
                     </p>
                 </div>
             </div>
