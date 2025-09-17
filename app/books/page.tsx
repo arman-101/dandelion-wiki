@@ -56,7 +56,7 @@ export default function BooksPage() {
                         </div>
                         <div className="p-4">
                             <p className="text-sm text-text-light dark:text-text-light">{book.series}</p>
-                            <h2 className="text-xl font-bold text-text-primary dark:text-text-primary mt-1 group-hover:text-primary transition-colors">{book.title}</h2>
+                            <h2 className="text-xl font-bold text-text-primary dark:text-text-primary mt-1 group-hover:text-[color:var(--color-accent-pink)] transition-colors">{book.title}</h2>
                             <p className="text-sm text-text-muted dark:text-text-muted mt-2">{book.description}</p>
                         </div>
                     </Link>

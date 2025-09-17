@@ -67,43 +67,43 @@ export default function AboutMePage() {
                     </p>
                 </div>
                 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4">
-                    <div className="bg-bg-card dark:bg-bg-card p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-border-secondary dark:border-border-primary group">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                    <div className="bg-bg-card dark:bg-bg-card p-6 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-border-secondary dark:border-border-primary group hover:border-primary-light dark:hover:border-accent-pink">
                         <div className="text-center">
-                            <h3 className="font-bold text-text-primary dark:text-text-primary mb-1 text-sm">The Grace of Kings</h3>
-                            <p className="text-sm text-text-light dark:text-text-light mb-1">Book 1</p>
-                            <a href="https://amzn.to/4lYVMGM" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-link dark:text-link-dark hover:text-primary-dark dark:hover:text-accent-pink font-medium text-xs group-hover:underline">
-                                Buy on Amazon <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                            <h3 className="font-bold text-text-primary dark:text-text-primary mb-2 text-lg">The Grace of Kings</h3>
+                            <p className="text-base text-text-light dark:text-text-light mb-4 font-medium">Book 1</p>
+                            <a href="https://amzn.to/4lYVMGM" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-full bg-primary hover:bg-primary-dark dark:bg-primary-light dark:hover:bg-accent-pink text-white font-semibold py-3 px-4 rounded-lg transition-all duration-200 group-hover:scale-105">
+                                Buy on Amazon <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                             </a>
                         </div>
                     </div>
                     
-                    <div className="bg-bg-card dark:bg-bg-card p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-border-secondary dark:border-border-primary group">
+                    <div className="bg-bg-card dark:bg-bg-card p-6 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-border-secondary dark:border-border-primary group hover:border-primary-light dark:hover:border-accent-pink">
                         <div className="text-center">
-                            <h3 className="font-bold text-text-primary dark:text-text-primary mb-1 text-sm">The Wall of Storms</h3>
-                            <p className="text-sm text-text-light dark:text-text-light mb-1">Book 2</p>
-                            <a href="https://amzn.to/3IXJlMU" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-link dark:text-link-dark hover:text-primary-dark dark:hover:text-accent-pink font-medium text-xs group-hover:underline">
-                                Buy on Amazon <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                            <h3 className="font-bold text-text-primary dark:text-text-primary mb-2 text-lg">The Wall of Storms</h3>
+                            <p className="text-base text-text-light dark:text-text-light mb-4 font-medium">Book 2</p>
+                            <a href="https://amzn.to/3IXJlMU" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-full bg-primary hover:bg-primary-dark dark:bg-primary-light dark:hover:bg-accent-pink text-white font-semibold py-3 px-4 rounded-lg transition-all duration-200 group-hover:scale-105">
+                                Buy on Amazon <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                             </a>
                         </div>
                     </div>
                     
-                    <div className="bg-bg-card dark:bg-bg-card p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-border-secondary dark:border-border-primary group">
+                    <div className="bg-bg-card dark:bg-bg-card p-6 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-border-secondary dark:border-border-primary group hover:border-primary-light dark:hover:border-accent-pink">
                         <div className="text-center">
-                            <h3 className="font-bold text-text-primary dark:text-text-primary mb-1 text-sm">The Veiled Throne</h3>
-                            <p className="text-sm text-text-light dark:text-text-light mb-1">Book 3</p>
-                            <a href="https://amzn.to/3Hcrgdj" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-link dark:text-link-dark hover:text-primary-dark dark:hover:text-accent-pink font-medium text-xs group-hover:underline">
-                                Buy on Amazon <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                            <h3 className="font-bold text-text-primary dark:text-text-primary mb-2 text-lg">The Veiled Throne</h3>
+                            <p className="text-base text-text-light dark:text-text-light mb-4 font-medium">Book 3</p>
+                            <a href="https://amzn.to/3Hcrgdj" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-full bg-primary hover:bg-primary-dark dark:bg-primary-light dark:hover:bg-accent-pink text-white font-semibold py-3 px-4 rounded-lg transition-all duration-200 group-hover:scale-105">
+                                Buy on Amazon <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                             </a>
                         </div>
                     </div>
                     
-                    <div className="bg-bg-card dark:bg-bg-card p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-border-secondary dark:border-border-primary group">
+                    <div className="bg-bg-card dark:bg-bg-card p-6 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-border-secondary dark:border-border-primary group hover:border-primary-light dark:hover:border-accent-pink">
                         <div className="text-center">
-                            <h3 className="font-bold text-text-primary dark:text-text-primary mb-1 text-sm">Speaking Bones</h3>
-                            <p className="text-sm text-text-light dark:text-text-light mb-1">Book 4</p>
-                            <a href="https://amzn.to/41kbNi5" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-link dark:text-link-dark hover:text-primary-dark dark:hover:text-accent-pink font-medium text-xs group-hover:underline">
-                                Buy on Amazon <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                            <h3 className="font-bold text-text-primary dark:text-text-primary mb-2 text-lg">Speaking Bones</h3>
+                            <p className="text-base text-text-light dark:text-text-light mb-4 font-medium">Book 4</p>
+                            <a href="https://amzn.to/41kbNi5" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-full bg-primary hover:bg-primary-dark dark:bg-primary-light dark:hover:bg-accent-pink text-white font-semibold py-3 px-4 rounded-lg transition-all duration-200 group-hover:scale-105">
+                                Buy on Amazon <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                             </a>
                         </div>
                     </div>

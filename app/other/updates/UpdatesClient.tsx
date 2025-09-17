@@ -13,7 +13,7 @@ interface Update {
 const updates: Update[] = [
     {
         version: '#2',
-        date: 'September 15, 2024',
+        date: 'September 17, 2024',
         title: 'UI/UX Improvements & Content Updates',
         description: 'Significant improvements to search functionality, homepage design, and comprehensive content updates across the wiki.',
         changes: [

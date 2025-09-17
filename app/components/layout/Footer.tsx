@@ -16,6 +16,10 @@ export default function Footer() {
                         About the Author
                     </Link>                    
                     <span className="text-gray-400 dark:text-gray-600">|</span>
+                    <Link href="/other/all-pages" className="text-link dark:text-link-dark hover:underline">
+                        All Pages
+                    </Link>
+                    <span className="text-gray-400 dark:text-gray-600">|</span>
                     <Link href="https://buymeacoffee.com/darknebulax1" target='_blank' className="text-link dark:text-link-dark hover:underline">
                         Cup a coffee?
                     </Link>
