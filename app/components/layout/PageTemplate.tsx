@@ -90,7 +90,7 @@ export default function PageTemplate({
         <div className={className}>
             <div className="flex flex-col lg:flex-row gap-8">
                 {/* Main Content Area */}
-                <div className="w-full lg:w-2/3 order-2 lg:order-1">
+                <div className="w-full lg:w-2/3 order-1 lg:order-1">
                     <h1 className="text-4xl md:text-5xl font-bold text-text-primary dark:text-text-primary mb-4">
                         {pageData.name}
                     </h1>
@@ -104,7 +104,7 @@ export default function PageTemplate({
                 </div>
 
                 {/* Sidebar with InfoBox only */}
-                <div className="w-full lg:w-1/3 order-1 lg:order-2">
+                <div className="w-full lg:w-1/3 order-2 lg:order-2">
                     <div className="sticky top-24">
                         <InfoBox 
                             title={infoBoxTitle}
