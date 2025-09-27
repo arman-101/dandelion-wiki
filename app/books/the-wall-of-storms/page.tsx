@@ -641,7 +641,7 @@ export default function WallOfStormsPage() {
                 <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-2">
                     {chapters.map(chapter => (
                         <li key={chapter.num}>
-                            <a href={`#chapter-${chapter.num}`} className="text-primary dark:text-accent-pink hover:text-[--color-accent-pink] hover:underline transition-colors">
+                            <a href={`#chapter-${chapter.num}`} className="text-primary dark:text-link hover:text-link-hover dark:hover:text-link-dark hover:underline transition-colors">
                                 {chapter.num} - {chapter.title}
                             </a>
                         </li>
@@ -665,7 +665,7 @@ export default function WallOfStormsPage() {
                             <div className="my-4 text-text-secondary dark:text-text-secondary prose dark:prose-invert max-w-none" style={{ whiteSpace: 'pre-line' }}>{formatAsteriskToBold(chapter.summary)}</div>
                             <div className="flex flex-wrap gap-2 pt-4 border-t border-border-secondary dark:border-border-primary">
                                 {chapter.links.map(link => (
-                                    <Link key={link.name} href={link.path} className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-sm px-3 py-1 rounded-full hover:bg-primary hover:text-white transition-colors">
+                                    <Link key={link.name} href={link.path} className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-sm px-3 py-1 rounded-full hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-colors">
                                         {link.name}
                                     </Link>
                                 ))}
