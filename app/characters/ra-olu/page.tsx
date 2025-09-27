@@ -4,7 +4,7 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import RaOluClient from './RaOluClient.tsx';
+import RaOluClient from './RaOluClient';
 
 const characterData: Character = {
     name: "Ra Olu",
@@ -14,7 +14,7 @@ const characterData: Character = {
         aliases: "The Collaborator",
         occupation: "Regent of Dasu, Advisor to the Lyucu",
         placeOfBirth: { text: "Dasu", link: "/places/dasu" },
-        status: "Alive",
+        status: "Deceased",
         gender: "Male",
         affiliation: "Dandelion Court, Lyucu Occupation Government",
         nationality: { text: "Dasu", link: "/places/dasu" },
