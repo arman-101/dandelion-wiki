@@ -7,7 +7,7 @@ export default function OtherPagesClient() {
     return (
         <div className="max-w-6xl mx-auto px-4 py-8">
             <div className="mb-8">
-                <h1 className="text-3xl md:text-4xl font-bold text-text-primary dark:text-text-primary mb-4 border-b pb-4">
+                <h1 className="text-3xl md:text-4xl font-bold text-text-primary dark:text-text-primary mb-8 border-b pb-4">
                     Other Pages
                 </h1>
                 <p className="text-text-secondary dark:text-text-light text-lg leading-relaxed">
@@ -16,7 +16,7 @@ export default function OtherPagesClient() {
                 </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                 {OTHER_PAGES.map(page => (
                     <Link 
                         href={page.path} 
@@ -24,10 +24,10 @@ export default function OtherPagesClient() {
                         className="group bg-bg-card dark:bg-bg-card rounded-lg shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-1 overflow-hidden border border-border-primary dark:border-border-secondary"
                     >
                         <div className="p-6">
-                            <h2 className="text-xl font-bold text-text-primary dark:text-text-primary mt-1 group-hover:text-link dark:group-hover:text-accent-pink transition-colors">
+                            <h2 className="text-xl font-bold text-text-primary dark:text-text-primary mt-1 group-hover:text-accent-pink transition-colors">
                                 {page.title}
                             </h2>
-                            <p className="text-sm text-text-muted dark:text-text-light mt-2">
+                            <p className="text-sm text-text-muted dark:text-text-muted mt-2">
                                 {getPageDescription(page.title)}
                             </p>
                         </div>
@@ -42,10 +42,10 @@ export default function OtherPagesClient() {
                     className="group bg-bg-card dark:bg-bg-card rounded-lg shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-1 overflow-hidden border border-border-primary dark:border-border-secondary"
                 >
                     <div className="p-6">
-                        <h2 className="text-xl font-bold text-text-primary dark:text-text-primary mt-1 group-hover:text-link dark:group-hover:text-accent-pink transition-colors">
+                        <h2 className="text-xl font-bold text-text-primary dark:text-text-primary mt-1 group-hover:text-accent-pink transition-colors">
                             ☕ Buy Me a Coffee
                         </h2>
-                        <p className="text-sm text-text-muted dark:text-text-light mt-2">
+                        <p className="text-sm text-text-muted dark:text-text-muted mt-2">
                             Support the development and maintenance of this wiki with a small donation.
                         </p>
                     </div>

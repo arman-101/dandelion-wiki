@@ -875,41 +875,174 @@ export const CHARACTERS_BY_BOOK_NAV = {
 };
 ```
 
-## 🎨 Styling Guidelines
+## 🎨 Design System & Styling Guidelines
 
-### 1. Use Centralized Colors
+### 🚨 CENTRALIZED DESIGN SYSTEM RULES
+
+**ALL pages must follow these exact patterns to ensure consistency:**
+
+#### 1. 📏 Grid Layouts (STANDARDIZED)
+```tsx
+// ✅ REQUIRED: All listing pages use 4-column grid
+className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+
+// ❌ NEVER use these variations:
+// "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" (3 columns)
+// "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" (missing xl:grid-cols-4)
+```
+
+#### 2. 🖼️ Card Component Standard (REQUIRED)
+```tsx
+// ✅ EXACT template for ALL listing page cards:
+className="group bg-bg-card dark:bg-bg-card rounded-lg shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-1 overflow-hidden border border-border-primary dark:border-border-secondary"
+
+// Content inside cards:
+<div className="p-6">
+  <h2 className="text-xl font-bold text-text-primary dark:text-text-primary group-hover:text-accent-pink transition-colors">{item.name}</h2>
+  <p className="text-sm text-text-muted dark:text-text-muted mt-2">{item.description}</p>
+</div>
+```
+
+#### 3. 📝 Page Headings Standard (REQUIRED)
+```tsx
+// ✅ EXACT template for ALL listing page headings:
+className="text-3xl md:text-4xl font-bold text-text-primary dark:text-text-primary mb-8 border-b pb-4"
+
+// ❌ NEVER use mb-4 - always use mb-8 for consistency
+```
+
+#### 4. 🎯 Hover Effects Standard (REQUIRED)
+```tsx
+// ✅ EXACT hover effect for ALL cards:
+group-hover:text-accent-pink
+
+// ❌ NEVER use these variations:
+// group-hover:text-[color:var(--color-accent-pink)]
+// group-hover:[color:var(--color-accent-pink)]
+// group-hover:text-link dark:group-hover:text-accent-pink
+```
+
+#### 5. 🔲 Border Standard (REQUIRED)
+```tsx
+// ✅ ALL cards must have borders:
+border border-border-primary dark:border-border-secondary
+```
+
+#### 6. 📐 Spacing Standards
+```tsx
+// ✅ Container spacing:
+className="max-w-6xl mx-auto px-4 py-8" // For listing pages
+className="max-w-6xl mx-auto"          // For individual pages
+
+// ✅ Card spacing:
+className="p-6"     // Card content padding
+className="gap-8"   // Grid gap
+className="mb-8"    // Heading bottom margin
+```
+
+### 🎨 Individual Styling Guidelines
+
+#### 1. Use Centralized Colors
 ```tsx
 // ✅ Good
-className="text-text-primary bg-bg-card hover:text-link"
+className="text-text-primary bg-bg-card hover:text-accent-pink"
 
 // ❌ Bad
 className="text-gray-900 bg-white hover:text-teal-600"
 ```
 
-### 2. Responsive Design
+#### 2. Responsive Design
 ```tsx
 // Always include responsive classes
 className="text-sm md:text-base lg:text-lg"
-className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
 ```
 
-### 3. Dark Mode Support
+#### 3. Dark Mode Support
 ```tsx
-// Include dark mode variants
+// Include dark mode variants for ALL elements
 className="bg-bg-card dark:bg-bg-card text-text-primary dark:text-text-primary"
 ```
 
-### 4. Hover Effects
+#### 4. Smooth Transitions
 ```tsx
-// Smooth transitions
-className="transition-all duration-200 hover:transform hover:scale-105"
+// All interactive elements need transitions
+className="transition-all duration-200 hover:transform hover:-translate-y-1"
+className="transition-colors" // For text color changes
 ```
 
-### 5. Consistent Spacing
+### 🚀 Quick Reference Templates
+
+#### Listing Page Template
 ```tsx
-// Use consistent spacing patterns
-className="p-6 mb-8 gap-6" // Multiples of 2/4/6/8
+'use client';
+
+import Link from 'next/link';
+import { CATEGORY_DATA } from '../data/wiki-data';
+
+export default function CategoryPage() {
+    return (
+        <div className="max-w-6xl mx-auto px-4 py-8">
+            <h1 className="text-3xl md:text-4xl font-bold text-text-primary dark:text-text-primary mb-8 border-b pb-4">
+                Category Name
+            </h1>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                {CATEGORY_DATA.map((item) => (
+                    <Link 
+                        href={item.link} 
+                        key={item.name}
+                        className="group bg-bg-card dark:bg-bg-card rounded-lg shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-1 overflow-hidden border border-border-primary dark:border-border-secondary"
+                    >
+                        <div className="p-6">
+                            <h2 className="text-xl font-bold text-text-primary dark:text-text-primary group-hover:text-accent-pink transition-colors">
+                                {item.name}
+                            </h2>
+                            <p className="text-sm text-text-muted dark:text-text-muted mt-2">
+                                {item.description}
+                            </p>
+                        </div>
+                    </Link>
+                ))}
+            </div>
+        </div>
+    );
+}
 ```
+
+#### Card Component Template (for custom components)
+```tsx
+<Link 
+    href={item.link} 
+    key={item.name}
+    className="group bg-bg-card dark:bg-bg-card rounded-lg shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-1 overflow-hidden border border-border-primary dark:border-border-secondary"
+>
+    <div className="p-6">
+        <h2 className="text-xl font-bold text-text-primary dark:text-text-primary group-hover:text-accent-pink transition-colors">
+            {item.name}
+        </h2>
+        <p className="text-sm text-text-muted dark:text-text-muted mt-2">
+            {item.description}
+        </p>
+    </div>
+</Link>
+```
+
+### ⚠️ Design Enforcement Checklist
+
+Before any page goes live, verify:
+
+- [ ] **Grid Layout**: Uses `xl:grid-cols-4` for 4-column layout
+- [ ] **Borders**: All cards have `border border-border-primary dark:border-border-secondary`
+- [ ] **Hover Effect**: Uses `group-hover:text-accent-pink` (not variations)
+- [ ] **Heading**: Uses `mb-8` spacing (not `mb-4`)
+- [ ] **Card Padding**: Uses `p-6` for content
+- [ ] **Gap**: Uses `gap-8` for grid spacing
+- [ ] **Container**: Uses `max-w-6xl mx-auto px-4 py-8` for listing pages
+- [ ] **Shadows**: Uses `shadow-lg hover:shadow-2xl` for cards
+- [ ] **Transform**: Uses `hover:-translate-y-1` for lift effect
+- [ ] **Colors**: Only uses centralized color classes
+- [ ] **Dark Mode**: Every class has dark mode variant
 
 ## 🔄 Development Workflow
 
@@ -955,6 +1088,11 @@ npm run dev
 - [ ] Responsive design works
 - [ ] Dark mode works
 - [ ] Colors use centralized system
+- [ ] **Design System Compliance:**
+  - [ ] Grid layout is 4 columns (`xl:grid-cols-4`)
+  - [ ] Cards have borders and correct hover effects
+  - [ ] Headings use `mb-8` spacing
+  - [ ] All elements follow centralized design patterns
 
 ## 🖼️ Image Management
 
@@ -1123,3 +1261,77 @@ When working with this codebase:
 - Skip the navigation setup
 
 This wiki is a labor of love for the Dandelion Dynasty series. Maintain the high quality and attention to detail that makes it special! ✨
+
+---
+
+## 📏 DESIGN SYSTEM SUMMARY
+
+### ✅ STANDARDIZED ELEMENTS
+
+All pages now follow these exact specifications:
+
+#### 🎯 Grid Layout
+- **ALL listing pages**: `grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8`
+- **4 columns on extra-large screens** (your preference implemented)
+- **Consistent gap-8** across all grids
+
+#### 🎨 Card Design
+- **ALL cards have borders**: `border border-border-primary dark:border-border-secondary`
+- **Consistent shadows**: `shadow-lg hover:shadow-2xl`
+- **Uniform hover lift**: `hover:-translate-y-1`
+- **Standard padding**: `p-6` for card content
+
+#### 🔗 Hover Effects
+- **ALL cards**: `group-hover:text-accent-pink` (standardized pink hover)
+- **Smooth transitions**: `transition-colors` for text changes
+- **NO MORE inconsistent hover patterns**
+
+#### 📐 Heading Spacing
+- **ALL main headings**: `mb-8` distance from content (32px)
+- **NO MORE `mb-4`** variations
+- **Consistent border**: `border-b pb-4`
+
+#### 🌈 Color Usage
+- **ALL elements use centralized colors**
+- **NO hardcoded colors** like `text-gray-800`
+- **Proper dark mode variants** for every element
+- **Centralized hover colors**: `text-accent-pink`
+
+#### 📱 Container Standards
+- **Listing pages**: `max-w-6xl mx-auto px-4 py-8`
+- **Individual pages**: `max-w-6xl mx-auto`
+- **Consistent responsive behavior**
+
+### 🎛️ PAGES STANDARDIZED
+
+✅ **Characters Page** - Grid, borders, hover, spacing
+✅ **Gods Page** - Grid, borders, hover, spacing
+✅ **Places Page** - Grid, borders, hover, spacing
+✅ **Concepts Page** - Grid, borders, hover, spacing
+✅ **Books Page** - Grid, borders, hover, spacing
+✅ **Other Pages** - Grid, borders, hover, spacing
+✅ **Updates Page** - Heading spacing
+✅ **Glossary Page** - Heading spacing
+✅ **PageTemplate Component** - Centralized colors
+
+### 🚫 DESIGN VIOLATIONS ELIMINATED
+
+❌ ~~3-column grids~~ → ✅ 4-column grids
+❌ ~~Missing borders~~ → ✅ Consistent borders
+❌ ~~Inconsistent hover effects~~ → ✅ Standardized pink hover
+❌ ~~Variable heading spacing~~ → ✅ Uniform `mb-8`
+❌ ~~Hardcoded colors~~ → ✅ Centralized color system
+❌ ~~Different gap sizes~~ → ✅ Standard `gap-8`
+
+### 📋 MAINTENANCE CHECKLIST
+
+For any new pages, ensure:
+- [ ] Uses the standardized grid layout
+- [ ] All cards have proper borders
+- [ ] Hover effects use `group-hover:text-accent-pink`
+- [ ] Headings use `mb-8` spacing
+- [ ] Only centralized color classes are used
+- [ ] Dark mode variants are included
+- [ ] Follows the exact templates in this guide
+
+**Result: Perfect design consistency across the entire wiki! 🎉**

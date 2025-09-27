@@ -33,9 +33,9 @@ const PlaceSection: FC<{ title: string; places: Place[]; isFirst?: boolean }> = 
         <h3 className={`text-3xl md:text-4xl font-bold text-text-primary dark:text-text-primary border-b pb-4 ${isFirst ? 'mt-0 mb-8' : 'my-8'}`}>{title}</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {places.map((place: Place) => (
-                <Link href={place.link} key={place.name} className="group bg-bg-card dark:bg-bg-card rounded-lg shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-1 overflow-hidden">
+                <Link href={place.link} key={place.name} className="group bg-bg-card dark:bg-bg-card rounded-lg shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-1 overflow-hidden border border-border-primary dark:border-border-secondary">
                     <div className="p-6">
-                        <h3 className="text-xl font-bold text-text-primary dark:text-text-primary group-hover:[color:var(--color-accent-pink)] transition-colors">{place.name}</h3>
+                        <h3 className="text-xl font-bold text-text-primary dark:text-text-primary group-hover:text-accent-pink transition-colors">{place.name}</h3>
                         <p className="text-sm text-text-muted dark:text-text-muted mt-2">{place.description}</p>
                     </div>
                 </Link>

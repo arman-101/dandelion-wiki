@@ -43,7 +43,7 @@ export default function PageTemplate({
     const renderSection = (section: PageSection) => {
         return (
             <section key={section.id} id={section.id}>
-                <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-200 border-b-2 border-primary-light pb-2 mb-4">
+                <h2 className="text-2xl font-bold text-text-primary dark:text-text-primary border-b-2 border-primary-light pb-2 mb-4">
                     {section.title}
                 </h2>
                 
@@ -66,7 +66,7 @@ export default function PageTemplate({
                                 
                                 return (
                                     <div key={index}>
-                                        <h3 className={`font-semibold text-gray-800 dark:text-gray-200 ${
+                                        <h3 className={`font-semibold text-text-primary dark:text-text-primary ${
                                             isBookTitle 
                                                 ? 'text-2xl mb-4' 
                                                 : 'text-xl'
@@ -94,7 +94,7 @@ export default function PageTemplate({
                     <h1 className="text-4xl md:text-5xl font-bold text-text-primary dark:text-text-primary mb-4">
                         {pageData.name}
                     </h1>
-                    <p className="text-lg italic text-text-muted dark:text-text-light mb-8 border-l-4 border-gray-300 dark:border-border-secondary pl-4">
+                    <p className="text-lg italic text-text-muted dark:text-text-light mb-8 border-l-4 border-border-primary dark:border-border-secondary pl-4">
                         {formatLinksInText(pageData.introduction)}
                     </p>
 

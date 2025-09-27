@@ -16,9 +16,9 @@ export default function ConceptsPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                 {/* Use the imported ALL_CONCEPTS_DATA list to render the cards */}
                 {ALL_CONCEPTS_DATA.map((concept) => (
-                    <Link href={concept.link} key={concept.name} className="group bg-bg-card dark:bg-bg-card rounded-lg shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-1 overflow-hidden">
+                    <Link href={concept.link} key={concept.name} className="group bg-bg-card dark:bg-bg-card rounded-lg shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-1 overflow-hidden border border-border-primary dark:border-border-secondary">
                         <div className="p-6">
-                            <h2 className="text-xl font-bold text-text-primary dark:text-text-primary group-hover:text-[color:var(--color-accent-pink)] transition-colors">{concept.name}</h2>
+                            <h2 className="text-xl font-bold text-text-primary dark:text-text-primary group-hover:text-accent-pink transition-colors">{concept.name}</h2>
                             <p className="text-sm text-text-muted dark:text-text-muted mt-2">{concept.description}</p>
                         </div>
                     </Link>
