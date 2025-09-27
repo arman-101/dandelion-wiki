@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { calculateWikiStats, getStatsByCategory, getDevelopmentMetrics } from '../../utils/statsUtils';
 
 interface Update {
     version: string;
@@ -57,6 +58,11 @@ const updates: Update[] = [
 
 export default function UpdatesClient() {
     const [expandedUpdate, setExpandedUpdate] = useState<string | null>(updates[0].version);
+    
+    // Get dynamic stats
+    const wikiStats = calculateWikiStats();
+    const categoryStats = getStatsByCategory();
+    const devMetrics = getDevelopmentMetrics();
 
     const toggleExpanded = (version: string) => {
         setExpandedUpdate(expandedUpdate === version ? null : version);
@@ -144,22 +150,79 @@ export default function UpdatesClient() {
             </div>
 
             <div className="mt-12 bg-slate-50 dark:bg-gray-800/50 p-6 rounded-lg">
-                <h3 className="text-lg font-semibold text-text-primary dark:text-text-primary mb-3">
+                <h3 className="text-lg font-semibold text-text-primary dark:text-text-primary mb-4">
                     📈 Development Statistics
                 </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                
+                {/* Main Stats */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm mb-6">
+                    <div className="text-center">
+                        <a 
+                            href="/other/all-pages" 
+                            className="block hover:bg-bg-secondary dark:hover:bg-bg-tertiary rounded-lg p-4 transition-colors group"
+                        >
+                            <div className="text-2xl font-bold text-primary dark:text-primary-light group-hover:text-link dark:group-hover:text-link-dark transition-colors">
+                                {wikiStats.totalPages}
+                            </div>
+                            <div className="text-text-muted dark:text-text-light">Total Wiki Pages</div>
+                        </a>
+                    </div>
                     <div className="text-center">
                         <div className="text-2xl font-bold text-primary dark:text-primary-light">
                             {updates.length}
                         </div>
                         <div className="text-text-muted dark:text-text-light">Updates Released</div>
                     </div>
-                    <div className="text-center">
-                        <div className="text-2xl font-bold text-primary dark:text-primary-light">
-                            150+
-                        </div>
-                        <div className="text-text-muted dark:text-text-light">Total Wiki Pages</div>
+                </div>
+
+                {/* Category Breakdown */}
+                <div className="mb-4">
+                    <h4 className="text-md font-semibold text-text-primary dark:text-text-primary mb-4">
+                        Content Breakdown
+                    </h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        {categoryStats.map((category, index) => {
+                            // Define the path for each category
+                            const getCategoryPath = (label: string) => {
+                                switch (label) {
+                                    case 'Characters': return '/characters';
+                                    case 'Places': return '/places';
+                                    case 'Gods': return '/gods';
+                                    case 'Concepts': return '/concepts';
+                                    case 'Books': return '/books';
+                                    case 'Other Pages': return '/other/pages';
+                                    default: return '#';
+                                }
+                            };
+
+                            return (
+                                <a 
+                                    key={index} 
+                                    href={getCategoryPath(category.label)}
+                                    className="block bg-white dark:bg-gray-700 rounded-lg p-4 shadow-sm border border-border-secondary dark:border-border-primary hover:shadow-md hover:border-primary dark:hover:border-primary-light transition-all group"
+                                >
+                                    <div className="flex items-center justify-between">
+                                        <div className="flex items-center space-x-3">
+                                            <div className={`w-3 h-3 rounded-full ${category.color.replace('text-', 'bg-')}`}></div>
+                                            <span className="text-sm font-medium text-text-secondary dark:text-text-light group-hover:text-link dark:group-hover:text-link-dark transition-colors">
+                                                {category.label}
+                                            </span>
+                                        </div>
+                                        <span className={`text-lg font-bold ${category.color} group-hover:text-link dark:group-hover:text-link-dark transition-colors`}>
+                                            {category.count}
+                                        </span>
+                                    </div>
+                                </a>
+                            );
+                        })}
                     </div>
+                </div>
+
+                {/* Last Updated */}
+                <div className="text-center pt-4 border-t border-border-secondary dark:border-border-primary">
+                    <p className="text-xs text-text-muted dark:text-text-light">
+                        Last updated: {devMetrics.lastUpdated}
+                    </p>
                 </div>
             </div>
 
