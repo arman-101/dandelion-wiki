@@ -57,7 +57,7 @@ const updates: Update[] = [
 
 
 export default function UpdatesClient() {
-    const [expandedUpdate, setExpandedUpdate] = useState<string | null>(updates[0].version);
+    const [expandedUpdates, setExpandedUpdates] = useState<string[]>([]);
     
     // Get dynamic stats
     const wikiStats = calculateWikiStats();
@@ -65,7 +65,11 @@ export default function UpdatesClient() {
     const devMetrics = getDevelopmentMetrics();
 
     const toggleExpanded = (version: string) => {
-        setExpandedUpdate(expandedUpdate === version ? null : version);
+        setExpandedUpdates(prev => 
+            prev.includes(version) 
+                ? prev.filter(v => v !== version)
+                : [...prev, version]
+        );
     };
 
     return (
@@ -111,7 +115,7 @@ export default function UpdatesClient() {
                                 <div className="ml-4 flex-shrink-0">
                                     <svg 
                                         className={`w-6 h-6 text-text-muted dark:text-text-light transition-transform ${
-                                            expandedUpdate === update.version ? 'rotate-180' : ''
+                                            expandedUpdates.includes(update.version) ? 'rotate-180' : ''
                                         }`}
                                         fill="none" 
                                         stroke="currentColor" 
@@ -123,7 +127,7 @@ export default function UpdatesClient() {
                             </div>
                         </div>
                         
-                        {expandedUpdate === update.version && (
+                        {expandedUpdates.includes(update.version) && (
                             <div className="px-6 pb-6 border-t border-border-secondary dark:border-border-primary">
                                 <div className="pt-4">
                                     <h3 className="text-lg font-semibold text-text-primary dark:text-text-primary mb-4">
