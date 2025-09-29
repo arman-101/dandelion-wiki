@@ -156,6 +156,7 @@ General rules:
 - Please include source notes or book chapter references in your PR description for factual additions.
 - Artwork and images: if you contribute original art, include how you want to be credited; AI-generated images will be marked accordingly.
 - **Icons**: Tree icon by [Flaticon](https://www.flaticon.com/free-icon/tree_1067751) - used under their free license.
+- **Pin Icon**: Pin icon by [Flaticon](https://www.flaticon.com/free-icon/pin_149059) - used for places images under their free license.
 
 ### Support the Project
 
