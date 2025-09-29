@@ -8,7 +8,7 @@ import TanAdüClient from './TanAdüClient';
 // --- DATA FOR TAN ADÜ ---
 const placeData: Place = {
     name: "Tan Adü",
-    image: "/places/tan-adu.png",
+    image: "/places/tan-adu.jpeg",
     introduction: "Tan Adü is a remote southern island, considered 'savage' by the rest of Dara. It is the home of the legendary cruben-riders, whose alliance with Kuni Garu proves to be a decisive factor in the Dandelion Rebellion.",
     infoBox: {
         type: "Island",

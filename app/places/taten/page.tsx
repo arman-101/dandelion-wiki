@@ -8,7 +8,7 @@ import TatenClient from './TatenClient';
 // --- DATA FOR TATEN ---
 const placeData: Place = {
     name: "Taten",
-    image: "/places/taten.png",
+    image: "/places/taten.jpeg",
     introduction: "Taten is the roaming tent-city that serves as the capital for the Pékyu of the Lyucu people in their homeland of Ukyu-Gondé. It is the center of Lyucu military and political power.",
     infoBox: {
         type: "Nomadic Capital City",

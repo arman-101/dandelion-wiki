@@ -8,7 +8,7 @@ import RoroHillsClient from './RoroHillsClient';
 // --- DATA FOR RORO HILLS ---
 const placeData: Place = {
     name: "Roro Hills",
-    image: "/places/roro-hills.png",
+    image: "/places/roro-hills.jpeg",
     introduction: "The Roro Hills are a strategically important region that became a significant battleground in the final war to liberate Dara from Lyucu occupation.",
     infoBox: {
         type: "Hill Range",

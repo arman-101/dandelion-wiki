@@ -8,7 +8,7 @@ import KiriValleyClient from './KiriValleyClient';
 // --- DATA FOR KIRI VALLEY ---
 const placeData: Place = {
     name: "Kiri Valley",
-    image: "/places/kiri-valley.png",
+    image: "/places/kiri-valley.jpeg",
     introduction: "Kiri Valley is a secret, hidden valley within the World's Edge Mountains of Ukyu-Gondé. It served as the main hidden base for the Agon rebellion, a place of community and preparation, before its tragic destruction.",
     infoBox: {
         type: "Hidden Valley / Rebel Base",

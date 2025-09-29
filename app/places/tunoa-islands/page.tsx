@@ -8,7 +8,7 @@ import TunoaIslandsClient from './TunoaIslandsClient';
 // --- DATA FOR TUNOA ISLANDS ---
 const placeData: Place = {
     name: "Tunoa Islands",
-    image: "/places/tunoa-islands.png",
+    image: "/places/tunoa-islands.jpeg",
     introduction: "The Tunoa Islands are the ancestral island fiefdom of the noble Zyndu clan. It is the place where Mata Zyndu was raised in exile, a constant reminder of his family's lost glory and his quest for vengeance.",
     infoBox: {
         type: "Archipelago Fiefdom",

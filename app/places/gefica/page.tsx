@@ -8,7 +8,7 @@ import GéficaClient from './GéficaClient';
 // --- DATA FOR GÉFICA ---
 const placeData: Place = {
     name: "Géfica",
-    image: "/places/gefica.png",
+    image: "/places/gefica.jpeg",
     introduction: "Géfica is a rich and strategically vital territory in Dara. It is most famous for being the subject of the 'Princeps's Promise,' a declaration that became a major catalyst for the civil war between Kuni Garu and Mata Zyndu.",
     infoBox: {
         Type: "Territory / Region",

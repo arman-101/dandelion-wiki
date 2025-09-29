@@ -8,7 +8,7 @@ import UkyuGondeClient from './UkyuGondeClient';
 // --- DATA FOR UKYU & GONDÉ ---
 const placeData: Place = {
     name: "Ukyu & Gondé",
-    image: "/places/ukyu-gonde.png",
+    image: "/places/ukyu-gonde.jpg",
     introduction: "Ukyu & Gondé is the vast, harsh continent across the eastern sea from Dara, separated by the impassable Wall of Storms. It is the homeland of the nomadic, garinafin-riding Lyucu people and their ancient rivals, the Agon.",
     infoBox: {
         type: "Continent",

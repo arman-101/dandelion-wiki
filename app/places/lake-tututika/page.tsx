@@ -8,7 +8,7 @@ import LakeTututikaClient from './LakeTututikaClient';
 // --- DATA FOR LAKE TUTUTIKA ---
 const placeData: Place = {
     name: "Lake Tututika",
-    image: "/places/lake-tututika.png",
+    image: "/places/lake-tututika.jpeg",
     introduction: "Lake Tututika is a large, sacred lake named after the goddess of beauty and fresh water. Emperor Mapidéré chose its shores as the location for Pan, the 'Immaculate City,' his new imperial capital.",
     infoBox: {
         type: "Sacred Lake",

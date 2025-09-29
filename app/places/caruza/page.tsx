@@ -8,7 +8,7 @@ import CaruzaClient from './ÇaruzaClient';
 // --- DATA FOR ÇARUZA ---
 const placeData: Place = {
     name: "Çaruza",
-    image: "/places/caruza.png",
+    image: "/places/caruza.jpeg",
     introduction: "Çaruza is the ancient capital of the kingdom of Cocru. During the Dandelion Rebellion, it was reclaimed and served as the political headquarters for the Grand Council of the allied Tiro states.",
     infoBox: {
         type: "Royal Capital City",

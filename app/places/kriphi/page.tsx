@@ -8,7 +8,7 @@ import KriphiClient from './KriphiClient';
 // --- DATA FOR KRIPHI ---
 const placeData: Place = {
     name: "Kriphi",
-    image: "/places/kriphi.png",
+    image: "/places/kriphi.jpeg",
     introduction: "Kriphi is the capital city of the island of Rui, the heart of the old Xana homeland. During the Lyucu occupation, it becomes the capital of 'Unredeemed Dara' and the seat of power for the Lyucu rulers.",
     infoBox: {
         type: "Capital City",

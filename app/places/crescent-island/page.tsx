@@ -8,7 +8,7 @@ import CrescentIslandClient from './CrescentIslandClient';
 // --- DATA FOR CRESCENT ISLAND ---
 const placeData: Place = {
     name: "Crescent Island",
-    image: "/places/crescent-island.png",
+    image: "/places/crescent-island.jpeg",
     introduction: "Crescent Island is a remote, isolated island that serves as a key location in the education of Zomi Kidosu. It later becomes the site of a pivotal and bloody battle during the war against the Lyucu.",
     infoBox: {
         type: "Island",

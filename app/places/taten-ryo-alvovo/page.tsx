@@ -7,7 +7,7 @@ import TatenRyoAlvovoClient from './TatenRyoAlvovoClient';
 
 const placeData: Place = {
     name: "Taten-ryo-alvovo",
-    image: "/places/taten-ryo-alvovo.png",
+    image: "/places/taten-ryo-alvovo.jpeg",
     introduction: "Taten-ryo-alvovo, the 'City of Ghosts,' is an ancient and sacred Agon ruin. It serves as a refuge for the child survivors of the Kiri Valley massacre and becomes the site where the Agon and Lyucu people rediscover their true, shared history.",
     infoBox: {
         type: "Ancient Ruins / Settlement",

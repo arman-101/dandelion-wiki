@@ -8,7 +8,7 @@ import DasuClient from './DasuClient';
 // --- DATA FOR DASU ---
 const placeData: Place = {
     name: "Dasu",
-    image: "/places/dasu.png",
+    image: "/places/dasu.jpeg",
     introduction: "Dasu is a small, remote, and seemingly insignificant island that becomes the crucible where the future Dandelion Dynasty is forged. Initially a place of exile for Kuni Garu, it is transformed into a beacon of innovation, meritocracy, and hope.",
     infoBox: {
         type: "Island Kingdom",

@@ -8,7 +8,7 @@ import GinpenClient from './GinpenClient';
 // --- DATA FOR GINPEN ---
 const placeData: Place = {
     name: "Ginpen",
-    image: "/places/ginpen.png",
+    image: "/places/ginpen.jpeg",
     introduction: "Ginpen is the capital city of the learned kingdom of Haan. It is the birthplace of Luan Zya and later becomes the stage for a grassroots cultural and technological movement led by Princess Fara and the Blossom Gang.",
     infoBox: {
         type: "Capital City",

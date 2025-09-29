@@ -8,7 +8,7 @@ import TiroCozoClient from './TiroCozoClient';
 // --- DATA FOR TIRO COZO ---
 const placeData: Place = {
     name: "Tiro Cozo",
-    image: "/places/tiro-cozo.png",
+    image: "/places/tiro-cozo.jpeg",
     introduction: "Tiro Cozo is the secret military base where Emperor Phyro established his clandestine garinafin breeding and training program. It was the birthplace of Dara's new aerial army, created in defiance of Empress Jia's regency.",
     infoBox: {
         Type: "Secret Military Base",

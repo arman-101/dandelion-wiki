@@ -6,7 +6,7 @@ import PanClient from './PanClient';
 // --- DATA FOR PAN ---
 const placeData: Place = {
     name: "Pan",
-    image: "/places/pan.png",
+    image: "/places/pan.jpeg",
     introduction: "Pan is the grand Imperial Capital of Dara, first established by the Xana Empire and later serving as the seat of power for the Dandelion Dynasty. It is the political, cultural, and administrative heart of the islands, and a frequent focal point for major historical events.",
     infoBox: {
         type: "Imperial Capital City",

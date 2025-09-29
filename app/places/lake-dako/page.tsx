@@ -8,7 +8,7 @@ import LakeDakoClient from './LakeDakoClient';
 // --- DATA FOR LAKE DAKO ---
 const placeData: Place = {
     name: "Lake Dako",
-    image: "/places/lake-dako.png",
+    image: "/places/lake-dako.jpeg",
     introduction: "Lake Dako is a mystical lake located within the crater of the volcano Mount Kiji on the island of Rui. It is the sole and irreplaceable source of the magical lift gas that enables Dara's airships to fly, making it one of the most strategically vital locations in the world.",
     infoBox: {
         type: "Crater Lake",

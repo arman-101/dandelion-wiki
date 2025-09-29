@@ -8,7 +8,7 @@ import RuiClient from './RuiClient';
 // --- DATA FOR RUI ---
 const placeData: Place = {
     name: "Rui",
-    image: "/places/rui.png",
+    image: "/places/rui.jpeg",
     introduction: "Rui is a large island that is part of the Xana nation and the symbolic heart of the old Xana homeland. It is critically important due to Mount Kiji, the sole source of the mystical lift gas that powers Dara's airships.",
     infoBox: {
         type: "Island",

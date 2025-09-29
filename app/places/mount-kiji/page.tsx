@@ -8,7 +8,7 @@ import MountKijiClient from './MountKijiClient';
 // --- DATA FOR MOUNT KIJI ---
 const placeData: Place = {
     name: "Mount Kiji",
-    image: "/places/mount-kiji.png",
+    image: "/places/mount-kiji.jpeg",
     introduction: "Mount Kiji is a massive, snow-peaked volcano on the island of Rui. It is the most strategically important location in Dara, as its crater lake, Lake Dako, is the sole source of the mystical lift gas that allows airships to fly.",
     infoBox: {
         type: "Volcano",

@@ -8,7 +8,7 @@ import LastBiteClient from './LastBiteClient';
 // --- DATA FOR LAST BITE ---
 const placeData: Place = {
     name: "Last Bite",
-    image: "/places/last-bite.png",
+    image: "/places/last-bite.jpeg",
     introduction: "Last Bite is a secret Imperial research facility that becomes the site of a shocking revelation, fundamentally altering the lives of several key characters and the political landscape of Dara.",
     infoBox: {
         Type: "Secret Research Facility",

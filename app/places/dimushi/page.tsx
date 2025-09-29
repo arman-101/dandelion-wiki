@@ -8,7 +8,7 @@ import DimushiClient from './DimushiClient';
 // --- DATA FOR DIMUSHI ---
 const placeData: Place = {
     name: "Dimushi",
-    image: "/places/dimushi.png",
+    image: "/places/dimushi.jpeg",
     introduction: "Dimushi is a bustling, rough-and-tumble port city. It is the hometown of the legendary Marshal Gin Mazoti and later becomes a haven for fugitives and a center for the resistance.",
     infoBox: {
         type: "Port City",

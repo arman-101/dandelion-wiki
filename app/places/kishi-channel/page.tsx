@@ -8,7 +8,7 @@ import KishiChannelClient from './KishiChannelClient';
 // --- DATA FOR KISHI CHANNEL ---
 const placeData: Place = {
     name: "Kishi Channel",
-    image: "/places/kishi-channel.png",
+    image: "/places/kishi-channel.jpeg",
     introduction: "The Kishi Channel is a notoriously treacherous strait separating the island of Wolf's Paw from the mainland. It is infamous for a massive, permanent whirlpool that makes naval passage nearly impossible, and was the site of one of the most horrific events of the Dandelion Rebellion.",
     infoBox: {
         type: "Strait / Whirlpool",

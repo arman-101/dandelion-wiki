@@ -8,7 +8,7 @@ import ZudiClient from './ZudiClient';
 // --- DATA FOR ZUDI ---
 const placeData: Place = {
     name: "Zudi",
-    image: "/places/zudi.png",
+    image: "/places/zudi.jpeg",
     introduction: "Zudi is a major city in the state of Cocru and the hometown of many of the Dandelion Dynasty's key figures, including Emperor Ragin (Kuni Garu), Empress Jia Matiza, and Prime Minister Cogo Yelu. It serves as a microcosm of the broader shifts in power and ideology throughout the saga.",
     infoBox: {
         type: "Major City",

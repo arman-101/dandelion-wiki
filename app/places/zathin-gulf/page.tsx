@@ -8,7 +8,7 @@ import ZathinGulfClient from './ZathinGulfClient';
 // --- DATA FOR ZATHIN GULF ---
 const placeData: Place = {
     name: "Zathin Gulf",
-    image: "/places/zathin-gulf.png",
+    image: "/places/zathin-gulf.jpeg",
     introduction: "The Zathin Gulf is a large gulf on the coast of the Big Island. It was the site of the massive, climactic naval and aerial battle between the invading Lyucu forces and the full military might of the Dandelion Dynasty, a battle that claimed the life of Emperor Ragin.",
     infoBox: {
         type: "Gulf / Bay",

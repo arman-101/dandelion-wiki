@@ -8,7 +8,7 @@ import ThocoPassClient from './ThocoPassClient';
 // --- DATA FOR THOCO PASS ---
 const placeData: Place = {
     name: "Thoco Pass",
-    image: "/places/thoco-pass.png",
+    image: "/places/thoco-pass.jpeg",
     introduction: "Thoco Pass is a strategically vital mountain pass that was the site of Marshal Dazu Zyndu's greatest victories and his ultimate, tragic defeat. It stands as a symbol of both Zyndu brilliance and the betrayal that led to their downfall.",
     infoBox: {
         type: "Mountain Pass",

@@ -8,7 +8,7 @@ import SeaofTearsClient from './SeaofTearsClient';
 // --- DATA FOR SEA OF TEARS ---
 const placeData: Place = {
     name: "Sea of Tears",
-    image: "/places/sea-of-tears.png",
+    image: "/places/sea-of-tears.jpeg",
     introduction: "The Sea of Tears is a large inland sea in Ukyu-Gondé, surrounded by vast salt flats. It is a place of ancient mystery and a grueling trial for the child survivors of the Kiri Valley massacre.",
     infoBox: {
         type: "Inland Sea / Salt Flats",

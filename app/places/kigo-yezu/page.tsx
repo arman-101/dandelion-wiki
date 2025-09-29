@@ -8,7 +8,7 @@ import KigoYezuClient from './KigoYezuClient';
 // --- DATA FOR KIGO YEZU ---
 const placeData: Place = {
     name: "Kigo Yezu",
-    image: "/places/kigo-yezu.png",
+    image: "/places/kigo-yezu.jpeg",
     introduction: "Kigo Yezu was a Dara village in occupied Rui that became a tragic symbol of the brutality and fanaticism of the Lyucu purges led by the hardliner Cutanrovo Aga.",
     infoBox: {
         Type: "Village",

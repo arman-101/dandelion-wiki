@@ -8,7 +8,7 @@ import WolfsPawClient from './WolfsPawClient';
 // --- DATA FOR WOLF'S PAW ---
 const placeData: Place = {
     name: "Wolf's Paw",
-    image: "/places/wolfs-paw.png",
+    image: "/places/wolfs-paw.jpeg",
     introduction: "Wolf's Paw is a southern island, part of the state of Gan, separated from the mainland by the treacherous Kishi Channel. It was the site of one of the largest battles of the Dandelion Rebellion and one of Mata Zyndu's most horrific atrocities.",
     infoBox: {
         type: "Island",

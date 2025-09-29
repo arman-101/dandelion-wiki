@@ -8,7 +8,7 @@ import SliyusaKiClient from './SliyusaKiClient';
 // --- DATA FOR SLIYUSA KI ---
 const placeData: Place = {
     name: "Sliyusa Ki",
-    image: "/places/sliyusa-ki.png",
+    image: "/places/sliyusa-ki.jpeg",
     introduction: "Sliyusa Ki is a major oasis in the vast Lurodia Tanta desert. It is the home of Takval Aragoz's tribe and becomes the first base of operations and political center for the Agon resistance against the Lyucu.",
     infoBox: {
         type: "Oasis Settlement",

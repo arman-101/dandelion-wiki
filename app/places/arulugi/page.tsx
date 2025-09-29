@@ -8,7 +8,7 @@ import ArulugiClient from './ArulugiClient';
 // --- DATA FOR ARULUGI ---
 const placeData: Place = {
     name: "Arulugi",
-    image: "/places/arulugi.png",
+    image: "/places/arulugi.jpeg",
     introduction: "Arulugi is the capital island of the state of Amu. It is the site of a key battle during the Dandelion Rebellion and, years later, the center of a new rebellion against the Dandelion Dynasty itself.",
     infoBox: {
         type: "Capital Island",

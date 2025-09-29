@@ -8,7 +8,7 @@ import NokidaClient from './NokidaClient';
 // --- DATA FOR NOKIDA ---
 const placeData: Place = {
     name: "Nokida",
-    image: "/places/nokida.png",
+    image: "/places/nokida.jpeg",
     introduction: "Nokida is the capital city of the state of Géjira. After the Dandelion Rebellion, it became the seat of power for Queen Gin Mazoti, the first woman to rule a major state in her own right.",
     infoBox: {
         type: "Capital City",

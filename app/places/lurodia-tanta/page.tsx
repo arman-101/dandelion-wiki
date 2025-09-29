@@ -8,7 +8,7 @@ import LurodiaTantaClient from './LurodiaTantaClient';
 // --- DATA FOR LURODIA TANTA ---
 const placeData: Place = {
     name: "Lurodia Tanta",
-    image: "/places/lurodia-tanta.png",
+    image: "/places/lurodia-tanta.jpeg",
     introduction: "The Lurodia Tanta is the vast, seemingly endless desert in Ukyu-Gondé. It is the harsh domain of the exiled Agon tribes, a place of extreme hardship and a crucible for the nascent rebellion led by Princess Théra and Takval Aragoz.",
     infoBox: {
         type: "Desert",

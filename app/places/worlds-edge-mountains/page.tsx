@@ -8,7 +8,7 @@ import WorldsEdgeMountainsClient from './WorldsEdgeMountainsClient';
 // --- DATA FOR WORLD'S EDGE MOUNTAINS ---
 const placeData: Place = {
     name: "World's Edge Mountains",
-    image: "/places/worlds-edge-mountains.png",
+    image: "/places/worlds-edge-mountains.jpeg",
     introduction: "The World's Edge Mountains are a massive, formidable mountain range that marks the eastern boundary of the continent of Ukyu-Gondé. They serve as a place of refuge and rebirth for the Agon rebellion after a catastrophic defeat.",
     infoBox: {
         type: "Mountain Range",

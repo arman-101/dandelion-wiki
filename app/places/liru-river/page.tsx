@@ -8,7 +8,7 @@ import LiruRiverClient from './LiruRiverClient';
 // --- DATA FOR LIRU RIVER ---
 const placeData: Place = {
     name: "Liru River",
-    image: "/places/liru-river.png",
+    image: "/places/liru-river.jpeg",
     introduction: "The Liru River is a major river system that serves as a key strategic and psychological border in Dara. It was the site of the tense, final standoff between the armies of Kuni Garu and Mata Zyndu during the Chrysanthemum-Dandelion War.",
     infoBox: {
         type: "River System / Border",

@@ -8,7 +8,7 @@ import GéjiraClient from './GéjiraClient';
 // --- DATA FOR GÉJIRA ---
 const placeData: Place = {
     name: "Géjira",
-    image: "/places/gejira.png",
+    image: "/places/gejira.jpeg",
     introduction: "Géjira is a major kingdom in Dara, granted to the legendary Marshal Gin Mazoti by Emperor Ragin after the Dandelion Rebellion. With its capital at Nokida, Géjira became the seat of Gin's power and a center of military influence, often acting as a political counterweight to the Imperial Court in Pan.",
     infoBox: {
         type: "Kingdom",
