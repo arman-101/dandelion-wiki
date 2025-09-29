@@ -244,7 +244,7 @@ hover:text-link, hover:bg-primary, hover:border-primary-light
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data'; // or Concept, Place, God
 import { generateCharacterMetadata } from '@/app/utils/metadata'; // or generateConceptMetadata, etc.
-import CharacterNameClient from './CharacterNameClient';
+import CharacterNameClient from './CharacterNameClient'; // Note: No .tsx extension
 
 // --- DATA FOR CHARACTER NAME ---
 const characterData: Character = {
@@ -315,9 +315,11 @@ export default function CharacterNameClient({ characterData }: CharacterNameClie
 
 ### 🖼️ Adding Images to Individual Pages
 
-**Current State**: Individual pages (characters, gods, places, concepts) use `PageTemplate` component which currently displays only the `InfoBox` in the sidebar.
+**Current State**: Individual pages (characters, gods, places, concepts) use `PageTemplate` component which displays both images (when available) and the `InfoBox` in the sidebar.
 
-**To Add Images Back to Individual Pages:**
+**Image Display is Optional**: The PageTemplate component automatically displays images when they are provided in the data, but gracefully handles pages without images.
+
+**To Add Images to Individual Pages:**
 
 #### Option 1: Modify PageTemplate Component
 **File**: `app/components/layout/PageTemplate.tsx`
@@ -553,7 +555,50 @@ export default function SpecialPage() {
 - **Places**: `PanPage()`, `XanaPage()`
 - **Gods**: `KijiPage()`, `FithoweoPage()`
 
-### 6. SEO Checklist
+### 6. Import Guidelines
+
+**CRITICAL**: When importing client components, do NOT include the `.tsx` extension:
+
+```tsx
+// ✅ Correct
+import CharacterNameClient from './CharacterNameClient';
+import PlaceNameClient from './PlaceNameClient';
+
+// ❌ Incorrect
+import CharacterNameClient from './CharacterNameClient.tsx';
+import PlaceNameClient from './PlaceNameClient.tsx';
+```
+
+### 7. Image Handling
+
+**Images are Optional**: The PageTemplate component automatically handles pages with or without images:
+
+```tsx
+// ✅ With image
+const placeData: Place = {
+    name: "Place Name",
+    image: "/places/place-name.jpeg", // Image will be displayed
+    introduction: "Description...",
+    // ... rest of data
+};
+
+// ✅ Without image (empty string or undefined)
+const placeData: Place = {
+    name: "Place Name",
+    image: "", // No image will be displayed
+    introduction: "Description...",
+    // ... rest of data
+};
+```
+
+**Image Requirements** (when using images):
+- **File Format**: PNG, JPG, or JPEG
+- **Location**: `public/[category]/[slug].{png|jpg|jpeg}`
+- **Dimensions**: Minimum 400x400px, recommended 800x800px
+- **Aspect Ratio**: Square (1:1) works best for consistent display
+- **File Size**: Optimize for web (under 500KB recommended)
+
+### 8. SEO Checklist
 
 Before creating any new page, ensure:
 
@@ -565,8 +610,10 @@ Before creating any new page, ensure:
 - [ ] **Twitter Cards**: Twitter-specific metadata
 - [ ] **Navigation**: Proper prev/next navigation
 - [ ] **Data Registration**: Added to appropriate data arrays in `wiki-data.ts`
+- [ ] **Import Guidelines**: Client components imported without `.tsx` extension
+- [ ] **Image Handling**: Images are optional and handled gracefully
 
-### 7. Common Mistakes to Avoid
+### 9. Common Mistakes to Avoid
 
 ❌ **Don't:**
 - Put `'use client'` in server components
@@ -574,6 +621,8 @@ Before creating any new page, ensure:
 - Use hardcoded titles without the "Wiki" suffix
 - Forget to create client components for interactive pages
 - Skip the navigation setup
+- Include `.tsx` extension when importing client components
+- Assume all pages need images
 
 ✅ **Do:**
 - Always use the server/client pattern
@@ -581,6 +630,8 @@ Before creating any new page, ensure:
 - Include proper metadata for SEO
 - Test that titles appear correctly in browser
 - Ensure navigation works properly
+- Import client components without `.tsx` extension
+- Handle images as optional in PageTemplate
 
 ### 8. Metadata Utility Functions
 
@@ -1243,6 +1294,9 @@ When working with this codebase:
 8. **Use server/client component pattern** for proper metadata
 9. **Test page titles** appear correctly in browser
 10. **Ensure proper navigation** between pages
+11. **🚨 CRITICAL: Import client components WITHOUT .tsx extension**
+12. **Handle images as optional** - PageTemplate gracefully handles pages with or without images
+13. **Use proper image paths** when adding images to data objects
 
 ### 🎯 **SEO & Title Requirements (MANDATORY)**
 

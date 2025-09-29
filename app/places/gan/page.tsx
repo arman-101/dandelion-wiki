@@ -3,12 +3,12 @@
 import type { Metadata } from 'next';
 import { Place } from '../../data/wiki-data';
 import { generatePlaceMetadata } from '@/app/utils/metadata';
-import GanClient from './GanClient.tsx';
+import GanClient from './GanClient';
 
 // --- DATA FOR GAN ---
 const placeData: Place = {
     name: "Gan",
-    image: "/places/gan.png",
+    image: "/places/gan.jpeg",
     introduction: "Gan is one of the six Tiro states, known as the wealthiest realm in Dara. It is a land of merchants and commerce, whose political actions are often driven by economic self-interest.",
     infoBox: {
         type: "Kingdom (Tiro State)",

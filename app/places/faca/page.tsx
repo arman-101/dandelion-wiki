@@ -3,12 +3,12 @@
 import type { Metadata } from 'next';
 import { Place } from '../../data/wiki-data';
 import { generatePlaceMetadata } from '@/app/utils/metadata';
-import FaçaClient from './FaçaClient.tsx';
+import FaçaClient from './FaçaClient';
 
 // --- DATA FOR FAÇA ---
 const placeData: Place = {
     name: "Faça",
-    image: "/places/faca.png",
+    image: "/places/faca.jpeg",
     introduction: "Faça is one of the six Tiro states, a northern kingdom known for its treacherous politics and its unique mastery of the 'silkmotic force,' the practical science of static electricity.",
     infoBox: {
         type: "Kingdom (Tiro State)",

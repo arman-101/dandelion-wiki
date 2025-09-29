@@ -3,12 +3,12 @@
 import type { Metadata } from 'next';
 import { Place } from '../../data/wiki-data';
 import { generatePlaceMetadata } from '@/app/utils/metadata';
-import XanaClient from './XanaClient.tsx';
+import XanaClient from './XanaClient';
 
 // --- DATA FOR XANA ---
 const placeData: Place = {
     name: "Xana",
-    image: "/places/xana.png",
+    image: "/places/xana.jpeg",
     introduction: "Xana is one of the Seven States of Dara, a powerful island nation that, under Emperor Mapidéré, conquered the other six states to forge the first unified Xana Empire. It is the original seat of imperial power and the homeland of the story's first antagonists.",
     infoBox: {
         type: "Island Nation / Empire",

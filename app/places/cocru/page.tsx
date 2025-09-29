@@ -3,12 +3,12 @@
 import type { Metadata } from 'next';
 import { Place } from '../../data/wiki-data';
 import { generatePlaceMetadata } from '@/app/utils/metadata';
-import CocruClient from './CocruClient.tsx';
+import CocruClient from './CocruClient';
 
 // --- DATA FOR COCRU ---
 const placeData: Place = {
     name: "Cocru",
-    image: "/places/cocru.png",
+    image: "/places/cocru.jpeg",
     introduction: "Cocru is one of the most powerful and central of the six Tiro states. It is the homeland of both Kuni Garu and Mata Zyndu, and its fate is central to the entire saga.",
     infoBox: {
         type: "Kingdom (Tiro State)",

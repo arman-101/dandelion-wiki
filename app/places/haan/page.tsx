@@ -3,12 +3,12 @@
 import type { Metadata } from 'next';
 import { Place } from '../../data/wiki-data';
 import { generatePlaceMetadata } from '@/app/utils/metadata';
-import HaanClient from './HaanClient.tsx';
+import HaanClient from './HaanClient';
 
 // --- DATA FOR HAAN ---
 const placeData: Place = {
     name: "Haan",
-    image: "/places/haan.png",
+    image: "/places/haan.jpeg",
     introduction: "Haan is one of the six Tiro states, renowned for its long history of scholarship, invention, and philosophy. It is the homeland of the brilliant strategist Luan Zya and becomes a center for scientific research under the Dandelion Dynasty.",
     infoBox: {
         type: "Kingdom (Tiro State)",

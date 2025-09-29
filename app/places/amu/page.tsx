@@ -3,12 +3,12 @@
 import type { Metadata } from 'next';
 import { Place } from '../../data/wiki-data';
 import { generatePlaceMetadata } from '@/app/utils/metadata';
-import AmuClient from './AmuClient.tsx';
+import AmuClient from './AmuClient';
 
 // --- DATA FOR AMU ---
 const placeData: Place = {
     name: "Amu",
-    image: "/places/amu.png",
+    image: "/places/amu.jpeg",
     introduction: "Amu is one of the six Tiro states, an archipelago kingdom known for its powerful navy, skilled sailors, and the beauty of its people. It is the homeland of the tragic Princess Kikomi.",
     infoBox: {
         type: "Archipelago Kingdom (Tiro State)",

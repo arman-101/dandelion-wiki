@@ -3,12 +3,12 @@
 import type { Metadata } from 'next';
 import { Place } from '../../data/wiki-data';
 import { generatePlaceMetadata } from '@/app/utils/metadata';
-import RimaClient from './RimaClient.tsx';
+import RimaClient from './RimaClient';
 
 // --- DATA FOR RIMA ---
 const placeData: Place = {
     name: "Rima",
-    image: "/places/rima.png",
+    image: "/places/rima.jpeg",
     introduction: "Rima is one of the six Tiro states, a forested northern kingdom whose tragic fall during the Dandelion Rebellion provided the rebellion with one of its most potent symbols of martyrdom.",
     infoBox: {
         type: "Kingdom (Tiro State)",
