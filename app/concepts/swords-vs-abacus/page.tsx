@@ -8,7 +8,6 @@ import SwordsVsAbacusClient from './SwordsVsAbacusClient';
 // --- DATA FOR SWORDS VS. ABACUS ---
 const conceptData: Concept = {
     name: "Swords vs. Abacus",
-    image: "/concepts/swords-vs-abacus.png",
     introduction: "The 'Swords versus Abacus' represents the central political and philosophical conflict within the Dandelion Court. It is the struggle between the military old guard who won the rebellion ('Swords') and the new class of civil bureaucrats who manage the empire ('Abacus').",
     infoBox: {
         Type: "Political Conflict",

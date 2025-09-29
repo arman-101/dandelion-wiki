@@ -3,7 +3,7 @@
 import type { Metadata } from 'next';
 import { Place } from '../../data/wiki-data';
 import { generatePlaceMetadata } from '@/app/utils/metadata';
-import ArulugiClient from './ArulugiClient.tsx';
+import ArulugiClient from './ArulugiClient';
 
 // --- DATA FOR ARULUGI ---
 const placeData: Place = {

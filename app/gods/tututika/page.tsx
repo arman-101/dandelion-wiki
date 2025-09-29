@@ -3,12 +3,11 @@
 import type { Metadata } from 'next';
 import { God } from '../../data/wiki-data';
 import { generateGodMetadata } from '@/app/utils/metadata';
-import TututikaClient from './TututikaClient.tsx';
+import TututikaClient from './TututikaClient';
 
 // --- DATA FOR TUTUTIKA ---
 const godData: God = {
     name: "Tututika",
-    image: "/gods/tututika.png",
     introduction: "Tututika is the patron goddess of Amu. As the youngest of the gods, she governs the domains of agriculture, beauty, and fresh water, and often shows a particular interest in the lives and choices of mortal women.",
     infoBox: {
         Patronage: { text: "Amu", link: "/places/amu" },

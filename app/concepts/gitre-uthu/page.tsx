@@ -8,7 +8,6 @@ import GitrthuClient from './GitrthuClient';
 // --- DATA FOR GITRÉ ÜTHU ---
 const conceptData: Concept = {
     name: "Gitré Üthu",
-    image: "/concepts/gitre-uthu.png",
     introduction: "Gitré Üthu is a magical, self-writing book of military strategy and philosophy. It was gifted to Luan Zya by the god Lutho and contains the distilled wisdom of countless scholars and generals from Dara's history.",
     infoBox: {
         Type: "Magical Artifact",

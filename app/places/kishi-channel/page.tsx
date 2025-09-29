@@ -3,7 +3,7 @@
 import type { Metadata } from 'next';
 import { Place } from '../../data/wiki-data';
 import { generatePlaceMetadata } from '@/app/utils/metadata';
-import KishiChannelClient from './KishiChannelClient.tsx';
+import KishiChannelClient from './KishiChannelClient';
 
 // --- DATA FOR KISHI CHANNEL ---
 const placeData: Place = {

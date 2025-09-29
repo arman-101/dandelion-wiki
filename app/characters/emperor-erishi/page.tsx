@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import EmperorErishiClient from './EmperorErishiClient.tsx';
+import EmperorErishiClient from './EmperorErishiClient';
 
 const characterData: Character = {
     name: "Emperor Erishi",
-    image: "/characters/emperor-erishi.png",
     introduction: "The second and last ruler of the Xana Dynasty, Emperor Erishi (born Prince Loshi) was a weak, foolish, and decadent boy-emperor whose complete detachment from reality hastened the collapse of his father's empire.",
     infoBox: {
         aliases: "Prince Loshi",

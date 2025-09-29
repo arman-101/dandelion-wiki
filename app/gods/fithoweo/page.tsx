@@ -3,12 +3,11 @@
 import type { Metadata } from 'next';
 import { God } from '../../data/wiki-data';
 import { generateGodMetadata } from '@/app/utils/metadata';
-import FithowéoClient from './FithowéoClient.tsx';
+import FithowéoClient from './FithowéoClient';
 
 // --- DATA FOR FITHOWÉO ---
 const godData: God = {
     name: "Fithowéo",
-    image: "/gods/fithoweo.png",
     introduction: "Fithowéo is the formidable patron god of Rima, presiding over war, the hunt, and the forge. Once blinded in a divine conflict, he embodies the courage to fight on when all seems lost, valuing resilience and strategy over simple victory.",
     infoBox: {
         Patronage: { text: "Rima", link: "/places/rima" },

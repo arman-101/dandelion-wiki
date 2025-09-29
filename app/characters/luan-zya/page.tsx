@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import LuanZyaClient from './LuanZyaClient.tsx';
+import LuanZyaClient from './LuanZyaClient';
 
 const characterData: Character = {
     name: "Luan Zya",
-    image: "/characters/luan-zya.png",
     introduction: "Luan Zya is a brilliant scholar, inventor, and strategist from Haan, and one of the most pivotal figures in the Dandelion Rebellion. The sole survivor of a noble house of innovators, his genius for strategy and invention becomes the intellectual foundation of Kuni Garu's rise to power.",
     infoBox: {
         aliases: "The Kite-Rider, Toru Noki",

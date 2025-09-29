@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import PrincessKikomiClient from './PrincessKikomiClient.tsx';
+import PrincessKikomiClient from './PrincessKikomiClient';
 
 const characterData: Character = {
     name: "Princess Kikomi",
-    image: "/characters/princess-kikomi.png",
     introduction: "Princess Kikomi of Amu was a beautiful and tragic figure whose actions, born from a desperate attempt to save her people, had devastating consequences for the Dandelion Rebellion and its leaders.",
     infoBox: {
         aliases: "The Hero of Arulugi",

@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import KingThufiClient from './KingThufiClient.tsx';
+import KingThufiClient from './KingThufiClient';
 
 const characterData: Character = {
     name: "King Thufi",
-    image: "/characters/king-thufi.png",
     introduction: "King Thufi was a humble shepherd and the lost heir to the throne of Cocru. Discovered by rebels, he was installed as King of Cocru and later declared himself Princeps, the supreme commander of the allied Tiro states, during the Dandelion Rebellion.",
     infoBox: {
         aliases: "The Shepherd King, Princeps",

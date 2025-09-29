@@ -3,7 +3,7 @@
 import type { Metadata } from 'next';
 import { Place } from '../../data/wiki-data';
 import { generatePlaceMetadata } from '@/app/utils/metadata';
-import EcofiIslandClient from './EcofiIslandClient.tsx';
+import EcofiIslandClient from './EcofiIslandClient';
 
 // --- DATA FOR ECOFI ISLAND ---
 const placeData: Place = {

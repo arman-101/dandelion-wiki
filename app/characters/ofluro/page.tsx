@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import OfluroClient from './OfluroClient.tsx';
+import OfluroClient from './OfluroClient';
 
 const characterData: Character = {
     name: "Ofluro",
-    image: "/characters/ofluro.png",
     introduction: "Ofluro is a Lyucu defector and a master garinafin rider. He becomes the controversial and demanding trainer for Emperor Phyro's secret garinafin breeding and training program, playing a vital role in building Dara's new aerial army.",
     infoBox: {
         aliases: "The Garinafin Master",

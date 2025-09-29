@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import RazutanaPonClient from './RazutanaPonClient.tsx';
+import RazutanaPonClient from './RazutanaPonClient';
 
 const characterData: Character = {
     name: "Razutana Pon",
-    image: "/characters/razutana-pon.png",
     introduction: "Razutana Pon is a Dara scholar of the Cultivationism school and a member of Princess Théra's expedition. She is one of the adult guardians who survives the Kiri Valley massacre and protects the children in the wilderness.",
     infoBox: {
         aliases: "The Scholar",

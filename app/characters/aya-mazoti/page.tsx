@@ -5,7 +5,6 @@ import AyaMazotiClient from './AyaMazotiClient';
 
 const characterData: Character = {
     name: "Aya Mazoti",
-    image: "/characters/aya-mazoti.png",
     introduction: "Aya Mazoti is the daughter of the legendary Marshal Gin Mazoti and the brilliant strategist Luan Zya. A skilled commander in her own right, she is driven by a fierce desire to live up to her parents' legacy and restore her family's honor.",
     infoBox: {
         aliases: "The Marshal's Daughter",

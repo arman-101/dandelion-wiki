@@ -3,7 +3,7 @@
 import type { Metadata } from 'next';
 import { Place } from '../../data/wiki-data';
 import { generatePlaceMetadata } from '@/app/utils/metadata';
-import DasuClient from './DasuClient.tsx';
+import DasuClient from './DasuClient';
 
 // --- DATA FOR DASU ---
 const placeData: Place = {

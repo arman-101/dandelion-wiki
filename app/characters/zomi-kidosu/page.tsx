@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import ZomiKidosuClient from './ZomiKidosuClient.tsx';
+import ZomiKidosuClient from './ZomiKidosuClient';
 
 const characterData: Character = {
     name: "Zomi Kidosu",
-    image: "/characters/zomi-kidosu.png",
     introduction: "Zomi Kidosu is a brilliant, radical thinker and engineer from Dasu. A student of the legendary Luan Zya, she rises from poverty and disability to become one of the most influential figures in the Dandelion Dynasty, championing innovation, meritocracy, and a complete reimagining of society's foundations.",
     infoBox: {
         aliases: "Mimi, Pearl of Fire, Farsight Secretary",

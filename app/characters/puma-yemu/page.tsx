@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import PumaYemuClient from './PumaYemuClient.tsx';
+import PumaYemuClient from './PumaYemuClient';
 
 const characterData: Character = {
     name: "Puma Yemu",
-    image: "/characters/puma-yemu.png",
     introduction: "Puma Yemu was a former bandit who became a fiercely loyal and effective general for Kuni Garu. He is known for his skill in raiding and unconventional tactics, and is a key member of the 'Swords' faction at the Dandelion Court.",
     infoBox: {
         aliases: "General Yemu, The Bandit Marquess",

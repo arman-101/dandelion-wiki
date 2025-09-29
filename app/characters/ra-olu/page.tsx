@@ -8,7 +8,6 @@ import RaOluClient from './RaOluClient';
 
 const characterData: Character = {
     name: "Ra Olu",
-    image: "/characters/ra-olu.png",
     introduction: "Ra Olu was a Dara official and the regent of Dasu under Prince Timu. After the Lyucu invasion, he became a willing and influential collaborator, advising the invaders on how to control and suppress the conquered populace.",
     infoBox: {
         aliases: "The Collaborator",

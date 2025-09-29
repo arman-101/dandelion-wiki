@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import HunoKrimaClient from './HunoKrimaClient.tsx';
+import HunoKrimaClient from './HunoKrimaClient';
 
 const characterData: Character = {
     name: "Huno Krima",
-    image: "/characters/huno-krima.png",
     introduction: "Huno Krima was a charismatic corvée laborer from Cocru whose desperate act of defiance sparked the first major rebellion against the Xana Empire. Though his rebellion ended in failure, he was the catalyst for the larger Dandelion Rebellion.",
     infoBox: {
         aliases: "The False King of West Cocru",

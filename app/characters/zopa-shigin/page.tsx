@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import ZopaShiginClient from './ZopaShiginClient.tsx';
+import ZopaShiginClient from './ZopaShiginClient';
 
 const characterData: Character = {
     name: "Zopa Shigin",
-    image: "/characters/zopa-shigin.png",
     introduction: "Zopa Shigin was a sturdy corvée laborer from Cocru and the co-conspirator of Huno Krima. He was an instrumental figure in the very beginning of the rebellion against the Xana Empire, though his life was tragically cut short by his friend's growing paranoia.",
     infoBox: {
         aliases: "The Co-Conspirator",

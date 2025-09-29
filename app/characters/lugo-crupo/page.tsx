@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import LügoCrupoClient from './LügoCrupoClient.tsx';
+import LügoCrupoClient from './LügoCrupoClient';
 
 const characterData: Character = {
     name: "Lügo Crupo",
-    image: "/characters/lugo-crupo.png",
     introduction: "Lügo Crupo was the ambitious, ruthless, and brilliant Prime Minister of the Xana Empire. Consumed by jealousy and a feeling of being perpetually second-best, his actions were instrumental in both the consolidation of Xana's power and its eventual, violent downfall.",
     infoBox: {
         aliases: "The Regent",

@@ -8,7 +8,6 @@ import TheChrysanthemumClient from './TheChrysanthemumClient';
 // --- DATA FOR THE CHRYSANTHEMUM ---
 const conceptData: Concept = {
     name: "The Chrysanthemum",
-    image: "/concepts/chrysanthemum.png",
     introduction: "The Chrysanthemum represents the philosophy of Mata Zyndu, embodying tradition, nobility, and unbending honor in the face of adversity.",
     infoBox: {
         "Type": "Philosophical Symbol",

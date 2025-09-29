@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import TantoAragozClient from './TantoAragozClient.tsx';
+import TantoAragozClient from './TantoAragozClient';
 
 const characterData: Character = {
     name: "Tanto Aragoz",
-    image: "/characters/tanto-aragoz.png",
     introduction: "Tanto Aragoz is the eldest son of Princess Théra and Takval Aragoz. Raised in the harsh environment of the Agon rebellion, he is a child of two cultures, embodying the future of the alliance between Dara and the Agon.",
     infoBox: {
         aliases: "None",

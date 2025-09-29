@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import KingMocriClient from './KingMocriClient.tsx';
+import KingMocriClient from './KingMocriClient';
 
 const characterData: Character = {
     name: "King Mocri",
-    image: "/characters/king-mocri.png",
     introduction: "King Mocri was the proud and honorable king of Gan and a key member of the Tiro Alliance during the Dandelion Rebellion.",
     infoBox: {
         aliases: "King of Gan",

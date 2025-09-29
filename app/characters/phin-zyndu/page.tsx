@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import PhinZynduClient from './PhinZynduClient.tsx';
+import PhinZynduClient from './PhinZynduClient';
 
 const characterData: Character = {
     name: "Phin Zyndu",
-    image: "/characters/phin-zyndu.png",
     introduction: "Phin Zyndu was the uncle of Mata Zyndu and the devoted guardian of his family's legacy. He rescued the infant Mata from the Xana purge of their clan and raised him in exile with the sole purpose of achieving vengeance.",
     infoBox: {
         aliases: "Guardian of the Zyndu Legacy",

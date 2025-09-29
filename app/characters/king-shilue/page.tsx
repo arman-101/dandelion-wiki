@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import KingShiluéClient from './KingShiluéClient.tsx';
+import KingShiluéClient from './KingShiluéClient';
 
 const characterData: Character = {
     name: "King Shilué",
-    image: "/characters/king-shilue.png",
     introduction: "King Shilué was the treacherous and opportunistic king of Faça. His attempts to play both sides during the Chrysanthemum-Dandelion War led to his swift and unceremonious downfall at the hands of Gin Mazoti.",
     infoBox: {
         aliases: "The Treacherous King",

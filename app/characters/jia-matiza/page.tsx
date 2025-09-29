@@ -6,7 +6,6 @@ import JiaMatizaClient from './JiaMatizaClient';
 // --- DATA FOR JIA MATIZA (WITH FULL INLINE REFERENCES FROM ALL FOUR BOOKS) ---
 const characterData: Character = {
     name: "Jia Matiza",
-    image: "/characters/jia-matiza.png",
     introduction: "Jia Matiza is the brilliant scholar and first wife of Kuni Garu, who becomes Empress Jia of the Dandelion Dynasty. A fiercely intelligent and politically savvy woman, she is the strategic and philosophical architect behind much of her husband's success. Over time, she evolves into a ruthless pragmatist, willing to make any sacrifice and be seen as a villain by history to ensure the long-term stability of the empire she helped build.",
     infoBox: {
         aliases: "Empress Jia, Dowager Empress, Regent",

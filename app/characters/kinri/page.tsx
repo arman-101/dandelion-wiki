@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import KinriClient from './KinriClient.tsx';
+import KinriClient from './KinriClient';
 
 const characterData: Character = {
     name: "Kinri",
-    image: "/characters/kinri.png",
     introduction: "Kinri is a young man of mixed Lyucu-Dara heritage whose journey of self-discovery from a refugee to the truth of his identity as Savo Ryoto—the son of the powerful Lyucu thane Goztan Ryoto and the Dara storyteller Oga Kidosu—places him at the heart of the series' themes of identity, family, and cultural conflict.",
     infoBox: {
         aliases: "Savo Ryoto",

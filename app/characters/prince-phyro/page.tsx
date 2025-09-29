@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import PrincePhyroClient from './PrincePhyroClient.tsx';
+import PrincePhyroClient from './PrincePhyroClient';
 
 const characterData: Character = {
     name: "Prince Phyro",
-    image: "/characters/prince-phyro.png",
     introduction: "Prince Phyro is the charismatic and martially gifted son of Emperor Ragin and Consort Risana. Favored by the military faction of the court, he grows from a mischievous boy into a determined military leader who rebels against his mother's regency, a path that ends in tragedy.",
     infoBox: {
         aliases: "Emperor Monadétu",

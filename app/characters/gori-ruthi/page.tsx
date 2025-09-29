@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import GoriRuthiClient from './GoriRuthiClient.tsx';
+import GoriRuthiClient from './GoriRuthiClient';
 
 const characterData: Character = {
     name: "Gori Ruthi",
-    image: "/characters/gori-ruthi.png",
     introduction: "Gori Ruthi is the nephew of the former Imperial Tutor, Zato Ruthi. He is a Moralist scholar and a well-intentioned but often naive official in the Dandelion court.",
     infoBox: {
         aliases: "The Moralist Scholar",

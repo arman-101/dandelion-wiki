@@ -3,11 +3,10 @@
 import type { Metadata } from 'next';
 import { Concept } from '../../data/wiki-data';
 import { generateConceptMetadata } from '@/app/utils/metadata';
-import ResistanceMovementClient from './ResistanceMovementClient.tsx';
+import ResistanceMovementClient from './ResistanceMovementClient';
 
 const conceptData: Concept = {
     name: "Resistance Movement",
-    image: "/concepts/resistance-movement.png",
     introduction: "The multifaceted, organized efforts of the people of Dara to resist and ultimately overthrow the Lyucu occupation. It was not a single, unified front but a collection of disparate groups employing various methods, from open warfare and espionage to cultural and political rebellion.",
     infoBox: {
         "Type": "Political & Military Movement",

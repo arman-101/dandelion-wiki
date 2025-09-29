@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import NazuTeiClient from './NazuTeiClient.tsx';
+import NazuTeiClient from './NazuTeiClient';
 
 const characterData: Character = {
     name: "Nazu Tei",
-    image: "/characters/nazu-tei.png",
     introduction: "Nazu Tei was a wise and courageous Dara scholar who became the tutor to the young Savo Ryoto (Kinri) in occupied Rui. Her teachings about the nature of truth and history were a formative influence on the young man.",
     infoBox: {
         aliases: "The Tutor",

@@ -3,7 +3,7 @@
 import type { Metadata } from 'next';
 import { Place } from '../../data/wiki-data';
 import { generatePlaceMetadata } from '@/app/utils/metadata';
-import SliyusaKiClient from './SliyusaKiClient.tsx';
+import SliyusaKiClient from './SliyusaKiClient';
 
 // --- DATA FOR SLIYUSA KI ---
 const placeData: Place = {

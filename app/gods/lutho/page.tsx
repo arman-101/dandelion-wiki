@@ -3,12 +3,11 @@
 import type { Metadata } from 'next';
 import { God } from '../../data/wiki-data';
 import { generateGodMetadata } from '@/app/utils/metadata';
-import LuthoClient from './LuthoClient.tsx';
+import LuthoClient from './LuthoClient';
 
 // --- DATA FOR LUTHO ---
 const godData: God = {
     name: "Lutho",
-    image: "/gods/lutho.png",
     introduction: "Lutho is the patron god of Haan, presiding over fishermen, divination, mathematics, and knowledge. He is a god of wisdom and strategy, whose interventions are subtle but have profound and lasting consequences.",
     infoBox: {
         Patronage: { text: "Haan", link: "/places/haan" },

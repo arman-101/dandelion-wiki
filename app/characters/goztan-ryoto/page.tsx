@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import GoztanRyotoClient from './GoztanRyotoClient.tsx';
+import GoztanRyotoClient from './GoztanRyotoClient';
 
 const characterData: Character = {
     name: "Goztan Ryoto",
-    image: "/characters/goztan-ryoto.png",
     introduction: "Goztan Ryoto is a powerful and independent Lyucu thane, the mother of Kinri (Savo Ryoto), and a key political player in both Ukyu-Gondé and occupied Dara. She leads the accommodationist faction of the Lyucu, advocating for a more pragmatic and integrated approach to ruling the conquered territories.",
     infoBox: {
         aliases: "Thane Ryoto",

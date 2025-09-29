@@ -3,12 +3,11 @@
 import type { Metadata } from 'next';
 import { Concept } from '../../data/wiki-data';
 import { generateConceptMetadata } from '@/app/utils/metadata';
-import LiftGasClient from './LiftGasClient.tsx';
+import LiftGasClient from './LiftGasClient';
 
 // --- DATA FOR LIFT GAS ---
 const conceptData: Concept = {
     name: "Lift Gas",
-    image: "/concepts/lift-gas.png",
     introduction: "Lift Gas is the rare, lighter-than-air element that makes airship flight possible. Found only in a single, sacred location in Dara, control of this resource is the ultimate key to military supremacy.",
     infoBox: {
         Type: "Natural Resource",

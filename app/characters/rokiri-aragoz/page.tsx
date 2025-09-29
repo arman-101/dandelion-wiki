@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import RokiriAragozClient from './RokiriAragozClient.tsx';
+import RokiriAragozClient from './RokiriAragozClient';
 
 const characterData: Character = {
     name: "Rokiri Aragoz",
-    image: "/characters/rokiri-aragoz.png",
     introduction: "Rokiri Aragoz is the second son of Princess Théra and Takval Aragoz. Like his older brother, he is a child of two cultures, born into the heart of the Agon rebellion against the Lyucu.",
     infoBox: {
         aliases: "None",

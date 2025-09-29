@@ -3,7 +3,7 @@
 import type { Metadata } from 'next';
 import { Place } from '../../data/wiki-data';
 import { generatePlaceMetadata } from '@/app/utils/metadata';
-import RoroHillsClient from './RoroHillsClient.tsx';
+import RoroHillsClient from './RoroHillsClient';
 
 // --- DATA FOR RORO HILLS ---
 const placeData: Place = {

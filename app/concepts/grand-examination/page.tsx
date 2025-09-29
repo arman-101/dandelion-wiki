@@ -3,12 +3,11 @@
 import type { Metadata } from 'next';
 import { Concept } from '../../data/wiki-data';
 import { generateConceptMetadata } from '@/app/utils/metadata';
-import TheGrandExaminationClient from './TheGrandExaminationClient.tsx';
+import TheGrandExaminationClient from './TheGrandExaminationClient';
 
 // --- DATA FOR THE GRAND EXAMINATION ---
 const conceptData: Concept = {
     name: "The Grand Examination",
-    image: "/concepts/grand-examination.png",
     introduction: "The Grand Examination is a revolutionary system established by the Dandelion Dynasty to select civil servants. It is designed to replace the old system of aristocratic privilege with a meritocracy based on intellect and skill, open to all citizens regardless of birth.",
     infoBox: {
         Type: "Meritocratic Civil Service Test",

@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import LadyMiraClient from './LadyMiraClient.tsx';
+import LadyMiraClient from './LadyMiraClient';
 
 const characterData: Character = {
     name: "Lady Mira",
-    image: "/characters/lady-mira.png",
     introduction: "Lady Mira was a gentle embroiderer and songstress from Tunoa who became Mata Zyndu's closest confidante. Described as the only person who truly understood him, she represented a connection to his lost home and a path of peace that stood in stark contrast to his life of violence.",
     infoBox: {
         aliases: "Mira of Tunoa",

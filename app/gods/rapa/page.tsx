@@ -3,12 +3,11 @@
 import type { Metadata } from 'next';
 import { God } from '../../data/wiki-data';
 import { generateGodMetadata } from '@/app/utils/metadata';
-import RapaClient from './RapaClient.tsx';
+import RapaClient from './RapaClient';
 
 // --- DATA FOR RAPA ---
 const godData: God = {
     name: "Rapa",
-    image: "/gods/rapa.png",
     introduction: "Rapa is one of the twin patrons of Cocru, sister to Kana. A serene and patient deity, she governs the domains of ice, snow, glaciers, and sleep, representing the quiet, stilling forces of nature.",
     infoBox: {
         Patronage: { text: "Cocru", link: "/places/cocru" },

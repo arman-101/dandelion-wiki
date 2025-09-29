@@ -3,7 +3,7 @@
 import type { Metadata } from 'next';
 import { Place } from '../../data/wiki-data';
 import { generatePlaceMetadata } from '@/app/utils/metadata';
-import TiroCozoClient from './TiroCozoClient.tsx';
+import TiroCozoClient from './TiroCozoClient';
 
 // --- DATA FOR TIRO COZO ---
 const placeData: Place = {

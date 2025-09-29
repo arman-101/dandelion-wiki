@@ -3,7 +3,7 @@
 import type { Metadata } from 'next';
 import { Place } from '../../data/wiki-data';
 import { generatePlaceMetadata } from '@/app/utils/metadata';
-import GinpenClient from './GinpenClient.tsx';
+import GinpenClient from './GinpenClient';
 
 // --- DATA FOR GINPEN ---
 const placeData: Place = {

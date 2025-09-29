@@ -8,7 +8,6 @@ import CorveLaborClient from './CorveLaborClient';
 // --- DATA FOR CORVÉE LABOR ---
 const conceptData: Concept = {
     name: "Corvée Labor",
-    image: "/concepts/corvee-labor.png",
     introduction: "Corvée labor was a system of state-sponsored forced, unpaid labor imposed by the Xana Empire upon its conquered subjects. This brutal practice was the primary catalyst for the widespread discontent that erupted into the Dandelion Rebellion.",
     infoBox: {
         Type: "Forced Labor System",

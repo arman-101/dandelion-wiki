@@ -3,11 +3,10 @@
 import type { Metadata } from 'next';
 import { Concept } from '../../data/wiki-data';
 import { generateConceptMetadata } from '@/app/utils/metadata';
-import TheBlossomGangClient from './TheBlossomGangClient.tsx';
+import TheBlossomGangClient from './TheBlossomGangClient';
 
 const conceptData: Concept = {
     name: "The Blossom Gang",
-    image: "/concepts/the-blossom-gang.png",
     introduction: "The Blossom Gang is a group of talented outcasts based in Ginpen who use their unique skills in engineering, law, and performance art to help the common folk. They become key allies of Princess Fara and later, a crucial part of the resistance against Empress Jia's regency.",
     infoBox: {
       "Type": "Activist Collective / 'Family of Choice'",

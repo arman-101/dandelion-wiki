@@ -3,7 +3,7 @@
 import type { Metadata } from 'next';
 import { Place } from '../../data/wiki-data';
 import { generatePlaceMetadata } from '@/app/utils/metadata';
-import RuiClient from './RuiClient.tsx';
+import RuiClient from './RuiClient';
 
 // --- DATA FOR RUI ---
 const placeData: Place = {

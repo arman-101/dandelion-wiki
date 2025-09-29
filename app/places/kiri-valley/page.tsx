@@ -3,7 +3,7 @@
 import type { Metadata } from 'next';
 import { Place } from '../../data/wiki-data';
 import { generatePlaceMetadata } from '@/app/utils/metadata';
-import KiriValleyClient from './KiriValleyClient.tsx';
+import KiriValleyClient from './KiriValleyClient';
 
 // --- DATA FOR KIRI VALLEY ---
 const placeData: Place = {

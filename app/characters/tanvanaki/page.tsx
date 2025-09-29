@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import TanvanakiClient from './TanvanakiClient.tsx';
+import TanvanakiClient from './TanvanakiClient';
 
 const characterData: Character = {
     name: "Tanvanaki",
-    image: "/characters/tanvanaki.png",
     introduction: "Tanvanaki, also known as Princess Vadyu, is the brilliant garinafin pilot and daughter of Pékyu Tenryo. After her father's death, she becomes the Pékyu of the Lyucu forces in Dara, struggling to rule a conquered people while navigating treacherous politics and her complex marriage to the captive Prince Timu.",
     infoBox: {
         aliases: "Princess Vadyu, Pékyu Tanvanaki",

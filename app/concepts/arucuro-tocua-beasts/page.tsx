@@ -7,7 +7,6 @@ import ArucuroTocuaBeastsClient from './ArucuroTocuaBeastsClient';
 
 const conceptData: Concept = {
     name: "Arucuro Tocua Beasts",
-    image: "/concepts/arucuro-tocua-beasts.png",
     introduction: "Arucuro Tocua, or 'living bones,' are massive walking fortresses created by Théra's rebels in Ukyu-Gondé. Built from the skeletons of ancient garinafins, they represent the fusion of Agon tradition and Dara ingenuity and became the rebellion's most powerful weapon.",
     infoBox: {
       "Type": "Walking Fortress / War Machine",

@@ -3,7 +3,7 @@
 import type { Metadata } from 'next';
 import { Place } from '../../data/wiki-data';
 import { generatePlaceMetadata } from '@/app/utils/metadata';
-import NokidaClient from './NokidaClient.tsx';
+import NokidaClient from './NokidaClient';
 
 // --- DATA FOR NOKIDA ---
 const placeData: Place = {

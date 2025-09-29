@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import TakvalAragozClient from './TakvalAragozClient.tsx';
+import TakvalAragozClient from './TakvalAragozClient';
 
 const characterData: Character = {
     name: "Takval Aragoz",
-    image: "/characters/takval-aragoz.png",
     introduction: "Takval Aragoz is a prince of the exiled Agon people from the continent of Ukyu-Gondé. He becomes the husband and indispensable ally of Princess Théra, combining his people's warrior traditions with her scientific ingenuity to lead a rebellion against the Lyucu.",
     infoBox: {
         aliases: "Prince of the Agon",

@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import ThanCaruconoClient from './ThanCaruconoClient.tsx';
+import ThanCaruconoClient from './ThanCaruconoClient';
 
 const characterData: Character = {
     name: "Than Carucono",
-    image: "/characters/than-carucono.png",
     introduction: "Than Carucono was a cheerful former stable master who became a loyal and surprisingly competent general and admiral for Kuni Garu. His good humor and steadfastness made him a beloved member of the Dandelion Court.",
     infoBox: {
         aliases: "General Than, Admiral Than",

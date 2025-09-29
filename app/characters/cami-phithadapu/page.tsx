@@ -5,7 +5,6 @@ import CamiPhithadapuClient from './CamiPhithadapuClient';
 
 const characterData: Character = {
     name: "Çami Phithadapu",
-    image: "/characters/cami-phithadapu.png",
     introduction: "Çami Phithadapu is a Dara scholar specializing in marine biology. She was a key member of Princess Théra's expedition to Ukyu-Gondé, where her unique knowledge proved to be a decisive strategic asset and led to revolutionary inventions.",
     infoBox: {
         aliases: "The Whale Scholar",

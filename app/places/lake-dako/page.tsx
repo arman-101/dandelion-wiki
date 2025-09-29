@@ -3,7 +3,7 @@
 import type { Metadata } from 'next';
 import { Place } from '../../data/wiki-data';
 import { generatePlaceMetadata } from '@/app/utils/metadata';
-import LakeDakoClient from './LakeDakoClient.tsx';
+import LakeDakoClient from './LakeDakoClient';
 
 // --- DATA FOR LAKE DAKO ---
 const placeData: Place = {

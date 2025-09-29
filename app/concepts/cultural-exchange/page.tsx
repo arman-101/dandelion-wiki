@@ -8,7 +8,6 @@ import CulturalExchangeClient from './CulturalExchangeClient';
 // --- DATA FOR CULTURAL EXCHANGE ---
 const conceptData: Concept = {
     name: "Cultural Exchange",
-    image: "/concepts/cultural-exchange.png",
     introduction: "Cultural Exchange is a central theme in the series, representing the complex interactions and mutual influences between the diverse peoples of Dara and Ukyu-Gondé. It encompasses everything from language and technology to philosophy and warfare.",
     infoBox: {
         "Type": "Social Phenomenon",

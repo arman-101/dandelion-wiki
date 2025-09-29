@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import TiphanHutoClient from './TiphanHutoClient.tsx';
+import TiphanHutoClient from './TiphanHutoClient';
 
 const characterData: Character = {
     name: "Tiphan Huto",
-    image: "/characters/tiphan-huto.png",
     introduction: "Tiphan Huto is an ambitious and unscrupulous merchant from Ginpen. His rivalry with the Splendid Urn restaurant serves as a backdrop for the grassroots technological and cultural renaissance led by Princess Fara and the Blossom Gang.",
     infoBox: {
         aliases: "The Merchant of Ginpen",

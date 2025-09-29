@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import TipoThoClient from './TipoThoClient.tsx';
+import TipoThoClient from './TipoThoClient';
 
 const characterData: Character = {
     name: "Tipo Tho",
-    image: "/characters/tipo-tho.png",
     introduction: "Tipo Tho is a Dara marine commander and a key military leader in Princess Théra's expedition to Ukyu-Gondé. He is a brave and capable officer, essential to the success of the rebellion's military operations.",
     infoBox: {
         aliases: "Commander Tho",

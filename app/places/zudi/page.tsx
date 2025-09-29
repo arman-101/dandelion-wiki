@@ -3,7 +3,7 @@
 import type { Metadata } from 'next';
 import { Place } from '../../data/wiki-data';
 import { generatePlaceMetadata } from '@/app/utils/metadata';
-import ZudiClient from './ZudiClient.tsx';
+import ZudiClient from './ZudiClient';
 
 // --- DATA FOR ZUDI ---
 const placeData: Place = {

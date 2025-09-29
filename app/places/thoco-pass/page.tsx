@@ -3,7 +3,7 @@
 import type { Metadata } from 'next';
 import { Place } from '../../data/wiki-data';
 import { generatePlaceMetadata } from '@/app/utils/metadata';
-import ThocoPassClient from './ThocoPassClient.tsx';
+import ThocoPassClient from './ThocoPassClient';
 
 // --- DATA FOR THOCO PASS ---
 const placeData: Place = {

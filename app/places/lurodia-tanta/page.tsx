@@ -3,7 +3,7 @@
 import type { Metadata } from 'next';
 import { Place } from '../../data/wiki-data';
 import { generatePlaceMetadata } from '@/app/utils/metadata';
-import LurodiaTantaClient from './LurodiaTantaClient.tsx';
+import LurodiaTantaClient from './LurodiaTantaClient';
 
 // --- DATA FOR LURODIA TANTA ---
 const placeData: Place = {

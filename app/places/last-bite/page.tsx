@@ -3,7 +3,7 @@
 import type { Metadata } from 'next';
 import { Place } from '../../data/wiki-data';
 import { generatePlaceMetadata } from '@/app/utils/metadata';
-import LastBiteClient from './LastBiteClient.tsx';
+import LastBiteClient from './LastBiteClient';
 
 // --- DATA FOR LAST BITE ---
 const placeData: Place = {

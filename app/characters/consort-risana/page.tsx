@@ -5,7 +5,6 @@ import ConsortRisanaClient from './ConsortRisanaClient';
 
 const characterData: Character = {
     name: "Consort Risana",
-    image: "/characters/consort-risana.png",
     introduction: "Lady Risana is an enigmatic illusionist and Kuni Garu's second wife, later known as Consort Risana. She is a woman of great wisdom, grace, and subtle power, representing the more intuitive and martial aspects of the Dandelion Court.",
     infoBox: {
         aliases: "Lady Risana",

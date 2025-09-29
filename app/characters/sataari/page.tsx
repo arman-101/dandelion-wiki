@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import SataariClient from './SataariClient.tsx';
+import SataariClient from './SataariClient';
 
 const characterData: Character = {
     name: "Sataari",
-    image: "/characters/sataari.png",
     introduction: "Sataari is a young Agon shaman who becomes a spiritual and military leader of the resistance against the Lyucu. She is the guardian of her people's ancient history and a key figure in rediscovering their lost heritage.",
     infoBox: {
         aliases: "The Shaman",

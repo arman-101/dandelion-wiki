@@ -3,7 +3,7 @@
 import type { Metadata } from 'next';
 import { Place } from '../../data/wiki-data';
 import { generatePlaceMetadata } from '@/app/utils/metadata';
-import CaruzaClient from './ÇaruzaClient.tsx';
+import CaruzaClient from './ÇaruzaClient';
 
 // --- DATA FOR ÇARUZA ---
 const placeData: Place = {

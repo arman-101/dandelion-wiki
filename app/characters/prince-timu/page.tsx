@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import PrinceTimuClient from './PrinceTimuClient.tsx';
+import PrinceTimuClient from './PrinceTimuClient';
 
 const characterData: Character = {
     name: "Prince Timu",
-    image: "/characters/prince-timu.png",
     introduction: "Prince Timu is the studious and serious Crown Prince of the Dandelion Dynasty, the eldest son of Emperor Ragin and Empress Jia. A man of principle and intellect, his journey is one of tragic compromise after being captured by the Lyucu and forced to become a puppet emperor.",
     infoBox: {
         aliases: "Emperor Thaké",

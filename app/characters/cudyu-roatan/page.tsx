@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import CudyuRoatanClient from './CudyuRoatanClient.tsx';
+import CudyuRoatanClient from './CudyuRoatanClient';
 
 const characterData: Character = {
     name: "Cudyu Roatan",
-    image: "/characters/cudyu-roatan.png",
     introduction: "Cudyu Roatan is the son of Pékyu Tenryo and brother to Tanvanaki. He is a ruthless and effective Lyucu commander, driven by a deep-seated belief in his people's superiority and their manifest destiny to conquer Dara.",
     infoBox: {
         aliases: "Prince Cudyu, Pékyu Cudyu",

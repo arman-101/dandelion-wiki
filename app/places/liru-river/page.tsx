@@ -3,7 +3,7 @@
 import type { Metadata } from 'next';
 import { Place } from '../../data/wiki-data';
 import { generatePlaceMetadata } from '@/app/utils/metadata';
-import LiruRiverClient from './LiruRiverClient.tsx';
+import LiruRiverClient from './LiruRiverClient';
 
 // --- DATA FOR LIRU RIVER ---
 const placeData: Place = {

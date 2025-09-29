@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import EmperorMapidereClient from './EmperorMapidereClient.tsx';
+import EmperorMapidereClient from './EmperorMapidereClient';
 
 const characterData: Character = {
     name: "Emperor Mapidere",
-    image: "/characters/emperor-mapidere.png",
     introduction: "Emperor Mapidéré of House Xana was the ambitious and ruthless conqueror who first unified the Seven States of Dara into an empire. His reign, known as 'One Bright Heaven,' was marked by both grand, unifying projects and immense cruelty, planting the seeds of the rebellion that would ultimately lead to his dynasty's downfall.",
     infoBox: {
         aliases: "The Unifier",

@@ -3,12 +3,11 @@
 import type { Metadata } from 'next';
 import { Concept } from '../../data/wiki-data';
 import { generateConceptMetadata } from '@/app/utils/metadata';
-import SilkmoticForceClient from './SilkmoticForceClient.tsx';
+import SilkmoticForceClient from './SilkmoticForceClient';
 
 // --- DATA FOR SILKMOTIC FORCE ---
 const conceptData: Concept = {
     name: "Silkmotic Force",
-    image: "/concepts/silkmotic-force.png",
     introduction: "The Silkmotic Force is the Daran term for static electricity. In the state of Faça, it was developed from a simple principle for street magic into a practical and powerful tool for warfare, showcasing the Dandelion Dynasty's emphasis on technological innovation.",
     infoBox: {
         Type: "Scientific Principle (Static Electricity)",

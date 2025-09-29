@@ -7,7 +7,6 @@ import TheDandelionClient from './TheDandelionClient';
 // --- DATA FOR THE DANDELION CONCEPT ---
 const conceptData: Concept = {
     name: "The Dandelion",
-    image: "/concepts/dandelion.png",
     introduction: "The dandelion is the central philosophical symbol of Kuni Garu and the Dandelion Dynasty, representing resilience, adaptability, and strength found in common places. It embodies the belief that true power comes not from noble birth, but from the ability to thrive in adversity and transform the world through innovation and compassion.",
     infoBox: {
         "Type": "Philosophical Symbol",

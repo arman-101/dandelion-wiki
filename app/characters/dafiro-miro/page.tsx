@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import DafiroMiroClient from './DafiroMiroClient.tsx';
+import DafiroMiroClient from './DafiroMiroClient';
 
 const characterData: Character = {
     name: "Dafiro Miro",
-    image: "/characters/dafiro-miro.png",
     introduction: "Dafiro Miro was a thoughtful and wise soldier who, along with his brother Ratho, was one of the first to shed blood in the Dandelion Rebellion. He evolved from a simple soldier into a key double agent and the loyal Captain of the Palace Guards for Emperor Ragin.",
     infoBox: {
         aliases: "Captain Miro",

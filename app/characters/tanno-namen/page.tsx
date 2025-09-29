@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import TannoNamenClient from './TannoNamenClient.tsx';
+import TannoNamenClient from './TannoNamenClient';
 
 const characterData: Character = {
     name: "Tanno Namen",
-    image: "/characters/tanno-namen.png",
     introduction: "Tanno Namen was a legendary and honorable general of the Xana Empire, brought out of retirement to quell the Dandelion Rebellion. He represented the old guard of Xana, a man of immense skill and unwavering loyalty to the empire, even as it crumbled around him.",
     infoBox: {
         aliases: "The Old General",

@@ -3,7 +3,7 @@
 import type { Metadata } from 'next';
 import { Place } from '../../data/wiki-data';
 import { generatePlaceMetadata } from '@/app/utils/metadata';
-import MountKijiClient from './MountKijiClient.tsx';
+import MountKijiClient from './MountKijiClient';
 
 // --- DATA FOR MOUNT KIJI ---
 const placeData: Place = {

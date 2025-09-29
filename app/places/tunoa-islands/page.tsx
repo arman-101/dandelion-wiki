@@ -3,7 +3,7 @@
 import type { Metadata } from 'next';
 import { Place } from '../../data/wiki-data';
 import { generatePlaceMetadata } from '@/app/utils/metadata';
-import TunoaIslandsClient from './TunoaIslandsClient.tsx';
+import TunoaIslandsClient from './TunoaIslandsClient';
 
 // --- DATA FOR TUNOA ISLANDS ---
 const placeData: Place = {

@@ -3,7 +3,7 @@
 import type { Metadata } from 'next';
 import { Place } from '../../data/wiki-data';
 import { generatePlaceMetadata } from '@/app/utils/metadata';
-import DimushiClient from './DimushiClient.tsx';
+import DimushiClient from './DimushiClient';
 
 // --- DATA FOR DIMUSHI ---
 const placeData: Place = {

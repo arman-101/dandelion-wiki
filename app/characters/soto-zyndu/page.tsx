@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import SotoZynduClient from './SotoZynduClient.tsx';
+import SotoZynduClient from './SotoZynduClient';
 
 const characterData: Character = {
     name: "Soto Zyndu",
-    image: "/characters/soto-zyndu.png",
     introduction: "Soto Zyndu is the politically brilliant aunt of Mata Zyndu. Long thought dead after faking her own demise to escape the Xana, she re-emerged as a wise and influential advisor to Empress Jia and the imperial children, shaping the future of the Dandelion Dynasty from the shadows.",
     infoBox: {
         aliases: "Soto the Housekeeper",

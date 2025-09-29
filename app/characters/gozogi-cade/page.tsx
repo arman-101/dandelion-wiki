@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import GozogiCadeClient from './GozogiCadeClient.tsx';
+import GozogiCadeClient from './GozogiCadeClient';
 
 const characterData: Character = {
     name: "Gozogi Cade",
-    image: "/characters/gozogi-cade.png",
     introduction: "Gozogi Cade was a former street tough from Zudi and one of Kuni Garu's oldest and most loyal friends. He served as a dependable, if unspectacular, general throughout the Dandelion Rebellion and the subsequent civil war.",
     infoBox: {
         aliases: "General Cade",

@@ -3,12 +3,11 @@
 import type { Metadata } from 'next';
 import { Concept } from '../../data/wiki-data';
 import { generateConceptMetadata } from '@/app/utils/metadata';
-import TheAgonClient from './TheAgonClient.tsx';
+import TheAgonClient from './TheAgonClient';
 
 // --- DATA FOR THE AGON ---
 const conceptData: Concept = {
     name: "The Agon",
-    image: "/concepts/agon.png",
     introduction: "The Agon are a nomadic people from the southern part of Ukyu-Gondé and the ancient rivals of the Lyucu. Long exiled to the deserts, they become crucial allies to Princess Théra in her rebellion against the Lyucu empire.",
     infoBox: {
       "Origin": { text: "Ukyu & Gondé", link: "/places/ukyu-gonde" },

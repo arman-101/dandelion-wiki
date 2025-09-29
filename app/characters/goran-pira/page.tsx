@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import GoranPiraClient from './GoranPiraClient.tsx';
+import GoranPiraClient from './GoranPiraClient';
 
 const characterData: Character = {
     name: "Goran Pira",
-    image: "/characters/goran-pira.png",
     introduction: "Goran Pira was the Imperial Chatelain and lifelong friend to Emperor Mapidéré. Publicly the most loyal servant of the Xana Dynasty, he was secretly a master manipulator who orchestrated its downfall from within as an act of ultimate, patient vengeance.",
     infoBox: {
         aliases: "The Chatelain, Prime Minister",

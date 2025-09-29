@@ -3,7 +3,7 @@
 import type { Metadata } from 'next';
 import { Place } from '../../data/wiki-data';
 import { generatePlaceMetadata } from '@/app/utils/metadata';
-import GéjiraClient from './GéjiraClient.tsx';
+import GéjiraClient from './GéjiraClient';
 
 // --- DATA FOR GÉJIRA ---
 const placeData: Place = {

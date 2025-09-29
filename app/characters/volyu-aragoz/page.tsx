@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import VolyuAragozClient from './VolyuAragozClient.tsx';
+import VolyuAragozClient from './VolyuAragozClient';
 
 const characterData: Character = {
     name: "Volyu Aragoz",
-    image: "/characters/volyu-aragoz.png",
     introduction: "Volyu Aragoz was the treacherous uncle of Takval Aragoz and the chieftain of the exiled Agon tribe at the Sliyusa Ki oasis. He was a collaborator with the Lyucu, secretly betraying his own people to maintain his precarious position of power.",
     infoBox: {
         aliases: "Chief of Sliyusa Ki",

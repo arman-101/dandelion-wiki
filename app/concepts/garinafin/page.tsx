@@ -6,7 +6,6 @@ import GarinafinClient from './GarinafinClient';
 // --- DATA FOR GARINAFIN ---
 const conceptData: Concept = {
     name: "Garinafin",
-    image: "/concepts/garinafin.png",
     introduction: "Garinafin are enormous, flying war beasts native to Ukyu-Gondé that serve as the primary military force of the Lyucu Empire. These fearsome creatures are capable of breathing fire, making them devastating weapons of war.",
     infoBox: {
         Type: "Flying War Beast",

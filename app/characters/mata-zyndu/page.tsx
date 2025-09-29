@@ -6,7 +6,6 @@ import MataZynduClient from './MataZynduClient';
 // --- DATA FOR MATA ZYNDU (WITH FULL INLINE REFERENCES) ---
 const characterData: Character = {
     name: "Mata Zyndu",
-    image: "/characters/mata-zyndu.png",
     introduction: "Mata Zyndu, the last heir of the noble Zyndu clan, is one of the two central protagonists of *The Grace of Kings*. A peerless warrior driven by a powerful code of honor and a deep-seated need for vengeance, Mata represents the philosophy of the chrysanthemum—nobility, tradition, and unbending strength in the face of adversity.",
     infoBox: {
         aliases: "The Hegemon, Marshal of Cocru, The Chrysanthemum, The Butcher of Wolf's Paw",

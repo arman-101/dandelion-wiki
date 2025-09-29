@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import CutanrovoAgaClient from './CutanrovoAgaClient.tsx';
+import CutanrovoAgaClient from './CutanrovoAgaClient';
 
 const characterData: Character = {
     name: "Cutanrovo Aga",
-    image: "/characters/cutanrovo-aga.png",
     introduction: "Cutanrovo Aga is a fanatical and puritanical Lyucu thane and the leader of the hardline faction in occupied Dara. She is a primary antagonist within the Lyucu court, driving a brutal campaign of cultural erasure against the people of Dara.",
     infoBox: {
         aliases: "The Hardliner",

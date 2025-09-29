@@ -3,12 +3,11 @@
 import type { Metadata } from 'next';
 import { Concept } from '../../data/wiki-data';
 import { generateConceptMetadata } from '@/app/utils/metadata';
-import TheWallofStormsClient from './TheWallofStormsClient.tsx';
+import TheWallofStormsClient from './TheWallofStormsClient';
 
 // --- DATA FOR THE WALL OF STORMS ---
 const conceptData: Concept = {
     name: "The Wall of Storms",
-    image: "/concepts/wall-of-storms.png",
     introduction: "The Wall of Storms is a colossal, permanent typhoon system that isolates the islands of Dara from the continent of Ukyu-Gondé. It is a seemingly impassable natural barrier that shapes the worldview and history of both civilizations.",
     infoBox: {
         Type: "Superstorm / Natural Barrier",

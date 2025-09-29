@@ -5,7 +5,6 @@ import CogoYeluClient from './CogoYeluClient';
 
 const characterData: Character = {
     name: "Cogo Yelu",
-    image: "/characters/cogo-yelu.png",
     introduction: "Cogo Yelu was a brilliant and practical administrator who served as Kuni Garu's first Prime Minister. A loyal friend and a genius of public policy, his innovative solutions were crucial in establishing the administrative foundation of the Dandelion Dynasty and, years later, he became the moral anchor that held it together.",
     infoBox: {
         aliases: "Prime Minister Yelu",

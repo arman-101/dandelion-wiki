@@ -6,7 +6,6 @@ import KuniGaruClient from './KuniGaruClient';
 // --- DATA FOR KUNI GARU (WITH FULL INLINE REFERENCES) ---
 const characterData: Character = {
     name: "Kuni Garu",
-    image: "/characters/kuni-garu.png",
     introduction: "Kuni Garu, later known by his regnal name Emperor Ragin, is one of the two central protagonists of *The Grace of Kings* and the founder of the Dandelion Dynasty. A charismatic and clever rogue who rises from humble origins to become emperor, Kuni represents the philosophy of the dandelion—resilience, adaptability, and strength found in common places.",
     infoBox: {
         aliases: "Emperor Ragin, The Dandelion, King of Dasu, Duke of Zudi",

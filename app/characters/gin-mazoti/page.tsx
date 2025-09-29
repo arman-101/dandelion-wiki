@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import GinMazotiClient from './GinMazotiClient.tsx';
+import GinMazotiClient from './GinMazotiClient';
 
 const characterData: Character = {
     name: "Gin Mazoti",
-    image: "/characters/gin-mazoti.png",
     introduction: "Gin Mazoti is a military prodigy who rises from the streets of Dimushi to become the first female Marshal in the history of Dara. She is Kuni Garu's most brilliant and loyal commander, known for her mastery of logistics, deception, and unconventional warfare.",
     infoBox: {
         aliases: "Marshal Gin, Queen of Rima and Faça, Queen of Géjira",

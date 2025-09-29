@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import SouliyanAragozClient from './SouliyanAragozClient.tsx';
+import SouliyanAragozClient from './SouliyanAragozClient';
 
 const characterData: Character = {
     name: "Souliyan Aragoz",
-    image: "/characters/souliyan-aragoz.png",
     introduction: "Souliyan Aragoz was the mother of Takval Aragoz and a wise, respected leader of the Agon resistance. She was a key figure in the early days of the rebellion against the Lyucu in Ukyu-Gondé.",
     infoBox: {
         aliases: "The Matriarch",

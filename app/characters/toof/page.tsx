@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import ToofClient from './ToofClient.tsx';
+import ToofClient from './ToofClient';
 
 const characterData: Character = {
     name: "Toof",
-    image: "/characters/toof.png",
     introduction: "Toof was a Lyucu garinafin pilot who, along with his partner Radia, was captured by Princess Théra's expedition. He eventually defected and joined the Agon resistance, playing a key role in the rebellion in Ukyu-Gondé.",
     infoBox: {
         aliases: "The Defector",

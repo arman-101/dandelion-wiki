@@ -3,12 +3,11 @@
 import type { Metadata } from 'next';
 import { God } from '../../data/wiki-data';
 import { generateGodMetadata } from '@/app/utils/metadata';
-import KanaClient from './KanaClient.tsx';
+import KanaClient from './KanaClient';
 
 // --- DATA FOR KANA ---
 const godData: God = {
     name: "Kana",
-    image: "/gods/kana.png",
     introduction: "Kana is one of the twin patrons of Cocru, sister to Rapa. She is a formidable and often terrifying goddess who presides over fire, ash, cremation, and death, representing destructive and transformative forces.",
     infoBox: {
         Patronage: { text: "Cocru", link: "/places/cocru" },

@@ -3,12 +3,11 @@
 import type { Metadata } from 'next';
 import { Concept } from '../../data/wiki-data';
 import { generateConceptMetadata } from '@/app/utils/metadata';
-import PawiClient from './PawiClient.tsx';
+import PawiClient from './PawiClient';
 
 // --- DATA FOR PAWI ---
 const conceptData: Concept = {
     name: "Pawi",
-    image: "/concepts/pawi.png",
     introduction: "The pawi are the animal companions and physical manifestations of the gods of Dara. Each of the eight major deities is associated with a specific pawi, which acts as their agent, symbol, and a channel for their influence in the mortal world.",
     infoBox: {
         Type: "Divine Animal Companions",

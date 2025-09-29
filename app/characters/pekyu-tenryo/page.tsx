@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import PékyuTenryoClient from './PékyuTenryoClient.tsx';
+import PékyuTenryoClient from './PékyuTenryoClient';
 
 const characterData: Character = {
     name: "Pékyu Tenryo",
-    image: "/characters/pekyu-tenryo.png",
     introduction: "Pékyu Tenryo was the ruthless, patient, and cunning leader of the Lyucu people. He orchestrated the enslavement of Mapidéré's lost expedition and used their knowledge to launch a full-scale invasion of Dara, which he viewed as a promised land for his people.",
     infoBox: {
         aliases: "The Pékyu",

@@ -21,7 +21,7 @@ interface PageSubSection {
 // Generic page data interface
 interface PageData {
     name: string;
-    image: string;
+    image?: string;
     introduction: string;
     infoBox: InfoBoxData;
     sections: PageSection[];
@@ -170,7 +170,7 @@ export default function PageTemplate({
             <ImageModal
                 isOpen={isImageModalOpen}
                 onClose={handleCloseModal}
-                imageSrc={pageData.image}
+                imageSrc={pageData.image || ''}
                 imageAlt={`Image of ${pageData.name}`}
             />
         </>

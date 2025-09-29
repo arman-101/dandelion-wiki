@@ -11,49 +11,41 @@ const godsData = [
     {
         name: "Kiji",
         description: "The patron of Xana, god of wind, flight, and birds. His pawi is the Mingén falcon.",
-        image: "/gods/kiji.png",
         link: "/gods/kiji"
     },
     {
         name: "Tututika",
         description: "The patron of Amu and youngest of the gods. Governs agriculture, beauty, and fresh water.",
-        image: "/gods/tututika.png",
         link: "/gods/tututika"
     },
     {
         name: "Kana",
         description: "A patron of Cocru and twin to Rapa. Kana is the goddess of fire, ash, cremation, and death.",
-        image: "/gods/kana.png",
         link: "/gods/kana"
     },
     {
         name: "Rapa",
         description: "A patron of Cocru and twin to Kana. Rapa is the goddess of ice, snow, glaciers, and sleep.",
-        image: "/gods/rapa.png",
         link: "/gods/rapa"
     },
     {
         name: "Rufizo",
         description: "The patron of Faça and the Divine Healer of the pantheon. His pawi is the dove.",
-        image: "/gods/rufizo.png",
         link: "/gods/rufizo"
     },
     {
         name: "Tazu",
         description: "The unpredictable patron of Gan. A chaotic god of sea currents, tsunamis, and sunken treasures.",
-        image: "/gods/tazu.png",
         link: "/gods/tazu"
     },
     {
         name: "Lutho",
         description: "The patron of Haan, god of fishermen, divination, mathematics, and knowledge.",
-        image: "/gods/lutho.png",
         link: "/gods/lutho"
     },
     {
         name: "Fithowéo",
         description: "The patron of Rima, the god of war, the hunt, and the forge. His pawi is the wolf.",
-        image: "/gods/fithoweo.png",
         link: "/gods/fithoweo"
     },
 ];

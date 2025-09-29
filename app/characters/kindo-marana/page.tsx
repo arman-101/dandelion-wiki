@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import KindoMaranaClient from './KindoMaranaClient.tsx';
+import KindoMaranaClient from './KindoMaranaClient';
 
 const characterData: Character = {
     name: "Kindo Marana",
-    image: "/characters/kindo-marana.png",
     introduction: "Kindo Marana was the unassuming chief tax collector for the Xana Empire who, despite having no military experience, was appointed Commander-in-Chief by Lügo Crupo. He proved to be a surprisingly competent and meticulous commander, approaching war with the methodical efficiency of a bureaucrat.",
     infoBox: {
         aliases: "The Tax Collector",

@@ -3,7 +3,7 @@
 import type { Metadata } from 'next';
 import { Place } from '../../data/wiki-data';
 import { generatePlaceMetadata } from '@/app/utils/metadata';
-import TanAdüClient from './TanAdüClient.tsx';
+import TanAdüClient from './TanAdüClient';
 
 // --- DATA FOR TAN ADÜ ---
 const placeData: Place = {

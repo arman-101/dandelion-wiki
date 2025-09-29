@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import KingJizuClient from './KingJizuClient.tsx';
+import KingJizuClient from './KingJizuClient';
 
 const characterData: Character = {
     name: "King Jizu",
-    image: "/characters/king-jizu.png",
     introduction: "King Jizu was a former fisherman who was reluctantly elevated to the throne of Rima during the Dandelion Rebellion. His noble self-sacrifice in the face of certain defeat became a powerful symbol of resistance for the rebel cause.",
     infoBox: {
         aliases: "The Fisherman King",

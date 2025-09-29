@@ -272,7 +272,7 @@ export interface InfoBoxLink {
 
 export interface Character {
     name: string;
-    image: string | StaticImageData;
+    image?: string | StaticImageData;
     introduction: string;
     infoBox: {
         [key: string]: string | InfoBoxLink | InfoBoxLink[];
@@ -286,7 +286,7 @@ export interface Character {
 
 export interface God {
     name: string;
-    image: string | StaticImageData;
+    image?: string | StaticImageData;
     introduction: string;
     infoBox: {
         [key: string]: string | InfoBoxLink;
@@ -315,7 +315,7 @@ export interface Place {
 
 export interface Concept {
     name: string;
-    image: string | StaticImageData;
+    image?: string | StaticImageData;
     introduction: string;
     infoBox: {
         [key: string]: string | InfoBoxLink | InfoBoxLink[];

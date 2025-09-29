@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import OgaKidosuClient from './OgaKidosuClient.tsx';
+import OgaKidosuClient from './OgaKidosuClient';
 
 const characterData: Character = {
     name: "Oga Kidosu",
-    image: "/characters/oga-kidosu.png",
     introduction: "Oga Kidosu was a humble fisherman from Dasu and the long-lost father of Zomi Kidosu. After being lost at sea, he was enslaved by the Lyucu and became a key witness to their history and their brutal conquest of Emperor Mapidéré's lost expedition.",
     infoBox: {
         aliases: "The Storyteller",

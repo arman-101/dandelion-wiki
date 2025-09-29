@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import ThécaKimoClient from './ThécaKimoClient.tsx';
+import ThécaKimoClient from './ThécaKimoClient';
 
 const characterData: Character = {
     name: "Théca Kimo",
-    image: "/characters/theca-kimo.png",
     introduction: "Théca Kimo was a Duke of Géfica and one of Mata Zyndu's key allies. A pragmatic and somewhat cynical nobleman, he was later manipulated into rebellion by the cunning of Empress Jia.",
     infoBox: {
         aliases: "Duke of Géfica",

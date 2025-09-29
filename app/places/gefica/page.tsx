@@ -3,7 +3,7 @@
 import type { Metadata } from 'next';
 import { Place } from '../../data/wiki-data';
 import { generatePlaceMetadata } from '@/app/utils/metadata';
-import GéficaClient from './GéficaClient.tsx';
+import GéficaClient from './GéficaClient';
 
 // --- DATA FOR GÉFICA ---
 const placeData: Place = {

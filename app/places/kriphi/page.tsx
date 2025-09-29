@@ -3,7 +3,7 @@
 import type { Metadata } from 'next';
 import { Place } from '../../data/wiki-data';
 import { generatePlaceMetadata } from '@/app/utils/metadata';
-import KriphiClient from './KriphiClient.tsx';
+import KriphiClient from './KriphiClient';
 
 // --- DATA FOR KRIPHI ---
 const placeData: Place = {

@@ -3,7 +3,7 @@
 import type { Metadata } from 'next';
 import { Place } from '../../data/wiki-data';
 import { generatePlaceMetadata } from '@/app/utils/metadata';
-import TatenClient from './TatenClient.tsx';
+import TatenClient from './TatenClient';
 
 // --- DATA FOR TATEN ---
 const placeData: Place = {

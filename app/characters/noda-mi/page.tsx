@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import NodaMiClient from './NodaMiClient.tsx';
+import NodaMiClient from './NodaMiClient';
 
 const characterData: Character = {
     name: "Noda Mi",
-    image: "/characters/noda-mi.png",
     introduction: "Noda Mi was a cunning and strategic fallen king who became the mastermind behind the rebellious Hegemon Cults. Driven by ambition and resentment, he was a master of deception who later became a collaborator with the Lyucu invaders.",
     infoBox: {
         aliases: "The Cunning King",

@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import RinCodaClient from './RinCodaClient.tsx';
+import RinCodaClient from './RinCodaClient';
 
 const characterData: Character = {
     name: "Rin Coda",
-    image: "/characters/rin-coda.png",
     introduction: "Rin Coda was Kuni Garu's timid and scholarly childhood friend. He rose to become the Farsight Secretary in the Dandelion Dynasty, a role akin to an intelligence minister, but he was ultimately broken by the moral compromises of his position.",
     infoBox: {
         aliases: "Farsight Secretary",

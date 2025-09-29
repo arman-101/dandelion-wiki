@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import MozoMuClient from './MozoMuClient.tsx';
+import MozoMuClient from './MozoMuClient';
 
 const characterData: Character = {
     name: "Mozo Mu",
-    image: "/characters/mozo-mu.png",
     introduction: "Mozo Mu is a young, prodigiously talented chef and a descendant of the legendary Suda Mu. She is forced to compete on behalf of the ruthless merchant Tiphan Huto in the Ginpen restaurant contest.",
     infoBox: {
         aliases: "The Prodigy Chef",

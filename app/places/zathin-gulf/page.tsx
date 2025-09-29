@@ -3,7 +3,7 @@
 import type { Metadata } from 'next';
 import { Place } from '../../data/wiki-data';
 import { generatePlaceMetadata } from '@/app/utils/metadata';
-import ZathinGulfClient from './ZathinGulfClient.tsx';
+import ZathinGulfClient from './ZathinGulfClient';
 
 // --- DATA FOR ZATHIN GULF ---
 const placeData: Place = {

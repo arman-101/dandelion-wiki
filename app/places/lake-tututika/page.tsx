@@ -3,7 +3,7 @@
 import type { Metadata } from 'next';
 import { Place } from '../../data/wiki-data';
 import { generatePlaceMetadata } from '@/app/utils/metadata';
-import LakeTututikaClient from './LakeTututikaClient.tsx';
+import LakeTututikaClient from './LakeTututikaClient';
 
 // --- DATA FOR LAKE TUTUTIKA ---
 const placeData: Place = {

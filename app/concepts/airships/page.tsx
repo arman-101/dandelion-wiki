@@ -8,7 +8,6 @@ import AirshipsClient from './AirshipsClient';
 // --- DATA FOR AIRSHIPS ---
 const conceptData: Concept = {
     name: "Airships",
-    image: "/concepts/airships.png",
     introduction: "Airships are the definitive 'silkpunk' technology of Dara. These magnificent lighter-than-air vessels, powered by the mystical Lift Gas from Mount Kiji, are the key to military and economic power, capable of projecting force across the islands in a way never before possible.",
     infoBox: {
         Technology: "'Silkpunk' aeronautics",

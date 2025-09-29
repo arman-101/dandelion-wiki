@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import RathoMiroClient from './RathoMiroClient.tsx';
+import RathoMiroClient from './RathoMiroClient';
 
 const characterData: Character = {
     name: "Ratho Miro",
-    image: "/characters/ratho-miro.png",
     introduction: "Ratho Miro was a fierce and impulsive warrior who, along with his brother Dafiro, was one of the first to shed blood in the Dandelion Rebellion. He became a loyal and devoted follower of Mata Zyndu.",
     infoBox: {
         aliases: "The Younger Miro",

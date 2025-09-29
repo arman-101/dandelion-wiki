@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import PrinceGimotoClient from './PrinceGimotoClient.tsx';
+import PrinceGimotoClient from './PrinceGimotoClient';
 
 const characterData: Character = {
     name: "Prince Gimoto",
-    image: "/characters/prince-gimoto.png",
     introduction: "Prince Gimoto is the son of Kado Garu and the nephew of Emperor Ragin (Kuni Garu). He is a young prince of the Dandelion Dynasty's imperial family.",
     infoBox: {
         aliases: "None",

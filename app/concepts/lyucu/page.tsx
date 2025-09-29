@@ -3,12 +3,11 @@
 import type { Metadata } from 'next';
 import { Concept } from '../../data/wiki-data';
 import { generateConceptMetadata } from '@/app/utils/metadata';
-import TheLyucuClient from './TheLyucuClient.tsx';
+import TheLyucuClient from './TheLyucuClient';
 
 // --- DATA FOR THE LYUCU ---
 const conceptData: Concept = {
     name: "The Lyucu",
-    image: "/concepts/lyucu.png",
     introduction: "The Lyucu are a hardy, nomadic, and warlike people from the continent of Ukyu-Gondé. Their society is built around military prowess and a deep connection to their flying, fire-breathing war beasts, the garinafins. Their invasion of Dara presents an existential threat to the Dandelion Dynasty.",
     infoBox: {
       "Origin": { text: "Ukyu & Gondé", link: "/places/ukyu-gonde" },

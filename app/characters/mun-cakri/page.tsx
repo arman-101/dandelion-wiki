@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import MünÇakriClient from './MünÇakriClient.tsx';
+import MünÇakriClient from './MünÇakriClient';
 
 const characterData: Character = {
     name: "Mün Çakri",
-    image: "/characters/mun-cakri.png",
     introduction: "Mün Çakri is a former butcher from Zudi who becomes one of Kuni Garu's most loyal and formidable followers. Known for his immense strength and unwavering devotion, he serves as Kuni's unofficial bodyguard and a steadfast general in the Dandelion Court.",
     infoBox: {
         aliases: "The Butcher",

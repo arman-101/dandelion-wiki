@@ -3,12 +3,11 @@
 import type { Metadata } from 'next';
 import { God } from '../../data/wiki-data';
 import { generateGodMetadata } from '@/app/utils/metadata';
-import TazuClient from './TazuClient.tsx';
+import TazuClient from './TazuClient';
 
 // --- DATA FOR TAZU ---
 const godData: God = {
     name: "Tazu",
-    image: "/gods/tazu.png",
     introduction: "Tazu is the unpredictable and chaotic patron god of Gan. He governs the domains of sea currents, tsunamis, and sunken treasures, but more broadly represents the role of chance, luck, and randomness in the universe.",
     infoBox: {
         Patronage: { text: "Gan", link: "/places/gan" },

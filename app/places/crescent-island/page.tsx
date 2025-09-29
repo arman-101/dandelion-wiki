@@ -3,7 +3,7 @@
 import type { Metadata } from 'next';
 import { Place } from '../../data/wiki-data';
 import { generatePlaceMetadata } from '@/app/utils/metadata';
-import CrescentIslandClient from './CrescentIslandClient.tsx';
+import CrescentIslandClient from './CrescentIslandClient';
 
 // --- DATA FOR CRESCENT ISLAND ---
 const placeData: Place = {

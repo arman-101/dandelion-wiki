@@ -3,12 +3,11 @@
 import type { Metadata } from 'next';
 import { Concept } from '../../data/wiki-data';
 import { generateConceptMetadata } from '@/app/utils/metadata';
-import CrubenClient from './CrubenClient.tsx';
+import CrubenClient from './CrubenClient';
 
 // --- DATA FOR CRUBEN ---
 const conceptData: Concept = {
     name: "Cruben",
-    image: "/concepts/cruben.png",
     introduction: "Cruben are massive, horned, sea-turtle-like beasts native to the remote southern island of Tan Adü. The people of the island have developed the unique ability to ride them, using them as powerful and unpredictable naval mounts.",
     infoBox: {
         Type: "War Beast / Naval Mount",

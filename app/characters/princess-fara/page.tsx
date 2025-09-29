@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import PrincessFaraClient from './PrincessFaraClient.tsx';
+import PrincessFaraClient from './PrincessFaraClient';
 
 const characterData: Character = {
     name: "Princess Fara",
-    image: "/characters/princess-fara.png",
     introduction: "Princess Fara is the youngest child of Emperor Ragin and Consort Risana, raised by Empress Jia. A talented artist and inventor, she operates under the alias 'Dandelion,' becoming the heart of a grassroots cultural renaissance in Ginpen and, ultimately, the unlikely heir to a fractured empire.",
     infoBox: {
         aliases: "Dandelion, Empress Shizona",

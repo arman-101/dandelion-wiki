@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import ZatoRuthiClient from './ZatoRuthiClient.tsx';
+import ZatoRuthiClient from './ZatoRuthiClient';
 
 const characterData: Character = {
     name: "Zato Ruthi",
-    image: "/characters/zato-ruthi.png",
     introduction: "Zato Ruthi was a well-meaning but militarily naive scholar-king of Rima during the Dandelion Rebellion. He later became the stern and traditional Imperial Tutor for the children of Emperor Ragin, his rigid worldview often clashing with the new era of innovation.",
     infoBox: {
         aliases: "King of Rima, Imperial Tutor",

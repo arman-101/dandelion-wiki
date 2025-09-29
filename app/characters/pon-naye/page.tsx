@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import PonNayeClient from './PonNayeClient.tsx';
+import PonNayeClient from './PonNayeClient';
 
 const characterData: Character = {
     name: "Pon Naye",
-    image: "/characters/pon-naye.png",
     introduction: "Pon Naye was a courageous and stoic Dara airship squadron commander who served under Marshal Gin Mazoti. He is remembered for his heroic sacrifice during the first major battle against the Lyucu.",
     infoBox: {
         aliases: "Commander Naye",

@@ -6,7 +6,6 @@ import KijiClient from './KijiClient';
 // --- DATA FOR KIJI ---
 const godData: God = {
     name: "Kiji",
-    image: "/gods/kiji.png",
     introduction: "Kiji is the proud and powerful patron god of Xana, revered as the Lord of the Air and the master of wind, flight, and birds. He often meddles in mortal affairs, tempting heroes and expressing his frustration with the state of the world.",
     infoBox: {
         Patronage: { text: "Xana", link: "/places/xana" },

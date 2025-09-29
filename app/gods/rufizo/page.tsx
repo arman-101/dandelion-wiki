@@ -3,12 +3,11 @@
 import type { Metadata } from 'next';
 import { God } from '../../data/wiki-data';
 import { generateGodMetadata } from '@/app/utils/metadata';
-import RufizoClient from './RufizoClient.tsx';
+import RufizoClient from './RufizoClient';
 
 // --- DATA FOR RUFIZO ---
 const godData: God = {
     name: "Rufizo",
-    image: "/gods/rufizo.png",
     introduction: "Rufizo is the patron god of Faça, known throughout Dara as the Divine Healer. He represents compassion, restoration, and the gentle aspects of divinity, often acting as a voice of mercy.",
     infoBox: {
         Patronage: { text: "Faça", link: "/places/faca" },

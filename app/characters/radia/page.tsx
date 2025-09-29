@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import RadiaClient from './RadiaClient.tsx';
+import RadiaClient from './RadiaClient';
 
 const characterData: Character = {
     name: "Radia",
-    image: "/characters/radia.png",
     introduction: "Radia was a Lyucu warrior and the companion of the pilot Toof. Captured alongside him by Théra's expedition, she defected to the Agon resistance and heroically sacrificed her life for their cause.",
     infoBox: {
         aliases: "The Defector",

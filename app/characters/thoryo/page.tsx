@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import ThoryoClient from './ThoryoClient.tsx';
+import ThoryoClient from './ThoryoClient';
 
 const characterData: Character = {
     name: "Thoryo",
-    image: "/characters/thoryo.png",
     introduction: "Thoryo is a mysterious, feral girl discovered as a stowaway aboard Princess Théra's flagship. Possessing an incredible and seemingly supernatural gift for mimicry, she becomes a linguistic prodigy, a key ally, and a revered, almost mythical figure in the Agon rebellion.",
     infoBox: {
         aliases: "The Mimic, The Wolf-Thane",

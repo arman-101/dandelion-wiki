@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import PrincessThéraClient from './PrincessThéraClient.tsx';
+import PrincessThéraClient from './PrincessThéraClient';
 
 const characterData: Character = {
     name: "Princess Théra",
-    image: "/characters/princess-thera.png",
     introduction: "Princess Théra is the brilliant, adventurous, and scientifically-minded eldest daughter of Emperor Ragin and Empress Jia. Possessing her father's charisma and her mother's intellect, she was secretly chosen by Kuni to be his heir. She later leads a rebellion against the Lyucu in their homeland, becoming a legendary figure in her own right.",
     infoBox: {
         aliases: "Empress Üna, Pékyu-votan Théra",

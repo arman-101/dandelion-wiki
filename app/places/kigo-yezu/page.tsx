@@ -3,7 +3,7 @@
 import type { Metadata } from 'next';
 import { Place } from '../../data/wiki-data';
 import { generatePlaceMetadata } from '@/app/utils/metadata';
-import KigoYezuClient from './KigoYezuClient.tsx';
+import KigoYezuClient from './KigoYezuClient';
 
 // --- DATA FOR KIGO YEZU ---
 const placeData: Place = {

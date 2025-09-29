@@ -4,11 +4,10 @@
 import type { Metadata } from 'next';
 import { Character } from '../../data/wiki-data';
 import { generateCharacterMetadata } from '@/app/utils/metadata';
-import DoruSolofiClient from './DoruSolofiClient.tsx';
+import DoruSolofiClient from './DoruSolofiClient';
 
 const characterData: Character = {
     name: "Doru Solofi",
-    image: "/characters/doru-solofi.png",
     introduction: "Doru Solofi was a disgraced former king who, along with the cunning Noda Mi, became a leader of the rebellious Hegemon Cults in Tunoa. He represents the lingering resentment of the old nobility against the Dandelion Dynasty.",
     infoBox: {
         aliases: "The Bully",
