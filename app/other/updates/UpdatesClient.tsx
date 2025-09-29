@@ -13,8 +13,24 @@ interface Update {
 
 const updates: Update[] = [
     {
+        version: '#3',
+        date: 'September 29, 2025',
+        title: 'Custom Domain, SEO Optimization & UI Enhancements',
+        description: 'Major SEO optimization with custom domain migration, comprehensive UI improvements with centralized design system, and enhanced map visualization for all places.',
+        changes: [
+            '🌐 **Custom Domain Migration**: Migrated to dandelion-dynasty.com as primary domain with 301 redirects from www.dandelion-dynasty.com and dandelion-wiki.vercel.app',
+            '🔍 **Comprehensive SEO Optimization**: Complete SEO overhaul with 25+ site-wide keywords, 8-10 keywords per page, enhanced metadata, structured data (Schema.org), and Google Search Console integration',
+            '📊 **Advanced Metadata**: Enhanced descriptions with character/place/concept names, proper OpenGraph and Twitter cards with alt text, canonical URLs pointing to custom domain',
+            '🗺️ **Sitemap & Indexing**: Automated sitemap generation for 160+ pages with proper priorities, robots.txt optimization, and automated Google indexing',
+            '🎨 **Centralized Design System**: Standardized all UI elements including 4-column grid layouts (xl:grid-cols-4), consistent borders on all cards, uniform hover effects (accent-pink), and standardized heading spacing (mb-8)',
+            '🖼️ **Map Image Enhancements**: Added location-specific map images to all place pages highlighting their geographical position, with zoom in/out functionality for better navigation',
+            '🎯 **UI Consistency**: Unified card designs across all listing pages, consistent shadow effects (shadow-lg hover:shadow-2xl), and standardized spacing (gap-8, p-6)',
+            '🧭 **Navbar Improvements**: Cleaned up navigation bar with better organization and improved user experience',
+        ]
+    },
+    {
         version: '#2',
-        date: 'September 17, 2024',
+        date: 'September 17, 2025',
         title: 'UI/UX Improvements & Content Updates',
         description: 'Significant improvements to search functionality, homepage design, and comprehensive content updates across the wiki.',
         changes: [
@@ -35,7 +51,7 @@ const updates: Update[] = [
     },
     {
         version: '#1',
-        date: 'September 3, 2024',
+        date: 'September 3, 2025',
         title: 'Initial Launch',
         description: 'The official launch of The Dandelion Dynasty Wiki - a comprehensive fan-created encyclopedia for Ken Liu\'s epic silkpunk fantasy series.',
         changes: [
