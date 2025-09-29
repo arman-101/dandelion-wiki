@@ -319,6 +319,11 @@ export default function CharacterNameClient({ characterData }: CharacterNameClie
 
 **Image Display is Optional**: The PageTemplate component automatically displays images when they are provided in the data, but gracefully handles pages without images.
 
+**Mobile-First Layout**: The PageTemplate uses a mobile-first approach where:
+1. **Page title and introduction** appear at the top
+2. **Image and InfoBox** appear next (on mobile) or in sidebar (on desktop)
+3. **Content sections** follow below
+
 **To Add Images to Individual Pages:**
 
 #### Option 1: Modify PageTemplate Component
@@ -808,17 +813,25 @@ Add new category card to the grid (after the existing 6 cards):
 ### Core Components
 
 #### 1. PageTemplate
-**Purpose**: Consistent page layout with navigation
+**Purpose**: Consistent page layout with navigation and image modal support
 **Location**: `app/components/layout/PageTemplate.tsx`
+
+**Layout Structure**:
+1. **Page Title & Introduction** - Always at the top
+2. **Image & InfoBox** - Next on mobile, sidebar on desktop  
+3. **Content Sections** - Below the image/info area
+
+**Features**:
+- **Optional images** with click-to-expand modal
+- **Mobile-first responsive design**
+- **Consistent spacing and typography**
+- **InfoBox integration**
+
 ```tsx
 <PageTemplate 
-  title="Page Title"
-  subtitle="Optional subtitle"
-  category="Category Name"
-  showNavigation={true} // optional
->
-  {/* Page content */}
-</PageTemplate>
+  pageData={convertPlaceData(placeData)} 
+  infoBoxTitle="Location Information"
+/>
 ```
 
 #### 2. InfoBox
@@ -1297,6 +1310,8 @@ When working with this codebase:
 11. **🚨 CRITICAL: Import client components WITHOUT .tsx extension**
 12. **Handle images as optional** - PageTemplate gracefully handles pages with or without images
 13. **Use proper image paths** when adding images to data objects
+14. **🚨 CRITICAL: Update INSTRUCTIONS.md when making template changes** - Always document template modifications, layout changes, and new features
+15. **Test mobile responsiveness** - Ensure all changes work on mobile devices
 
 ### 🎯 **SEO & Title Requirements (MANDATORY)**
 

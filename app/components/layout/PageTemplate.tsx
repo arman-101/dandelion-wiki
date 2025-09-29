@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { formatLinksInText } from '../../utils/textFormatting';
 import InfoBox, { InfoBoxData } from '../ui/InfoBox';
 import ContentRenderer from '../ui/ContentRenderer';
+import ImageModal from '../ui/ImageModal';
 import { ContentBlock } from '../../data/wiki-data';
 
 // Generic section interface
@@ -41,6 +42,17 @@ export default function PageTemplate({
     infoBoxTitle,
     className = "" 
 }: PageTemplateProps) {
+    const [isImageModalOpen, setIsImageModalOpen] = useState(false);
+
+    const handleImageClick = () => {
+        if (pageData.image && pageData.image.trim() !== '') {
+            setIsImageModalOpen(true);
+        }
+    };
+
+    const handleCloseModal = () => {
+        setIsImageModalOpen(false);
+    };
     const renderSection = (section: PageSection) => {
         return (
             <section key={section.id} id={section.id}>
@@ -88,45 +100,80 @@ export default function PageTemplate({
     };
 
     return (
-        <div className={className}>
-            <div className="flex flex-col lg:flex-row gap-8">
-                {/* Main Content Area */}
-                <div className="w-full lg:w-2/3 order-1 lg:order-1">
+        <>
+            <div className={className}>
+                {/* Page Title and Introduction - Always at top */}
+                <div className="mb-8">
                     <h1 className="text-4xl md:text-5xl font-bold text-text-primary dark:text-text-primary mb-4">
                         {pageData.name}
                     </h1>
-                    <p className="text-lg italic text-text-muted dark:text-text-light mb-8 border-l-4 border-border-primary dark:border-border-secondary pl-4">
+                    <p className="text-lg italic text-text-muted dark:text-text-light border-l-4 border-border-primary dark:border-border-secondary pl-4">
                         {formatLinksInText(pageData.introduction)}
                     </p>
-
-                    <div className="space-y-8">
-                        {pageData.sections.map(renderSection)}
-                    </div>
                 </div>
 
-                {/* Sidebar with Image and InfoBox */}
-                <div className="w-full lg:w-1/3 order-2 lg:order-2">
-                    <div className="sticky top-24 space-y-6">
-                        {/* Image Display - Optional */}
-                        {pageData.image && pageData.image.trim() !== '' && (
-                            <div className="relative w-full h-80 rounded-lg overflow-hidden shadow-lg">
-                                <Image 
-                                    src={pageData.image}
-                                    alt={`Image of ${pageData.name}`}
-                                    fill
-                                    style={{ objectFit: "cover", objectPosition: "top" }}
-                                />
-                            </div>
-                        )}
-                        
-                        <InfoBox 
-                            title={infoBoxTitle}
-                            data={pageData.infoBox}
-                        />
+                <div className="flex flex-col lg:flex-row gap-8">
+                    {/* Main Content Area */}
+                    <div className="w-full lg:w-2/3 order-2 lg:order-1">
+                        <div className="space-y-8">
+                            {pageData.sections.map(renderSection)}
+                        </div>
+                    </div>
+
+                    {/* Sidebar with Image and InfoBox */}
+                    <div className="w-full lg:w-1/3 order-1 lg:order-2">
+                        <div className="sticky top-24 space-y-6">
+                            {/* Image Display - Optional with Click to Expand */}
+                            {pageData.image && pageData.image.trim() !== '' && (
+                                <div 
+                                    className="relative w-full h-80 rounded-lg overflow-hidden shadow-lg cursor-pointer hover:shadow-xl transition-shadow duration-200"
+                                    onClick={handleImageClick}
+                                    title="Click to view larger image"
+                                >
+                                    <Image 
+                                        src={pageData.image}
+                                        alt={`Image of ${pageData.name}`}
+                                        fill
+                                        style={{ objectFit: "cover", objectPosition: "top" }}
+                                    />
+                                    {/* Overlay with expand icon */}
+                                    <div className="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-all duration-200 flex items-center justify-center">
+                                        <div className="opacity-0 hover:opacity-100 transition-opacity duration-200">
+                                            <svg 
+                                                className="w-8 h-8 text-white drop-shadow-lg" 
+                                                fill="none" 
+                                                stroke="currentColor" 
+                                                viewBox="0 0 24 24"
+                                            >
+                                                <path 
+                                                    strokeLinecap="round" 
+                                                    strokeLinejoin="round" 
+                                                    strokeWidth={2} 
+                                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" 
+                                                />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
+                            
+                            <InfoBox 
+                                title={infoBoxTitle}
+                                data={pageData.infoBox}
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+
+            {/* Image Modal */}
+            <ImageModal
+                isOpen={isImageModalOpen}
+                onClose={handleCloseModal}
+                imageSrc={pageData.image}
+                imageAlt={`Image of ${pageData.name}`}
+            />
+        </>
     );
 }
 
