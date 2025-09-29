@@ -15,13 +15,27 @@ const inter = Inter({ subsets: ['latin'] })
 const websiteStructuredData = generateWebsiteStructuredData()
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://dandelion-wiki.vercel.app'),
+  metadataBase: new URL('https://dandelion-dynasty.com'),
   title: {
     template: '%s | The Dandelion Dynasty Wiki',
     default: 'The Dandelion Dynasty Wiki'
   },
-  description: 'The ultimate encyclopedia for Ken Liu\'s epic silkpunk fantasy series. Explore characters, places, gods, concepts, and more from the world of Dara.',
-  keywords: ['Dandelion Dynasty', 'Ken Liu', 'silkpunk', 'fantasy', 'wiki', 'encyclopedia', 'Dara', 'Grace of Kings', 'Wall of Storms', 'Veiled Throne', 'Speaking Bones'],
+  description: 'The ultimate encyclopedia for Ken Liu\'s epic silkpunk fantasy series, The Dandelion Dynasty. Explore 100+ characters like Kuni Garu and Mata Zyndu, places like Dara and Pan, gods, concepts like garinafins, and detailed book guides from the world of Dara.',
+  keywords: [
+    // Series & Author
+    'Dandelion Dynasty', 'Ken Liu', 'silkpunk', 'fantasy series', 'Dara',
+    // Books
+    'Grace of Kings', 'Wall of Storms', 'Veiled Throne', 'Speaking Bones',
+    // Main Characters
+    'Kuni Garu', 'Mata Zyndu', 'Jia Matiza', 'Zomi Kidosu', 'Théra', 'Phyro Garu',
+    'Gin Mazoti', 'Luan Zya', 'Tanno Namen', 'Zyndu Clan',
+    // Major Concepts
+    'garinafin', 'cruben', 'airship', 'silkpunk technology',
+    // Places
+    'Pan', 'Xana', 'Rui', 'Dasu', 'Géjira', 'Ukyu-Gondé', 'Lyucu Empire',
+    // Content Type
+    'wiki', 'encyclopedia', 'character guide', 'book summary', 'fantasy worldbuilding'
+  ],
   authors: [{ name: 'Dandelion Dynasty Wiki Community' }],
   creator: 'Dandelion Dynasty Wiki',
   publisher: 'Dandelion Dynasty Wiki',
@@ -29,14 +43,15 @@ export const metadata: Metadata = {
     icon: '/icon.png',
   },
   alternates: {
-    canonical: 'https://dandelion-wiki.vercel.app'
+    canonical: 'https://dandelion-dynasty.com'
   },
   openGraph: {
     title: 'The Dandelion Dynasty Wiki',
-    description: 'The ultimate encyclopedia for Ken Liu\'s epic silkpunk fantasy series. Explore characters, places, gods, concepts, and more from the world of Dara.',
-    url: 'https://dandelion-wiki.vercel.app',
+    description: 'The ultimate encyclopedia for Ken Liu\'s epic silkpunk fantasy series. Explore 100+ characters, places, gods, concepts, and detailed book guides from the world of Dara.',
+    url: 'https://dandelion-dynasty.com',
     siteName: 'The Dandelion Dynasty Wiki',
     type: 'website',
+    locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
@@ -54,6 +69,9 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
+  },
+  verification: {
+    google: 'R8ExRVy3k4nL7knfBM-SiGJOqYQHHqQC0bbgiEsGuyk',
   },
 }
 

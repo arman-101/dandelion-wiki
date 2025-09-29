@@ -53,6 +53,7 @@ This comprehensive guide provides all the information needed for AI assistants t
 - **Icons**: Lucide React + custom SVGs
 - **Deployment**: Vercel
 - **TypeScript**: Strict mode enabled
+- **Domain**: dandelion-dynasty.com (primary), dandelion-wiki.vercel.app (legacy)
 
 ## 📁 Directory Structure
 
@@ -1293,6 +1294,381 @@ public/
 
 ---
 
+## 🔍 SEO Best Practices & Optimization
+
+### 🎯 SEO Overview
+
+**Primary Domain**: `https://dandelion-dynasty.com`  
+**Goal**: Rank #1 for all Dandelion Dynasty-related searches (characters, places, gods, concepts, books)
+
+### 🚀 SEO Implementation
+
+The wiki uses a comprehensive SEO strategy with:
+- **Canonical URLs** pointing to dandelion-dynasty.com
+- **Rich metadata** with extensive keywords
+- **Structured data** (JSON-LD) for search engines
+- **Optimized descriptions** with character/place names
+- **Sitemap** with all pages
+- **Robots.txt** configuration
+
+### 📊 SEO Files & Configuration
+
+#### 1. Root Layout (`app/layout.tsx`)
+**Purpose**: Site-wide SEO metadata and structured data
+
+```typescript
+export const metadata: Metadata = {
+  metadataBase: new URL('https://dandelion-dynasty.com'),
+  title: {
+    template: '%s | The Dandelion Dynasty Wiki',
+    default: 'The Dandelion Dynasty Wiki'
+  },
+  description: '...',
+  keywords: [
+    // Series & Author
+    'Dandelion Dynasty', 'Ken Liu', 'silkpunk', 'fantasy series', 'Dara',
+    // Books
+    'Grace of Kings', 'Wall of Storms', 'Veiled Throne', 'Speaking Bones',
+    // Main Characters
+    'Kuni Garu', 'Mata Zyndu', 'Jia Matiza', 'Zomi Kidosu', 'Théra', 'Phyro Garu',
+    // Major Concepts
+    'garinafin', 'cruben', 'airship', 'silkpunk technology',
+    // Places
+    'Pan', 'Xana', 'Rui', 'Dasu', 'Géjira', 'Ukyu-Gondé', 'Lyucu Empire',
+    // Content Type
+    'wiki', 'encyclopedia', 'character guide', 'book summary'
+  ],
+  // ... rest of metadata
+}
+```
+
+**Key Features**:
+- **metadataBase**: All relative URLs automatically use dandelion-dynasty.com
+- **Extensive keywords**: Includes main characters, places, concepts for better discoverability
+- **Structured data**: Embedded JSON-LD for search engines
+
+#### 2. Metadata Utility (`app/utils/metadata.ts`)
+**Purpose**: Generate SEO-optimized metadata for each page type
+
+**Enhanced Features**:
+- ✅ Uses dandelion-dynasty.com for all canonical URLs
+- ✅ Enhanced descriptions with character/place/concept names
+- ✅ Page-specific keywords for better ranking
+- ✅ Alt text for images
+- ✅ Proper OpenGraph and Twitter cards
+
+**Functions Available**:
+```typescript
+// Character pages - includes character name in keywords
+generateCharacterMetadata(character: Character)
+
+// Place pages - includes location-specific keywords
+generatePlaceMetadata(place: Place)
+
+// God pages - includes mythology keywords
+generateGodMetadata(god: God)
+
+// Concept pages - includes worldbuilding keywords
+generateConceptMetadata(concept: Concept)
+
+// Book pages - includes book title and series keywords
+generateBookMetadata(bookTitle: string, description?: string, slug?: string)
+
+// General pages - includes basic keywords
+generatePageMetadata(pageTitle: string, description?: string, slug?: string)
+```
+
+#### 3. Structured Data (`app/utils/structuredData.ts`)
+**Purpose**: Provide semantic information to search engines
+
+**Available Functions**:
+```typescript
+// Character pages - uses "Person" schema type
+generateCharacterStructuredData(character: Character, slug: string)
+
+// Place pages - uses "Place" schema type
+generatePlaceStructuredData(place: Place, slug: string)
+
+// God pages - uses "Thing" schema type
+generateGodStructuredData(god: God, slug: string)
+
+// Concept pages - uses "Thing" schema type
+generateConceptStructuredData(concept: Concept, slug: string)
+
+// Book pages - uses "Book" schema type with author
+generateBookStructuredData(bookTitle: string, description: string, slug: string)
+
+// Site-wide - includes search action
+generateWebsiteStructuredData()
+
+// Navigation breadcrumbs
+generateBreadcrumbStructuredData(items: Array<{name: string, url: string}>)
+```
+
+**What Structured Data Provides**:
+- Search engines understand page content better
+- Rich snippets in search results
+- Knowledge graph integration
+- Better categorization
+
+#### 4. Sitemap (`app/sitemap.ts`)
+**Purpose**: Help search engines discover all pages
+
+**Current Configuration**:
+- **Homepage**: Priority 1.0, weekly updates
+- **Category pages**: Priority 0.9, weekly updates
+- **Character pages**: Priority 0.8, monthly updates
+- **Book pages**: Priority 0.8, monthly updates
+- **Place/God/Concept pages**: Priority 0.7, monthly updates
+- **Other pages**: Priority 0.6, monthly updates
+
+**Automatically generates** from wiki data:
+- All character pages from `ALL_CHARACTERS`
+- All place pages from `ALL_PLACES`
+- All god pages from `ALL_GODS`
+- All concept pages from `ALL_CONCEPTS`
+- All book pages from `ALL_BOOKS`
+
+#### 5. Robots.txt (`app/robots.ts`)
+**Purpose**: Control search engine crawling
+
+```typescript
+export default function robots() {
+  return {
+    rules: [
+      {
+        userAgent: '*',
+        allow: '/',
+        crawlDelay: 1,  // 1 second between requests
+      }
+    ],
+    sitemap: 'https://dandelion-dynasty.com/sitemap.xml',
+  }
+}
+```
+
+### 🎯 SEO Best Practices for New Pages
+
+#### 1. Use Enhanced Descriptions
+**Good Description**:
+```typescript
+"Kuni Garu, the cunning Emperor of Dara. Explore the complete biography, history, and role of Kuni Garu in Ken Liu's silkpunk fantasy series."
+```
+
+**Why It Works**:
+- Includes character name multiple times
+- Mentions the series and author
+- Describes what users will find
+- Uses relevant keywords (biography, history, role)
+
+#### 2. Include Relevant Keywords
+**For Characters**:
+```typescript
+keywords: [
+  'Character Name',
+  'Dandelion Dynasty character',
+  'Ken Liu',
+  'The Grace of Kings',
+  'silkpunk fantasy',
+  'Dara character',
+  ...character.name.split(' ')  // Individual name parts
+]
+```
+
+**For Places**:
+```typescript
+keywords: [
+  'Place Name',
+  'Dandelion Dynasty location',
+  'Ken Liu',
+  'Dara geography',
+  'silkpunk world',
+  'fantasy locations'
+]
+```
+
+#### 3. Add Alt Text to Images
+```typescript
+openGraph: {
+  images: imageUrl ? [{ 
+    url: imageUrl, 
+    alt: `Portrait of ${character.name}` 
+  }] : undefined
+}
+```
+
+#### 4. Use Canonical URLs
+```typescript
+const canonicalUrl = `https://dandelion-dynasty.com/characters/${slug}`;
+
+alternates: {
+  canonical: canonicalUrl
+}
+```
+
+### 📈 SEO Monitoring & Improvement
+
+#### Google Search Console Setup
+1. Verify ownership of dandelion-dynasty.com
+2. Submit sitemap: `https://dandelion-dynasty.com/sitemap.xml`
+3. Monitor:
+   - Indexing status
+   - Search queries
+   - Click-through rates
+   - Page performance
+
+#### Add Verification Code
+Update `app/layout.tsx`:
+```typescript
+verification: {
+  google: 'your-google-site-verification-code',
+}
+```
+
+#### Key Metrics to Track
+- **Impressions**: How many times your site appears in search
+- **Clicks**: How many people click through
+- **Average Position**: Your ranking for queries
+- **CTR**: Click-through rate
+
+### 🎨 SEO-Friendly Content Guidelines
+
+#### Page Titles
+**Format**: `[Page Name] | The Dandelion Dynasty Wiki`
+- ✅ "Kuni Garu | The Dandelion Dynasty Wiki"
+- ✅ "The Grace of Kings | The Dandelion Dynasty Wiki"
+- ❌ "Kuni Garu" (missing branding)
+- ❌ "Kuni Garu - Dandelion Wiki" (inconsistent format)
+
+#### Meta Descriptions
+**Length**: 120-160 characters
+**Structure**: [Entity name] + [brief description] + [context/series]
+
+**Good Examples**:
+- "Kuni Garu, the cunning Emperor of Dara. Explore his complete biography, rise to power, and legacy in Ken Liu's silkpunk fantasy series."
+- "Pan, the archipelago nation. Discover the geography, history, and significance of Pan in Ken Liu's world of Dara."
+
+#### Headings Hierarchy
+```tsx
+<h1>Character Name</h1>           {/* Page title */}
+<h2>Appearance and Personality</h2> {/* Main sections */}
+<h3>Physical Description</h3>      {/* Subsections */}
+```
+
+#### Internal Linking
+- Link to related characters, places, and concepts
+- Use descriptive anchor text
+- Example: "Kuni Garu" instead of "click here"
+
+### 🔗 URL Structure
+
+#### Best Practices
+```
+✅ Good URLs:
+https://dandelion-dynasty.com/characters/kuni-garu
+https://dandelion-dynasty.com/places/pan
+https://dandelion-dynasty.com/gods/kiji
+
+❌ Avoid:
+/characters?id=123
+/page.php?name=kuni-garu
+/characters/Kuni-Garu (mixed case)
+```
+
+#### Slug Guidelines
+- Use lowercase
+- Use hyphens, not underscores
+- Remove special characters
+- Keep it short and descriptive
+- Match the entity name
+
+### 📱 Technical SEO
+
+#### Performance Optimization
+- ✅ Next.js Image component for optimization
+- ✅ Static generation for all pages
+- ✅ Minimal JavaScript bundles
+- ✅ Fast page loads (<2 seconds)
+
+#### Mobile-First
+- ✅ Responsive design
+- ✅ Touch-friendly navigation
+- ✅ Readable text sizes
+- ✅ Properly sized tap targets
+
+#### Core Web Vitals
+Monitor these metrics:
+- **LCP** (Largest Contentful Paint): <2.5s
+- **FID** (First Input Delay): <100ms
+- **CLS** (Cumulative Layout Shift): <0.1
+
+### 🎯 Ranking Strategy
+
+#### Target Keywords by Category
+
+**Characters**:
+- "[Character Name] Dandelion Dynasty"
+- "[Character Name] Ken Liu"
+- "[Character Name] Grace of Kings"
+- "Who is [Character Name]"
+
+**Places**:
+- "[Place Name] Dandelion Dynasty"
+- "[Place Name] Dara"
+- "[Place Name] Ken Liu world"
+
+**Concepts**:
+- "What is [Concept]"
+- "[Concept] Dandelion Dynasty"
+- "[Concept] silkpunk"
+- "Garinafin flying creature"
+
+**Books**:
+- "Grace of Kings summary"
+- "Grace of Kings characters"
+- "Dandelion Dynasty reading order"
+
+#### Content Quality
+- ✅ Comprehensive information
+- ✅ Regular updates
+- ✅ Cite sources (book references)
+- ✅ Unique content (not copied)
+- ✅ Well-structured with headings
+
+### 🚨 SEO Checklist for New Pages
+
+Before publishing any new page:
+
+- [ ] **Metadata**: Uses appropriate generate*Metadata function
+- [ ] **Title**: Follows "Name | The Dandelion Dynasty Wiki" format
+- [ ] **Description**: Enhanced with keywords and context
+- [ ] **Keywords**: Includes relevant search terms
+- [ ] **Canonical URL**: Points to dandelion-dynasty.com
+- [ ] **Images**: Have descriptive alt text
+- [ ] **Structured Data**: Added if applicable (for major pages)
+- [ ] **Internal Links**: Links to related pages
+- [ ] **Heading Hierarchy**: Proper h1, h2, h3 structure
+- [ ] **URL Slug**: Lowercase, hyphenated, descriptive
+- [ ] **Content Quality**: Comprehensive and accurate
+- [ ] **Mobile Responsive**: Looks good on all devices
+- [ ] **Data Registration**: Added to wiki-data.ts arrays
+- [ ] **Sitemap**: Automatically included via data arrays
+
+### 🎓 SEO Resources
+
+#### Tools to Use
+- **Google Search Console**: Monitor search performance
+- **Google PageSpeed Insights**: Check performance
+- **Lighthouse**: Audit SEO, performance, accessibility
+- **Ahrefs/SEMrush**: Track keyword rankings (optional)
+
+#### Key Documents
+- [Google Search Central](https://developers.google.com/search)
+- [Next.js SEO Guide](https://nextjs.org/learn/seo/introduction-to-seo)
+- [Schema.org Documentation](https://schema.org/)
+
+---
+
 ## 🤖 AI Assistant Guidelines
 
 When working with this codebase:
@@ -1312,20 +1688,29 @@ When working with this codebase:
 13. **Use proper image paths** when adding images to data objects
 14. **🚨 CRITICAL: Update INSTRUCTIONS.md when making template changes** - Always document template modifications, layout changes, and new features
 15. **Test mobile responsiveness** - Ensure all changes work on mobile devices
+16. **🚨 CRITICAL: SEO Optimization** - Use enhanced metadata, keywords, and canonical URLs pointing to dandelion-dynasty.com
+17. **Implement structured data** for major pages using appropriate schema types
+18. **Follow SEO best practices** outlined in the SEO section above
 
 ### 🎯 **SEO & Title Requirements (MANDATORY)**
 
 **EVERY new page MUST:**
 - Use the server/client component pattern
-- Export proper `metadata` using utility functions
+- Export proper `metadata` using utility functions from `app/utils/metadata.ts`
 - Follow the exact title format: "Name | The Dandelion Dynasty Wiki"
-- Include OpenGraph and Twitter metadata
+- Include enhanced descriptions with relevant keywords
+- Use canonical URLs pointing to `https://dandelion-dynasty.com`
+- Include OpenGraph and Twitter metadata with alt text for images
+- Add structured data for major pages (characters, places, gods, concepts, books)
 - Have proper navigation (prev/next/return links)
-- Be registered in the appropriate data arrays
+- Be registered in the appropriate data arrays for sitemap generation
 
 **NEVER:**
 - Create pages without proper metadata
 - Use hardcoded titles without "Wiki" suffix
+- Use old domain (dandelion-wiki.vercel.app) for canonical URLs
+- Skip keyword optimization in metadata
+- Forget alt text for images
 - Mix server and client code in the same component
 - Skip the navigation setup
 

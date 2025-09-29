@@ -23,7 +23,7 @@ interface BaseStructuredData {
 
 // Character structured data
 export function generateCharacterStructuredData(character: Character, slug: string): BaseStructuredData {
-  const baseUrl = 'https://dandelion-wiki.vercel.app'
+  const baseUrl = 'https://dandelion-dynasty.com'
   
   return {
     '@context': 'https://schema.org',
@@ -44,7 +44,7 @@ export function generateCharacterStructuredData(character: Character, slug: stri
 
 // Place structured data
 export function generatePlaceStructuredData(place: Place, slug: string): BaseStructuredData {
-  const baseUrl = 'https://dandelion-wiki.vercel.app'
+  const baseUrl = 'https://dandelion-dynasty.com'
   
   return {
     '@context': 'https://schema.org',
@@ -65,7 +65,7 @@ export function generatePlaceStructuredData(place: Place, slug: string): BaseStr
 
 // God structured data
 export function generateGodStructuredData(god: God, slug: string): BaseStructuredData {
-  const baseUrl = 'https://dandelion-wiki.vercel.app'
+  const baseUrl = 'https://dandelion-dynasty.com'
   
   return {
     '@context': 'https://schema.org',
@@ -86,7 +86,7 @@ export function generateGodStructuredData(god: God, slug: string): BaseStructure
 
 // Concept structured data
 export function generateConceptStructuredData(concept: Concept, slug: string): BaseStructuredData {
-  const baseUrl = 'https://dandelion-wiki.vercel.app'
+  const baseUrl = 'https://dandelion-dynasty.com'
   
   return {
     '@context': 'https://schema.org',
@@ -107,7 +107,7 @@ export function generateConceptStructuredData(concept: Concept, slug: string): B
 
 // Book structured data
 export function generateBookStructuredData(bookTitle: string, description: string, slug: string): BaseStructuredData {
-  const baseUrl = 'https://dandelion-wiki.vercel.app'
+  const baseUrl = 'https://dandelion-dynasty.com'
   
   return {
     '@context': 'https://schema.org',
@@ -131,7 +131,7 @@ export function generateBookStructuredData(bookTitle: string, description: strin
 
 // Website structured data
 export function generateWebsiteStructuredData(): any {
-  const baseUrl = 'https://dandelion-wiki.vercel.app'
+  const baseUrl = 'https://dandelion-dynasty.com'
   
   return {
     '@context': 'https://schema.org',

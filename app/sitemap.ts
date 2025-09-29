@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 import { ALL_CHARACTERS, ALL_PLACES, ALL_GODS, ALL_CONCEPTS, ALL_BOOKS } from './data/wiki-data'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://dandelion-wiki.vercel.app'
+  const baseUrl = 'https://dandelion-dynasty.com'
   
   // Static pages
   const staticPages = [
