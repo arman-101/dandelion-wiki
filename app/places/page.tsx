@@ -30,7 +30,7 @@ const placesEtc: Place[] = ALL_PLACES_DATA.filter(p => p.category === 'etc');
 // Helper component for rendering each section
 const PlaceSection: FC<{ title: string; places: Place[]; isFirst?: boolean }> = ({ title, places, isFirst = false }) => (
     <section>
-        <h3 className={`text-3xl md:text-4xl font-bold text-text-primary dark:text-text-primary border-b pb-4 ${isFirst ? 'mt-0 mb-8' : 'my-8'}`}>{title}</h3>
+        <h3 id={title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')} className={`text-3xl md:text-4xl font-bold text-text-primary dark:text-text-primary border-b pb-4 ${isFirst ? 'mt-0 mb-8' : 'my-8'}`}>{title}</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {places.map((place: Place) => (
                 <Link href={place.link} key={place.name} className="group bg-bg-card dark:bg-bg-card rounded-lg shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-1 overflow-hidden border border-border-primary dark:border-border-secondary">

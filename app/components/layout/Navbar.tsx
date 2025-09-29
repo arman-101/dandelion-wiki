@@ -9,8 +9,6 @@ import { ThemeToggleButton } from '../features/ThemeToggleButton';
 import { ChevronDownIcon, MenuIcon, XIcon, CoffeeIcon } from '../ui/Icons';
 import {
     ALL_BOOKS,
-    PLACES_TIRO_STATES,
-    PLACES_BEYOND_DARA,
     MAIN_GODS,
     OTHER_PAGES,
     CHARACTERS_BY_BOOK_NAV
@@ -61,6 +59,10 @@ export default function Navbar() {
                                 </button>
                                 <div className="absolute left-0 top-full mt-2 w-56 rounded-md shadow-lg bg-bg-primary dark:bg-bg-card ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                                     <div className="py-1">
+                                        <Link href="/books" className="flex justify-between items-center px-4 py-2 text-sm text-text-secondary dark:text-text-secondary hover:bg-bg-tertiary dark:hover:bg-border-primary hover:[color:var(--color-accent-pink)] transition-colors">
+                                            All Books
+                                        </Link>
+                                        <hr className="my-1 border-border-secondary dark:border-border-secondary" />
                                         {ALL_BOOKS.map(book => (
                                             <DropdownItem key={book.path} href={book.path}>
                                                 {book.title}
@@ -119,19 +121,16 @@ export default function Navbar() {
                                                 <span className="text-xs">▶</span>
                                             </Link>
                                             <div className="absolute left-full top-0 -mt-1 w-56 rounded-md shadow-lg bg-bg-card dark:bg-bg-card ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover/submenu:opacity-100 group-hover/submenu:visible transition-all duration-200">
-                                                <div className="py-1 font-semibold text-xs px-4 pt-2 pb-1 text-text-light">Tiro States</div>
-                                                {PLACES_TIRO_STATES.map(p => (
-                                                    <DropdownItem key={p.path} href={p.path}>
-                                                        {p.title}
-                                                    </DropdownItem>
-                                                ))}
+                                                <Link href="/places" className="flex justify-between items-center px-4 py-2 text-sm text-text-secondary dark:text-text-secondary hover:bg-bg-tertiary dark:hover:bg-border-primary hover:[color:var(--color-accent-pink)] transition-colors">
+                                                    All Places
+                                                </Link>
                                                 <hr className="my-1 border-border-secondary dark:border-border-secondary" />
-                                                <div className="py-1 font-semibold text-xs px-4 pt-1 pb-1 text-text-light">Beyond Dara</div>
-                                                {PLACES_BEYOND_DARA.map(p => (
-                                                    <DropdownItem key={p.path} href={p.path}>
-                                                        {p.title}
-                                                    </DropdownItem>
-                                                ))}
+                                                <DropdownItem href="/places#the-seven-states-of-dara">The Seven States of Dara</DropdownItem>
+                                                <DropdownItem href="/places#major-cities-regions">Major Cities & Regions</DropdownItem>
+                                                <DropdownItem href="/places#outer-islands-archipelagos">Outer Islands & Archipelagos</DropdownItem>
+                                                <DropdownItem href="/places#geographical-landmarks">Geographical Landmarks</DropdownItem>
+                                                <DropdownItem href="/places#ukyu-gonde">Ukyu & Gonde</DropdownItem>
+                                                <DropdownItem href="/places#etc">Etc</DropdownItem>
                                             </div>
                                         </div>
                                         <div className="relative group/submenu">
@@ -140,6 +139,10 @@ export default function Navbar() {
                                                 <span className="text-xs">▶</span>
                                             </Link>
                                             <div className="absolute left-full top-0 -mt-1 w-56 rounded-md shadow-lg bg-bg-card dark:bg-bg-card ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover/submenu:opacity-100 group-hover/submenu:visible transition-all duration-200">
+                                                <Link href="/gods" className="flex justify-between items-center px-4 py-2 text-sm text-text-secondary dark:text-text-secondary hover:bg-bg-tertiary dark:hover:bg-border-primary hover:[color:var(--color-accent-pink)] transition-colors">
+                                                    All Gods
+                                                </Link>
+                                                <hr className="my-1 border-border-secondary dark:border-border-secondary" />
                                                 <div className="py-1">
                                                     {MAIN_GODS.map(g => (
                                                         <DropdownItem key={g.path} href={g.path}>
