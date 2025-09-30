@@ -40,7 +40,12 @@ export const metadata: Metadata = {
   creator: 'Dandelion Dynasty Wiki',
   publisher: 'Dandelion Dynasty Wiki',
   icons: {
-    icon: '/icon.png',
+    icon: [
+      { url: '/icon.png', sizes: '32x32', type: 'image/png' },
+      { url: '/icon.png', sizes: '16x16', type: 'image/png' },
+    ],
+    shortcut: '/icon.png',
+    apple: '/icon.png',
   },
   alternates: {
     canonical: 'https://dandelion-dynasty.com'
