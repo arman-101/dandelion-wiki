@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   // Optimize for production deployment
-  output: 'standalone',
+  // output: 'standalone', // Commented out for Vercel compatibility
   // Ensure proper static asset handling
   trailingSlash: false,
   // Optimize images
