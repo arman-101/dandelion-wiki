@@ -41,11 +41,24 @@ export const metadata: Metadata = {
   publisher: 'Dandelion Dynasty Wiki',
   icons: {
     icon: [
-      { url: '/icon.png', sizes: '32x32', type: 'image/png' },
-      { url: '/icon.png', sizes: '16x16', type: 'image/png' },
+      { url: '/icon.png', type: 'image/png' },
     ],
     shortcut: '/icon.png',
     apple: '/icon.png',
+    other: [
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '32x32',
+        url: '/icon.png',
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '16x16',
+        url: '/icon.png',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://dandelion-dynasty.com'
@@ -57,6 +70,7 @@ export const metadata: Metadata = {
     siteName: 'The Dandelion Dynasty Wiki',
     type: 'website',
     locale: 'en_US',
+    images: [{ url: '/icon.png', width: 512, height: 512, alt: 'The Dandelion Dynasty Wiki' }],
   },
   twitter: {
     card: 'summary_large_image',

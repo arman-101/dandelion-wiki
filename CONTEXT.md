@@ -1,4 +1,4 @@
-# 🤖 AI Instructions for Dandelion Wiki
+# 🤖 AI Context for Dandelion Wiki
 
 This comprehensive guide provides all the information needed for AI assistants to work effectively with the Dandelion Dynasty Wiki codebase.
 
@@ -7,6 +7,7 @@ This comprehensive guide provides all the information needed for AI assistants t
 - [Tech Stack & Versions](#tech-stack--versions)
 - [Directory Structure](#directory-structure)
 - [Color System](#color-system)
+- [Icon & Favicon Configuration](#icon--favicon-configuration)
 - [Creating New Pages](#creating-new-pages)
 - [Component Usage](#component-usage)
 - [Data Management](#data-management)
@@ -227,6 +228,201 @@ hover:text-link, hover:bg-primary, hover:border-primary-light
 - `text-primary`, `bg-bg-card`, etc. (centralized classes)
 - CSS variables for custom components
 - Consistent color patterns
+
+## 🎨 Icon & Favicon Configuration
+
+### Current Icon Setup
+
+The wiki uses a centralized icon configuration that ensures the site icon appears correctly across:
+- Browser tabs
+- Bookmarks
+- Google search results
+- Social media shares
+- Mobile home screens (PWA)
+
+### Icon Files & Locations
+
+**Primary Icon:**
+- **File:** `/public/icon.png`
+- **Recommended Size:** 512x512 pixels (minimum)
+- **Format:** PNG (transparent background preferred)
+- **Aspect Ratio:** 1:1 (square)
+- **File Size:** Under 500KB
+
+**Configuration Files:**
+1. **`app/layout.tsx`** - Icon metadata in root layout
+2. **`app/manifest.ts`** - PWA manifest for mobile/app support
+
+### Icon Metadata Configuration
+
+**Location:** `app/layout.tsx` (lines 42-62)
+
+```typescript
+icons: {
+  icon: [
+    { url: '/icon.png', type: 'image/png' },
+  ],
+  shortcut: '/icon.png',
+  apple: '/icon.png',
+  other: [
+    {
+      rel: 'icon',
+      type: 'image/png',
+      sizes: '32x32',
+      url: '/icon.png',
+    },
+    {
+      rel: 'icon',
+      type: 'image/png',
+      sizes: '16x16',
+      url: '/icon.png',
+    },
+  ],
+},
+```
+
+**What This Does:**
+- ✅ Sets icon for browser tabs
+- ✅ Configures Apple Touch Icon for iOS
+- ✅ Provides multiple sizes for different contexts
+- ✅ Enables icon in Google search results (after indexing)
+
+### Web App Manifest
+
+**Location:** `app/manifest.ts`
+
+```typescript
+export default function manifest(): MetadataRoute.Manifest {
+  return {
+    name: 'The Dandelion Dynasty Wiki',
+    short_name: 'Dandelion Wiki',
+    description: 'The ultimate encyclopedia for Ken Liu\'s epic silkpunk fantasy series, The Dandelion Dynasty.',
+    start_url: '/',
+    display: 'standalone',
+    background_color: '#ffffff',
+    theme_color: '#0d9488', // Brand teal color
+    icons: [
+      {
+        src: '/icon.png',
+        sizes: 'any',
+        type: 'image/png',
+      },
+    ],
+  }
+}
+```
+
+**What This Provides:**
+- ✅ PWA (Progressive Web App) support
+- ✅ Mobile "Add to Home Screen" functionality
+- ✅ Brand colors for browser UI (theme_color)
+- ✅ Proper app metadata for search engines
+
+### Icon in OpenGraph & Social Media
+
+Icons are also included in OpenGraph metadata for social media shares:
+
+**Location:** `app/layout.tsx` (lines 66-73)
+
+```typescript
+openGraph: {
+  title: 'The Dandelion Dynasty Wiki',
+  // ... other metadata
+  images: [{ url: '/icon.png', width: 512, height: 512, alt: 'The Dandelion Dynasty Wiki' }],
+},
+```
+
+### Google Search Results Icon
+
+For the icon to appear in Google search results:
+
+#### Current Status:
+✅ **Icon metadata properly configured**
+✅ **Web manifest created**
+✅ **OpenGraph images included**
+
+#### Required Actions:
+1. **Optimize icon file** - Ensure `/public/icon.png` is 512x512px
+2. **Deploy changes** - Push to production
+3. **Submit to Google Search Console:**
+   - Verify domain: `dandelion-dynasty.com`
+   - Submit sitemap: `https://dandelion-dynasty.com/sitemap.xml`
+   - Request re-indexing
+4. **Wait for Google** - 1-2 weeks for search results to update
+
+#### Testing:
+```bash
+# Test locally
+npm run dev
+# Check browser tab for icon
+# Open DevTools > Application > Manifest
+
+# Test build
+npm run build
+npm start
+```
+
+### Creating Additional Icon Sizes (Optional)
+
+While the current setup uses a single icon file, you can create multiple sizes for optimal display:
+
+**Recommended Sizes:**
+- `icon-16.png` (16x16) - Browser tab
+- `icon-32.png` (32x32) - Browser tab (retina)
+- `icon-192.png` (192x192) - Android home screen
+- `icon-512.png` (512x512) - High-res displays
+- `apple-icon.png` (180x180) - iOS home screen
+- `favicon.ico` (32x32) - Legacy support
+
+**Using Online Tools:**
+- [RealFaviconGenerator.net](https://realfavicongenerator.net/) - Best option
+- [Favicon.io](https://favicon.io/)
+- [Cloudinary](https://cloudinary.com/)
+
+**Using Command Line (ImageMagick):**
+```bash
+convert icon.png -resize 16x16 icon-16.png
+convert icon.png -resize 32x32 icon-32.png
+convert icon.png -resize 192x192 icon-192.png
+convert icon.png -resize 512x512 icon-512.png
+convert icon.png -resize 180x180 apple-icon.png
+convert icon.png -resize 32x32 favicon.ico
+```
+
+### Icon Troubleshooting
+
+**Icon doesn't appear in browser tab:**
+- Clear browser cache
+- Check `/public/icon.png` exists
+- Verify file is valid PNG
+- Rebuild project: `npm run build`
+
+**Icon doesn't appear in Google:**
+- Ensure deployed to production
+- Check Google Search Console for indexing
+- Wait 1-2 weeks for re-crawl
+- Verify sitemap includes homepage
+
+**Icon appears pixelated:**
+- Increase icon resolution (512x512 minimum)
+- Use PNG format with transparency
+- Avoid JPG for icons
+
+### Best Practices
+
+✅ **Do:**
+- Use square aspect ratio (1:1)
+- Minimum 512x512 pixels
+- PNG format with transparency
+- Simple, recognizable design
+- Test on multiple devices
+
+❌ **Don't:**
+- Use rectangular images
+- Use images smaller than 192x192
+- Use complex designs (hard to see at small sizes)
+- Forget to optimize file size
+- Skip the web manifest
 
 ## 📄 Creating New Pages with SEO & Titles
 
@@ -534,7 +730,7 @@ export default function SpecialPage() {
 ### 4. Title Format Requirements
 
 **ALL pages must follow this exact format:**
-- **Home**: "Home | The Dandelion Dynasty Wiki"
+- **Home**: "The Dandelion Dynasty Wiki"
 - **Characters**: "Character Name | The Dandelion Dynasty Wiki"
 - **Concepts**: "Concept Name | The Dandelion Dynasty Wiki"
 - **Places**: "Place Name | The Dandelion Dynasty Wiki"
@@ -1778,7 +1974,7 @@ When working with this codebase:
 **EVERY new page MUST:**
 - Use the server/client component pattern
 - Export proper `metadata` using utility functions from `app/utils/metadata.ts`
-- Follow the exact title format: "Name | The Dandelion Dynasty Wiki"
+- Follow the exact title format: "Name | The Dandelion Dynasty Wiki" (homepage is just "The Dandelion Dynasty Wiki")
 - Include enhanced descriptions with relevant keywords
 - Use canonical URLs pointing to `https://dandelion-dynasty.com`
 - Include OpenGraph and Twitter metadata with alt text for images
@@ -1788,7 +1984,7 @@ When working with this codebase:
 
 **NEVER:**
 - Create pages without proper metadata
-- Use hardcoded titles without "Wiki" suffix
+- Use incorrect title format (must include "Wiki" - "Name | The Dandelion Dynasty Wiki")
 - Use old domain (dandelion-wiki.vercel.app) for canonical URLs
 - Skip keyword optimization in metadata
 - Forget alt text for images
@@ -1796,6 +1992,46 @@ When working with this codebase:
 - Skip the navigation setup
 
 This wiki is a labor of love for the Dandelion Dynasty series. Maintain the high quality and attention to detail that makes it special! ✨
+
+---
+
+## 📝 Recent Updates & Changes
+
+### Icon & Title Configuration (October 2025)
+
+**Status:** ✅ Complete - Deployed
+
+#### Changes Made:
+
+**1. Title Format (WITH "Wiki"):**
+- Homepage: `"The Dandelion Dynasty Wiki"` (not "Home | ...")
+- Individual pages: `"Name | The Dandelion Dynasty Wiki"`
+- All 161 pages use this consistent format
+
+**2. Icon Configuration:**
+- Enhanced icon metadata in `app/layout.tsx` with multiple sizes
+- Created `app/manifest.ts` for PWA support
+- Added OpenGraph images for social sharing
+- Icon appears in: browser tabs, bookmarks, mobile home screens, social shares
+- Icon will appear in Google search results after re-indexing (1-2 weeks)
+
+**3. Files Modified:**
+- `app/layout.tsx` - Title template and icon configuration
+- `app/page.tsx` - Homepage title
+- `app/utils/metadata.ts` - All 6 metadata generators updated
+- `app/manifest.ts` - NEW PWA manifest file
+- `INSTRUCTIONS.md` → `CONTEXT.md` - Renamed and enhanced
+
+**4. Google Search Results:**
+To make icon appear in Google:
+1. Ensure `/public/icon.png` is 512x512px minimum
+2. Deploy changes to production
+3. Submit to Google Search Console
+4. Submit sitemap: `https://dandelion-dynasty.com/sitemap.xml`
+5. Request re-indexing
+6. Wait 1-2 weeks for Google to update
+
+**Build Status:** ✅ All 161 pages generated successfully
 
 ---
 
