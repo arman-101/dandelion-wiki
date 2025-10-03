@@ -1997,6 +1997,35 @@ This wiki is a labor of love for the Dandelion Dynasty series. Maintain the high
 
 ## 📝 Recent Updates & Changes
 
+### Layout & Link Consistency (October 2025)
+
+**Status:** ✅ Complete - All Fixed
+
+#### Changes Made:
+
+**1. Books Listing Page Grid Standardization:**
+- Updated `app/books/page.tsx` to use the standardized 4-column grid layout
+- Changed from `lg:grid-cols-4` to `lg:grid-cols-3 xl:grid-cols-4` for consistency with design system
+- Now matches all other listing pages (characters, places, gods, concepts)
+
+**2. Speaking Bones Layout Consistency:**
+- Simplified responsive classes for book cover image container
+- Removed extra `max-w-xs mx-auto md:max-w-none md:mx-0` classes
+- Now uses standard `w-full md:w-1/3 flex-shrink-0` pattern matching other books
+
+**3. Broken Links Removed:**
+- Removed non-existent character link to "Zen-Kara" from Speaking Bones Chapter 46
+- All chapter links now point to existing wiki pages only
+- Character names mentioned in summaries but not linked if page doesn't exist
+
+**4. Files Modified:**
+- `app/books/page.tsx` - Grid layout standardization
+- `app/books/speaking-bones/page.tsx` - Layout consistency and link fixes
+
+**Build Status:** ✅ All pages render correctly with consistent layouts
+
+---
+
 ### Icon & Title Configuration (October 2025)
 
 **Status:** ✅ Complete - Deployed

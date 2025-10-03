@@ -424,7 +424,7 @@ const chapters = [
         quote: "My father spoke often of you. He always regretted not being able to carry out the proper duties of a son.",
         speaker: "Princess Dyana",
         summary: "In the aftermath of Phyro's death and Jia's incapacitation, Zen-Kara leads the remaining garinafin forces to Pan to assert her authority and prevent civil war. She negotiates with Cogo Yelu, surrendering the garinafin force to the Dandelion Throne to ensure stability, honoring Phyro's legacy through her strategic leadership.",
-        links: [{ name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "Cogo Yelu", path: "/characters/cogo-yelu" }, { name: "Zen-Kara", path: "/characters/zen-kara" }, { name: "Garinafin", path: "/concepts/garinafin" }]
+        links: [{ name: "Prince Phyro", path: "/characters/prince-phyro" }, { name: "Cogo Yelu", path: "/characters/cogo-yelu" }, { name: "Garinafin", path: "/concepts/garinafin" }]
     },
     {
         num: 47,
@@ -559,7 +559,7 @@ export default function SpeakingBonesPage() {
             />
 
             <div className="flex flex-col md:flex-row gap-8 items-start mb-12">
-                <div className="w-full max-w-xs mx-auto md:w-1/3 md:max-w-none md:mx-0 flex-shrink-0">
+                <div className="w-full md:w-1/3 flex-shrink-0">
                     <Image
                         src="/books/speaking-bones.jpg"
                         alt="Speaking Bones Book Cover"
