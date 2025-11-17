@@ -15,7 +15,7 @@ function extractSlugFromImage(imagePath: string, folder: 'characters' | 'places'
 export function generateCharacterMetadata(character: Character): Metadata {
     const title = `${character.name}`;
     const baseDescription = character.introduction || `${character.name} from The Dandelion Dynasty.`;
-    const enhancedDescription = truncate(`${baseDescription} Explore the complete biography, history, and role of ${character.name} in Ken Liu's silkpunk fantasy series.`);
+    const enhancedDescription = truncate(`${character.name} - ${baseDescription} Complete biography and history of ${character.name} in Ken Liu's Dandelion Dynasty silkpunk fantasy series. Explore ${character.name}'s role in the world of Dara.`);
     const imageUrl = typeof character.image === 'string' ? character.image : '';
     const slug = imageUrl ? extractSlugFromImage(imageUrl, 'characters') : null;
     const url = slug ? `/characters/${slug}` : undefined;
@@ -25,13 +25,34 @@ export function generateCharacterMetadata(character: Character): Metadata {
         title,
         description: enhancedDescription,
         keywords: [
+            // Character name variations
             character.name,
+            ...(character.name.split(' ')),
+            // Series keywords
+            'Dandelion Dynasty',
+            'The Dandelion Dynasty',
             'Dandelion Dynasty character',
+            'Dandelion Dynasty characters',
+            // Author
             'Ken Liu',
+            'Ken Liu character',
+            'Ken Liu Dandelion Dynasty',
+            // Books
             'The Grace of Kings',
+            'Grace of Kings',
+            'Wall of Storms',
+            'Veiled Throne',
+            'Speaking Bones',
+            // Genre & World
             'silkpunk fantasy',
+            'silkpunk',
+            'Dara',
             'Dara character',
-            ...(character.name.split(' '))
+            'world of Dara',
+            // Content type
+            'character biography',
+            'character guide',
+            'fantasy character'
         ],
         alternates: {
             canonical: canonicalUrl
@@ -56,7 +77,7 @@ export function generateCharacterMetadata(character: Character): Metadata {
 export function generatePlaceMetadata(place: Place): Metadata {
     const title = `${place.name}`;
     const baseDescription = place.introduction || `${place.name} in The Dandelion Dynasty.`;
-    const enhancedDescription = truncate(`${baseDescription} Discover the geography, history, and significance of ${place.name} in Ken Liu's world of Dara.`);
+    const enhancedDescription = truncate(`${place.name} - ${baseDescription} Explore the geography, history, and significance of ${place.name} in Ken Liu's Dandelion Dynasty. Discover ${place.name} in the world of Dara.`);
     const imageUrl = typeof place.image === 'string' ? place.image : '';
     const slug = imageUrl ? extractSlugFromImage(imageUrl, 'places') : null;
     const url = slug ? `/places/${slug}` : undefined;
@@ -66,13 +87,32 @@ export function generatePlaceMetadata(place: Place): Metadata {
         title,
         description: enhancedDescription,
         keywords: [
+            // Place name variations
             place.name,
+            ...(place.name.split(' ')),
+            // Series keywords
+            'Dandelion Dynasty',
+            'The Dandelion Dynasty',
             'Dandelion Dynasty location',
+            'Dandelion Dynasty places',
+            'Dandelion Dynasty geography',
+            // Author
             'Ken Liu',
+            'Ken Liu world',
+            'Ken Liu Dandelion Dynasty',
+            // World
+            'Dara',
             'Dara geography',
+            'world of Dara',
+            'Islands of Dara',
+            // Genre
             'silkpunk world',
+            'silkpunk',
+            'silkpunk fantasy',
+            // Content type
             'fantasy locations',
-            ...(place.name.split(' '))
+            'fantasy geography',
+            'fantasy world'
         ],
         alternates: {
             canonical: canonicalUrl
@@ -97,7 +137,7 @@ export function generatePlaceMetadata(place: Place): Metadata {
 export function generateGodMetadata(god: God): Metadata {
     const title = `${god.name}`;
     const baseDescription = god.introduction || `${god.name} from the Dara pantheon.`;
-    const enhancedDescription = truncate(`${baseDescription} Learn about ${god.name}, a deity from the Dandelion Dynasty pantheon in Ken Liu's silkpunk fantasy world.`);
+    const enhancedDescription = truncate(`${god.name} - ${baseDescription} Learn about ${god.name}, a deity from Ken Liu's Dandelion Dynasty. Explore ${god.name} in the pantheon of Dara's silkpunk fantasy world.`);
     const imageUrl = typeof god.image === 'string' ? god.image : '';
     const slug = imageUrl ? extractSlugFromImage(imageUrl, 'gods') : null;
     const url = slug ? `/gods/${slug}` : undefined;
@@ -107,13 +147,32 @@ export function generateGodMetadata(god: God): Metadata {
         title,
         description: enhancedDescription,
         keywords: [
+            // God name variations
             god.name,
+            ...(god.name.split(' ')),
+            // Series keywords
+            'Dandelion Dynasty',
+            'The Dandelion Dynasty',
             'Dandelion Dynasty gods',
-            'Dara pantheon',
+            'Dandelion Dynasty deities',
+            'Dandelion Dynasty pantheon',
+            // Author
             'Ken Liu',
+            'Ken Liu gods',
+            'Ken Liu Dandelion Dynasty',
+            // World
+            'Dara pantheon',
+            'Dara gods',
+            'Dara deities',
+            'world of Dara',
+            // Genre
             'silkpunk mythology',
+            'silkpunk',
+            'silkpunk fantasy',
+            // Content type
             'fantasy deities',
-            ...(god.name.split(' '))
+            'fantasy gods',
+            'fantasy mythology'
         ],
         alternates: {
             canonical: canonicalUrl
@@ -138,7 +197,7 @@ export function generateGodMetadata(god: God): Metadata {
 export function generateConceptMetadata(concept: Concept): Metadata {
     const title = `${concept.name}`;
     const baseDescription = concept.introduction || `${concept.name} concept from The Dandelion Dynasty.`;
-    const enhancedDescription = truncate(`${baseDescription} Explore ${concept.name} and its role in Ken Liu's silkpunk fantasy series, The Dandelion Dynasty.`);
+    const enhancedDescription = truncate(`${concept.name} - ${baseDescription} Explore ${concept.name} in Ken Liu's Dandelion Dynasty silkpunk fantasy. Learn about ${concept.name} in the world of Dara.`);
     const imageUrl = typeof concept.image === 'string' ? concept.image : '';
     const slug = imageUrl ? extractSlugFromImage(imageUrl, 'concepts') : null;
     const url = slug ? `/concepts/${slug}` : undefined;
@@ -148,13 +207,29 @@ export function generateConceptMetadata(concept: Concept): Metadata {
         title,
         description: enhancedDescription,
         keywords: [
+            // Concept name variations
             concept.name,
+            ...(concept.name.split(' ')),
+            // Series keywords
+            'Dandelion Dynasty',
+            'The Dandelion Dynasty',
             'Dandelion Dynasty concepts',
+            'Dandelion Dynasty technology',
+            'Dandelion Dynasty worldbuilding',
+            // Author
             'Ken Liu',
+            'Ken Liu technology',
+            'Ken Liu Dandelion Dynasty',
+            // Technology & World
             'silkpunk technology',
+            'silkpunk',
+            'silkpunk fantasy',
             'Dara worldbuilding',
+            'world of Dara',
+            // Content type
             'fantasy concepts',
-            ...(concept.name.split(' '))
+            'fantasy technology',
+            'worldbuilding'
         ],
         alternates: {
             canonical: canonicalUrl
@@ -180,21 +255,38 @@ export function generateConceptMetadata(concept: Concept): Metadata {
 export function generateBookMetadata(bookTitle: string, description?: string, slug?: string): Metadata {
     const title = `${bookTitle}`;
     const baseDesc = description || `${bookTitle} from The Dandelion Dynasty series by Ken Liu.`;
-    const desc = truncate(`${baseDesc} Complete chapter guide, character appearances, and detailed summary.`);
+    const desc = truncate(`${bookTitle} - ${baseDesc} Complete chapter-by-chapter guide, character appearances, and detailed summary of ${bookTitle} from Ken Liu's Dandelion Dynasty.`);
     const canonicalUrl = slug ? `https://dandelion-dynasty.com/books/${slug}` : undefined;
 
     return {
         title,
         description: desc,
         keywords: [
+            // Book title variations
             bookTitle,
-            'Ken Liu',
+            `The ${bookTitle}`,
+            // Series keywords
             'Dandelion Dynasty',
+            'The Dandelion Dynasty',
+            'Dandelion Dynasty books',
+            'Dandelion Dynasty series',
+            // Author
+            'Ken Liu',
+            'Ken Liu books',
+            'Ken Liu Dandelion Dynasty',
+            // World
+            'Dara',
+            'world of Dara',
+            // Genre
             'silkpunk fantasy',
+            'silkpunk',
+            'epic fantasy',
+            // Content type
             'book summary',
             'chapter guide',
+            'book guide',
             'fantasy series',
-            'Dara'
+            'reading guide'
         ],
         alternates: {
             canonical: canonicalUrl
@@ -217,18 +309,32 @@ export function generateBookMetadata(bookTitle: string, description?: string, sl
 // Generic page metadata generator
 export function generatePageMetadata(pageTitle: string, description?: string, slug?: string): Metadata {
     const title = `${pageTitle}`;
-    const desc = truncate(description || `${pageTitle} - The Dandelion Dynasty Wiki`);
+    const desc = truncate(description || `${pageTitle} - Complete guide from The Dandelion Dynasty Wiki by Ken Liu. Explore the world of Dara and silkpunk fantasy.`);
     const canonicalUrl = slug ? `https://dandelion-dynasty.com${slug}` : undefined;
 
     return {
         title,
         description: desc,
         keywords: [
+            // Page title
             pageTitle,
+            // Series keywords
             'Dandelion Dynasty',
+            'The Dandelion Dynasty',
+            'Dandelion Dynasty wiki',
+            // Author
             'Ken Liu',
+            'Ken Liu Dandelion Dynasty',
+            // Genre
             'silkpunk',
-            'fantasy wiki'
+            'silkpunk fantasy',
+            // World
+            'Dara',
+            'world of Dara',
+            // Content type
+            'fantasy wiki',
+            'wiki guide',
+            'encyclopedia'
         ],
         alternates: {
             canonical: canonicalUrl

@@ -7,12 +7,20 @@ import ScrollToTopButton from './components/ui/ScrollToTopButton'
 import ThemeProviders from './components/layout/ThemeProviders'
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
-import { generateWebsiteStructuredData } from './utils/structuredData'
+import { 
+  generateWebsiteStructuredData,
+  generateFAQStructuredData,
+  generateOrganizationStructuredData,
+  generateSeriesStructuredData
+} from './utils/structuredData'
 
 const inter = Inter({ subsets: ['latin'] })
 
-// Generate website structured data once
+// Generate structured data once
 const websiteStructuredData = generateWebsiteStructuredData()
+const faqStructuredData = generateFAQStructuredData()
+const organizationStructuredData = generateOrganizationStructuredData()
+const seriesStructuredData = generateSeriesStructuredData()
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://dandelion-dynasty.com'),
@@ -20,21 +28,87 @@ export const metadata: Metadata = {
     template: '%s | The Dandelion Dynasty Wiki',
     default: 'The Dandelion Dynasty Wiki'
   },
-  description: 'The ultimate encyclopedia for Ken Liu\'s epic silkpunk fantasy series, The Dandelion Dynasty. Explore 100+ characters like Kuni Garu and Mata Zyndu, places like Dara and Pan, gods, concepts like garinafins, and detailed book guides from the world of Dara.',
+  description: 'The Dandelion Dynasty Wiki - Complete encyclopedia for Ken Liu\'s silkpunk fantasy series. Discover The Dandelion Dynasty books, characters, world of Dara, and silkpunk technology. From The Grace of Kings to Speaking Bones, explore Kuni Garu, Mata Zyndu, garinafins, and more.',
   keywords: [
-    // Series & Author
-    'Dandelion Dynasty', 'Ken Liu', 'silkpunk', 'fantasy series', 'Dara',
-    // Books
-    'Grace of Kings', 'Wall of Storms', 'Veiled Throne', 'Speaking Bones',
-    // Main Characters
-    'Kuni Garu', 'Mata Zyndu', 'Jia Matiza', 'Zomi Kidosu', 'Théra', 'Phyro Garu',
-    'Gin Mazoti', 'Luan Zya', 'Tanno Namen', 'Zyndu Clan',
-    // Major Concepts
-    'garinafin', 'cruben', 'airship', 'silkpunk technology',
+    // Core Series Terms (most important - variations)
+    'Dandelion Dynasty',
+    'The Dandelion Dynasty',
+    'Dandelion Dynasty series',
+    'Dandelion Dynasty books',
+    'Dandelion',
+    'Dynasty',
+    // Author (critical)
+    'Ken Liu',
+    'Ken Liu books',
+    'Ken Liu fantasy',
+    'Ken Liu series',
+    // Genre & Style
+    'silkpunk',
+    'silkpunk fantasy',
+    'silkpunk series',
+    'silkpunk technology',
+    'fantasy series',
+    'epic fantasy',
+    // World
+    'Dara',
+    'world of Dara',
+    'Dara fantasy',
+    'Islands of Dara',
+    // Books (with variations)
+    'Grace of Kings',
+    'The Grace of Kings',
+    'Wall of Storms',
+    'The Wall of Storms',
+    'Veiled Throne',
+    'The Veiled Throne',
+    'Speaking Bones',
+    // Main Characters (top tier)
+    'Kuni Garu',
+    'Mata Zyndu',
+    'Jia Matiza',
+    'Zomi Kidosu',
+    'Théra',
+    'Phyro Garu',
+    'Gin Mazoti',
+    'Luan Zya',
+    'Tanno Namen',
+    'Zyndu Clan',
+    'Cogo Yelu',
+    'Risana',
+    // Major Concepts (iconic to series)
+    'garinafin',
+    'garinafins',
+    'cruben',
+    'airship',
+    'silkpunk airship',
     // Places
-    'Pan', 'Xana', 'Rui', 'Dasu', 'Géjira', 'Ukyu-Gondé', 'Lyucu Empire',
+    'Pan',
+    'Xana',
+    'Rui',
+    'Dasu',
+    'Géjira',
+    'Ukyu-Gondé',
+    'Lyucu Empire',
+    'Cocru',
+    'Haan',
+    // Search Intent Keywords
+    'Dandelion Dynasty wiki',
+    'Dandelion Dynasty encyclopedia',
+    'Dandelion Dynasty guide',
+    'Dandelion Dynasty characters',
+    'Dandelion Dynasty summary',
+    'Ken Liu Dandelion Dynasty',
+    'what is Dandelion Dynasty',
+    'Dandelion Dynasty book order',
+    'Dandelion Dynasty reading order',
     // Content Type
-    'wiki', 'encyclopedia', 'character guide', 'book summary', 'fantasy worldbuilding'
+    'wiki',
+    'encyclopedia',
+    'character guide',
+    'book summary',
+    'fantasy worldbuilding',
+    'fantasy wiki',
+    'book series guide'
   ],
   authors: [{ name: 'Dandelion Dynasty Wiki Community' }],
   creator: 'Dandelion Dynasty Wiki',
@@ -64,18 +138,18 @@ export const metadata: Metadata = {
     canonical: 'https://dandelion-dynasty.com'
   },
   openGraph: {
-    title: 'The Dandelion Dynasty Wiki',
-    description: 'The ultimate encyclopedia for Ken Liu\'s epic silkpunk fantasy series. Explore 100+ characters, places, gods, concepts, and detailed book guides from the world of Dara.',
+    title: 'The Dandelion Dynasty Wiki - Ken Liu\'s Silkpunk Fantasy Series',
+    description: 'Complete encyclopedia for The Dandelion Dynasty by Ken Liu. Explore the world of Dara, silkpunk technology, characters like Kuni Garu and Mata Zyndu, garinafins, and all four books from The Grace of Kings to Speaking Bones.',
     url: 'https://dandelion-dynasty.com',
     siteName: 'The Dandelion Dynasty Wiki',
     type: 'website',
     locale: 'en_US',
-    images: [{ url: '/icon.png', width: 512, height: 512, alt: 'The Dandelion Dynasty Wiki' }],
+    images: [{ url: '/icon.png', width: 512, height: 512, alt: 'The Dandelion Dynasty Wiki - Ken Liu Silkpunk Fantasy' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'The Dandelion Dynasty Wiki',
-    description: 'The ultimate encyclopedia for Ken Liu\'s epic silkpunk fantasy series.',
+    title: 'The Dandelion Dynasty Wiki - Ken Liu Silkpunk Fantasy',
+    description: 'Complete guide to The Dandelion Dynasty series by Ken Liu. Characters, world of Dara, silkpunk technology, garinafins, and book guides.',
     creator: '@dandeliondynastywiki'
   },
   robots: {
@@ -102,10 +176,32 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* Website structured data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(websiteStructuredData),
+          }}
+        />
+        {/* FAQ structured data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(faqStructuredData),
+          }}
+        />
+        {/* Organization structured data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationStructuredData),
+          }}
+        />
+        {/* Book Series structured data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(seriesStructuredData),
           }}
         />
       </head>

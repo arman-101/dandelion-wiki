@@ -39,6 +39,24 @@ export default function HomePageClient() {
           </button>
         </div>
 
+        {/* SEO-Rich Content Section */}
+        <div className="max-w-4xl mx-auto mb-12 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            About The Dandelion Dynasty
+          </h2>
+          <div className="text-base text-gray-700 dark:text-gray-300 space-y-3">
+            <p>
+              <strong>The Dandelion Dynasty</strong> is an epic <strong>silkpunk fantasy series</strong> by acclaimed author <strong>Ken Liu</strong>. Set in the fictional world of <strong>Dara</strong>, this groundbreaking series reimagines Asian history and mythology through a unique silkpunk lens, blending ancient technology with fantastical innovation.
+            </p>
+            <p>
+              The series comprises four books: <strong>The Grace of Kings</strong>, <strong>The Wall of Storms</strong>, <strong>The Veiled Throne</strong>, and <strong>Speaking Bones</strong>. Follow legendary characters like <strong>Kuni Garu</strong>, the cunning emperor, and <strong>Mata Zyndu</strong>, the fearsome warrior, alongside <strong>Jia Matiza</strong>, <strong>Zomi Kidosu</strong>, <strong>Théra</strong>, and <strong>Phyro Garu</strong> as they navigate war, politics, and the clash of empires across the <strong>Islands of Dara</strong>.
+            </p>
+            <p>
+              Experience <strong>Ken Liu&apos;s</strong> revolutionary <strong>silkpunk technology</strong> including <strong>garinafins</strong> (massive flying creatures), <strong>crubens</strong> (underwater vessels), and ingenious airships. Explore the rich geography of <strong>Dara</strong>, from <strong>Pan</strong> and <strong>Xana</strong> to the distant <strong>Lyucu Empire</strong>, and discover the pantheon of gods that shape this world.
+            </p>
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           <Link href="/books" className="group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 shadow-sm hover:shadow-lg hover:border-teal-300 dark:hover:border-teal-600 transition-all duration-300 transform hover:-translate-y-1">
             <div className="text-center">
