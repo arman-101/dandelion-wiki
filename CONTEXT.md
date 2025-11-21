@@ -112,7 +112,9 @@ dandelion-wiki/
 │   │   └── ui/                 # UI components
 │   │       ├── Icons.tsx
 │   │       ├── InfoBox.tsx
-│   │       └── ContentRenderer.tsx
+│   │       ├── ContentRenderer.tsx
+│   │       ├── BackToHomeButton.tsx
+│   │       └── ScrollToTopButton.tsx
 │   │
 │   ├── data/                    # Data management
 │   │   └── wiki-data.ts        # 📊 ALL CONTENT DATA
@@ -884,13 +886,15 @@ After creating a new page:
 
 import Link from 'next/link';
 import { CATEGORY_DATA } from '../data/wiki-data';
+import BackToHomeButton from '@/app/components/ui/BackToHomeButton';
 
 export default function CategoryPage() {
   return (
     <div className="max-w-6xl mx-auto">
-      <h1 className="text-3xl md:text-4xl font-bold text-text-primary dark:text-text-primary mb-8 border-b pb-4">
-        Category Name
-      </h1>
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 border-b pb-4">
+        <h1 className="text-3xl md:text-4xl font-bold text-text-primary dark:text-text-primary">Category Name</h1>
+        <BackToHomeButton />
+      </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {CATEGORY_DATA.map(item => (
@@ -922,13 +926,15 @@ export default function CategoryPage() {
 import Image from 'next/image';
 import Link from 'next/link';
 import { CATEGORY_DATA } from '../data/wiki-data';
+import BackToHomeButton from '@/app/components/ui/BackToHomeButton';
 
 export default function CategoryPage() {
   return (
     <div className="max-w-6xl mx-auto">
-      <h1 className="text-3xl md:text-4xl font-bold text-text-primary dark:text-text-primary mb-8 border-b pb-4">
-        Category Name
-      </h1>
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 border-b pb-4">
+        <h1 className="text-3xl md:text-4xl font-bold text-text-primary dark:text-text-primary">Category Name</h1>
+        <BackToHomeButton />
+      </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {CATEGORY_DATA.map(item => (
@@ -1067,6 +1073,40 @@ Add new category card to the grid (after the existing 6 cards):
   className="w-full"
 />
 ```
+
+#### 5. BackToHomeButton
+**Purpose**: Reusable navigation button to return to homepage from category pages
+**Location**: `app/components/ui/BackToHomeButton.tsx`
+
+**Features**:
+- **Home icon** from lucide-react with scale animation on hover
+- **Hover effects**: Text changes to accent pink, icon scales up, border highlights, shadow appears, slight lift
+- **Uses centralized colors**: Follows design system with proper dark mode support
+- **Responsive**: Works on all screen sizes
+
+**Usage**:
+```tsx
+import BackToHomeButton from '@/app/components/ui/BackToHomeButton';
+
+// In category page header
+<div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 border-b pb-4">
+  <h1 className="text-3xl md:text-4xl font-bold text-text-primary dark:text-text-primary">Page Title</h1>
+  <BackToHomeButton />
+</div>
+```
+
+**Used in**:
+- All category listing pages (Books, Characters, Concepts, Gods, Places, Maps)
+- Positioned in top-right area next to page title
+- Stacks vertically on mobile, horizontal on larger screens
+
+**Hover Effects**:
+- Text color: Changes to accent pink (`hover:[color:var(--color-accent-pink)]`)
+- Icon: Scales up 10% (`group-hover:scale-110`)
+- Border: Changes to accent pink
+- Background: Subtle background color change
+- Shadow: Appears on hover
+- Transform: Slight upward lift (`hover:-translate-y-0.5`)
 
 ### Layout Components
 
@@ -2137,11 +2177,13 @@ When working with this codebase:
 11. **🚨 CRITICAL: Import client components WITHOUT .tsx extension**
 12. **Handle images as optional** - PageTemplate gracefully handles pages with or without images
 13. **Use proper image paths** when adding images to data objects
-14. **🚨 CRITICAL: Update INSTRUCTIONS.md when making template changes** - Always document template modifications, layout changes, and new features
+14. **🚨 CRITICAL: Update CONTEXT.md when making template changes** - Always document template modifications, layout changes, and new features
 15. **Test mobile responsiveness** - Ensure all changes work on mobile devices
 16. **🚨 CRITICAL: SEO Optimization** - Use enhanced metadata, keywords, and canonical URLs pointing to dandelion-dynasty.com
 17. **Implement structured data** for major pages using appropriate schema types
 18. **Follow SEO best practices** outlined in the SEO section above
+19. **Use BackToHomeButton component** - For all category listing pages (Books, Characters, Concepts, Gods, Places, Maps) - Don't create custom home buttons
+20. **Reuse existing components** - Check `app/components/ui/` and `app/components/features/` before creating new components
 
 ### 🎯 **SEO & Title Requirements (MANDATORY)**
 
@@ -2170,6 +2212,60 @@ This wiki is a labor of love for the Dandelion Dynasty series. Maintain the high
 ---
 
 ## 📝 Recent Updates & Changes
+
+### BackToHomeButton Component (December 2024)
+
+**Status:** ✅ Complete - Deployed
+
+#### Changes Made:
+
+**1. Reusable BackToHomeButton Component:**
+- Created `app/components/ui/BackToHomeButton.tsx` as a reusable component
+- Eliminates repetitive code across all category pages
+- Consistent styling and hover effects across all pages
+
+**2. Enhanced Hover Effects:**
+- Text color changes to accent pink on hover (matching navbar style)
+- Home icon scales up 10% on hover (`group-hover:scale-110`)
+- Border highlights with accent pink color
+- Subtle shadow appears on hover
+- Slight upward lift effect (`hover:-translate-y-0.5`)
+- Smooth transitions (`transition-all duration-200`)
+
+**3. Centralized Color System:**
+- Uses `text-link` / `text-link-dark` for default text
+- Uses `hover:[color:var(--color-accent-pink)]` for hover text
+- Uses `border-border-primary` / `border-border-secondary` for borders
+- Uses `hover:border-accent-pink` for hover border
+- Uses `bg-bg-secondary` for hover background
+- Fully supports dark mode
+
+**4. Responsive Design:**
+- Stacks vertically on mobile devices
+- Horizontal layout on larger screens (sm and up)
+- Maintains proper spacing and alignment
+
+**5. Files Modified:**
+- `app/components/ui/BackToHomeButton.tsx` - NEW reusable component
+- `app/books/page.tsx` - Updated to use component
+- `app/characters/page.tsx` - Updated to use component
+- `app/concepts/page.tsx` - Updated to use component
+- `app/gods/page.tsx` - Updated to use component
+- `app/places/page.tsx` - Updated to use component
+- `app/maps/page.tsx` - Updated to use component
+
+**6. Usage Pattern:**
+All category pages now use the same header pattern:
+```tsx
+<div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 border-b pb-4">
+  <h1 className="text-3xl md:text-4xl font-bold text-text-primary dark:text-text-primary">Page Title</h1>
+  <BackToHomeButton />
+</div>
+```
+
+**Build Status:** ✅ All category pages updated with consistent navigation
+
+---
 
 ### Layout & Link Consistency (October 2025)
 

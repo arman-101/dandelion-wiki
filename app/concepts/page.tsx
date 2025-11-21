@@ -3,6 +3,7 @@ import Link from 'next/link';
 // Import the new master list from your central data file
 import { ALL_CONCEPTS_DATA } from '../data/wiki-data';
 import { generatePageMetadata } from '@/app/utils/metadata';
+import BackToHomeButton from '@/app/components/ui/BackToHomeButton';
 
 export const metadata: Metadata = generatePageMetadata(
     'Concepts',
@@ -12,7 +13,10 @@ export const metadata: Metadata = generatePageMetadata(
 export default function ConceptsPage() {
     return (
         <div>
-            <h1 className="text-3xl md:text-4xl font-bold text-text-primary dark:text-text-primary mb-8 border-b pb-4">Concepts</h1>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 border-b pb-4">
+                <h1 className="text-3xl md:text-4xl font-bold text-text-primary dark:text-text-primary">Concepts</h1>
+                <BackToHomeButton />
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                 {/* Use the imported ALL_CONCEPTS_DATA list to render the cards */}
                 {ALL_CONCEPTS_DATA.map((concept) => (

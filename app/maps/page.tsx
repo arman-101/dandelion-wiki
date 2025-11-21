@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ALL_PLACES_DATA, PLACES_TIRO_STATES } from '../data/wiki-data';
 import { generatePageMetadata } from '@/app/utils/metadata';
+import BackToHomeButton from '@/app/components/ui/BackToHomeButton';
 
 export const metadata: Metadata = generatePageMetadata(
     'Maps',
@@ -18,7 +19,10 @@ const ukyuGondeLocations = ALL_PLACES_DATA.filter(
 export default function MapsPage() {
     return (
         <div className="max-w-5xl mx-auto px-4">
-            <h1 className="text-4xl font-bold text-center mb-8 text-text-primary dark:text-text-primary">World Maps</h1>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 border-b pb-4">
+                <h1 className="text-3xl md:text-4xl font-bold text-text-primary dark:text-text-primary">World Maps</h1>
+                <BackToHomeButton />
+            </div>
 
             {/* Map Section for Dara */}
             <div className="mb-12">

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { FC } from 'react';
 import { ALL_PLACES_DATA } from '../data/wiki-data'; // Import the new master data list
 import { generatePageMetadata } from '@/app/utils/metadata';
+import BackToHomeButton from '@/app/components/ui/BackToHomeButton';
 
 export const metadata: Metadata = generatePageMetadata(
     'Places',
@@ -47,6 +48,10 @@ const PlaceSection: FC<{ title: string; places: Place[]; isFirst?: boolean }> = 
 export default function PlacesPage() {
     return (
         <div>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 border-b pb-4">
+                <h1 className="text-3xl md:text-4xl font-bold text-text-primary dark:text-text-primary">Places</h1>
+                <BackToHomeButton />
+            </div>
             <PlaceSection title="The Seven States of Dara" places={placesCoreStates} isFirst={true} />
             <PlaceSection title="Major Cities & Regions" places={placesCities} />
             <PlaceSection title="Outer Islands & Archipelagos" places={placesIslands} />
