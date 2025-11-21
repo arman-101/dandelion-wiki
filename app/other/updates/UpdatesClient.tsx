@@ -13,6 +13,24 @@ interface Update {
 
 const updates: Update[] = [
     {
+        version: '#4',
+        date: 'November 21, 2025',
+        title: 'Navigation Improvements, Bug Fixes & Advanced SEO',
+        description: 'Enhanced user navigation with BackToHomeButton component, fixed duplicate page titles, updated affiliate links, improved content accuracy, and advanced SEO optimizations with structured data.',
+        changes: [
+            '🏠 **BackToHomeButton Component**: Added reusable BackToHomeButton component to all category listing pages (Books, Characters, Concepts, Gods, Places, Maps) for improved navigation with consistent hover effects and centralized styling',
+            '🔧 **Title Fixes**: Fixed duplicate page titles in browser tabs (e.g., "Glossary | The Dandelion Dynasty Wiki | The Dandelion Dynasty Wiki") - all pages now display correctly without duplication',
+            '🔗 **Affiliate Link Update**: Updated Amazon author link in About Author page to include affiliate tracking for better support of the wiki',
+            '📝 **Content Accuracy Improvements**: Updated character pages (Gin Mazoti, Jia Matiza, Kuni Garu, Mata Zyndu, Princess Fara) with more accurate information by cross-referencing with other wiki sources',
+            '🖼️ **Icon Fixes**: Resolved icon background display issues and improved icon rendering across the site',
+            '🔍 **Advanced SEO Enhancements**: Implemented comprehensive structured data including FAQ Schema, Organization Schema, and BookSeries Schema for better search engine understanding and rich snippets',
+            '📊 **Enhanced Metadata**: Expanded metadata keywords from 25+ to 75+ site-wide keywords, with 17-25+ keywords per individual page for broader search coverage',
+            '🏠 **Homepage SEO Content**: Added SEO-rich content section with 150+ words of keyword-dense, natural text about The Dandelion Dynasty series',
+            '📚 **Structured Data**: Added multiple Schema.org types (FAQ, Organization, BookSeries) to homepage for enhanced search visibility and knowledge graph integration',
+            '🎯 **SEO Strategy**: Optimized for broader search terms including "Dandelion Dynasty", "Ken Liu", "silkpunk", and individual character/place/concept names without requiring "wiki" suffix',
+        ]
+    },
+    {
         version: '#3',
         date: 'September 29, 2025',
         title: 'Custom Domain, SEO Optimization & UI Enhancements',
