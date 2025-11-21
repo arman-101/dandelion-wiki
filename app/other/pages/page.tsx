@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import OtherPagesClient from './OtherPagesClient';
 
 export const metadata: Metadata = {
-    title: 'Other Pages | The Dandelion Dynasty Wiki',
+    title: 'Other Pages',
     description: 'Additional resources and information about the Dandelion Dynasty Wiki, including about pages, glossary, updates, and more.',
     openGraph: {
         title: 'Other Pages | The Dandelion Dynasty Wiki',

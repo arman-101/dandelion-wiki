@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import GlossaryClient from './GlossaryClient';
 
 export const metadata: Metadata = {
-    title: 'Glossary | The Dandelion Dynasty Wiki',
+    title: 'Glossary',
     description: 'A comprehensive glossary of terms, concepts, and vocabulary from Ken Liu\'s Dandelion Dynasty series, including Daran, Lyucu, and Agon terminology.',
     openGraph: {
         title: 'Glossary | The Dandelion Dynasty Wiki',
