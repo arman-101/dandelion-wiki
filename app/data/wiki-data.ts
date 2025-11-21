@@ -109,7 +109,7 @@ export const ALL_CHARACTERS_DATA = [
     { name: "Pon Naye", description: "A courageous Dara airship commander who makes a heroic sacrifice in the first battle against the Lyucu.", image: "/characters/pon-naye.png", link: "/characters/pon-naye" },
     { name: "Takval Aragoz", description: "A prince of the exiled Agon people who becomes Princess Théra's husband and co-leader of the rebellion in Ukyu-Gondé.", image: "/characters/takval-aragoz.png", link: "/characters/takval-aragoz" },
     // The Veiled Throne
-    { name: "Princess Fara", description: "The artist-princess and youngest child of Kuni and Risana, who becomes the unlikely hope for a new era of peace.", image: "/characters/princess-fara.png", link: "/characters/princess-fara" },
+    { name: "Princess Fara", description: "The artist-princess and youngest child of Kuni and Consort Fina, raised by Empress Jia, who becomes the unlikely hope for a new era of peace.", image: "/characters/princess-fara.png", link: "/characters/princess-fara" },
     { name: "Kinri", description: "A young refugee of mixed Lyucu-Dara heritage who discovers his secret identity as Savo Ryoto and becomes a pivotal inventor.", image: "/characters/kinri.png", link: "/characters/kinri" },
     { name: "Goztan Ryoto", description: "A powerful Lyucu thane and mother of Savo Ryoto who leads the pragmatic accommodationist faction.", image: "/characters/goztan-ryoto.png", link: "/characters/goztan-ryoto" },
     { name: "Volyu Aragoz", description: "The treacherous uncle of Takval Aragoz who repeatedly betrays the Agon rebellion to the Lyucu.", image: "/characters/volyu-aragoz.png", link: "/characters/volyu-aragoz" },

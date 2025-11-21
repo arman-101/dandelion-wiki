@@ -16,6 +16,7 @@ const characterData: Character = {
         significantOther: [
             { text: "Jia Matiza", link: "/characters/jia-matiza" },
             { text: "Consort Risana", link: "/characters/consort-risana" },
+            { text: "Consort Fina", link: "" },
         ],
         relatives: [
             { text: "Féso Garu (father)", link: "" },

@@ -19,6 +19,7 @@ const characterData: Character = {
         ],
         relatives: [
             { text: "Dazu Zyndu (grandfather)", link: "" },
+            { text: "Shiru Zyndu (father)", link: "" },
             { text: "Phin Zyndu (uncle)", link: "/characters/phin-zyndu" },
             { text: "Soto Zyndu (aunt)", link: "/characters/soto-zyndu" }
         ],

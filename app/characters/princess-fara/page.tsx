@@ -8,7 +8,7 @@ import PrincessFaraClient from './PrincessFaraClient';
 
 const characterData: Character = {
     name: "Princess Fara",
-    introduction: "Princess Fara is the youngest child of Emperor Ragin and Consort Risana, raised by Empress Jia. A talented artist and inventor, she operates under the alias 'Dandelion,' becoming the heart of a grassroots cultural renaissance in Ginpen and, ultimately, the unlikely heir to a fractured empire.",
+    introduction: "Princess Fara is the youngest child of Emperor Ragin and Consort Fina, raised by Empress Jia. A talented artist and inventor, she operates under the alias 'Dandelion,' becoming the heart of a grassroots cultural renaissance in Ginpen and, ultimately, the unlikely heir to a fractured empire.",
     infoBox: {
         aliases: "Dandelion, Empress Shizona",
         occupation: "Princess, Artist, Inventor, Empress of Dara",
@@ -18,11 +18,11 @@ const characterData: Character = {
         significantOther: { text: "Kinri (Savo Ryoto)", link: "/characters/kinri" },
         relatives: [
             { text: "Kuni Garu (father)", link: "/characters/kuni-garu" },
-            { text: "Consort Risana (mother)", link: "/characters/consort-risana" },
+            { text: "Consort Fina (mother)", link: "" },
             { text: "Jia Matiza (adoptive mother)", link: "/characters/jia-matiza" },
-            { text: "Prince Phyro (brother)", link: "/characters/prince-phyro" },
-            { text: "Prince Timu (brother, by adoption)", link: "/characters/prince-timu" },
-            { text: "Princess Théra (sister, by adoption)", link: "/characters/princess-thera" }
+            { text: "Prince Phyro (half-brother)", link: "/characters/prince-phyro" },
+            { text: "Prince Timu (half-brother, by adoption)", link: "/characters/prince-timu" },
+            { text: "Princess Théra (half-sister, by adoption)", link: "/characters/princess-thera" }
         ],
         affiliation: "Dandelion Court, The Blossom Gang",
         nationality: "Daran",

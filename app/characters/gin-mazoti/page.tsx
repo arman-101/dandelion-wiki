@@ -12,7 +12,7 @@ const characterData: Character = {
     infoBox: {
         aliases: "Marshal Gin, Queen of Rima and Faça, Queen of Géjira",
         occupation: "Dockworker, Quartermaster, Marshal, Queen",
-        placeOfBirth: { text: "Dimushi", link: "/places/dimushi" },
+        placeOfBirth: "Dimushi, Amu",
         status: "Deceased",
         gender: "Female",
         significantOther: [

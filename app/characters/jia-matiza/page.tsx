@@ -10,18 +10,23 @@ const characterData: Character = {
     infoBox: {
         aliases: "Empress Jia, Dowager Empress, Regent",
         occupation: "Herbalist, Scholar, Empress of Dara, Regent",
-        placeOfBirth: { text: "Zudi", link: "/places/zudi" },
+        placeOfBirth: { text: "Faca", link: "/places/faca" },
         status: "Alive",
         gender: "Female",
-        significantOther: { text: "Kuni Garu", link: "/characters/kuni-garu" },
+        significantOther: [
+            { text: "Kuni Garu (husband)", link: "/characters/kuni-garu" },
+            { text: "Otho Krin (lover)", link: "" }
+        ],
         relatives: [
+            { text: "Gilo Matiza (father)", link: "" },
+            { text: "Lu (mother)", link: "" },
             { text: "Prince Timu (son)", link: "/characters/prince-timu" },
             { text: "Princess Théra (daughter)", link: "/characters/princess-thera" },
             { text: "Prince Phyro (son, by adoption)", link: "/characters/prince-phyro" },
             { text: "Princess Fara (daughter, by adoption)", link: "/characters/princess-fara" }
         ],
         affiliation: "House of Garu, Dandelion Court",
-        nationality: { text: "Cocru", link: "/places/cocru" },
+        nationality: { text: "Faca", link: "/places/faca" },
         firstAppeared: { text: "The Grace of Kings", link: "/books/the-grace-of-kings" },
         lastAppeared: { text: "Speaking Bones", link: "/books/speaking-bones" }
     },
