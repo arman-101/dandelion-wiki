@@ -1,6 +1,11 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { OTHER_PAGES } from '../../data/wiki-data';
+import { getSurroundingPages } from '@/app/utils/navigationUtils';
+import { TopNavigation } from '@/app/components/layout/PageNavigation';
+import BackToHomeButton from '@/app/components/ui/BackToHomeButton';
 
 interface GlossaryTerm {
     term: string;
@@ -195,19 +200,30 @@ export default function GlossaryClient() {
         groupedTerms[culture].sort((a, b) => a.term.localeCompare(b.term));
     });
 
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...OTHER_PAGES]);
+    const returnLink = { title: 'Return to Other Pages', path: '/other/pages' };
+
     return (
-        <div className="max-w-6xl mx-auto px-4 py-8">
-            <div className="mb-8">
-                <h1 className="text-3xl md:text-4xl font-bold text-text-primary dark:text-text-primary mb-8 border-b pb-4">
-                    Glossary
-                </h1>
-                <p className="text-text-secondary dark:text-text-light text-lg leading-relaxed">
+        <>
+            <TopNavigation 
+                prevPage={prevPage} 
+                nextPage={nextPage} 
+                returnLink={returnLink} 
+            />
+            <div className="max-w-6xl mx-auto px-4 py-8">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 border-b pb-4">
+                    <h1 className="text-3xl md:text-4xl font-bold text-text-primary dark:text-text-primary">
+                        Glossary
+                    </h1>
+                    <BackToHomeButton />
+                </div>
+                <p className="text-text-secondary dark:text-text-light text-lg leading-relaxed mb-8">
                     A comprehensive glossary of terms, concepts, and vocabulary from Ken Liu&apos;s Dandelion Dynasty series. 
                     This collection includes Daran, Lyucu, and Agon terminology, organized by culture.
                 </p>
-            </div>
 
-            <div className="space-y-12">
+                <div className="space-y-12">
                 {Object.entries(groupedTerms).map(([culture, terms]) => (
                     <div key={culture} className="space-y-6">
                         <h2 className="text-2xl md:text-3xl font-bold text-text-primary dark:text-text-primary border-b pb-2">
@@ -242,7 +258,8 @@ export default function GlossaryClient() {
                         </div>
                     </div>
                 ))}
+                </div>
             </div>
-        </div>
+        </>
     );
 }

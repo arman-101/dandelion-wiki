@@ -1,6 +1,11 @@
 'use client';
 
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
+import { OTHER_PAGES } from '../../data/wiki-data';
+import { getSurroundingPages } from '@/app/utils/navigationUtils';
+import { TopNavigation } from '@/app/components/layout/PageNavigation';
+import BackToHomeButton from '@/app/components/ui/BackToHomeButton';
 import { calculateWikiStats, getStatsByCategory, getDevelopmentMetrics } from '../../utils/statsUtils';
 
 interface Update {
@@ -106,20 +111,31 @@ export default function UpdatesClient() {
         );
     };
 
+    const pathname = usePathname();
+    const { prevPage, nextPage } = getSurroundingPages(pathname, [...OTHER_PAGES]);
+    const returnLink = { title: 'Return to Other Pages', path: '/other/pages' };
+
     return (
-        <div className="max-w-6xl mx-auto px-4 py-8">
-            <div className="mb-8">
-                <h1 className="text-3xl md:text-4xl font-bold text-text-primary dark:text-text-primary mb-8 border-b pb-4">
-                    Wiki Updates
-                </h1>
-                <p className="text-text-secondary dark:text-text-light text-lg leading-relaxed">
+        <>
+            <TopNavigation 
+                prevPage={prevPage} 
+                nextPage={nextPage} 
+                returnLink={returnLink} 
+            />
+            <div className="max-w-6xl mx-auto px-4 py-8">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 border-b pb-4">
+                    <h1 className="text-3xl md:text-4xl font-bold text-text-primary dark:text-text-primary">
+                        Wiki Updates
+                    </h1>
+                    <BackToHomeButton />
+                </div>
+                <p className="text-text-secondary dark:text-text-light text-lg leading-relaxed mb-8">
                     Track the development history and evolution of The Dandelion Dynasty Wiki. 
                     From the initial launch to ongoing improvements, see how this comprehensive resource 
                     for Ken Liu&apos;s silkpunk fantasy series continues to grow and improve.
                 </p>
-            </div>
 
-            <div className="space-y-6">
+                <div className="space-y-6">
                 {updates.map((update) => (
                     <div 
                         key={update.version}
@@ -185,9 +201,9 @@ export default function UpdatesClient() {
                         )}
                     </div>
                 ))}
-            </div>
+                </div>
 
-            <div className="mt-12 bg-slate-50 dark:bg-gray-800/50 p-6 rounded-lg">
+                <div className="mt-12 bg-slate-50 dark:bg-gray-800/50 p-6 rounded-lg">
                 <h3 className="text-lg font-semibold text-text-primary dark:text-text-primary mb-4">
                     📈 Development Statistics
                 </h3>
@@ -271,7 +287,8 @@ export default function UpdatesClient() {
                         darknebulax1@gmail.com
                     </a>
                 </p>
+                </div>
             </div>
-        </div>
+        </>
     );
 }
