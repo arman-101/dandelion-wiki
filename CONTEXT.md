@@ -31,8 +31,8 @@ This comprehensive guide provides all the information needed for AI assistants t
 ### Core Framework
 ```json
 {
-  "next": "15.4.4",
-  "react": "19.1.0",
+  "next": "15.5.7",
+  "react": "19.1.2",
   "typescript": "5",
   "tailwindcss": "3.4.17"
 }
