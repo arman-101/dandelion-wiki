@@ -21,8 +21,8 @@ const characterData: Character = {
             { text: "Consort Fina (mother)", link: "" },
             { text: "Jia Matiza (adoptive mother)", link: "/characters/jia-matiza" },
             { text: "Prince Phyro (half-brother)", link: "/characters/prince-phyro" },
-            { text: "Prince Timu (half-brother, by adoption)", link: "/characters/prince-timu" },
-            { text: "Princess Théra (half-sister, by adoption)", link: "/characters/princess-thera" }
+            { text: "Prince Timu (half-brother)", link: "/characters/prince-timu" },
+            { text: "Princess Théra (half-sister)", link: "/characters/princess-thera" }
         ],
         affiliation: "Dandelion Court, The Blossom Gang",
         nationality: "Daran",
