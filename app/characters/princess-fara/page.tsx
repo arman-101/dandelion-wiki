@@ -19,7 +19,6 @@ const characterData: Character = {
         relatives: [
             { text: "Kuni Garu (father)", link: "/characters/kuni-garu" },
             { text: "Consort Fina (mother)", link: "" },
-            { text: "Jia Matiza (adoptive mother)", link: "/characters/jia-matiza" },
             { text: "Prince Phyro (half-brother)", link: "/characters/prince-phyro" },
             { text: "Prince Timu (half-brother)", link: "/characters/prince-timu" },
             { text: "Princess Théra (half-sister)", link: "/characters/princess-thera" }
